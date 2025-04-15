@@ -5,7 +5,7 @@
 
     <category Name="Ekuemekiyye" DisplayName="{{G|The Toxic Arboreta of Ekuemekiyye, the Holy City}}">
 
-      <subtype Name="Horticulturist" Gear="StartingGear_Horticulturist" Tile="creatures/caste_1.bmp" DetailColor="g">
+      <subtype Name="Horticulturist" Gear="StartingGear_Horticulturist" Tile="bucklerparry_largerfolk/horticulturalist_fat.png" DetailColor="g">
         <stat Name="Intelligence" Bonus="3" />
         <skills>
           <skill Name="CookingAndGathering" />
@@ -19,7 +19,7 @@
         </savemodifiers>
       </subtype>
 
-      <subtype Name="Priest of All Suns" Gear="StartingGear_PriestOfAllSuns" Tile="creatures/caste_2.bmp" DetailColor="Y">
+      <subtype Name="Priest of All Suns" Gear="StartingGear_PriestOfAllSuns" Tile="bucklerparry_largerfolk/priest_of_all_suns_fat.png" DetailColor="Y">
         <stat Name="Ego" Bonus="3" />
         <skills>
           <skill Name="Cudgel" />
@@ -50,7 +50,7 @@
         </savemodifiers>
       </subtype>
 
-      <subtype Name="Syzygyrior" Gear="StartingGear_Syzygyrior" Tile="creatures/caste_4.bmp" DetailColor="g">
+      <subtype Name="Syzygyrior" Gear="StartingGear_Syzygyrior" Tile="bucklerparry_largerfolk/syzygyrior_fat.png" DetailColor="g">
         <stat Name="Agility" Bonus="3" />
         <skills>
           <skill Name="Multiweapon_Fighting" />
@@ -80,7 +80,7 @@
         </skills>
       </subtype>
 
-      <subtype Name="Consul" Gear="StartingGear_Consul" Tile="creatures/caste_6.bmp" DetailColor="c">
+      <subtype Name="Consul" Gear="StartingGear_Consul" Tile="bucklerparry_largerfolk/consul_fat.png" DetailColor="c">
         <stat Name="Ego" Bonus="3" />
         <stat Name="ColdResistance" Bonus="15" />
         <skills>
@@ -132,7 +132,7 @@
         </skills>
       </subtype>
 
-      <subtype Name="Child of the Wheel" Gear="StartingGear_ChildoftheWheel" Tile="creatures/caste_10.bmp" DetailColor="r">
+      <subtype Name="Child of the Wheel" Gear="StartingGear_ChildoftheWheel" Tile="bucklerparry_largerfolk/child_of_the_wheel_fat.png" DetailColor="r">
         <stat Name="Agility" Bonus="2" />
         <stat Name="Strength" Bonus="1" />
         <stat Name="Ego" Bonus="1" />
