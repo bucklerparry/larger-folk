@@ -145,7 +145,7 @@
         </description>
       </pregen>
 
-      <pregen Name="First Child of the Hearth" Genotype="True Kin" Tile="bucklerparry_largerfolk/child_of_the_hearth_fat.png" Foreground="y" Detail="r" Background="k">
+      <pregen Name="First Child of the Hearth" Genotype="True Kin" Tile="bucklerparry_largerfolk/first_child_of_the_hearth_fat.png" Foreground="y" Detail="r" Background="k">
         <code>H4sIAFgIKGEA/81UYWvbMBD9Xuh/EGYfHZOkYYxCPqTeWEdXyBqTDUY/yPbNFlMkI502zMh/78lOGquBhQ02IghJ7r27e3p39q/LC8aiim/gBxgrtIquWTRNxsl0PE1msyju8NwJWQ4IEyKMd9hGl06CpfBX/5+xrqQ/OyhrG/BJXx4+JmnNDS8QzI2vaJNPrvSf96A0Eu2+S4jZwlrY5LIdpStKaGK27nvPD8piljqJzsBcgUPDZcyWLpeiuIM2099BzZWTstfYiSk5cpLxrI5Cr3zP30gLZb2lAkfSDg2o3p7vS2bGAbsTKiAcWbjHtv2P7Y78FxauXH6GDgaqThu4o/uCaU01mP7GsAZ2C9xg/b+sXCAakTsEe2ZuvhR22tClFgrt0pmi5hbKsJ83HA2oiqy9ZpPpIJGgRSWkwJaQ1yGQaVfVCqx/5F9AHxSClKICVfh7TEL0s5Cy0T/BEHQVQu8qTcHZIbYfX4fyZtWAQmKMrt6EwANsuFBCVQSOh1BO9100vlOQ8Q/XJm1zMApQFOe2N0fKTi+O9NaNhgOMLEgokNQP3vX9CXaKmId+3ZPMTS5KuOWqvNG0N8M+PV27brjhuhCw5kbwDop8tn0e1mBg/jz+0YT91+PlxfYJFKR47fsGAAA=</code>
         <description>
 &amp;c&#249;&amp;y Melee fighter and extreme bruiser
