@@ -1,0 +1,333 @@
+using System;
+using System.Text;
+using XRL.Rules;
+using XRL.UI;
+using XRL.World.Anatomy;
+
+namespace XRL.World.Parts.Mutation;
+
+[Serializable]
+public class LargerFolk_Immobile : BaseDefaultEquipmentMutation
+{
+	public int ACModifier;
+
+	public int DVModifier;
+
+	public int ResistanceMod;
+
+	public bool Tight;
+
+	public int TightFactor;
+
+	public GameObject CarapaceObject;
+
+	[NonSerialized]
+	protected GameObjectBlueprint _Blueprint;
+
+	public int bodyID = int.MinValue;
+
+	public string BlueprintName => Variant.Coalesce("Gigantic Belly");
+
+	public GameObjectBlueprint Blueprint
+	{
+		get
+		{
+			if (_Blueprint == null)
+			{
+				_Blueprint = GameObjectFactory.Factory.GetBlueprint(BlueprintName);
+			}
+			return _Blueprint;
+		}
+	}
+
+	public override IPart DeepCopy(GameObject Parent, Func<GameObject, GameObject> MapInv)
+	{
+		Carapace obj = base.DeepCopy(Parent, MapInv) as Carapace;
+		obj.CarapaceObject = null;
+		return obj;
+	}
+
+	public LargerFolk_Immobile()
+	{
+		DisplayName = "Immobile";
+	}
+
+	public override bool GeneratesEquipment()
+	{
+		return true;
+	}
+
+	//public override void CollectStats(Templates.StatCollector stats, int Level)
+	//{
+		stats.Set("CarapaceName", DisplayName.ToLower());
+	//}
+
+	//public override bool WantEvent(int ID, int cascade)
+	//{
+//		if (!base.WantEvent(ID, cascade) && ID != AIGetDefensiveAbilityListEvent.ID)
+//		{
+//			return ID == SingletonEvent<UseEnergyEvent>.ID;
+//		}
+//		return true;
+//	}
+
+//	public override bool HandleEvent(AIGetDefensiveAbilityListEvent E)
+//	{
+//		int high = Math.Max(ParentObject.baseHitpoints - E.Distance, 1);
+//		if (!Tight && ACModifier >= 1 && E.Actor.HasStat("Hitpoints") && IsMyActivatedAbilityAIUsable(ActivatedAbilityID) && Stat.Random(0, high) > E.Actor.hitpoints)
+//		{
+//			E.Add("CommandTightenCarapace");
+//		}
+//		return base.HandleEvent(E);
+//	}
+
+//	public override bool HandleEvent(UseEnergyEvent E)
+//	{
+//		if (Tight && (E.Type == null || (!E.Type.Contains("Pass") && !E.Type.Contains("Mental") && !E.Type.Contains("LargerFolk_Immobile"))))
+//		{
+//			Loosen(Message: true);
+//		}
+//		return base.HandleEvent(E);
+//	}
+
+//	public override void Register(GameObject Object, IEventRegistrar Registrar)
+//	{
+//		Registrar.Register("BeginMove");
+//		Registrar.Register("CommandTightenCarapace");
+//		Registrar.Register("IsMobile");
+//		base.Register(Object, Registrar);
+//	}
+
+	public override string GetDescription()
+	{
+		return Blueprint.GetTag("VariantDescription").Coalesce("You are protected by a durable carapace.");
+	}
+
+//	public static int GetAVModifier(int Level)
+//	{
+//		return 3 + (int)Math.Floor((double)Level / 2.0);
+//	}
+
+//	public static int GetDVModifier(int Level)
+//	{
+//		return -2;
+//	}
+
+	public static int GetHeatResistance(int Level)
+	{
+		return 5 + 5 * Level;
+	}
+
+	public static int GetColdResistance(int Level)
+	{
+		return 5 + 5 * Level;
+	}
+
+	public override string GetLevelText(int Level)
+	{
+		string cachedDisplayNameStripped = Blueprint.CachedDisplayNameStripped;
+		StringBuilder stringBuilder = Event.NewStringBuilder();
+		stringBuilder.AppendSigned(GetAVModifier(Level), "rules").Append(" AV\n").AppendSigned(GetDVModifier(Level), "rules")
+			.Append(" DV\n")
+			.AppendSigned(GetHeatResistance(Level), "rules")
+			.Append(" Heat Resistance\n")
+			.AppendSigned(GetColdResistance(Level), "rules")
+			.Append(" Cold Resistance");
+		if (Blueprint.TryGetPartParameter<string>("AddsRep", "Faction", out var Result) && Blueprint.TryGetPartParameter<int>("AddsRep", "Value", out var Result2))
+		{
+			AddsRep.AppendDescription(stringBuilder, Result, Result2, null, null, Rules: false, SignedRules: true);
+		}
+		stringBuilder.Append("\nYou may tighten your ").Append(cachedDisplayNameStripped).Append(" to receive double the AV bonus at a -2 DV penalty as long as you remain still.")
+			.Append("\nCannot wear body armor.");
+		return Event.FinalizeString(stringBuilder);
+	}
+
+	public override bool FireEvent(Event E)
+	{
+		if (E.ID == "CommandTightenCarapace")
+		{
+			Loosen();
+			if (ACModifier < 1)
+			{
+				return ParentObject.Fail("You fail to tighten " + ((CarapaceObject == null) ? "your carapace" : ParentObject.poss(CarapaceObject, Definite: true, null)) + ".");
+			}
+			UseEnergy(1000, "Physical Mutation Tighten Carapace");
+			Tighten(Message: true);
+			The.Core.RenderBase();
+		}
+		else if (E.ID == "BeginMove" && Tight && !E.HasFlag("Forced") && E.GetStringParameter("Type") != "Teleporting")
+		{
+			Loosen(Message: true);
+		}
+		return base.FireEvent(E);
+	}
+
+	public void Tighten(bool Message = false)
+	{
+		if (Tight)
+		{
+			return;
+		}
+		Tight = true;
+		TightFactor = ACModifier;
+		ParentObject.Statistics["AV"].Bonus += TightFactor;
+		ParentObject.Statistics["DV"].Penalty += 2;
+		ParentObject.PlayWorldSound("Sounds/StatusEffects/sfx_statusEffect_positiveVitality");
+		if (!Message)
+		{
+			return;
+		}
+		if (CarapaceObject == null)
+		{
+			MetricsManager.LogError(ParentObject.DebugName + " had no CarapaceObject for Carapace tighten message");
+			if (ParentObject.IsPlayer())
+			{
+				Popup.Show("You tighten your carapace. Your AV increases by {{G|" + TightFactor + "}}.");
+			}
+			else
+			{
+				DidX("tighten", ParentObject.its + " carapace", null, null, null, null, null, UseFullNames: false, IndefiniteSubject: false, null, null, DescribeSubjectDirection: false, DescribeSubjectDirectionLate: false, AlwaysVisible: false, FromDialog: true);
+			}
+		}
+		else if (ParentObject.IsPlayer())
+		{
+			Popup.Show("You tighten " + ParentObject.poss(CarapaceObject, Definite: true, null) + ". Your AV increases by {{G|" + TightFactor + "}}.");
+		}
+		else
+		{
+			DidXToY("tighten", CarapaceObject, null, null, null, null, null, null, UseFullNames: false, IndefiniteSubject: false, IndefiniteObject: false, IndefiniteObjectForOthers: false, PossessiveObject: false, null, ParentObject, null, DescribeSubjectDirection: false, DescribeSubjectDirectionLate: false, AlwaysVisible: false, FromDialog: true);
+		}
+	}
+
+	public void Loosen(bool Message = false)
+	{
+		if (!Tight)
+		{
+			return;
+		}
+		ParentObject.Statistics["AV"].Bonus -= TightFactor;
+		ParentObject.Statistics["DV"].Penalty -= 2;
+		Tight = false;
+		TightFactor = 0;
+		ParentObject.PlayWorldSound("Sounds/StatusEffects/sfx_statusEffect_negativeVitality");
+		if (!Message)
+		{
+			return;
+		}
+		if (CarapaceObject == null)
+		{
+			MetricsManager.LogError(ParentObject.DebugName + " had no CarapaceObject for Carapace loosen message");
+			if (ParentObject.IsPlayer())
+			{
+				Popup.Show(ParentObject.Poss("carapace") + " loosens. Your AV decreases by {{R|" + ACModifier + "}}.");
+			}
+			else
+			{
+				IComponent<GameObject>.EmitMessage(ParentObject, ParentObject.Poss("carapace") + " loosens.");
+			}
+		}
+		else if (ParentObject.IsPlayer())
+		{
+			Popup.Show(CarapaceObject.Does("loosen", int.MaxValue, null, null, null, AsIfKnown: false, Single: false, NoConfusion: false, NoColor: false, Stripped: false, WithoutTitles: true, Short: true, BaseOnly: false, WithIndefiniteArticle: false, null, IndicateHidden: false, Pronoun: false, SecondPerson: true, null) + ". Your AV decreases by {{R|" + ACModifier + "}}.");
+		}
+		else
+		{
+			IComponent<GameObject>.EmitMessage(ParentObject, CarapaceObject.Does("loosen", int.MaxValue, null, null, null, AsIfKnown: false, Single: false, NoConfusion: false, NoColor: false, Stripped: false, WithoutTitles: true, Short: true, BaseOnly: false, WithIndefiniteArticle: false, null, IndicateHidden: false, Pronoun: false, SecondPerson: true, null) + ".");
+		}
+	}
+
+	public override bool ChangeLevel(int NewLevel)
+	{
+		Loosen();
+		ACModifier = 3 + (int)Math.Floor((decimal)(base.Level / 2));
+		DVModifier = -2;
+		if (ResistanceMod > 0)
+		{
+			if (ParentObject.HasStat("HeatResistance"))
+			{
+				ParentObject.GetStat("HeatResistance").Bonus -= ResistanceMod;
+			}
+			if (ParentObject.HasStat("ColdResistance"))
+			{
+				ParentObject.GetStat("ColdResistance").Bonus -= ResistanceMod;
+			}
+			ResistanceMod = 0;
+		}
+		ResistanceMod = 5 + 5 * base.Level;
+		if (ParentObject.HasStat("HeatResistance"))
+		{
+			ParentObject.GetStat("HeatResistance").Bonus += ResistanceMod;
+		}
+		if (ParentObject.HasStat("ColdResistance"))
+		{
+			ParentObject.GetStat("ColdResistance").Bonus += ResistanceMod;
+		}
+		if (CarapaceObject != null)
+		{
+			Armor part = CarapaceObject.GetPart<Armor>();
+			part.AV = ACModifier;
+			part.DV = DVModifier;
+		}
+		return base.ChangeLevel(NewLevel);
+	}
+
+	public override void OnRegenerateDefaultEquipment(Body body)
+	{
+		AddCarapaceTo(body.GetPartByID(bodyID));
+	}
+
+	public override void SetVariant(string Variant)
+	{
+		base.SetVariant(Variant);
+		_Blueprint = null;
+	}
+
+	public void AddCarapaceTo(BodyPart body)
+	{
+		if (body != null)
+		{
+			if (CarapaceObject == null)
+			{
+				CarapaceObject = GameObjectFactory.Factory.CreateObject(Blueprint);
+			}
+			if (body.Equipped != CarapaceObject)
+			{
+				body.ForceUnequip(Silent: true);
+				body.ParentBody.ParentObject.ForceEquipObject(CarapaceObject, body, Silent: true, 0);
+			}
+		}
+	}
+
+	public override bool Mutate(GameObject GO, int Level)
+	{
+		Body body = GO.Body;
+		if (body != null)
+		{
+			BodyPart body2 = body.GetBody();
+			bodyID = body2.ID;
+			AddCarapaceTo(body2);
+			ActivatedAbilityID = AddMyActivatedAbility("Tighten " + DisplayName, "CommandTightenCarapace", "Physical Mutations", null, "ï");
+		}
+		return base.Mutate(GO, Level);
+	}
+
+	public override bool Unmutate(GameObject GO)
+	{
+		Loosen();
+		if (ResistanceMod > 0)
+		{
+			if (ParentObject.HasStat("HeatResistance"))
+			{
+				ParentObject.GetStat("HeatResistance").Bonus -= ResistanceMod;
+			}
+			if (ParentObject.HasStat("ColdResistance"))
+			{
+				ParentObject.GetStat("ColdResistance").Bonus -= ResistanceMod;
+			}
+			ResistanceMod = 0;
+		}
+		CleanUpMutationEquipment(GO, ref CarapaceObject);
+		RemoveMyActivatedAbility(ref ActivatedAbilityID);
+		return base.Unmutate(GO);
+	}
+}

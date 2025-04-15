@@ -1,0 +1,30 @@
+using HarmonyLib;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using ConsoleLib.Console;
+using HistoryKit;
+using Qud.API;
+using XRL.Language;
+using XRL.Rules;
+using XRL.World;
+using XRL.World.Capabilities;
+using XRL.World.Effects;
+using XRL.World.Parts;
+using XRL.World.Parts.Mutation;
+
+namespace LargerFolk.HarmonyPatches
+{
+    [HarmonyPatch(typeof(XRL.UI.StatusScreen))]
+    class LargerFolk_Harmony_WeightStatus
+    {
+        [HarmonyPostfix]
+        [HarmonyPatch("Show")]
+        static void Postfix(ref GameObject GO)
+        {
+            
+            ScreenBuffer.GetScrapBuffer1().WriteAt(3, 21, GO.GetPart<LargerFolk_WeightGain>().GetWeightString());
+        }
+    }
+}

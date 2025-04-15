@@ -1,0 +1,1043 @@
+using System;
+using System.Collections.Generic;
+using XRL.Rules;
+using XRL.UI;
+using XRL.World.Capabilities;
+using XRL.World.Parts.Mutation;
+using XRL.World.Tinkering;
+
+namespace XRL.World.Parts
+{
+[Serializable]
+public class LargerFolk_Door : IPart, IHackingSifrahHandler
+{
+	public bool Open;
+
+	public bool Locked;
+
+	public bool WasLocked;
+
+	public string ClosedDisplay = "+";
+
+	public string OpenDisplay = "/";
+
+	public string ClosedTile = "Tiles/sw_door_basic.bmp";
+
+	public string OpenTile = "Tiles/sw_door_basic_open.bmp";
+
+	public bool SyncRender = true;
+
+	public string KeyObject;
+
+	public bool SyncAdjacent;
+
+	public bool OccludingWhileClosed = true;
+
+	[Obsolete("mod compat, will be removed after Q2 2024")]
+	public bool bOpen
+	{
+		get
+		{
+			return Open;
+		}
+		set
+		{
+			Open = value;
+		}
+	}
+
+	[Obsolete("mod compat, will be removed after Q2 2024")]
+	public bool bLocked
+	{
+		get
+		{
+			return Locked;
+		}
+		set
+		{
+			Locked = value;
+		}
+	}
+
+	public int SecurityClearance
+	{
+		get
+		{
+			return XRL.World.Capabilities.SecurityClearance.GetSecurityClearanceByKeySpecification(KeyObject);
+		}
+		set
+		{
+			XRL.World.Capabilities.SecurityClearance.HandleSecurityClearanceSpecification(value, ref KeyObject);
+		}
+	}
+
+	public override bool SameAs(IPart p)
+	{
+		Door door = p as Door;
+		if (door.ClosedDisplay != ClosedDisplay)
+		{
+			return false;
+		}
+		if (door.OpenDisplay != OpenDisplay)
+		{
+			return false;
+		}
+		if (door.ClosedTile != ClosedTile)
+		{
+			return false;
+		}
+		if (door.OpenTile != OpenTile)
+		{
+			return false;
+		}
+		if (door.SyncRender != SyncRender)
+		{
+			return false;
+		}
+		if (door.KeyObject != KeyObject)
+		{
+			return false;
+		}
+		if (door.SyncAdjacent != SyncAdjacent)
+		{
+			return false;
+		}
+		if (door.OccludingWhileClosed != OccludingWhileClosed)
+		{
+			return false;
+		}
+		if (door.Locked != Locked)
+		{
+			return false;
+		}
+		if (door.WasLocked != WasLocked)
+		{
+			return false;
+		}
+		if (door.Open != Open)
+		{
+			return false;
+		}
+		return true;
+	}
+
+	public override bool WantEvent(int ID, int cascade)
+	{
+		if (!base.WantEvent(ID, cascade) && ID != PooledEvent<AnimateEvent>.ID && ID != CanSmartUseEvent.ID && ID != CommandSmartUseEvent.ID && ID != EnteredCellEvent.ID && ID != GetInventoryActionsEvent.ID && ID != InventoryActionEvent.ID && ID != ObjectCreatedEvent.ID)
+		{
+			return ID == ObjectEnteredCellEvent.ID;
+		}
+		return true;
+	}
+
+	public override bool HandleEvent(AnimateEvent E)
+	{
+		SyncAdjacent = false;
+		return base.HandleEvent(E);
+	}
+
+	public override bool HandleEvent(CanSmartUseEvent E)
+	{
+		Cell cell = base.currentCell;
+		if (Open && E.MinPriority > 0)
+		{
+			return true;
+		}
+		if (cell == null || !cell.HasObjectWithPart("Campfire"))
+		{
+			return false;
+		}
+		return base.HandleEvent(E);
+	}
+
+	public override bool HandleEvent(CommandSmartUseEvent E)
+	{
+		Event @event = Event.New("Open");
+		@event.SetParameter("Opener", E.Actor);
+		@event.SetParameter("Actor", E.Actor);
+		@event.SetParameter("UsePopupsForFailures", true);
+		ParentObject.FireEvent(@event);
+		return base.HandleEvent(E);
+	}
+
+	public override bool HandleEvent(EnteredCellEvent E)
+	{
+		if (SyncAdjacent)
+		{
+			PerformAdjacentSync();
+		}
+		if (!Open)
+		{
+			int i = 0;
+			for (int count = E.Cell.Objects.Count; i < count; i++)
+			{
+				GameObject gameObject = E.Cell.Objects[i];
+				if (gameObject == E.Ignore || !BlocksClosing(gameObject))
+				{
+					continue;
+				}
+				if (gameObject.IsCombatObject(NoBrainOnly: true))
+				{
+					AttemptOpen(gameObject, UsePopups: false, UsePopupsForFailures: false, IgnoreMobility: true, IgnoreSpecialConditions: true, FromMove: true, Silent: false, E);
+					if (Open)
+					{
+						break;
+					}
+				}
+				else if (!Locked)
+				{
+					PerformOpen(null, null, FromMove: true);
+					if (Open)
+					{
+						break;
+					}
+				}
+			}
+		}
+
+		
+		return base.HandleEvent(E);
+	}
+
+
+	public void FatStuck(GameObject actor)
+	{
+		if (actor.HasPart<LargerFolk_Fat>())
+		{
+			
+		}
+	}
+
+	public override bool HandleEvent(ObjectEnteredCellEvent E)
+	{
+		if (!Open && BlocksClosing(E.Object))
+		{
+			if (E.Object.HasPart<Combat>())
+			{
+				AttemptOpen(E.Object, UsePopups: false, UsePopupsForFailures: false, IgnoreMobility: true, IgnoreSpecialConditions: false, FromMove: false, Silent: false, E);
+			}
+			else if (!Locked)
+			{
+				PerformOpen(null, null, FromMove: true);
+			}
+		}
+		
+		if (Open)
+		{
+			if (E.Object.HasPart<LargerFolk_Fat>())
+			{
+				if (!E.Object.HasEffect<Greased>() && E.Object.GetMatterPhase() <= 1 && !E.Object.HasTag("ExcavatoryTerrainFeature") && E.Object.PhaseMatches(ParentObject) && !ParentObject.IsBroken() && !ParentObject.IsRusted())
+				{
+					E.Object.ApplyEffect(new Stuck(Duration, SaveTarget, SaveVs, DestroyOnBreak ? ParentObject : null, "stuck", "in", ParentObject.ID));
+				}
+			}
+		}
+		return base.HandleEvent(E);
+	}
+
+	public override bool HandleEvent(GetInventoryActionsEvent E)
+	{
+		if (Open)
+		{
+			E.AddAction("Close", "close", "Close", null, 'c', FireOnActor: false, 10, 0, Override: false, WorksAtDistance: false, WorksTelekinetically: true);
+		}
+		else
+		{
+			E.AddAction("Open", "open", "Open", null, 'o', FireOnActor: false, 10, 0, Override: false, WorksAtDistance: false, WorksTelekinetically: true);
+		}
+		return base.HandleEvent(E);
+	}
+
+	public override bool HandleEvent(InventoryActionEvent E)
+	{
+		if (E.Command == "Open" || E.Command == "Close")
+		{
+			Event @event = Event.New("Open");
+			@event.SetParameter("Opener", E.Actor);
+			@event.SetParameter("Actor", E.Actor);
+			@event.SetFlag("UsePopups", !E.Auto);
+			@event.SetFlag("UsePopupsForFailures", State: true);
+			if (!ParentObject.FireEvent(@event))
+			{
+				return false;
+			}
+			E.RequestInterfaceExit();
+		}
+		return base.HandleEvent(E);
+	}
+
+	public override bool HandleEvent(ObjectCreatedEvent E)
+	{
+		if (Open)
+		{
+			if (SyncRender)
+			{
+				ParentObject.Render.RenderString = OpenDisplay;
+				ParentObject.Render.Tile = OpenTile;
+			}
+			ParentObject.Render.Occluding = false;
+			ParentObject.Physics.Solid = false;
+		}
+		else
+		{
+			if (SyncRender)
+			{
+				ParentObject.Render.RenderString = ClosedDisplay;
+				ParentObject.Render.Tile = ClosedTile;
+			}
+			if (OccludingWhileClosed)
+			{
+				ParentObject.Render.Occluding = true;
+			}
+			ParentObject.Physics.Solid = true;
+		}
+		return base.HandleEvent(E);
+	}
+
+	public override bool AllowStaticRegistration()
+	{
+		return true;
+	}
+
+	public override void Register(GameObject Object, IEventRegistrar Registrar)
+	{
+		Registrar.Register("BeforePhysicsRejectObjectEntringCell");
+		Registrar.Register("Open");
+		base.Register(Object, Registrar);
+	}
+
+	public override bool FireEvent(Event E)
+	{
+		if (E.ID == "BeforePhysicsRejectObjectEntringCell")
+		{
+			if (!ParentObject.IsCreature)
+			{
+				if (E.HasFlag("Actual"))
+				{
+					if (!Open)
+					{
+						GameObject gameObjectParameter = E.GetGameObjectParameter("Object");
+						if (gameObjectParameter.Body != null)
+						{
+							Event @event = Event.New("Open");
+							@event.SetParameter("Opener", gameObjectParameter);
+							@event.SetParameter("Actor", gameObjectParameter);
+							@event.SetFlag("FromMove", State: true);
+							ParentObject.FireEvent(@event);
+						}
+					}
+				}
+				else
+				{
+					GameObject gameObjectParameter2 = E.GetGameObjectParameter("Object");
+					if (gameObjectParameter2.Body != null && CanOpen(gameObjectParameter2))
+					{
+						return false;
+					}
+				}
+			}
+		}
+		else if (E.ID == "Open" && !AttemptOpen(E.GetGameObjectParameter("Actor") ?? E.GetGameObjectParameter("Opener"), E.HasFlag("UsePopups"), E.HasFlag("UsePopupsForFailures"), IgnoreMobility: false, IgnoreSpecialConditions: false, E.HasFlag("FromMove"), Silent: false, E))
+		{
+			return false;
+		}
+		return base.FireEvent(E);
+	}
+
+	public bool CanOpen(GameObject Actor = null, bool IgnoreMobility = false, bool IgnoreSpecialConditions = false, bool FromMove = false)
+	{
+		if (Open)
+		{
+			return false;
+		}
+		if (!IgnoreMobility && Actor != null && !Actor.CanMoveExtremities("Open", ShowMessage: false, Involuntary: false, AllowTelekinetic: true))
+		{
+			return false;
+		}
+		if (Actor != null && !Actor.PhaseMatches(ParentObject))
+		{
+			return false;
+		}
+		if (Actor != null && ParentObject.IsFlying && !Actor.IsFlying)
+		{
+			return false;
+		}
+		if (!IgnoreSpecialConditions && Actor != null && !CapableOfOpening(Actor, ParentObject))
+		{
+			return false;
+		}
+		if (Locked && Actor != null)
+		{
+			Event @event = Event.New("CanAttemptDoorUnlock");
+			@event.SetParameter("Opener", Actor);
+			@event.SetParameter("Actor", Actor);
+			@event.SetParameter("Door", this);
+			if (!ParentObject.FireEvent(@event))
+			{
+				return false;
+			}
+			if (!KeyObject.IsNullOrEmpty())
+			{
+				List<string> list = KeyObject.CachedCommaExpansion();
+				if ((list.Count > 1 || list[0] != "*Psychometry") && Actor.FindContainedObjectByAnyBlueprint(list) != null)
+				{
+					return true;
+				}
+				if (Actor.GetIntProperty("DoorUnlocker") > 0)
+				{
+					return true;
+				}
+				if (list.Contains("*Psychometry") && UsePsychometry(Actor, ParentObject))
+				{
+					return true;
+				}
+			}
+			return false;
+		}
+		return true;
+	}
+
+	public bool AttemptOpen(GameObject Actor = null, bool UsePopups = false, bool UsePopupsForFailures = false, bool IgnoreMobility = false, bool IgnoreSpecialConditions = false, bool FromMove = false, bool Silent = false, IEvent FromEvent = null)
+	{
+		if (!IgnoreMobility && Actor != null && !Actor.CanMoveExtremities("Open", !Silent, Involuntary: false, AllowTelekinetic: true))
+		{
+			return false;
+		}
+		if (!IgnoreSpecialConditions && Actor != null && !CapableOfOpening(Actor, ParentObject, out var Reason))
+		{
+			if (!Silent && Actor != null && Actor.IsPlayer())
+			{
+				IComponent<GameObject>.EmitMessage(Actor, "You cannot open " + ParentObject.t(int.MaxValue, null, null, AsIfKnown: false, Single: false, NoConfusion: false, NoColor: false, Stripped: false, WithoutTitles: true, Short: true, BaseOnly: false, null, IndicateHidden: false, SecondPerson: true, Reflexive: false, null) + Reason + ".", ' ', FromDialog: false, UsePopups || UsePopupsForFailures);
+			}
+			return false;
+		}
+		if (Actor != null && !Actor.PhaseMatches(ParentObject))
+		{
+			if (!Silent && Actor.IsPlayer())
+			{
+				IComponent<GameObject>.EmitMessage(Actor, "You are out of phase with " + ParentObject.t(int.MaxValue, null, null, AsIfKnown: false, Single: false, NoConfusion: false, NoColor: false, Stripped: false, WithoutTitles: true, Short: true, BaseOnly: false, null, IndicateHidden: false, SecondPerson: true, Reflexive: false, null) + ".", ' ', FromDialog: false, UsePopups || UsePopupsForFailures);
+			}
+			return false;
+		}
+		if (Actor != null && ParentObject.IsFlying && !Actor.IsFlying)
+		{
+			if (!Silent && Actor.IsPlayer())
+			{
+				IComponent<GameObject>.EmitMessage(Actor, "You cannot reach " + ParentObject.t(int.MaxValue, null, null, AsIfKnown: false, Single: false, NoConfusion: false, NoColor: false, Stripped: false, WithoutTitles: true, Short: true, BaseOnly: false, null, IndicateHidden: false, SecondPerson: true, Reflexive: false, null) + ".", ' ', FromDialog: false, UsePopups || UsePopupsForFailures);
+			}
+			return false;
+		}
+		if (!Open)
+		{
+			if (!IgnoreSpecialConditions && Actor != null && Actor.HasTag("Grazer"))
+			{
+				return false;
+			}
+			if (Locked)
+			{
+				if (Actor != null)
+				{
+					Event @event = Event.New("AttemptDoorUnlock");
+					@event.SetParameter("Actor", Actor);
+					@event.SetParameter("Opener", Actor);
+					@event.SetParameter("Door", this);
+					if (!ParentObject.FireEvent(@event))
+					{
+						return false;
+					}
+					if (!KeyObject.IsNullOrEmpty())
+					{
+						if (ParentObject.DistanceTo(Actor) > 1)
+						{
+							if (!Silent && Actor.IsPlayer())
+							{
+								IComponent<GameObject>.EmitMessage(Actor, "You can't unlock " + ParentObject.t(int.MaxValue, null, null, AsIfKnown: false, Single: false, NoConfusion: false, NoColor: false, Stripped: false, WithoutTitles: true, Short: true, BaseOnly: false, null, IndicateHidden: false, SecondPerson: true, Reflexive: false, null) + " from a distance.", ' ', FromDialog: false, UsePopups || UsePopupsForFailures);
+							}
+							return false;
+						}
+						List<string> list = KeyObject.CachedCommaExpansion();
+						if (list.Count > 1 || list[0] != "*Psychometry")
+						{
+							GameObject obj = Actor.FindContainedObjectByAnyBlueprint(list);
+							if (obj != null)
+							{
+								if (!Silent && Actor.IsPlayer())
+								{
+									PerformOpen(Actor, delegate
+									{
+										IComponent<GameObject>.EmitMessage(Actor, obj.Does("unlock", int.MaxValue, null, null, null, AsIfKnown: false, Single: true, NoConfusion: false, NoColor: false, Stripped: false, WithoutTitles: true, Short: true, BaseOnly: false, WithIndefiniteArticle: false, null, IndicateHidden: false, Pronoun: false, SecondPerson: true, null) + " " + ParentObject.t(int.MaxValue, null, null, AsIfKnown: false, Single: false, NoConfusion: false, NoColor: false, Stripped: false, WithoutTitles: true, Short: true, BaseOnly: false, null, IndicateHidden: false, SecondPerson: true, Reflexive: false, null) + ".", ' ', FromDialog: false, UsePopups);
+									});
+								}
+								else
+								{
+									PerformOpen(Actor);
+								}
+							}
+						}
+						if (Locked && Actor.GetIntProperty("DoorUnlocker") > 0)
+						{
+							if (!Silent && Actor.IsPlayer())
+							{
+								PerformOpen(Actor, delegate
+								{
+									IComponent<GameObject>.EmitMessage(Actor, "You interface with " + ParentObject.t(int.MaxValue, null, null, AsIfKnown: false, Single: false, NoConfusion: false, NoColor: false, Stripped: false, WithoutTitles: true, Short: true, BaseOnly: false, null, IndicateHidden: false, SecondPerson: true, Reflexive: false, null) + " and unlock " + ParentObject.them + ".", ' ', FromDialog: false, UsePopups);
+								});
+							}
+							else
+							{
+								PerformOpen(Actor);
+							}
+						}
+						if (Locked && list.Contains("*Psychometry") && UsePsychometry(Actor, ParentObject))
+						{
+							if (!Silent && Actor.IsPlayer())
+							{
+								PerformOpen(Actor, delegate
+								{
+									IComponent<GameObject>.EmitMessage(Actor, "You lay your hand upon " + ParentObject.t(int.MaxValue, null, null, AsIfKnown: false, Single: false, NoConfusion: false, NoColor: false, Stripped: false, WithoutTitles: true, Short: true, BaseOnly: false, null, IndicateHidden: false, SecondPerson: true, Reflexive: false, null) + " and draw forth " + ParentObject.its + " passcode. You enter the code and " + ParentObject.does("unlock", int.MaxValue, null, null, null, AsIfKnown: false, Single: false, NoConfusion: false, NoColor: false, Stripped: false, WithoutTitles: true, Short: true, BaseOnly: false, WithIndefiniteArticle: false, null, IndicateHidden: false, Pronoun: false, SecondPerson: true, null) + ".", ' ', FromDialog: false, UsePopups);
+								});
+							}
+							else
+							{
+								PerformOpen(Actor);
+							}
+						}
+						if (Locked && Actor.IsPlayer() && IsHackable() && Options.SifrahHacking && ParentObject.GetIntProperty("SifrahHack") >= 0)
+						{
+							int num = XRL.World.Capabilities.SecurityClearance.GetSecurityClearanceByKeySpecification(KeyObject);
+							if (!KeyObject.CachedCommaExpansion().Contains("*Psychometry"))
+							{
+								num += 2;
+							}
+							HackingSifrah hackingSifrah = new HackingSifrah(ParentObject, num, num, Actor.Stat("Intelligence"));
+							hackingSifrah.HandlerID = ParentObject.ID;
+							hackingSifrah.HandlerPartName = GetType().Name;
+							hackingSifrah.Play(ParentObject);
+							if (hackingSifrah.InterfaceExitRequested)
+							{
+								FromEvent?.RequestInterfaceExit();
+							}
+							if (ParentObject.GetIntProperty("SifrahHack") > 0)
+							{
+								ParentObject.ModIntProperty("SifrahHack", -1, RemoveIfZero: true);
+								PerformOpen(Actor);
+							}
+						}
+					}
+					if (Locked)
+					{
+						if (!Silent && Actor.IsPlayer() && (!FromMove || !ParentObject.IsCreature))
+						{
+							PlayWorldSound("sfx_interact_door_locked_rattle");
+							IComponent<GameObject>.EmitMessage(Actor, "You can't unlock " + ParentObject.t(int.MaxValue, null, null, AsIfKnown: false, Single: false, NoConfusion: false, NoColor: false, Stripped: false, WithoutTitles: true, Short: true, BaseOnly: false, null, IndicateHidden: false, SecondPerson: true, Reflexive: false, null) + ".", ' ', FromDialog: false, UsePopups || UsePopupsForFailures);
+						}
+						return false;
+					}
+				}
+			}
+			else
+			{
+				PerformOpen(Actor, null, FromMove);
+			}
+		}
+		else if (!AttemptClose(Actor, UsePopups, UsePopupsForFailures, IgnoreMobility, IgnoreSpecialConditions, FromMove, Silent))
+		{
+			return false;
+		}
+		return true;
+	}
+
+	private bool ShouldSync(Door d)
+	{
+		if (d != null && d.SyncAdjacent)
+		{
+			return d.KeyObject == KeyObject;
+		}
+		return false;
+	}
+
+	private void SyncAdjacentCell(Cell C)
+	{
+		int i = 0;
+		for (int count = C.Objects.Count; i < count; i++)
+		{
+			Door part = C.Objects[i].GetPart<Door>();
+			if (!ShouldSync(part))
+			{
+				continue;
+			}
+			if (part.Locked != Locked)
+			{
+				if (Locked)
+				{
+					part.Lock();
+				}
+				else
+				{
+					part.Unlock();
+				}
+			}
+			if (part.Open != Open)
+			{
+				if (Open)
+				{
+					part.PerformOpen();
+				}
+				else
+				{
+					part.PerformClose();
+				}
+			}
+		}
+	}
+
+	public void PerformAdjacentSync()
+	{
+		if (ParentObject.CurrentCell != null)
+		{
+			ParentObject.CurrentCell.ForeachCardinalAdjacentCell((Action<Cell>)SyncAdjacentCell);
+		}
+	}
+
+	public void PerformOpen(GameObject Actor = null, Action Message = null, bool FromMove = false)
+	{
+		if (Locked)
+		{
+			WasLocked = true;
+			Locked = false;
+		}
+		Open = true;
+		if (SyncRender)
+		{
+			ParentObject.Render.RenderString = OpenDisplay;
+			ParentObject.Render.Tile = OpenTile;
+		}
+		ParentObject.Render.Occluding = false;
+		ParentObject.Physics.Solid = false;
+		Zone.SoundMapDirty = true;
+		Message?.Invoke();
+		PlayWorldSound(ParentObject.GetPropertyOrTag("OpenSound"));
+		if (ParentObject.CurrentCell != null)
+		{
+			ParentObject.CurrentCell.ClearOccludeCache();
+			ParentObject.CurrentCell.FlushNavigationCache();
+		}
+		if (SyncAdjacent)
+		{
+			PerformAdjacentSync();
+		}
+		if (ParentObject.HasRegisteredEvent("Opened"))
+		{
+			ParentObject.FireEvent(Event.New("Opened", "Object", ParentObject));
+		}
+		if (Actor != null)
+		{
+			if (Actor.HasRegisteredEvent("Opened"))
+			{
+				Actor.FireEvent(Event.New("Opened", "Object", ParentObject));
+			}
+			if (!FromMove)
+			{
+				Actor.UseEnergy(1000, "Door Open", null, null);
+			}
+		}
+	}
+
+	public bool AttemptClose(GameObject Actor = null, bool UsePopups = false, bool UsePopupsForFailures = false, bool IgnoreMobility = false, bool IgnoreSpecialConditions = false, bool FromMove = false, bool Silent = false)
+	{
+		if (ParentObject.HasTagOrProperty("NoClose"))
+		{
+			if (!Silent && Actor != null && Actor.IsPlayer())
+			{
+				IComponent<GameObject>.EmitMessage(Actor, ParentObject.T(int.MaxValue, null, null, AsIfKnown: false, Single: false, NoConfusion: false, NoColor: false, Stripped: false, WithoutTitles: true, Short: true, BaseOnly: false, null, IndicateHidden: false, SecondPerson: true, Reflexive: false, null) + " cannot be closed.", ' ', FromDialog: false, UsePopups || UsePopupsForFailures);
+			}
+			return false;
+		}
+		if (!IgnoreMobility && Actor != null && !Actor.CanMoveExtremities("Close", !Silent, Involuntary: false, AllowTelekinetic: true))
+		{
+			return false;
+		}
+		if (!IgnoreSpecialConditions && Actor != null && !CapableOfClosing(Actor, ParentObject, out var Reason))
+		{
+			if (!Silent && Actor != null && Actor.IsPlayer())
+			{
+				IComponent<GameObject>.EmitMessage(Actor, "You cannot close " + ParentObject.t(int.MaxValue, null, null, AsIfKnown: false, Single: false, NoConfusion: false, NoColor: false, Stripped: false, WithoutTitles: true, Short: true, BaseOnly: false, null, IndicateHidden: false, SecondPerson: true, Reflexive: false, null) + Reason + ".", ' ', FromDialog: false, UsePopups || UsePopupsForFailures);
+			}
+			return false;
+		}
+		Cell cell = ParentObject.CurrentCell;
+		if (cell != null)
+		{
+			int i = 0;
+			for (int count = cell.Objects.Count; i < count; i++)
+			{
+				GameObject gameObject = cell.Objects[i];
+				if (BlocksClosing(gameObject))
+				{
+					if (!Silent && (gameObject.IsPlayer() || (Actor != null && Actor.IsPlayer())))
+					{
+						IComponent<GameObject>.EmitMessage(Actor, ParentObject.T(int.MaxValue, null, null, AsIfKnown: false, Single: false, NoConfusion: false, NoColor: false, Stripped: false, WithoutTitles: true, Short: true, BaseOnly: false, null, IndicateHidden: false, SecondPerson: true, Reflexive: false, null) + " cannot be closed with " + (gameObject.IsPlayer() ? "you" : gameObject.t(int.MaxValue, null, null, AsIfKnown: false, Single: false, NoConfusion: false, NoColor: false, Stripped: false, WithoutTitles: true, Short: true, BaseOnly: false, null, IndicateHidden: false, SecondPerson: true, Reflexive: false, null)) + " in the way.", ' ', FromDialog: false, UsePopups || UsePopupsForFailures);
+					}
+					return false;
+				}
+			}
+			if (SyncAdjacent)
+			{
+				List<Cell> cardinalAdjacentCells = cell.GetCardinalAdjacentCells();
+				int j = 0;
+				for (int count2 = cardinalAdjacentCells.Count; j < count2; j++)
+				{
+					Cell cell2 = cardinalAdjacentCells[j];
+					Door door = null;
+					int k = 0;
+					for (int count3 = cell2.Objects.Count; k < count3; k++)
+					{
+						Door part = cell2.Objects[k].GetPart<Door>();
+						if (ShouldSync(part))
+						{
+							door = part;
+							break;
+						}
+					}
+					if (door == null)
+					{
+						continue;
+					}
+					int l = 0;
+					for (int count4 = cell2.Objects.Count; l < count4; l++)
+					{
+						GameObject gameObject2 = cell2.Objects[l];
+						if (door.BlocksClosing(gameObject2))
+						{
+							if (!Silent && (gameObject2.IsPlayer() || (Actor != null && Actor.IsPlayer())))
+							{
+								IComponent<GameObject>.EmitMessage(Actor, ParentObject.T(int.MaxValue, null, null, AsIfKnown: false, Single: false, NoConfusion: false, NoColor: false, Stripped: false, WithoutTitles: true, Short: true, BaseOnly: false, null, IndicateHidden: false, SecondPerson: true, Reflexive: false, null) + " cannot be closed with " + (gameObject2.IsPlayer() ? "you" : gameObject2.t(int.MaxValue, null, null, AsIfKnown: false, Single: false, NoConfusion: false, NoColor: false, Stripped: false, WithoutTitles: true, Short: true, BaseOnly: false, null, IndicateHidden: false, SecondPerson: true, Reflexive: false, null)) + " in the way to the " + Directions.GetExpandedDirection(cell.GetDirectionFromCell(cell2)) + ".", ' ', FromDialog: false, UsePopups || UsePopupsForFailures);
+							}
+							return false;
+						}
+					}
+				}
+			}
+		}
+		PerformClose(Actor, FromMove);
+		return !Open;
+	}
+
+	public void PerformClose(GameObject Actor = null, bool FromMove = false)
+	{
+		if (ParentObject.HasTagOrProperty("NoClose"))
+		{
+			return;
+		}
+		Locked = WasLocked;
+		Open = false;
+		if (SyncRender)
+		{
+			ParentObject.Render.RenderString = ClosedDisplay;
+			ParentObject.Render.Tile = ClosedTile;
+		}
+		ParentObject.Render.Occluding = true;
+		ParentObject.Physics.Solid = true;
+		Zone.SoundMapDirty = true;
+		PlayWorldSound(ParentObject.GetPropertyOrTag("CloseSound"));
+		if (ParentObject.CurrentCell != null)
+		{
+			ParentObject.CurrentCell.ClearOccludeCache();
+			ParentObject.CurrentCell.FlushNavigationCache();
+		}
+		if (SyncAdjacent)
+		{
+			PerformAdjacentSync();
+		}
+		if (ParentObject.HasRegisteredEvent("Closed"))
+		{
+			ParentObject.FireEvent(Event.New("Closed", "Object", ParentObject));
+		}
+		if (Actor != null)
+		{
+			if (Actor.HasRegisteredEvent("Closed"))
+			{
+				Actor.FireEvent(Event.New("Closed", "Object", ParentObject));
+			}
+			if (!FromMove)
+			{
+				Actor.UseEnergy(1000, "Door Close", null, null);
+			}
+		}
+	}
+
+	public void Unlock()
+	{
+		if (Locked)
+		{
+			WasLocked = true;
+			Locked = false;
+			PlayWorldSound(ParentObject.GetPropertyOrTag("UnlockSound"));
+			if (SyncAdjacent)
+			{
+				PerformAdjacentSync();
+			}
+		}
+	}
+
+	public void Lock()
+	{
+		if (!Locked)
+		{
+			if (Open)
+			{
+				PerformClose();
+			}
+			Locked = true;
+			PlayWorldSound(ParentObject.GetPropertyOrTag("LockSound"));
+			if (SyncAdjacent)
+			{
+				PerformAdjacentSync();
+			}
+		}
+	}
+
+	public bool CanPathThrough(GameObject who)
+	{
+		if (Open)
+		{
+			return true;
+		}
+		if (!CapableOfOpening(who, ParentObject))
+		{
+			return false;
+		}
+		if (!Locked)
+		{
+			return true;
+		}
+		if (!KeyObject.IsNullOrEmpty() && who != null)
+		{
+			List<string> list = KeyObject.CachedCommaExpansion();
+			if ((list.Count > 1 || list[0] != "*Psychometry") && who.ContainsAnyBlueprint(list))
+			{
+				return true;
+			}
+			if (who.GetIntProperty("DoorUnlocker") > 0)
+			{
+				return true;
+			}
+			if (list.Contains("*Psychometry") && ShouldUsePsychometry(who))
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public bool BlocksClosing(GameObject obj)
+	{
+		if (obj == ParentObject)
+		{
+			return false;
+		}
+		if (obj.GetMatterPhase() != 1)
+		{
+			return false;
+		}
+		if (obj.HasPart<FungalVision>() != ParentObject.HasPart<FungalVision>())
+		{
+			return false;
+		}
+		if (!obj.HasTag("Creature") && !obj.HasPropertyOrTag("BlocksDoors") && !obj.ConsiderSolidFor(ParentObject))
+		{
+			return false;
+		}
+		if (!obj.PhaseAndFlightMatches(ParentObject))
+		{
+			return false;
+		}
+		if (obj.HasTag("ExcavatoryTerrainFeature"))
+		{
+			return false;
+		}
+		return true;
+	}
+
+	public bool IsHackable()
+	{
+		if (!KeyObject.IsNullOrEmpty())
+		{
+			return XRL.World.Capabilities.SecurityClearance.GetSecurityClearanceByKeySpecification(KeyObject) > 0;
+		}
+		return false;
+	}
+
+	public void HackingResultSuccess(GameObject who, GameObject obj, HackingSifrah game)
+	{
+		if (obj == ParentObject)
+		{
+			ParentObject.ModIntProperty("SifrahHack", 1);
+			if (who.IsPlayer())
+			{
+				Popup.Show("You hack " + obj.t(int.MaxValue, null, null, AsIfKnown: false, Single: false, NoConfusion: false, NoColor: false, Stripped: false, WithoutTitles: true, Short: true, BaseOnly: false, null, IndicateHidden: false, SecondPerson: true, Reflexive: false, null) + ".");
+			}
+		}
+	}
+
+	public void HackingResultExceptionalSuccess(GameObject who, GameObject obj, HackingSifrah game)
+	{
+		if (obj != ParentObject)
+		{
+			return;
+		}
+		ParentObject.ModIntProperty("SifrahHack", 1);
+		if (KeyObject.IsNullOrEmpty())
+		{
+			return;
+		}
+		List<string> list = KeyObject.CachedCommaExpansion();
+		int num = 0;
+		while (++num < 10)
+		{
+			try
+			{
+				if (70.in100())
+				{
+					string randomBits = BitType.GetRandomBits("2d4".Roll(), obj.GetTechTier());
+					if (!randomBits.IsNullOrEmpty())
+					{
+						who.RequirePart<BitLocker>().AddBits(randomBits);
+						if (who.IsPlayer())
+						{
+							Popup.Show("You hack " + ParentObject.t(int.MaxValue, null, null, AsIfKnown: false, Single: false, NoConfusion: false, NoColor: false, Stripped: false, WithoutTitles: true, Short: true, BaseOnly: false, null, IndicateHidden: false, SecondPerson: true, Reflexive: false, null) + " and find tinkering bits <{{|" + BitType.GetDisplayString(randomBits) + "}}> in " + ParentObject.them + "!");
+						}
+						break;
+					}
+					continue;
+				}
+				GameObject gameObject = GameObject.Create(list.GetRandomElement());
+				if (gameObject != null)
+				{
+					if (who.IsPlayer())
+					{
+						Popup.Show("You hack " + ParentObject.t(int.MaxValue, null, null, AsIfKnown: false, Single: false, NoConfusion: false, NoColor: false, Stripped: false, WithoutTitles: true, Short: true, BaseOnly: false, null, IndicateHidden: false, SecondPerson: true, Reflexive: false, null) + " and find " + gameObject.an(int.MaxValue, null, null, AsIfKnown: false, Single: false, NoConfusion: false, NoColor: false, Stripped: false, WithoutTitles: false, Short: true, BaseOnly: false, IndicateHidden: false, SecondPerson: true, Reflexive: false, null) + " stuck in " + ParentObject.them + "!");
+					}
+					who.ReceiveObject(gameObject);
+					break;
+				}
+			}
+			catch
+			{
+			}
+		}
+	}
+
+	public void HackingResultPartialSuccess(GameObject who, GameObject obj, HackingSifrah game)
+	{
+		if (obj == ParentObject && who.IsPlayer())
+		{
+			Popup.Show("You feel like you're making progress on hacking " + obj.t(int.MaxValue, null, null, AsIfKnown: false, Single: false, NoConfusion: false, NoColor: false, Stripped: false, WithoutTitles: true, Short: true, BaseOnly: false, null, IndicateHidden: false, SecondPerson: true, Reflexive: false, null) + " open.");
+		}
+	}
+
+	public void HackingResultFailure(GameObject who, GameObject obj, HackingSifrah game)
+	{
+		if (obj == ParentObject)
+		{
+			ParentObject.ModIntProperty("SifrahHack", -1);
+			if (who.IsPlayer())
+			{
+				Popup.Show("You cannot seem to work out how to hack " + obj.t(int.MaxValue, null, null, AsIfKnown: false, Single: false, NoConfusion: false, NoColor: false, Stripped: false, WithoutTitles: true, Short: true, BaseOnly: false, null, IndicateHidden: false, SecondPerson: true, Reflexive: false, null) + ".");
+			}
+		}
+	}
+
+	public void HackingResultCriticalFailure(GameObject who, GameObject obj, HackingSifrah game)
+	{
+		if (obj != ParentObject)
+		{
+			return;
+		}
+		ParentObject.ModIntProperty("SifrahHack", -1);
+		if (who.HasPart<Dystechnia>())
+		{
+			Dystechnia.CauseExplosion(ParentObject, who);
+			game.RequestInterfaceExit();
+			return;
+		}
+		if (who.IsPlayer())
+		{
+			Popup.Show("Your attempt to hack " + obj.t(int.MaxValue, null, null, AsIfKnown: false, Single: false, NoConfusion: false, NoColor: false, Stripped: false, WithoutTitles: true, Short: true, BaseOnly: false, null, IndicateHidden: false, SecondPerson: true, Reflexive: false, null) + " has gone very wrong.");
+		}
+		List<Cell> localAdjacentCells = ParentObject.CurrentCell.GetLocalAdjacentCells();
+		Cell cell = who.CurrentCell;
+		ParentObject.Discharge((cell != null && localAdjacentCells.Contains(cell)) ? cell : localAdjacentCells.GetRandomElement(), "3d8".RollCached(), 0, "2d4", null, who, obj);
+	}
+
+	public static bool CapableOfOpening(GameObject Object, GameObject Door, out string Reason)
+	{
+		Reason = "";
+		if (Object == null)
+		{
+			return true;
+		}
+		if (!GameObject.Validate(ref Object))
+		{
+			return false;
+		}
+		if (Object.CanManipulateTelekinetically(Door))
+		{
+			return true;
+		}
+		if (Object.Stat("Intelligence") < 7 && !Object.IsPlayer() && !Object.HasPropertyOrTag("Humanoid"))
+		{
+			Reason = " because you cannot figure out how";
+			return false;
+		}
+		if (Object.HasTagOrProperty("CantOpenDoors"))
+		{
+			return false;
+		}
+		if (Object.HasTagOrProperty("Grazer"))
+		{
+			return false;
+		}
+		return true;
+	}
+
+	public static bool CapableOfOpening(GameObject Object, GameObject Door = null)
+	{
+		string Reason;
+		return CapableOfOpening(Object, Door, out Reason);
+	}
+
+	public static bool CapableOfClosing(GameObject Object, GameObject Door, out string Reason)
+	{
+		Reason = "";
+		if (Object == null)
+		{
+			return true;
+		}
+		if (!GameObject.Validate(ref Object))
+		{
+			return false;
+		}
+		if (Object.CanManipulateTelekinetically(Door))
+		{
+			return true;
+		}
+		if (Object.Stat("Intelligence") < 7 && !Object.IsPlayer() && !Object.HasPropertyOrTag("Humanoid"))
+		{
+			Reason = " because you cannot figure out how";
+			return false;
+		}
+		if (Object.HasTagOrProperty("CantCloseDoors"))
+		{
+			return false;
+		}
+		return true;
+	}
+
+	public static bool CapableOfClosing(GameObject Object, GameObject Door = null)
+	{
+		string Reason;
+		return CapableOfClosing(Object, Door, out Reason);
+	}
+}
+}

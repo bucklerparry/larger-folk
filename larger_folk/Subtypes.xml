@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<subtypes>
+
+  <class ID="Castes" ChargenTitle="choose caste" SingularTitle="caste" StatBoxDisplay="true">
+
+    <category Name="Ekuemekiyye" DisplayName="{{G|The Toxic Arboreta of Ekuemekiyye, the Holy City}}">
+
+      <subtype Name="Horticulturist" Gear="StartingGear_Horticulturist" Tile="creatures/caste_1.bmp" DetailColor="g">
+        <stat Name="Intelligence" Bonus="3" />
+        <skills>
+          <skill Name="CookingAndGathering" />
+          <skill Name="CookingAndGathering_Harvestry" />
+          <skill Name="Axe" />
+          <skill Name="Rifles" />
+          <skill Name="Survival_JungleSurvival" />
+        </skills>
+        <savemodifiers>
+          <savemodifier Vs="Bleeding" Amount="2" />
+        </savemodifiers>
+      </subtype>
+
+      <subtype Name="Priest of All Suns" Gear="StartingGear_PriestOfAllSuns" Tile="creatures/caste_2.bmp" DetailColor="Y">
+        <stat Name="Ego" Bonus="3" />
+        <skills>
+          <skill Name="Cudgel" />
+          <skill Name="Physic" />
+          <skill Name="Physic_Nostrums" />
+          <skill Name="Persuasion" />
+          <skill Name="Persuasion_SnakeOiler" />
+          <skill Name="Persuasion_Intimidate" />
+          <skill Name="Survival_JungleSurvival" />
+        </skills>
+        <savemodifiers>
+          <savemodifier Vs="Bleeding" Amount="2" />
+        </savemodifiers>
+      </subtype>
+
+      <subtype Name="Priest of All Moons" Gear="StartingGear_PriestofAllMoons" Tile="bucklerparry_largerfolk/priest_of_all_moons_fat.png" DetailColor="W">
+        <stat Name="Willpower" Bonus="2" />
+        <stat Name="Toughness" Bonus="2" />
+        <skills>
+          <skill Name="Axe" />
+          <skill Name="CookingAndGathering_Butchery" />
+          <skill Name="Discipline_Lionheart" />
+          <skill Name="Endurance_PoisonTolerance" />
+          <skill Name="Survival_JungleSurvival" />
+        </skills>
+        <savemodifiers>
+          <savemodifier Vs="Bleeding" Amount="2" />
+        </savemodifiers>
+      </subtype>
+
+      <subtype Name="Syzygyrior" Gear="StartingGear_Syzygyrior" Tile="creatures/caste_4.bmp" DetailColor="g">
+        <stat Name="Agility" Bonus="3" />
+        <skills>
+          <skill Name="Multiweapon_Fighting" />
+          <skill Name="Multiweapon_Proficiency" />
+          <skill Name="Multiweapon_Expertise" />
+          <skill Name="Survival_JungleSurvival" />
+        </skills>
+        <savemodifiers>
+          <savemodifier Vs="Bleeding" Amount="2" />
+        </savemodifiers>
+      </subtype>
+
+    </category>
+
+    <category Name="Ibul" DisplayName="{{C|The Ice-Sheathed Arcology of Ibul}}">
+
+      <subtype Name="Artifex" Gear="StartingGear_Artifex" Tile="bucklerparry_largerfolk/artifex_fat.png" DetailColor="c">
+        <stat Name="Intelligence" Bonus="3" />
+        <stat Name="ColdResistance" Bonus="15" />
+        <skills>
+          <skill Name="Tinkering" />
+          <skill Name="Tinkering_Repair" />
+          <skill Name="Tinkering_Disassemble" />
+          <skill Name="Tinkering_DeployTurret" />
+          <skill Name="Tinkering_Tinker1" />
+          <skill Name="Tinkering_Tinker2" />
+        </skills>
+      </subtype>
+
+      <subtype Name="Consul" Gear="StartingGear_Consul" Tile="creatures/caste_6.bmp" DetailColor="c">
+        <stat Name="Ego" Bonus="3" />
+        <stat Name="ColdResistance" Bonus="15" />
+        <skills>
+          <skill Name="Persuasion_InspiringPresence" />
+          <skill Name="Persuasion_Proselytize" />
+        </skills>
+      </subtype>
+
+      <subtype Name="Praetorian" Gear="StartingGear_Praetorian" Tile="bucklerparry_largerfolk/praetorian_fat.png" DetailColor="c">
+        <stat Name="Strength" Bonus="2" />
+        <stat Name="Toughness" Bonus="1" />
+        <stat Name="Willpower" Bonus="1" />
+        <stat Name="ColdResistance" Bonus="15" />
+        <skills>
+          <skill Name="LongBlades" />
+          <skill Name="Shield" />
+          <skill Name="Shield_Slam" />
+          <skill Name="Rifles" />
+        </skills>
+      </subtype>
+
+      <subtype Name="Eunuch" Gear="StartingGear_Eunuch" Tile="bucklerparry_largerfolk/eunuch_fat.png" DetailColor="c">
+        <stat Name="Agility" Bonus="2" />
+        <stat Name="Intelligence" Bonus="2" />
+        <stat Name="ColdResistance" Bonus="15" />
+        <skills>
+          <skill Name="ShortBlades" />
+          <skill Name="ShortBlades_Hobble" />
+          <skill Name="Pistol" />
+          <skill Name="Pistol_WeakSpotter" />
+          <skill Name="Acrobatics" />
+          <skill Name="Acrobatics_Dodge" />
+          <skill Name="Tactics" />
+        </skills>
+      </subtype>
+
+    </category>
+
+    <category Name="Yawningmoon" DisplayName="{{R|The Crustal Mortars of Yawningmoon}}">
+
+      <subtype Name="Child of the Hearth" Gear="StartingGear_ChildoftheHearth" Tile="bucklerparry_largerfolk/hearthchild_fat.png" DetailColor="r">
+        <stat Name="Strength" Bonus="3" />
+        <stat Name="HeatResistance" Bonus="15" />
+        <skills>
+          <skill Name="Cudgel" />
+          <skill Name="Cudgel_Slam" />
+          <skill Name="HeavyWeapons" />
+          <skill Name="Endurance_Calloused" />
+        </skills>
+      </subtype>
+
+      <subtype Name="Child of the Wheel" Gear="StartingGear_ChildoftheWheel" Tile="creatures/caste_10.bmp" DetailColor="r">
+        <stat Name="Agility" Bonus="2" />
+        <stat Name="Strength" Bonus="1" />
+        <stat Name="Ego" Bonus="1" />
+        <stat Name="HeatResistance" Bonus="15" />
+        <skills>
+          <skill Name="ShortBlades" />
+          <skill Name="Axe" />
+          <skill Name="Axe_Cleave" />
+          <skill Name="Multiweapon_Fighting" />
+          <skill Name="Multiweapon_Proficiency" />
+          <skill Name="Discipline_IronMind" />
+        </skills>
+      </subtype>
+
+      <subtype Name="Child of the Deep" Gear="StartingGear_ChildoftheDeep" Tile="bucklerparry_largerfolk/deepchild_fat.png" DetailColor="r">
+        <stat Name="Toughness" Bonus="3" />
+        <stat Name="HeatResistance" Bonus="15" />
+        <skills>
+          <skill Name="HeavyWeapons" />
+          <skill Name="HeavyWeapons_Tank" />
+          <skill Name="Endurance" />
+          <skill Name="Survival_MountainsSurvival" />
+          <skill Name="Survival_DesertCanyonSurvival" />
+        </skills>
+      </subtype>
+
+      <subtype Name="Fuming God-Child" Gear="StartingGear_FumingGodChild" Tile="bucklerparry_largerfolk/fuming_godchild_fat.png" DetailColor="r">
+        <stat Name="Willpower" Bonus="4" />
+        <stat Name="HeatResistance" Bonus="15" />
+        <skills>
+          <skill Name="Discipline" />
+          <skill Name="Discipline_FastingWay" />
+          <skill Name="Discipline_Lionheart" />
+          <skill Name="Endurance_PoisonTolerance" />
+          <skill Name="Persuasion" />
+          <skill Name="Persuasion_Intimidate" />
+        </skills>
+      </subtype>
+
+    </category>
+
+  </class>
+
+  <class ID="Callings" ChargenTitle="choose calling" SingularTitle="calling">
+
+    <subtype Name="Apostle" Gear="StartingGear_Apostle" Tile="bucklerparry_largerfolk/apostle_fat.png" DetailColor="m">
+      <stat Name="Ego" Bonus="2" />
+      <skills>
+        <skill Name="Persuasion_Intimidate" />
+        <skill Name="Persuasion_Proselytize" />
+        <skill Name="Customs" />
+      </skills>
+    </subtype>
+
+    <subtype Name="Arconaut" Gear="StartingGear_Arconaut" Tile="bucklerparry_largerfolk/arconaut_fat.png" DetailColor="Y">
+      <stat Name="Agility" Bonus="2" />
+      <skills>
+        <skill Name="ShortBlades" />
+        <skill Name="Tinkering" />
+        <skill Name="Tinkering_Scavenger" />
+        <skill Name="Acrobatics" />
+        <skill Name="Acrobatics_Dodge" />
+      </skills>
+      <extrainfo>Starts with random junk and artifacts</extrainfo>
+    </subtype>
+
+    <subtype Name="Greybeard" Gear="StartingGear_Greybeard" Tile="bucklerparry_largerfolk/greybeard_fat.png" DetailColor="w">
+      <stat Name="Willpower" Bonus="3" />
+      <stat Name="Strength" Bonus="-1" />
+      <skills>
+        <skill Name="Cudgel" />
+        <skill Name="Persuasion_Berate" />
+        <skill Name="Endurance_Calloused" />
+      </skills>
+      <reputations>
+        <reputation With="Bears" Value="100" />
+      </reputations>
+    </subtype>
+
+    <subtype Name="Gunslinger" Gear="StartingGear_Gunslinger" Tile="bucklerparry_largerfolk/gunslinger_fat.png" DetailColor="K">
+      <stat Name="Agility" Bonus="2" />
+      <skills>
+        <skill Name="Pistol" />
+        <skill Name="Pistol_Akimbo" />
+      </skills>
+      <reputations>
+        <reputation With="Strangers" Value="200" />
+      </reputations>
+    </subtype>
+
+    <subtype Name="Marauder" Gear="StartingGear_Marauder" Tile="bucklerparry_largerfolk/marauder_fat.png" DetailColor="r">
+      <stat Name="Strength" Bonus="2" />
+      <skills>
+        <skill Name="Axe" />
+        <skill Name="Axe_Dismember" />
+        <skill Name="Tactics_Charge" />
+        <skill Name="CookingAndGathering_Butchery" />
+      </skills>
+    </subtype>
+
+    <subtype Name="Pilgrim" Gear="StartingGear_Pilgrim" Tile="bucklerparry_largerfolk/pilgrim_fat.png" DetailColor="y">
+      <stat Name="Willpower" Bonus="2" />
+      <skills>
+        <skill Name="Discipline" />
+        <skill Name="Discipline_FastingWay" />
+        <skill Name="Discipline_IronMind" />
+        <skill Name="Survival" />
+      </skills>
+    </subtype>
+
+    <subtype Name="Nomad" Gear="StartingGear_Nomad" Tile="bucklerparry_largerfolk/nomad_fat.png" DetailColor="W">
+      <stat Name="Toughness" Bonus="2" />
+      <skills>
+        <skill Name="Survival" />
+        <skill Name="Survival_SaltDesertSurvival" />
+        <skill Name="CookingAndGathering_Harvestry" />
+        <skill Name="Survival_Trailblazer" />
+        <skill Name="Endurance_Weathered" />
+      </skills>
+      <reputations>
+        <reputation With="Issachari" Value="200" />
+      </reputations>
+      <extrainfo>Starts with a {{B|recycling suit}}</extrainfo>
+    </subtype>
+
+    <subtype Name="Scholar" Class="ScholarSkills" Gear="StartingGear_Scholar" Tile="bucklerparry_largerfolk/scholar_fat.png" DetailColor="C">
+      <stat Name="Intelligence" Bonus="2" />
+      <skills>
+        <skill Name="Tinkering" />
+				<skill Name="Physic" />
+        <skill Name="Physic_Nostrums" />
+        <skill Name="CookingAndGathering_Harvestry" />
+        <skill Name="Tactics" />
+        <skill Name="Customs" />
+      </skills>
+    </subtype>
+
+    <subtype Name="Tinker" Gear="StartingGear_Tinker" Tile="bucklerparry_largerfolk/tinker_fat.png" DetailColor="c">
+      <stat Name="Intelligence" Bonus="2" />
+      <skills>
+        <skill Name="Tinkering" />
+        <skill Name="Tinkering_LayMine" />
+        <skill Name="Tinkering_Disassemble" />
+        <skill Name="Tinkering_Repair" />
+        <skill Name="Tinkering_Tinker1" />
+      </skills>
+      <reputations>
+        <reputation With="Barathrumites" Value="100" />
+      </reputations>
+      <extrainfo>Begins with a number of random artifacts and scrap</extrainfo>
+    </subtype>
+
+    <subtype Name="Warden" Gear="StartingGear_Warden" Tile="bucklerparry_largerfolk/caste_warden_fat.png" DetailColor="w">
+      <stat Name="Strength" Bonus="2" />
+      <skills>
+        <skill Name="LongBlades" />
+        <skill Name="Shield" />
+        <skill Name="Shield_Slam" />
+        <skill Name="Rifles" />
+        <skill Name="Pistol" />
+      </skills>
+      <reputations>
+        <reputation With="Wardens" Value="300" />
+      </reputations>
+    </subtype>
+
+    <subtype Name="Water Merchant" Gear="StartingGear_WaterMerchant" Tile="bucklerparry_largerfolk/water_merchant_fat.png" DetailColor="B">
+      <stat Name="Ego" Bonus="2" />
+      <skills>
+        <skill Name="ShortBlades" />
+        <skill Name="Persuasion_SnakeOiler" />
+      </skills>
+      <reputations>
+        <reputation With="Water" Value="200" />
+      </reputations>
+      <extrainfo>Allowed entrance to many settlements for purposes of trade</extrainfo>
+      <extrainfo>Starts with trade goods</extrainfo>
+    </subtype>
+
+    <subtype Name="Watervine Farmer" Gear="StartingGear_WatervineFarmer" Tile="bucklerparry_largerfolk/farmer1_fat.png" DetailColor="y">
+      <stat Name="Toughness" Bonus="2" />
+      <skills>
+        <skill Name="CookingAndGathering" />
+        <skill Name="CookingAndGathering_Harvestry" />
+        <skill Name="Axe" />
+        <skill Name="Survival_SaltmarshSurvival" />
+      </skills>
+      <reputations>
+        <reputation With="Joppa" Value="100" />
+				<reputation With="Farmers" Value="200" />
+			</reputations>
+      <extrainfo>Starts with random cooking ingredients</extrainfo>
+    </subtype>
+
+  </class>
+
+</subtypes>

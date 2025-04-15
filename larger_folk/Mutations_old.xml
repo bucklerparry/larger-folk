@@ -1,0 +1,14 @@
+<!--
+<?xml version="1.0" encoding="utf-8" ?>
+<mutations>
+  <category Name="PhysicalDefects">
+    <mutation Name="Fat" Cost="-2" MaxSelected="1" Class="LargerFolk_Fat" Exclusions="LargerFolk_Obese,LargerFolk_Immobile" BearerDescription="the plump" Tile="bucklerparry_largerfolk/largerfolk_mutations_fat.png" />  
+<!--<mutation Name="Obese" Cost="-4" MaxSelected="1" Class="LargerFolk_Obese" Exclusions="LargerFolk_Fat,LargerFolk_Immobile" BearerDescription="the extremely overweight" Tile="bucklerparry_largerfolk/largerfolk_mutations_obese.png" />
+    <mutation Name="Immobile" Cost="-10" MaxSelected="1" Class="LargerFolk_Immobile" Exclusions="LargerFolk_Fat,LargerFolk_Obese" BearerDescription="the immobile" Tile="bucklerparry_largerfolk/largerfolk_mutations_immobile.png" />-->
+  </category>
+  <category Name="Mental">
+  <mutation Name="Fetishist" Cost="2" MaxSelected="1" Class="LargerFolk_FatFetish" Exclusions="" BearerDescription="the fat-loving" Tile="bucklerparry_largerfolk/largerfolk_mutations_fatfetish.png" />
+  </category>
+</mutations>
+-->
+

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<factions>
+    <faction
+        Name="Gainers"
+        DisplayName="Gainers"
+        Visible="true"
+        Old="false"
+        PositiveSound="Sounds/Reputation/sfx_reputation_fungi_positive"
+        NegativeSound="Sounds/Reputation/sfx_reputation_fungi_negative"
+        HistoricalSignificance="1"
+        EmblemTile="bucklerparry_largerfolk/snapjaw_hero_fat.png"
+        EmblemTileColor="Y"
+        EmblemDetailColor="r"
+    >
+        <interests>
+            <interest Tags="dead" WillBuy="true" WillSell="false" Description="the locations of dead things" />
+            <interest Tags="dead" WillBuy="true" WillSell="false" Description="the locations of hatters" />
+        </interests>
+        
+        <property Name="EndVisibility" Value="Ruined" />
+        <intproperty Name="EndReputationMin" Value="-200" />
+        <intproperty Name="EndReputationMax" Value="200" />
+    </faction>
+</factions>

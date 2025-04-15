@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<objects>
+
+    <object Name="BaseFarmer" Inherits="NPC">
+        <part Name="Render" DisplayName="[farmer]" ColorString="&amp;y" RenderString="f" />
+        <builder Name="RandomTile" Tiles="bucklerparry_largerfolk/farmer1_fat.png,bucklerparry_largerfolk/farmer2_fat.png,bucklerparry_largerfolk/farmer3_fat.png,bucklerparry_largerfolk/farmer4_fat.png,bucklerparry_largerfolk/farmer5_fat.png,bucklerparry_largerfolk/farmer6_fat.png" />
+        <part Name="Brain" Wanders="false" Factions="Farmers-100" />
+        <part Name="AISelfPreservation" Threshold="30" />
+        <inventoryobject Blueprint="Woven Tunic" Number="1" />
+        <inventoryobject Blueprint="Sandals" Number="1" />
+        <tag Name="BaseObject" Value="*noinherit" />
+        <!--
+        <tag Name="RandomGender" Value="male,female,genericpersonalsingular,personalsingular" />
+        <tag Name="RandomPronounSet" Value="genericpersonalsingular,personalsingular,generate" />
+        <tag Name="RandomPronounSetChance" Value="10" />-->
+    </object>
+    <object Name="BaseIssachari" Inherits="BaseHumanoid">
+        <part Name="Render" DisplayName="Issachari raider" RenderString="h" Tile="bucklerparry_largerfolk/issachari_raider_fat.png" ColorString="&amp;Y" DetailColor="R" />
+        <part Name="Corpse" CorpseChance="0" CorpseBlueprint="Snapjaw Corpse" />
+        <part Name="Brain" Hostile="false" Factions="Issachari-100" />
+        <part Name="ConversationScript" ConversationID="Issachari" />
+        <stat Name="Hitpoints" Value="16" />
+        <part Name="Description" Short="Wind presses a sunbleached thawb and neckdress against the curves of a soft humanoid form. The fabric is embroidered to rhyme with patterns in the salt." />
+        <inventoryobject Blueprint="Dagger" Number="1" />
+        <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
+        <tag Name="HeroHPBoost" Value="2" />
+        <tag Name="HeroIntBoost" Value="2" />
+        <tag Name="SecretAdjectives" Value="humanoid" />
+        <tag Name="Culture" Value="Issachari" />
+            <stag Name="Contemporary" />
+    </object>
+
+    <object Name="bucklerparry_largerfolk_Fat Snapjaw" Inherits="Snapjaw">
+        <part Name="Render" DisplayName="snapjaw" Tile="bucklerparry_largerfolk/snapjaw_fat.png" RenderString="s" ColorString="&amp;w" DetailColor="R" />
+        <part Name="ConversationScript" ConversationID="Snapjaw" />
+        <part Name="Swarmer" />
+        <tag Name="Role" Value="Minion" />
+        <tag Name="DynamicObjectsTable:Snapjaws" />
+        <tag Name="DynamicObjectsTable:Snapjaws:Number" Value="1-2" />
+        <tag Name="AggregateWith" Value="Snapjaw Scavanger" />
+        <tag Name="BaseObject" Value="*noinherit" />		
+        <part Name="Description" Short="Tussocks of fur dress skin stretched over plush adipose. Upright =pronouns.subjective= =verb:stand:afterpronoun=, but =pronouns.subjective= =verb:look:afterpronoun= ready to drop onto fours. Though, =pronouns.subjective= =verb:look:afterpronoun= like =pronouns.subjective= might have trouble getting back up. =pronouns.Possessive= wide snout snarls and =pronouns.possessive= ears twitch. =pronouns.Subjective= =verb:bark:afterpronoun=, and =pronouns.possessive= hyena tribeskin answer." />
+
+    </object>
+    <object Name="Snapjaw" Inherits="BaseHumanoid">
+        <part Name="Render" DisplayName="snapjaw" Tile="bucklerparry_largerfolk/snapjaw_fat.png" RenderString="s" ColorString="&amp;w" DetailColor="R" />
+        <part Name="ConversationScript" ConversationID="Snapjaw" />
+        <part Name="Corpse" CorpseChance="90" CorpseBlueprint="Snapjaw Corpse" />
+        <part Name="Brain" Hostile="false" Factions="Snapjaws-100" />
+        <stat Name="Hitpoints" Value="3" />
+        <mutation Name="HeightenedSmell" Level="5" />
+        <inventoryobject Blueprint="Snapjaw_Bite" Number="1" />
+        <part Name="Description" Short="Tussocks of fur dress skin stretched over plush adipose. Upright =pronouns.subjective= =verb:stand:afterpronoun=, but =pronouns.subjective= =verb:look:afterpronoun= ready to drop onto fours. Though, =pronouns.subjective= =verb:look:afterpronoun= like =pronouns.subjective= might have trouble getting back up. =pronouns.Possessive= wide snout snarls and =pronouns.possessive= ears twitch. =pronouns.Subjective= =verb:bark:afterpronoun=, and =pronouns.possessive= hyena tribeskin answer." />
+        <part Name="KillAchievement" Category="Snapjaws" AchievementID="ACH_KILL_100_SNAPJAWS" TargetAmount="100" />
+        <tag Name="Species" Value="snapjaw" />
+        <tag Name="Culture" Value="Snapjaw" />
+        <tag Name="DynamicObjectsTable:DesertCanyon_Creatures" />
+        <tag Name="DynamicObjectsTable:Saltmarsh_Creatures" />
+        <tag Name="DynamicObjectsTable:Hills_Creatures" />
+        <tag Name="Snapjaw" />
+        <tag Name="LairMinions" Value="DynamicObjectsTable:Snapjaws" />
+        <xtagTextFragments YounglingNoise="*heh*,*huff*,*urp*,*huff puff*,*heheh*,*heheheh*,*haaaah*,*oof*" Activity="hunting and gathering,raiding villages,howling at the Beetle Moon,picking the meat off bones,sleeping off a meal,scratching our guts,stuffing our faces,outgrowing clothes,waddling slowly" VillageActivity="sleeping in our bedrolls and sitting in our creaking chairs,lounging around on widening rears,reading books,peeling and gorging on musa,howling at the moon,picking the meat off discarded bones,sleeping off a meal,waddling around,stuffing our faces,growing larger" NeedsItemFor="for my own collection,to slake my greed,because of its trade value,to inspire my art,to inspire my poetry,to snarl at meaninglessly,as something to howl at,to be my muse,to help with farm work,for the games we play under the Beetle Moon" SacredThing="the act of procreating,weight gain,gluttony,obesity,immobility,philosophy,the tilled land of others,howling at the Beetle Moon,snarling,picking the meat from bones,alcohol,grains of the earth,stone fruit,artistry,poetry,warm meals,bread and wine,pottery,painting" ArableLand="defenseless villages,hapless farmers,the homes of sedentary creatures" ValuedOre="meat and bone,fresh meat,tracks,fat" />
+        <tag Name="AmbientIdleSound" Value="Sounds/Creatures/VO/sfx_creature_animal_snapjaw_vo_idle"/>
+        <tag Name="PunchSound" Value="Sounds/Creatures/VO/sfx_creature_animal_snapjaw_vo_attack"/>
+        <tag Name="DeathSounds" Value="Sounds/Creatures/VO/sfx_creature_animal_snapjaw_vo_die" />
+        <tag Name="TakeDamageSound" Value="Sounds/Creatures/VO/sfx_creature_animal_snapjaw_vo_hurt"/>
+        <tag Name="LairAmbientBed" Value="Sounds/Ambiences/amb_creature_snapjaw" />
+        <stag Name="Contemporary" />
+    </object>
+    <object Name="Snapjaw Hunter" Inherits="Snapjaw">
+        <part Name="AIShootAndScoot" Duration="1d2" />
+        <part Name="Render" ColorString="&amp;r" Tile="bucklerparry_largerfolk/snapjaw_hunter_fat.png" DisplayName="snapjaw hunter" DetailColor="w" />
+        <part Name="Description" Short="" />
+        <stat Name="Hitpoints" Value="6" />
+        <stat Name="Speed" Value="95" />
+        <inventoryobject Blueprint="Dagger" Number="1" />
+        <inventoryobject Blueprint="Short Bow" Number="1" />
+        <inventoryobject Blueprint="Wooden Arrow" Number="5" />
+        <tag Name="Role" Value="Skirmisher" />
+        <tag Name="DynamicObjectsTable:Snapjaws" />
+        <tag Name="AggregateWith" Value="Snapjaw Hunter" />
+        <tag Name="BaseObject" Value="*noinherit" />
+    </object>
+    <object Name="Snapjaw Shotgunner" Inherits="Snapjaw">
+        <part Name="AIShootAndScoot" Duration="1d3-1" />
+        <part Name="Render" ColorString="&amp;R" DisplayName="snapjaw shotgunner" Tile="bucklerparry_largerfolk/snapjaw_shotgunner_fat.png" DetailColor="r" />
+        <stat Name="Hitpoints" Value="6" />
+        <stat Name="Speed" Value="95" />
+        <inventoryobject Blueprint="Dagger" Number="1" />
+        <inventoryobject Blueprint="Pump Shotgun" Number="1" />
+        <inventoryobject Blueprint="Shotgun Shell" Number="5" />
+        <tag Name="Role" Value="Artillery" />
+        <tag Name="DynamicObjectsTable:Snapjaws" />
+        <tag Name="AggregateWith" Value="Snapjaw Shotgunner" />
+        <tag Name="BaseObject" Value="*noinherit" />
+    </object>
+    <object Name="Snapjaw Brute" Inherits="Snapjaw">
+        <part Name="Render" DisplayName="snapjaw brute" Tile="bucklerparry_largerfolk/snapjaw_bruiser_fat.png" ColorString="&amp;W" DetailColor="R" />
+        <part Name="Description" Short="Upright =pronouns.subjective= =verb:stand:afterpronoun=, confidently bipedal. Tight undergarments strain against fat-swaddled thighs, unusual of =pronouns.possessive= kind, though =pronouns.Possessive= soft gut covers any immodesty regardless. =pronouns.possessive= wide snout snarls and =pronouns.possessive= ears twitch. =pronouns.Subjective= =verb:bark:afterpronoun=, and =pronouns.possessive= hyena tribeskin answer." />
+        <stat Name="Hitpoints" Value="25" />
+        <stat Name="AV" Value="1" />
+        <stat Name="DV" Value="2" />
+        <tag Name="Role" Value="Brute" />
+        <tag Name="DynamicObjectsTable:Snapjaws" />
+        <tag Name="AggregateWith" Value="Snapjaw Brute" />
+        <tag Name="BaseObject" Value="*noinherit" />
+    </object>
+    <object Name="Snapjaw Warrior" Inherits="Snapjaw">
+        <part Name="Render" DisplayName="snapjaw warrior" Tile="bucklerparry_largerfolk/snapjaw_warrior_fat.png" ColorString="&amp;Y" DetailColor="R" />
+        <part Name="Description" Short="Clanking and belching, a fearsome warrior waddles across the wasteland in search of feed. =pronouns.Possessive= makeshift armour creaks and groans, its wearer in great excess of its weight capacity." />
+        <stat Name="Hitpoints" Value="20" />
+        <stat Name="AV" Value="1" />
+        <stat Name="DV" Value="2" />
+        <tag Name="Role" Value="Tank" />
+        <tag Name="DynamicObjectsTable:Snapjaws" />
+        <tag Name="AggregateWith" Value="Snapjaw Warrior" />
+        <tag Name="BaseObject" Value="*noinherit" />
+    </object>
+    <object Name="Snapjaw Warlord" Inherits="Snapjaw">
+        <part Name="Render" DisplayName="snapjaw warlord" Tile="bucklerparry_largerfolk/snapjaw_warlord_fat.png" ColorString="&amp;B" DetailColor="R" />
+        <part Name="Description" Short="A heavy gut filled with the pride of past meals swings pendulously abreast barely-mobile waddling thighs, testament to a hero's prowess. Too round for proper armour, a bright cloak flutters tattered in the wind."/>
+        <stat Name="Hitpoints" Value="20" />
+        <stat Name="AV" Value="2" />
+        <stat Name="DV" Value="3" />
+        <tag Name="Role" Value="Leader" />
+        <part Name="Swarmer" ExtraBonus="2" />
+        <tag Name="DynamicObjectsTable:Snapjaws" />
+        <tag Name="AggregateWith" Value="Snapjaw Warlord" />
+        <tag Name="BaseObject" Value="*noinherit" />
+    </object>
+
+
+  <!-- End tier 1 creatures -->
+
+  <!--
+
+    **********************
+       Tier 2 creatures
+    **********************
+
+  -->
+  <object Name="Issachari Raider" PreviousName="Desert Raider" Inherits="BaseIssachari">
+    <part Name="Render" DisplayName="Issachari raider" RenderString="h" Tile="bucklerparry_largerfolk/issachari_raider_fat.png" ColorString="&amp;Y" DetailColor="R" />
+		<stat Name="Hitpoints" Value="16" />
+    <stat Name="Level" Value="8" />
+    <inventoryobject Blueprint="Dagger" Number="1" />    
+    <tag Name="DynamicObjectsTable:Saltdunes_Creatures" />
+    <tag Name="DynamicObjectsTable:Saltdunes_Creatures:Weight" Value="3" />
+  </object>
+  <object Name="Issachari Rifler" PreviousName="Desert Raider Rifleman" Inherits="BaseIssachari">
+    <part Name="Render" DisplayName="Issachari rifler" Tile="bucklerparry_largerfolk/issachari_rifler_fat.png" RenderString="h" ColorString="&amp;y" />
+    <part Name="Corpse" CorpseChance="0" CorpseBlueprint="Snapjaw Corpse" />
+    <part Name="Brain" Hostile="false" Factions="Issachari-100" />
+    <stat Name="Hitpoints" Value="16" />
+    <stat Name="Level" Value="8" />
+    <inventoryobject Blueprint="Desert Rifle" Number="1" />
+    <inventoryobject Blueprint="Lead Slug" Number="8" />
+    <inventoryobject Blueprint="Long Sword" Number="1" />
+    <tag Name="DynamicObjectsTable:Saltdunes_Creatures" />
+    <tag Name="DynamicObjectsTable:Saltdunes_Creatures:Weight" Value="3" />
+  </object>
+  <object Name="Bloated Leech" Inherits="BaseWorm">
+    <part Name="Render" DisplayName="{{r|bloated leech}}" Tile="bucklerparry_largerfolk/bloated_leech_fat.png"  RenderString="W" ColorString="&amp;r" DetailColor="Y" />
+    <part Name="Corpse" CorpseChance="100" CorpseBlueprint="Leech Corpse" />
+    <stat Name="AV" Value="3" />
+    <stat Name="Level" Value="8" />
+    <stat Name="Hitpoints" Value="40" />
+    <part Name="Brain" Hostile="false" Calm="True" Factions="Worms-100" />
+    <inventoryobject Blueprint="Bloated_Leech_Bite" Number="1" />
+    <part Name="Description" Short="Reticle dots are stretched to sagging geometry on =pronouns.possessive= bright and turgid wormback, coiled into flabby zigzags. =pronouns.Possessive= sucker bells flap open slightly on =pronouns.possessive= overstuffed head, satisfied." />
+    <mutation Name="LifeDrain" />
+    <skill Name="Axe" />
+    <tag Name="Role" Value="Brute" />
+    <tag Name="Species" Value="leech" />
+    <tag Name="DynamicObjectsTable:Jungle_Creatures" />
+    <tag Name="DynamicObjectsTable:Ruins_Creatures" />
+  </object>
+  <object Name="Salthopper" Inherits="BaseInsect">
+    <part Name="Render" DisplayName="salthopper" Tile="bucklerparry_largerfolk/salthopper_fat.png" RenderString="i" ColorString="&amp;Y" />
+    <part Name="Corpse" CorpseChance="8" CorpseBlueprint="Salthopper Corpse" />
+    <stat Name="Strength" Boost="1" />
+    <stat Name="AV" Value="3" />
+    <stat Name="Level" Value="9" />
+    <stat Name="Hitpoints" Value="24" />    
+    <part Name="Brain" Hostile="false" />
+    <inventoryobject Blueprint="Salthopper_Mandibles" Number="1" />
+    <part Name="Description" Short="A bulge-eye head and flabby thorax of sunsalt white is poised to leap through the air by the trust of a sestet of jiggling legs." />
+    <tag Name="Role" Value="Brute" />
+    <skill Name="Endurance" />
+    <skill Name="Tactics_Run" />
+    <tag Name="Species" Value="salthopper" />
+    <tag Name="DynamicObjectsTable:DesertCanyon_Creatures" />
+    <tag Name="DynamicObjectsTable:Flowerfields_Creatures" />
+  </object>
+
+<!-- Robots (yeah, them too)-->
+  <object Name="BaseMiner" Inherits="BaseRobot">
+    <part Name="Render" DisplayName="miner" Tile="bucklerparry_largerfolk/miner_fat.png" RenderString="2" ColorString="&amp;g" TileColor="&amp;c" />
+    <part Name="Description" Short="Wobbling stilt pistons fire in alternating quatro and tote the miner and =pronouns.possessive= mines in esoteric patterns across the ground. When =pronouns.possessive= topographic instincts are sated, a hatch opens on its distended carapace, and =pronouns.subjective= =verb:lay:afterpronoun= =pronouns.possessive= explosive egg." />
+    <part Name="Body" Anatomy="QuadrupedalRobot" />
+    <tag Name="Species" Value="quadrupedal robot" />
+    <inventoryobject Blueprint="@DynamicObjectsTable:EnergyCells:Tier{ownertier}" Number="1-2" Chance="4" />
+    <tag Name="BaseObject" Value="*noinherit" />
+    <tag Name="Gender" Value="female" />
+    <tag Name="Role" Value="Summoner" />
+  </object>
+
+
+
+<!-- Dromads -->
+  <object Name="Dromad" Inherits="BaseHumanoid">
+    <part Name="Render" DisplayName="dromad" Tile="bucklerparry_largerfolk/dromad_fat.png" RenderString="d" DetailColor="W" ColorString="&amp;W" TileColor="&amp;w" />    
+		<part Name="Brain" Factions="Dromad-100" />
+    <part Name="Corpse" CorpseChance="100" CorpseBlueprint="Dromad Corpse" />
+    <stat Name="Willpower" Value="18" />
+    <stat Name="Hitpoints" Value="30" />
+		<stat Name="AV" Value="8" />    
+    <part Name="Description" Short="Shot ink decorates the dulla on =pronouns.possessive= sagging neck rolls in one of the thousand patterns of the camelfolk. =pronouns.Possessive= ears are arrayed with gilded rings, and eyelashes flow down =pronouns.possessive= pudgy face like watervine fronds. Across =pronouns.possessive= back, a hump of moistured and healthy fat pushes =pronouns.possessive= center of mass skyward." />
+    <part Name="ItemElements" Elements="salt::1" />
+	  <tag Name="DeathSounds" Value="Sounds/Creatures/VO/sfx_dromad_vo_die" />
+	  <tag Name="TakeDamageSound" Value="Sounds/Creatures/VO/sfx_dromad_vo_hurt"/>
+	  <tag Name="AmbientIdleSound" Value="Sounds/Creatures/VO/sfx_dromad_vo_idle"/>
+	  <tag Name="PunchSound" Value="Sounds/Creatures/VO/sfx_dromad_vo_attack"/>
+    <tag Name="Species" Value="dromad" />
+    <tag Name="Culture" Value="Dromad" />
+		<stag Name="Contemporary" />
+  </object>
+
+<!-- UNIQUE -->
+<!-- Joppa -->
+<object Name="Mehmet" Inherits="WatervineFarmerJoppa">
+    <part Name="Render" DisplayName="Mehmet" ColorString="&amp;W" RenderString="f" Tile="bucklerparry_largerfolk/mehmet_fat.png" />
+    <part Name="Description" Short="=pronouns.Subjective= =verb:are:afterpronoun= a wind-carved man with the posture of a vinereaper; =pronouns.possessive= spine is bent to point the bright turquoise of =pronouns.possessive= eyes at the tilling angle, =pronouns.possessive= hips are pushed odd-forward with the slumping ease of a stance much more relaxed than =pronouns.possessive=. If it weren't for the salt on =pronouns.possessive= brow and the scarred knuckles, =pronouns.subjective= would seem a marble Saad perched under a crumbling tomb." />
+    <part Name="ConversationScript" ConversationID="Mehmet" />
+    <part Name="Brain" Wanders="false" Factions="Joppa-100" />
+    <removebuilder Name="RandomTile" />
+    <inventoryobject Blueprint="Vinewafer" Number="1-2" />
+    <stat Name="Level" Value="16" />
+    <stat Name="Hitpoints" Value="100" />
+    <mutation Name="MentalMirror" />
+    <skill Name="CookingAndGathering_Harvestry" />
+    <skill Name="Survival" />
+    <part Name="GivesRep" />
+    <!-- <tag Name="NoHateFactions" Value="Wardens,Fish,Dromad,Farmers" /> -->
+    <tag Name="Gender" Value="male" />
+    <tag Name="NoSleep" />
+    <tag Name="AllowIdleBehavior" Value="*delete" />
+    <tag Name="QuestGiver" Value="What's Eating the Watervine?" />
+    <tag Name="NoSignpost" />
+    <xtagGrammar Proper="true" />
+    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
+  </object>
+
+<!-- Grit Gate -->
+  <object Name="Q Girl" Inherits="Barathrumite">
+    <part Name="Render" DisplayName="Q Girl" ColorString="&amp;m" TileColor="&amp;Y" RenderString="b" Tile="bucklerparry_largerfolk/sw_bearman_1_fat.png" DetailColor="m" />
+    <part Name="Brain" Wanders="false" />
+    <part Name="ConversationScript" ConversationID="Q Girl" />
+    <part Name="FactionRank" Ranks="Barathrumites::meyvn" />
+    <stat Name="Strength" sValue="19" />
+    <stat Name="Intelligence" sValue="39" />
+    <stat Name="Willpower" sValue="26" />
+    <stat Name="Toughness" sValue="16" />
+    <stat Name="Agility" sValue="31" />
+    <stat Name="Ego" sValue="26" />
+    <stat Name="Hitpoints" Value="85" />
+    <part Name="Description" Short="=pronouns.Subjective==verb:'re:afterpronoun= an opal in the monochrome.
+
+=pronouns.Possessive= hair is a quasar of red ochre and indigo in the blanched light of the workshop. =pronouns.Possessive= cartilage is pierced by polyhedral rings that spin in antinomy to the cave's simple geometry. Beneath the quills =pronouns.possessive= skin is decorated in furcate lines, fantastic elaborations on the patterns of discarded circuitboards. =pronouns.Subjective==verb:'re:afterpronoun= surrounded by apparatuses of =pronouns.possessive= own creation. Through the harmony of those machines, =pronouns.subjective= =verb:cut= a swath through the entropic brine that sizzles around =pronouns.objective= in a loudening chorus." />
+    <stat Name="Level" Value="28" />
+    <skill Name="Customs_Tactful" />
+    <skill Name="Tinkering" />
+    <skill Name="Tinkering_Disassemble" />
+    <skill Name="Tinkering_Repair" />
+    <skill Name="Tinkering_ReverseEngineer" />
+    <skill Name="Tinkering_Tinker1" />
+    <skill Name="Tinkering_Tinker2" />
+    <skill Name="Pistol" />
+    <skill Name="Pistol_Akimbo" />
+    <part Name="GivesRep" />
+    <part Name="AISelfPreservation" Threshold="30" />
+    <tag Name="staticFaction3" Value=",friend,developing a quantum mechanical model" />
+    <tag Name="staticFaction2" Value=",dislike,=pronouns.possessive= queer appearance" />
+    <tag Name="staticFaction1" Value=",hate,questioning the legitimacy of their hierarchies" />
+    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
+    <tag Name="Gender" Value="female" />
+    <tag Name="PronounSet" Value="she/her" />
+    <xtagGrammar Proper="true" />
+    <property Name="WontSell" Value="Overloaded Laser Pistol" />
+    <inventoryobject Blueprint="BarathrumiteSafetyBand" Number="1" CellChance="100" CellFullChance="100" CellType="Chem Cell" />
+    <inventoryobject Blueprint="Ulnar Stimulators" Number="1" CellChance="100" CellFullChance="100" CellType="Chem Cell" />
+    <inventoryobject Blueprint="Strength Exo" Number="1" CellChance="100" CellFullChance="100" CellType="Chem Cell" />
+    <inventoryobject Blueprint="Plastifer Sneakers" Number="1" />
+    <inventoryobject Blueprint="Polyhedral Rings" Number="1" />
+		<inventoryobject Blueprint="Spiral Iron" Number="1" />
+    <inventoryobject Blueprint="Rough Agate" Number="0-1" />
+    <inventoryobject Blueprint="Rough Jasper" Number="0-1" />
+    <inventoryobject Blueprint="Rough Amethyst" Number="0-1" />
+    <inventoryobject Blueprint="Rough Sapphire" Number="0-1" />
+    <inventoryobject Blueprint="Rough Emerald" Number="0-1" />		
+    <inventoryobject Blueprint="Overloaded Laser Pistol" Number="2" CellChance="100" CellFullChance="100" CellType="Chem Cell" />
+    <inventoryobject Blueprint="CyberneticsCreditWedge_Cheap" Number="1" />
+    <xtagWaterRitual NoJoin="true" numRecipes="3" />
+    <tag Name="ReturnToGritGateAfterAttack" Value="32,10" />
+  </object>
+
+
+</objects>

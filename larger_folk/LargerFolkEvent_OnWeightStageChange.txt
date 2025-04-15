@@ -1,0 +1,85 @@
+using XRL.World;
+
+namespace LargerFolk
+{
+	public class LargerFolkEvent_OnWeightStageChange : ModPooledEvent<LargerFolkEvent_OnWeightStageChange>
+	{
+		// public new static readonly int ID = MinEvent.AllocateID();
+
+		public static readonly int CascadeLevel = CASCADE_EQUIPMENT | CASCADE_EXCEPT_THROWN_WEAPON;
+
+		public string Value;
+		
+		public GameObject Actor;
+		public int WeightStage;
+		public int LastWeightStage;
+		public int TotalCalories;
+
+		// public LargerFolkEvent_OnWeightStageChange() {
+		// 	base.ID = LargerFolkEvent_OnWeightStageChange.ID;
+		// }
+
+
+		// This is necessary for custom events that need the HandleEvent to be reflected.
+		public override bool WantInvokeDispatch() {
+			return true;
+		}
+
+		// // A static helper method to fire our event on a GameObject.
+		// // If it's a high-frequency event this should implement event pooling, rather than create a new MyCustomMinEvent each time.
+		// public static void Send(GameObject Object) {
+		// 	if (Object.WantEvent(LargerFolkEvent_OnWeightStageChange.ID, MinEvent.CascadeLevel)) {
+		// 		Object.HandleEvent(new LargerFolkEvent_OnWeightStageChange());
+		// 	} 
+		// 	// If you want to use an old event as a fallback, this is a good place to do so.
+		// 	if (obj.HasRegisteredEvent("OnWeightStageChange")) {
+		// 		obj.FireEvent(Event.New("OnWeightStageChange"));
+		// 	}
+		// }
+
+		// A static method that fires your event,
+        // this isn't strictly necessary but is how the game prefers to organize it
+        public static string GetFor(GameObject Object)
+        {
+            var E = FromPool();
+            Object.HandleEvent(E);
+
+            return E.Value;
+        }
+
+		// Resets the event before it's returned to the pool
+        public override void Reset()
+        {
+            base.Reset();
+            Value = null;
+        }
+
+		// How far our event will cascade,
+        // this example will cascade to equipped items
+		public override int GetCascadeLevel()
+        {
+            return CascadeLevel;
+        }
+		
+	}
+
+	public class LargerFolkEvent_OnWeightStageChange_Handler : IPart, IModEventHandler<LargerFolkEvent_OnWeightStageChange>
+    {
+
+        public override bool WantEvent(int ID, int Cascade)
+        {
+            return base.WantEvent(ID, Cascade)
+                   || ID == LargerFolkEvent_OnWeightStageChange.ID
+                ;
+        }
+
+        public bool HandleEvent(LargerFolkEvent_OnWeightStageChange E)
+        {
+			E.Value = "Handled!";
+            return true;
+        }
+
+    }
+
+	
+}

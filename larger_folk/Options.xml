@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<options>
+
+  <!-- 
+  Mod Options
+  -->
+    <option 
+		ID="Option_LargerFolk_DynamicWeightGainOn"
+	    DisplayText="Enable or disable the dynamic weight gain system. ({{R|new save}})"
+	    Category="Mods: Larger Folk"
+	    Type="Checkbox" 
+			Default="No"
+	>
+		<helptext>
+			Turn this on if you wanna try it out. If disabled, the fat sprites are used no matter what, and weight-based effects like stuckage and chair-breaking will not occur.
+
+			The default is {{w|Disabled}}.
+		</helptext>
+	</option>
+	
+	<option 
+		ID="Option_LargerFolk_ArmorEffects"
+	    DisplayText="Enable or disable armor-based weight gain effects such as breaking when too fat (DOESN'T WORK WELL, WORK IN PROGRESS). ({{R|new save}})"
+	    Category="Mods: Larger Folk"
+	    Type="Checkbox" 
+			Default="No"
+	>
+		<helptext>
+			Turn it on if you reaaally want to try it out, but it's very basic and buggy.
+
+			The default is {{w|Disabled}}.
+		</helptext>
+	</option>
+  <!-- 	<option 
+		ID="Option_LargerFolk_DynamicWeightGainOn"
+	    Requires="Option_GigantismPlus_EnableGiganticStartingGear==Yes"
+	    DisplayText="Include starting grenades ({{R|new save}})"
+	    Category="Mods: Gigantism Plus"
+	    Type="Checkbox" 
+			Default="No"
+	>
+		<helptext>
+			The {{gigantic|gigantic}} modifier typically increases the radius of grenades which could represent a significant reduction in starting difficulty for characters who generate with several of them.
+
+			The default is {{w|Disabled}}.
+		</helptext>
+	</option>
+
+	<option
+		ID="Option_GigantismPlus_EnableGigantismRapidAdvance"
+	    DisplayText="Make {{gigantic|Gigantism}} ({{r|D}}) eligible for rapid advancement"
+	    Category="Mods: Gigantism Plus"
+	    Type="Checkbox"
+			Default="Yes"
+	>
+		<helptext>
+			({{r|D}})efects aren't typically able to be leveled up and are excluded from rapid advancement by default.
+			When enabled, {{gigantism|Gigantism}} ({{r|D}}) will be included in the list of physical mutations for this purpose.
+
+			The default is {{w|Enabled}}.
+		</helptext>
+	</option>
+	
+	<option 
+		ID="Option_GigantismPlus_SelectGiganticTinkering"
+	    DisplayText="Make the {{gigantic|gigantic}} modifier tinkerable"
+	    Category="Mods: Gigantism Plus"
+	    Type="Checkbox"
+			Default="Yes"
+	>
+		<helptext>
+      This makes the {{gigantic|gigantic}} modifier tinkerable, including the availability of the data disk for it.
+      Its tech tier has been adjusted up to 3 so that it will cost at least a {{b|3}} bit to tinker.
+      Tinker I is the required skill.
+      
+      The default is {{w|Enabled}}.
+    </helptext>
+	</option>
+	
+	<option 
+		ID="Option_GigantismPlus_SelectGiganticDerarification"
+	    DisplayText="Make {{gigantic|gigantic}} items slightly more common"
+	    Category="Mods: Gigantism Plus"
+	    Type="Checkbox"
+			Default="Yes"
+	>
+		<helptext>
+      This makes {{gigantic|gigantic}} items a little less rare to find by adjusting their rarity from R2 to R.
+      Some examples of other mods with R rarity: {{spiked|Spiked}}, {{k|Nulling}}, and {{C|Radio Powered}}.
+
+      The default is {{w|Enabled}}.
+    </helptext>
+	</option> -->
+
+  <!-- 
+  End of Mod Options
+  -->
+	
+</options>
