@@ -1,3 +1,5 @@
+Clone the repository for whatever latest hottest changes i've pushed recently, check releases for the old beta and (eventually) big major releases with all-tested changes!
+
 To install, go to the user folder of your computer, and navigate to 
 AppData>LocalLow>Freehold Games>CavesOfQud. 
 drag the larger_folk folder from the zip into the Mods folder, if there's no "Mods" folder, create a folder called "Mods"
