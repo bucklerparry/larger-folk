@@ -8556,7 +8556,7 @@ You may activate this item to conjure a force field in front of you. Robots will
   <object Name="Corpse" Inherits="Item">
     <part Name="Render" DisplayName="[Corpse]" Tile="items/sw_splat1.bmp" TileColor="&amp;r" DetailColor="w" RenderString="%" ColorString="&amp;w" RenderLayer="5" />
     <part Name="Food" Satiation="Meal" Gross="true" IllOnEat="true" />
-    <part Name="LargerFolk_FoodCalories" Calories="1500"/>
+    <part Name="LargerFolk_FoodCalories" Calories="1000"/>
     <part Name="Physics" Category="Corpses" Weight="5" Organic="true" />
     <part Name="Description" Short="A corpse." />
     <part Name="Springy" Factor="0.5" />
@@ -8576,6 +8576,7 @@ You may activate this item to conjure a force field in front of you. Robots will
 	<object Name="Animal Corpse" Inherits="Corpse">
 		<part Name="Description" Short="A mound of wet hair and rotting flesh puts some elevation to the ground." />
 		<part Name="Physics" Weight="40" />
+     <part Name="LargerFolk_FoodCalories" Calories="1000"/>
 		<part Name="Food" Message="The meat is tough." />
 		<tag Name="BaseObject" Value="*noinherit" />
 	</object>
@@ -8583,11 +8584,13 @@ You may activate this item to conjure a force field in front of you. Robots will
 		<part Name="Description" Short="A small mound of wet hair and rotting flesh puts a bump in the ground." />
 		<part Name="Physics" Weight="10" />
 		<part Name="Food" Message="The meat is tough." />
+    <part Name="LargerFolk_FoodCalories" Calories="800"/>
 		<tag Name="BaseObject" Value="*noinherit" />
 	</object>
 	<object Name="Humanoid Corpse" Inherits="Corpse">
 		<part Name="Description" Short="A mound of wet hair and rotting flesh puts some elevation to the ground." />
 		<part Name="Physics" Weight="80" />
+     <part Name="LargerFolk_FoodCalories" Calories="1500"/>
 		<part Name="Food" Message="The meat is tough." />
 		<tag Name="DynamicObjectsTable:HumanoidCorpses" />
 		<tag Name="BaseObject" Value="*noinherit" />		
@@ -8596,6 +8599,7 @@ You may activate this item to conjure a force field in front of you. Robots will
 		<part Name="Description" Short="Its torso is downside up and sprouts a bouquet of crumpled legs." />
 		<part Name="Physics" Weight="30" />
 		<part Name="Food" Message="Crunching through the exoskeleton gives way to soft meat that dissolves on your tongue." />
+     <part Name="LargerFolk_FoodCalories" Calories="1000"/>
 		<tag Name="BaseObject" Value="*noinherit" />
 	</object>
 	<object Name="Crab Corpse" Inherits="Arthropod Corpse">
@@ -8616,6 +8620,7 @@ You may activate this item to conjure a force field in front of you. Robots will
 	<object Name="Fish Corpse" Inherits="Corpse">
 		<part Name="Description" Short="Wet scales lay in flat tessellation." />
 		<part Name="Physics" Weight="5" />
+    <part Name="LargerFolk_FoodCalories" Calories="500"/>
 		<part Name="Food" Message="Soft meat slips off the pin bones." />
 		<tag Name="BaseObject" Value="*noinherit" />
 	</object>

@@ -8,6 +8,7 @@ using XRL.UI;
 using XRL.World.Anatomy;
 using XRL.World.Capabilities;
 using XRL.World.Effects;
+using XRL.Rules;
 using XRL.World.Parts.Mutation;
 
 
@@ -65,13 +66,23 @@ public class LargerFolk_WeightGain : IPart
 
     public override bool FireEvent(Event E)
     {
-        if (E.ID == "AfterMoved" && CanExercise)
+        if (E.ID == "AfterMoved")
         {
-            if (ParentObject.HasPart<Stomach>() && ParentObject.GetPart<Stomach>().HungerLevel > 0)
+            if (CanExercise)
             {
-                ChangeCalories(-2);
+                if (ParentObject.HasPart<Stomach>() && ParentObject.GetPart<Stomach>().HungerLevel > 0)
+                {
+                    ChangeCalories(-2);
+                }
             }
             
+            if (WeightStage >= 3)
+            {
+                if (Stat.Random(1, 4) == 1)
+                {
+                    ParentObject.ApplyEffect(new LargerFolk_ImmobileStuck(12, 25, "Web Stuck Restraint", null, "stuck", "in", ParentObject.ID));
+                }
+            }
         }
 
         return base.FireEvent(E);
@@ -155,6 +166,16 @@ public class LargerFolk_WeightGain : IPart
             }
             
             WeightStage = 1;
+
+            // BodyPart bodyPart = ParentObject.Body
+		    // if (bodyPart != null)
+		    // {
+		    // 	string managerID = ManagerID;
+		    // 	bool? extrinsic = true;
+		    // 	string[] orInsertBefore = new string[2] { "Feet", "Roots" };
+		    // 	bodyPart.AddPartAt("Icy Outcrop", 0, null, null, null, null, managerID, null, null, null, null, null, null, null, extrinsic, null, null, null, null, null, "Icy Outcrop", orInsertBefore);
+		    // 	TryGrowMushroom();
+		    // }
         }
         else if ((TotalCalories < CalorieThresholdFat) && (WeightStage >= 1))
         {

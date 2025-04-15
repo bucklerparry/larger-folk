@@ -22,7 +22,7 @@
     <part Name="Springy" Factor="0.8" />
     <tag Name="BaseObject" Value="*noinherit" />
     <part Name="Food" Satiation="Meal" />
-    <part Name="LargerFolk_FoodCalories" Calories="500" />
+    <part Name="LargerFolk_FoodCalories" Calories="800" />
     <tag Name="Breakable" Value="*delete"/>
 	  <tag Name="EquipSound" Value="sfx_equip_material_generic_organic" />
     <stag Name="Food" />
@@ -32,6 +32,7 @@
     <part Name="Physics" Category="Food" Weight="1" />
     <tag Name="BaseObject" Value="*noinherit" />
     <part Name="Food" Satiation="Snack" />
+    <part Name="LargerFolk_FoodCalories" Calories="300" />
     <tag Name="Meat" />		
   </object>
   <object Name="Snack" Inherits="Food">
@@ -39,6 +40,7 @@
     <part Name="Physics" Category="Food" Weight="1" />
     <tag Name="BaseObject" Value="*noinherit" />
     <part Name="Food" Satiation="Snack" />
+    <part Name="LargerFolk_FoodCalories" Calories="300" />
   </object>
   <object Name="Preservable" Inherits="Snack">
     <part Name="Render" DisplayName="[preservable]" RenderString="%" ColorString="&amp;R" DetailColor="g" RenderLayer="5" Tile="Items/sw_apple.bmp" />
@@ -643,6 +645,7 @@ Your {{Y|Ego}} is reduced by {{C|1}}" />
   <object Name="Taco Suprema" Inherits="Food">
     <part Name="Render" DisplayName="{{m|taco suprema}}" Tile="Items/sw_taco.bmp" RenderString="%" RenderLayer="5" DetailColor="m" />
     <part Name="Food" Thirst="15000" Message="A divine crisp dissolves into salted manna." />
+    <part Name="LargerFolk_FoodCalories" Calories="6000" />
     <part Name="Physics" Weight="0" />
     <part Name="Commerce" Value="500" />
     <part Name="Description" Short="Thin and ancient paper, a palimpsest of grease, wraps the crisp saddle of fried wafer. Seven strata of congealed nectar fill the crispy cleft." />
@@ -883,6 +886,7 @@ Your {{Y|Ego}} is reduced by {{C|1}}" />
     <part Name="Render" DisplayName="{{w|canned Have-It-All}}" Tile="Items/sw_can.bmp" ColorString="&amp;w" TileColor="&amp;y" DetailColor="w" />
     <part Name="Description" Short="The stencil on the tin depicts an animal with claws, or are they hooves? Snoods (or horns? antlers?) pucker its nose and brow. Shaggy, knotted fur, or ruffled feathers, sheath it from the heat (or cold)." />
     <part Name="Food" Satiation="Snack" />
+    <part Name="LargerFolk_FoodCalories" Calories="1500" />
     <tag Name="Meat" />
     <tag Name="Plant" />
     <tag Name="AlwaysStack" Value="*delete"/>
@@ -911,6 +915,7 @@ Your {{Y|Ego}} is reduced by {{C|1}}" />
     <part Name="Render" DisplayName="food cube" Tile="items/sw_cube.bmp" DetailColor="g" />
     <part Name="Description" Short="Spongy foodstuff molded into a slate-hued cube of perfect proportions. What forces married the messiness of eating with the precision of cubes?" />
     <part Name="Food" Satiation="Meal" />
+    <part Name="LargerFolk_FoodCalories" Calories="1500" />
     <tag Name="Meat" />
     <tag Name="Plant" />
     <tag Name="AlwaysStack" Value="*delete"/>
