@@ -1,4 +1,4 @@
-Clone the repository for whatever latest hottest changes i've pushed recently, check releases for the old beta and (eventually) big major releases with all-tested changes!
+Clone the repository with the big green button for whatever latest hottest changes i've pushed recently, check releases for the old beta and (eventually) big major releases with all-tested changes!
 
 To install, go to the user folder of your computer, and navigate to 
 AppData>LocalLow>Freehold Games>CavesOfQud. 
