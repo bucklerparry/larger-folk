@@ -111,7 +111,7 @@ public class LargerFolk_WeightGain : IPart
                     }
                     else if (ParentObject.HasPart<LargerFolk_FatFetish>())
                     {
-                        StageChangePlayerPopup("Your efforts have paid dividends. You can feel your plush body spread out far past its original bounds, testament to your boundless appetite.\nThe price of your decadence is your mobility, but you can't help but blush even at that.\n You are now immobile, and have never felt better.");
+                        StageChangePlayerPopup("Your efforts have paid dividends. You can feel your plush body spread out far past its original bounds, testament to your incredible appetite.\nThe price of your decadence is your mobility, but you can't help but blush even at that.\n You are now immobile, and have never felt better.");
                     }
                     else
                     {
@@ -136,7 +136,7 @@ public class LargerFolk_WeightGain : IPart
             }
             else if (WeightStage > 2)
             {
-                if (ParentObject.IsPlayer()) StageChangePlayerPopup("Your lack of caloric intake is apparent, even on your plush form.\nYou have slimmed down to mere obesity.");
+                if (ParentObject.IsPlayer()) StageChangePlayerPopup("Your lack of caloric intake has started showing, even on your plush form.\nYou have slimmed down to mere obesity.");
                 else ParentObject.EmitMessage(new string(ParentObject.GetDisplayName(int.MaxValue, null, null, AsIfKnown: false, Single: false, NoConfusion: false, NoColor: false, Stripped: true, ColorOnly: false, Visible: true, WithoutTitles: false, ForSort: false, Short: true, BaseOnly: false, WithIndefiniteArticle: false, WithDefiniteArticle: false, null, IndicateHidden: false, Capitalize: false, SecondPerson: false, Reflexive: false, true) + " has lost weight, and become obese.") );
                 
             }

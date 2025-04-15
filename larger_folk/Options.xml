@@ -6,7 +6,7 @@
   -->
     <option 
 		ID="Option_LargerFolk_DynamicWeightGainOn"
-	    DisplayText="Enable or disable the dynamic weight gain system. ({{R|new save}})"
+	    DisplayText="Dynamic Weight Gain ({{R|new save}})"
 	    Category="Mods: Larger Folk"
 	    Type="Checkbox" 
 			Default="No"
@@ -20,7 +20,7 @@
 	
 	<option 
 		ID="Option_LargerFolk_ArmorEffects"
-	    DisplayText="Enable or disable armor-based weight gain effects such as breaking when too fat (DOESN'T WORK WELL, WORK IN PROGRESS). ({{R|new save}})"
+	    DisplayText="Armor-Based Weight Effects (DOESN'T WORK WELL, WORK IN PROGRESS). ({{R|new save}})"
 	    Category="Mods: Larger Folk"
 	    Type="Checkbox" 
 			Default="No"
