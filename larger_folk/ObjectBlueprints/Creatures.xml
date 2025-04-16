@@ -1781,7 +1781,7 @@ The infant child is unaware
     <tag Name="DynamicObjectsTable:Corpses" />
   </object>
   <object Name="Ray Cat" Inherits="BaseCat">
-    <part Name="Render" DisplayName="ray cat" Tile="creatures/sw_cat.bmp" RenderString="l" ColorString="&amp;m" DetailColor="y" />
+    <part Name="Render" DisplayName="ray cat" Tile="bucklerparry_largerfolk/cat_fat.png" RenderString="l" ColorString="&amp;m" DetailColor="y" />
     <part Name="Corpse" CorpseChance="50" CorpseBlueprint="Ray Cat Corpse" />
     <stat Name="AV" Value="0" />
     <stat Name="Level" Value="1" />
@@ -4013,7 +4013,7 @@ The infant child is unaware
     <tag Name="Tier" Value="3" />    
   </object>  
   <object Name="Chitinous Puma" Inherits="BaseCat">
-    <part Name="Render" DisplayName="chitinous puma" Tile="creatures/sw_cat.bmp" RenderString="l" ColorString="&amp;W" />
+    <part Name="Render" DisplayName="chitinous puma" Tile="bucklerparry_largerfolk/cat_fat.png" RenderString="l" ColorString="&amp;W" />
     <part Name="Corpse" CorpseChance="5" CorpseBlueprint="Chitinous Puma Corpse" />
     <stat Name="AV" Value="7" />
     <stat Name="Level" Value="12" />
@@ -8664,7 +8664,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
     <tag Name="TitleIfNamed" Value="arch dervish of the Sightless Way" />
   </object>
   <object Name="Astral Tabby" Inherits="BaseCat">
-    <part Name="Render" DisplayName="astral tabby" Tile="creatures/sw_kitty.bmp" RenderString="c" ColorString="&amp;K" DetailColor="y" />
+    <part Name="Render" DisplayName="astral tabby" Tile="bucklerparry_largerfolk/kitty_fat.png" RenderString="c" ColorString="&amp;K" DetailColor="y" />
     <part Name="Description" Short="=pronouns.Subjective= =verb:flicker:afterpronoun= behind =pronouns.possessive= marble coat, synchronously inhabiting this dimension while stalking the dreamy corridors of =pronouns.possessive= own chimeric world." />
     <stat Name="AV" Value="3" />
     <stat Name="Level" Value="36" />
@@ -12976,9 +12976,9 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
     <xtagGrammar Proper="true" />
   </object>
   <object Name="Ctesiphus" Inherits="Ray Cat">
-    <part Name="Render" DisplayName="Ctesiphus" Tile="creatures/sw_kitty.bmp" RenderString="l" ColorString="&amp;m" DetailColor="y" />
+    <part Name="Render" DisplayName="Ctesiphus" Tile="bucklerparry_largerfolk/kitty_fat.png" RenderString="l" ColorString="&amp;m" DetailColor="y" />
     <part Name="Brain" Wanders="True" Calm="True" Factions="Joppa-100" />
-    <part Name="Description" Short="One star-ribboned night, a ray cat crossed the marshy loam and wandered into Joppa. The watervine farmers, wakened by the joyful cries of a small girl, gathered around to revel at the favorable omen and extol the generosity of the Beetle Moon. Since then, Ctesiphus =verb:have= spent =pronouns.possessive= days curled under the shade of brinestalk huts and sauntering over dirt paths. So long as =pronouns.subjective==verb:'re:afterpronoun= approached with care, =pronouns.subjective= =verb:welcome:afterpronoun= the hands of friends and strangers alike.
+    <part Name="Description" Short="One star-ribboned night, a ray cat crossed the marshy loam and wandered into Joppa. The watervine farmers, wakened by the joyful cries of a small girl, gathered around to revel at the favorable omen and extol the generosity of the Beetle Moon. Since then, Ctesiphus =verb:have= spent =pronouns.possessive= days curled under the shade of brinestalk huts and sauntering over dirt paths. Comfortable, and very well-fed. So long as =pronouns.subjective==verb:'re:afterpronoun= approached with care, =pronouns.subjective= =verb:welcome:afterpronoun= the hands of friends and strangers alike.
 
 &amp;mphosphorescent&amp;y" />
     <part Name="Raycat" />
