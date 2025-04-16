@@ -3093,6 +3093,7 @@ The infant child is unaware
     <part Name="Render" DisplayName="salthopper" Tile="bucklerparry_largerfolk/salthopper_fat.png" RenderString="i" ColorString="&amp;Y" />
     <part Name="Corpse" CorpseChance="8" CorpseBlueprint="Salthopper Corpse" />
     <stat Name="Strength" Boost="1" />
+    <stat Name="Speed" Value="0" />
     <stat Name="AV" Value="3" />
     <stat Name="Level" Value="9" />
     <stat Name="Hitpoints" Value="24" />    
@@ -3116,6 +3117,22 @@ The infant child is unaware
     <part Name="Render" DisplayName="salthopper corpse" />        
     <part Name="Butcherable" OnSuccess="@Salthopper Corpse" />
     <tag Name="Tier" Value="2" />
+  </object>
+  <object Name="Obese Salthopper" Inherits="Salthopper">
+    <part Name="Render" DisplayName="salthopper" Tile="bucklerparry_largerfolk/salthopper_obese.png" RenderString="i" ColorString="&amp;Y" />
+    <part Name="Corpse" CorpseChance="8" CorpseBlueprint="Salthopper Corpse" />
+    <stat Name="Strength" Boost="1" />
+    <stat Name="AV" Value="3" />
+    <stat Name="Level" Value="9" />
+    <stat Name="Hitpoints" Value="24" />    
+    <part Name="Brain" Mobile="false" Hostile="false" />
+    <part Name="Description" Short="An overindulgent Salthopper, rendered a mass of wobbling flesh filling its carapace near to bursting." />
+    <tag Name="Role" Value="Brute" />
+    <skill Name="Endurance" />
+    <skill Name="Tactics_Run" />
+    <tag Name="Species" Value="salthopper" />
+    <tag Name="DynamicObjectsTable:DesertCanyon_Creatures" />
+    <tag Name="DynamicObjectsTable:Flowerfields_Creatures" />
   </object>
   <object Name="Seedsprout Worm" Inherits="BaseWorm">
     <part Name="Render" DisplayName="seedsprout worm" Tile="Creatures/sw_sprouting_worm.bmp" RenderString="w" ColorString="&amp;G" DetailColor="g" />
