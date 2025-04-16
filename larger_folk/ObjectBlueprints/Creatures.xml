@@ -4315,7 +4315,7 @@ The infant child is unaware
     <tag Name="Role" Value="Brute" />
   </object>
   <object Name="Ice frog" Inherits="BaseFrog">
-    <part Name="Render" DisplayName="ice frog" Tile="Creatures/sw_frog.bmp"  RenderString="f" ColorString="&amp;C" DetailColor="W" />
+    <part Name="Render" DisplayName="ice frog" Tile="bucklerparry_largerfolk/ice_frog_fat.png"  RenderString="f" ColorString="&amp;C" DetailColor="W" />
     <part Name="Body" Anatomy="Frog" />
     <part Name="Corpse" CorpseChance="10" CorpseBlueprint="Ice frog corpse" />
     <part Name="Brain" Hostile="false" />
@@ -5935,7 +5935,7 @@ The infant child is unaware
     <tag Name="DynamicObjectsTable:BananaGrove_Creatures" />
   </object>
   <object Name="Bloated Pearlfrog" Inherits="BaseFrog">
-    <part Name="Render" DisplayName="bloated pearlfrog" Tile="Creatures/sw_giant_frog.bmp" RenderString="F" ColorString="&amp;Y" DetailColor="g" />
+    <part Name="Render" DisplayName="bloated pearlfrog" Tile="bucklerparry_largerfolk/bloated_pearlfrog_fat.png" RenderString="F" ColorString="&amp;Y" DetailColor="g" />
     <part Name="Description" Short="Depigmented belly skin is tumefied with crushed insect matter into a gigantic and ripe pearl. Its legs have been resorbed by fat; the art of jumping mastered by its forebears survives only through ancestral memory." />
     <part Name="Corpse" CorpseChance="20" CorpseBlueprint="Bloated Pearlfrog Corpse" />
     <part Name="Brain"  Wanders="false" Mobile="false" />
@@ -7933,7 +7933,7 @@ The infant child is unaware
 		<part Name="MeleeWeapon" BaseDamage="3d3" Skill="ShortBlades" Slot="Face" />
 	</object>
 	<object Name="Enigma Snail" Inherits="BaseSnail">
-    <part Name="Render" DisplayName="enigma snail" Tile="creatures/sw_cone_snail.bmp" RenderString="q" ColorString="&amp;B" TileColor="&amp;W" DetailColor="B" />
+    <part Name="Render" DisplayName="enigma snail" Tile="bucklerparry_largerfolk/enigma_snail_fat.png" RenderString="q" ColorString="&amp;B" TileColor="&amp;W" DetailColor="B" />
     <part Name="Description" Short="A giant cone of calcereous shell conceals a softform body. It tilts to the side, and its many whorls are sequenced to impress the eye with pleasing geometry before swerving to uncomfortable and dizzying disharmony." />
     <part Name="Corpse" CorpseChance="20" CorpseBlueprint="Enigma Snail Corpse" />
     <part Name="Brain" MaxKillRadius="6" />
@@ -11453,7 +11453,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
 	</object>
 	<object Name="Qas" Inherits="BaseNephal">
 		<part Name="Body" Anatomy="Quadruped" />
-		<part Name="Render" DisplayName="Qas" Tile="Creatures/nephilim_qas.bmp" DetailColor="c" />
+		<part Name="Render" DisplayName="Qas" Tile="bucklerparry_largerfolk/girsh_qas_fat.png" DetailColor="c" />
 		<part Name="Description" Short="A creature of immensity mounts the upper eyeline. Quantized force has shaped =pronouns.possessive= behemoth muzzle to an uncanny square-shape, and tresses of potential energy wash =pronouns.possessive= withers to an unmeaning blur. Beneath =pronouns.possessive= slumping barrel, elephantine knees are locked at right angles. Finally, irisdual light churning under =pronouns.possessive= tx-glass skin is filtered to a polar hue and radiates out of body in lituus spirals." />
 		<part Name="Spawner" SpawnBlueprint="Polarized Girshling Cresh" SpawnCheckBlueprint="Polarized Girshling" />
 		<part Name="DropOnDeath" Blueprints="LightCircleQas" />
