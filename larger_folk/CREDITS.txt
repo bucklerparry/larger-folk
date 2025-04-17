@@ -3,3 +3,6 @@ All sprites/scripts not credited here are by bucklerparry! (bucklerparry.bsky.so
 
 Bukie (chubbukie.bsky.social)
 - humor_fat.png
+- gyrohumor_fat.png
+- panhumor_fat.png
+- soupy_sludge_fat.png

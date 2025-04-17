@@ -6067,7 +6067,7 @@ The infant child is unaware
     <stat Name="AcidResistance" Value="15" />
   </object>
   <object Name="Gyrohumor" Inherits="BaseOoze">
-    <part Name="Render" DisplayName="gyrohumor" Tile="Creatures/sw_gyrohumor.bmp"  RenderString="J" ColorString="&amp;C" />
+    <part Name="Render" DisplayName="gyrohumor" Tile="bucklerparry_largerfolk/gyrohumor_fat.png"  RenderString="J" ColorString="&amp;C" />
     <part Name="Description" Short="Humors are the eroded bits of the earth: dust flaked off a million-year-old wall of shale, runoff brine dripped through a hairline crack of chrome, dew clung to the lips of a pipe after it's belched its septic vapor. Under the right conditions, at time scales inscrutable to kith and kin, the bits are heaped together by the geometry of entropy and remorphed into the prime material anew." />
     <stat Name="Level" Value="22" />
     <stat Name="AV" Value="9" />
@@ -6951,7 +6951,7 @@ The infant child is unaware
 	<!-- POINTER: Gyre Wight of Bethsaida - Tier 4 -->
 	<!-- POINTER: Gyre Wight of Shug'ruith - Tier 4 -->
 	<object Name="Gyre Wight of Rermadon" Inherits="BaseGyreWight">
-		<part Name="Render" DisplayName="gyre wight of Rermadon" Tile="bucklerparry_largerfolk_fat/wight_rermadon_fat.png" ColorString="&amp;G" TileColor="&amp;m" DetailColor="G" />
+		<part Name="Render" DisplayName="gyre wight of Rermadon" Tile="bucklerparry_largerfolk/wight_rermadon_fat.png" ColorString="&amp;G" TileColor="&amp;m" DetailColor="G" />
 		<part Name="Description" Short="A figure is marked by star orchid robes as a votary of the Gyre and reveler in the metamorphic numen. Nails filth-black flash from out =pronouns.possessive= sleeve in a gesture-poem to say that plague is but transmutation, death is the ladder to life, and the existence of children proves the prelacy of raw growth. =pronouns.Subjective= =verb:smell:afterpronoun= of burning fish guts." />
 		<stat Name="Hitpoints" Value="100" />
 		<stat Name="Level" Value="22" />
@@ -7459,7 +7459,7 @@ The infant child is unaware
     <tag Name="Tier" Value="6" />    
   </object>
   <object Name="Panhumor" Inherits="BaseOoze">
-    <part Name="Render" DisplayName="panhumor" Tile="Creatures/sw_panhumor.bmp"  RenderString="J" ColorString="&amp;y" />
+    <part Name="Render" DisplayName="panhumor" Tile="bucklerparry_largerfolk/panhumor_fat.png"  RenderString="J" ColorString="&amp;y" />
     <stat Name="Level" Value="27" />
     <stat Name="AV" Value="5" />
     <stat Name="DV" Value="0" />
@@ -10029,7 +10029,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
 
   <!-- Soup sludges -->
   <object Name="SoupSludge" Inherits="BaseOoze">
-    <part Name="Render" DisplayName="{{c|soupy}} sludge" RenderString="J" ColorString="&amp;c" DetailColor="C" Tile="Creatures/sw_sludge.bmp" />
+    <part Name="Render" DisplayName="{{c|soupy}} sludge" RenderString="J" ColorString="&amp;c" DetailColor="C" Tile="bucklerparry_largerfolk/soupy_sludge_fat.png" />
     <part Name="Description" Short="Quickened to life, or something akin to life, by the ionic exchange between an ultra-reactive primordial soup and its liquid cousin, the sludge repeats a process played out on trillions of star-orbiting world-rocks." />
     <part Name="Corpse" CorpseChance="0" />
     <stat Name="Hitpoints" Value="75" />
