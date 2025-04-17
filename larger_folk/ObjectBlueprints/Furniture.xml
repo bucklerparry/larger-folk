@@ -5534,7 +5534,7 @@ The frame forms half a heart; the Eaters' favorite remains." />
 		<tag Name="WorshipPower" Value="6" />
 	</object>
 	<object Name="QasShrine" Inherits="NephilimShrine">
-		<part Name="Render" DisplayName="shrine to Girsh Qas" Tile="Furniture/nephilim_statue_qas.bmp" />
+		<part Name="Render" DisplayName="shrine to Girsh Qas" Tile="bucklerparry_largerfolk/statue_qas_fat.png" />
 		<part Name="Description" Short="The halfgod kneels on hinds worked wide in old stone. Tiled polygons spill off the statue's base to evoke Qas's rightening of space, time, mountain, and village. Generations of moss skirt the beast's treecutter hooves." />
 		<tag Name="Worshippable" />
 		<tag Name="WorshippedAs" Value="Qas" />
