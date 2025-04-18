@@ -43,6 +43,7 @@ namespace XRL.World.Parts
                     WeightStage_3 = WeightStage_2;
                 }
             }
+            
 			return;
 		}
 

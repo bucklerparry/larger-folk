@@ -6,3 +6,4 @@ Bukie (chubbukie.bsky.social)
 - gyrohumor_fat.png
 - panhumor_fat.png
 - soupy_sludge_fat.png
+- gelatinous_wedge_fat.png

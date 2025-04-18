@@ -3090,8 +3090,7 @@ The infant child is unaware
     <tag Name="Species" Value="knollworm" />
   </object>
   <object Name="Salthopper" Inherits="BaseInsect">
-    <part Name="Render" DisplayName="salthopper" Tile="Assets_Content_Textures_Creatures_sw_salthopper.bmp" RenderString="i" ColorString="&amp;Y" />
-    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Assets_Content_Textures_Creatures_sw_salthopper.bmp" WeightStage_1="bucklerparry_largerfolk/salthopper_fat.png" WeightStage_2="bucklerparry_largerfolk/salthopper_fat.png" WeightStage_3="bucklerparry_largerfolk/salthopper_obese.png"/>
+    <part Name="Render" DisplayName="salthopper" Tile="bucklerparry_largerfolk/salthopper_fat.png" RenderString="i" ColorString="&amp;Y" />
     <part Name="Corpse" CorpseChance="8" CorpseBlueprint="Salthopper Corpse" />
     <stat Name="Strength" Boost="1" />
     <stat Name="AV" Value="3" />
@@ -3744,7 +3743,7 @@ The infant child is unaware
 
   <!-- Naphtaali -->
   <object Name="BaseWoodsprog" Inherits="BaseHumanoid">
-    <part Name="Render" DisplayName="woodsprog" RenderString="n" ColorString="&amp;w" Tile="Creatures/woodsprog.bmp" DetailColor="g" />
+    <part Name="Render" DisplayName="woodsprog" RenderString="n" ColorString="&amp;w" Tile="bucklerparry_largerfolk/woodsprog_fat.png" DetailColor="g" />
     <part Name="Description" Short="A body time-fit to living in the smalls of spiral roots is kept warm by a layer of symbiotic moss-fur. Bright eyes scan the forest points and then soften toward the stars." />
     <part Name="Corpse" CorpseChance="25" CorpseBlueprint="Woodsprog Corpse" />
     <part Name="Brain" Wanders="true" Factions="Prey-100" />
@@ -4238,7 +4237,7 @@ The infant child is unaware
 		<part Name="MeleeWeapon" BaseDamage="2d2" Skill="Cudgel" Stat="Strength" Slot="Foot" />		
 	</object>
 	<object Name="Gelatinous Wedge" Inherits="BaseOoze">
-		<part Name="Render" DisplayName="gelatinous wedge" Tile="Creatures/sw_wedge.bmp"  RenderString="J" ColorString="&amp;c" DetailColor="C" />
+		<part Name="Render" DisplayName="gelatinous wedge" Tile="bucklerparry_largerfolk/gelatinous_wedge_fat.png"  RenderString="J" ColorString="&amp;c" DetailColor="C" />
 		<part Name="Description" Short="Organic matter is liquefied by the agents of decay and pressurized by tight spaces into the shapes of prismatoids. Galvanized by a cousin-instinct to hunger, the gelatin entity now extrudes itself forward in wedge form." />
 		<stat Name="Level" Value="13" />
 		<tag Name="Role" Value="Tank" />
