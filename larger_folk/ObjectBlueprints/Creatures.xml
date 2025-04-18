@@ -3090,10 +3090,10 @@ The infant child is unaware
     <tag Name="Species" Value="knollworm" />
   </object>
   <object Name="Salthopper" Inherits="BaseInsect">
-    <part Name="Render" DisplayName="salthopper" Tile="bucklerparry_largerfolk/salthopper_fat.png" RenderString="i" ColorString="&amp;Y" />
+    <part Name="Render" DisplayName="salthopper" Tile="Assets_Content_Textures_Creatures_sw_salthopper.bmp" RenderString="i" ColorString="&amp;Y" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Assets_Content_Textures_Creatures_sw_salthopper.bmp" WeightStage_1="bucklerparry_largerfolk/salthopper_fat.png" WeightStage_2="bucklerparry_largerfolk/salthopper_fat.png" WeightStage_3="bucklerparry_largerfolk/salthopper_obese.png"/>
     <part Name="Corpse" CorpseChance="8" CorpseBlueprint="Salthopper Corpse" />
     <stat Name="Strength" Boost="1" />
-    <stat Name="Speed" Value="0" />
     <stat Name="AV" Value="3" />
     <stat Name="Level" Value="9" />
     <stat Name="Hitpoints" Value="24" />    
@@ -3119,18 +3119,21 @@ The infant child is unaware
     <tag Name="Tier" Value="2" />
   </object>
   <object Name="Obese Salthopper" Inherits="Salthopper">
-    <part Name="Render" DisplayName="salthopper" Tile="bucklerparry_largerfolk/salthopper_obese.png" RenderString="i" ColorString="&amp;Y" />
+    <part Name="Render" DisplayName="immobilized salthopper" Tile="bucklerparry_largerfolk/salthopper_obese.png" RenderString="i" ColorString="&amp;Y" />
     <part Name="Corpse" CorpseChance="8" CorpseBlueprint="Salthopper Corpse" />
     <stat Name="Strength" Boost="1" />
+    <part Name="Physics" Solid="false" />
     <stat Name="AV" Value="3" />
     <stat Name="Level" Value="9" />
     <stat Name="Hitpoints" Value="24" />    
-    <part Name="Brain" Mobile="false" Hostile="false" />
-    <part Name="Description" Short="An overindulgent Salthopper, rendered a mass of wobbling flesh filling its carapace near to bursting." />
+    <part Name="Brain" Mobile="false" Hostile="false" Factions="Playerneutral-100" />
+    <part Name="Description" Short="An overindulgent Salthopper, rendered a mass of wobbling flesh within an overtaxed carapace. =pronouns.Subjective= pants softly, content with futile wobbling as =pronouns.possessive= sole pasttime." />
     <tag Name="Role" Value="Brute" />
     <skill Name="Endurance" />
     <skill Name="Tactics_Run" />
     <tag Name="Species" Value="salthopper" />
+    <part Name="Bed" />
+		<stag Name="Sleep" />
     <tag Name="DynamicObjectsTable:DesertCanyon_Creatures" />
     <tag Name="DynamicObjectsTable:Flowerfields_Creatures" />
   </object>

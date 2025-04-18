@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<populations>
+
+ <population Name="FlowerfieldCreatures" Load="Merge">
+    
+    <group Name="Creatures" Load="Merge">
+      <object Weight="10" Number="1" Blueprint="Obese Salthopper" />
+    </group>
+  </population>
+
+</populations>

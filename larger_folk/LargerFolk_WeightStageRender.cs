@@ -32,7 +32,17 @@ namespace XRL.World.Parts
 		{
         
             // WeightStage_0 = renderPart.Tile;
-            
+            if (IsEnabled)
+            {
+                if (WeightStage_2 == null)
+                {
+                    WeightStage_2 = WeightStage_1;
+                }
+                if (WeightStage_3 == null)
+                {
+                    WeightStage_3 = WeightStage_2;
+                }
+            }
 			return;
 		}
 
@@ -64,7 +74,9 @@ namespace XRL.World.Parts
             {
                 return;
             }
-            switch (newStage)
+            if (IsEnabled)
+            {
+                switch (newStage)
                 {
                     case 0:
                         if (WeightStage_0 != null) ParentObject.GetPart<Render>().Tile = WeightStage_0;
@@ -74,13 +86,27 @@ namespace XRL.World.Parts
                         break;
                     case 2:
                         if (WeightStage_2 != null) ParentObject.GetPart<Render>().Tile = WeightStage_2;
+                        else if (WeightStage_2 == null)
+                        {
+                            WeightStage_2 = WeightStage_1;
+                            ParentObject.GetPart<Render>().Tile = WeightStage_2;
+                        }
                         break;
                     case 3:
                         if (WeightStage_3 != null) ParentObject.GetPart<Render>().Tile = WeightStage_3;
+                        else if (WeightStage_3 == null)
+                        {
+                            if (WeightStage_2 == null) WeightStage_2 = WeightStage_1;
+                               
+                            WeightStage_3 = WeightStage_2;
+                            
+                            ParentObject.GetPart<Render>().Tile = WeightStage_3;
+                        }
                         break;
                     default:
                         break;
                 }
+            }
         }
 		
 	}

@@ -2984,6 +2984,17 @@
     <part Name="Bed" />
 		<stag Name="Sleep" />
   </object>
+  <object Name="BodyPillow" Inherits="Furniture">
+    <part Name="Render" DisplayName="printed body pillow" ColorString="&amp;w" RenderString="169" Occluding="false" RenderIfDark="true" Tile="bucklerparry_largerfolk/furniture_bodypillow.png" DetailColor="y" />
+    <part Name="RandomColors" MainColor="Y" DetailColor="m,W,r,R,b,B,g,G" />
+    <part Name="Physics" Weight="4" Takeable="true" Solid="false" />
+    <part Name="Description" Short="An amniotic sac from which dreams are born, carefully printed with a well-conceived image of the erotic form." />
+    <part Name="Bed" />
+		<stag Name="Sleep" />
+    <stag Name="Crafts" />
+		<stag Name="Beauty" />
+	  <stag Name="Contemporary" />
+  </object>
   <object Name="Crib" Inherits="BaseBed">
     <part Name="Render" DisplayName="crib" ColorString="&amp;Y" TileColor="&amp;w" DetailColor="Y" Tile="Items/sw_crib.bmp" Occluding="false" RenderIfDark="true" />
     <part Name="Physics" Weight="50" />

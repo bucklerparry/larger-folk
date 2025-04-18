@@ -11880,6 +11880,7 @@ These effects stack if multiple rubbergums are ingested." />
 		<part Name="TinkerItem" Bits="B" />
     <part Name="Description" Short="Tubes of known purpose splay at welded joints and support a plank for sitting." />
     <part Name="Chair" />
+    <part Name="LargerFolk_ChairFat" />
     <part Name="Metal" />
 		<tag Name="Tier" Value="1" />    
     <tag Name="Mods" Value="CommonMods,WeaponMods,CudgelMods" />
