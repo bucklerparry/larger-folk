@@ -2843,7 +2843,7 @@ The infant child is unaware
     <part Name="Nest" TurnsPerSpawn="15-20" NumberSpawned="1-3" SpawnMessage="A giant centipede crawls out of the nest." SpawnParticle="&amp;w." BlueprintSpawned="Giant Centipede" />
   </object>  		
   <object Name="Glowmoth" Inherits="BaseInsect">
-    <part Name="Render" DisplayName="glowmoth" Tile="creatures/sw_glowmoth.bmp" RenderString="i" ColorString="&amp;G" />
+    <part Name="Render" DisplayName="glowmoth" Tile="bucklerparry_largerfolk/glowmoth_fat.png" RenderString="i" ColorString="&amp;G" />
     <part Name="Corpse" CorpseChance="1" CorpseBlueprint="Glowmoth Corpse" />
     <stat Name="Hitpoints" Value="10" />
     <stat Name="Level" Value="6" />
@@ -5068,7 +5068,7 @@ The infant child is unaware
     <part Name="ImmuneToSleepGas" />
   </object>
   <object Name="Electric Snail" Inherits="BaseSnail">
-    <part Name="Render" DisplayName="electric snail" Tile="creatures/sw_snail.bmp" RenderString="q" ColorString="&amp;W" DetailColor="B" />
+    <part Name="Render" DisplayName="electric snail" Tile="bucklerparry_largerfolk/snail_fat.png" RenderString="q" ColorString="&amp;W" DetailColor="B" />
     <part Name="Corpse" CorpseChance="100" CorpseBlueprint="Electric Snail Corpse" />
     <stat Name="AV" Value="6" />
     <stat Name="Level" Value="16" />
@@ -5159,7 +5159,7 @@ The infant child is unaware
     <tag Name="DynamicObjectsTable:Ruins_Creatures" />
   </object>
   <object Name="Gelatinous Frustum" Inherits="BaseOoze">
-    <part Name="Render" DisplayName="gelatinous frustum" Tile="Creatures/sw_frustum.bmp"  RenderString="J" ColorString="&amp;w" DetailColor="W"/>
+    <part Name="Render" DisplayName="gelatinous frustum" Tile="bucklerparry_largerfolk/gelatinous_frustum_fat.png"  RenderString="J" ColorString="&amp;w" DetailColor="W"/>
     <part Name="Description" Short="Organic matter is liquefied by the agents of decay and pressurized by tight spaces into the shapes of prismatoids. Galvanized by a cousin-instinct to hunger, the gelatin entity now extrudes itself forward in frustum form." />
     <stat Name="Level" Value="18" />
     <part Name="Engulfing" />
@@ -6053,7 +6053,7 @@ The infant child is unaware
     <tag Name="Species" Value="hover robot" />
   </object>
   <object Name="Gelatinous Prism" Inherits="BaseOoze">
-    <part Name="Render" DisplayName="gelatinous prism" Tile="Creatures/sw_prism.bmp"  RenderString="J" ColorString="&amp;y" DetailColor="Y" />
+    <part Name="Render" DisplayName="gelatinous prism" Tile="bucklerparry_largerfolk/gelatinous_prism_fat.png"  RenderString="J" ColorString="&amp;y" DetailColor="Y" />
     <part Name="Description" Short="Organic matter is liquefied by the agents of decay and pressurized by tight spaces into the shapes of prismatoids. Galvanized by a cousin-instinct to hunger, the gelatin entity now extrudes itself forward in prism form." />
     <stat Name="Level" Value="23" />
     <tag Name="Role" Value="Tank" />
@@ -6500,7 +6500,7 @@ The infant child is unaware
     <part Name="MeleeWeapon" BaseDamage="1d6" Skill="LongBlades" Stat="Strength" Slot="Foot" />
   </object>
   <object Name="Snailmother" Inherits="BaseSnail">
-    <part Name="Render" DisplayName="snailmother" Tile="creatures/sw_snail.bmp" RenderString="Q" ColorString="&amp;C" DetailColor="c" />
+    <part Name="Render" DisplayName="snailmother" Tile="bucklerparry_largerfolk/snail_fat.png" RenderString="Q" ColorString="&amp;C" DetailColor="c" />
 		<part Name="Description" Short="Out a pristine shell of rolling citrine, frozen azure, and polished jade, the goopy neck cranes straight up and loosens a throbbing egg from =pronouns.possessive= gelatin clutch." />
     <part Name="Corpse" CorpseChance="100" CorpseBlueprint="Snailmother Corpse" />
     <stat Name="ElectricResistance" Value="5" />
@@ -7207,7 +7207,7 @@ The infant child is unaware
     <part Name="Metal" />
   </object>
   <object Name="Gelatinous Cupola" Inherits="BaseOoze">
-    <part Name="Render" DisplayName="gelatinous cupola" Tile="Creatures/sw_cupola.bmp"  RenderString="J" ColorString="&amp;g" DetailColor="G" />
+    <part Name="Render" DisplayName="gelatinous cupola" Tile="bucklerparry_largerfolk/gelatinous_cupola_fat.png"  RenderString="J" ColorString="&amp;g" DetailColor="G" />
     <part Name="Description" Short="Organic matter is liquefied by the agents of decay and pressurized by tight spaces into the shapes of prismatoids. Galvanized by a cousin-instinct to hunger, the gelatin entity now extrudes itself forward in cupola form." />
     <stat Name="Level" Value="28" />
     <tag Name="Role" Value="Tank" />
@@ -8035,7 +8035,7 @@ The infant child is unaware
     <tag Name="DynamicObjectsTable:BaroqueRuins_FarmablePlants:Weight" Value="0.2" />
   </object>
   <object Name="Gelatinous Antiprism" Inherits="BaseOoze">
-    <part Name="Render" DisplayName="gelatinous antiprism" Tile="Creatures/sw_antiprism.bmp"  RenderString="J" ColorString="&amp;K" DetailColor="y" />
+    <part Name="Render" DisplayName="gelatinous antiprism" Tile="bucklerparry_largerfolk/gelatinous_antiprism_fat.png"  RenderString="J" ColorString="&amp;K" DetailColor="y" />
     <part Name="Description" Short="Organic matter is liquefied by the agents of decay and pressurized by tight spaces into the shapes of prismatoids. Galvanized by a cousin-instinct to hunger, the gelatin entity now extrudes itself forward in antiprism form." />
     <stat Name="Level" Value="33" />
     <tag Name="Role" Value="Tank" />
@@ -8303,7 +8303,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
     <part Name="ElementalDamage" Damage="4d4" Attributes="Electric" />
   </object>
   <object Name="Plasma Jelly" Inherits="BaseJelly">
-    <part Name="Render" DisplayName="plasma jelly" Tile="Creatures/sw_jelly.bmp"  RenderString="J" ColorString="&amp;Y" DetailColor="g" />
+    <part Name="Render" DisplayName="plasma jelly" Tile="bucklerparry_largerfolk/plasma_jelly_fat.png"  RenderString="J" ColorString="&amp;Y" DetailColor="g" />
     <part Name="Description" Short="Roses of burning ions bloom inside the slick and glassy membrane. Trailing the galactic bell is a tetrad of incandescent feelers, melted jade and ivory, steaming the air." />
     <part Name="Body" Anatomy="Jelly" />
     <part Name="Corpse" CorpseChance="100" CorpseBlueprint="Plasma1000" />
@@ -8915,7 +8915,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
     <part Name="OmniphaseProjectile" />
   </object>
   <object Name="Gamma Moth" Inherits="BaseInsect">
-    <part Name="Render" DisplayName="gamma moth" Tile="Creatures/sw_moth.bmp" ColorString="&amp;M" DetailColor="K" />
+    <part Name="Render" DisplayName="gamma moth" Tile="bucklerparry_largerfolk/gamma_moth_fat.png" ColorString="&amp;M" DetailColor="K" />
     <part Name="Description" Short="Vast diaphanous wings painted in the furcate patterns of fractalized geometry bat the air." />
     <stat Name="Level" Value="39" />
     <stat Name="Hitpoints" Value="250" />
