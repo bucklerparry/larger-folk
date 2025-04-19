@@ -16,3 +16,7 @@ Bukie (chubbukie.bsky.social)
 - glowmoth_fat.png
 - plasma_jelly_fat.png
 - snail_fat.png
+- cave_spider_fat.png
+- scorpiock_fat.png
+- spark_tick_fat.png
+- voider_fat.png

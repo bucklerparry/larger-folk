@@ -1751,7 +1751,7 @@ The infant child is unaware
     <part Name="MeleeWeapon" BaseDamage="1d2" Skill="Axe" />
   </object>
   <object Name="Cave Spider" Inherits="BaseSpider">
-    <part Name="Render" DisplayName="cave spider" Tile="creatures/sw_spider.bmp" DetailColor="G" RenderString="x" />
+    <part Name="Render" DisplayName="cave spider" Tile="bucklerparry_largerfolk/cave_spider_fat.png" DetailColor="G" RenderString="x" />
     <part Name="Corpse" CorpseChance="25" CorpseBlueprint="Cave Spider Corpse" />
     <part Name="Brain" Hibernating="false" Hostile="false" Factions="Arachnids-100" />
     <part Name="AITryKeepDistance" NotStuck="true" />
@@ -1929,7 +1929,7 @@ The infant child is unaware
     <tag Name="ExcludeFromDynamicEncounters" />
   </object>
   <object Name="Electrofuge" Inherits="BaseSpider">
-    <part Name="Render" DisplayName="electrofuge" Tile="creatures/sw_spider.bmp" RenderString="y" ColorString="&amp;W" DetailColor="w" />
+    <part Name="Render" DisplayName="electrofuge" Tile="bucklerparry_largerfolk/cave_spider_fat.png" RenderString="y" ColorString="&amp;W" DetailColor="w" />
     <part Name="Corpse" CorpseChance="10" CorpseBlueprint="Electrofuge Corpse" />
     <stat Name="AV" Value="2" />
     <stat Name="Level" Value="5" />
@@ -2304,7 +2304,7 @@ The infant child is unaware
 		<tag Name="Tier" Value="1" />
   </object>	
   <object Name="Scorpiock" Inherits="BaseSpider">
-    <part Name="Render" DisplayName="scorpiock" Tile="Creatures/sw_scorpiock.bmp" RenderString="y" ColorString="&amp;w" DetailColor="W" />
+    <part Name="Render" DisplayName="scorpiock" Tile="bucklerparry_largerfolk/scorpiock_fat.png" RenderString="y" ColorString="&amp;w" DetailColor="W" />
     <part Name="Corpse" CorpseChance="10" CorpseBlueprint="Scorpiock Corpse" />
     <stat Name="Level" Value="5" />
     <stat Name="AV" Value="3" />
@@ -4520,7 +4520,7 @@ The infant child is unaware
     <tag Name="ExcludeFromDynamicEncounters" />
   </object>
   <object Name="Spark Tick" Inherits="BaseSpider">
-    <part Name="Render" DisplayName="{{W|spark tick}}" Tile="Creatures/sw_sparktick.bmp" RenderString="i" ColorString="&amp;W" />
+    <part Name="Render" DisplayName="{{W|spark tick}}" Tile="bucklerparry_largerfolk/spark_tick_fat.png" RenderString="i" ColorString="&amp;W" />
     <part Name="Corpse" CorpseChance="10" CorpseBlueprint="Spark Tick Corpse" />
     <stat Name="Level" Value="15" />
     <stat Name="Agility" Boost="1" />
@@ -4576,7 +4576,7 @@ The infant child is unaware
     <tag Name="DynamicObjectsTable:Ruins_Creatures" />
   </object>
   <object Name="Voider" Inherits="BaseSpider">
-    <part Name="Render" DisplayName="voider" ColorString="&amp;B" RenderString="x" Tile="creatures/sw_voider.bmp" DetailColor="y" />
+    <part Name="Render" DisplayName="voider" ColorString="&amp;B" RenderString="x" Tile="bucklerparry_largerfolk/voider_fat.png" DetailColor="y" />
     <part Name="Corpse" CorpseChance="15" CorpseBlueprint="Voider Corpse" />
     <part Name="Brain" Hibernating="false" Hostile="false" Factions="Arachnids-100" />
     <part Name="AITryKeepDistance" NotStuck="true" />
