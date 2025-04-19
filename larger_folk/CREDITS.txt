@@ -7,3 +7,12 @@ Bukie (chubbukie.bsky.social)
 - panhumor_fat.png
 - soupy_sludge_fat.png
 - gelatinous_wedge_fat.png
+- beetlebum_fat.png
+- gamma_moth_fat.png
+- gelatinous_antiprism_fat.png
+- gelatinous_cupola_fat.png
+- gelatinous_frustum_fat.png
+- gelatinous_prism_fat.png
+- glowmoth_fat.png
+- plasma_jelly_fat.png
+- snail_fat.png
