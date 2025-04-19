@@ -78,9 +78,11 @@ public class LargerFolk_WeightGain : IPart
             
             if (WeightStage >= 3)
             {
-                if (Stat.Random(1, 4) == 1)
+                int MoveStat = ParentObject.Stat("MoveSpeed");
+
+                if (Stat.Random(1, (int)((MoveStat/10)*(MoveStat/10)/20)) == 1)
                 {
-                    ParentObject.ApplyEffect(new LargerFolk_ImmobileStuck(12, 25, "Web Stuck Restraint", null, "stuck", "in", ParentObject.ID));
+                    ParentObject.ApplyEffect(new LargerFolk_ImmobileStuck(12, 15, "Web Stuck Restraint", null, "stuck", "in", ParentObject.ID));
                 }
             }
         }
