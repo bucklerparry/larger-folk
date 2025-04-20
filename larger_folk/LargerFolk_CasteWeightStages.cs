@@ -79,6 +79,7 @@ public class LargerFolk_CasteWeightStages : IPlayerMutator
                 player.GetPart<LargerFolk_WeightStageRender>().WeightStage_1 = "bucklerparry_largerfolk/first_child_of_the_hearth_fat.png";
             }
 
+            player.GetPart<LargerFolk_WeightGain>().TotalCalories = 1000;
             player.GetPart<LargerFolk_WeightGain>().InitializeWeightStage();
         }
 

@@ -1821,7 +1821,12 @@ The infant child is unaware
     <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
     <part Name="Interesting" />
   </object>
-  <object Name="Croc" Inherits="BaseReptile">
+
+  <object Name="Croc" Load="Merge">
+    <part Name="Render" DisplayName="croc" RenderString="r" Tile="bucklerparry_largerfolk/croc_fat.png" DetailColor="M" ColorString="&amp;g" />
+  </object>
+
+  <!--<object Name="Croc" Inherits="BaseReptile">
     <part Name="Render" DisplayName="croc" RenderString="r" Tile="bucklerparry_largerfolk/croc_fat.png" DetailColor="M" ColorString="&amp;g" />
     <part Name="Corpse" CorpseChance="20" CorpseBlueprint="Croc Corpse" />
     <part Name="Brain" Hostile="false" Factions="Unshelled Reptiles-100" />
@@ -1838,7 +1843,8 @@ The infant child is unaware
     <tag Name="Species" Value="croc" />
     <tag Name="DynamicObjectsTable:Saltmarsh_Creatures" />
     <tag Name="DynamicObjectsTable:Water_Creatures" />
-  </object>
+  </object> -->
+
   <object Name="Croc_Bite" Inherits="Bite">
     <part Name="MeleeWeapon" BaseDamage="1d4" Skill="Axe" />
   </object>
@@ -3089,34 +3095,16 @@ The infant child is unaware
     <stat Name="ElectricResistance" Value="10" />
     <tag Name="Species" Value="knollworm" />
   </object>
-  <object Name="Salthopper" Inherits="BaseInsect">
+  <object Name="Salthopper" Load="Merge">
     <part Name="Render" DisplayName="salthopper" Tile="bucklerparry_largerfolk/salthopper_fat.png" RenderString="i" ColorString="&amp;Y" />
-    <part Name="Corpse" CorpseChance="8" CorpseBlueprint="Salthopper Corpse" />
-    <stat Name="Strength" Boost="1" />
-    <stat Name="AV" Value="3" />
-    <stat Name="Level" Value="9" />
-    <stat Name="Hitpoints" Value="24" />    
-    <part Name="Brain" Hostile="false" />
-    <inventoryobject Blueprint="Salthopper_Mandibles" Number="1" />
+    <part Name="LargerFolk_WeightStageRender" 
+    WeightStage_0="Assets_Content_Textures_Creatures_sw_salthopper.bmp" 
+    WeightStage_1="bucklerparry_largerfolk/salthopper_fat.png" 
+    WeightStage_2="bucklerparry_largerfolk/salthopper_fat.png"
+    WeightStage_3="bucklerparry_largerfolk/salthopper_obese.png"/>
     <part Name="Description" Short="A bulge-eye head and flabby thorax of sunsalt white is poised to leap through the air by the trust of a sestet of jiggling legs." />
-    <tag Name="Role" Value="Brute" />
-    <skill Name="Endurance" />
-    <skill Name="Tactics_Run" />
-    <tag Name="Species" Value="salthopper" />
-    <tag Name="DynamicObjectsTable:DesertCanyon_Creatures" />
-    <tag Name="DynamicObjectsTable:Flowerfields_Creatures" />
   </object>
-  <object Name="Salthopper_Mandibles" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="{{G|rending mandibles}}" Tile="Creatures/natural-weapon-mandible.bmp" ColorString="&amp;Y" />
-    <part Name="MeleeWeapon" BaseDamage="1d4" Skill="Axe" Stat="Strength" Slot="Head" />
-    <tag Name="Gender" Value="plural" />
-  </object>
-  <object Name="Salthopper Corpse" Inherits="Arthropod Corpse">
-    <part Name="Physics" Weight="50" />
-    <part Name="Render" DisplayName="salthopper corpse" />        
-    <part Name="Butcherable" OnSuccess="@Salthopper Corpse" />
-    <tag Name="Tier" Value="2" />
-  </object>
+
   <object Name="Obese Salthopper" Inherits="Salthopper">
     <part Name="Render" DisplayName="immobilized salthopper" Tile="bucklerparry_largerfolk/salthopper_obese.png" RenderString="i" ColorString="&amp;Y" />
     <part Name="Corpse" CorpseChance="8" CorpseBlueprint="Salthopper Corpse" />

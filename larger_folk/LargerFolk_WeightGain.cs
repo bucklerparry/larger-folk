@@ -20,6 +20,9 @@ public class LargerFolk_WeightGain : IPart
 {
     //If this is disabled, it will not be subject to the weight gain system.
     public bool IsEnabled => XRL.UI.Options.GetOption("Option_LargerFolk_DynamicWeightGainOn").EqualsNoCase("Yes");
+    public bool DisplayWeightName => XRL.UI.Options.GetOption("Option_LargerFolk_WeightNames").EqualsNoCase("Yes");
+
+    bool Initialized = false;
 
     //Can lose weight by walking around
     public bool CanExercise = true;
@@ -45,8 +48,6 @@ public class LargerFolk_WeightGain : IPart
         {
             WeightStage = 0;
             TotalCalories = 0;
-
-
         }
     }
 
@@ -57,12 +58,50 @@ public class LargerFolk_WeightGain : IPart
             Registrar.Register("AfterMoved");
             Registrar.Register("OnWeightStageChange");
             Registrar.Register("ActivateMechanicalWings");
-
+            Registrar.Register("DrinkingFrom");
         }
 		base.Register(Object, Registrar);
 	}
 
-   
+    // Listens for one event always.
+    public override bool WantEvent(int ID, int cascade) 
+    {
+	    // Check if the ID parameter matches one of the events we want
+	    // The base WantEvent of IPart/Effect will always return false.
+	    return base.WantEvent(ID, cascade) || ID == ObjectCreatedEvent.ID || (ID == GetDisplayNameEvent.ID);
+    }
+
+    // public override bool WantEvent(int ID, int cascade) 
+    // {
+	//     return base.WantEvent(ID, cascade) || ID == GetDisplayNameEvent.ID;
+    // }
+
+    public override bool HandleEvent(ObjectCreatedEvent E)
+    {
+        // set a random initial weight stage for non-player creatures, usually lean or fat, occasionally obese, extremely rarely immobile
+        if (IsEnabled && !ParentObject.IsPlayer())
+        {
+            int TempRand = Stat.Random(1,101);
+            if (TempRand > 99)
+            {
+                SetWeightStage(3);
+            }
+            else if (TempRand > 90)
+            {
+                SetWeightStage(2);
+            }
+            else if (TempRand > 45)
+            {
+                SetWeightStage(1);
+            }
+            else
+            {
+                SetWeightStage(0);
+            }
+        }
+
+        return base.HandleEvent(E);
+    }
 
     public override bool FireEvent(Event E)
     {
@@ -86,6 +125,17 @@ public class LargerFolk_WeightGain : IPart
                 }
             }
         }
+        else if (E.ID == "DrinkingFrom")
+		{
+			LiquidVolume liquidVolume = (E.GetParameter("Container") as GameObject).LiquidVolume;
+			if (liquidVolume.GetPrimaryLiquid() != null)
+			{
+                if (liquidVolume.IsPureLiquid("honey") || liquidVolume.IsPureLiquid("sap") || liquidVolume.IsPureLiquid("cider") || liquidVolume.IsPureLiquid("wine") )
+                {
+                    ChangeCalories(200);
+                }
+			}
+		}
 
         return base.FireEvent(E);
     }
@@ -266,7 +316,16 @@ public class LargerFolk_WeightGain : IPart
                 break;
         }
         
-        ConfirmWeightStage(last_calories, TotalCalories);
+        if (Initialized)
+        {
+            ConfirmWeightStage(last_calories, TotalCalories);
+        }
+        else
+        {
+            Initialized = true;
+            InitializeWeightStage();
+        }
+       
     }
     public string GetWeightString()
     {
@@ -294,6 +353,12 @@ public class LargerFolk_WeightGain : IPart
         {
             Popup.Show(s);
         }
+    }
+
+    public override bool HandleEvent(GetDisplayNameEvent E)
+	{
+        if (DisplayWeightName) E.AddAdjective(GetWeightString());
+        return base.HandleEvent(E);
     }
 }
 
