@@ -1635,25 +1635,14 @@ For I knew neither 'til they spoke her name." />
     <part Name="GivesRep" />
     <tag Name="Role" Value="Hero" />
   </object>
-  <object Name="Bat" Inherits="BaseBat">
-    <part Name="Render" DisplayName="bat" Tile="Assets_Content_Textures_Creatures_sw_bat.bmp" ColorString="&amp;K" RenderString="b" />
-    <part Name="Corpse" CorpseChance="20" CorpseBlueprint="Bat Corpse" />
-    <part Name="Brain" Hostile="false" Factions="Winged Mammals-100" />
-    <stat Name="Level" Value="1" />
-    <stat Name="AV" Value="0" />
-    <stat Name="DV" Value="2" />
-    <stat Name="Hitpoints" Value="3" />
-    <tag Name="Role" Value="Minion" />
-    <inventoryobject Blueprint="Bat_Bite" Number="1" />
+  <object Name="Bat" Load="Merge">
+    <part Name="Render" DisplayName="bat" Tile="bucklerparry_largerfolk/bat_fat.png" ColorString="&amp;K" RenderString="b" />
+    <part Name="LargerFolk_WeightStageRender" 
+    WeightStage_0="Assets_Content_Textures_Creatures_sw_bat.bmp"
+    WeightStage_1="bucklerparry_largerfolk/bat_fat.png" />
     <part Name="Description" Short="It sheaths itself in filmy wings." />    
   </object>
-  <object Name="Bat_Bite" Inherits="Bite">
-    <part Name="MeleeWeapon" BaseDamage="1d1" />
-  </object>
-  <object Name="Bat Corpse" Inherits="Small Animal Corpse">
-    <part Name="Render" DisplayName="bat corpse" />
-    <part Name="Food" Message="It tastes like rat meat." />    
-  </object>
+  
   <object Name="Bear" Inherits="BaseBear">
     <part Name="Render" DisplayName="bear" Tile="bucklerparry_largerfolk/bear_fat.png" RenderString="u" ColorString="&amp;w" DetailColor="y" />
 		<part Name="Description" Short="&quot;The Grizzly Bear is huge and wild; 
@@ -5198,24 +5187,14 @@ The infant child is unaware
 	<object Name="Uplifted Still Gyre Wight of Bethsaida" Inherits="Still Gyre Wight of Bethsaida">
 		<part Name="Uplift" />
 	</object>
-	<object Name="Gyre Wight of Shug'ruith" Inherits="BaseGyreWight">
-		<part Name="Render" DisplayName="gyre wight of Shug'ruith" Tile="Creatures/wight_shugruith.bmp" ColorString="&amp;w" TileColor="&amp;m" DetailColor="w" />
-		<part Name="Description" Short="A figure is marked by star orchid robes as a votary of the Gyre and reveler in the metamorphic numen. Nails filth-black flash from out =pronouns.possessive= sleeve in a gesture-poem to say that plague is but transmutation, death is the ladder to life, and the existence of children proves the prelacy of raw growth. =pronouns.Subjective= =verb:are:afterpronoun= peppered with shale dust." />
-		<stat Name="Hitpoints" Value="45" />
-		<stat Name="Level" Value="18" />
-		<part Name="RandomMutations" Mental="0-1" MentalLevel="1-6" Physical="0-2" PhysicalLevel="1-7" />
-		<part Name="ConversationScript" ConversationID="GyreWightShug'ruith" />
-		<tag Name="NamingTag" Value="Shug'ruithGyreWight" />
-		<xtagWaterRitual SellSecretWeight="$shugruithlair:10000" />
-		<inventoryobject Blueprint="Girshling Fangs" />
+	<object Name="Gyre Wight of Shug'ruith" Load="Merge">
+		<part Name="Render" DisplayName="gyre wight of Shug'ruith" Tile="bucklerparry_largerfolk/wight_shugruith_fat.png" ColorString="&amp;w" TileColor="&amp;m" DetailColor="w" />
+    <part Name="LargerFolk_WeightStageRender" 
+      WeightStage_0="Creatures/wight_shugruith.bmp"
+      WeightStage_1="bucklerparry_largerfolk/wight_shugruith_fat.png" />
+		<part Name="Description" Short="A figure is marked by tight star orchid robes as a votary of the Gyre and reveler in the metamorphic numen. Nails filth-black flash from out =pronouns.possessive= sleeve in a gesture-poem to say that plague is but transmutation, death is the ladder to life, and the existence of children proves the prelacy of raw growth. =pronouns.Subjective= =verb:are:afterpronoun= peppered with shale dust." />
 	</object>
-	<object Name="Still Gyre Wight of Shug'ruith" Inherits="Gyre Wight of Shug'ruith">
-		<part Name="Brain" Wanders="false" />
-		<tag Name="ExcludeFromDynamicEncounters" />
-	</object>
-	<object Name="Uplifted Still Gyre Wight of Shug'ruith" Inherits="Still Gyre Wight of Shug'ruith">
-		<part Name="Uplift" />
-	</object>
+	
   <object Name="Holographic Ivory" Inherits="BasePlant">
     <part Name="Render" RenderIfDark="true" Tile="Creatures/sw_young_ivory.bmp" DisplayName="{{Y|holographic ivory}}" RenderString="011" ColorString="&amp;y" DetailColor="Y" />
     <part Name="Physics" Organic="false" />
@@ -8954,31 +8933,14 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
 		<tag Name="HeroHasSlaves" Value="4" />
 		<tag Name="NamingTag" Value="GrandNewfather" />
 	</object>
-	<object Name="Gyre Wight Apotheote" Inherits="BaseHumanoid" PreviousName="Glow Wight Apotheote">
-		<part Name="Render" DisplayName="gyre wight apotheote" Tile="Creatures/sw_glowwight_apotheote.bmp" RenderString="Z" ColorString="&amp;m" TileColor="&amp;G" DetailColor="m" />
-		<part Name="Description" Short="=pronouns.Possessive= stomach is greasy and bloated from the curdled hemolymph, and =pronouns.possessive= limbs are shrunken and folded. =pronouns.Subjective= =verb:are:afterpronoun= the vessel of the metamorphic numen now; the scars of =pronouns.possessive= scrambled-egg genome underwrite =pronouns.possessive= slumping body like bright scabs." />
-		<part Name="Brain" Factions="Gyre Wights-100" Hostile="true" />
-		<stat Name="Strength" Boost="1" />
-		<stat Name="Toughness" Boost="-1" />
-		<stat Name="Level" Value="36" />
-		<stat Name="Hitpoints" Value="280" />
-		<part Name="RandomMutations" Mental="0" Physical="4-5" PhysicalLevel="8-12" />
-		<inventoryobject Blueprint="Apotheote_Claws" Number="2" />
-		<inventoryobject Blueprint="Apotheote_Bite" Number="1" />
-		<skill Name="ShortBlades" />
-		<skill Name="ShortBlades_Bloodletter" />
-		<tag Name="WaterRitualLiquid" Value="blood" />
-		<tag Name="DynamicObjectsTable:MoonStair_Creatures" />
+	<object Name="Gyre Wight Apotheote" Load="Merge">
+		<part Name="Render" DisplayName="gyre wight apotheote" Tile="bucklerparry_largerfolk/wight_apotheote_fat.png" RenderString="Z" ColorString="&amp;m" TileColor="&amp;G" DetailColor="m" />
+    <part Name="LargerFolk_WeightStageRender" 
+    WeightStage_0="Creatures/sw_glowwight_apotheote.bmp" 
+    WeightStage_1="bucklerparry_largerfolk/wight_apotheote_fat.png" />
+		<part Name="Description" Short="=pronouns.Possessive= stomach is greasy and bloated from the curdled hemolymph, and =pronouns.possessive= limbs are flabby and folded. =pronouns.Subjective= =verb:are:afterpronoun= the vessel of the metamorphic numen now; the scars of =pronouns.possessive= scrambled-egg genome underwrite =pronouns.possessive= slumping body like bright scabs." />
 	</object>
-	<object Name="Apotheote_Claws" Inherits="NaturalWeapon">
-		<part Name="Render" DisplayName="{{Y|glinted nail claw}}" Tile="Creatures/natural-weapon-claw.bmp" ColorString="&amp;m" />
-		<part Name="MeleeWeapon" BaseDamage="4d4" Skill="ShortBlades" Stat="Strength" Slot="Hand" />
-	</object>
-	<object Name="Apotheote_Bite" Inherits="NaturalWeapon">
-		<part Name="Render" DisplayName="{{Y|filed fangs}}" Tile="Creatures/natural-weapon-bite.bmp" ColorString="&amp;m" />
-		<part Name="MeleeWeapon" BaseDamage="6d2" Skill="ShortBlades" Stat="Strength" Slot="Hand" />
-		<tag Name="Gender" Value="plural" />
-	</object>
+
   <object Name="Great Magma Crab" Inherits="BaseCrab">
     <part Name="Render" DisplayName="{{R|great magma crab}}" RenderString="C" ColorString="&amp;R" DetailColor="W" Tile="creatures/sw_magmacrab.png" />
     <part Name="Corpse" CorpseChance="90" CorpseBlueprint="Basalt" />
@@ -14341,6 +14303,7 @@ In Barathrum's name, =pronouns.subjective==verb:'ve:afterpronoun= conferred onto
     <part Name="Render" DisplayName="corpse of Slog" ColorString="&amp;M" />
     <part Name="Description" Short="Rolls upon rolls of spongy wormfat are deflated and still. Little bristles scrape the earth." />
     <part Name="Food" Message="It's sickening!" />
+    <part Name="LargerFolk_FoodCalories" Calories="10000" />
     <part Name="Physics" Weight="300" />
     <part Name="Commerce" Value="100" />
     <part Name="Butcherable" OnSuccess="SlogTrophy" />
@@ -14364,7 +14327,7 @@ In Barathrum's name, =pronouns.subjective==verb:'ve:afterpronoun= conferred onto
       Elain, Tireis, Allodetta
       Quiet this metal.&quot;
       -Ezra Pound.
-      ... Or something. Your gaze is drawn inexorably to =pronouns.possessive= pendulous chest, and the poetry is lost on your vacant mind. It really is unnaturally large, no doubt the result of some dark experiment or other." />
+      ... Or something. Your gaze is drawn inexorably to =pronouns.possessive= pendulous chest, and the poetry is lost on your vacant mind... It really is unnaturally large, no doubt the result of some dark experiment." />
     <stat Name="Intelligence" Value="59" />
     <stat Name="Willpower" Value="52" />
     <stat Name="Ego" Value="22" />
@@ -15142,24 +15105,14 @@ This one is jeweled in the eroded scrap of the Tomb." />
     <xtagGrammar Proper="true" />
     <tag Name="ExcludeFromDynamicEncounters" />
   </object>
-  <object Name="Rokhas" Inherits="PigFarmer">
-    <part Name="Render" DisplayName="Rokhas" Tile="Creatures/sw_rokhas.bmp" ColorString="&amp;W" TileColor="&amp;W" DetailColor="M" />
+  <object Name="Rokhas" Load="Merge">
+    <part Name="Render" DisplayName="Rokhas" Tile="bucklerparry_largerfolk/rokhas_fat.png" ColorString="&amp;W" TileColor="&amp;W" DetailColor="M" />
+    <part Name="LargerFolk_WeightStageRender"
+      WeightStage_0="Creatures/sw_rokhas.bmp"
+      WeightStage_1="bucklerparry_largerfolk/rokhas_fat.png" />
     <part Name="Description" Short="=pronouns.Subjective= is a mudrock in the kaleidoscope. =pronouns.Possessive= salt-pocked skin, slouching spine, and dour expression are imported from the farmsteading reaches of western Qud, buh =pronouns.subjective= =verb:stand:afterpronoun= draped in the bright colors of =pronouns.possessive= brilliant eastborn flock." />
-    <part Name="Brain" Factions="YdFreehold-100" Wanders="false" />
-    <part Name="ConversationScript" ConversationID="Rokhas" />
-    <tag Name="Gender" Value="male" />
-    <removebuilder Name="RandomTile" />
-    <inventoryobject Blueprint="Kaleidocera Cape" Number="1" />
-    <stat Name="Level" Value="26" />
-    <stat Name="Hitpoints" sValue="170" />
-    <skill Name="CookingAndGathering_Harvestry" />
-    <skill Name="CookingAndGathering_Butchery" />
-    <skill Name="Cudgel_Expertise" />
-    <skill Name="Cudgel_Conk" />
-    <skill Name="Survival_DesertCanyonSurvival" />
-    <xtagGrammar Proper="true" />
-    <tag Name="ExcludeFromDynamicEncounters" />
   </object>
+
   <object Name="Une" Inherits="NPC">
     <part Name="Render" DisplayName="Une" RenderString="t" Tile="Creatures/sw_une.bmp" ColorString="&amp;B" TileColor="&amp;B" DetailColor="Y" />
     <part Name="Honorifics" Primary="Warden" />

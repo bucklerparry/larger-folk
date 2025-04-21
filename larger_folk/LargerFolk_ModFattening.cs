@@ -109,7 +109,7 @@ namespace XRL.World.Parts
 				GameObject subject = gameObjectParameter2;
 				if (subject.HasPart<LargerFolk_WeightGain>())
 				{
-					subject.GetPart<LargerFolk_WeightGain>().ChangeCalories(1000);
+					subject.GetPart<LargerFolk_WeightGain>().ChangeCalories(6000);
 				}
 				// if (GetSpecialEffectChanceEvent.GetFor(gameObjectParameter, parentObject, "Modification ModSerrated Dismember", Chance, subject).in100() && IsReady(UseCharge: true, IgnoreCharge: false, IgnoreLiquid: false, IgnoreBootSequence: false, IgnoreBreakage: false, IgnoreRust: false, IgnoreEMP: false, IgnoreRealityStabilization: false, IgnoreSubject: false, IgnoreLocallyDefinedFailure: false, 1, null, UseChargeIfUnpowered: false, 0L, null))
 				// {
