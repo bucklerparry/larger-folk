@@ -10,7 +10,7 @@ other places describe the process of installing qud mods more effectively, so se
 MOD DETAILS
 
 Right now, there are fat sprites for every player preset/calling/class, and a bunch of the creatures including almost all merchants and early game enemies.
-There is a dynamic weight system, and weight effects such as breaking chairs and getting stuck in doors based on weight.
+There is a dynamic weight system, and weight effects such as breaking chairs and getting stuck in doors based on weight. Weight gain visual changes only apply to the preset characters and a (very) small amount of creatures that i added it to for testing purposes, it's kind of tedious to add it in for each creature and I want to be totally sure of the process first before i do it, in case i change how the visuals work later.
 Some NPCs have new silly erotic dialogue and conversation options.
 Some creatures have new descriptions reflecting their new visage.
 
