@@ -62,10 +62,4 @@
     </group>
   </population>
 
-   <population Name="Village Tinker 1" Load="Merge">
-    <group Name="Items" Load="Merge">
-      <object Number="1-4" Blueprint="GainTonic" Chance="100"/>
-    </group>
-  </population>
-
 </populations>
