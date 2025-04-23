@@ -4472,25 +4472,10 @@ The infant child is unaware
     <part Name="Metal" />
     <part Name="VibroWeapon" ChargeUse="0" />
   </object>
-  <object Name="SewageEel" Inherits="BaseFish">
+  <object Name="SewageEel" Load="Merge">
     <part Name="Render" DisplayName="sewage eel" RenderString="224" ColorString="&amp;r" Tile="bucklerparry_largerfolk/sewage_eel_fat.png" />
-    <part Name="Corpse" CorpseChance="0" CorpseBlueprint="Madpole Corpse" />
-    <stat Name="Hitpoints" Value="12" />
-    <stat Name="Strength" sValue="18" />
-    <stat Name="Agility" sValue="17" />
-    <stat Name="Level" Value="13" />
-    <part Name="Brain" WandersRandomly="true" Wanders="false" Hostile="false" Aquatic="true" />
-		<mutation Name="Gills" Level="10" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="creatures/sw_eel.bmp" WeightStage_1="bucklerparry_largerfolk/sewage_eel_fat.png" />
     <part Name="Description" Short="Circular gills on =pronouns.possessive= tongue-slick and finned bodypipe suck air out of the surrounding foul liquid gunk." />
-    <inventoryobject Blueprint="SewageEel_Bite" Number="1" />
-    <property Name="NoLoot" Value="true" />
-    <tag Name="Role" Value="Minion" />
-    <tag Name="Species" Value="eel" />
-    <tag Name="FilthAffinity" />
-    <tag Name="PlacementHint" Value="Aquatic" />
-  </object>
-  <object Name="SewageEel_Bite" Inherits="Bite">
-    <part Name="MeleeWeapon" MaxStrengthBonus="9999" BaseDamage="2d4" Skill="Axe" />
   </object>
   <object Name="Sleeping Plated Chromeling" Inherits="Plated Chromeling">
     <part Name="SpawnWithEffect" Effect="Asleep" />
@@ -5480,34 +5465,10 @@ The infant child is unaware
     <part Name="Physics" Weight="10" />
     <part Name="MeleeWeapon" BaseDamage="1d4" Skill="Cudgel" Stat="Strength" Slot="Body" />    
   </object>
-  <object Name="Twinning Lamprey" Inherits="BaseWorm">
-    <part Name="Render" DisplayName="twinning lamprey" Tile="Creatures/sw_lamprey.bmp" RenderString="224" ColorString="&amp;g" TileColor="&amp;m" DetailColor="g" />
-    <stat Name="AV" Value="4" />
-    <stat Name="Level" Value="18" />
-    <stat Name="Hitpoints" Value="30" />
-    <stat Name="Ego" sValue="28" />
-    <stat Name="Agility" sValue="18" />
-    <part Name="Brain" Hostile="False" Factions="Fish-100" />
-    <stat Name="ElectricResistance" Value="10" />
-    <stat Name="HeatResistance" Value="10" />
-    <stat Name="ColdResistance" Value="35" />
-    <stat Name="AcidResistance" Value="10" />
-    <inventoryobject Blueprint="Lamprey Bite" Number="1" />
-    <part Name="Description" Short="A ribbon of scaleless tissue quivers in suspension beyond a mouth ringed with repeating triangle teeth. =pronouns.Subjective= =verb:extrude:afterpronoun= a double through the mirrored planes of reality." />
-    <mutation Name="Regeneration" />
-    <part Name="MentalShield" />
-    <part Name="Twinner" />
-		<tag Name="Class" Value="fish" />
-		<tag Name="Species" Value="fish" />
-	  <tag Name="NoHelpBroadcastWake" />
-    <tag Name="Role" Value="Controller" />
-    <skill Name="ShortBlades" />
-    <intproperty Name="TreatAsPsychic" Value="1" />    
-  </object>
-  <object Name="Lamprey Bite" Inherits="Bite">
-    <part Name="Render" DisplayName="{{B|psychic bite}}" />
-    <part Name="MeleeWeapon" BaseDamage="1d8" Stat="Ego" Slot="Head" />
-    <part Name="BleedingOnHit" Amount="1d1" SaveTarget="20" Stack="true" />
+  <object Name="Twinning Lamprey" Load="Merge">
+    <part Name="Render" DisplayName="twinning lamprey" Tile="bucklerparry_largerfolk/twinning_lamprey_fat.png" RenderString="224" ColorString="&amp;g" TileColor="&amp;m" DetailColor="g" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_lamprey.bmp" WeightStage_1="bucklerparry_largerfolk/twinning_lamprey_fat.png" />
+    <part Name="Description" Short="A ribbon of scaleless adipose tissue quivers in suspension beyond a mouth ringed with repeating triangle teeth, peering out from between overstuffed cheeks. =pronouns.Subjective= =verb:extrude:afterpronoun= a double through the mirrored planes of reality." />
   </object>
 		
   <!-- Breathbeards -->
@@ -6525,38 +6486,12 @@ The infant child is unaware
     <stat Name="Level" Value="24" />
     <tag Name="DynamicObjectsTable:Fungal_Creatures" />
   </object>
-  <object Name="Urchin Belcher" Inherits="BaseFish">
-    <part Name="Render" Tile="Creatures/sw_urchin_belcher.bmp" DisplayName="urchin belcher" RenderString="224" ColorString="&amp;C" TileColor="&amp;W" DetailColor="C" />
+  <object Name="Urchin Belcher" Load="Merge">
+    <part Name="Render" Tile="bucklerparry_largerfolk/urchin_belcher_fat.png" DisplayName="urchin belcher" RenderString="224" ColorString="&amp;C" TileColor="&amp;W" DetailColor="C" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_urchin_belcher.bmp" WeightStage_1="bucklerparry_largerfolk/urchin_belcher_fat.png" />
     <part Name="Description" Short="Urchins stick to the scum-slick tissue of a cavernous mouth while soft-rayed fins drag the mammoth fish body across the ground." />
-    <part Name="Corpse" CorpseChance="20" CorpseBlueprint="Urchin Belcher Corpse" />
-    <part Name="ImmuneToConfusionGas" />
-    <part Name="ImmuneToSleepGas" />
-    <stat Name="Level" Value="23" />
-    <tag Name="Role" Value="Artillery" />
-    <mutation Name="UrchinBelcher" Level="6" />
-    <tag Name="Species" Value="shark" />
-    <stat Name="Hitpoints" Value="95" />
-    <stat Name="AV" Value="5" />
-    <stat Name="Strength" Boost="2" />
-    <stat Name="Toughness" Boost="1" />
-    <stat Name="HeatResistance" Value="6" />
-    <stat Name="ColdResistance" Value="6" />
-    <stat Name="ElectricResistance" Value="6" />
-    <stat Name="AcidResistance" Value="6" />
-    <inventoryobject Blueprint="Belcher_Bite" Number="1" />
   </object>
-  <object Name="Belcher_Bite" Inherits="Bite">
-    <part Name="MeleeWeapon" BaseDamage="2d3" />
-  </object>
-  <object Name="Urchin Belcher Corpse" Inherits="Fish Corpse">
-    <part Name="Butcherable" OnSuccess="Raw Fish Meat" OnSuccessAmount="1-3" />
-		<part Name="Description" Short="A mound of wet scales lay in a wreath of bloated death." />
-		<part Name="Render" DisplayName="urchin belcher corpse" />
-    <part Name="Food" Message="The moistened fat dissolves slowly." />    
-    <part Name="Physics" Weight="400" />
-    <part Name="Commerce" Value="30" />    
-    <tag Name="Tier" Value="5" />
-  </object>
+  
   <object Name="Waveform Worm" Inherits="BaseWorm">
     <part Name="Description" Short="Metameric fat rings are joined into a line and crammed along a waveform. When one of a trillion-per-second random fluctuations causes the cosmic fabric to ripple, the worm aligns itself to a pattern of constructive interference and is shunted forward, with nary a jiggle to indicate any movement of the sluggish thing has occurred." />
     <part Name="Render" Tile="bucklerparry_largerfolk/waveform_worm_fat.png" DisplayName="waveform worm" RenderString="w" ColorString="&amp;c" DetailColor="R" />
@@ -7359,36 +7294,12 @@ The infant child is unaware
     <part Name="SapOnPenetration" Stat="Hitpoints" Amount="1-2" />
     <tag Name="DynamicObjectsTable:DeepJungle_Creatures" />
   </object>  
-  <object Name="Madpole" Inherits="BaseFish">
-    <part Name="Render" DisplayName="madpole" Tile="Creatures/sw_madpole.bmp"  RenderString="224" ColorString="&amp;W" />
-    <part Name="Corpse" CorpseChance="100" CorpseBlueprint="Madpole Corpse" />
-    <stat Name="Hitpoints" Value="55" />
-    <stat Name="Strength" sValue="38" />
-    <stat Name="Agility" sValue="27" />
-    <stat Name="Level" Value="27" />
-    <part Name="Brain" WandersRandomly="true" Wanders="false" Hostile="True" Aquatic="true" />
-		<mutation Name="Gills" Level="10" />
-    <skill Name="Axe_Expertise" />
-    <skill Name="Axe_Dismember" />
-    <part Name="LiquidProximityFrenzies" Range="0" Duration="10" BerserkImmediately="true" PreferBleedingTarget="true" />
+  <object Name="Madpole" Load="Merge">
+    <part Name="Render" DisplayName="madpole" Tile="bucklerparry_largerfolk/madpole_fat.png"  RenderString="224" ColorString="&amp;W" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_madpole.bmp" WeightStage_1="bucklerparry_largerfolk/madpole_fat.png" />
     <part Name="Description" Short="The distended jaw of this large aureolin fish is lined with wicked, blade-like teeth. You shudder to imagine what sort of terrible amphibious fiend the madpole might one day become." />
-    <inventoryobject Blueprint="Madpole_Jaws" Number="1" />
-    <property Name="NoLoot" Value="true" />
-    <tag Name="Role" Value="Minion" />
-    <tag Name="Species" Value="fish" />
-    <tag Name="DynamicObjectsTable:Water_Creatures" />
-    <tag Name="PlacementHint" Value="Aquatic" />
   </object>
-  <object Name="Madpole_Jaws" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="jaws" Tile="Creatures/natural-weapon-bite.bmp" ColorString="&amp;w" />
-    <part Name="MeleeWeapon" Slot="Face" MaxStrengthBonus="9999" BaseDamage="2d4" Skill="Axe" />
-    <part Name="LatchesOn" InitialSaveTarget="15" InitialSaveStat="Agility" InitialSaveDifficultyStat="Agility" MoveSaveTarget="15" MoveSaveStat="Strength" MoveSaveDifficultyStat="Strength" BreakSaveTarget="15" BreakSaveStat="Strength" BreakSaveDifficultyStat="Strength" Duration="3d4" AutoAttackOnMove="false" AutoAttackOnMoveAway="false" AutoAttackPerTurn="true" BloodSpatterOnLatch="true" />
-    <tag Name="Gender" Value="plural" />
-  </object>
-  <object Name="Madpole Corpse" Inherits="Corpse">
-    <part Name="Render" DisplayName="madpole corpse" />            
-    <tag Name="Tier" Value="5" />    
-  </object>
+  
   <object Name="Miner Mk III" Inherits="BaseMiner">
     <part Name="Render" DisplayName="miner Mk III" RenderString="6" DetailColor="R" />
     <stat Name="Level" Value="29" />
@@ -8244,56 +8155,18 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
 		<tag Name="TakeDamageSound" Value="Sounds/Damage/sfx_damage_glass" />		
 		<tag Name="PunchSound" Value="Sounds/Damage/sfx_damage_glass" />	
   </object>
-  <object Name="Quatravolt Glider" Inherits="BaseFish">
-    <part Name="Render" DisplayName="quatravolt glider" RenderString="224" Tile="Creatures\sw_eel_2.bmp" DetailColor="y" ColorString="&amp;W" />
+  
+  <object Name="Quatravolt Glider" Load="Merge">
+    <part Name="Render" DisplayName="quatravolt glider" RenderString="224" Tile="bucklerparry_largerfolk/eel2_fat.png" DetailColor="y" ColorString="&amp;W" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures\sw_eel_2.bmp" WeightStage_1="bucklerparry_largerfolk/eel2_fat.png" />
     <part Name="Description" Short="=pronouns.Possessive= body is a clotted, finned cord that hovers and strums the air with magnetic force. Barbels crack out of =pronouns.possessive= mouth then sizzle and fry =pronouns.possessive= saliva." />
-    <part Name="Brain" MaxKillRadius="6" />
-    <stat Name="Level" Value="32" />
-    <stat Name="AV" Value="8" />
-    <stat Name="Ego" sValue="14" />
-    <stat Name="HeatResistance" Value="20" />
-    <stat Name="ColdResistance" Value="20" />
-    <stat Name="ElectricResistance" Value="300" />
-    <stat Name="AcidResistance" Value="20" />
-    <stat Name="Hitpoints" Value="140" />
-    <tag Name="Role" Value="Brute" />
-    <removepart Name="Aquatic" />
-    <removepart Name="SpawnWithLiquid" />
-    <mutation Name="TemporalFugue" Level="7" />
-    <mutation Name="ElectricalGeneration" Level="10" BaseChargePerTurnPercent="300" />
-    <inventoryobject Blueprint="QuatravoltGlider_Bite" Number="1" />
-    <tag Name="Polypwalking" />
-    <tag Name="DynamicObjectsTable:PalladiumReef_Creatures" />
   </object>
-  <object Name="QuatravoltGlider_Bite" Inherits="Bite">
-    <part Name="MeleeWeapon" BaseDamage="0" />
-    <part Name="ElementalDamage" Damage="4d4" Attributes="Electric" />
-  </object>
-  <object Name="Plasma Jelly" Inherits="BaseJelly">
+  <object Name="Plasma Jelly" Load="Merge">
     <part Name="Render" DisplayName="plasma jelly" Tile="bucklerparry_largerfolk/plasma_jelly_fat.png"  RenderString="J" ColorString="&amp;Y" DetailColor="g" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_jelly.bmp" WeightStage_1="bucklerparry_largerfolk/plasma_jelly_fat.png" />
     <part Name="Description" Short="Roses of burning ions bloom inside the slick and glassy membrane. Trailing the galactic bell is a tetrad of incandescent feelers, melted jade and ivory, steaming the air." />
-    <part Name="Body" Anatomy="Jelly" />
-    <part Name="Corpse" CorpseChance="100" CorpseBlueprint="Plasma1000" />
-    <part Name="Brain" MaxKillRadius="6" />
-    <stat Name="Level" Value="34" />
-    <stat Name="Hitpoints" Value="200" />
-    <stat Name="AV" Value="4" />
-    <stat Name="ElectricResistance" Value="30" />
-    <stat Name="HeatResistance" Value="30" />
-    <stat Name="ColdResistance" Value="30" />
-    <stat Name="AcidResistance" Value="100" />
-    <mutation Name="PlasmaGeneration" Level="10" />
-    <tag Name="Role" Value="Controller" />
-    <inventoryobject Blueprint="PlasmaJelly_Sting" Number="4" />
-    <tag Name="Polypwalking" />
-    <tag Name="Strutwalking" />
-    <tag Name="DynamicObjectsTable:PalladiumReef_Creatures" />
   </object>
-  <object Name="PlasmaJelly_Sting" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="{{auroral|ionized}} tentacle" Tile="Creatures/natural-weapon-pseudopod.bmp" ColorString="&amp;G" />
-    <part Name="MeleeWeapon" HitBonus="6" BaseDamage="0" Slot="Hand" />
-    <part Name="ElementalDamage" Damage="5d4" Attributes="Heat" />
-  </object>
+
   <object Name="Red Jell" Inherits="BaseOoze">
     <part Name="Corpse" CorpseChance="0" />
     <part Name="Render" DisplayName="{{R|red jell}}" RenderString="j" ColorString="&amp;R" />
@@ -12996,16 +12869,9 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
     <xtagGrammar Proper="true" />
     <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
   </object>
-  <object Name="VillageZeroConvert" Inherits="NPC">
-    <part Name="Render" DisplayName="watervine farmer and Mechanimist convert" Tile="Creatures/farmer_convert.bmp" ColorString="&amp;C" DetailColor="g" RenderString="z" />
-    <part Name="Brain" Wanders="true" Factions="MechaSub-100" />
-    <part Name="JoppaZealot" />
-    <inventoryobject Blueprint="Canticles3" />
-    <inventoryobject Blueprint="Cloth Robe" />
-    <tag Name="Culture" Value="Mechanimist" />
-    <tag Name="QuestGiver" Value="O Glorious Shekhinah!" />
-    <tag Name="BaseObject" Value="*noinherit" />
-    <part Name="Interesting" />
+  <object Name="VillageZeroConvert" Load="Merge">
+    <part Name="Render" DisplayName="watervine farmer and Mechanimist convert" Tile="bucklerparry_largerfolk/farmer_convert_fat.png" ColorString="&amp;C" DetailColor="g" RenderString="z" />
+    <!-- Creatures/farmer_convert.bmp -->
   </object>
   <object Name="WatervineFarmerConvert" Inherits="VillageZeroConvert">
     <part Name="Description" Short="=pronouns.Possessive= kufiya has been cut and resewn to a cowl, and =pronouns.subjective= =verb:have:afterpronoun= tailored a vinewafer sack to approximate the slate habit of the chromaic people. A sheaf of watervine bundled in copper wire is slung on =pronouns.possessive= hip, and =pronouns.subjective= =verb:rub:afterpronoun= a salt-nailed thumb over a talisman of cracked circuitboard." />
@@ -13023,7 +12889,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
     <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
   </object>
   <object Name="PigFarmerConvert" Inherits="VillageZeroConvert">
-    <part Name="Render" DisplayName="pig farmer and Mechanimist convert" Tile="Creatures/farmer_convert.bmp" ColorString="&amp;C" DetailColor="w" RenderString="z" />
+    <part Name="Render" DisplayName="pig farmer and Mechanimist convert" Tile="bucklerparry_largerfolk/farmer_convert_fat.png" ColorString="&amp;C" DetailColor="w" RenderString="z" />
     <part Name="Description" Short="=pronouns.Possessive= kufiya has been cut and resewn to a cowl, and =pronouns.subjective= =verb:have:afterpronoun= tailored an apple sack to approximate the slate habit of the chromaic people. A herding crook sheathed in copper wire is slung on =pronouns.possessive= hip, and =pronouns.subjective= =verb:rub:afterpronoun= a salt-nailed thumb over a talisman of cracked circuitboard." />
     <stat Name="Level" Value="3" />
     <stat Name="AV" Value="3" />

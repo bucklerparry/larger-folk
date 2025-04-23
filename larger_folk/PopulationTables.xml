@@ -8,4 +8,64 @@
     </group>
   </population>
 
+  <population Name="Injectors" Load="Merge">
+    <group Name="Items" Load="Merge">
+      <object Weight="50" Number="1" Blueprint="GainTonic" />
+    </group>
+  </population>
+
+  <population Name="Meds 1" Load="Merge">
+    <group Name="Items" Load="Merge">
+      <object Weight="5" Number="1" Blueprint="GainTonic" />
+    </group>
+  </population>
+
+  <population Name="Meds 2" Load="Merge">
+    <group Name="Items" Load="Merge">
+      <object Weight="5" Number="1" Blueprint="GainTonic" />
+    </group>
+  </population>
+
+  <population Name="Meds 3" Load="Merge">
+    <group Name="Items" Load="Merge">
+      <object Weight="5" Number="1" Blueprint="GainTonic" />
+    </group>
+  </population>
+
+  <population Name="Meds 4" Load="Merge">
+    <group Name="Items" Load="Merge">
+      <object Weight="45" Number="1" Blueprint="GainTonic" />
+    </group>
+  </population>
+
+  <population Name="Meds 5" Load="Merge">
+    <group Name="Items" Load="Merge">
+      <object Weight="45" Number="1" Blueprint="GainTonic" />
+    </group>
+  </population>
+
+  <population Name="Meds 6" Load="Merge">
+    <group Name="Items" Load="Merge">
+      <object Weight="45" Number="1" Blueprint="GainTonic" />
+    </group>
+  </population>
+
+  <population Name="Meds 7" Load="Merge">
+    <group Name="Items" Load="Merge">
+      <object Weight="45" Number="1" Blueprint="GainTonic" />
+    </group>
+  </population>
+
+  <population Name="Meds 8" Load="Merge">
+    <group Name="Items" Load="Merge">
+      <object Weight="45" Number="1" Blueprint="GainTonic" />
+    </group>
+  </population>
+
+   <population Name="Village Tinker 1" Load="Merge">
+    <group Name="Items" Load="Merge">
+      <object Number="1-4" Blueprint="GainTonic" Chance="100"/>
+    </group>
+  </population>
+
 </populations>

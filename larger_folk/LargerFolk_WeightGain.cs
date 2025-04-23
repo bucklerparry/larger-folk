@@ -152,6 +152,7 @@ public class LargerFolk_WeightGain : IPart
             TotalCalories = 0;
         }
 
+        //if (CaloriesToStage)
         ConfirmWeightStage(last_calories, TotalCalories);
     }
 

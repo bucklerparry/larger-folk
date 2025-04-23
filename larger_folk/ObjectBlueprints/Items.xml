@@ -10945,7 +10945,7 @@ Heat damage you deal is increased by 25%.
 +20 Quickness
 Your temperature cannot be increased by external heat sources.
 You must move around to avoid combusting and losing the effects of this tonic." />
-    />
+
     <part Name="TinkerItem" Bits="01" Ingredient="Fire Ant Gaster Paste" />
     <tag Name="Tier" Value="2" />
     <tag Name="TechTier" Value="4" />
@@ -10997,6 +10997,7 @@ You recover 0.9 hit points per level (minimum 5) each round." />
     <tag Name="ChooseToPreserve" />
     <tag Name="DynamicObjectsTable:Tonics_NonRare" />
   </object>
+ 
 
   <object Name="SkulkTonic" Inherits="Tonic">
     <part Name="Render" DisplayName="{{skulk|skulk}} injector" />
@@ -12786,5 +12787,35 @@ These effects stack if multiple rubbergums are ingested." />
     <tag Name="ProjectileVFX" Value="MissileWeaponsEffects/lead_slug" />
     <tag Name="ProjectileVFXConfiguration" Value="duration::0.25;;slugColor::#FFFFFF;;trailColor::#808080" />
   </object>
+
+  <object Name="GainTonic" Inherits="Tonic">
+    <part Name="Render" DisplayName="{{Y|adipocytic}} injector" />
+    <part Name="LargerFolk_GainTonicApplicator" />
+    <part Name="RulesDescription" Text="Duration: 15 rounds
+You gain 400 calories each round." AltForGenotype="True Kin" GenotypeAlt="Duration: 5 rounds
+You gain 600 calories each round." />
+    <part Name="TinkerItem" Bits="01" Ingredient="Dreadroot Tuber" />
+    <part Name="PreservableItem" Result="Congealed Salve" Number="5" />
+    <tag Name="Gift" Value="*noinherit" />
+    <tag Name="Tier" Value="1" />
+    <tag Name="TechTier" Value="4" />
+    <tag Name="ChooseToPreserve" />
+    <tag Name="DynamicObjectsTable:Tonics_NonRare" />
+  </object>
+
+  <!-- <object Name="WeightLossTonic" Inherits="Tonic">
+    <part Name="Render" DisplayName="{{Y|adipolemic}} injector" />
+    <part Name="LargerFolk_LossTonicApplicator" />
+    <part Name="RulesDescription" Text="Duration: 15 rounds
+You lose 300 calories each round." AltForGenotype="True Kin" GenotypeAlt="Duration: 5 rounds
+You lose 450 calories each round." />
+    <part Name="TinkerItem" Bits="01" Ingredient="Dreadroot Tuber" />
+    <part Name="PreservableItem" Result="Congealed Salve" Number="5" />
+    <tag Name="Gift" Value="*noinherit" />
+    <tag Name="Tier" Value="1" />
+    <tag Name="TechTier" Value="4" />
+    <tag Name="ChooseToPreserve" />
+    <tag Name="DynamicObjectsTable:Tonics_NonRare" />
+  </object> -->
 
 </objects>

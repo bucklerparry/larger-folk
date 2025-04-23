@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<objects>
+
+  <!--    
+    1 Unidentified item name templates
+		2 Cooking ingredient mappings
+    3 Villager templates
+    4 Faction hero templates
+    5 Faction data buckets    
+  -->
+
+  <!-- DataBuckets are just data stores; don't instantiate these objects -->
+
+	<!--
+
+    **************************************
+       Unidentified item name templates
+    **************************************
+
+  -->
+
+	<!-- Unknown names -->
+	
+
+	<!-- Partially known names -->	
+
+  <!-- tonics -->
+  <object Name="UnknownSmallRuddyTube" Inherits="UnknownMed">
+		<part Name="Render" DisplayName="{{r|ruddy}} tube" ColorString="&amp;r" />		
+		<tag Name="ExaminerUnknownMeds" />
+	</object>
+  <!-- <object Name="UnknownSmallAzureTube" Inherits="UnknownMed">
+		<part Name="Render" DisplayName="{{B|azure}} tube" ColorString="&amp;B" />		
+		<tag Name="ExaminerUnknownMeds" />
+	</object> -->
+	<!-- 
+  <object Name="UnknownEmptyMed" Inherits="UnknownMed">
+		<part Name="Render" DisplayName="tube" DetailColor="k" ColorString="&amp;y" />
+		<part Name="Description" Short="Empty air pressurizes a channel of glass." />
+		<tag Name="ExaminerRandom" Value="*delete" />
+	</object>
+	<object Name="UnknownSmallMilkyTube" Inherits="UnknownMed">
+		<part Name="Render" DisplayName="{{Y|milky}} tube" ColorString="&amp;Y" />		
+		<tag Name="ExaminerUnknownMeds" />
+	</object>
+	<object Name="UnknownSmallSmokeyTube" Inherits="UnknownMed">
+		<part Name="Render" DisplayName="{{K|smokey}} tube" ColorString="&amp;K" />		
+		<tag Name="ExaminerUnknownMeds" />
+	</object>
+	<object Name="UnknownSmallRoseyTube" Inherits="UnknownMed">
+		<part Name="Render" DisplayName="{{R|rosey}} tube" ColorString="&amp;R" />		
+		<tag Name="ExaminerUnknownMeds" />
+	</object>
+	<object Name="UnknownSmallTurquoiseTube" Inherits="UnknownMed">
+		<part Name="Render" DisplayName="{{C|turquoise}} tube" ColorString="&amp;C" />		
+		<tag Name="ExaminerUnknownMeds" />
+	</object>
+	<object Name="UnknownSmallCobaltTube" Inherits="UnknownMed">
+		<part Name="Render" DisplayName="{{b|cobalt}} tube" ColorString="&amp;b" />		
+		<tag Name="ExaminerUnknownMeds" />
+	</object>
+	<object Name="UnknownSmallMossyTube" Inherits="UnknownMed">
+		<part Name="Render" DisplayName="{{g|mossy}} tube" ColorString="&amp;g" />		
+		<tag Name="ExaminerUnknownMeds" />
+	</object>
+	<object Name="UnknownSmallGoldFleckedTube" Inherits="UnknownMed">
+		<part Name="Render" DisplayName="{{W|gold-flecked}} tube" ColorString="&amp;W" />		
+		<tag Name="ExaminerUnknownMeds" />
+	</object>
+	<object Name="UnknownSmallMuddyTube" Inherits="UnknownMed">
+		<part Name="Render" DisplayName="{{w|muddy}} tube" ColorString="&amp;w" />		
+		<tag Name="ExaminerUnknownMeds" />
+	</object>
+	<object Name="UnknownSmallVioletTube" Inherits="UnknownMed">
+		<part Name="Render" DisplayName="{{m|violet}} tube" ColorString="&amp;m" />		
+		<tag Name="ExaminerUnknownMeds" />
+	</object>
+	<object Name="UnknownSmallPlatinumTube" Inherits="UnknownMed">
+		<part Name="Render" DisplayName="{{y|platinum}} tube" ColorString="&amp;y" />		
+		<tag Name="ExaminerUnknownMeds" />
+	</object> -->
+
+	<!-- End unidentified item name templates -->
+
+	<!--
+
+    *********************************
+       Cooking ingredient mappings
+    *********************************
+
+  -->
+
+  <!--
+  <object Name="ProceduralCookingIngredient_heat" Inherits="IngredientMapping">
+    <tag Name="Units" Value="CookingDomainHeat_UnitFlamingHands,CookingDomainHeat_UnitPyrokinesis,CookingDomainHeat_UnitBreatheFire,CookingDomainHeat_UnitResist" />
+    <tag Name="Triggers" Value="CookingDomainHeat_OnEnflamed,CookingDomainHeat_OnDealingHeatDamage" />
+    <tag Name="Actions" Value="CookingDomainHeat_FlamingHandsCharge_ProceduralCookingTriggeredAction,CookingDomainHeat_PyrokinesisCharge_ProceduralCookingTriggeredAction,CookingDomainHeat_HeatResist_ProceduralCookingTriggeredAction,CookingDomainHeat_LargeHeatResist_ProceduralCookingTriggeredAction" />
+    <tag Name="Description" Value="heat and fire-based" />
+    <tag Name="RandomWeight" Value="10" />
+		<tag Name="RandomHighTierWeight" Value="2" />
+  </object> 
+  -->
+
+
+  <!-- End cooking ingredient mappings -->
+  
+  <!--
+
+    ************************
+       Villager templates
+    ************************
+
+  -->
+  <!--<object Name="SpecialVillagerHeroTemplate" Inherits="DataBucket" />
+
+  <object Name="SpecialVillagerHeroTemplate_Mayor" Inherits="SpecialVillagerHeroTemplate">
+    <tag Name="HeroIntBoost" Value="3" />
+    <tag Name="HeroWilBoost" Value="3" />
+    <tag Name="HeroEgoBoost" Value="3" />
+    <tag Name="HeroNameColor" Value="&amp;Y" />
+    <tag Name="HeroColorString" Value="&amp;r" />
+    <tag Name="HeroTileColor" Value="&amp;r" />
+    <tag Name="HeroSelfPreservationThreshold" Value="40" />
+  </object>
+  <object Name="SpecialVillagerHeroTemplate_King" Inherits="SpecialVillagerHeroTemplate">
+    <tag Name="HeroIntBoost" Value="3" />
+    <tag Name="HeroWilBoost" Value="3" />
+    <tag Name="HeroEgoBoost" Value="3" />
+    <tag Name="HeroNameColor" Value="&amp;Y" />
+    <tag Name="HeroColorString" Value="&amp;M" />
+    <tag Name="HeroTileColor" Value="&amp;M" />
+    <tag Name="HeroSelfPreservationThreshold" Value="30" />
+  </object>
+  <object Name="SpecialVillagerHeroTemplate_Queen" Inherits="SpecialVillagerHeroTemplate">
+    <tag Name="HeroIntBoost" Value="3" />
+    <tag Name="HeroWilBoost" Value="3" />
+    <tag Name="HeroEgoBoost" Value="3" />
+    <tag Name="HeroNameColor" Value="&amp;Y" />
+    <tag Name="HeroColorString" Value="&amp;M" />
+    <tag Name="HeroTileColor" Value="&amp;M" />
+    <tag Name="HeroSelfPreservationThreshold" Value="30" />
+  </object>
+  <object Name="SpecialVillagerHeroTemplate_Councilor" Inherits="SpecialVillagerHeroTemplate">
+    <tag Name="HeroIntBoost" Value="1" />
+    <tag Name="HeroWilBoost" Value="1" />
+    <tag Name="HeroEgoBoost" Value="1" />
+    <tag Name="HeroNameColor" Value="&amp;Y" />
+    <tag Name="HeroColorString" Value="&amp;r" />
+    <tag Name="HeroTileColor" Value="&amp;r" />
+    <tag Name="HeroSelfPreservationThreshold" Value="50" />
+  </object>
+  <object Name="SpecialVillagerHeroTemplate_Senator" Inherits="SpecialVillagerHeroTemplate">
+    <tag Name="HeroIntBoost" Value="1" />
+    <tag Name="HeroWilBoost" Value="1" />
+    <tag Name="HeroEgoBoost" Value="1" />
+    <tag Name="HeroNameColor" Value="&amp;Y" />
+    <tag Name="HeroColorString" Value="&amp;r" />
+    <tag Name="HeroTileColor" Value="&amp;r" />
+    <tag Name="HeroSelfPreservationThreshold" Value="60" />
+  </object>
+  <object Name="SpecialVillagerHeroTemplate_Parliamentarian" Inherits="SpecialVillagerHeroTemplate">
+    <tag Name="HeroIntBoost" Value="1" />
+    <tag Name="HeroWilBoost" Value="1" />
+    <tag Name="HeroEgoBoost" Value="1" />
+    <tag Name="HeroNameColor" Value="&amp;Y" />
+    <tag Name="HeroColorString" Value="&amp;r" />
+    <tag Name="HeroTileColor" Value="&amp;r" />
+    <tag Name="HeroSelfPreservationThreshold" Value="70" />
+  </object>
+  <object Name="SpecialVillagerHeroTemplate_Viceroy" Inherits="SpecialVillagerHeroTemplate">
+    <tag Name="HeroIntBoost" Value="3" />
+    <tag Name="HeroWilBoost" Value="3" />
+    <tag Name="HeroEgoBoost" Value="3" />
+    <tag Name="HeroNameColor" Value="&amp;Y" />
+    <tag Name="HeroColorString" Value="&amp;r" />
+    <tag Name="HeroTileColor" Value="&amp;r" />
+    <tag Name="HeroSelfPreservationThreshold" Value="20" />
+  </object>
+  <object Name="SpecialVillagerHeroTemplate_Governor" Inherits="SpecialVillagerHeroTemplate">
+    <tag Name="HeroIntBoost" Value="3" />
+    <tag Name="HeroWilBoost" Value="3" />
+    <tag Name="HeroEgoBoost" Value="3" />
+    <tag Name="HeroNameColor" Value="&amp;Y" />
+    <tag Name="HeroColorString" Value="&amp;r" />
+    <tag Name="HeroTileColor" Value="&amp;r" />
+    <tag Name="HeroSelfPreservationThreshold" Value="60" />
+  </object>
+  <object Name="SpecialVillagerHeroTemplate_Warden" Inherits="SpecialVillagerHeroTemplate">
+    <tag Name="HeroStrBoost" Value="3" />
+    <tag Name="HeroTouBoost" Value="3" />
+    <tag Name="HeroAgiBoost" Value="3" />
+    <tag Name="HeroNameColor" Value="&amp;Y" />
+    <tag Name="HeroColorString" Value="&amp;B" />
+    <tag Name="HeroTileColor" Value="&amp;B" />
+    <tag Name="HeroMinLevel" Value="20" />
+  </object>
+  <object Name="SpecialVillagerHeroTemplate_Merchant" Inherits="SpecialVillagerHeroTemplate">
+    <tag Name="HeroEgoBoost" Value="3" />
+    <tag Name="HeroNameColor" Value="&amp;Y" />
+    <tag Name="HeroColorString" Value="&amp;W" />
+    <tag Name="HeroTileColor" Value="&amp;W" />
+    <tag Name="HeroMentalMutations" Value="0" />
+    <tag Name="HeroPhysicalMutations" Value="0" />
+    <tag Name="HeroNoWaterRitual" Value="true" />
+  </object>
+  <object Name="SpecialVillagerHeroTemplate_DromadMerchant" Inherits="SpecialVillagerHeroTemplate_Merchant">
+    <tag Name="HeroSelfPreservationThreshold" Value="40" />
+  </object>
+  <object Name="SpecialVillagerHeroTemplate_Tinker" Inherits="SpecialVillagerHeroTemplate">
+    <tag Name="HeroIntBoost" Value="2" />
+    <tag Name="HeroStrBoost" Value="0" />
+    <tag Name="HeroTouBoost" Value="0" />
+    <tag Name="HeroAgiBoost" Value="0" />
+    <tag Name="HeroHPBoost" Value="1" />
+    <tag Name="HeroLevelMultiplier" Value="1" />
+    <tag Name="HeroNameColor" Value="&amp;Y" />
+    <tag Name="HeroColorString" Value="&amp;c" />
+    <tag Name="HeroTileColor" Value="&amp;c" />
+    <tag Name="HeroNoWaterRitual" Value="true" />
+    <tag Name="HeroSelfPreservationThreshold" Value="50" />
+  </object>
+  <object Name="SpecialVillagerHeroTemplate_Apothecary" Inherits="SpecialVillagerHeroTemplate">
+    <tag Name="HeroIntBoost" Value="1" />
+    <tag Name="HeroStrBoost" Value="0" />
+    <tag Name="HeroTouBoost" Value="1" />
+    <tag Name="HeroAgiBoost" Value="0" />
+    <tag Name="HeroHPBoost" Value="1" />
+    <tag Name="HeroLevelMultiplier" Value="1" />
+    <tag Name="HeroNameColor" Value="&amp;Y" />
+    <tag Name="HeroColorString" Value="&amp;g" />
+    <tag Name="HeroTileColor" Value="&amp;g" />
+    <tag Name="HeroNoWaterRitual" Value="true" />
+    <tag Name="HeroSelfPreservationThreshold" Value="40" />
+  </object>
+  <object Name="SpecialVillagerHeroTemplate_Villager" Inherits="SpecialVillagerHeroTemplate">
+    <tag Name="HeroNameColor" Value="&amp;Y" />
+    <tag Name="HeroColorString" Value="&amp;W" />
+    <tag Name="HeroTileColor" Value="&amp;W" />
+    <tag Name="HeroDetailColor" Value="same" />
+    <tag Name="HeroNoWaterRitual" Value="true" />
+    <tag Name="HeroSelfPreservationThreshold" Value="55" />
+  </object>
+  <object Name="SpecialVillagerHeroTemplate_VillagerMayor" Inherits="SpecialVillagerHeroTemplate">
+    <tag Name="HeroNameColor" Value="&amp;Y" />
+    <tag Name="HeroColorString" Value="&amp;r" />
+    <tag Name="HeroTileColor" Value="&amp;r" />
+    <tag Name="HeroDetailColor" Value="same" />
+    <tag Name="HeroSelfPreservationThreshold" Value="35" />
+  </object>-->
+  
+  <!-- End villager templates -->
+
+  <!--
+
+    ****************************
+       Faction hero templates
+    ****************************
+
+  -->
+  
+  <!-- End faction hero templates -->
+
+	<!--
+
+    *********************************
+       Misc special hero templates
+    *********************************
+
+  -->
+
+
+	<!-- End misc special hero templates -->
+
+  <!--
+
+    ***************************
+       Faction data buckets
+    ***************************
+
+  -->
+  
+
+</objects>
