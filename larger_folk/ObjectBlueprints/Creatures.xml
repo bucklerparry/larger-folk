@@ -4364,24 +4364,12 @@ The infant child is unaware
     <part Name="MeleeWeapon" BaseDamage="1d3+1" Skill="LongBlades" Slot="Face" />
     <part Name="Metal" />
   </object>
-  <object Name="Prism Perch" Inherits="BaseFish">
-    <part Name="Render" DisplayName="prism perch" Tile="Creatures\sw_fish_school_1.bmp" ColorString="&amp;Y" TileColor="&amp;y" />
+  <object Name="Prism Perch" Load="Merge">
+    <part Name="Render" DisplayName="prism perch" Tile="bucklerparry_largerfolk/fishschool1_fat.png" ColorString="&amp;Y" TileColor="&amp;y" />
     <part Name="Description" Short="Unlidded eyes stare out from a whirling school of opalescent scales." />
-    <stat Name="Hitpoints" Value="25" />
-    <part Name="Brain" WandersRandomly="true" Aquatic="true" Wanders="false" Calm="true" Factions="Fish-100" />
-		<mutation Name="Gills" Level="10" />
-    <inventoryobject Blueprint="PrismPerch_Bite" Number="1" />
-    <stat Name="Level" Value="14" />
-    <builder Name="RandomTile" Tiles="Creatures\sw_fish_school_1.bmp,Creatures\sw_fish_school_2.bmp" />
-    <part Name="RandomColors" TileColor="g,r,m,W,K" DetailColor="g,r,m,W,K" />
-    <tag Name="Species" Value="perch" />
-    <tag Name="PlacementHint" Value="Aquatic" />
-    <tag Name="Gender" Value="plural" />
-    <tag Name="DynamicObjectsTable:LakeHinnom_Creatures" />
-    <tag Name="DynamicObjectsTable:PalladiumReef_Creatures" />
-  </object>
-  <object Name="PrismPerch_Bite" Inherits="Bite">
-    <part Name="MeleeWeapon" BaseDamage="2d2" />
+    
+    <builder Name="RandomTile" Tiles="bucklerparry_largerfolk/fishschool1_fat.png,bucklerparry_largerfolk/fishschool2_fat.png" /> 
+    <!-- "Creatures\sw_fish_school_1.bmp,Creatures\sw_fish_school_2.bmp" /> -->
   </object>
   <object Name="Quillipede" Inherits="BaseInsect">
     <part Name="Corpse" CorpseChance="10" CorpseBlueprint="quillipede corpse" />
@@ -8088,39 +8076,12 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
     <tag Name="Light" />		
   </object>
 
-  <object Name="Memory Eater" Inherits="BaseFish">
-    <part Name="Render" DisplayName="memory eater" Tile="Creatures/sw_memory_eater.bmp" RenderString="236" TileColor="&amp;K" ColorString="&amp;m" DetailColor="M" />
+  <object Name="Memory Eater" Load="Merge">
+    <part Name="Render" DisplayName="memory eater" Tile="bucklerparry_largerfolk/memory_eater_fat.png" RenderString="236" TileColor="&amp;K" ColorString="&amp;m" DetailColor="M" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_memory_eater.bmp" WeightStage_1="bucklerparry_largerfolk/memory_eater_fat.png" />
     <part Name="Description" Short="Eight rings of pointed teeth rasp away tissue, and =pronouns.possessive= suction-cup mouth latches onto the exposed spinal column and sucks out the raw nerves. =pronouns.Possessive= glands are fat with stolen memories." />
-    <part Name="Corpse" CorpseChance="35" CorpseBlueprint="Memory Eater Corpse" />
-    <stat Name="Ego" sValue="30" />
-    <stat Name="Level" Value="33" />
-    <stat Name="Hitpoints" Value="150" />
-    <stat Name="Strength" Boost="2" />
-    <stat Name="Agility" Boost="1" />
-    <stat Name="AV" Value="9" />
-    <stat Name="HeatResistance" Value="20" />
-    <stat Name="ColdResistance" Value="20" />
-    <stat Name="ElectricResistance" Value="20" />
-    <stat Name="AcidResistance" Value="20" />
-    <tag Name="Role" Value="Brute" />
-    <tag Name="Species" Value="lamprey" />
-    <inventoryobject Blueprint="MemoryEater_Bite" Number="1" />
-    <tag Name="Gender" Value="neuter" />
-    <tag Name="DynamicObjectsTable:BaroqueRuins_Creatures" />
   </object>
-  <object Name="MemoryEater_Bite" Inherits="Bite">
-    <part Name="MeleeWeapon" BaseDamage="2d3" />
-    <part Name="EatMemoriesOnHit" />
-  </object>
-  <object Name="Memory Eater Corpse" Inherits="Worm Corpse">
-    <part Name="Render" DisplayName="memory eater corpse" ColorString="&amp;y" />
-    <part Name="Food" Message="You don't remember what it tastes like." />    
-    <part Name="Commerce" Value="100" />
-    <part Name="Physics" Weight="50" />    
-    <tag Name="Tier" Value="7" />
-    <part Name="Butcherable" OnSuccess="Psychal Gland" />
-    <tag Name="Role" Value="Rare" />
-  </object>
+  
   <object Name="Mirror Bug" Inherits="BaseInsect">
     <part Name="Render" DisplayName="mirror bug" Tile="Creatures/sw_bug.bmp" ColorString="&amp;y" TileColor="&amp;K" DetailColor="y" RenderString="i" />
     <part Name="Description" Short="It glints as it scuttles beneath an alighted exoskeleton of angled glass." />
@@ -8155,7 +8116,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
 		<tag Name="TakeDamageSound" Value="Sounds/Damage/sfx_damage_glass" />		
 		<tag Name="PunchSound" Value="Sounds/Damage/sfx_damage_glass" />	
   </object>
-  
+
   <object Name="Quatravolt Glider" Load="Merge">
     <part Name="Render" DisplayName="quatravolt glider" RenderString="224" Tile="bucklerparry_largerfolk/eel2_fat.png" DetailColor="y" ColorString="&amp;W" />
     <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures\sw_eel_2.bmp" WeightStage_1="bucklerparry_largerfolk/eel2_fat.png" />
@@ -8300,35 +8261,10 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
     <tag Name="Tier" Value="7" />    
     <tag Name="Role" Value="Uncommon" />
   </object>
-  <object Name="Trining Lamprey" Inherits="BaseWorm">
-    <part Name="Render" DisplayName="trining lamprey" Tile="Creatures/sw_trining_lamprey.bmp" RenderString="224" ColorString="&amp;G" TileColor="&amp;m" DetailColor="G" />
+  <object Name="Trining Lamprey" Load="Merge">
+    <part Name="Render" DisplayName="trining lamprey" Tile="bucklerparry_largerfolk/trining_lamprey_fat.png" RenderString="224" ColorString="&amp;G" TileColor="&amp;m" DetailColor="G" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_trining_lamprey.bmp" WeightStage_1="bucklerparry_largerfolk/trining_lamprey_fat.png" />
     <part Name="Description" Short="A giant ribbon of scaleless tissue quivers in suspension beyond a mouth ringed with repeating triangle teeth, and imagined finnage dresses =pronouns.possessive= glistening length. =pronouns.Subjective= =verb:extrude:afterpronoun= a double through the mirrored planes of reality, and inverts back through them to extrude a triple." />
-    <part Name="Brain" MaxKillRadius="4" Hostile="false" Factions="Fish-100" />
-    <stat Name="Level" Value="33" />
-    <stat Name="AV" Value="7" />
-    <stat Name="Hitpoints" Value="50" />
-    <stat Name="Ego" sValue="32" />
-    <stat Name="Agility" sValue="18" />
-    <stat Name="ElectricResistance" Value="30" />
-    <stat Name="HeatResistance" Value="30" />
-    <stat Name="ColdResistance" Value="30" />
-    <stat Name="AcidResistance" Value="30" />
-    <inventoryobject Blueprint="TriningLamprey_Bite" Number="1" />
-    <mutation Name="Regeneration" />
-    <part Name="MentalShield" />
-    <part Name="Triner" />
-    <tag Name="Role" Value="Controller" />
-    <skill Name="ShortBlades" />
-    <intproperty Name="TreatAsPsychic" Value="1" />
-	  <tag Name="NoHelpBroadcastWake" />
-    <tag Name="Polypwalking" />
-    <tag Name="Strutwalking" />    
-    <tag Name="DynamicObjectsTable:PalladiumReef_Creatures" />
-    <tag Name="DynamicObjectsTable:BaroqueRuins_Creatures" />
-  </object>
-  <object Name="TriningLamprey_Bite" Inherits="Bite">
-    <part Name="Render" DisplayName="{{B|psychic bite}}" />
-    <part Name="MeleeWeapon" BaseDamage="1d8+3" Stat="Ego" Slot="Head" />
   </object>
   <object Name="Sultan Croc" Inherits="Croc">
     <part Name="Render" DisplayName="sultan croc" RenderString="R" Tile="bucklerparry_largerfolk/sultancroc_fat.png" />

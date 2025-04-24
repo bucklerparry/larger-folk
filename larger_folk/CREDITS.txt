@@ -20,3 +20,12 @@ Bukie (chubbukie.bsky.social)
 - scorpiock_fat.png
 - spark_tick_fat.png
 - voider_fat.png
+- urchin_belcher_fat.png
+- twinning_lamprey_fat.png
+- madpole_fat.png
+- sewage_eel_fat.png
+- quatravolt_glider_fat.png
+- memory_eater_fat.png
+- fishschool1_fat.png (prism perch)
+- trining_lamprey_fat.png
+-
