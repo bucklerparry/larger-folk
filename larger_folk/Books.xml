@@ -1,5 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<books>
-  
+<books Load="Merge">
+    <book ID="LargerFolk_WeightSounds" Title="WeightSounds">
+        <page>{{emote|*Huff.*}}</page>
+        <page>{{emote|*Huff.*}}</page>
+        <page>{{emote|*Huff, puff.*}}</page>
+        <page>{{emote|*Haaaah...*}}</page>
+        <page>{{emote|*Wheeze.*}}</page>
+        <page>{{emote|*Whoof.*}}</page>
+        <page>{{emote|*Haaaah, haaaah...*}}</page>
+    </book>
+    <book ID="LargerFolk_BellySounds" Title="BellySounds">
+        <page>{{emote|*Gurgle.*}}</page>
+        <page>{{emote|*Grooooooan...*}}</page>
+        <page>{{emote|*Streeeeeetch...*}}</page>
+        <page>{{emote|*Grumble.*}}</page>
+    </book>
 
 </books>

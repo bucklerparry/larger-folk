@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<objects>
+<objects Load="Merge">
 
   <!--    
     1 Base creature objects
@@ -34,6 +34,7 @@
     <part Name="Combat" />
     <part Name="Experience" />
     <part Name="LargerFolk_WeightGain" />
+    <part Name="LargerFolk_WeightPreach" Book="LargerFolk_WeightSounds" Prefix="=subject.T= =verb:go= {{W|'" inOrder="false" />
     <part Name="Inventory" />
     <part Name="Mutations" />
     <part Name="Skills" />
