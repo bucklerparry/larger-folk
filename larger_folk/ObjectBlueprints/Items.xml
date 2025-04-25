@@ -12803,6 +12803,13 @@ You gain 600 calories each round." />
     <tag Name="DynamicObjectsTable:Tonics_NonRare" />
   </object>
 
+   <object Name="LargerFolk_WeightReport" Inherits="Book">
+    <part Name="Render" DisplayName="{{W|Classification and Process of Excess Consumption, 1st Edition}}" ColorString="&amp;g" RenderString="=" RenderLayer="5" Tile="Items/sw_book_2.bmp" TileColor="&amp;W" DetailColor="g" />
+    <part Name="Description" Short="Fine pages of lined parchment are bound into a brief distributable pamphlet." />
+    <part Name="Book" ID="LargerFolk_WeightReport" />
+    <part Name="Commerce" Value="200" />
+  </object>
+
   <!-- <object Name="WeightLossTonic" Inherits="Tonic">
     <part Name="Render" DisplayName="{{Y|adipolemic}} injector" />
     <part Name="LargerFolk_LossTonicApplicator" />

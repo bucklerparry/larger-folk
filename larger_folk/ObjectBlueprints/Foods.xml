@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<objects>
+<objects Load="Merge">
 
   <!--    
     1 Base objects
@@ -27,6 +27,14 @@
   
   
   <!-- End base objects -->
+
+<object Name="Starapple" Load="Merge">
+  <part Name="LargerFolk_FoodCalories" Calories="200" />
+</object>
+
+<object Name="Vinewafer" Load="Merge">
+  <part Name="LargerFolk_FoodCalories" Calories="50" />
+</object>
 
   <!--
 

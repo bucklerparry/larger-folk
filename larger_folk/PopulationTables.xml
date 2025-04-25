@@ -62,4 +62,10 @@
     </group>
   </population>
 
+  <population Name="Books">
+    <group Name="Items" Style="pickone">
+      <object Weight="20" Number="1" Blueprint="LargerFolk_WeightReport" />
+    </group>
+  </population>
+
 </populations>
