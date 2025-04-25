@@ -212,7 +212,7 @@ namespace XRL.World.Parts
                     {
                         if (!ParentObject.IsPlayerLed())
                         {
-                            PreacherHomily(gameObjectParameter, Dialog: true);
+                            PreacherHomily(gameObjectParameter, Dialog: false);
                         }
                     }
                     else
