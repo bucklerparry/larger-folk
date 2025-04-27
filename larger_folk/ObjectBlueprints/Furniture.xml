@@ -5442,13 +5442,14 @@ The frame forms half a heart; the Eaters' favorite remains." />
   </object>
 
   <!-- Sultan shrines -->
-  <object Name="SultanShrine" Inherits="MountedFurniture">
-    <part Name="Render" DisplayName="shrine" RenderString="228" ColorString="&amp;y" DetailColor="g" Occluding="true" Tile="bucklerparry_largerfolk/object_angelstatue_fat.png" RenderLayer="8"/>
+  <object Name="SultanShrine" Load="Merge">
+    <!-- <part Name="Render" DisplayName="shrine" RenderString="228" ColorString="&amp;y" DetailColor="g" Occluding="true" Tile="bucklerparry_largerfolk/object_angelstatue_fat.png" RenderLayer="8"/>
     <part Name="Physics" Weight="10000" FlameTemperature="99999" VaporTemperature="1500" Solid="true" />
     <stat Name="AV" Value="20" />
-    <stat Name="Hitpoints" Value="6000" />
-    <part Name="SultanShrine" />
-    <part Name="Shrine" />
+    <stat Name="Hitpoints" Value="6000" /> -->
+    <!-- <part Name="SultanShrine" /> -->
+    <part Name="LargerFolk_SultanShrine" />
+    <!-- <part Name="Shrine" />
     <part Name="RandomSubterraneanColors" DetailColor="r,c,w,Y" />
     <part Name="SmartuseTwiddles" />
     <part Name="Description" Short="" />
@@ -5459,7 +5460,7 @@ The frame forms half a heart; the Eaters' favorite remains." />
     <tag Name="NoVillageStrip" />
     <tag Name="WorshipColorPool" Value="Sultans" />
     <tag Name="QuestableVerb" Value="pray at,desecrate" />
-    <tag Name="QuestableEvent" Value="Prayed,Desecrated" />
+    <tag Name="QuestableEvent" Value="Prayed,Desecrated" /> -->
   </object>
   <object Name="JoppaSultanShrine" Inherits="SultanShrine">
     <part Name="Render" DisplayName="shrine" ColorString="&amp;y^k" Occluding="false" Tile="bucklerparry_largerfolk/object_angelstatue_fat.png" />
@@ -6336,5 +6337,8 @@ The frame forms half a heart; the Eaters' favorite remains." />
 	</object>	
 
 	<!-- End vehicle furniture -->
+
+  <!-- LargerFolk new furniture -->
+
 
 </objects>

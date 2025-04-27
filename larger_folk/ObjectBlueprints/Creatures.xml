@@ -1875,28 +1875,12 @@ The infant child is unaware
   </object>
 
 
-  <object Name="Dog" Inherits="BaseDog">
-    <part Name="Render" DisplayName="feral dog" Tile="creatures/sw_dog.bmp" RenderString="d" ColorString="&amp;y" />
-    <part Name="Corpse" CorpseChance="100" CorpseBlueprint="Dog Corpse" />
-    <stat Name="AV" Value="2" />
-    <stat Name="Hitpoints" Value="8" />
+  <object Name="Dog" Load="Merge">
+    <part Name="Render" DisplayName="feral dog" Tile="bucklerparry_largerfolk/dog_fat.png" RenderString="d" ColorString="&amp;y" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="creatures/sw_dog.bmp" WeightStage_1="bucklerparry_largerfolk/dog_fat.png" />
     <part Name="Description" Short="=pronouns.Subjective= =verb:are:afterpronoun= a snarling mess of matted hair." />
-    <inventoryobject Blueprint="Dog_Bite" Number="1" />
-    <part Name="Swarmer" />
-    <tag Name="Role" Value="Minion" />
-    <part Name="AIPilgrim" Chance ="10" MapNoteAttributes="humanoid,settlement" />
-    <stat Name="Level" Value="1" />
-    <tag Name="DynamicObjectsTable:DesertCanyon_Creatures" />
-    <tag Name="DynamicObjectsTable:Hills_Creatures" />
-    <tag Name="DynamicObjectsTable:Mountains_Creatures" />
-    <tag Name="DynamicObjectsTable:Flowerfields_Creatures" />
   </object>
-  <object Name="Dog_Bite" Inherits="Bite">
-    <part Name="MeleeWeapon" BaseDamage="1d3" />
-  </object>
-  <object Name="Dog Corpse" Inherits="Small Animal Corpse">
-    <part Name="Render" DisplayName="dog corpse" />        
-  </object>
+
   <object Name="BarathrumiteRobot" Inherits="BaseRobot">
     <part Name="Brain" Hostile="false" Factions="Barathrumites-100" />
     <part Name="FriendlyFireAmnestyDuringQuest" QuestName="A Call to Arms" />
@@ -2632,87 +2616,36 @@ The infant child is unaware
     <tag Name="Role" Value="Controller" />
     <part Name="AloePorta" />
   </object>
-  <object Name="Beetlebum" Inherits="BaseInsect">
+  <object Name="Beetlebum" Load="Merge">
     <part Name="Render" DisplayName="beetlebum" Tile="bucklerparry_largerfolk/beetlebum_fat.png" RenderString="i" ColorString="&amp;B" TileColor="&amp;K" DetailColor="B" />
-    <part Name="Corpse" CorpseChance="50" CorpseBlueprint="Giant Beetle Corpse" />
-    <stat Name="Level" Value="8" />
-    <stat Name="AV" Value="6" />
-    <stat Name="Hitpoints" Value="45" />
-    <part Name="Brain" Hostile="false" Wanders="true" Hibernating="false" Factions="Prey-100,Insects-25" />
     <part Name="Description" Short="Bonnet blue wings contour to =pronouns.possessive= abdominal balloon, puffed out to blimpish volume by the garbage =pronouns.subjective= =verb:have:afterpronoun= eaten." />
-    <skill Name="Endurance" />
-    <inventoryobject Blueprint="Beetlebum_Mandibles" />
-    <tag Name="Role" Value="Brute" />
-    <part Name="Sweeper" />
-    <tag Name="Species" Value="beetle" />
-    <tag Name="DynamicObjectsTable:Jungle_Creatures" />
-    <tag Name="DynamicObjectsTable:Ruins_Creatures" />
   </object>
-  <object Name="Beetlebum_Mandibles" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="large mandibles" Tile="Creatures/natural-weapon-mandible.bmp" ColorString="&amp;w" />
-    <part Name="MeleeWeapon" BaseDamage="1d7" Skill="Axe" Stat="Strength" Slot="Head" />
-    <tag Name="Gender" Value="plural" />
-  </object>  
   <object Name="Farm Beetlebum" Inherits="Beetlebum">
     <part Name="Brain" Hostile="false" Factions="Prey-100" />
     <tag Name="Grazer" />
     <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
   </object>
-  <object Name="Bloated Leech" Inherits="BaseWorm">
+  <object Name="Bloated Leech" Load="Merge">
     <part Name="Render" DisplayName="{{r|bloated leech}}" Tile="bucklerparry_largerfolk/bloated_leech_fat.png"  RenderString="W" ColorString="&amp;r" DetailColor="Y" />
-    <part Name="Corpse" CorpseChance="100" CorpseBlueprint="Leech Corpse" />
-    <stat Name="AV" Value="3" />
-    <stat Name="Level" Value="8" />
-    <stat Name="Hitpoints" Value="40" />
-    <part Name="Brain" Hostile="false" Calm="True" Factions="Worms-100" />
-    <inventoryobject Blueprint="Bloated_Leech_Bite" Number="1" />
     <part Name="Description" Short="Reticle dots are stretched to sagging geometry on =pronouns.possessive= bright and turgid wormback, coiled into flabby zigzags. =pronouns.Possessive= sucker bells flap open slightly on =pronouns.possessive= overstuffed head, satisfied." />
-    <mutation Name="LifeDrain" />
-    <skill Name="Axe" />
-    <tag Name="Role" Value="Brute" />
-    <tag Name="Species" Value="leech" />
-    <tag Name="DynamicObjectsTable:Jungle_Creatures" />
-    <tag Name="DynamicObjectsTable:Ruins_Creatures" />
   </object>
   <object Name="Bloated_Leech_Bite" Inherits="Bite">
     <part Name="MeleeWeapon" BaseDamage="1d4" Skill="Axe" Slot="Head" />
   </object>  
   
-  <object Name="ClockworkBeetle" Inherits="Giant Beetle">
-    <part Name="Body" Anatomy="HexapedalRobot" />
+  <object Name="ClockworkBeetle" Load="Merge">
     <part Name="Render" DisplayName="clockwork beetle" Tile="bucklerparry_largerfolk/beetlebum_fat.png"  RenderString="i" ColorString="&amp;c" DetailColor="W" />
-    <part Name="Brain" Hostile="false" Factions="Insects-100,Robots-100" />
-    <stat Name="AV" Value="4" />
-    <stat Name="DV" Value="2" />
-    <stat Name="Hitpoints" Value="10" />
-    <stat Name="Level" Value="10" />
-    <inventoryobject Blueprint="ClockworkBeetle_Bite" Number="1" />
-    <part Name="Description" Short="Shining black elytra flitter on the back of a goat-sized bug." />
-    <builder Name="Roboticized" ChanceOneIn="1" NamePrefix="" DescriptionPostfix="There is sharp, persistent ticking emanating outward." />
   </object>
   <object Name="ClockworkBeetle_Bite" Inherits="Bite">
     <part Name="MeleeWeapon" BaseDamage="2d6" Skill="Cudgel" Slot="Head" />
   </object>
-  <object Name="Issachari Raider" PreviousName="Desert Raider" Inherits="BaseIssachari">
+  <object Name="Issachari Raider" Load="Merge">
     <part Name="Render" DisplayName="Issachari raider" RenderString="h" Tile="bucklerparry_largerfolk/issachari_raider_fat.png" ColorString="&amp;Y" DetailColor="R" />
-		<stat Name="Hitpoints" Value="16" />
-    <stat Name="Level" Value="8" />
-    <inventoryobject Blueprint="Dagger" Number="1" />    
-    <tag Name="DynamicObjectsTable:Saltdunes_Creatures" />
-    <tag Name="DynamicObjectsTable:Saltdunes_Creatures:Weight" Value="3" />
   </object>
-  <object Name="Issachari Rifler" PreviousName="Desert Raider Rifleman" Inherits="BaseIssachari">
+  <object Name="Issachari Rifler" Load="Merge">
     <part Name="Render" DisplayName="Issachari rifler" Tile="bucklerparry_largerfolk/issachari_rifler_fat.png" RenderString="h" ColorString="&amp;y" />
-    <part Name="Corpse" CorpseChance="0" CorpseBlueprint="Snapjaw Corpse" />
-    <part Name="Brain" Hostile="false" Factions="Issachari-100" />
-    <stat Name="Hitpoints" Value="16" />
-    <stat Name="Level" Value="8" />
-    <inventoryobject Blueprint="Desert Rifle" Number="1" />
-    <inventoryobject Blueprint="Lead Slug" Number="8" />
-    <inventoryobject Blueprint="Long Sword" Number="1" />
-    <tag Name="DynamicObjectsTable:Saltdunes_Creatures" />
-    <tag Name="DynamicObjectsTable:Saltdunes_Creatures:Weight" Value="3" />
   </object>
+
   <object Name="Two-Headed Boar" Inherits="Boar">
     <part Name="Render" DisplayName="two-headed boar" Tile="creatures/sw_twoheadedboar.bmp" RenderString="o" ColorString="&amp;W" />
     <part Name="Corpse" CorpseChance="25" CorpseBlueprint="Boar Corpse" />
@@ -2729,20 +2662,12 @@ The infant child is unaware
     <tag Name="DynamicObjectsTable:Flowerfields_Creatures" />
   </object>
   	
-  <object Name="Guard Dog" Inherits="BaseDog">
-    <part Name="Render" DisplayName="guard dog" Tile="Creatures/sw_dog.bmp" RenderString="d" ColorString="&amp;w" DetailColor="K" />
-    <part Name="Corpse" CorpseChance="100" CorpseBlueprint="Dog Corpse" />
-    <part Name="Brain" Hostile="false" Factions="Dogs-100,Farmers-99" />
-    <stat Name="AV" Value="3" />
-    <stat Name="Hitpoints" Value="22" />
-    <part Name="Description" Short="The mess was combed out of =pronouns.possessive= nape by a doting companion, and =pronouns.possessive= forelegs are stiff in vigil." />
-    <stat Name="Level" Value="8" />
-    <inventoryobject Blueprint="BigDog_Bite" Number="1" />
-    <tag Name="Role" Value="Brute" />
+  <object Name="Guard Dog" Load="Merge">
+    <part Name="Render" DisplayName="guard dog" Tile="bucklerparry_largerfolk/dog_fat.png" RenderString="d" ColorString="&amp;w" DetailColor="K" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="creatures/sw_dog.bmp" WeightStage_1="bucklerparry_largerfolk/dog_fat.png" />
+    <part Name="Description" Short="The mess was combed out of =pronouns.possessive= nape by a doting companion, and =pronouns.possessive= flabby forelegs are stiff in vigil. =pronouns.Possessive= ponderous gut scrapes the earth as testament to ample compensation." />
   </object>
-  <object Name="BigDog_Bite" Inherits="Bite">
-    <part Name="MeleeWeapon" BaseDamage="1d8" />
-  </object>
+
   <object Name="Chute Crab" Inherits="BaseCrab">
     <part Name="Render" DisplayName="chute crab" Tile="creatures/sw_chutecrab.bmp" RenderString="c" ColorString="&amp;y" />
     <part Name="Corpse" CorpseChance="0" CorpseBlueprint="Chute Crab Corpse" />
@@ -2760,11 +2685,6 @@ The infant child is unaware
     <part Name="Swarmer" />
     <property Name="NoLoot" Value="true" />
   </object>
-  <object Name="Chute Crab Claw" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="crab claw" Tile="Creatures/natural-weapon-pincer.bmp" ColorString="&amp;y" />
-    <part Name="DisplayNameColor" Color="&amp;Y" />
-    <part Name="MeleeWeapon" BaseDamage="1d2" Skill="Cudgel" Stat="Strength" Slot="Hand" />
-  </object>	
   <object Name="Eyeless Crab" Inherits="BaseCrab">
     <part Name="Render" DisplayName="eyeless crab" RenderString="c" ColorString="&amp;Y" />
     <part Name="DisplayNameColor" Color="&amp;Y" />
@@ -4300,16 +4220,10 @@ The infant child is unaware
 	<object Name="Uplifted Still Gyre Wight of Agolgot" Inherits="Still Gyre Wight of Agolgot">
 		<part Name="Uplift" />
 	</object>
-  <object Name="Herding Dog" Inherits="BaseDog">
-    <part Name="Render" DisplayName="herding dog" Tile="Creatures/sw_dog.bmp" RenderString="d" ColorString="&amp;Y" DetailColor="K" />
-    <part Name="Corpse" CorpseChance="100" CorpseBlueprint="Dog Corpse" />
-    <part Name="Brain" Hostile="false" Factions="Dogs-100,Farmers-99" />
-    <stat Name="AV" Value="3" />
-    <stat Name="Hitpoints" Value="22" />
+  <object Name="Herding Dog" Load="Merge">
+    <part Name="Render" DisplayName="herding dog" Tile="bucklerparry_largerfolk/dog_fat.png" RenderString="d" ColorString="&amp;Y" DetailColor="K" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="creatures/sw_dog.bmp" WeightStage_1="bucklerparry_largerfolk/dog_fat.png" />
     <part Name="Description" Short="White and black shag sheds off =pronouns.objective=, and =pronouns.possessive= paws tap the ground with a working itch." />
-    <stat Name="Level" Value="12" />
-    <inventoryobject Blueprint="BigDog_Bite" Number="1" />
-    <tag Name="Role" Value="Brute" />
   </object>
   <object Name="Ice frog" Inherits="BaseFrog">
     <part Name="Render" DisplayName="ice frog" Tile="bucklerparry_largerfolk/ice_frog_fat.png"  RenderString="f" ColorString="&amp;C" DetailColor="W" />
@@ -5206,21 +5120,10 @@ The infant child is unaware
     <part Name="MeleeWeapon" HitBonus="4" BaseDamage="0" Skill="Cudgel" Stat="Strength" />
     <part Name="ElementalDamage" Damage="1d8+12" Attributes="Heat" />
   </object>
-  <object Name="Hyrkhound" Inherits="BaseDog">
-    <part Name="Render" ColorString="&amp;G" TileColor="&amp;w" DetailColor="G" RenderString="d" Tile="creatures/sw_dog.bmp" DisplayName="{{Y|hyrkhound}}" />
-    <stat Name="Level" Value="18" />
-    <part Name="Brain" Hostile="false" Factions="Dogs-100" />
-    <stat Name="Hitpoints" Value="20" />
-    <stat Name="Speed" Value="120" />
-    <inventoryobject Blueprint="Hyrkhound_Bite" Number="1" />
+  <object Name="Hyrkhound" Load="Merge">
+    <part Name="Render" ColorString="&amp;G" TileColor="&amp;w" DetailColor="G" RenderString="d" Tile="bucklerparry_largerfolk/dog_fat.png" DisplayName="{{Y|hyrkhound}}" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="creatures/sw_dog.bmp" WeightStage_1="bucklerparry_largerfolk/dog_fat.png" />
     <part Name="Description" Short="A mess of burnt hair drapes the jowls of a snarling mean mastiff, and two lengths of sharp canine bone drip =pronouns.possessive= bleaching saliva." />
-    <part Name="Swarmer" />
-  </object>
-  <object Name="Hyrkhound_Bite" Inherits="Bite">
-    <part Name="Render" DisplayName="{{G|acid-wet}} fangs" />
-    <part Name="MeleeWeapon" BaseDamage="2d2" />
-    <part Name="ElementalDamage" Damage="1d6+9" Attributes="Acid" />
-    <tag Name="Gender" Value="plural" />
   </object>
   <object Name="Ixlthyxl" Inherits="BaseFish">
     <part Name="Render" DisplayName="ixlthyxl" Tile="Creatures\sw_weird_fish.bmp" RenderString="159" ColorString="&amp;m" TileColor="&amp;m" DetailColor="W" />
@@ -12859,41 +12762,15 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
     <part Name="ConversationScript" ConversationID="IssachariConvert" />
     <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
   </object>
-  <object Name="Warden Yrame" Inherits="NPC">
+  <object Name="Warden Yrame" Load="Merge">
     <part Name="Render" DisplayName="Yrame" Tile="bucklerparry_largerfolk/yrame_fat.png" ColorString="&amp;B" TileColor="&amp;w" DetailColor="B" RenderString="w" />
-    <part Name="Honorifics" Primary="Warden" />
     <part Name="Description" Short="Big Yrame shifts =pronouns.possessive= prodigious weight between hind and forelegs. =pronouns.Subjective= =verb:shake:afterpronoun= a storm of rust dander from the tines of =pronouns.possessive= great horns, and =pronouns.subjective= =verb:blow:afterpronoun= a halo of freezing air from =pronouns.possessive= rime-veined hands. Movement is a chore even on easy earth for the mammoth physique of the widest warden." />
+    <part Name="LargerFolk_WeightDescription" 
+    WeightDescription_0="Big Yrame shifts =pronouns.possessive= weight between hind and forelegs. =pronouns.Subjective= =verb:shake:afterpronoun= a storm of rust dander from the tines of =pronouns.possessive= great horns, and =pronouns.subjective= =verb:blow:afterpronoun= a halo of freezing air from =pronouns.possessive= rime-veined hands." 
+    WeightDescription_1="Big Yrame shifts =pronouns.possessive= prodigious weight between hind and forelegs. =pronouns.Subjective= =verb:shake:afterpronoun= a storm of rust dander from the tines of =pronouns.possessive= great horns, and =pronouns.subjective= =verb:blow:afterpronoun= a halo of freezing air from =pronouns.possessive= rime-veined hands. Movement is a chore even on easy earth for the mammoth physique of the widest warden."
+    />
     <part Name="ConversationScript" ConversationID="WardenYrame" />
-    <part Name="Brain" Wanders="false" Factions="Wardens-100" />
-    <stat Name="Level" sValue="25" />
-    <stat Name="Hitpoints" Value="275" />
-    <stat Name="Strength" sValue="29" />
-    <stat Name="Agility" sValue="22" />
-    <stat Name="Toughness" sValue="28" />
-    <stat Name="Intelligence" sValue="16" />
-    <stat Name="Willpower" sValue="22" />
-    <stat Name="Ego" sValue="18" />
-    <inventoryobject Blueprint="Chain Mail" Number="1" />
-    <inventoryobject Blueprint="Vibro Blade" Number="1" CellChance="100" CellFullChance="100" CellType="Chem Cell" />
-    <inventoryobject Blueprint="Waterskin" Number="3" />
-    <inventoryobject Blueprint="Leather Boots" Number="1" />
-    <skill Name="Endurance" />
-    <skill Name="LongBladesProficiency" />
-    <skill Name="Rifles" />
-    <mutation Name="MultipleLegs" Level="6" />
-    <mutation Name="Horns" Level="8" Variant="Horns"/>
-    <mutation Name="FreezingRay" Level="9" />
-    <mutation Name="Regeneration" Level="6" />
-    <tag Name="Genotype" Value="Mutated Human" />
-    <part Name="GivesRep" />
-    <tag Name="staticFaction1" Value="Joppa,friend,defending their village" />
-    <tag Name="NoHateFactions" Value="Joppa,Fish,Dromad" />
-    <xtagGrammar Proper="true" />
-    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
-    <xtagWaterRitual SellSkill="false" />
-    <tag Name="NoSleep" />
-    <tag Name="AllowIdleBehavior" Value="*delete" />
-    <tag Name="Gender" Value="female" />
+    <tag Name="staticFaction1" Value="Joppa,friend,letting them rub her tummy" />
   </object>
   
   <!-- Salt marsh -->
@@ -14400,32 +14277,13 @@ In Barathrum's name, =pronouns.subjective==verb:'ve:afterpronoun= conferred onto
     <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
     <tag Name="PronounSet" Value="xe/xem/xyr" />
   </object>
-  <object Name="Zothom" Inherits="BaseHumanoid">
-    <part Name="Render" DisplayName="Zothom" Tile="Creatures/sw_zothom.bmp" ColorString="&amp;Y" DetailColor="y" TileColor="&amp;Y" RenderString="h"  />
-    <part Name="Epithets" Primary="the Penitent" />
-    <stat Name="AV" Value="6" />
-    <stat Name="DV" Value="4" />
-    <stat Name="Level" Value="24" />
-    <stat Name="Hitpoints" Value="250" />
-    <part Name="Brain" Wanders="false" Hostile="false" Factions="Pariahs-100" />
-    <part Name="ConversationScript" ConversationID="Zothom" />
+
+  <object Name="Zothom" Load="Merge">
+    <part Name="Render" DisplayName="Zothom" Tile="bucklerparry_largerfolk/zothom_fat.png" ColorString="&amp;Y" DetailColor="y" TileColor="&amp;Y" RenderString="h"  />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_zothom.bmp" WeightStage_1="bucklerparry_largerfolk/zothom_fat.png" />
     <part Name="Description" Short="A man in the threadbare clothes of a tattered knight stands as if hewn from the trunk of a tree. Gnarled hands grip with more force than is needed for the task of standing at an unasked vigil." />
-    <part Name="Interesting" />
-    <tag Name="InventoryPopulationTable" Value="HumanoidEquipment Broad" />
-    <inventoryobject Blueprint="Leather Cloak" Number="1" />
-    <inventoryobject Blueprint="La Jeunesse" />
-    <tag Name="Role" Value="Brute" />
-    <stat Name="ColdResistance" Value="15" />
-    <stat Name="HeatResistance" Value="15" />
-    <stat Name="ElectricResistance" Value="15" />
-    <skill Name="LongBlades" />
-    <skill Name="LongBladesProficiency" />
-    <skill Name="LongBladesSwipe" />
-    <skill Name="LongBladesImprovedAggressiveStance" />
-    <xtagGrammar Proper="true" />
-    <tag Name="Gender" Value="male" />
-    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
   </object>
+
   <object Name="Yla Haj" Inherits="HumanTinker5">
     <part Name="Render" DisplayName="Yla Haj" Tile="bucklerparry_largerfolk/daughter_wrench_fat.png" ColorString="&amp;c" TileColor="&amp;C" DetailColor="m" RenderString="h"  />
     <part Name="Description" Short="Spools of hair are bunched under the frustum of =pronouns.possessive= habit, =pronouns.possessive= round cheeks are smeared with polyurethane and Spindle dust, and =pronouns.possessive= face is pulled low by the violence of =pronouns.possessive= square jaw. Long, muscular forearms are tensed by the repeated pinching motion of tool manipulation. =pronouns.Possessive= eyes are ultra keen and shine bright cyan, and =pronouns.possessive= vision smoothly segues between =pronouns.possessive= work and =pronouns.possessive= surroundings." />

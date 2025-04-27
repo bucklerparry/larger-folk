@@ -12803,11 +12803,89 @@ You gain 600 calories each round." />
     <tag Name="DynamicObjectsTable:Tonics_NonRare" />
   </object>
 
-   <object Name="LargerFolk_WeightReport" Inherits="Book">
+<!-- NEW BOOKS -->
+  <object Name="LargerFolk_WeightReport" Inherits="Book">
     <part Name="Render" DisplayName="{{W|Classification and Process of Excess Consumption, 1st Edition}}" ColorString="&amp;g" RenderString="=" RenderLayer="5" Tile="Items/sw_book_2.bmp" TileColor="&amp;W" DetailColor="g" />
     <part Name="Description" Short="Fine pages of lined parchment are bound into a brief distributable pamphlet." />
     <part Name="Book" ID="LargerFolk_WeightReport" />
     <part Name="Commerce" Value="200" />
+  </object>
+
+  <object Name="test_statue_0" Inherits="InorganicObject"> 
+    <part Name="Render" DisplayName="test statue 0" Tile="Terrain/sw_sultanstatue_0.png" ColorString="&amp;y" DetailColor="g" RenderLayer="8"/>
+  </object>
+  <object Name="test_statue_1" Inherits="InorganicObject"> 
+    <part Name="Render" DisplayName="test statue 1" Tile="Terrain/sw_sultanstatue_1.png" ColorString="&amp;y" DetailColor="g" RenderLayer="8"/>
+  </object>
+  <object Name="test_statue_2" Inherits="InorganicObject"> 
+    <part Name="Render" DisplayName="test statue 2" Tile="Terrain/sw_sultanstatue_2.png" ColorString="&amp;y" DetailColor="g" RenderLayer="8"/>
+  </object>
+  <object Name="test_statue_3" Inherits="InorganicObject"> 
+    <part Name="Render" DisplayName="test statue 3" Tile="Terrain/sw_sultanstatue_3.png" ColorString="&amp;y" DetailColor="g" RenderLayer="8"/>
+  </object>
+  <object Name="test_statue_4" Inherits="InorganicObject"> 
+    <part Name="Render" DisplayName="test statue 4" Tile="Terrain/sw_sultanstatue_4.png" ColorString="&amp;y" DetailColor="g" RenderLayer="8"/>
+  </object>
+  <object Name="test_statue_5" Inherits="InorganicObject"> 
+    <part Name="Render" DisplayName="test statue 5" Tile="Terrain/sw_sultanstatue_5.png" ColorString="&amp;y" DetailColor="g" RenderLayer="8"/>
+  </object>
+  <object Name="test_statue_6" Inherits="InorganicObject"> 
+    <part Name="Render" DisplayName="test statue 6" Tile="Terrain/sw_sultanstatue_6.png" ColorString="&amp;y" DetailColor="g" RenderLayer="8"/>
+  </object>
+  <object Name="test_statue_7" Inherits="InorganicObject"> 
+    <part Name="Render" DisplayName="test statue 7" Tile="Terrain/sw_sultanstatue_7.png" ColorString="&amp;y" DetailColor="g" RenderLayer="8"/>
+  </object>
+  <object Name="test_statue_8" Inherits="InorganicObject"> 
+    <part Name="Render" DisplayName="test statue 8" Tile="Terrain/sw_sultanstatue_8.png" ColorString="&amp;y" DetailColor="g" RenderLayer="8"/>
+  </object>
+  <object Name="test_statue_9" Inherits="InorganicObject"> 
+    <part Name="Render" DisplayName="test statue 9" Tile="Terrain/sw_sultanstatue_9.png" ColorString="&amp;y" DetailColor="g" RenderLayer="8"/>
+  </object>
+  <object Name="test_statue_10" Inherits="InorganicObject"> 
+    <part Name="Render" DisplayName="test statue 10" Tile="Terrain/sw_sultanstatue_10.png" ColorString="&amp;y" DetailColor="g" RenderLayer="8"/>
+  </object>
+  <object Name="test_statue_11" Inherits="InorganicObject"> 
+    <part Name="Render" DisplayName="test statue 11" Tile="Terrain/sw_sultanstatue_11.png" ColorString="&amp;y" DetailColor="g" RenderLayer="8"/>
+  </object>
+  <object Name="test_statue_12" Inherits="InorganicObject"> 
+    <part Name="Render" DisplayName="test statue 12" Tile="Terrain/sw_sultanstatue_12.png" ColorString="&amp;y" DetailColor="g" RenderLayer="8"/>
+  </object>
+
+  <object Name="test_rarestatue_0" Inherits="InorganicObject"> 
+    <part Name="Render" DisplayName="test rare statue 0" Tile="Terrain/sw_sultanstatue_rare_0.bmp" ColorString="&amp;y" DetailColor="g" RenderLayer="8"/>
+  </object>
+  <object Name="test_rarestatue_1" Inherits="InorganicObject"> 
+    <part Name="Render" DisplayName="test rare statue 1" Tile="Terrain/sw_sultanstatue_rare_1.bmp" ColorString="&amp;y" DetailColor="g" RenderLayer="8"/>
+  </object>
+  <object Name="test_rarestatue_2" Inherits="InorganicObject"> 
+    <part Name="Render" DisplayName="test rare statue 2" Tile="Terrain/sw_sultanstatue_rare_2.bmp" ColorString="&amp;y" DetailColor="g" RenderLayer="8"/>
+  </object>
+  <object Name="test_rarestatue_3" Inherits="InorganicObject"> 
+    <part Name="Render" DisplayName="test rare statue 3" Tile="Terrain/sw_sultanstatue_rare_3.bmp" ColorString="&amp;y" DetailColor="g" RenderLayer="8"/>
+  </object>
+  <object Name="test_rarestatue_4" Inherits="InorganicObject"> 
+    <part Name="Render" DisplayName="test rare statue 4" Tile="Terrain/sw_sultanstatue_rare_4.bmp" ColorString="&amp;y" DetailColor="g" RenderLayer="8"/>
+  </object>
+  <object Name="test_rarestatue_5" Inherits="InorganicObject"> 
+    <part Name="Render" DisplayName="test rare statue 5" Tile="Terrain/sw_sultanstatue_rare_5.bmp" ColorString="&amp;y" DetailColor="g" RenderLayer="8"/>
+  </object>
+  <object Name="test_rarestatue_6" Inherits="InorganicObject"> 
+    <part Name="Render" DisplayName="test rare statue 6" Tile="Terrain/sw_sultanstatue_rare_6.bmp" ColorString="&amp;y" DetailColor="g" RenderLayer="8"/>
+  </object>
+  <object Name="test_rarestatue_7" Inherits="InorganicObject"> 
+    <part Name="Render" DisplayName="test rare statue 7" Tile="Terrain/sw_sultanstatue_rare_7.bmp" ColorString="&amp;y" DetailColor="g" RenderLayer="8"/>
+  </object>
+  <object Name="test_rarestatue_8" Inherits="InorganicObject"> 
+    <part Name="Render" DisplayName="test rare statue 8" Tile="Terrain/sw_sultanstatue_rare_8.bmp" ColorString="&amp;y" DetailColor="g" RenderLayer="8"/>
+  </object>
+  <object Name="test_rarestatue_9" Inherits="InorganicObject"> 
+    <part Name="Render" DisplayName="test rare statue 9" Tile="Terrain/sw_sultanstatue_rare_9.bmp" ColorString="&amp;y" DetailColor="g" RenderLayer="8"/>
+  </object>
+  <object Name="test_rarestatue_10" Inherits="InorganicObject"> 
+    <part Name="Render" DisplayName="test rare statue 10" Tile="Terrain/sw_sultanstatue_rare_10.bmp" ColorString="&amp;y" DetailColor="g" RenderLayer="8"/>
+  </object>
+  <object Name="test_rarestatue_11" Inherits="InorganicObject"> 
+    <part Name="Render" DisplayName="test rare statue 11" Tile="Terrain/sw_sultanstatue_rare_11.bmp" ColorString="&amp;y" DetailColor="g" RenderLayer="8"/>
   </object>
 
   <!-- <object Name="WeightLossTonic" Inherits="Tonic">
