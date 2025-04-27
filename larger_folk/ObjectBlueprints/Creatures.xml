@@ -12900,37 +12900,15 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
     <tag Name="NoHateFactions" Value="Wardens,Mechanimists,Resheph" />
     <tag Name="Mayor" Value="Pariahs" />
   </object>
-  <object Name="Tszappur" Inherits="Mysterious Gunslinger">
-    <part Name="Render" DisplayName="Tszappur" Tile="creatures/sw_stranger1.bmp" ColorString="&amp;Y" DetailColor="C" />
-    <part Name="Titles" Primary="disciple of the Coiled Lamb" />
-    <part Name="Description" Short="Folds of coarse-weave physician's cloth hang off =pronouns.possessive= lissome frame like a gunslinger's shawl, and the crinkled brim of an old hat blots the sun and starlight." />
-    <part Name="Brain" Wanders="false" Hostile="false" Factions="Resheph-100" />
-    <part Name="ConversationScript" ConversationID="Tszappur" />
-    <skill Name="Physic_StaunchWounds" />
-    <skill Name="Physic_Nostrums" />
-    <skill Name="Physic_Apothecary" />
-    <skill Name="Physic_AmputateLimb" />
-    <part Name="GivesRep" />
-    <tag Name="NoHateFactions" Value="Mechanimists,Pariahs,Wardens" />
-    <tag Name="NoSleep" />
-    <tag Name="Gender" Value="male" />
-    <xtagGrammar Proper="true" />
-    <xtagWaterRitual NoJoin="true" />
-    <inventoryobject Blueprint="Sandals" Number="1" />
-    <inventoryobject Blueprint="Slate Frock" Number="1" />
-    <inventoryobject Blueprint="Vinewafer" Number="2-3" />
-    <inventoryobject Blueprint="Waterskin" Number="1-2" />
-    <inventoryobject Blueprint="Bandage" Number="2-4" />
-    <inventoryobject Blueprint="HoneyWaterskin" Number="0-1" />
-    <inventoryobject Blueprint="Yuckwheat Stem" Number="2-3" />
-    <inventoryobject Blueprint="Witchwood Bark" Number="2-3" />
-    <inventoryobject Blueprint="Hoarshroom" Number="1" Chance="50" />
-    <inventoryobject Blueprint="Humble Pie" Number="0-1" />
-    <inventoryobject Blueprint="SalveTonic" Number="0-1" />
-    <inventoryobject Blueprint="Spraybottle" Number="2" />
-    <inventoryobject Blueprint="Convalessence Phial" Number="2" />
-    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
-  </object>
+  <object Name="Tszappur" Load="Merge">
+    <part Name="Render" DisplayName="Tszappur" Tile="bucklerparry_largerfolk/stranger1_fat.png" ColorString="&amp;Y" DetailColor="C" />
+    <part Name="WeightStage_Render" WeightStage_0="creatures/sw_stranger1.bmp" WeightStage_1="bucklerparry_largerfolk/stranger1_fat.png" />
+    <part Name="Description" Short="Folds of coarse-weave physician's cloth fail to cover =pronouns.possessive= mounds of flab, and the crinkled brim of an old hat blots the sun and starlight. =pronouns.Possessive= hardy constitution gives an impression of unlikely spriteliness, beneath the copious coils of poundage that would immobilize a lesser worshipper." />
+    <part Name="LargerFolk_WeightDescription" 
+    WeightDescription_0="Folds of coarse-weave physician's cloth hang off =pronouns.possessive= lissome frame like a gunslinger's shawl, and the crinkled brim of an old hat blots the sun and starlight." 
+    WeightDescription_1="Folds of coarse-weave physician's cloth fail to cover =pronouns.possessive= mounds of flab, and the crinkled brim of an old hat blots the sun and starlight. =pronouns.Possessive= hardy constitution gives an impression of unlikely spriteliness, beneath the copious coils of poundage that would immobilize a lesser worshipper."/>
+
+ </object>
 
   <!-- Grit Gate -->
   <object Name="Shem -1" Inherits="Chromeling">
@@ -14582,23 +14560,11 @@ This one is jeweled in the eroded scrap of the Tomb." />
   </object>
 
   <!-- Brightsheol -->
-  <object Name="Rainwater Shomer" Inherits="BaseHumanoid">
-    <part Name="Render" DisplayName="Rainwater" Tile="creatures/sw_stranger1.bmp" RenderString="h" ColorString="&amp;Y" DetailColor="C" />
-    <part Name="Epithets" Primary="Shomer" />
+  <object Name="Rainwater Shomer" Load="Merge">
+    <part Name="Render" DisplayName="Rainwater" Tile="bucklerparry_largerfolk/stranger1_fat.png" RenderString="h" ColorString="&amp;Y" DetailColor="C" />
+    <part Name="WeightStage_Render" WeightStage_0="creatures/sw_stranger1.bmp" WeightStage_1="bucklerparry_largerfolk/stranger1_fat.png" />
     <part Name="Description" Short="Damp clothes of the shomerim habit, a hoiche, a tallit, and a robe, drape over air as if they swathe a person's figure. Rain drops from another world patter on the bosks of ribboned thread, transforming from tense spheres of selfhood to diffuse moisture on the fibrous loam. Old life is absorbed by the ageless linen, wrung out by an invisible hand, and the cycle repeats itself." />
-    <part Name="Corpse" CorpseChance="100" CorpseBlueprint="Rainwater Shomer" />
-    <part Name="Brain" Wanders="false" Hostile="false" Factions="Playerneutral-100" />
-    <part Name="ConversationScript" ConversationID="Shomer" />
-    <part Name="RebornOnDeathInThinWorld" />
-    <stat Name="Level" Value="40" />
-    <stat Name="Hitpoints" Value="1" />
-    <tag Name="NoSleep" />
-    <tag Name="Gender" Value="nonspecific" />
-    <xtagGrammar Proper="true" />
-    <xtagWaterRitual NoJoin="true" />
-    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
   </object>
-
   <!-- Yd Freehold -->
   <object Name="Mak" Inherits="Svardym Eld">
     <part Name="Render" DisplayName="Mak" RenderString="F" Tile="Creatures/sw_yd_elder_svardym_2.bmp" ColorString="&amp;g" DetailColor="w" />

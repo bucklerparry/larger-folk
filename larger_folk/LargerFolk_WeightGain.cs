@@ -59,6 +59,7 @@ public class LargerFolk_WeightGain : IPart
             Registrar.Register("OnWeightStageChange");
             Registrar.Register("ActivateMechanicalWings");
             Registrar.Register("DrinkingFrom");
+            Registrar.Register("ApplyLovesick");
         }
 		base.Register(Object, Registrar);
 	}
@@ -136,6 +137,12 @@ public class LargerFolk_WeightGain : IPart
                 }
 			}
 		}
+
+        // when a character becomes lovesick toward an fat+ creature, they have a chance of developing Adipophilia (greater chance the fatter the subject of love is).
+        else if (E.ID == "ApplyLovesick")
+        {
+            
+        }
 
         return base.FireEvent(E);
     }
