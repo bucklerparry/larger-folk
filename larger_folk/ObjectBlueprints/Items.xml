@@ -12794,12 +12794,11 @@ These effects stack if multiple rubbergums are ingested." />
     <part Name="Examiner" Unknown="UnknownStrangeFurniture" Complexity="2" />
     <part Name="Commerce" Value="15" />
 		<part Name="TinkerItem" Bits="BC" />
-    <part Name="Description" Short="A spring-loaded platform bears the load, and indicates it's burden." />
+    <part Name="Description" Short="A spring-loaded platform bears the load of a passenger, and indicates their weight." />
     <!-- <part Name="LargerFolk_ChairFat" WeightThreshold="4"/> -->
     <part Name="LargerFolk_Artifact_Scale" />
     <part Name="Metal" />
-		<tag Name="Tier" Value="1" />    
-    <tag Name="Mods" Value="CommonMods,WeaponMods,CudgelMods" />
+		<tag Name="Tier" Value="1" />
 		<tag Name="DynamicObjectsTable:Trinkets" Value="*delete" />
 	  <stag Name="Trinket" />
   </object>

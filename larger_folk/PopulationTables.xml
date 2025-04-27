@@ -8,6 +8,58 @@
     </group>
   </population>
 
+  <!-- Trinkets -->
+  <population Name="Trinkets 1" Load="Merge">
+    <group Name="Items" Load="Merge">
+      <object Weight="20" Number="1" Blueprint="WeightScale" />
+    </group>
+  </population>
+
+  <population Name="Trinkets 2" Load="Merge">
+    <group Name="Items" Load="Merge">
+      <object Weight="20" Number="1" Blueprint="WeightScale" />
+    </group>
+  </population>
+
+  <population Name="Trinkets 3" Load="Merge">
+    <group Name="Items" Load="Merge">
+      <object Weight="20" Number="1" Blueprint="WeightScale" />
+    </group>
+  </population>
+
+  <population Name="Trinkets 4" Load="Merge">
+    <group Name="Items" Load="Merge">
+      <object Weight="20" Number="1" Blueprint="WeightScale" />
+    </group>
+  </population>
+
+  <population Name="Trinkets 5" Load="Merge">
+    <group Name="Items" Load="Merge">
+      <object Weight="20" Number="1" Blueprint="WeightScale" />
+    </group>
+  </population>
+
+  <population Name="Trinkets 6" Load="Merge">
+    <group Name="Items" Load="Merge">
+      <object Weight="20" Number="1" Blueprint="WeightScale" />
+    </group>
+  </population>
+
+  <population Name="Trinkets 7" Load="Merge">
+    <group Name="Items" Load="Merge">
+      <object Weight="20" Number="1" Blueprint="WeightScale" />
+    </group>
+  </population>
+
+  <population Name="Trinkets 8" Load="Merge">
+    <group Name="Items" Load="Merge">
+      <object Weight="20" Number="1" Blueprint="WeightScale" />
+    </group>
+  </population>
+
+  <!-- END TRINKETS -->
+
+  <!-- Meds -->
   <population Name="Injectors" Load="Merge">
     <group Name="Items" Load="Merge">
       <object Weight="50" Number="1" Blueprint="GainTonic" />

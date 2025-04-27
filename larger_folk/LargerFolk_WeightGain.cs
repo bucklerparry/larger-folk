@@ -81,16 +81,16 @@ public class LargerFolk_WeightGain : IPart
         // set a random initial weight stage for non-player creatures, usually lean or fat, occasionally obese, extremely rarely immobile
         if (IsEnabled && !ParentObject.IsPlayer())
         {
-            int TempRand = Stat.Random(1,101);
-            if (TempRand > 99)
+            int TempRand = Stat.Random(1,1001);
+            if (TempRand > 999)
             {
                 SetWeightStage(3);
             }
-            else if (TempRand > 90)
+            else if (TempRand > 900)
             {
                 SetWeightStage(2);
             }
-            else if (TempRand > 45)
+            else if (TempRand > 500)
             {
                 SetWeightStage(1);
             }

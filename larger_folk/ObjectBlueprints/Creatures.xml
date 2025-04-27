@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<objects Load="Merge">
+<objects>
 
   <!--    
     1 Base creature objects
@@ -5130,13 +5130,12 @@ The infant child is unaware
     <part Name="MeleeWeapon" BaseDamage="2d2" />
   </object>
   <object Name="Juice Sap" Load="Merge">
-    <part Name="Render" DisplayName="stat sap" Tile="bucklerparry_largerfolk/bat2_fat.png" ColorString="&amp;r" TileColor="&amp;K" DetailColor="r" RenderString="b" />
+    <part Name="Render" DisplayName="juice sap" Tile="bucklerparry_largerfolk/bat2_fat.png" ColorString="&amp;r" TileColor="&amp;K" DetailColor="r" RenderString="b" />
     <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_bat2.bmp" WeightStage_1="bucklerparry_largerfolk/bat2_fat.png" />
     <part Name="Description" Short="Current jumps up the length of a needle proboscis, and the circut veins etched under =pronouns.possessive= overworked wings gleam. Between engorged vestigial legs hangs a bloated gut that pulses with sparklight." />
     <part Name="LargerFolk_WeightDescription" 
       WeightDescription_0="Current jumps up the length of a needle proboscis, and the circut veins etched under =pronouns.possessive= wings gleam." 
-      WeightDescription_1="Current jumps up the length of a needle proboscis, and the circut veins etched under =pronouns.possessive= overworked wings gleam. Between engorged vestigial legs hangs a bloated gut that pulses with sparklight."
-      />
+      WeightDescription_1="Current jumps up the length of a needle proboscis, and the circut veins etched under =pronouns.possessive= overworked wings gleam. Between engorged vestigial legs hangs a bloated gut that pulses with sparklight."/>
   </object>
   <object Name="Livid Creeper" Inherits="MutatedVine">
     <part Name="Render" DisplayName="livid creeper" Tile="Creatures/sw_livid_creeper.bmp" RenderString="&amp;" ColorString="&amp;c^w" DetailColor="B" RenderIfDark="true" />
@@ -8059,8 +8058,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
     <part Name="Description" Short="It sheaths itself in flabby wings and brandishes a tissue-boring proboscis, belly swollen with vital essentia." />
     <part Name="LargerFolk_WeightDescription" 
       WeightDescription_0="It sheaths itself in filmy wings and brandishes a tissue-boring proboscis." 
-      WeightDescription_1="It sheaths itself in flabby wings and brandishes a tissue-boring proboscis, belly swollen with vital essentia."
-      />
+      WeightDescription_1="It sheaths itself in flabby wings and brandishes a tissue-boring proboscis, belly swollen with vital essentia." />
   </object>
   <object Name="Sap_Bite" Inherits="Bite">
     <part Name="MeleeWeapon" PenBonus="3" BaseDamage="0" />
@@ -8075,16 +8073,14 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
     <part Name="Description" Short="It sheaths itself in flabby wings and brandishes a tissue-boring proboscis, belly swollen with vital essentia." />
     <part Name="LargerFolk_WeightDescription" 
       WeightDescription_0="It sheaths itself in filmy wings and brandishes a tissue-boring proboscis." 
-      WeightDescription_1="It sheaths itself in flabby wings and brandishes a tissue-boring proboscis, belly swollen with ingested musculature."
-      />
+      WeightDescription_1="It sheaths itself in flabby wings and brandishes a tissue-boring proboscis, belly swollen with ingested musculature." />
   </object>
   <object Name="Toughness Sap" Inherits="BaseStatSap">
     <part Name="Render" DisplayName="vigor sap" DetailColor="r" />
     <part Name="SapOnPenetration" Stat="Toughness" />
     <part Name="LargerFolk_WeightDescription" 
       WeightDescription_0="It sheaths itself in filmy wings and brandishes a tissue-boring proboscis." 
-      WeightDescription_1="It sheaths itself in flabby wings and brandishes a tissue-boring proboscis, belly swollen with absorbed vitality."
-      />
+      WeightDescription_1="It sheaths itself in flabby wings and brandishes a tissue-boring proboscis, belly swollen with absorbed vitality." />
   </object>
   <object Name="Agility Sap" Inherits="BaseStatSap">
     <part Name="Render" DisplayName="quick sap" DetailColor="W" />
@@ -8096,25 +8092,21 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
     <part Name="SapOnPenetration" Stat="Intelligence" />
     <part Name="LargerFolk_WeightDescription" 
       WeightDescription_0="It sheaths itself in filmy wings and brandishes a tissue-boring proboscis." 
-      WeightDescription_1="It sheaths itself in flabby wings and brandishes a tissue-boring proboscis, belly swollen with absorbed gray matter."
-      />
-  </object>
+      WeightDescription_1="It sheaths itself in flabby wings and brandishes a tissue-boring proboscis, belly swollen with absorbed gray matter." />
   </object>
   <object Name="Ego Sap" Inherits="BaseStatSap">
     <part Name="Render" DisplayName="ego sap" DetailColor="M" />
     <part Name="SapOnPenetration" Stat="Ego" />
     <part Name="LargerFolk_WeightDescription" 
       WeightDescription_0="It sheaths itself in filmy wings and brandishes a tissue-boring proboscis." 
-      WeightDescription_1="It sheaths itself in flabby wings and brandishes a tissue-boring proboscis, belly swollen with ingested psychology."
-      />
+      WeightDescription_1="It sheaths itself in flabby wings and brandishes a tissue-boring proboscis, belly swollen with ingested psychology." />
   </object>
   <object Name="Willpower Sap" Inherits="BaseStatSap">
     <part Name="Render" DisplayName="will sap" DetailColor="g" />
     <part Name="SapOnPenetration" Stat="Willpower" />
     <part Name="LargerFolk_WeightDescription" 
       WeightDescription_0="It sheaths itself in filmy wings and brandishes a tissue-boring proboscis." 
-      WeightDescription_1="It sheaths itself in flabby wings and brandishes a tissue-boring proboscis, belly swollen with ingested volition."
-      />
+      WeightDescription_1="It sheaths itself in flabby wings and brandishes a tissue-boring proboscis, belly swollen with ingested volition." />
   </object>  
   <object Name="Tongue Tyrant" Inherits="MutatedFlower">
     <part Name="Render" DisplayName="tongue tyrant" Tile="Creatures/sw_anemone_1.bmp" RenderString="244" ColorString="&amp;m" TileColor="&amp;W" DetailColor="m" />
