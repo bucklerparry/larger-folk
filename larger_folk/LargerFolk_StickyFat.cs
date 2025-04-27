@@ -50,7 +50,8 @@ public class LargerFolk_StickyFat : IPart
 	}
 
 	public override bool HandleEvent(ObjectEnteredCellEvent E)
-	{	if (SizeThreshold >= 1)
+	{	
+		if (SizeThreshold >= 1)
 		{
 			if (E.Object.HasPart<LargerFolk_WeightGain>() && (E.Object.GetPart<LargerFolk_WeightGain>()).WeightStage >= SizeThreshold)
 			{
