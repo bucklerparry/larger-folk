@@ -3201,21 +3201,10 @@ The infant child is unaware
     <part Name="SurroundOnStep" Radius="2" SurroundObject="PlantWall" EmptyOnly="true" />
     <stag Name="Plank" Value="thatch" />
   </object>
-  <object Name="TemplarSquireBase" Inherits="Templar">
-    <part Name="Render" DisplayName="Templar squire" ColorString="&amp;Y" TileColor="&amp;r" RenderString="t" Tile="Creatures/sw_templar_squire.bmp" DetailColor="Y" />
+  <object Name="TemplarSquireBase" Load="Merge">
+    <part Name="Render" DisplayName="Templar squire" ColorString="&amp;Y" TileColor="&amp;r" RenderString="t" Tile="bucklerparry_largerfolk/templar_squire_fat.png" DetailColor="Y" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_templar_squire.bmp" WeightStage_1="bucklerparry_largerfolk/templar_squire_fat.png" />
     <part Name="Description" Short="Wet skin scintillates behind =pronouns.possessive= ears. =pronouns.Possessive= spine cambers in anticipation of its blood-fated curvature, and =pronouns.subjective= =verb:poke:afterpronoun= out =pronouns.possessive= chin in emulation of =pronouns.possessive= elders. Sword grease stains =pronouns.possessive= hands." />
-    <stat Name="Level" Value="9" />
-    <stat Name="Hitpoints" Value="25" />
-    <stat Name="Strength" Boost="1" />
-    <stat Name="Willpower" Boost="1" />
-    <tag Name="BaseObject" Value="*noinherit" />
-  </object>
-  <object Name="Templar Squire" Inherits="TemplarSquireBase">
-    <inventoryobject Blueprint="Long Sword3" Number="1" />
-    <inventoryobject Blueprint="Steel Shield" />
-    <inventoryobject Blueprint="Steel Plate Mail" />
-    <inventoryobject Blueprint="Steel Boots" />
-    <inventoryobject Chance="75" Blueprint="@Explosives 1" Number="1d2" />
   </object>
   <object Name="Thirst Thistle" Inherits="Plant Turret">
     <part Name="Render" DisplayName="thirst thistle" RenderString="225" Tile="Creatures/sw_thirst_thistle.bmp" ColorString="&amp;Y" TileColor="&amp;y" DetailColor="Y" />
@@ -5140,24 +5129,14 @@ The infant child is unaware
   <object Name="Ixlthyxl_Bite" Inherits="Bite">
     <part Name="MeleeWeapon" BaseDamage="2d2" />
   </object>
-  <object Name="Juice Sap" Inherits="BaseBat">
-    <part Name="Render" DisplayName="juice sap" Tile="Creatures/sw_bat2.bmp" ColorString="&amp;W" TileColor="&amp;B" DetailColor="W" RenderString="b" />
-    <part Name="Description" Short="Current jumps up the length of a needle proboscis, and the circut veins etched under =pronouns.possessive= wings gleam." />
-    <part Name="Corpse" CorpseChance="20" CorpseBlueprint="Bat Corpse" />
-    <part Name="Brain" Hostile="true" Factions="Winged Mammals-100" />
-    <stat Name="Level" Value="16" />
-    <stat Name="AV" Value="2" />
-    <stat Name="Hitpoints" Value="20" />
-    <stat Name="ElectricResistance" Value="20" />
-    <tag Name="Role" Value="Minion" />
-    <part Name="SapChargeOnHit" ChanceEach="60" Amount="800-1200" RequireDamageAttribute="Unarmed" />
-    <part Name="Biocapacitor" ChargeRate="1000" MinimumChargeToExplode="100" ChargeDisplayStyle="" />
-    <inventoryobject Blueprint="Juice_Sap_Bite" Number="1" />    
-    <tag Name="DynamicObjectsTable:Ruins_Creatures" />
-  </object>
-  <object Name="Juice_Sap_Bite" Inherits="Bite">
-    <part Name="MeleeWeapon" BaseDamage="2d2" />
-    <part Name="ModHeatSeeking" />
+  <object Name="Juice Sap" Load="Merge">
+    <part Name="Render" DisplayName="stat sap" Tile="bucklerparry_largerfolk/bat2_fat.png" ColorString="&amp;r" TileColor="&amp;K" DetailColor="r" RenderString="b" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_bat2.bmp" WeightStage_1="bucklerparry_largerfolk/bat2_fat.png" />
+    <part Name="Description" Short="Current jumps up the length of a needle proboscis, and the circut veins etched under =pronouns.possessive= overworked wings gleam. Between engorged vestigial legs hangs a bloated gut that pulses with sparklight." />
+    <part Name="LargerFolk_WeightDescription" 
+      WeightDescription_0="Current jumps up the length of a needle proboscis, and the circut veins etched under =pronouns.possessive= wings gleam." 
+      WeightDescription_1="Current jumps up the length of a needle proboscis, and the circut veins etched under =pronouns.possessive= overworked wings gleam. Between engorged vestigial legs hangs a bloated gut that pulses with sparklight."
+      />
   </object>
   <object Name="Livid Creeper" Inherits="MutatedVine">
     <part Name="Render" DisplayName="livid creeper" Tile="Creatures/sw_livid_creeper.bmp" RenderString="&amp;" ColorString="&amp;c^w" DetailColor="B" RenderIfDark="true" />
@@ -6703,21 +6682,9 @@ The infant child is unaware
     <inventoryobject Chance="15" Blueprint="Ontological Anchor" Number="1" />
     <part Name="HasSlaves" SlaveTier="3-5" NumberOfSlaves="2" />
   </object>
-  <object Name="Phylactery Squire" Inherits="TemplarSquireBase">
+  <object Name="Phylactery Squire" Load="Merge">
     <part Name="Render" DisplayName="phylactery squire" TileColor="&amp;B" />
     <part Name="Description" Short="Wet skin scintillates behind =pronouns.possessive= ears. =pronouns.Possessive= spine cambers in anticipation of its blood-fated curvature, and =pronouns.subjective= =verb:poke:afterpronoun= out =pronouns.possessive= chin in emulation of =pronouns.possessive= elders. Wood polish stains =pronouns.possessive= hands, which =pronouns.subjective= =verb:struggle:afterpronoun= to keep dead still." />
-    <stat Name="Level" Value="26" />
-    <stat Name="Hitpoints" Value="50" />
-    <stat Name="HeatResistance" Value="10" />
-    <stat Name="ColdResistance" Value="10" />
-    <stat Name="ElectricResistance" Value="10" />
-    <part Name="AITryKeepDistance" LocalOnly="true" />
-    <inventoryobject Blueprint="Long Sword3" Number="1" />
-    <inventoryobject Blueprint="Steel Buckler" Number="1" />
-    <inventoryobject Blueprint="TemplarPhylactery" Number="1" />
-    <inventoryobject Blueprint="Steel Plate Mail" />
-    <inventoryobject Blueprint="Steel Boots" />
-    <inventoryobject Chance="75" Blueprint="@Explosives 1" Number="1d2" />
   </object>
   <object Name="Wraith-Knight Templar" Inherits="Templar">
     <part Name="Render" ColorString="&amp;Y" TileColor="&amp;r" RenderString="t" Tile="Creatures/sw_templar.bmp" DetailColor="Y" DisplayName="Wraith-Knight Templar of the Binary Honorum" />
@@ -7177,14 +7144,14 @@ The infant child is unaware
     <tag Name="DynamicObjectsTable:LakeHinnom_Creatures" />
     <tag Name="DynamicObjectsTable:PalladiumReef_Creatures" />
   </object>
-  <object Name="Life Sap" Inherits="BaseStatSap">
+  <object Name="Life Sap" Load="Merge">
     <part Name="Render" DisplayName="life sap" ColorString="&amp;R" TileColor="&amp;y" DetailColor="R" RenderString="b" />
-    <part Name="Description" Short="It sheaths itself in filmy wings and brandishes a sanguine proboscis." />
-    <stat Name="Level" Value="26" />
-    <stat Name="Hitpoints" Value="18" />
-    <stat Name="AV" Value="2" />
-    <part Name="SapOnPenetration" Stat="Hitpoints" Amount="1-2" />
-    <tag Name="DynamicObjectsTable:DeepJungle_Creatures" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_bat2.bmp" WeightStage_1="bucklerparry_largerfolk/bat2_fat.png" />
+    <part Name="Description" Short="It sheaths itself in flabby wings and brandishes a sanguine proboscis, belly swollen with vital essentia." />
+    <part Name="LargerFolk_WeightDescription" 
+      WeightDescription_0="It sheaths itself in filmy wings and brandishes a sanguine proboscis." 
+      WeightDescription_1="It sheaths itself in flabby wings and brandishes a sanguine proboscis, belly swollen with vital essentia."
+      />
   </object>  
   <object Name="Madpole" Load="Merge">
     <part Name="Render" DisplayName="madpole" Tile="bucklerparry_largerfolk/madpole_fat.png"  RenderString="224" ColorString="&amp;W" />
@@ -8086,19 +8053,14 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
     <tag Name="Tier" Value="7" />
     <stat Name="Level" Value="34" />
   </object>
-  <object Name="BaseStatSap" Inherits="BaseBat">
-    <part Name="Brain" Hostile="true" Factions="Winged Mammals-100" />
-    <part Name="Render" DisplayName="stat sap" Tile="Creatures/sw_bat2.bmp" ColorString="&amp;r" TileColor="&amp;K" DetailColor="r" RenderString="b" />
-    <part Name="Description" Short="It sheaths itself in filmy wings and brandishes a tissue-boring proboscis." />
-    <part Name="Corpse" CorpseChance="20" CorpseBlueprint="Bat Corpse" />
-    <stat Name="Level" Value="31" />
-    <stat Name="Hitpoints" Value="25" />
-    <stat Name="AV" Value="2" />
-    <part Name="SapOnPenetration" Amount="1" />
-    <inventoryobject Blueprint="Sap_Bite" Number="1" />
-    <tag Name="Role" Value="Minion" />    
-    <tag Name="AggregateWith" Value="StatSap" />
-    <tag Name="BaseObject" Value="*noinherit" />
+  <object Name="BaseStatSap" Load="Merge">
+    <part Name="Render" DisplayName="stat sap" Tile="bucklerparry_largerfolk/bat2_fat.png" ColorString="&amp;r" TileColor="&amp;K" DetailColor="r" RenderString="b" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_bat2.bmp" WeightStage_1="bucklerparry_largerfolk/bat2_fat.png" />
+    <part Name="Description" Short="It sheaths itself in flabby wings and brandishes a tissue-boring proboscis, belly swollen with vital essentia." />
+    <part Name="LargerFolk_WeightDescription" 
+      WeightDescription_0="It sheaths itself in filmy wings and brandishes a tissue-boring proboscis." 
+      WeightDescription_1="It sheaths itself in flabby wings and brandishes a tissue-boring proboscis, belly swollen with vital essentia."
+      />
   </object>
   <object Name="Sap_Bite" Inherits="Bite">
     <part Name="MeleeWeapon" PenBonus="3" BaseDamage="0" />
@@ -8110,26 +8072,49 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
   <object Name="Strength Sap" Inherits="BaseStatSap">
     <part Name="Render" DisplayName="strength sap" DetailColor="y" />
     <part Name="SapOnPenetration" Stat="Strength" />
+    <part Name="Description" Short="It sheaths itself in flabby wings and brandishes a tissue-boring proboscis, belly swollen with vital essentia." />
+    <part Name="LargerFolk_WeightDescription" 
+      WeightDescription_0="It sheaths itself in filmy wings and brandishes a tissue-boring proboscis." 
+      WeightDescription_1="It sheaths itself in flabby wings and brandishes a tissue-boring proboscis, belly swollen with ingested musculature."
+      />
   </object>
   <object Name="Toughness Sap" Inherits="BaseStatSap">
     <part Name="Render" DisplayName="vigor sap" DetailColor="r" />
     <part Name="SapOnPenetration" Stat="Toughness" />
+    <part Name="LargerFolk_WeightDescription" 
+      WeightDescription_0="It sheaths itself in filmy wings and brandishes a tissue-boring proboscis." 
+      WeightDescription_1="It sheaths itself in flabby wings and brandishes a tissue-boring proboscis, belly swollen with absorbed vitality."
+      />
   </object>
   <object Name="Agility Sap" Inherits="BaseStatSap">
     <part Name="Render" DisplayName="quick sap" DetailColor="W" />
     <part Name="SapOnPenetration" Stat="Agility" />
+    
   </object>
   <object Name="Intelligence Sap" Inherits="BaseStatSap">
     <part Name="Render" DisplayName="smarts sap" DetailColor="B" />
     <part Name="SapOnPenetration" Stat="Intelligence" />
+    <part Name="LargerFolk_WeightDescription" 
+      WeightDescription_0="It sheaths itself in filmy wings and brandishes a tissue-boring proboscis." 
+      WeightDescription_1="It sheaths itself in flabby wings and brandishes a tissue-boring proboscis, belly swollen with absorbed gray matter."
+      />
+  </object>
   </object>
   <object Name="Ego Sap" Inherits="BaseStatSap">
     <part Name="Render" DisplayName="ego sap" DetailColor="M" />
     <part Name="SapOnPenetration" Stat="Ego" />
+    <part Name="LargerFolk_WeightDescription" 
+      WeightDescription_0="It sheaths itself in filmy wings and brandishes a tissue-boring proboscis." 
+      WeightDescription_1="It sheaths itself in flabby wings and brandishes a tissue-boring proboscis, belly swollen with ingested psychology."
+      />
   </object>
   <object Name="Willpower Sap" Inherits="BaseStatSap">
     <part Name="Render" DisplayName="will sap" DetailColor="g" />
     <part Name="SapOnPenetration" Stat="Willpower" />
+    <part Name="LargerFolk_WeightDescription" 
+      WeightDescription_0="It sheaths itself in filmy wings and brandishes a tissue-boring proboscis." 
+      WeightDescription_1="It sheaths itself in flabby wings and brandishes a tissue-boring proboscis, belly swollen with ingested volition."
+      />
   </object>  
   <object Name="Tongue Tyrant" Inherits="MutatedFlower">
     <part Name="Render" DisplayName="tongue tyrant" Tile="Creatures/sw_anemone_1.bmp" RenderString="244" ColorString="&amp;m" TileColor="&amp;W" DetailColor="m" />
