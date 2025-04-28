@@ -12962,56 +12962,12 @@ In Barathrum's name, =pronouns.subjective==verb:'ve:afterpronoun= conferred onto
     <tag Name="ReturnToGritGateAfterAttack" Value="32,21" />
     <tag Name="Mayor" Value="Barathrumites" />
   </object>
-  <object Name="Q Girl" Inherits="Barathrumite">
+  <object Name="Q Girl" Load="Merge">
     <part Name="Render" DisplayName="Q Girl" ColorString="&amp;m" TileColor="&amp;Y" RenderString="b" Tile="bucklerparry_largerfolk/sw_bearman_1_fat.png" DetailColor="m" />
-    <part Name="Brain" Wanders="false" />
-    <part Name="ConversationScript" ConversationID="Q Girl" />
-    <part Name="FactionRank" Ranks="Barathrumites::meyvn" />
-    <stat Name="Strength" sValue="19" />
-    <stat Name="Intelligence" sValue="39" />
-    <stat Name="Willpower" sValue="26" />
-    <stat Name="Toughness" sValue="16" />
-    <stat Name="Agility" sValue="31" />
-    <stat Name="Ego" sValue="26" />
-    <stat Name="Hitpoints" Value="85" />
     <part Name="Description" Short="=pronouns.Subjective==verb:'re:afterpronoun= an opal in the monochrome.
 
 =pronouns.Possessive= hair is a quasar of red ochre and indigo in the blanched light of the workshop. =pronouns.Possessive= cartilage is pierced by polyhedral rings that spin in antinomy to the cave's simple geometry. Beneath the quills =pronouns.possessive= skin is decorated in furcate lines, fantastic elaborations on the patterns of discarded circuitboards. =pronouns.Subjective==verb:'re:afterpronoun= surrounded by apparatuses of =pronouns.possessive= own creation. Through the harmony of those machines, =pronouns.subjective= =verb:cut= a swath through the entropic brine that sizzles around =pronouns.objective= in a loudening chorus." />
-    <stat Name="Level" Value="28" />
-    <skill Name="Customs_Tactful" />
-    <skill Name="Tinkering" />
-    <skill Name="Tinkering_Disassemble" />
-    <skill Name="Tinkering_Repair" />
-    <skill Name="Tinkering_ReverseEngineer" />
-    <skill Name="Tinkering_Tinker1" />
-    <skill Name="Tinkering_Tinker2" />
-    <skill Name="Pistol" />
-    <skill Name="Pistol_Akimbo" />
-    <part Name="GivesRep" />
-    <part Name="AISelfPreservation" Threshold="30" />
-    <tag Name="staticFaction3" Value=",friend,developing a quantum mechanical model" />
-    <tag Name="staticFaction2" Value=",dislike,=pronouns.possessive= queer appearance" />
-    <tag Name="staticFaction1" Value=",hate,questioning the legitimacy of their hierarchies" />
-    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
-    <tag Name="Gender" Value="female" />
-    <tag Name="PronounSet" Value="she/her" />
-    <xtagGrammar Proper="true" />
-    <property Name="WontSell" Value="Overloaded Laser Pistol" />
-    <inventoryobject Blueprint="BarathrumiteSafetyBand" Number="1" CellChance="100" CellFullChance="100" CellType="Chem Cell" />
-    <inventoryobject Blueprint="Ulnar Stimulators" Number="1" CellChance="100" CellFullChance="100" CellType="Chem Cell" />
-    <inventoryobject Blueprint="Strength Exo" Number="1" CellChance="100" CellFullChance="100" CellType="Chem Cell" />
-    <inventoryobject Blueprint="Plastifer Sneakers" Number="1" />
-    <inventoryobject Blueprint="Polyhedral Rings" Number="1" />
-		<inventoryobject Blueprint="Spiral Iron" Number="1" />
-    <inventoryobject Blueprint="Rough Agate" Number="0-1" />
-    <inventoryobject Blueprint="Rough Jasper" Number="0-1" />
-    <inventoryobject Blueprint="Rough Amethyst" Number="0-1" />
-    <inventoryobject Blueprint="Rough Sapphire" Number="0-1" />
-    <inventoryobject Blueprint="Rough Emerald" Number="0-1" />		
-    <inventoryobject Blueprint="Overloaded Laser Pistol" Number="2" CellChance="100" CellFullChance="100" CellType="Chem Cell" />
-    <inventoryobject Blueprint="CyberneticsCreditWedge_Cheap" Number="1" />
-    <xtagWaterRitual NoJoin="true" numRecipes="3" />
-    <tag Name="ReturnToGritGateAfterAttack" Value="32,10" />
+    
   </object>
   <object Name="Barathrum" Inherits="Barathrumite">
     <part Name="Render" DisplayName="Barathrum" ColorString="&amp;Y" DetailColor="w" RenderString="B" Tile="Creatures/sw_barathrum.bmp" />
@@ -13051,56 +13007,12 @@ In Barathrum's name, =pronouns.subjective==verb:'ve:afterpronoun= conferred onto
     <inventoryobject Blueprint="Ulnar Stimulators" Number="1" CellChance="100" CellFullChance="100" CellType="Chem Cell" />
     <xtagWaterRitual NoJoin="true" numRecipes="3" />
   </object>
-  <object Name="Rodanis Y" Inherits="BaseRobot">
+  <object Name="Rodanis Y" Load="Merge">
     <part Name="Body" Anatomy="TreadedRobot" />
     <part Name="Render" DisplayName="Rodanis Y" Tile="bucklerparry_largerfolk/rodanis_fat.png" ColorString="&amp;B" DetailColor="c" RenderString="7" />
-    <part Name="Brain" PointBlankRange="true" Hostile="false" Hibernating="false" Factions="Barathrumites-100,Robots-25" Wanders="false" />
-    <part Name="FriendlyFireAmnestyDuringQuest" QuestName="A Call to Arms" />
-    <stat Name="AV" Value="12" />
-    <stat Name="Strength" Value="30" />
-    <stat Name="Toughness" Value="30" />
-    <stat Name="Hitpoints" Value="200" />
     <part Name="Description" Short="A giant is carpentered from large-scale scrap towed from the trash sea. Tailstock legs meet a great wobbling gut at sagging hips, piston arms break at wye pipe shoulders, and a bent pressing plate soldered with radio antennae delivers an empty stare from between mounds of chromium cheekflab." />
-    <part Name="ArtificialIntelligence" ChargeUse="500" ShowAsDeactivated="true" />
-    <part Name="BroadcastPowerReceiver" ChargeRate="1000" />
-    <part Name="Circuitry" />
-    <part Name="RemotePowerSwitch" FrequencyCode="RODANIS/Y/UPSILON" />
-    <part Name="AnimatedMaterialGeneric" AnimationLength="64" DetailColorAnimationFrames="28=m,62=c" RequiresOperationalActivePart="ArtificialIntelligence" />
-    <part Name="AnimatedMaterialGenericAlternate" AnimationLength="300" TileAnimationFrames="80=Items/sw_power_cut_small.png,180=default" ColorStringAnimationFrames="80=&amp;W,180=default" DetailColorAnimationFrames="80=R,180=default" RequiresUnpoweredActivePart="ArtificialIntelligence" />
-    <part Name="Interesting" />
-    <stat Name="Level" Value="33" />
-    <skill Name="Cudgel" />
-    <skill Name="Cudgel_Bludgeon" />
-    <skill Name="Cudgel_Expertise" />
-    <skill Name="Cudgel_Slam" />
-    <skill Name="Multiweapon_Fighting" />
-    <skill Name="Multiweapon_Expertise" />
-    <skill Name="Multiweapon_Mastery" />
-    <skill Name="Axe" />
-    <skill Name="Axe_Dismember" />
-    <intproperty Name="SlamDistanceBonus" Value="4" />
-    <inventoryobject Blueprint="Tungsten Carbide Hammer-Fist" Number="1" />
-    <inventoryobject Blueprint="Tungsten Carbide Axe-Fist" Number="1" />
-    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
-    <xtagGrammar Proper="true" />
-    <tag Name="SeveredHeadBlueprint" Value="RobotHead6" />
-    <tag Name="Barathrumite" />
-    <tag Name="CallToArmsBarathrumite" Value="1" />
-    <tag Name="GritGateDefenseBehavior" Value="aggressive" />
-		<tag Name="Species" Value="humanoid robot" />
-		<tag Name="Gigantic" />
   </object>
-  <object Name="Tungsten Carbide Hammer-Fist" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="tungsten carbide hammer-fist" Tile="Creatures/natural-weapon-fist.bmp" ColorString="&amp;B" />
-    <part Name="MeleeWeapon" HitBonus="6" BaseDamage="2d3" Skill="Cudgel" Stat="Strength" Slot="Hand" />
-    <part Name="Metal" />
-  </object>
-  <object Name="Tungsten Carbide Axe-Fist" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="tungsten carbide axe-fist" Tile="Items/sw_axe_7.bmp" ColorString="&amp;B" />
-    <part Name="ModSerrated" Chance="60" />
-    <part Name="MeleeWeapon" HitBonus="6" BaseDamage="2d3" Skill="Axe" Stat="Strength" Slot="Hand" />
-    <part Name="Metal" />
-  </object>
+
   <object Name="Sparafucile" Inherits="Barathrumite">
     <part Name="Render" DisplayName="Sparafucile" ColorString="&amp;Y" RenderString="b" Tile="Creatures/sw_bearman3.bmp" DetailColor="w" />
     <part Name="Brain" Wanders="false" />
