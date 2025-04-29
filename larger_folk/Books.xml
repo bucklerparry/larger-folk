@@ -1,5 +1,204 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<books Load="Merge">
+<books>
+
+
+ <book ID="Quotes" Load="Merge">
+
+      <page>
+"Get your hands off-a mine haunches."
+[[-Big Yrame]]
+      </page>
+      <page>
+"I assure you the formula has been well-tested,
+now quit whining and put the tube in your mouth."
+[[-Argyve, Tinker]]
+      </page>
+      <page>
+"It is *my* sweetroll, and no, I shan't be sharing."
+[[-Hegelrut]]
+      </page>
+      <page>
+"What? I can't move!"
+[[-Argyve's apprentice]]
+      </page>
+      <page>
+"Heavy is the eater-man, and as his empire petered out,
+his children growing larger still 
+nay fathom of a life without."
+[[-Willow Shakesprig]]
+      </page>
+      <page>
+"How hungry..."
+[[-Ethnographer of Cannibal Society]]
+      <page>
+"*Huff*"
+[[-Warden Indrix]]
+      </page>
+      <page>
+"Our well-watered foliage, their piggish repletion.
+Our decadent grazing, their base gluttony."
+[[-Consortium Socialite]]
+      </page>
+
+      <page>
+"Strap this around your temples. Stop yammering, you will be fine.
+What could possibly go wrong?"
+[[-Argyve, Tinker]]
+      </page>
+      <page>
+"Breathe deep the breath of gods, and die."
+[[-Ekuemekiyyen inscription]]
+      </page>
+      <page>
+"Black devils swing from starry masts,
+beneath the Yawning Moon."
+[[-Fuming God Sea shanty]]
+      </page>
+      <page>
+"Today we shove off our frozen haunts, across bleak Arthax, and spy
+for those inverted hills of chrome."
+[[-Consul Ijulii's farewell]]
+      </page>
+      <page>
+"Who inhabits the colossal desert freehold of Nanru? The Gathered Men.
+The fiefdoms of Odrum? The Kneeling Men.
+The jungles of Yyp? The Breathless Men.
+And the rust-caves of Qud? The Screaming Men."
+[[-Dromad travelogue]]
+      </page>
+      <page>
+"Live and drink, friend. Now give me your water."
+[[-Courteous bandit]]
+      </page>
+      <page>
+"Moon and Sun; wisdom and will."
+[[-Watervine farmer's prayer]]
+      </page>
+      <page>
+"Praises due to the most high, thy Argent Father, me."
+[[-Shekhinah]]
+      </page>
+      <page>
+"Look on my riches, ye Wealthy, and despair! (but do not touch)"
+[[-Hegelrut]]
+      </page>
+      <page>
+"Yes, I know the secrets of the circuitry mind. It's a flaming
+wonder, telepath."
+[[-Seeker of the Sightless Way]]
+      </page>
+      <page>
+"It burns!"
+[[-Argyve's apprentice]]
+      </page>
+      <page>
+"Rule with a tungsten carbide fist."
+[[-King K4K5]]
+      </page>
+      <page>
+"Alas, I'd make a slumberling divine,
+for in the dreaming dale art thou yet mine."
+[[-Willow Shakesprig]]
+      </page>
+      <page>
+"There it is in all of us -- shades of our elder selves. Within each
+man, a goat. Within each goat, a man!"
+[[-Wild-eyed watervine merchant]]
+      </page>
+      <page>
+"What is the nature of this thing we bludgeon? Or of the act itself?"
+[[-Mayor Nuntu]]
+      </page>
+      <page>
+"To ply those silver hollows -- a spry adventurer's dream!"
+[[-Elder Irudad]]
+      </page>
+      <page>
+"Don't heed the tale of every thirsty fool."
+[[-Ol' Uri]]
+      </page>
+      <page>
+"Grrrraaaah."
+[[-Warden Indrix]]
+      </page>
+      <page>
+"May you bathe in blood. Not your own blood, sir. The blood of the
+recast. I mean, the reclaimed. May you bathe in the blood of the
+reclaimed."
+[[-Putus squire]]
+      </page>
+      <page>
+"May you bathe in the blood of the reclaimed."
+[[-Putus Templar]]
+      </page>
+      <page>
+"Do those legs absorb water? Do they even synthesize cytokinins? I
+didn't think so."
+[[-Consortium Socialite]]
+      </page>
+      <page>
+"Upon hearing the news of the king's death, Uutut's political
+adversaries cheered Wysterwort as a hero. They were soon disabused."
+[[-The Baccata Yewtarch]]
+      </page>
+      <page>
+"I have gazed into the hundred nine eyes of Shug'ruith the Burrower."
+[[-Barathrum the Old]]
+      </page>
+      <page>
+"May the ground shake but the Six Day Stilt never tumble!"
+[[-Song of Hebronze]]
+      </page>
+      <page>
+"O, wise men! Keep thyselves assured wise,
+and where a maid approacheth, shut thine eyes."
+[[-Willow Shakesprig]]
+      </page>
+      <page>
+"Nay, you should desire none of these things, for we are ravenous
+fiends and oft succumb to fits of maddened fury."
+[[-The Madpole]]
+      </page>
+      <page>
+"Erecting a lodge is no paltry charge. Near all of my day is spent
+chipping and stacking wood, and though you marvel at the lodge
+itself, you may scowl at the labor that brings it forth."
+[[-The Musker]]
+      </page>
+      <page>
+"In all these things you may with us partake, but take heed, for ours
+are idle lives, and you may soon grow weary of them."
+[[-The Gnu]]
+      </page>
+      <page>
+"Klanq puff at you."
+[[-Pax Klanq]]
+      </page>
+      <page>
+"Feast upon the goat hearts!"
+[[-Mamon Souldrinker]]
+      </page>
+      <page>
+"Now Elohart and Belahind lie in a field of lah
+because their fields got hungry and devoured the faundren raw."
+[[-Bey Lah nursery rhyme]]
+      </page>
+      <page>
+"You determine your worthiness! You steer it and shape it with 
+your words and deeds! Now will you wallow in your abject limitations,
+or will you face me with everything you have?"
+[[-Carbide Chef Agate Severance Star]]
+      </page>      
+      <page>
+"It is my dearest hope that one day I shall be known not as Angohind,
+village bookworm... but Angohind, Master Detective."
+[[-Angohind]]
+      </page>
+			<page>
+"Trees grow best beside the dead."
+[[-Daughter Erinna]]
+      </page>
+    </book>
     <book ID="LargerFolk_WeightSounds" Title="WeightSounds">
         <page>{{emote|*Huff.*}}</page>
         <page>{{emote|*Huff.*}}</page>
