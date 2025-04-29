@@ -38,6 +38,8 @@ public class LargerFolk_WeightGain : IPart
     //3 = immobile
     public int WeightStage = 0;
 
+    public int StartingWeight = -1;
+
     public int CalorieThresholdFat = 5000;
     public int CalorieThresholdObese = 12000;
     public int CalorieThresholdImmobile = 20000;
@@ -79,25 +81,34 @@ public class LargerFolk_WeightGain : IPart
 
     public override bool HandleEvent(ObjectCreatedEvent E)
     {
-        // set a random initial weight stage for non-player creatures, usually lean or fat, occasionally obese, extremely rarely immobile
+        // set an initial weight stage for non-player creatures, usually lean or fat, occasionally obese, extremely rarely immobile
         if (IsEnabled && !ParentObject.IsPlayer())
         {
-            int TempRand = Stat.Random(1,1001);
-            if (TempRand > 999)
+
+            // if no starting weight is set, select one randomly
+            if (StartingWeight < 0)
             {
-                SetWeightStage(3);
+                int TempRand = Stat.Random(1,1001);
+                if (TempRand > 999)
+                {
+                    SetWeightStage(3);
+                }
+                else if (TempRand > 900)
+                {
+                    SetWeightStage(2);
+                }
+                else if (TempRand > 500)
+                {
+                    SetWeightStage(1);
+                }
+                else
+                {
+                    SetWeightStage(0);
+                }
             }
-            else if (TempRand > 900)
+            else // otherwise, set weight to starting weight
             {
-                SetWeightStage(2);
-            }
-            else if (TempRand > 500)
-            {
-                SetWeightStage(1);
-            }
-            else
-            {
-                SetWeightStage(0);
+                SetWeightStage(StartingWeight);
             }
         }
 
@@ -120,7 +131,7 @@ public class LargerFolk_WeightGain : IPart
             {
                 int MoveStat = ParentObject.Stat("MoveSpeed");
 
-                if (Stat.Random(1, (int)((MoveStat/10)*(MoveStat/10)/20)) == 1)
+                if (Stat.Random(1, (int)((MoveStat/10)*(MoveStat/10)/20 + ParentObject.Stat("Strength")/3)) == 1)
                 {
                     ParentObject.ApplyEffect(new LargerFolk_ImmobileStuck(12, 15, "Web Stuck Restraint", null, "stuck", "in", ParentObject.ID));
                 }
@@ -252,6 +263,8 @@ public class LargerFolk_WeightGain : IPart
             @event.SetParameter("TotalCalories", TotalCalories);
             ParentObject.FireEvent(@event);
         }
+
+        AfterWeightChange();
     }
 
     public void InitializeWeightStage()
@@ -280,6 +293,40 @@ public class LargerFolk_WeightGain : IPart
         @event.SetParameter("TotalCalories", TotalCalories);
         ParentObject.FireEvent(@event);
         
+        AfterWeightChange();
+    }
+
+    // apply effects of current weight stage that aren't dependant on how weight stage was entered
+    public void AfterWeightChange()
+    {
+        switch (WeightStage)
+        {
+            case 0:
+                StatShifter.DefaultDisplayName = "Lean";
+                StatShifter.SetStatShift(ParentObject, "AV", 0);
+                StatShifter.SetStatShift(ParentObject, "DV", 1);
+                break;
+            case 1:
+                StatShifter.DefaultDisplayName = "Overweight";
+                StatShifter.SetStatShift(ParentObject, "AV", 1);
+                StatShifter.SetStatShift(ParentObject, "DV", -2);
+                break;
+            case 2:
+                StatShifter.DefaultDisplayName = "Obesity";
+                StatShifter.SetStatShift(ParentObject, "AV", 2);
+                StatShifter.SetStatShift(ParentObject, "DV", -4);
+                break;
+            case 3:
+                StatShifter.DefaultDisplayName = "Extreme Obesity";
+                StatShifter.SetStatShift(ParentObject, "AV", 3);
+                StatShifter.SetStatShift(ParentObject, "DV", -6);
+                break; 
+            default:
+                StatShifter.DefaultDisplayName = "Lean";
+                StatShifter.SetStatShift(ParentObject, "AV", 0);
+                StatShifter.SetStatShift(ParentObject, "DV", 1);
+                break;
+        }
     }
 
     public int CaloriesToStage(int cal)
@@ -301,6 +348,8 @@ public class LargerFolk_WeightGain : IPart
             return 0;
         }
     }
+
+    
     
     public void SetWeightStage(int n)
     {
@@ -363,6 +412,7 @@ public class LargerFolk_WeightGain : IPart
         }
     }
 
+    // display the creature's current weight stage in their name
     public override bool HandleEvent(GetDisplayNameEvent E)
 	{
         if (DisplayWeightName) E.AddAdjective(GetWeightString());
