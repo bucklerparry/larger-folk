@@ -92,7 +92,8 @@
 
   </object>
   <object Name="BaseCrab" Load="Merge">
-    <part Name="Render" Tile="Assets_Content_Textures_Creatures_sw_crab.bmp" />
+    <part Name="Render" Tile="bucklerparry_largerfolk/eyeless_crab_fat.png" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Assets_Content_Textures_Creatures_sw_crab.bmp" WeightStage_1="bucklerparry_largerfolk/eyeless_crab_fat.png"/>
     <xtagTextFragments Skin="chitin" PoeticFeatures="ageless shelf of shell,titanic claws,stilted eyes" YounglingNoise="*click*,*croak*" Activity="scuttling without purpose" VillageActivity="reinforcing the walls of our homes" SacredThing="the art of pinching" />
   </object>
   <object Name="BaseDog" Load="Merge">
@@ -1717,95 +1718,37 @@ The infant child is unaware
     <mutation Name="Stinger" Variant="Stinger Paralysis" Level="2" />
     <tag Name="Species" Value="scorpion" />
   </object>
-  <object Name="Scorpiock_Claws" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="claws" Tile="Creatures/natural-weapon-claw.bmp" ColorString="&amp;w" />
-    <part Name="MeleeWeapon" BaseDamage="1d3" Skill="Axe" Stat="Strength" Slot="Arm" />
-    <tag Name="Gender" Value="plural" />
-  </object>
-  <object Name="Scorpiock_Bite" Inherits="Bite">
-    <part Name="MeleeWeapon" BaseDamage="1d4" />
-  </object>
-  <object Name="Scorpiock Corpse" Inherits="Arthropod Corpse">
-    <part Name="Butcherable" OnSuccess="Raw Scorpiock Meat" />
-    <part Name="Render" DisplayName="scorpiock corpse" />    
-    <part Name="Physics" Weight="40" />
-    <part Name="Commerce" Value="1" />
-    <tag Name="Tier" Value="1" />    
-  </object>
-  <object Name="Scrap-clad Hermit" Inherits="BaseHumanoid">
+
+  <object Name="Scrap-clad Hermit" Load="Merge">
     <part Name="Render" DisplayName="scrap-clad hermit" Tile="bucklerparry_largerfolk/hermit_fat.png" RenderString="h" ColorString="&amp;w" DetailColor="c" />
-    <stat Name="Hitpoints" Value="20" />
-    <stat Name="Level" Value="4" />
-    <stat Name="AV" Value="4" />
-    <stat Name="DV" Value="2" />
-    <part Name="Description" Short="The patchwork of burnt metal and rust-flaked rivets make a gradient of newflesh across the hermit's body. =pronouns.Possessive= hair is knotted into a rat's nest and held high by a barrette of broken glass. =pronouns.Subjective= =verb:scream:afterpronoun= in a tongue of =pronouns.possessive= own invention." />
-    <tag Name="Role" Value="Tank" />
-    <builder Name="Tier2Junk" />
-    <part Name="Brain" Factions="Hermits-100" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_hermit.bmp" WeightStage_1="bucklerparry_largerfolk/hermit_fat.png"/>
+    <part Name="Description" Short="The patchwork of burnt metal and rust-flaked rivets make a heightmap of bulging adipose across the hermit's body. =pronouns.Possessive= hair is knotted into a rat's nest and held high by a barrette of broken glass. =pronouns.Subjective= =verb:scream:afterpronoun= in a tongue of =pronouns.possessive= own invention." />
+    <part Name="LargerFolk_WeightDescription" 
+      WeightDescription_0="The patchwork of burnt metal and rust-flaked rivets make a gradient of newflesh across the hermit's body. =pronouns.Possessive= hair is knotted into a rat's nest and held high by a barrette of broken glass. =pronouns.Subjective= =verb:scream:afterpronoun= in a tongue of =pronouns.possessive= own invention."
+      WeightDescription_1="The patchwork of burnt metal and rust-flaked rivets make a heightmap of bulging adipose across the hermit's body. =pronouns.Possessive= hair is knotted into a rat's nest and held high by a barrette of broken glass. =pronouns.Subjective= =verb:scream:afterpronoun= in a tongue of =pronouns.possessive= own invention." />
   </object>
-  <object Name="Seed-Spitting Vine" Inherits="Plant Turret">
-		<part Name="Description" Short="Jade green tendrils curl inward and hug =pronouns.possessive= center in tension. =pronouns.Possessive= leaves vibrate to low-volume crunches as =pronouns.subjective= =verb:compact:afterpronoun= seed matter for spitting. " />
-		<part Name="Body" Anatomy="Vine" />		
-    <part Name="Brain" PointBlankRange="true" />
-    <part Name="Render" DisplayName="{{g|seed-spitting vine}}" RenderString="225" Tile="Creatures/sw_seed_spitting_vine.bmp" ColorString="&amp;G" DetailColor="g" />
-    <inventoryobject Blueprint="Seed Slingshot" />
-    <stat Name="Level" Value="1" />
-    <tag Name="DynamicObjectsTable:DesertCanyon_Creatures" />
-    <tag Name="DynamicObjectsTable:Flowerfields_Creatures" />
+
+  <object Name="Seed-Spitting Vine" Load="Merge">
+		<part Name="Description" Short="Flabby jade green tendrils fold inward and smother =pronouns.possessive= center in sagging pressure. =pronouns.Possessive= plush leaves vibrate to low-volume crunches as =pronouns.subjective= =verb:compact:afterpronoun= seed matter for spitting." />
+    <part Name="LargerFolk_WeightDescription" 
+      WeightDescription_0="Jade green tendrils curl inward and hug =pronouns.possessive= center in tension. =pronouns.Possessive= leaves vibrate to low-volume crunches as =pronouns.subjective= =verb:compact:afterpronoun= seed matter for spitting." 
+      WeightDescription_1="Flabby jade green tendrils fold inward and smother =pronouns.possessive= center in sagging pressure. =pronouns.Possessive= plush leaves vibrate to low-volume crunches as =pronouns.subjective= =verb:compact:afterpronoun= seed matter for spitting."
+      />
+    <part Name="Render" DisplayName="{{g|seed-spitting vine}}" RenderString="225" Tile="bucklerparry_largerfolk/seed_spitting_vine_fat.png" ColorString="&amp;G" DetailColor="g" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_seed_spitting_vine.bmp" WeightStage_1="bucklerparry_largerfolk/seed_spitting_vine_fat.png" />
   </object>
-  <object Name="Seed Slingshot" Inherits="BaseMagazineRifle">
-    <part Name="Render" DisplayName="seed spitter" Tile="Items/sw_wheat_stem.bmp" ColorString="&amp;G" TileColor="&amp;G" DetailColor="g" />
-    <part Name="Physics" UsesTwoSlots="true" />
-    <part Name="Commerce" Value="25" />
-    <part Name="MissileWeapon" Skill="Rifle" ShotsPerAction="1" AmmoPerAction="1" ShotsPerAnimation="1" WeaponAccuracy="20" />
-    <part Name="BioAmmoLoader" MaxCapacity="20" Available="20" TurnsToGenerate="5" ProjectileObject="ProjectileSpatSeed" ConsumesLiquid="sap" LiquidMustBePure="false" LiquidConsumptionChanceOneIn="25" />
-    <part Name="LiquidVolume" MaxVolume="4" StartVolume="4" InitialLiquid="sap-1000" />
-    <part Name="LeakWhenBroken" />
-    <part Name="LiquidProducer" Liquid="sap" Rate="35" FillSelfOnly="true" IsTechScannable="false" WorksOnEquipper="true" WorksOnSelf="false" RequiresBodyPartCategory="Plant" />
-    <part Name="Description" Short="Compacted seed matter that's been stuffed into the leaf-mitt of a coiled tendril." />
-    <part Name="Examiner" Unknown="UnknownStrangePlant"  Complexity="2" Difficulty="1" />
-    <tag Name="Tier" Value="2" />
-    <tag Name="ReloadSound" Value="Sounds/Missile/Reloads/sfx_missile_bloodGradientHandVacuum_reload" />
-    <tag Name="MissileFireSound" Value="Sounds/Missile/Fires/Rifles/sfx_missile_seedSpitter_fire" />
-    <tag Name="LivePlant" />
-  </object>
-  <object Name="ProjectileSpatSeed" Inherits="TemporaryProjectile">
-    <part Name="Render" DisplayName="seed" />
-    <part Name="Projectile" BasePenetration="2" BaseDamage="1d3" ColorString="&amp;y" PassByVerb="whiz" />
-	  <xtagProjectileVFX
-			  Effect="MissileWeaponsEffects/3cprojectile"
-			  Tile="Items/sw_nugget.bmp"
-			  Foreground="W"
-			  Detail="g"
-			  TrailStartWidth="4"
-			  TrailColor="g"
-			  Orientation="225"
-			  Rotation="720"
-			  Speed="500"
-			  Scale="0.7"
-	  />
-  </object>
-	<object Name="BaseWatervineFarmer" Inherits="BaseFarmer">
+
+	<object Name="BaseWatervineFarmer" Load="Merge">
     <part Name="Render" DisplayName="watervine farmer" ColorString="&amp;y" DetailColor="g" RenderString="f" />
     <part Name="Description" Short="The tatters of a sweat-stained kufiya thrash in the wind from where they hang about the farmer's neck. Clasped in =pronouns.possessive= gnarled, brown hand is a curved vinereaper of iron with which =pronouns.subjective= =verb:cull:afterpronoun= moisture-swollen wafers from the viridian plant called watervine." />
-		<part Name="Brain" Wanders="true" />
-		<stat Name="DV" Value="3" />
-    <stat Name="Level" Value="1" />
-		<skill Name="CookingAndGathering_Harvestry" />
-		<part Name="ConversationScript" ConversationID="WatervineFarmers" />		
-    <part Name="AmbientSoundGenerator" Sounds="sfx_tinker_idle_chop" ChancePerThousand="50" />
-		<inventoryobject Blueprint="Wide-brimmed Hat" />		
-    <inventoryobject Blueprint="Iron Vinereaper" Number="1" />
-    <inventoryobject Blueprint="Vinewafer Sheaf" Number="2-3" />
-    <tag Name="BaseObject" Value="*noinherit" />    
   </object>
-  <object Name="WatervineFarmer" Inherits="BaseWatervineFarmer">
+  <!-- <object Name="WatervineFarmer" Load="Merge">
     <tag Name="DynamicObjectsTable:Saltmarsh_Creatures" />
   </object>
-  <object Name="WatervineFarmerJoppa" Inherits="BaseWatervineFarmer">
+  <object Name="WatervineFarmerJoppa" Load="Merge">
     <part Name="ConversationScript" ConversationID="JoppaFarmer" />
     <part Name="Brain" Factions="Joppa-100" />
-  </object>	
+  </object>	 -->
   <object Name="Young Ivory" Inherits="BasePlant">
     <part Name="Render" RenderIfDark="true" Tile="Creatures/sw_young_ivory.bmp" DisplayName="{{Y|young ivory}}" RenderString="011" ColorString="&amp;Y" TileColor="&amp;y" DetailColor="Y" />
     <part Name="Brain" Hostile="false" Wanders="false" Mobile="false" Factions="Roots-100" />
@@ -2102,26 +2045,12 @@ The infant child is unaware
     <part Name="Swarmer" />
     <property Name="NoLoot" Value="true" />
   </object>
-  <object Name="Eyeless Crab" Inherits="BaseCrab">
+  <object Name="Eyeless Crab" Load="Merge">
     <part Name="Render" DisplayName="eyeless crab" RenderString="c" ColorString="&amp;Y" />
-    <part Name="DisplayNameColor" Color="&amp;Y" />
-    <part Name="Corpse" CorpseChance="25" CorpseBlueprint="Eyeless Crab Corpse" />
-    <stat Name="AV" Value="7" />
-    <stat Name="Level" Value="7" />
-    <stat Name="Hitpoints" Value="30" />    
-    <part Name="Brain" Hostile="False" />
-    <inventoryobject Blueprint="Eyeless Crab_Claw" Number="2" />
+    <!-- <part Name="LargerFolk_WeightStageRender" WeightStage_0="" WeightStage_1=""/> -->
     <part Name="Description" Short="A shadow inches over the dull white carapace of a giant and caveborn crustacean. =pronouns.Possessive= eyestalks have shrunk to nothing in the sundim grottos of the underearth." />
-    <skill Name="Cudgel" />
-    <skill Name="Multiweapon_Fighting" />
-    <tag Name="Role" Value="Tank" />
   </object>
-  <object Name="Eyeless Crab_Claw" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="crab claw" Tile="Creatures/natural-weapon-pincer.bmp" ColorString="&amp;Y" />
-    <part Name="DisplayNameColor" Color="&amp;Y" />
-    <part Name="MeleeWeapon" BaseDamage="1d2" Skill="Cudgel" Stat="Strength" Slot="Hand" />
-  </object>
-  <object Name="Farm Eyeless Crab" Inherits="Eyeless Crab">
+  <object Name="Farm Eyeless Crab" Load="Merge">
     <part Name="Brain" Hostile="False" Factions="Farmers-100" />
     <tag Name="Grazer" />
     <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
@@ -3712,114 +3641,37 @@ The infant child is unaware
     <tag Name="DynamicObjectsTable:Jungle_Creatures" />
     <tag Name="DynamicObjectsTable:Ruins_Creatures" />    
   </object>
-  <object Name="quillipede quills" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="quills" Tile="Items/sw_quills.bmp" ColorString="&amp;y"  />
-    <part Name="MeleeWeapon" BaseDamage="1d5" Skill="LongBlades" Stat="Strength" Slot="Head" />
-    <tag Name="Gender" Value="plural" />
-  </object>
-  <object Name="quillipede corpse" Inherits="Arthropod Corpse">
-    <part Name="Render" DisplayName="quillipede corpse" />
-		<part Name="Description" Short="Its torso is downside up and sprouts a bouquet of spines and crumpled legs." />
-    <part Name="Physics" Weight="100" />    
-    <tag Name="Tier" Value="3" />    
-  </object>
-  <object Name="Rifle Turret Tinker" Inherits="Turret Tinker">
+  <object Name="Rifle Turret Tinker" Load="Merge">
     <part Name="Render" DisplayName="rifle turret tinker" RenderString="3" ColorString="&amp;y" DetailColor="c" />
     <stat Name="Level" Value="14" />
     <stat Name="AV" Value="4" />
     <part Name="TurretTinker" TurretType="Desert Rifle" />
   </object>
-  <object Name="Rustacean" Inherits="BaseCrab">
+  <object Name="Rustacean" Load="Merge">
     <part Name="Render" DisplayName="{{r|rustacean}}" RenderString="c" ColorString="&amp;r" />
-    <part Name="Corpse" CorpseChance="90" CorpseBlueprint="Rustacean Corpse" />
-    <stat Name="AV" Value="8" />
-    <stat Name="Level" Value="12" />
-    <stat Name="Hitpoints" Value="45" />    
-    <part Name="Brain" Hostile="false" />
-    <inventoryobject Blueprint="Rustacean Crab_Claw" Number="2" />
     <part Name="Description" Short="A broad, flat shell in the hue of air-sucked iron has started to flake in a verdigral pattern. =pronouns.Subjective= =verb:shake:afterpronoun= a single monstrous, serrated claw, caked in a year's worth of Red Death, the eroded metal dust." />
-    <skill Name="Cudgel" />
-    <skill Name="Cudgel_ShatteringBlows" />
-    <skill Name="Multiweapon_Fighting" />
-    <tag Name="Role" Value="Tank" />
-    <stat Name="ColdResistance" Value="10" />
-    <stat Name="HeatResistance" Value="10" />
-    <stat Name="ElectricResistance" Value="-10" />
   </object>
-  <object Name="Rustacean Crab_Claw" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="{{r|rust-encrusted claw}}" Tile="Creatures/natural-weapon-pincer.bmp" ColorString="&amp;r" />
-    <part Name="MeleeWeapon" BaseDamage="1d3" Skill="Cudgel" Stat="Strength" Slot="Hand" />
-  </object>
-  <object Name="Rustacean Corpse" Inherits="Crab Corpse">
-    <part Name="Render" DisplayName="rustacean corpse" ColorString="&amp;r" />
-		<part Name="Physics" Weight="250" />
-    <tag Name="Tier" Value="3" />    
-  </object>
-  <object Name="Sawhander" Inherits="BaseRobot">
-    <part Name="Body" Anatomy="TreadedRobot" />
+  <object Name="Sawhander" Load="Merge">
     <part Name="Render" DisplayName="{{W|saw-hander}}" RenderString="5" ColorString="&amp;W" Tile="bucklerparry_largerfolk/sawhander_fat.png" DetailColor="w" />
-    <stat Name="Level" Value="15" />
-    <stat Name="Agility" Boost="1" />
-    <stat Name="AV" Value="5" />
-    <stat Name="Hitpoints" Value="50" />
-    <part Name="Brain" Hostile="false" Hibernating="true" />
-    <part Name="Description" Short="Steel treads turn around a drive sprocket, toting a chrome tank and featureless sensor array. Stuck on =pronouns.possessive= grooved, steel arms are two big rotary saws, rust-dulled. Its treads are splayed to accomodate its enormous fuel store, kissing the ground between its hips and sagging downward over the edges of its lower body." />
-    <inventoryobject Blueprint="Sawhander_Saw" Number="2" />
-    <inventoryobject Chance="4" Blueprint="Chem Cell" />
-    <skill Name="Axe" />
-    <skill Name="Axe_Dismember" />
-    <skill Name="Axe_Cleave" />
-		<tag Name="Species" Value="wheeled robot" />
-    <tag Name="Role" Value="Brute" />
-    <tag Name="SeveredHeadBlueprint" Value="RobotHead3" />
-    <tag Name="DynamicObjectsTable:Jungle_Creatures" />
-    <tag Name="DynamicObjectsTable:Ruins_Creatures" />    
-  </object>
-  <object Name="Sawhander_Saw" Inherits="NaturalWeapon">
-    <part Name="MeleeWeapon" BaseDamage="2d8" Skill="Axe" Stat="Strength" Slot="Hand" />
-    <part Name="Render" DisplayName="{{r|rust-pitted saw}}" Tile="Creatures/natural-weapon-saw.bmp" ColorString="&amp;r" />
-    <part Name="Metal" />
-    <part Name="VibroWeapon" ChargeUse="0" />
+    <part Name="Description" Short="Steel treads turn around a drive sprocket, toting a chrome tank and featureless sensor array. Stuck on =pronouns.possessive= grooved, steel arms are two big rotary saws, rust-dulled. =pronouns.Possessive= treads are splayed to accomodate =pronouns.possessive= enormous fuel store, kissing the ground between =pronouns.possessive= hips and sagging downward over the edges of =pronouns.possessive= lower body." />
+    <part Name="LargerFolk_WeightDescription" 
+      WeightDescription_0="Steel treads turn around a drive sprocket, toting a chrome spine and featureless sensor array. Stuck on =pronouns.possessive= grooved, steel arms are two big rotary saws, rust-dulled."  
+      WeightDescription_1="Steel treads turn around a drive sprocket, toting a chrome tank and featureless sensor array. Stuck on =pronouns.possessive= grooved, steel arms are two big rotary saws, rust-dulled. =pronouns.Possessive= treads are splayed to accomodate =pronouns.possessive= enormous fuel store, kissing the ground between =pronouns.possessive= hips and sagging downward over the edges of =pronouns.possessive= lower body." />
   </object>
   <object Name="SewageEel" Load="Merge">
     <part Name="Render" DisplayName="sewage eel" RenderString="224" ColorString="&amp;r" Tile="bucklerparry_largerfolk/sewage_eel_fat.png" />
     <part Name="LargerFolk_WeightStageRender" WeightStage_0="creatures/sw_eel.bmp" WeightStage_1="bucklerparry_largerfolk/sewage_eel_fat.png" />
-    <part Name="Description" Short="Circular gills on =pronouns.possessive= tongue-slick and finned bodypipe suck air out of the surrounding foul liquid gunk." />
+    <part Name="Description" Short="Circular gills bunch up in the upper folds of =pronouns.possessive= overstuffed bodypipe, sucking air out of the surrounding foul liquid gunk where the greedy creature lies." />
+    <part Name="LargerFolk_WeightDescription" WeightDescription_0="Circular gills on =pronouns.possessive= tongue-slick and finned bodypipe suck air out of the surrounding foul liquid gunk." WeightDescription_1="Circular gills bunch up in the upper folds of =pronouns.possessive= overstuffed bodypipe, sucking air out of the surrounding foul liquid gunk where the greedy creature lies." />
   </object>
   <object Name="Sleeping Plated Chromeling" Inherits="Plated Chromeling">
     <part Name="SpawnWithEffect" Effect="Asleep" />
     <tag Name="ExcludeFromDynamicEncounters" />
   </object>
-  <object Name="Spark Tick" Inherits="BaseSpider">
+  <object Name="Spark Tick" Load="Merge">
     <part Name="Render" DisplayName="{{W|spark tick}}" Tile="bucklerparry_largerfolk/spark_tick_fat.png" RenderString="i" ColorString="&amp;W" />
-    <part Name="Corpse" CorpseChance="10" CorpseBlueprint="Spark Tick Corpse" />
-    <stat Name="Level" Value="15" />
-    <stat Name="Agility" Boost="1" />
-    <stat Name="AV" Value="3" />
-    <stat Name="Hitpoints" Value="4" />
-    <part Name="Brain" Hostile="false" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_sparktick.bmp" WeightStage_1="bucklerparry_largerfolk/spark_tick_fat.png" />
     <part Name="Description" Short="=pronouns.Possessive= sensory palps crackle and pop off of moontime, and =pronouns.possessive= six legs flare with sparklight. The bug caroms from spot to spot, galvanized by raw biocurrent." />
-    <inventoryobject Blueprint="Spark_Tick_Arc" Number="1" />
-    <skill Name="ShortBlades" />
-    <tag Name="Role" Value="Minion" />
-    <part Name="Swarmer" />
-    <stat Name="ElectricResistance" Value="100" />
-  </object>
-  <object Name="Spark_Tick_Arc" Inherits="NaturalWeapon">
-    <part Name="MeleeWeapon" BaseDamage="1d3" Skill="ShortBlades" Stat="Strength" Slot="Face" />
-    <part Name="Render" DisplayName="electric arc" Tile="Creatures/natural-weapon-arc.bmp" ColorString="&amp;W" />
-    <part Name="DischargeOnHit" ChargeUse="0" Voltage="1d4" DamageRange="1d2" />
-  </object>	
-  <object Name="Spark Tick Corpse" Inherits="Arthropod Corpse">
-    <part Name="Render" DisplayName="{{W|spark tick}} corpse" ColorString="&amp;W" />
-		<part Name="Description" Short="Its torso is downside up and sprouts a bouquet of crumpled legs. Voltaic residuum drips and sizzles." />
-    <part Name="Food" Message="It crackles and pops." />
-    <part Name="Physics" Weight="20" />   
-    <part Name="Butcherable" OnSuccess="Spark Tick Scutum" />
-    <part Name="Commerce" Value="20" />
-		<tag Name="Species" Value="tick" />
-		<tag Name="Tier" Value="3" />
-    <tag Name="Role" Value="Rare" />
   </object>
   <object Name="Two-Headed Slugsnout" Inherits="BaseSlugsnout">
     <part Name="Render" DisplayName="two-headed slugsnout" Tile="Creatures/sw_twoheadedboar.bmp" ColorString="&amp;G" DetailColor="W" />
@@ -3846,37 +3698,12 @@ The infant child is unaware
     <tag Name="Species" Value="ant" />
     <tag Name="DynamicObjectsTable:Ruins_Creatures" />
   </object>
-  <object Name="Voider" Inherits="BaseSpider">
+  <object Name="Voider" Load="Merge">
     <part Name="Render" DisplayName="voider" ColorString="&amp;B" RenderString="x" Tile="bucklerparry_largerfolk/voider_fat.png" DetailColor="y" />
-    <part Name="Corpse" CorpseChance="15" CorpseBlueprint="Voider Corpse" />
-    <part Name="Brain" Hibernating="false" Hostile="false" Factions="Arachnids-100" />
-    <part Name="AITryKeepDistance" NotStuck="true" />
-    <stat Name="ColdResistance" Value="5" />
-    <stat Name="AcidResistance" Value="5" />
-    <stat Name="AV" Value="3" />
-    <stat Name="DV" Value="7" />
-    <stat Name="Hitpoints" Value="32" />
-    <stat Name="Level" Value="15" />
-    <inventoryobject Blueprint="Voider_Bite" Number="1" />
-    <part Name="Description" Short="Anxious legs, grown longer in the vacated space around =pronouns.objective=, ply the mineral dirt. A drop of gastric flux sloshes inside =pronouns.possessive= stomach-orb, powering =pronouns.possessive= instinctual rotation of the local ley." />
-    <skill Name="ShortBlades" />
-    <mutation Name="SpiderWebs" Level="4" />
-    <mutation Name="TeleportOther" Level="4" />
-  </object>
-  <object Name="Voider_Bite" Inherits="Bite">
-    <part Name="Render" DisplayName="fangs" />
-    <part Name="MeleeWeapon" BaseDamage="1d8" />
-    <tag Name="Gender" Value="plural" />
-  </object>
-  <object Name="Voider Corpse" Inherits="Arthropod Corpse">
-		<part Name="Render" DisplayName="voider corpse" />		
-    <part Name="Physics" Weight="40" />
-    <part Name="Commerce" Value="20" />
-    <part Name="TeleportOnEat" />
-		<part Name="Butcherable" OnSuccess="Voider Gland" />
-		<part Name="Food" Message="Your mouth starts to fizz." />
-    <tag Name="Tier" Value="3" />    
-    <tag Name="Role" Value="Rare" />
+    <part Name="Description" Short="Anxious legs, grown wider in the vacated space around =pronouns.objective=, ply the mineral dirt. A drop of gastric flux sloshes inside =pronouns.possessive= swollen stomach-orb, powering =pronouns.possessive= instinctual rotation of the local ley." />
+    <part Name="LargerFolk_WeightDescription" 
+    WeightStage_0="Anxious legs, grown longer in the vacated space around =pronouns.objective=, ply the mineral dirt. A drop of gastric flux sloshes inside =pronouns.possessive= stomach-orb, powering =pronouns.possessive= instinctual rotation of the local ley."
+    WeightStage_1="Anxious legs, grown wider in the vacated space around =pronouns.objective=, ply the mineral dirt. A drop of gastric flux sloshes inside =pronouns.possessive= swollen stomach-orb, powering =pronouns.possessive= instinctual rotation of the local ley. Some posit the voider's spatial capabilities developed as a method of capturing juicier prey." />
   </object>
   <object Name="Yonderbrush" Inherits="BasePlant">
     <part Name="Render" RenderIfDark="true" DisplayName="{{B|yonderbrush}}" RenderString="#" ColorString="&amp;B" Tile="creatures/sw_yonderbrush.bmp" DetailColor="W" />
@@ -3899,48 +3726,16 @@ The infant child is unaware
   </object>
 
   <!-- Goatfolk -->
-  <object Name="Goatfolk" Inherits="BaseAnimal">
+  <object Name="Goatfolk" Load="Merge">
     <part Name="Render" DisplayName="goatfolk" Tile="bucklerparry_largerfolk/goatbully_fat.png" RenderString="g" ColorString="&amp;W" />
-    <part Name="Corpse" CorpseChance="5" CorpseBlueprint="Goatfolk Corpse" />
-    <stat Name="Level" Value="15" />
-    <part Name="Body" Anatomy="Humanoid" />
-    <stat Name="AV" Value="3" />
-    <stat Name="Hitpoints" Value="20" />
-    <stat Name="Strength" Boost="1" />
-    <stat Name="Intelligence" Boost="1" />
-    <stat Name="Willpower" Boost="2" />
-    <stat Name="Ego" Boost="1" />
-    <part Name="Brain" Hostile="false" Factions="Goatfolk-100" />
-    <part Name="ConversationScript" ConversationID="Goatfolk" ClearLost="true" />
     <part Name="Description" Short="A braid of roasted frogskin stretches taut over =pronouns.possessive= swollen pectorals and fastens a satchel to =pronouns.possessive= hip. =pronouns.Possessive= hooves are stained with an unclassified mixture of blood, and spittle flies from =pronouns.possessive= bleating mouth into a tuft of scraggle chin-hair." />
-    <skill Name="Endurance" />
-    <skill Name="Shield" />
-    <tag Name="Role" Value="Brute" />
-    <tag Name="Species" Value="goatfolk" />
-    <tag Name="Culture" Value="Goatfolk" />
-    <tag Name="SecretAdjectives" Value="humanoid" />
-    <inventoryobject Blueprint="Goatfolk_Horns" />
-    <tag Name="InventoryPopulationTable" Value="HumanoidEquipment" />
-    <part Name="AIPilgrim" Chance="10" MapNoteAttributes="goatfolk" />
-    <xtagTextFragments YounglingNoise="*rrrraaah*,*rrraah*,*rrah*" Activity="gorging on the flesh of beasts by starlight" VillageActivity="ramming things with @their@ horns" />
-    <tag Name="PrimaryLimbType" Value="Hand" />
-    <tag Name="DynamicObjectsTable:Jungle_Creatures" />
-    <tag Name="DynamicObjectsTable:Ruins_Creatures" />
-    <tag Name="Cervine" />
-    <tag Name="BaseObject" Value="*noinherit" />	  
-    <tag Name="DeathSounds" Value="Sounds/Creatures/VO/sfx_goatfolk_vo_die" />
-	  <tag Name="TakeDamageSound" Value="Sounds/Creatures/VO/sfx_goatfolk_vo_hurt"/>
-	  <tag Name="AmbientIdleSound" Value="Sounds/Creatures/VO/sfx_goatfolk_vo_idle"/>
-	  <tag Name="PunchSound" Value="Sounds/Creatures/VO/sfx_goatfolk_vo_attack"/>    
-		<stag Name="Contemporary" />
+    <part Name="LargerFolk_WeightDescription" 
+      WeightDescription_0="A braid of roasted frogskin stretches taut over =pronouns.possessive= swollen pectorals and fastens a satchel to =pronouns.possessive= hip. =pronouns.Possessive= hooves are stained with an unclassified mixture of blood, and spittle flies from =pronouns.possessive= bleating mouth into a tuft of scraggle chin-hair." 
+      WeightDescription_1="A braid of roasted frogskin stretches taut over =pronouns.possessive= sagging teats and fastens a satchel clumsily to =pronouns.possessive= hip, leather straining against the gentle pressure of it's wearer's width. 
+      =pronouns.Possessive= hooves are stained with an unclassified mixture of blood from hunt-feasts past, and spittle flies from =pronouns.possessive= bleating mouth into the crevice of a second chin."
+    />
   </object>
-  <object Name="Goatfolk_Horns" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="curly horns" Tile="Items/sw_horns2.bmp" ColorString="&amp;w"  />
-    <part Name="MeleeWeapon" BaseDamage="1d3" Skill="ShortBlades" Stat="Strength" Slot="Head" />
-    <part Name="Shield" AV="2" DV="0" WornOn="Head" />
-    <tag Name="Gender" Value="plural" />
-  </object>
-  <object Name="Goatfolk Corpse" Inherits="Humanoid Corpse">
+  <!-- <object Name="Goatfolk Corpse" Load="Merge">
 		<part Name="Render" DisplayName="goatfolk corpse" />
 		<part Name="Description" Short="A mound of wet hair and rotting flesh puts some elevation to the ground. A single chipped horn curls out of the mess like a fungus sprout." />
 		<part Name="Butcherable" OnSuccess="Raw Goat Meat" />
@@ -3949,7 +3744,7 @@ The infant child is unaware
     <part Name="Commerce" Value="5" />
     <tag Name="Tier" Value="3" />    
   </object>
-  <object Name="Flayed Goatfolk Corpse" Inherits="Humanoid Corpse">
+  <object Name="Flayed Goatfolk Corpse" Load="Merge">
     <part Name="Render" DisplayName="flayed goatfolk corpse" ColorString="&amp;R" />
     <part Name="Food" Message="It's putrid!" />
     <part Name="Description" Short="A crumpled and horned frame of tendons and muscle rot in putrid, black blood." />
@@ -3964,128 +3759,51 @@ The infant child is unaware
     <part Name="Physics" Weight="140" />
     <part Name="Commerce" Value="2" />
     <tag Name="Tier" Value="3" />    
-  </object>
-  <object Name="Goatfolk Bully" Inherits="Goatfolk">
+  </object> -->
+  <object Name="Goatfolk Bully" Load="Merge"> <!-- Inherits="Goatfolk"-->
     <part Name="Render" DisplayName="goatfolk bully" ColorString="&amp;W" />
-    <stat Name="AV" Value="5" />
-    <stat Name="Hitpoints" Value="60" />
-    <tag Name="Role" Value="Brute" />
-    <tag Name="DynamicObjectsTable:Goatfolk" />
   </object>
-  <object Name="Goatfolk Hornblower" Inherits="Goatfolk Bully">
+  <object Name="Goatfolk Hornblower" Load="Merge"> <!-- Inherits="Goatfolk Bully"-->
     <part Name="Render" DisplayName="goatfolk hornblower" Tile="bucklerparry_largerfolk/goatfolk_hornblower_fat.png" ColorString="&amp;G" />
-    <tag Name="Role" Value="Controller" />
-    <inventoryobject Blueprint="Grandfather Horn" />
-    <tag Name="DynamicObjectsTable:Goatfolk" />
   </object>
-  <object Name="Goatfolk Sower" Inherits="Goatfolk">
+  <object Name="Goatfolk Sower" Load="Merge"> <!-- Inherits="Goatfolk"-->
     <part Name="Render" DisplayName="goatfolk sower" Tile="creatures/sw_goatfolk_sower.bmp" ColorString="&amp;r" />
-    <stat Name="AV" Value="3" />
-    <stat Name="Agility" Boost="2" />
-    <stat Name="Hitpoints" Value="30" />
-    <tag Name="Role" Value="Skirmisher" />
-    <inventoryobject Blueprint="Sowers_Seed" Number="4" />
-    <tag Name="DynamicObjectsTable:Goatfolk" />
   </object>
-  <object Name="Sowers_Seed" Inherits="BaseThrownWeapon">
-    <part Name="Render" DisplayName="sower's seed" RenderString="*" Tile="creatures/sw_sowerseed.bmp" ColorString="&amp;W" TileColor="&amp;W" DetailColor="w" />
-    <part Name="Description" Short="A small, warm seed." />
-    <part Name="Stacker" />
-    <part Name="Physics" Organic="true" Category="Grenades" />
-    <part Name="Examiner" Unknown="UnknownStrangePlant" Complexity="3" Difficulty="1" />
-    <part Name="Commerce" Value="10" />
-    <part Name="HEGrenade" Force="2000" />
-    <tag Name="LivePlant" />
-    <tag Name="ExcludeFromTurretStock" />
-  </object>
-  <object Name="Goatfolk Yurtwarden" Inherits="Goatfolk">
+  <object Name="Goatfolk Yurtwarden" Load="Merge"> <!-- Inherits="Goatfolk"-->
     <part Name="Render" DisplayName="goatfolk yurtwarden" Tile="creatures/sw_goatfolk_hunter.bmp" ColorString="&amp;R" />
-    <stat Name="AV" Value="4" />
-    <stat Name="Agility" Boost="2" />
-    <stat Name="Hitpoints" Value="30" />
-    <tag Name="Role" Value="Artillery" />
-    <inventoryobject Blueprint="Desert Rifle" Number="1" />
-    <inventoryobject Blueprint="Lead Slug" Number="16" />
-    <tag Name="DynamicObjectsTable:Goatfolk" />
   </object>
-  <object Name="Goatfolk Shaman" Inherits="Goatfolk">
+  <object Name="Goatfolk Shaman" Load="Merge"> <!-- Inherits="Goatfolk"-->
     <part Name="Render" DisplayName="goatfolk shaman" Tile="creatures/sw_goatfolk_shaman.bmp" ColorString="&amp;B" />
-    <stat Name="AV" Value="4" />
-    <stat Name="Intelligence" Boost="2" />
-    <stat Name="Willpower" Boost="3" />
-    <stat Name="Ego" Boost="3" />
-    <stat Name="Hitpoints" Value="50" />
-    <tag Name="Role" Value="Leader" />
-    <part Name="RandomMutations" Mental="1d1" MentalLevel="1d6" Physical="1d1" PhysicalLevel="1d6" />
-    <tag Name="DynamicObjectsTable:Goatfolk" />
   </object>
-  <object Name="Crazed Goatfolk Shaman 1" Inherits="Goatfolk Shaman">
-    <part Name="Brain" Factions="Mamon-100" />
-    <part Name="GoatfolkClan1" />
+  <object Name="Crazed Goatfolk Shaman 1" Load="Merge"> <!-- Inherits="Goatfolk Shaman"-->
   </object>
-  <object Name="Crazed Goatfolk Shaman 2" Inherits="Goatfolk Shaman">
-    <part Name="Brain" Factions="Mamon-100" />
-    <part Name="GoatfolkClan1" />
+  <object Name="Crazed Goatfolk Shaman 2" Load="Merge"> <!-- Inherits="Goatfolk Shaman"-->
   </object>
-  <object Name="Goatfolk Hero 1" Inherits="Goatfolk Shaman">
+  <object Name="Goatfolk Hero 1" Load="Merge"> <!-- Inherits="Goatfolk Shaman"-->
     <part Name="Render" ColorString="&amp;M" Tile="creatures/sw_goatfolk_shaman2.bmp" />
-    <tag Name="Role" Value="Hero" />
-    <builder Name="GoatfolkHero1" />
-    <part Name="GoatfolkClan1" />
-    <part Name="GivesRep" />
   </object>
-  <object Name="Goatfolk Thrall" Inherits="Goatfolk Bully">
-    <part Name="Brain" Hostile="false" Factions="Mamon-100" />
+  <object Name="Goatfolk Thrall" Load="Merge"> <!-- Inherits="Goatfolk Bully"-->
     <part Name="Render" DisplayName="goatfolk thrall" />
-    <stat Name="Strength" Boost="1" />
-    <stat Name="Willpower" Boost="-1" />
-    <stat Name="Hitpoints" Boost="2" />
-    <part Name="Physics" FlameTemperature="14550" />
   </object>
   
   <!-- Snapjaw troglodytes -->
-  <object Name="Snapjaw Troglodyte" Inherits="Snapjaw">
+  <object Name="Snapjaw Troglodyte" Load="Merge"> <!-- Inherits="Snapjaw"-->
     <part Name="Render" DisplayName="[snapjaw troglodyte]" Tile="bucklerparry_largerfolk/snapjaw_feeder_fat.png" />
-    <stat Name="Strength" Boost="1" />
-    <stat Name="Agility" Boost="1" />
-    <stat Name="Intelligence" Boost="-1" />
-    <stat Name="Willpower" Boost="-1" />
-    <stat Name="Ego" Boost="-1" />
-    <tag Name="DynamicObjectsTable:DesertCanyon_Creatures" Value="{{{remove}}}" />
-    <tag Name="DynamicObjectsTable:Saltmarsh_Creatures" Value="{{{remove}}}" />
-    <tag Name="DynamicObjectsTable:Hills_Creatures" Value="{{{remove}}}" />
-    <part Name="Description" Short="Fur is matted in blood-brushed clumps across =pronouns.possessive= sagging skin; long fangs break the plane of =pronouns.possessive= fattened snout. =pronouns.Possessive= soft hindlegs wobble and =pronouns.subjective= =verb:reach:afterpronoun= with =pronouns.possessive= forepaws for the reassurance of the dirt. In the earth's lightless recesses, troglodytes are reclaimed by the primal forces that once shucked them toward civilization." />
-    <tag Name="BaseObject" Value="*noinherit" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_snapjaw_feeder.bmp" WeightStage_1="bucklerparry_largerfolk/snapjaw_feeder_fat.png" />
+    <part Name="Description" Short="Fur is matted in blood-brushed clumps across =pronouns.possessive= sagging fleshrolls; long fangs break the plane of =pronouns.possessive= fattened snout. =pronouns.Possessive= soft hindlegs wobble and =pronouns.subjective= =verb:reach:afterpronoun= with =pronouns.possessive= forepaws for the reassurance of the dirt. In the earth's lightless recesses, troglodytes are reclaimed by the primal forces that once shucked them toward civilization." />
+    <part Name="LargerFolk_WeightDescription" 
+    WeightDescription_0="Fur is matted in blood-brushed clumps across =pronouns.possessive= skin; long fangs break the plane of =pronouns.possessive= bristly snout. =pronouns.Possessive= hindlegs tic and =pronouns.subjective= =verb:reach:afterpronoun= with =pronouns.possessive= forepaws for the reassurance of the dirt. In the earth's lightless recesses, troglodytes are reclaimed by the primal forces that once shucked them toward civilization."  
+    WeightDescription_1="Fur is matted in blood-brushed clumps across =pronouns.possessive= sagging fleshrolls; long fangs break the plane of =pronouns.possessive= fattened snout. =pronouns.Possessive= soft hindlegs wobble and =pronouns.subjective= =verb:reach:afterpronoun= with =pronouns.possessive= forepaws for the reassurance of the dirt. In the earth's lightless recesses, troglodytes are reclaimed by the primal forces that once shucked them toward civilization."/>
   </object>
-  <object Name="Snapjaw Feeder" Inherits="Snapjaw Troglodyte">
+  <object Name="Snapjaw Feeder" Load="Merge"> <!-- Inherits="Snapjaw Troglodyte"-->
     <part Name="Render" DisplayName="snapjaw feeder" Tile="bucklerparry_largerfolk/snapjaw_feeder_fat.png" />
-    <part Name="Swarmer" />
-    <stat Name="Level" Value="11" />
-    <stat Name="AV" Value="1" />
-    <stat Name="Hitpoints" Value="12" />
-    <tag Name="Role" Value="Minion" />
-    <inventoryobject Blueprint="SnapjawFeeder_Bite" />
-    <skill Name="ShortBlades_Expertise" />
-    <skill Name="ShortBlades_Bloodletter" />
-    <skill Name="ShortBlades_Jab" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_snapjaw_feeder.bmp" WeightStage_1="bucklerparry_largerfolk/snapjaw_feeder_fat.png" />
   </object>
-  <object Name="SnapjawFeeder_Bite" Inherits="Bite">
-    <part Name="Render" DisplayName="{{r|gore-brushed fangs}}" />
-    <part Name="MeleeWeapon" BaseDamage="2d2" />
-    <tag Name="Gender" Value="plural" />
-  </object>
-  <object Name="Snapjaw Spearfiend" Inherits="Snapjaw Troglodyte">
+  <object Name="Snapjaw Spearfiend" Load="Merge">  <!-- Inherits="Snapjaw Troglodyte"-->
     <part Name="Render" DisplayName="snapjaw spearfiend" Tile="bucklerparry_largerfolk/snapjaw_spearfiend_fat.png" ColorString="&amp;r" DetailColor="g" />
-    <stat Name="Level" Value="12" />
-    <stat Name="AV" Value="1" />
-    <stat Name="Hitpoints" Value="15" />
-    <tag Name="Role" Value="Skirmisher" />
-    <part Name="AIShootAndScoot" Duration="1d2" />
-    <intproperty Name="ThrowRangeBonus" Value="3" />
-    <inventoryobject Blueprint="Poison-tipped Spear" Number="4-6" />
-    <tag Name="InventoryPopulationTable" Value="HumanoidEquipment" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_snapjaw_spearthrower.bmp" WeightStage_1="bucklerparry_largerfolk/snapjaw_spearfiend_fat.png" />
   </object>
-  <object Name="Poison-tipped Spear" Inherits="Item">
+  <!-- <object Name="Poison-tipped Spear" Inherits="Item">
     <part Name="Render" DisplayName="poison-tipped spear" Tile="Items/sw_spear_tipped.bmp" RenderString="/" ColorString="&amp;G" TileColor="&amp;w" DetailColor="G" />
     <part Name="Description" Short="Hot germ drip sticks to a rusty iron tip." />
     <part Name="Commerce" Value="0.40" />
@@ -4102,27 +3820,14 @@ The infant child is unaware
 			  TrailColor="Detail"
 			  Easing="SineOut"
 	  />
-  </object>
-  <object Name="Snapjaw Trapper" Inherits="Snapjaw Troglodyte">
+  </object> -->
+  <object Name="Snapjaw Trapper" Load="Merge">  <!-- Inherits="Snapjaw Troglodyte"-->
     <part Name="Render" DisplayName="snapjaw trapper" Tile="bucklerparry_largerfolk/snapjaw_trapper_fat.png" ColorString="&amp;R" DetailColor="Y" />
-    <stat Name="Level" Value="13" />
-    <stat Name="AV" Value="1" />
-    <stat Name="Hitpoints" Value="15" />
-    <tag Name="Role" Value="Artillery" />
-    <intproperty Name="ThrowRangeBonus" Value="3" />
-    <inventoryobject Blueprint="CastNet" Number="4-6" />
-    <part Name="AIShootAndScoot" Duration="2" />
-    <tag Name="InventoryPopulationTable" Value="HumanoidEquipment" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_snapjaw_netter.bmp" WeightStage_1="bucklerparry_largerfolk/snapjaw_trapper_fat.png" />
   </object>
-  <object Name="Snapjaw Howler" Inherits="Snapjaw Troglodyte">
+  <object Name="Snapjaw Howler" Load="Merge">  <!-- Inherits="Snapjaw Troglodyte"-->
     <part Name="Render" DisplayName="snapjaw howler" Tile="bucklerparry_largerfolk/snapjaw_howler_fat.png" ColorString="&amp;B" />
-    <stat Name="Level" Value="15" />
-    <stat Name="AV" Value="4" />
-    <stat Name="Hitpoints" Value="40" />
-    <tag Name="Role" Value="Leader" />
-    <skill Name="Snapjaw_Howl" />
-    <part Name="Swarmer" ExtraBonus="2" />
-    <tag Name="InventoryPopulationTable" Value="HumanoidEquipment" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_snapjaw_howler.bmp" WeightStage_1="bucklerparry_largerfolk/snapjaw_howler_fat.png" />
   </object>         
 
   <!-- End tier 3 creatures -->
@@ -4135,161 +3840,41 @@ The infant child is unaware
 
   -->
 
-  <object Name="Aloe Pyra" Inherits="BaseAloe">
+  <object Name="Aloe Pyra" Load="Merge"> <!-- Inherits="BaseAloe" -->
     <part Name="Render" DisplayName="aloe pyra" Tile="Creatures/sw_aloe_solo.bmp" ColorString="&amp;y" DetailColor="R" Occluding="false" />
     <part Name="Description" Short="Mottled leaf-chutes are splayed out in a rosette. They sputter and smolder." />
-    <stat Name="Level" Value="18" />
-    <tag Name="Role" Value="Controller" />
-    <stat Name="HeatResistance" Value="200" />
-    <part Name="CrossFlameOnStep" Level="4" Length="12" Cooldown="10" />
   </object>
-  <object Name="Asphodelyte" Inherits="SapientMutatedFlower">
+  <object Name="Asphodelyte" Load="Merge"> <!-- Inherits="SapientMutatedFlower" -->
     <part Name="Render"  Tile="Creatures/sw_flower.bmp" TileColor="&amp;G" ColorString="&amp;G" DetailColor="r" RenderString="237" DisplayName="asphodelyte" />
-    <part Name="Brain" Wanders="false" Hostile="false" Factions="Consortium-100,Flowers-100" />
-    <stat Name="Level" Value="18" />
-    <stat Name="Strength" sValue="23" />
-    <stat Name="Agility" sValue="27" />
-    <stat Name="Toughness" sValue="22" />
-    <stat Name="Intelligence" sValue="16" />
-    <stat Name="Willpower" sValue="16" />
-    <stat Name="Ego" sValue="17" />
-    <stat Name="Hitpoints" sValue="80" />
-    <stat Name="AV" Value="6" />
     <part Name="Description" Short="A clan of contoured petals upfold to a florid bowl. Sharp current climbs =pronouns.possessive= filament and hops from anther to anther, while the dirt stutters under =pronouns.possessive= digging roots." />
-    <part Name="FriendlyFireAmnestyDuringQuest" QuestName="Reclamation" />
-    <tag Name="Role" Value="Minion" />
-    <mutation Name="ElectricalGeneration" Level="7" />
-    <mutation Name="Teleportation" Level="10" />
-    <stat Name="ElectricResistance" Value="100" />
   </object>
-  <object Name="Black Jel" Inherits="BaseOoze">
-    <part Name="Corpse" CorpseChance="0" />
-    <part Name="Brain" Hostile="false" />
+  <object Name="Black Jel" Load="Merge"> <!-- Inherits="BaseOoze" -->
     <part Name="Render" DisplayName="{{K|black jell}}" RenderString="j" ColorString="&amp;K" />
-    <stat Name="Level" Value="18" />
-    <stat Name="AV" Value="3" />
-    <stat Name="Hitpoints" Value="25" />
-    <inventoryobject Blueprint="Oozing Pseudopod" Number="1" />
     <part Name="Description" Short="A greasy sac of ooze gyres over the floor in spiral-step. Under =pronouns.possessive= membrane, a shoal of spitbright eels slither for freedom." />
-    <skill Name="Cudgel" />
-    <skill Name="Cudgel_Bludgeon" />
-    <tag Name="Role" Value="Brute" />
-    <part Name="LiquidBurst" EelChance="25" Liquid="OozePuddle" />
   </object>
   <object Name="Oozing Pseudopod" Inherits="NaturalWeapon">
     <part Name="Render" DisplayName="{{K|oozing pseudopod}}" Tile="Creatures/natural-weapon-pseudopod.bmp" ColorString="&amp;K" />
     <part Name="MeleeWeapon" MaxStrengthBonus="9999" BaseDamage="2d2" Skill="Cudgel" Stat="Strength" Slot="Hand" />
     <part Name="DiseaseOnHit" Chance="100" />
   </object>
-  <object Name="Blue Jel" Inherits="BaseOoze">
-    <part Name="Corpse" CorpseChance="0" />
-    <part Name="Brain" Wanders="true" Hostile="false" Factions="Prey-100,Oozes-25" />
+  <object Name="Blue Jel" Load="Merge"> 
     <part Name="Render" DisplayName="{{C|blue jell}}" RenderString="j" ColorString="&amp;C" />
-    <stat Name="Level" Value="18" />
-    <stat Name="AV" Value="3" />
-    <property Name="*XPValue" Value="0" />
-    <stat Name="Hitpoints" Value="125" />
-    <stat Name="ColdResistance" Value="60" />
-    <inventoryobject Blueprint="Luminous Pseudopod" Number="1" />
 		<part Name="Description" Short="A greasy sac of luminous broth gyres over the floor in spiral-step and lights a helical path." />
-    <skill Name="Cudgel" />
-    <skill Name="Cudgel_Bludgeon" />
-    <tag Name="Role" Value="Controller" />
-    <tag Name="BleedLiquid" Value="convalessence-1000" />
-    <tag Name="BleedColor" Value="&amp;C" />
-    <tag Name="BleedPrefix" Value="{{C|luminous}}" />
-    <part Name="LiquidBurst" EelChance="0" Liquid="ConvalessencePuddle" />
-    <part Name="LightSource" Lit="true" Radius="6" />
   </object>
-  <object Name="Luminous Pseudopod" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="{{C|luminous pseudopod}}" Tile="Creatures/natural-weapon-pseudopod.bmp" ColorString="&amp;C" />
-    <part Name="MeleeWeapon" MaxStrengthBonus="9999" BaseDamage="2d2" Skill="Cudgel" Stat="Strength" Slot="Hand" />
-  </object>
-  <object Name="Brown Sludge" Inherits="BaseOoze">
-    <part Name="Corpse" CorpseChance="0" />
-    <part Name="Brain" Hostile="false" />
+  <object Name="Brown Sludge" Load="Merge"> <!-- Inherits="BaseOoze" -->
     <part Name="Render" DisplayName="{{w|brown jell}}" RenderString="j" ColorString="&amp;w" />
-    <stat Name="Level" Value="18" />
-    <stat Name="AV" Value="3" />
-    <stat Name="Hitpoints" Value="25" />
-    <inventoryobject Blueprint="Sludgy Pseudopod" Number="1" />
 		<part Name="Description" Short="A greasy sac of ooze gyres over the floor in spiral-step. Under =pronouns.possessive= membrane, a shoal of spitbright eels slither for freedom." />
-    <skill Name="Cudgel" />
-    <skill Name="Cudgel_Bludgeon" />
-    <tag Name="Role" Value="Brute" />
-    <part Name="LiquidBurst" EelChance="25" Liquid="SludgePuddle" />
   </object>
-  <object Name="Sludgy Pseudopod" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="{{w|sludgy pseudopod}}" Tile="Creatures/natural-weapon-pseudopod.bmp" ColorString="&amp;w" />
-    <part Name="MeleeWeapon" MaxStrengthBonus="9999" BaseDamage="2d2" Skill="Cudgel" Stat="Strength" Slot="Hand" />
-    <part Name="RustOnHit" />
-  </object>
-  <object Name="Chaingun Turret Tinker" Inherits="Turret Tinker">
+  <object Name="Chaingun Turret Tinker" Load="Merge"> <!-- Inherits="Turret Tinker" -->
     <part Name="Render" DisplayName="chaingun turret tinker" RenderString="4" ColorString="&amp;C" DetailColor="c" />
-    <stat Name="Level" Value="19" />
-    <stat Name="Hitpoints" Value="35" />
-    <stat Name="AV" Value="5" />
-    <tag Name="Role" Value="Summoner" />
-    <part Name="TurretTinker" TurretType="Chaingun" />
-    <tag Name="DynamicObjectsTable:Ruins_Creatures" />
   </object>
-  <object Name="Cloneling" Inherits="BaseRobot">
-    <part Name="Cloneling" />
-    <part Name="Body" Anatomy="HoverRobotWithFourArms" />
+  <object Name="Cloneling" Load="Merge"> <!-- Inherits="BaseRobot"-->
     <part Name="Render" DisplayName="{{c|cloneling}}" Tile="bucklerparry_largerfolk/cloneling_fat.png" RenderString="4" ColorString="&amp;c" DetailColor="C" />
-    <stat Name="Level" Value="16" />
-    <stat Name="AV" Value="4" />
-    <stat Name="Hitpoints" Value="25" />
-    <part Name="Brain" Hostile="false" Factions="Robots-100" />
-    <stat Name="HeatResistance" Value="25" />
-    <stat Name="ColdResistance" Value="35" />
     <part Name="Description" Short="A brushed metal pyramid floats in place and shoulders an array of stemmed articulators, some holding scalpels, some suturers, and all dripping with the amniotic draught of life." />
-    <inventoryobject Blueprint="Cloneling_Scalpel" Number="4" />
-    <inventoryobject Chance="25" Blueprint="Chem Cell" />
-    <skill Name="ShortBlades" />
-    <skill Name="ShortBlades_Bloodletter" />
-    <skill Name="Multiweapon_Fighting" />
-    <skill Name="Multiweapon_Expertise" />
-    <skill Name="Multiweapon_Mastery" />    
-    <tag Name="Species" Value="hover robot" />
-    <tag Name="Role" Value="Breeder" />
-    <tag Name="SeveredHeadBlueprint" Value="RobotHead3" />    
-    <tag Name="ExcludeFromVillageZero" />
   </object>
-  <object Name="Cloneling_Scalpel" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="scalpel" Tile="Creatures/natural-weapon-manipulator.bmp" ColorString="&amp;c" />
-    <part Name="MeleeWeapon" BaseDamage="1d3" Skill="ShortBlades" Slot="Hand" />
-    <part Name="Metal" />
-  </object>
-  <object Name="Cragmensch" Inherits="BaseHumanoid">
+  <object Name="Cragmensch" Load="Merge"> <!-- Inherits="BaseHumanoid" -->
     <part Name="Render" DisplayName="cragmensch" Tile="creatures/sw_bugbear.bmp" RenderString="t" ColorString="&amp;y" />
-		<part Name="Physics" FlameTemperature="600" />
-    <part Name="Corpse" CorpseChance="0" />
-		<part Name="DropOnDeath" Blueprints="LargeBoulder" />
-    <part Name="Brain" Hostile="false" Factions="Cragmensch-100" />
-    <stat Name="Strength" Boost="2" />
-    <stat Name="Agility" sValue="1d3+7" />
-    <stat Name="Toughness" Boost="2" />
-    <stat Name="HeatResistance" Value="50" />
-    <stat Name="ColdResistance" Value="50" />
-    <stat Name="AcidResistance" Value="75" />
-    <stat Name="Speed" Value="40" />
-    <stat Name="AV" Value="15" />
-    <stat Name="Level" Value="20" />
-    <stat Name="Hitpoints" Value="25" />
     <part Name="Description" Short="Ideas like the tetravalence of carbon and silicon were suffocated in the thick valley air of jungle hamlets. The human gatherer who mounts a root-braided hillock and looks out to the horizon in wonder, who descries flecks of granite stirring on the mountain face, and who with ancestral dread ponders what toll the rocks themselves are animated to collect, he can't know the miracles of chemistry that sophists inscribed in data disks at the Long Before. Those miracles are to him the ciphers of god-things." />
-    <skill Name="Cudgel" />    
-    <tag Name="Species" Value="cragmensch" />
-    <tag Name="BaseObject" Value="*noinherit" />
-		<tag Name="LairAmbientBed" Value="Sounds/Ambiences/amb_creature_rocks" />
-    <tag Name="DeathSounds" Value="Sounds/Creatures/VO/sfx_creature_animal_rockCreature_vo_die" />
-    <tag Name="TakeDamageSound" Value="Sounds/Creatures/VO/sfx_creature_animal_rockCreature_vo_hurt"/>
-    <tag Name="AmbientIdleSound" Value="Sounds/Creatures/VO/sfx_creature_animal_rockCreature_vo_idle"/>
-    <tag Name="PunchSound" Value="Sounds/Creatures/VO/sfx_creature_animal_rockCreature_vo_attack"/>
-  </object>
-  <object Name="Cragmensch Fist" Inherits="NaturalFist">
-    <part Name="Render" DisplayName="hoary fist" Tile="Creatures/natural-weapon-fist.bmp" ColorString="&amp;y" />
-    <part Name="MeleeWeapon" HitBonus="4" BaseDamage="3d3" Skill="Cudgel" Stat="Strength" Slot="Hand" />
   </object>
   <object Name="Cragmensch Brainer" Inherits="Cragmensch">
     <stat Name="Strength" Boost="3" />
@@ -4338,35 +3923,11 @@ The infant child is unaware
     <part Name="DrowsingUrchin" />
     <part Name="ImmuneToSleepGas" />
   </object>
-  <object Name="Electric Snail" Inherits="BaseSnail">
+  <object Name="Electric Snail" Load="Merge"> <!-- Inherits="BaseSnail" -->
     <part Name="Render" DisplayName="electric snail" Tile="bucklerparry_largerfolk/snail_fat.png" RenderString="q" ColorString="&amp;W" DetailColor="B" />
-    <part Name="Corpse" CorpseChance="100" CorpseBlueprint="Electric Snail Corpse" />
-    <stat Name="AV" Value="6" />
-    <stat Name="Level" Value="16" />
-    <stat Name="Hitpoints" Value="45" />
-    <part Name="Brain" Hostile="false" Factions="Mollusks-100" />
-    <inventoryobject Blueprint="ElectricSnail_Flail" Number="1" />
     <part Name="Description" Short="A ribbon of sparkflow writhes between the slick feelers of a boulder-height snail. =pronouns.Possessive= muscular foot tenses in the static air and disappears beneath a striated shell." />
-    <skill Name="Cudgel" />
-    <skill Name="Multiweapon_Fighting" />
-    <stat Name="ElectricResistance" Value="100" />
-    <tag Name="DynamicObjectsTable:Jungle_Creatures" />
-    <tag Name="DynamicObjectsTable:Ruins_Creatures" />
   </object>
-  <object Name="ElectricSnail_Flail" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="{{W|electric-snail flail}}" Tile="Creatures/natural-weapon-pseudopod.bmp" ColorString="&amp;W" />
-    <part Name="MeleeWeapon" BaseDamage="2d3" Skill="Cudgel" Stat="Strength" Slot="Face" />
-    <part Name="DischargeOnHit" ChargeUse="0" Voltage="1d4" DamageRange="1d4" />
-  </object>
-  <object Name="Electric Snail Corpse" Inherits="Snail Corpse">
-    <part Name="Butcherable" OnSuccess="Electric Snail Shell" />
-    <part Name="Render" DisplayName="electric snail corpse" />    
-		<part Name="Food" Message="You crunch the shell to pieces and your mouth fills with crackling slime." />
-		<part Name="Physics" Weight="400" />
-    <part Name="Commerce" Value="20" />
-    <tag Name="Tier" Value="4" />    
-  </object>
-  <object Name="Farm Electric Snail" Inherits="Electric Snail">
+  <object Name="Farm Electric Snail" Load="Merge"> <!--  Inherits="Electric Snail" -->
     <part Name="Brain" Hostile="false" Factions="Farmers-100" />
     <tag Name="Grazer" />
     <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
@@ -4391,10 +3952,6 @@ The infant child is unaware
     <skill Name="Multiweapon_Mastery" />
     <tag Name="Role" Value="Tank" />
     <part Name="EyelessKingCrabSkuttle1" />
-  </object>
-  <object Name="Eyeless King Crab_Claw" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="{{Y|monstrous claw}}" Tile="Creatures/natural-weapon-pincer.bmp" ColorString="&amp;Y" />
-    <part Name="MeleeWeapon" BaseDamage="1d6" Skill="Cudgel" Stat="Strength" Slot="Hand" />
   </object>
   <object Name="Eyeless King Crab Corpse" Inherits="Crab Corpse">
     <part Name="Render" DisplayName="eyeless king crab corpse" ColorString="&amp;y" DetailColor="Y" />
@@ -4429,34 +3986,14 @@ The infant child is unaware
     <tag Name="Gender" Value="female" />
     <tag Name="DynamicObjectsTable:Ruins_Creatures" />
   </object>
-  <object Name="Gelatinous Frustum" Inherits="BaseOoze">
+  <object Name="Gelatinous Frustum" Load="Merge"> <!--Inherits="BaseOoze"-->
     <part Name="Render" DisplayName="gelatinous frustum" Tile="bucklerparry_largerfolk/gelatinous_frustum_fat.png"  RenderString="J" ColorString="&amp;w" DetailColor="W"/>
     <part Name="Description" Short="Organic matter is liquefied by the agents of decay and pressurized by tight spaces into the shapes of prismatoids. Galvanized by a cousin-instinct to hunger, the gelatin entity now extrudes itself forward in frustum form." />
-    <stat Name="Level" Value="18" />
-    <part Name="Engulfing" />
-    <part Name="EngulfingDamage" Amount ="3-7" />
-    <part Name="EngulfingWanders" />
-    <stat Name="AV" Value="5" />
-    <stat Name="Hitpoints" Value="70" />
-    <stat Name="HeatResistance" Value="10" />
-    <stat Name="ColdResistance" Value="10" />
-    <stat Name="ElectricResistance" Value="10" />
-    <stat Name="AcidResistance" Value="10" />
-    <tag Name="Role" Value="Tank" />
   </object>
-  <object Name="Green Goo" Inherits="BaseOoze">
-    <part Name="Corpse" CorpseChance="0" />
-    <part Name="Brain" Hostile="false" />
+  <object Name="Green Goo" Load="Merge"> <!--Inherits="BaseOoze"-->
     <part Name="Render" DisplayName="{{G|green jell}}" RenderString="j" ColorString="&amp;G" />
-    <stat Name="Level" Value="18" />
-    <stat Name="AV" Value="3" />
-    <stat Name="Hitpoints" Value="25" />
     <inventoryobject Blueprint="Gooey Pseudopod" Number="1" />
 		<part Name="Description" Short="A greasy sac of goo gyres over the floor in spiral-step. Under =pronouns.possessive= membrane, a shoal of spitbright eels slither for freedom." />
-    <skill Name="Cudgel" />
-    <skill Name="Cudgel_Bludgeon" />
-    <tag Name="Role" Value="Brute" />
-    <part Name="LiquidBurst" EelChance="25" Liquid="GooPuddle" />
   </object>
   <object Name="Gooey Pseudopod" Inherits="NaturalWeapon">
     <part Name="Render" DisplayName="{{G|gooey pseudopod}}" Tile="Creatures/natural-weapon-pseudopod.bmp" ColorString="&amp;G" />
@@ -5039,36 +4576,13 @@ The infant child is unaware
     <part Name="MeleeWeapon" BaseDamage="4d2" Slot="Head" />
     <part Name="MonochromePoisonOnDamage" />
   </object>
-  <object Name="Agolzvuv" Inherits="BaseInsect">
-    <part Name="Render" DisplayName="agolzvuv" RenderString="I" ColorString="&amp;m" Tile="Creatures/sw_agolzvuv.bmp" DetailColor="y" />
-    <part Name="Corpse" CorpseChance="0" CorpseBlueprint="Agolzvuv Corpse" />
-    <stat Name="AV" Value="6" />
-    <stat Name="Level" Value="22" />
-    <stat Name="Hitpoints" Value="95" />
-    <part Name="Brain" Hostile="false" Factions="Insects-99,Girsh-100" />
-    <inventoryobject Blueprint="Agolzvuv_Foreleg_Barbs" Number="2" />
-    <inventoryobject Blueprint="Agolzvuv_Midleg_Barbs" Number="2" />
-    <part Name="Description" Short="Rotting pipe milk has soaked =pronouns.possessive= wings and stuck them permanently to =pronouns.possessive= sides as a second skin. Pus-moist barbs mitten a matched pair of fly-like fore and midlegs, while a third set crooks under =pronouns.possessive= ass, skinny and naked." />
-    <skill Name="LongBlades" />
-    <skill Name="LongBladesProficiency" />
-    <skill Name="LongBladesLunge" />
-    <skill Name="LongBladesSwipe" />
-    <skill Name="LongBladesImprovedAggressiveStance" />
-    <skill Name="LongBladesImprovedDefensiveStance" />
-    <skill Name="Multiweapon_Fighting" />
-    <skill Name="Multiweapon_Proficiency" />
-    <skill Name="Multiweapon_Expertise" />
-    <skill Name="Multiweapon_Mastery" />
-    <tag Name="Role" Value="Brute" />
-    <tag Name="Species" Value="fly" />    
-  </object>
-  <object Name="Agolzvuv_Foreleg_Barbs" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="barbed foreleg" Tile="Creatures/natural-weapon-insect-leg.bmp" ColorString="&amp;m" />
-    <part Name="MeleeWeapon" BaseDamage="1d14" Skill="LongBlades" Stat="Strength" Slot="Arm" />
-  </object>
-  <object Name="Agolzvuv_Midleg_Barbs" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="barbed midleg" Tile="Creatures/natural-weapon-insect-leg.bmp" ColorString="&amp;m" />
-    <part Name="MeleeWeapon" BaseDamage="1d10" Skill="LongBlades" Stat="Strength" Slot="Arm" />
+  <object Name="Agolzvuv" Load="Merge">
+    <part Name="Render" DisplayName="agolzvuv" RenderString="I" ColorString="&amp;m" Tile="bucklerparry_largerfolk/agolzvuv_fat.png" DetailColor="y" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_agolzvuv.bmp" WeightStage_1="bucklerparry_largerfolk/agolzvuv_fat.png" />
+    <part Name="Description" Short="Rotting pipe milk has soaked =pronouns.possessive= wings and stuck them permanently to =pronouns.possessive= sides as a second skin, though already uselessly dainty with regards to lifting =pronouns.possessive= replete bulk into flight. Pus-moist barbs mitten a matched pair of swollen fore and midlegs, while a third set crooks under the sagging cheeks of =pronouns.possessive= triple-wide ass, flabby and struggling." />
+    <part Name="LargerFolk_WeightDescription" 
+    WeightDescription_0="Rotting pipe milk has soaked =pronouns.possessive= wings and stuck them permanently to =pronouns.possessive= sides as a second skin. Pus-moist barbs mitten a matched pair of fly-like fore and midlegs, while a third set crooks under =pronouns.possessive= ass, skinny and naked." 
+    WeightDescription_1="Rotting pipe milk has soaked =pronouns.possessive= wings and stuck them permanently to =pronouns.possessive= sides as a second skin, though already uselessly dainty with regards to lifting =pronouns.possessive= replete bulk into flight. Pus-moist barbs mitten a matched pair of swollen fore and midlegs, while a third set crooks under the sagging cheeks of =pronouns.possessive= triple-wide ass, flabby and struggling." />
   </object>
   <object Name="Aloe Fugues" Inherits="BaseAloe">
     <part Name="Render" DisplayName="aloe fugues" Tile="Creatures/sw_aloe_solo.bmp" RenderString="." ColorString="&amp;G" TileColor="&amp;y" DetailColor="G" Occluding="false" />
@@ -7329,21 +6843,10 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
     <part Name="Description" Short="Eight rings of pointed teeth rasp away tissue, and =pronouns.possessive= suction-cup mouth latches onto the exposed spinal column and sucks out the raw nerves. =pronouns.Possessive= glands are fat with stolen memories." />
   </object>
   
-  <object Name="Mirror Bug" Inherits="BaseInsect">
-    <part Name="Render" DisplayName="mirror bug" Tile="Creatures/sw_bug.bmp" ColorString="&amp;y" TileColor="&amp;K" DetailColor="y" RenderString="i" />
+  <object Name="Mirror Bug" Load="Merge">
+    <part Name="Render" DisplayName="mirror bug" Tile="bucklerparry_largerfolk/mirror_bug_fat.png" ColorString="&amp;y" TileColor="&amp;K" DetailColor="y" RenderString="i" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_bug.bmpCreatures/sw_bug.bmp" WeightStage_1="bucklerparry_largerfolk/mirror_bug_fat.png"/>
     <part Name="Description" Short="It glints as it scuttles beneath an alighted exoskeleton of angled glass." />
-    <stat Name="Level" Value="31" />
-    <tag Name="Role" Value="Minion" />
-    <stat Name="Hitpoints" Value="15" />
-    <stat Name="AV" Value="3" />
-    <part Name="ReflectDamage" ReflectPercentage="100" />
-    <part Name="RefractLight" Chance="100" />
-    <part Name="Swarmer" />
-    <inventoryobject Blueprint="Mirror_Bug_Bite" Number="1" />
-    <tag Name="Species" Value="ant" />
-  </object>
-  <object Name="Mirror_Bug_Bite" Inherits="Bite">
-    <part Name="MeleeWeapon" BaseDamage="2d2" />
   </object>
   <object Name="Quartziferous Mirror" Inherits="BaseNest">
     <part Name="Render" DisplayName="quartziferous mirror" Tile="Creatures/sw_mirror.bmp" ColorString="&amp;K" DetailColor="Y" />
@@ -11952,116 +11455,40 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
     <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
     <tag Name="Mayor" Value="Joppa" />
   </object>
-  <object Name="Nima Ruda" Inherits="NPC">
+  <object Name="Nima Ruda" Load="Merge"> <!-- Inherits="NPC"-->
     <part Name="Render" DisplayName="Nima Ruda" Tile="bucklerparry_largerfolk/nimaruda_fat.png" ColorString="&amp;g" TileColor="&amp;g" DetailColor="w" RenderString="f" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/npc-nima-ruda.bmp" WeightStage_1="bucklerparry_largerfolk/nimaruda_fat.png"/>
     <part Name="Description" Short="Sharp jade eyes are crow-worn to late middle age and her lips are scarred with gas burns, sandwiched between soft cheeks. Beneath a strained grass-green gown gurgles a sizeable gut and flabby rump, folds elegantly visible through the fabric's contours. Climbing over her back and neck are the jeweled segments of a great spiral tail and stinger; a bead of smoking gut juice gleams on the tip." />
-    <part Name="ConversationScript" ConversationID="Nima Ruda" />
-    <part Name="Brain" Wanders="false" Factions="Joppa-100" />
-    <part Name="Interesting" />
-    <part Name="AISelfPreservation" Threshold="40" />
-    <part Name="GenericInventoryRestocker" Table="Village Apothecary 0" Chance="71" />
-    <stat Name="Hitpoints" Value="150" />
-    <stat Name="Level" Value="18" />
-    <stat Name="Ego" Boost="-1" />
-    <stat Name="Intelligence" Boost="1" />
-    <skill Name="CookingAndGathering_Harvestry" />
-    <skill Name="Physic_StaunchWounds" />
-    <skill Name="Physic_Nostrums" />
-    <skill Name="Physic_Apothecary" />
-    <mutation Name="MultipleArms" Level="10" />
-    <mutation Name="Stinger" Level="1" Variant="Stinger Confusion" />
-    <mutation Name="Chimera" />
-    <inventoryobject Blueprint="Leather Apron" Number="1" />
-    <inventoryobject Blueprint="Sandals" Number="1" />
-    <inventoryobject Blueprint="Wide-brimmed Hat" Number="1" />
-    <inventoryobject Blueprint="Pestle" Number="1" />
-    <tag Name="Genotype" Value="Mutated Human" />
-    <tag Name="Gender" Value="female" />
-    <tag Name="NoSleep" />
-    <tag Name="AllowIdleBehavior" Value="*delete" />
-    <xtagGrammar Proper="true" />
-    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
+    <part Name="LargerFolk_WeightDescription" 
+    WeightDescription_0="Sharp jade eyes are crow-worn to late middle age and her lips are scarred with gas burns. Climbing over her back and neck are the jeweled segments of a great spiral tail and stinger; a bead of smoking gut juice gleams on the tip." 
+    WeightDescription_1="Sharp jade eyes are crow-worn to late middle age and her lips are scarred with gas burns, sandwiched between soft cheeks. Beneath a strained grass-green gown gurgles a sizeable gut and flabby rump, folds elegantly visible through the fabric's contours. Climbing over her back and neck are the jeweled segments of a great spiral tail and stinger; a bead of smoking gut juice gleams on the tip." 
+    />
   </object>
-  <object Name="Argyve" Inherits="HumanTinker_Village0">
+  <object Name="Argyve" Load="Merge"> <!-- Inherits="HumanTinker_Village0"-->
     <part Name="Render" DisplayName="Argyve" Tile="bucklerparry_largerfolk/argyve_fat.png" RenderString="h" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/npc-argyve.bmp" WeightStage_1="bucklerparry_largerfolk/argyve_fat.png" />
     <part Name="Description" Short="=pronouns.Possessive= mushroom cloud of beard hair is powdered with all the abrasions of the trash sea: white lime, red iron, gold filament, opalescent shavings of the plastiglomerate. Chrome joints and pieces of scrap crystal are hooked to pockets lining =pronouns.possessive= torso, and one of =pronouns.possessive= bushy eyebrows is perpetually cocked, though whether that's a symptom of an insatiable curiosity or forehead mutation is unknown." />
-    <part Name="ConversationScript" ConversationID="Argyve" />
-    <part Name="Brain" Wanders="false" Factions="Joppa-100,Barathrumites-100" />
-    <part Name="Interesting" />
-    <stat Name="Level" Value="22" />
-    <stat Name="Hitpoints" Value="150" />
-    <stat Name="Strength" Boost="-2" />
-    <stat Name="Willpower" Boost="-2" />
-    <stat Name="Intelligence" Boost="2" />
-    <inventoryobject Blueprint="Scratched Data Disk" Number="1" />
-    <inventoryobject Blueprint="Goggles" />
-    <inventoryobject Blueprint="Sandals" />
-    <inventoryobject Blueprint="Pocketed Vest" />
-    <property Name="WontSell" Value="Scratched Data Disk" />
-    <skill Name="Tinkering" />
-    <skill Name="Tinkering_Repair" />
-    <skill Name="Tinkering_Disassemble" />
-    <skill Name="Tinkering_ReverseEngineer" />
-    <skill Name="Tinkering_Tinker1" />
-    <tag Name="NoSignpost" />
-    <tag Name="AllowIdleBehavior" Value="*delete" />
-    <tag Name="QuestGiver" Value="Fetch Argyve a Knickknack;Fetch Argyve Another Knickknack;Weirdwire Conduit... Eureka!;A Canticle for Barathrum" />
-    <!-- todo:these may needs to be set as prerequisites of each other so you aren't directed to a quest you can't start yet -->
-    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
-    <tag Name="Gender" Value="male" />
-    <xtagGrammar Proper="true" />
   </object>
-  <object Name="Ctesiphus" Inherits="Ray Cat">
+  <object Name="Ctesiphus" Load="Merge"> <!-- Inherits="Ray Cat"-->
     <part Name="Render" DisplayName="Ctesiphus" Tile="bucklerparry_largerfolk/kitty_fat.png" RenderString="l" ColorString="&amp;m" DetailColor="y" />
-    <part Name="Brain" Wanders="True" Calm="True" Factions="Joppa-100" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="creatures/sw_kitty.bmp" WeightStage_1="bucklerparry_largerfolk/kitty_fat.png" />
     <part Name="Description" Short="One star-ribboned night, a ray cat crossed the marshy loam and wandered into Joppa. The watervine farmers, wakened by the joyful cries of a small girl, gathered around to revel at the favorable omen and extol the generosity of the Beetle Moon. Since then, Ctesiphus =verb:have= spent =pronouns.possessive= days curled under the shade of brinestalk huts and sauntering over dirt paths. Comfortable, and very well-fed. So long as =pronouns.subjective==verb:'re:afterpronoun= approached with care, =pronouns.subjective= =verb:welcome:afterpronoun= the hands of friends and strangers alike.
 
 &amp;mphosphorescent&amp;y" />
-    <part Name="Raycat" />
-    <part Name="Pettable" PettableIfPositiveFeeling="True" UseFactionForFeelingFloor="Joppa" />
-    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
-    <part Name="AISelfPreservation" Threshold="40" />
-    <part Name="Interesting" />
-    <part Name="ReplicatedAchievement" AchievementID="ACH_CLONE_CTESIPHUS" />
-    <tag Name="Gender" Value="male" />
-    <tag Name="VillagePet" />
-    <xtagGrammar Proper="true" />
+    <part Name="LargerFolk_WeightDescription" 
+    WeightDescription_0="One star-ribboned night, a ray cat crossed the marshy loam and wandered into Joppa. The watervine farmers, wakened by the joyful cries of a small girl, gathered around to revel at the favorable omen and extol the generosity of the Beetle Moon. Since then, Ctesiphus =verb:have= spent =pronouns.possessive= days curled under the shade of brinestalk huts and sauntering over dirt paths. So long as =pronouns.subjective==verb:'re:afterpronoun= approached with care, =pronouns.subjective= =verb:welcome:afterpronoun= the hands of friends and strangers alike.
+
+&amp;mphosphorescent&amp;y"
+    WeightDescription_1="One star-ribboned night, a ray cat crossed the marshy loam and wandered into Joppa. The watervine farmers, wakened by the joyful cries of a small girl, gathered around to revel at the favorable omen and extol the generosity of the Beetle Moon. Since then, Ctesiphus =verb:have= spent =pronouns.possessive= days curled under the shade of brinestalk huts and sauntering over dirt paths. Comfortable, and very well-fed. So long as =pronouns.subjective==verb:'re:afterpronoun= approached with care, =pronouns.subjective= =verb:welcome:afterpronoun= the hands of friends and strangers alike.
+
+&amp;mphosphorescent&amp;y"/>
   </object>
-  <object Name="Tam" Inherits="DromadTrader_Village0">
+  <object Name="Tam" Load="Merge"> <!--Inherits="DromadTrader_Village0"-->
     <part Name="Render" DisplayName="Tam" ColorString="&amp;W" TileColor="&amp;w" DetailColor="W" RenderString="d" />
-    <part Name="Titles" Ordinary="dromad merchant" />
-    <part Name="Brain" Hostile="false" Wanders="false" Factions="Dromad-100,Joppa-99" />
-    <part Name="ConversationScript" ConversationID="Tam" />
-    <stat Name="Level" Value="20" />
-    <tag Name="NoSleep" />
-    <tag Name="NoSignpost" />
-    <tag Name="AllowIdleBehavior" Value="*delete" />
-    <tag Name="Gender" Value="male" />
-    <xtagGrammar Proper="true" />
-    <part Name="AISitting" />
-    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
   </object>
-  <object Name="Mehmet" Inherits="WatervineFarmerJoppa">
+  <object Name="Mehmet" Load="Merge"> <!--Inherits="WatervineFarmerJoppa"-->
     <part Name="Render" DisplayName="Mehmet" ColorString="&amp;W" RenderString="f" Tile="bucklerparry_largerfolk/mehmet_fat.png" />
     <part Name="Description" Short="=pronouns.Subjective= =verb:are:afterpronoun= a wind-carved man with the posture of a vinereaper; =pronouns.possessive= spine is bent to point the bright turquoise of =pronouns.possessive= eyes at the tilling angle, =pronouns.possessive= hips are pushed odd-forward with the slumping ease of a stance much more relaxed than =pronouns.possessive=. If it weren't for the salt on =pronouns.possessive= brow and the extra padding, =pronouns.subjective= would seem a marble Saad perched under a crumbling tomb." />
-    <part Name="ConversationScript" ConversationID="Mehmet" />
-    <part Name="Brain" Wanders="false" Factions="Joppa-100" />
-    <removebuilder Name="RandomTile" />
-    <inventoryobject Blueprint="Vinewafer" Number="1-2" />
-    <stat Name="Level" Value="16" />
-    <stat Name="Hitpoints" Value="100" />
-    <mutation Name="MentalMirror" />
-    <skill Name="CookingAndGathering_Harvestry" />
-    <skill Name="Survival" />
-    <part Name="GivesRep" />
-    <!-- <tag Name="NoHateFactions" Value="Wardens,Fish,Dromad,Farmers" /> -->
-    <tag Name="Gender" Value="male" />
-    <tag Name="NoSleep" />
-    <tag Name="AllowIdleBehavior" Value="*delete" />
-    <tag Name="QuestGiver" Value="What's Eating the Watervine?" />
-    <tag Name="NoSignpost" />
-    <xtagGrammar Proper="true" />
-    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
   </object>
   <object Name="VillageZeroConvert" Load="Merge">
     <part Name="Render" DisplayName="watervine farmer and Mechanimist convert" Tile="bucklerparry_largerfolk/farmer_convert_fat.png" ColorString="&amp;C" DetailColor="g" RenderString="z" />
@@ -12119,12 +11546,12 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
   <!-- ColorString="&amp;B" TileColor="&amp;w" DetailColor="B" RenderString="w" DisplayName="Yrame"  -->
   <object Name="Warden Yrame" Load="Merge">
     <part Name="Render" Tile="bucklerparry_largerfolk/yrame_fat.png" /> 
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/npc-yrame.bmp" WeightStage_1="bucklerparry_largerfolk/yrame_fat.png" />
     <part Name="Description" Short="Big Yrame shifts =pronouns.possessive= prodigious weight between hind and forelegs. =pronouns.Subjective= =verb:shake:afterpronoun= a storm of rust dander from the tines of =pronouns.possessive= great horns, and =pronouns.subjective= =verb:blow:afterpronoun= a halo of freezing air from =pronouns.possessive= rime-veined hands. Movement is a chore even on easy earth for the mammoth physique of the widest warden." />
     <part Name="LargerFolk_WeightDescription" 
     WeightDescription_0="Big Yrame shifts =pronouns.possessive= weight between hind and forelegs. =pronouns.Subjective= =verb:shake:afterpronoun= a storm of rust dander from the tines of =pronouns.possessive= great horns, and =pronouns.subjective= =verb:blow:afterpronoun= a halo of freezing air from =pronouns.possessive= rime-veined hands." 
     WeightDescription_1="Big Yrame shifts =pronouns.possessive= prodigious weight between hind and forelegs. =pronouns.Subjective= =verb:shake:afterpronoun= a storm of rust dander from the tines of =pronouns.possessive= great horns, and =pronouns.subjective= =verb:blow:afterpronoun= a halo of freezing air from =pronouns.possessive= rime-veined hands. Movement is a chore even on easy earth for the mammoth physique of the widest warden."
     />
-    <part Name="ConversationScript" ConversationID="WardenYrame" />
     <tag Name="staticFaction1" Value="Joppa,friend,letting them rub her tummy" />
   </object>
   

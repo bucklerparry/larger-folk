@@ -28,4 +28,7 @@ Bukie (chubbukie.bsky.social)
 - memory_eater_fat.png
 - fishschool1_fat.png (prism perch)
 - trining_lamprey_fat.png
--
+- agolzvuv_fat.png
+- mirror_bug_fat.png
+- eyeless_crab_fat.png
+- seed_spitting_vine_fat.png
