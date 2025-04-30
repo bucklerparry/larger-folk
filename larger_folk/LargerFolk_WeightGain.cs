@@ -415,7 +415,7 @@ public class LargerFolk_WeightGain : IPart
     // display the creature's current weight stage in their name
     public override bool HandleEvent(GetDisplayNameEvent E)
 	{
-        if (DisplayWeightName) E.AddAdjective(GetWeightString());
+        if (DisplayWeightName) E.AddAdjective("{{C|" + GetWeightString() + "}}");
         return base.HandleEvent(E);
     }
 }
