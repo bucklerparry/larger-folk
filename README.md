@@ -17,8 +17,10 @@ Some creatures have new descriptions reflecting their new visage.
 -- Weight Gain --
 dynamic weight gain can be enabled in the larger folk options at the bottom of the qud options menu!
 eating food items increases your internal calories, walking around while hungry or famished burns calories. eating at a campfire does not increase calories, but as it reduces hunger it can prevent weight loss.
-consuming enough calories increases your weight stage, which you'll be notified of with a popup. current weight stages are slim -> Fat -> Obese -> Immobile/Morbidly Obese (Immobility mechanics are unimplemented)
-when weight gain is enabled becoming "fat" or heavier gives you the fat version of your sprite, though there are no more visual stages planned. 
+certain tonics can affect weight, such as the adipocytic injector. 
+Creatures' current weight stage will be displayed next to their name, and you can check your own internal calories & estimated poundage at a Weight Scale.
+consuming enough calories increases your weight stage, which you'll be notified of with a popup. current weight stages are slim -> Fat -> Obese -> Immobile/Morbidly Obese (Immobility causes frequent tripping/exhaustion based on strength and movespeed, forcing you to stop and rest for a bit after a certain number of steps.)
+when weight gain is enabled becoming "fat" or heavier gives you the fat version of your sprite and creatures may have new descriptions for higher weight stages, though there are no more visual stages planned beyond simply "fatter than usual". 
 
 
 
