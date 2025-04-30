@@ -1,10 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<books>
+<books Load="Merge">
 
+ <book ID="Quotes" Title="Quotes">
 
- <book ID="Quotes" Load="Merge">
-
-      <page>
+ <page>
 "Get your hands off-a mine haunches."
 [[-Big Yrame]]
       </page>
@@ -30,6 +29,7 @@ nay fathom of a life without."
       <page>
 "How hungry..."
 [[-Ethnographer of Cannibal Society]]
+      </page>
       <page>
 "*Huff*"
 [[-Warden Indrix]]
@@ -194,7 +194,7 @@ or will you face me with everything you have?"
 village bookworm... but Angohind, Master Detective."
 [[-Angohind]]
       </page>
-			<page>
+        <page>
 "Trees grow best beside the dead."
 [[-Daughter Erinna]]
       </page>
