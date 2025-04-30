@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<conversations>
+<conversations Load="Merge">
   <!-- Inherited by all conversations by default, unless another base or empty string is specified in Inherits="" -->
     <!-- Conversation level choices are distributed to all start nodes by default -->
 
@@ -222,6 +222,7 @@
         Please inspect only the quality of the letters. I am not a librarian.~
         These books can weather the salt and jungle alike.~
         I assure you, the smell fades once the glue is dry.~
+        Books of cooking, mathematics, philosophy... Even some dirty ones, from time to time.~
         I've books for trade, if you're interested.
       </text>
       <choice GotoID="End">Live and drink.</choice>
@@ -256,6 +257,7 @@
         Without bees, all life in Qud would eventually die.~
         Bees are smarter than you think. They got that hive mind, see.~
         I eat honey matz every morning and I ain't been sick in decades.~
+        Honey is the stuff of gods, though one must watch their waistline in this business.~
         We'd all be dead without bees, you know.
       </text>
       <choice GotoID="End">Live and drink.</choice>
@@ -273,6 +275,7 @@
         You a maker?~
         Take out what you've busted and I'll jury-rig it for a fair price.~
         Need scrap?~
+        My gut's been pressing against the workbench these days, but I'd sooner construct an accommodation than give up jerky.~
         You get used to the nicks and burns, after years working with spark and solder.~
         They say some folks can talk to machines. I say we all can, if we listen right.~
         My fees for battery charging depend how empty the battery is when you bring it to me.~
@@ -318,6 +321,7 @@
 				Got a fungal infection? You'll want one of my spray bottles to apply the cure.~
 				Got a fungal infection? You'll want one of my spray bottles to apply the cure.~
 				Get your hands on the Corpus Choliys for disease and fungus cures.~
+        If you're looking to shed some pounds, sorry to say none of my tinctures can help. Though, if you're looking to fill out some, perhaps I can assist you...~
 				Get your hands on the Corpus Choliys for disease and fungus cures.
 			</text>
       <choice GotoID="End">Live and drink.</choice>
@@ -334,6 +338,7 @@
         "Ease the pain, addle the brain." Be careful when you chew witchwood bark.~
         Best not leave town without some bark and bandages, wayfarer.~
         Live and drink. Keeping well, I hope?~
+        Looking well-fed, =player.formalAddressTerm=. I hope you're staying healthy, I'd hate to see you lose that softness to sickness...~
         How are you feeling today, =player.formalAddressTerm=?~
         Moon and sun, =player.formalAddressTerm=. Keeping healthy?
       </text>
@@ -352,6 +357,7 @@
         Not a word of lie, I studied under a chef who studied under Agate Severance Star herself. That's why my recipes are the best.~
         Try my recipe. You'll believe =player.reflexive= to be judging the Carbide Chefs in the Kitchen Heptagon itself.~
         Cookbooks are best named from the heart. Those who ridicule the name of a cookbook have lost their sense of wonder.~
+        Why =player.formalAddressTerm=, you're positively wasting away! Buy something to put some meat on those bones, won't you?~
         Live and eat, =player.formalAddressTerm=.~
         Live and drink, =player.formalAddressTerm=.
       </text>
@@ -371,6 +377,8 @@
         Crave a bit of salt, =player.formalAddressTerm=, or a load of salt?~
         Nothing sadder than a cookfire and nothing to cook over it.~
         Are you a chef, =player.formalAddressTerm=? My vittles are of the highest quality.~
+        You look like the type who enjoys a good meal, =player.formalAddressTerm=.~
+        Cooking is an art of electrochemistry, and fine ingredients are a must to fill one's belly. If you cook without care or intent, you may as well eat nothing at all.~
         Nourishment for the road, =player.formalAddressTerm=?
       </text>
       <choice GotoID="End">Live and drink.</choice>
@@ -388,6 +396,7 @@
         Tell me, =player.formalAddressTerm=, is there any sight more sad than a hookah tent without wine?~
         Wine, cheese, bread. =player.FormalAddressTerm=, tell me, is there anything else you truly need?~
         The kipper and I both know that the finest ingredient is time.~
+        Eating well, eh? You know, I have just the vintage to pair with that dish.~
         Greetings, =player.formalAddressTerm=. Try some rose wine? One rose is fair, but as you may know from hanging around the Stiltgrounds, five is death.
       </text>
       <choice GotoID="End">Live and drink.</choice>
@@ -405,7 +414,8 @@
         Pouring, decanting, collecting, mixing. I adore my calling.~
         If it flows, I desire it. You should too, =player.formalAddressTerm=.~
         Do you ever stop and think about fluids? Are they not divine?~
-        Someday I will plumb the depths of Bethesda Susa, that I may meet the Alchemist.~
+        Someday I will plumb the depths of Bethesda Susa, that I may meet the Alchemist. I hear their ti-, er, tinctures, are most incredible.~
+        Some speak of a fluid that repletes the body with rolls and folds. It sounds like a dream, doesn't it?~
         Live and drink, and collect, and combine...
       </text>
       <choice GotoID="End">Live and drink.</choice>
@@ -444,6 +454,7 @@
         I'll still take parts you ain't washed off, it's fine.~
         If you can butcher a boar, you can do the same to a man. Just ain't meat you're looking for.~
         My best customers don't ask questions. My best stock asked too many.~
+        Ah, you've got quite a gut on you indeed, traveller. Not what I'm looking for sadly, during business hours at least.~
         Live and drink.
       </text>
       <choice GotoID="End">Live and drink.</choice>
@@ -478,6 +489,8 @@
         Hot sands out there, =player.formalAddressTerm=. Is your footwear protecting you?~
         Hello, =player.formalAddressTerm=! Care to be shod?~
         Walk a few parasangs in my shoes, =player.formalAddressTerm=, and you'll wonder how you ever did otherwise.~
+        Not much for exercise, =player.formalAddressTerm=? I've some fine slippers to turn heads at the hookah tent.~
+
         Live and drink, =player.formalAddressTerm=.
       </text>
       <choice GotoID="End">Live and drink.</choice>
@@ -495,6 +508,9 @@
         How may I clothe you, =player.formalAddressTerm=?~
         Now, =player.formalAddressTerm=, I know you must have an eye for fashion, if you're here.~
         Oh dear. Who dressed you, =player.formalAddressTerm=? Let me help you, please.~
+        Mmm, you larger folk wear fine dress so well, you know.~
+        I hope you aren't coming for repairs, my rotund friend. You'll have to speak to a tailor about that.~
+        My wares are crafted with painstaking effort, =player.formalAddressTerm=, do try not to outgrow them too quickly.~
         Live and drink, =player.formalAddressTerm=.
       </text>
       <choice GotoID="End">Live and drink.</choice>
@@ -514,6 +530,7 @@
         I've got my eye on you.~
         Leather, ring, and plate, to keep you alive.~
         Don't get near the hearth.~
+        You've enough meat to stop a rhinox there, do you really need further protection?~
         =player.FormalAddressTerm=. Live and drink.
       </text>
       <choice GotoID="End">Live and drink.</choice>
@@ -550,6 +567,7 @@
         I used to be a wayfarer like you, =player.formalAddressTerm=, but old wounds slow you down. Cherish the time while you have it.~
         I wish I could allow you to test my wares in the shop, =player.formalAddressTerm=, but walk a parasang in any direction and you'll find a target.~
         Might not want to touch anything on the workbenches, =player.formalAddressTerm=.~
+        Ho there, wide load. I can tell you're not one to fight up close.~
         Live, drink, and shoot, =player.formalAddressTerm=, in whichever order you like.
       </text>
       <choice GotoID="End">Live and drink.</choice>
@@ -835,376 +853,6 @@
 	
   <!-- Gritgate -->
 
-  <!--Otho-->
-  <conversation ID="Otho" Inherits="BaseSlynthMayor">
-    <node ID="Start" IfHaveActiveQuest="More Than a Willing Spirit" IfHaveBlueprint="Dormant Waydroid" IfLevelLessOrEqual="12">
-      <text>
-        Welcome to Grit Gate. I am Otho, Barathrum's steward. I apologize for the manner of our introduction, but we must take precautions. Qud is a very unforgiving place.
-
-        You demonstrate tremendous promise to have returned from Golgotha with such inexperience. Take this firearm as your reward. It bears the mark of our finest gunsmith, Sparafucile. Take this bracelet, as well.
-
-        Return when you are ready to discuss the signal.
-      </text>
-      <choice GotoID="End">Live and drink.</choice>
-      <choice GotoID="End" CompleteQuestStep="More Than a Willing Spirit~Return to Grit Gate|3000">
-        <text>Thank you. I will return.</text>
-        <part Name="ReceiveItem" Blueprints="MasterworkCarbine,MasterworkChainPistol" Pick="true" Identify="All" />
-        <part Name="ReceiveItem" Blueprints="Hologram Bracelet" Identify="All" />
-        <part Name="GritGateHandler" Rank="Apprentice" />
-      </choice>
-    </node>
-    <node ID="Start" IfHaveActiveQuest="More Than a Willing Spirit" IfHaveBlueprint="Dormant Waydroid" IfLevelLessOrEqual="18">
-      <text>
-        Welcome to Grit Gate. I am Otho, Barathrum's steward. I apologize for the manner of our introduction, but we must take precautions. Qud is a very unforgiving place.
-
-        I am pleased to see that you've returned with the waydroid, though you still know little of the dangers you bear. Take this firearm as your reward. It bears the mark of our finest gunsmith, Sparafucile.
-
-        Return when you are ready to discuss the signal.
-      </text>
-      <choice GotoID="End" CompleteQuestStep="More Than a Willing Spirit~Return to Grit Gate|1250">
-        <text>Thank you. I will return.</text>
-        <part Name="ReceiveItem" Blueprints="MasterworkCarbine,MasterworkChainPistol" Pick="true" Identify="All" />
-        <part Name="GritGateHandler" Rank="Apprentice" />
-      </choice>
-    </node>
-    <node ID="Start" IfHaveActiveQuest="More Than a Willing Spirit" IfHaveBlueprint="Dormant Waydroid">
-      <text>
-        Welcome to Grit Gate. I am Otho, Barathrum's steward. I apologize for the manner of our introduction, but we must take precautions. Qud is a very unforgiving place.
-
-        You are worthy to study with us. Take these.
-
-        Return when you are ready to discuss the signal.
-      </text>
-      <choice GotoID="End" CompleteQuestStep="More Than a Willing Spirit~Return to Grit Gate|750">
-        <text>Thank you. I will return.</text>
-        <part Name="ReceiveItem" Blueprints="EMPGrenade3,ColdGrenade3,StasisGrenade3" Identify="All" />
-		  <part Name="GritGateHandler" Rank="Apprentice" />
-      </choice>
-    </node>
-    <node ID="Start" IfHaveActiveQuest="More Than a Willing Spirit">
-      <text>
-        It takes more than a willing spirit to be trusted here, wayfarer.
-
-        Prove your worth and bring us a waydroid, and we will have more to speak of.
-      </text>
-      <choice GotoID="End">...</choice>
-    </node>
-    <node ID="Start" IfFinishedQuest="More Than a Willing Spirit" IfNotHaveQuest="Decoding the Signal">
-      <text>
-        Are you ready to discuss the signal?
-      </text>
-      <choice GotoID="Signal">Yes.</choice>
-      <choice GotoID="End">No.</choice>
-    </node>
-    <node ID="Signal">
-      <text>
-        The signal is a repeat transmission being broadcast from an unknown source.=V0tinkeraddendum= One of our tinkers, &amp;mQ Girl&amp;y, discovered it while rigging a long wave detector. Unfortunately, it's encrypted, and we do not have the means here to decrypt it. You may be of some help in this matter, however.
-
-        We've long known the location of a fully functioning &amp;Wbaetyl&amp;y within the bowels of the great hall &amp;CBethesda Susa&amp;y. The Mechanimists have consecrated the site around it and built a temple there. Q Girl claims to have developed a means to decrypt the signal, but she needs the computing power of the baetyl. If you can infiltrate the Mechanimist compound, you may be able to engage the baetyl and decode the signal.
-      </text>
-      <choice GotoID="Baetyl?">What is a baetyl?</choice>
-    </node>
-    <node ID="Baetyl?">
-      <text>
-        They are antique stones located in certain places deep within the caverns of Qud. We believe they are some sort of hyper-advanced machines built by the Eaters. Often one claims to possess a sentience of its own. However, most of them have gone haywire in the eons since their creation; it is rare indeed to discover one whose circuitry is wholly uncorroded.
-
-        The Mechanimists worship this one as an idol, and they will protect it at all costs. You will need to find a way through their host to the baetyl itself.
-
-        Do you believe you can accomplish this task?
-      </text>
-      <choice GotoID="Bethesda1">Yes, I do.</choice>
-      <choice GotoID="End">I must think on this task.</choice>
-    </node>
-    <node ID="Bethesda1">
-      <text>
-        Good, =factionaddress:Barathrumites=. Speak to &amp;mQ Girl&amp;y in the workshop. She'll encode her instructions for the baetyl onto a copy of the disk.
-
-        There's one more thing. The baetyl is located beneath the ancient cryobarrios of the Eaters. Time has worked to erode the mechanisms that contain their cryogenic mist. That freezing vapor billows out of the chambers freely now, cooling the entire cavern. You will want to procure warm clothing to protect =player.reflexive=.
-
-        The spoils of the Mechanimists are yours to keep. Remember, =factionaddress:Barathrumites=, Barathrum will look kindly upon your service.
-      </text>
-      <choice GotoID="End" GiveItem="Argyve's Data Disk" StartQuest="Decoding the Signal">I will return with the data, Steward.</choice>
-    </node>
-    <node ID="Start" IfHaveQuest="Decoding the Signal" IfNotFinishedQuestStep="Decoding the Signal~Decode the Signal">
-      <text>
-        Luck be with you in the lair of Bethsaida, =factionaddress:Barathrumites=.
-      </text>
-      <choice GotoID="End">I will return with the data, Steward.</choice>
-    </node>
-
-    <node ID="Start" IfFinishedQuestStep="Decoding the Signal~Decode the Signal" IfNotFinishedQuest="Decoding the Signal" IfNotHaveQuest="The Earl of Omonporch">
-      <text>
-        You return. Have you succeeded in decoding the signal?
-      </text>
-      <choice GotoID="PresentTheDisk">Yes.</choice>
-    </node>
-
-    <node ID="PresentTheDisk">
-      <text>
-        Well done, =factionaddress:Barathrumites=. Present the disk.
-      </text>
-      <choice GotoID="InterpretSignal" CompleteQuestStep="Decoding the Signal~Return to Grit Gate|6000" FinishQuest="Decoding the Signal">
-		  <text>[Give Otho the disk]</text>
-		  <part Name="GritGateHandler" Rank="Journeyfriend" />
-      </choice>
-    </node>
-
-    <node ID="InterpretSignal">
-      <text>
-        I must bring the decoded signal to Barathrum immediately. Return in a few hours. By then I'll have discussed our next course of action with Barathrum and will have further instructions for you.
-      </text>
-      <choice GotoID="End" Execute="XRL.World.Parts.OthoWander1:begin">As you say, steward.</choice>
-    </node>
-
-    <node ID="Start" IfFinishedQuest="Decoding the Signal" IfNotHaveQuest="The Earl of Omonporch" IfNotHaveState="OmonporchReady">
-      <text>
-        =factionaddress:Barathrumites|capitalize=, I have no further instructions for you yet. Return soon.
-      </text>
-      <choice GotoID="End">As you say, steward.</choice>
-    </node>
-
-    <node ID="Start" IfFinishedQuest="Decoding the Signal" IfNotHaveQuest="The Earl of Omonporch">
-      <text>
-        =name=, I've brought the decoded signal to Barathrum, and he's finished musing on it. We have fresh instructions for you, =factionaddress:Barathrumites=. Are you ready to hear them?
-      </text>
-      <choice GotoID="Overripe">Yes.</choice>
-    </node>
-
-    <node ID="Overripe">
-      <text>
-        Barathrum needs you for an undertaking of great importance. You must journey to &amp;COmonporch&amp;y far to the north. There the Spindle stretches from earth to sky. Unfortunately, a troublesome merchant from the Consortium of Phyta has relocated there and declared xerself Earl of Omonporch. We need you to broker a deal so that we may lease control of the Spindle. Failing that, you'll need to dispose of the self-appointed Earl.
-
-        Be careful on your approach to Omonporch, =factionaddress:Barathrumites=. So far east into the reaches of Qud, the Putus Templar lie in wait.
-      </text>
-      <choice GotoID="Ripe1">Who are the Putus Templar?</choice>
-      <choice GotoID="Ripe2">What is the purpose of this?</choice>
-      <choice GotoID="End" StartQuest="The Earl of Omonporch">I will secure the Spindle for Barathrum.</choice>
-      <choice GotoID="End">I must think on this task.</choice>
-    </node>
-    <node ID="Ripe1">
-      <text>
-        The Putus Templar, or the Sons and Daughters, as they call themselves, are an order of knights who claim descendancy from the Eaters, the ancient folk who wrought the chrome halls of Qud. Beware them, for while they despise all mutants, they harbor a special malice for Barathrum.
-
-        Take care that you do not find =player.reflexive= inside one of their slave pens.
-      </text>
-      <choice GotoID="Ripe2">What is the purpose of this?</choice>
-      <choice GotoID="End" StartQuest="The Earl of Omonporch">I will secure the Spindle for Barathrum.</choice>
-      <choice GotoID="End">I must think on this task.</choice>
-    </node>
-    <node ID="Ripe2">
-      <text>
-        That will be revealed to you in due time.
-
-        Do not forget your place, =factionaddress:Barathrumites=.
-      </text>
-      <choice GotoID="Ripe1">Who are the Putus Templar?</choice>
-      <choice GotoID="End" StartQuest="The Earl of Omonporch">I will secure the Spindle for Barathrum.</choice>
-      <choice GotoID="End">I must think on this task.</choice>
-    </node>
-    <node ID="Start" IfHaveActiveQuest="Grave Thoughts" IfFinishedQuestStep="Grave Thoughts~Investigate the Rumbling">
-      <text>
-        It's as I feared, =name=. Grit Gate is being assailed. The Putus Templar must have followed you back from Omonporch.
-
-        Let us use the precious little time we have before they arrive to prepare our defenses.
-      </text>
-      <choice GotoID="BeginCallToArms">What can I do?</choice>
-    </node>
-    <node ID="Start" IfHaveActiveQuest="Grave Thoughts" IfNotFinishedQuestStep="Grave Thoughts~Investigate the Rumbling">
-      <text>
-        Go to the mainframe room and scan the shale surrounding Grit Gate for anomalies. Now, =name=!
-      </text>
-      <choice GotoID="End">I'll go now.</choice>
-    </node>
-    <node ID="BeginCallToArms">
-      <text>
-        With the chrome key card I gave you, you now have access to our power grid. There are chain laser emplacements and force projectors across the enclave. Use Ereshkigal's reconnaissance to decide which defenses to enable. You can also broadcast an overclock command or activate Rodanis Y by interfacing with Ereshkigal.
-
-        Be mindful of the amperage draw, though. If you overdraw the grid, you could cause brownouts.
-
-        Act quickly, =name=! The Templar near us even as we speak.
-      </text>
-      <choice GotoID="End" CompleteQuestStep="Grave Thoughts~Speak to Otho" StartQuest="A Call to Arms">I'll do my best to defend Grit Gate.</choice>
-    </node>
-    <node ID="Start" IfHaveState="CallToArmsStarted" IfNotHaveQuest="Grave Thoughts">
-      <text>
-        That rumbling... what was it? An explosion? Hmm...
-      </text>
-      <choice GotoID="BeginGraveTidings">What are you thinking, Otho?</choice>
-    </node>
-
-    <node ID="BeginGraveTidings">
-      <text>
-        Grave thoughts, =name=. Listen to me now. Take this key card, go to Ereshkigal's room, and-- oh, that's the mainframe. It's what she prefers to be called.
-
-        Go to her room, access Ereshkigal, and scan the shale surrounding the enclave for anomalies. I've asked her to ready her sensors.
-
-        Update me with what you learn. You may use the intercom in the northeast corner of Ereshkigal's room to deliver your update.
-
-        Go, quickly! I'd soon be disabused of my fears.
-      </text>
-      <choice GotoID="End" GiveItem="GritGateGridKey" StartQuest="Grave Thoughts">I'll go now.</choice>
-    </node>
-
-    <node ID="Start" IfHaveActiveQuest="A Call to Arms">
-      <text>
-        You can still activate our defenses, =name=. There are chain laser emplacements and force projectors across the enclave. Use Ereshkigal's reconnaissance to decide which defenses to enable. You can also broadcast an overclock command or activate Rodanis Y by interfacing with Ereshkigal.
-
-        Be mindful of the amperage draw, though. If you overdraw the grid, you could cause brownouts.
-      </text>
-      <choice GotoID="End">I'll do my best to defend Grit Gate.</choice>
-    </node>
-
-    <node ID="Start" IfHaveActiveQuest="The Earl of Omonporch">
-      <text>
-        Have you secured the Spindle yet?
-      </text>
-      <choice GotoID="CompleteSpindle" IfFinishedQuestStep="The Earl of Omonporch~Secure the Spindle">Yes, the Spindle is ours.</choice>
-      <choice GotoID="End">No, not yet.</choice>
-    </node>
-    <node ID="Start" IfHaveQuest="The Earl of Omonporch" IfNotHaveState="CallToArmsStarted">
-      <text>
-        Leave me alone for a moment, =factionaddress:Barathrumites=. I have duties to attend.
-      </text>
-      <choice GotoID="End">I will return later, Otho.</choice>
-    </node>
-
-    <node ID="CompleteSpindle" IfHaveActiveQuest="The Earl of Omonporch">
-      <text>
-        That is sterling news, =factionaddress:Barathrumites=. I'll go inform Barathrum straightaway.
-      </text>
-		<choice GotoID="End" IfFinishedQuestStep="The Earl of Omonporch~Secure the Spindle" CompleteQuestStep="The Earl of Omonporch~Return to Grit Gate" FinishQuest="The Earl of Omonporch">
-			<text>Live and drink.</text>
-			<part Name="GritGateHandler" Invasion="true" />
-		</choice>
-    </node>
-    <node ID="IntroduceBarathrum">
-      <text>
-        Furthermore, I spoke with Barathrum. He praised your handling of the Earl of Omonporch, and he thanks you for the bravery you exhibited in defending Grit Gate.
-
-        The attack today reminds us: for too long have we put our faith in the isolation of our guild and the preoccupations of the Putus Templar. The looming threat of another attack impels Barathrum to accelerate his plans, and with them, your position in our guild.
-
-        You are raised to Disciple, =player.formalAddressTerm=. Barathrum wishes to speak with you immediately.
-      </text>
-		<choice GotoID="Barathrum">
-			<text>He wishes to speak to me? Barathrum himself?</text>
-			<part Name="GritGateHandler" Rank="Disciple" />
-		</choice>
-    </node>
-    <node ID="Start" IfFinishedQuest="The Assessment" IfNotHaveQuest="Pax Klanq, I Presume?">
-      <text>
-        I spoke with Barathrum. He praised your handling of the Earl of Omonporch, and he thanks you for the bravery you exhibited in defending Grit Gate.
-
-        The attack today reminds us: for too long have we put our faith in the isolation of our guild and the preoccupations of the Putus Templar. The looming threat of another attack impels Barathrum to accelerate his plans, and with them, your position in our guild.
-
-        You are raised to Disciple, =player.formalAddressTerm=. Barathrum wishes to speak with you immediately.
-      </text>
-      <choice IfTestState="GotBarathrumKey" GotoID="BarathrumHaveKey">
-		  <text>He wishes to speak to me? Barathrum himself?</text>
-		  <part Name="GritGateHandler" Rank="Disciple" />
-	  </choice>
-		<choice GotoID="Barathrum" IfNotHaveState="GotBarathrumKey">
-			<text>He wishes to speak to me? Barathrum himself?</text>
-			<part Name="GritGateHandler" Rank="Disciple" />
-		</choice>
-    </node>
-    <node ID="Barathrum">
-      <text>
-        Yes, =factionaddress:Barathrumites=. Take this key and follow the stairs down to his study. He awaits.
-      </text>
-      <choice GotoID="End" GiveItem="BarathrumKey" SetBooleanState="GotBarathrumKey,true">Thank you, Otho.</choice>
-    </node>
-		<node ID="BarathrumHaveKey">
-			<text>
-				Yes, =factionaddress:Barathrumites=. Follow the stairs down to his study. He awaits.
-			</text>
-			<choice GotoID="End">Thank you, Otho.</choice>
-		</node>
-    <node ID="Start" IfNotHaveQuest="More Than a Willing Spirit">
-      <text>
-        I am busy, wayfarer. Please talk to Mafeo in the trade square if you need something.
-      </text>
-      <choice GotoID="End">...</choice>
-    </node>
-    <node ID="Start" IfFinishedQuest="A Call to Arms" IfNotHaveQuest="The Assessment">
-      <text>
-        =factionaddress:Barathrumites|capitalize=! You have my deepest gratitude. Few =player.personTerm|pluralize= could have defended Grit Gate so deftly.
-
-        Now, give me time to assess our losses and consult with Barathrum. Return soon.
-      </text>
-      <choice GotoID="End" StartQuest="The Assessment">Live and drink, Otho.</choice>
-    </node>
-    <node ID="Start" IfHaveActiveQuest="The Assessment" IfHaveState="ACallToArms_TopScore" AllowEscape="false">
-      <part Name="CallToArmsResult" Reward="Top" />
-      <text>Given the circumstances, this is a remarkable lack of destruction. Your defense of Grit Gate was first-class, =name=.</text>
-      <choice GotoID="IntroduceBarathrum">Thank you for the update, Otho.</choice>
-    </node>
-    <node ID="Start" IfHaveActiveQuest="The Assessment" IfHaveState="ACallToArms_MidScore" AllowEscape="false">
-      <part Name="CallToArmsResult" Reward="Mid" />
-      <text>Much was lost, but such is what I expected. Once again, thank you for efforts, =name=.</text>
-      <choice GotoID="IntroduceBarathrum">Thank you for the update, Otho.</choice>
-    </node>
-    <node ID="Start" IfHaveActiveQuest="The Assessment" IfHaveState="ACallToArms_BottomScore" AllowEscape="false">
-      <part Name="CallToArmsResult" Reward="Bottom" />
-      <text>Such tremendous loss. I wonder if more could have been done to prevent it.</text>
-      <choice GotoID="IntroduceBarathrum">Thank you for the update, Otho.</choice>
-    </node>
-    <node ID="Start">
-      <text>
-        Yes, =name=?
-      </text>
-      <choice GotoID="End">Live and drink, steward.</choice>
-    </node>
-    <node ID="SlynthRequest">Be straightforward, disciple. You mean to ask if we will house them.</node>
-    <node ID="SlynthRequestAccept">
-      <text>I am uncertain that you know the enormity of what you ask me, =name=. Nonetheless, I cannot deny what you have done for our order. These slynth must be tested as you were, but should they show the mettle and drive set by your example, we will accept them as apprentices.</text>
-      <choice Target="End">You have my thanks, Otho.</choice>
-    </node>
-    <node ID="SlynthRequestReject">You have grown bold beyond your station. What you have asked of us you have not earned. If you must ask again, become worthier first.</node>
-    <node ID="SlynthAbout">Has this slynth situation been settled yet?</node>
-    <node ID="SlynthArrived">
-      <text>
-        I did not expect to admit this, disciple, but the refugees have met my expectations. Like you, they have shown more than a willing spirit in work and curiosity both.
-
-        The slynth have promise, and you may have been right to bring them to us.
-      </text>
-      <choice GotoID="Start">My thanks, Otho.</choice>
-    </node>
-    <node ID="SlynthSettled">
-      <text>
-        Live and drink, disciple.
-
-        You will be pleased to know that the slynth have proven themselves worthy of apprentice status. They will reside here for as long as they uphold and serve the tenets of our order.
-      </text>
-      <choice GotoID="Start">My thanks again, Otho</choice>
-    </node>
-  </conversation>
-
-  <conversation ID="Gritgate Mainframe Intercom">
-    <node ID="Start" IfHaveActiveQuest="Grave Thoughts" IfFinishedQuestStep="Grave Thoughts~Investigate the Rumbling">
-      <text>
-        It's as I feared, =name=. Grit Gate is being assailed. The Putus Templar must have followed you back from Omonporch.
-
-        Let us use the precious little time we have before they arrive to prepare our defenses.
-      </text>
-      <choice GotoID="BeginCallToArms">What can I do?</choice>
-    </node>
-    <node ID="BeginCallToArms">
-      <text>
-        With the chrome key card I gave you, you now have access to our power grid. There are chain laser emplacements and force projectors across the enclave. Use Ereshkigal's reconnaissance to decide which defenses to enable. You can also broadcast an overclock command or activate Rodanis Y by interfacing with Ereshkigal.
-
-        Be mindful of the amperage draw, though. If you overdraw the grid, you could cause brownouts.
-
-        Act quickly, =name=! The Templar near us even as we speak.
-      </text>
-      <choice GotoID="End" CompleteQuestStep="Grave Thoughts~Speak to Otho" StartQuest="A Call to Arms">I'll do my best to defend Grit Gate.</choice>
-    </node>
-    <node ID="Start">
-      <text>
-        {{emote|*loud static*}}
-      </text>
-      <choice GotoID="End">...</choice>
-    </node>
-  </conversation>
 
 
   <!-- Q Girl -->
@@ -1233,6 +881,7 @@
       <choice ID="QuetzalChoice" GotoID="Quetzal">What does 'quetzal' mean?</choice>
       <choice ID="HairChoice" IfNotHaveState="HasMonochrome" Achievement="ACH_COMPLIMENT_QGIRL" GotoID="Hair">Your hair is a quasar of red ochre and indigo.</choice>
       <choice ID="GogglesChoice" IfWearingBlueprint="Goggles" GotoID="Goggles">Do you like my goggles?</choice>
+      <choice ID="FatBookChoice" IfHaveItem="LargerFolk_WeightReport" GotoID="FatBook"> You worked on Dardi's thesis, didn't you? </choice>
       <choice ID="TinkerChoice" GotoID="Tinker">There must be a hundred gadgets here. What are you working on?</choice>
       <choice ID="DiskChoice" IfHaveQuest="Decoding the Signal" IfNotFinishedQuestStep="Decoding the Signal~Get Q Girl's Instructions onto the Data Disk" GotoID="Disk">
         Otho informs me that you have a method for decoding the signal. Can you encode your instructions for the baetyl onto this disk?
@@ -1282,6 +931,24 @@
       <choice UseID="TinkerChoice" />
       <choice UseID="DiskChoice" />
       <choice GotoID="End">Live and drink, tinker.</choice>
+    </node>
+    <node ID="FatBook">
+      <text>
+        {{emote|*She turns her gaze momentarily.*}}
+        Ah, you have...? May I ask your thoughts...?
+      </text>
+      <choice ID="FatBookChoice2" GotoID="FatBook2"> I found your additions quite valuable. Particularly the experiment you mentioned...</choice>
+      <choice GotoID="End">Excuse me, I must collect my thoughts first.</choice>
+    </node>
+    <node ID="FatBook2">
+      <text>
+        {{emote|*She bounces excitedly.*}}
+        Yes, yes! You understand, don't you? The thought of it, it's just quetzal...
+        You know, it might be time to try that out... 
+        {{emote|*She appears lost in though. Perhaps, given time, her dreams will be fulfilled...*}}
+        {{emote|*Though, you get the feeling it may be some time. Not until a future patch, at least.*}}
+      </text>
+      <choice GotoID="End">Live and eat, honeybear.</choice>
     </node>
     <node ID="Tinker">
       <text>
