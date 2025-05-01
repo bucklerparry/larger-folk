@@ -1307,62 +1307,26 @@ The infant child is unaware
     <tag Name="BarathrumiteRobot" />
     <tag Name="BaseObject" Value="*noinherit" />
   </object>
-  <object Name="Chromeling" Inherits="BarathrumiteRobot">
-    <part Name="Render" DisplayName="{{c|chromeling}}" Tile="Creatures/sw_chromeling.bmp" RenderString="1" ColorString="&amp;c" DetailColor="y" />
-    <stat Name="AV" Value="4" />
-    <stat Name="Level" Value="5" />
-    <stat Name="Hitpoints" Value="15" />
-    <inventoryobject Blueprint="Stun Rod" CellChance="100" CellFullChance="100" />
-    <part Name="Description" Short="Thatched together out of scrap metal, =pronouns.subjective= =verb:teeter:afterpronoun=. What was the artist and maker thinking while banging metal into a likeness? =pronouns.Subjective= =verb:occupy:afterpronoun= a point between poles on several axes: halfway between chimp and human, halfway between child and adult. =pronouns.Subjective= =verb:are:afterpronoun= small, and there are shadows under =pronouns.possessive= chrome cheek." />
-    <inventoryobject Blueprint="Chromeling_Bite" Number="1" />
-    <tag Name="Chromeling" />
-    <tag Name="Species" Value="humanoid robot" />
-  </object>
-  <object Name="Chromeling_Bite" Inherits="Bite">
-    <part Name="MeleeWeapon" BaseDamage="1d3" Skill="Axe" />
-    <part Name="Metal" />
+  <object Name="Chromeling" Load="Merge"> <!--Inherits="BarathrumiteRobot"-->
+    <part Name="Render" DisplayName="{{c|chromeling}}" Tile="bucklerparry_largerfolk/chromeling_fat.png" RenderString="1" ColorString="&amp;c" DetailColor="y" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_chromeling.bmp" WeightStage_1="bucklerparry_largerfolk/chromeling_fat.png" />
+    <part Name="Description" Short="Thatched together out of scrap metal, =pronouns.subjective= =verb:teeter:afterpronoun= upon jiggling limbshafts. What was the artist and maker thinking while banging metal into a likeness? =pronouns.Subjective= =verb:occupy:afterpronoun= a point between poles on several axes: halfway between chimp and human, halfway between child and adult, somewhere on the road from large to larger. =pronouns.Subjective= =verb:are:afterpronoun= small, and there are shadows under =pronouns.possessive= chrome cheek." />
+    <part Name="LargerFolk_WeightDescription" 
+      WeightDescription_0="Thatched together out of scrap metal, =pronouns.subjective= =verb:teeter:afterpronoun=. What was the artist and maker thinking while banging metal into a likeness? =pronouns.Subjective= =verb:occupy:afterpronoun= a point between poles on several axes: halfway between chimp and human, halfway between child and adult. =pronouns.Subjective= =verb:are:afterpronoun= small, and there are shadows under =pronouns.possessive= chrome cheek." 
+      WeightDescription_1="Thatched together out of scrap metal, =pronouns.subjective= =verb:teeter:afterpronoun= upon jiggling limbshafts. What was the artist and maker thinking while banging metal into a likeness? =pronouns.Subjective= =verb:occupy:afterpronoun= a point between poles on several axes: halfway between chimp and human, halfway between child and adult, somewhere on the road from large to larger. =pronouns.Subjective= =verb:are:afterpronoun= small, and there are shadows under =pronouns.possessive= chrome cheek." 
+    />
   </object>
   <object Name="Sleeping Chromeling" Inherits="Chromeling">
     <part Name="SpawnWithEffect" Effect="Asleep" />
     <tag Name="ExcludeFromDynamicEncounters" />
   </object>
-  <object Name="Electrofuge" Inherits="BaseSpider">
+  <object Name="Electrofuge" Load="Merge"> <!--Inherits="BaseSpider"-->
     <part Name="Render" DisplayName="electrofuge" Tile="bucklerparry_largerfolk/cave_spider_fat.png" RenderString="y" ColorString="&amp;W" DetailColor="w" />
-    <part Name="Corpse" CorpseChance="10" CorpseBlueprint="Electrofuge Corpse" />
-    <stat Name="AV" Value="2" />
-    <stat Name="Level" Value="5" />
-    <stat Name="Hitpoints" Value="18" />    
-		<mutation Name="ElectricalGeneration" Level="2" />
-    <part Name="Brain" Hostile="false" Factions="Arachnids-100" />
     <part Name="Description" Short="Gossamer hairs stand stiff in static charge across =pronouns.possessive= octet of Spindle legs, and =pronouns.subjective= =verb:crackle:afterpronoun= as =pronouns.subjective= =verb:crawl:afterpronoun=." />
-    <inventoryobject Blueprint="Electrofuge_Bite" Number="1" />
-    <tag Name="Role" Value="Lurker" />
-    <stat Name="ElectricResistance" Value="50" />
-		<part Name="AnimatedMaterialElectric" />
-    <tag Name="DynamicObjectsTable:Ruins_Creatures" />
   </object>
-  <object Name="Electrofuge_Bite" Inherits="Bite">
-    <part Name="MeleeWeapon" BaseDamage="2d3" Skill="Axe" />
-  </object>
-  <object Name="Electrofuge Corpse" Inherits="Arthropod Corpse">
-    <part Name="Render" DisplayName="electrofuge corpse" ColorString="&amp;W" />
-    <part Name="Description" Short="Gossamer hairs splay at straight angles from its crumpled legs-things." />
-    <part Name="Physics" Weight="40" />    
-    <part Name="Food" Message="It's shockingly delicious." />
-    <tag Name="Tier" Value="2" />    
-  </object>
-  <object Name="GiantAmoeba" Inherits="BaseOoze">
+  <object Name="GiantAmoeba" Load="Merge"> <!--Inherits="BaseOoze"-->
     <part Name="Render" DisplayName="giant amoeba" RenderString="j" ColorString="&amp;g" />    
-    <stat Name="Hitpoints" Value="20" />
-    <part Name="Brain" Hostile="false" />
-    <stat Name="Level" Value="1" />
-    <stat Name="AV" Value="3" />
     <part Name="Description" Short="Slime within the quivering blob striates into different densities. You can barely perceive the outline of something inside." />
-    <skill Name="Cudgel" />
-    <inventoryobject Blueprint="GiantAmoeba_Pseudopod" Number="4" />
-    <part Name="GiantAmoeba" />
-    <tag Name="Role" Value="Tank" />		
-    <tag Name="Species" Value="amoeba" />    
   </object>
   <object Name="GiantAmoeba_Pseudopod" Inherits="NaturalWeapon">
     <part Name="Render" DisplayName="{{g|slimy pseudopod}}" Tile="Creatures/natural-weapon-pseudopod.bmp" ColorString="&amp;G" />
@@ -1373,32 +1337,14 @@ The infant child is unaware
     <tag Name="Grazer" />
     <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
   </object>
-  <object Name="Giant Beetle" Inherits="BaseInsect">
+  <object Name="Giant Beetle" Load="Merge"> <!-- Inherits="BaseInsect"-->
     <part Name="Render" DisplayName="giant beetle" Tile="bucklerparry_largerfolk/beetlebum_fat.png"  RenderString="i" ColorString="&amp;K" DetailColor="w" />
-    <part Name="Corpse" CorpseChance="25" CorpseBlueprint="Giant Beetle Corpse" />
-    <part Name="Brain" Hostile="false" />
-    <stat Name="AV" Value="4" />
-    <stat Name="DV" Value="2" />
-    <stat Name="Hitpoints" Value="15" />
-    <stat Name="Level" Value="10" />
-    <inventoryobject Blueprint="GiantBeetle_Bite" Number="1" />
-    <part Name="Description" Short="Shining black elytra flitter on the back of a goat-sized bug." />
-    <skill Name="Cudgel" />
-    <tag Name="Role" Value="Minion" />
-    <part Name="Swarmer" />		
-    <tag Name="Species" Value="beetle" />
-    <tag Name="DynamicObjectsTable:Jungle_Creatures" />
-    <tag Name="DynamicObjectsTable:Ruins_Creatures" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="creatures/sw_beetle.bmp" WeightStage_1="bucklerparry_largerfolk/beetlebum_fat.png" />
+    <part Name="Description" Short="Shining black elytra flitter uselessly on the bloated backside of a bug fattened to bovine proportions." />
+    <part Name="LargerFolk_WeightDescription" 
+      WeightDescription_0="Shining black elytra flitter on the back of a goat-sized bug." 
+      WeightDescription_1="Shining black elytra flitter uselessly on the bloated backside of a bug fattened to bovine proportions." />
   </object>
-  <object Name="GiantBeetle_Bite" Inherits="Bite">
-    <part Name="MeleeWeapon" BaseDamage="2d2" Skill="Cudgel" Slot="Head" />
-  </object>
-  <object Name="Giant Beetle Corpse" Inherits="Arthropod Corpse">
-    <part Name="Render" DisplayName="giant beetle corpse" />    
-    <part Name="Commerce" Value="1" />
-    <part Name="Butcherable" OnSuccess="Raw Beetle Meat" />
-    <tag Name="Tier" Value="1" />    
-  </object>	
 	<object Name="Farm Giant Beetle" Inherits="Giant Beetle">
     <part Name="Brain" Hostile="false" Factions="Prey-100" />
     <tag Name="Grazer" />
@@ -2975,124 +2921,44 @@ The infant child is unaware
   </object>
 
   <!-- Naphtaali -->
-  <object Name="BaseWoodsprog" Inherits="BaseHumanoid">
+  <object Name="BaseWoodsprog" Load="Merge"> <!--Inherits="BaseHumanoid"-->
     <part Name="Render" DisplayName="woodsprog" RenderString="n" ColorString="&amp;w" Tile="bucklerparry_largerfolk/woodsprog_fat.png" DetailColor="g" />
     <part Name="Description" Short="A body time-fit to living in the smalls of spiral roots is kept warm by a layer of symbiotic moss-fur. Bright eyes scan the forest points and then soften toward the stars." />
-    <part Name="Corpse" CorpseChance="25" CorpseBlueprint="Woodsprog Corpse" />
-    <part Name="Brain" Wanders="true" Factions="Prey-100" />
-    <part Name="ConversationScript" ConversationID="Woodsprog" />
-    <part Name="AISelfPreservation" Threshold="90" />
-    <stat Name="Level" Value="7" />
-    <stat Name="AV" Value="1" />
-    <stat Name="Hitpoints" Value="12" />
-    <tag Name="Species" Value="woodsprog" />
-    <skill Name="Survival" />
-    <skill Name="Survival_JungleSurvival" />
-    <tag Name="DynamicObjectsTable:Jungle_Creatures" />
-    <stag Name="Contemporary" />
   </object>
-  <object Name="Woodsprog" Inherits="BaseWoodsprog">
+  <object Name="Woodsprog" Load="Merge"> <!--Inherits="BaseWoodsprog"-->
     <tag Name="InventoryPopulationTable" Value="WoodsprogInventory" />
   </object>
-  <object Name="Woodsprog Kyakukya" Inherits="Woodsprog">
-    <part Name="Brain" Wanders="true" Factions="Kyakukya-100" />
-    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
+  <object Name="Woodsprog Kyakukya" Load="Merge"> <!--Inherits="Woodsprog"-->
   </object>
-  <object Name="Woodsprog Corpse" Inherits="Humanoid Corpse">
-    <part Name="Render" DisplayName="woodsprog corpse" />
-    <part Name="Description" Short="A mound of wet leaves, rootbind, and rotting flesh puts some elevation to the ground." />
-    <part Name="Physics" Weight="40" />
-    <part Name="Commerce" Value="1" />
-    <tag Name="Tier" Value="2" />
-  </object>
-  <object Name="BaseNaphtaali" Inherits="BaseWoodsprog">
+  <object Name="BaseNaphtaali" Load="Merge"> <!--Inherits="BaseWoodsprog"-->
     <part Name="Render" DisplayName="Naphtaali" Tile="Creatures/naphtaali_forager.bmp" ColorString="&amp;g" DetailColor="w" />
     <part Name="Description" Short="A body time-fit to living in the smalls of spiral roots is kept warm by a layer of symbiotic moss-fur. Bright, scanning eyes peer out the selfsame mask of =pronouns.possessive= minyan, making =pronouns.possessive= face a blazing portrait of togetherness- laced, burned, and painted to point." />
-    <part Name="Brain" Hostile="false" Factions="Naphtaali-100" />
-    <part Name="ConversationScript" ConversationID="Naphtaali" />
-    <part Name="AISelfPreservation" Threshold="20" />
-    <stat Name="AV" Value="2" />
-    <stat Name="Hitpoints" Value="10" />
-    <part Name="Swarmer" />
-    <tag Name="Culture" Value="Naphtaali" />
-    <tag Name="BaseObject" Value="*noinherit" />
-    <tag Name="DynamicObjectsTable:Naphtaali" />
   </object>
-  <object Name="Naphtaali Forager" Inherits="BaseNaphtaali">
+  <object Name="Naphtaali Forager" Load="Merge"> <!--Inherits="BaseNaphtaali"-->
     <part Name="Render" DisplayName="Naphtaali forager" Tile="Creatures/naphtaali_forager.bmp" />
-    <inventoryobject Chance="50" Blueprint="Club" Number="1" />
-    <stat Name="Level" Value="7" />
-    <tag Name="Role" Value="Minion" />
-    <skill Name="CookingAndGathering" />
-    <skill Name="CookingAndGathering_Harvestry" />
   </object>
-  <object Name="Naphtaali Tinker" Inherits="BaseNaphtaali">
+  <object Name="Naphtaali Tinker" Load="Merge"> <!--Inherits="BaseNaphtaali"-->
     <part Name="Render" DisplayName="Naphtaali tinker" ColorString="&amp;c" Tile="Creatures/naphtaali_tinker.bmp" />
-    <stat Name="Level" Value="9" />
-    <tag Name="Role" Value="Leader" />
-    <stat Name="Intelligence" Boost="1" />
-    <stat Name="Strength" Boost="-1" />
-    <tag Name="InventoryPopulationTable" Value="NaphtaaliTinkerInventory" />
-    <skill Name="Tinkering" />
-    <skill Name="Tinkering_Repair" />
-    <skill Name="Tinkering_Tinker1" />
   </object>
-  <object Name="Naphtaali Nimrod" Inherits="BaseNaphtaali">
+  <object Name="Naphtaali Nimrod" Load="Merge"> <!--Inherits="BaseNaphtaali"-->
     <part Name="Render" DisplayName="Naphtaali nimrod" ColorString="&amp;K" Tile="Creatures/naphtaali_nimrod.bmp" />
-    <stat Name="Hitpoints" Value="15" />
-    <inventoryobject Blueprint="@DynamicObjectsTable:Daggers:Tier2" Number="1" />
-    <skill Name="ShortBlades" />
-    <skill Name="ShortBlades_Hobble" />
-    <skill Name="ShortBlades_Bloodletter" />
-    <stat Name="Level" Value="9" />
-    <tag Name="Role" Value="Brute" />
-    <stat Name="Strength" Boost="1" />
-    <stat Name="Agility" Boost="1" />
-    <stat Name="Wisdom" Boost="-1" />
-    <stat Name="Intelligence" Boost="-1" />
   </object>
-  <object Name="Naphtaali Jeer" Inherits="BaseNaphtaali">
-    <part Name="Render" DisplayName="Naphtaali jeer" ColorString="&amp;r" Tile="Creatures/naphtaali_jeer.bmp" />
-    <inventoryobject Blueprint="Short Bow" Number="1" />
-    <inventoryobject Blueprint="Wooden Arrow" Number="4-7" />
-    <stat Name="Hitpoints" Value="10" />
-    <stat Name="Level" Value="8" />
-    <tag Name="Role" Value="Skirmisher" />
-    <skill Name="Persuasion_Berate" />
-    <stat Name="Ego" Boost="1" />
-    <stat Name="Strength" Boost="-1" />
+  <object Name="Naphtaali Jeer" Load="Merge"> <!--Inherits="BaseNaphtaali"-->
+    <part Name="Render" DisplayName="Naphtaali jeer" ColorString="&amp;r" Tile="bucklerparry_largerfolk/naphtaali_jeer_fat.png" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/naphtaali_jeer.bmp" WeightStage_1="bucklerparry_largerfolk/naphtaali_jeer_fat.png" />
   </object>
-  <object Name="Naphtaali Sap" Inherits="BaseNaphtaali">
+  <object Name="Naphtaali Sap" Load="Merge"> <!--Inherits="BaseNaphtaali"-->
     <part Name="Render" DisplayName="Naphtaali sap" ColorString="&amp;W" Tile="Creatures/naphtaali_sap.bmp" />
-    <stat Name="Hitpoints" Value="10" />
-    <stat Name="Level" Value="7" />
-    <tag Name="Role" Value="Lurker" />
-    <inventoryobject Blueprint="@DynamicObjectsTable:EnergyCells:Tier2" Number="1" />
-    <mutation Name="ElectricalGeneration" Level="3" />
   </object>
-  <object Name="Unplanished Godhed" Inherits="BaseRobot">
-    <part Name="Body" Anatomy="HoverRobot" />
+  <object Name="Unplanished Godhed" Load="Merge"> <!--Inherits="BaseRobot"-->
     <part Name="Render" Tile="bucklerparry_largerfolk/unplanished_godhed1_fat.png"  DisplayName="unplanished godhed" RenderString="0" ColorString="&amp;c" DetailColor="w" />
     <builder Name="RandomTile" Tiles="bucklerparry_largerfolk/unplanished_godhed1_fat.png,bucklerparry_largerfolk/unplanished_godhed2_fat.png,bucklerparry_largerfolk/unplanished_godhed1_fat.png" />
     <part Name="Description" Short="A greebled egg of metal and circuited glass was fished from the chromefall to be welded on and serve as spiritual center mass for a minyan of woodsprogs. =pronouns.Possessive= sensory pane remains unplanished, and so =pronouns.subjective= have yet to show the growth rings of communal meaning." />
-    <part Name="Brain" Factions="Naphtaali-100,Robots-25" />
-    <stat Name="Hitpoints" Value="30" />
-    <stat Name="AV" Value="4" />
-    <stat Name="Level" Value="9" />
-    <tag Name="InventoryPopulationTable" Value="GodhedInventory" />
-    <part Name="DropOnDeath" Blueprints="Garbage" />
-    <tag Name="Species" Value="hover robot" />
-    <tag Name="NamingTag" Value="Godhed" />
-    <tag Name="DynamicObjectsTable:Naphtaali" />
   </object>
-  <object Name="Planished Godhed" Inherits="Unplanished Godhed">
+  <object Name="Planished Godhed" Load="Merge"> <!--Inherits="Unplanished Godhed"-->
     <part Name="Render" DisplayName="planished godhed" />
     <part Name="Description" Short="A greebled egg of metal and circuited glass was fished from the chromefall to be welded on and serve as spiritual center mass for a minyan of woodsprogs. =pronouns.Possessive= sensory pane is fused at junction points to the selfsame mask of =pronouns.possessive= creator/minions, tied with ribbons of mossgrowth and wire." />
     <builder Name="RandomTile" Tiles="bucklerparry_largerfolk/planished_godhed1_fat.png,bucklerparry_largerfolk/planished_godhed2_fat.png,bucklerparry_largerfolk/planished_godhed3_fat.png" />
-    <part Name="Uplift" AdditionalSpecializationTemplate="SpecialHeroTemplate_Godhed" />
-    <part Name="Leader" SpawnRadius="4" popTable="NaphtaaliMinyan" />
-    <tag Name="InventoryPopulationTable" Value="LegendaryGodhedInventory" />
-    <tag Name="Noclone" />
   </object>
 
   <!-- End tier 2 creatures -->
@@ -3560,59 +3426,22 @@ The infant child is unaware
     <part Name="LargerFolk_WeightStageRender" WeightStage_0="creatures/sw_dog.bmp" WeightStage_1="bucklerparry_largerfolk/dog_fat.png" />
     <part Name="Description" Short="White and black shag sheds off =pronouns.objective=, and =pronouns.possessive= paws tap the ground with a working itch." />
   </object>
-  <object Name="Ice frog" Inherits="BaseFrog">
+  <object Name="Ice frog" Load="Merge"> <!--Inherits="BaseFrog"-->
     <part Name="Render" DisplayName="ice frog" Tile="bucklerparry_largerfolk/ice_frog_fat.png"  RenderString="f" ColorString="&amp;C" DetailColor="W" />
-    <part Name="Body" Anatomy="Frog" />
-    <part Name="Corpse" CorpseChance="10" CorpseBlueprint="Ice frog corpse" />
-    <part Name="Brain" Hostile="false" />
-    <stat Name="AV" Value="3" />
-    <stat Name="Hitpoints" Value="30" />
-    <stat Name="Level" Value="12" />
-		<mutation Name="FreezingRay" Level="3" BodyPartType="Face" />
     <part Name="Description" Short="=pronouns.Subjective= =verb:gulp:afterpronoun= and =verb:shiver:afterpronoun= tufts off =pronouns.possessive= rime-tarped nostrils." />
-    <inventoryobject Blueprint="Ice frog bite" Number="1" />
-    <tag Name="Role" Value="Controller" />
-    <stat Name="ColdResistance" Value="85" />
-    <skill Name="Acrobatics_Jump" />		    
-    <tag Name="DynamicObjectsTable:Jungle_Creatures" />
   </object>
-  <object Name="Ice frog bite" Inherits="Bite">
-    <part Name="MeleeWeapon" BaseDamage="1d10" Skill="LongBlades" />
-  </object>
-  <object Name="Ice frog corpse" Inherits="Scaled Reptile Corpse">
-		<part Name="Render" DisplayName="{{C|ice frog}} corpse" ColorString="&amp;C" />
-		<part Name="Description" Short="Wet frog skin is pressed to the ground." />
-		<part Name="Butcherable" OnSuccess="Raw Frog Meat" OnSuccessAmount="1" />    
-    <part Name="Food" Message="The cold slime clings." />
-    <part Name="Physics" Weight="25" />
-    <part Name="Commerce" Value="10" />    
-    <tag Name="Tier" Value="3" />    
-  </object>
-  <object Name="Infiltrator" Inherits="BaseRobot">
-    <part Name="Body" Anatomy="HoverRobot" />
-    <part Name="Brain" Hostile="false" Factions="Templar-100" />
+  <object Name="Infiltrator" Load="Merge"> <!--Inherits="BaseRobot"-->
     <part Name="Description" Short="Radial handles circumscribe a space inverter." />
     <part Name="Render" DisplayName="infiltrator" Tile="bucklerparry_largerfolk/interdictor_fat.png"  RenderString="3" ColorString="&amp;c" DetailColor="B"/>
-    <stat Name="Level" Value="13" />
-    <stat Name="AV" Value="2" />
-    <stat Name="Hitpoints" Value="30" />
-    <tag Name="Species" Value="hover robot" />
-    <tag Name="Role" Value="Controller" />
-    <mutation Name="Infiltrate" Level="1" />
   </object>
-  <object Name="Plated Chromeling" Inherits="BarathrumiteRobot">
-    <part Name="Render" DisplayName="{{C|plated chromeling}}" Tile="Creatures/sw_plated_chromeling.bmp" RenderString="3" ColorString="&amp;C" DetailColor="y" />
-    <stat Name="Level" Value="12" />
-    <stat Name="AV" Value="8" />
-    <stat Name="Hitpoints" Value="45" />
-    <inventoryobject Blueprint="Stun Rod" CellChance="100" CellFullChance="100" />
-    <part Name="Description" Short="Thatched together out of scrap metal, =pronouns.subjective= =verb:teeter:afterpronoun=. What was the artist and maker thinking while banging metal into a likeness? =pronouns.Subjective= =verb:occupy:afterpronoun= a point between poles on several axes: halfway between chimp and human, halfway between child and adult. =pronouns.Subjective= =verb:are:afterpronoun= small, and there are shadows under =pronouns.possessive= chrome cheek." />
-    <inventoryobject Blueprint="PlatedChromeling_Bite" Number="1" />
-    <tag Name="Chromeling" />
-  </object>
-  <object Name="PlatedChromeling_Bite" Inherits="Bite">
-    <part Name="MeleeWeapon" BaseDamage="1d3+1" Skill="LongBlades" Slot="Face" />
-    <part Name="Metal" />
+  <object Name="Plated Chromeling" Load="Merge"> <!--Inherits="BarathrumiteRobot"-->
+    <part Name="Render" DisplayName="{{C|plated chromeling}}" Tile="bucklerparry_largerfolk/plated_chromeling_fat.png" RenderString="3" ColorString="&amp;C" DetailColor="y" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_plated_chromeling.bmp" WeightStage_1="bucklerparry_largerfolk/played_chromeling_fat.png" />
+    <part Name="Description" Short="Thatched together out of scrap metal, =pronouns.subjective= =verb:teeter:afterpronoun= upon jiggling limbshafts. What was the artist and maker thinking while banging metal into a likeness? =pronouns.Subjective= =verb:occupy:afterpronoun= a point between poles on several axes: halfway between chimp and human, halfway between child and adult, somewhere on the road from large to larger. =pronouns.Subjective= =verb:are:afterpronoun= small, and there are shadows under =pronouns.possessive= chrome cheek." />
+    <part Name="LargerFolk_WeightDescription" 
+      WeightDescription_0="Thatched together out of scrap metal, =pronouns.subjective= =verb:teeter:afterpronoun=. What was the artist and maker thinking while banging metal into a likeness? =pronouns.Subjective= =verb:occupy:afterpronoun= a point between poles on several axes: halfway between chimp and human, halfway between child and adult. =pronouns.Subjective= =verb:are:afterpronoun= small, and there are shadows under =pronouns.possessive= chrome cheek." 
+      WeightDescription_1="Thatched together out of scrap metal, =pronouns.subjective= =verb:teeter:afterpronoun= upon jiggling limbshafts. What was the artist and maker thinking while banging metal into a likeness? =pronouns.Subjective= =verb:occupy:afterpronoun= a point between poles on several axes: halfway between chimp and human, halfway between child and adult, somewhere on the road from large to larger. =pronouns.Subjective= =verb:are:afterpronoun= small, and there are shadows under =pronouns.possessive= chrome cheek." 
+    />  
   </object>
   <object Name="Prism Perch" Load="Merge">
     <part Name="Render" DisplayName="prism perch" Tile="bucklerparry_largerfolk/fishschool1_fat.png" ColorString="&amp;Y" TileColor="&amp;y" />
@@ -7344,29 +7173,6 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
     <tag Name="NonMutant" />
 		<stag Name="Historical" />
   </object>
-  <object Name="Dawning ape fist" Inherits="NaturalFist">
-    <part Name="Render" DisplayName="{{Y|ape fist}}" Tile="Creatures/natural-weapon-fist.bmp" ColorString="&amp;Y" />
-    <part Name="MeleeWeapon" BaseDamage="4d4" Skill="Cudgel" Stat="Strength" Slot="Hand" />
- </object>
- <object Name="Decarbonizer" Inherits="BaseRobot">
-    <part Name="Body" Anatomy="Turret" />
-    <part Name="Render" DisplayName="decarbonizer" Tile="creatures/sw_decarbonizer.bmp" RenderString="c" ColorString="&amp;c" DetailColor="R" />
-    <part Name="Description" Short="Particles spin in the molecular orrery of =pronouns.possessive= engine and whir against =pronouns.possessive= chrome-plated chassis. Life-lint powders the inside of =pronouns.possessive= elliptical cannon." />
-    <part Name="Brain" Wanders="false" Mobile="false" />
-    <stat Name="Level" Value="40" />
-    <stat Name="Hitpoints" Value="2000" />
-    <stat Name="AV" Value="25" />
-    <tag Name="Species" Value="turret" />
-    <tag Name="Role" Value="Artillery" />
-    <mutation Name="Decarbonizer" />
-		<tag Name="SeveredHeadBlueprint" Value="RobotHead8" />
-    <tag Name="Gender" Value="neuter" />
-  </object>
-	<object Name="ProjectileDecarbonizer" Inherits="TemporaryProjectile">
-    <part Name="Render" DisplayName="{{C|molecular cannon beam}}" ColorString="&amp;R" />
-    <part Name="Projectile" Attributes="Disintegrate" ColorString="&amp;R" PassByVerb="sizzle" />
-    <tag Name="Light" />		
-	</object>
 	<object Name="Dreamcrungle" Inherits="MutatedBush">
 		<part Name="Render" DisplayName="dreamcrungle" Tile="Creatures/sw_dreamcrungle.bmp"  RenderString="*" ColorString="&amp;B" TileColor="&amp;b" DetailColor="B" />
 		<part Name="Description" Short="Anchor shanks wet with a nameless slick do a stubborn glomming onto the ground. A saucer rife with nubs bends upward, and sitting inside it, a steamy globe gurgles sounds of the other-world. There are processes at work on those moist and inner clouds, but their rules are locked beyond knowledge." />
@@ -7378,12 +7184,6 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
 		<mutation Name="CrungleGaze" Level="10" />
 		<tag Name="DynamicObjectsTable:MoonStair_Creatures" />
 	</object>
-	<object Name="ProjectileCrungleGaze" Inherits="TemporaryProjectile">
-		<part Name="Render" DisplayName="{{B|crungling gaze}}" ColorString="&amp;B" />
-		<part Name="Projectile" Attributes="Dream" ColorString="&amp;B" PassByVerb="flutter" />
-        <part Name="TreatAsSolid" GazeBased="true" Hits="false" RequiresPhaseMatch="false" Message="The darkness consumes =subject.t=!" />
-		<tag Name="Dream" />
-	</object>
 	<object Name="Sated Dreamcrungle" Inherits="Corpse">
 		<part Name="Render" DisplayName="sated dreamcrungle" Tile="Creatures/sw_dreamcrungle_dead.bmp"  RenderString="*" ColorString="&amp;b" TileColor="&amp;b" DetailColor="B" />
 		<part Name="Description" Short="=pronouns.Possessive= shanks have stilled after the dream-quiver; the saucer slags, and the globe steams with the heat of imagined life." />
@@ -7393,100 +7193,16 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
 		<tag Name="Tier" Value="8" />
 		<tag Name="Role" Value="Rare" />
 	</object>
-	<object Name="Galgal" Inherits="BaseRobot">
-    <part Name="Body" Anatomy="WheelRobot" />
-    <part Name="Render" DisplayName="galgal" RenderString="8" ColorString="&amp;m" TileColor="&amp;c" Tile="Creatures/sw_galgal_1.bmp" DetailColor="R" />
+	<object Name="Galgal" Load="Merge"> <!--Inherits="BaseRobot"-->\
+    <part Name="Render" DisplayName="galgal" RenderString="8" ColorString="&amp;m" TileColor="&amp;c" Tile="bucklerparry_largerfolk/galgal_fat.png" DetailColor="R" /> <!--Creatures/sw_galgal_1.bmp-->
     <part Name="Description" Short="A troika of monstrous, gleaming wheels orbit a center sphere of xenon clouds and gallium lightning. The spokes are laminated crysteel bled of their emerald imperfections, and the rims are milky epithelium -- a single iris stretched to the topology of a torus -- and checkered on the underside with pupils. =pronouns.Possessive= movement traces the carpentry of worlds." />
-    <tag Name="Gender" Value="neuter" />
-    <stat Name="Level" Value="40" />
-    <stat Name="Speed" Value="175" />
-    <stat Name="AV" Value="15" />
-    <stat Name="Hitpoints" Value="400" />
-    <part Name="Brain" MaxKillRadius="8" />
-    <builder Name="RandomTile" Tiles="Creatures/sw_galgal_1.bmp,Creatures/sw_galgal_2.bmp,Creatures/sw_galgal_3.bmp,Creatures/sw_galgal_4.bmp" />
-    <part Name="FusionReactor" ChargeRate="1000" ExplodeChance="0" />
-    <part Name="Circuitry" />
-    <part Name="RunOver" />
-    <inventoryobject Blueprint="Naser Cannon" />
-    <skill Name="Cudgel" />
-    <skill Name="Cudgel_Slam" />
-    <skill Name="HeavyWeapons" />
-    <skill Name="HeavyWeapons_Tank" />
-    <tag Name="Species" Value="wheeled robot" />
-    <tag Name="Role" Value="Artillery" />
-    <stat Name="HeatResistance" Value="60" />
-    <stat Name="ColdResistance" Value="60" />
-    <tag Name="customMissileOrder" Value="abilities,missile,thrown,items,defensiveItems,defensiveAbilities" />
-    <tag Name="customMeleeOrder" Value="abilities,missile,items,defensiveItems,defensiveAbilities" />
-    <tag Name="SeveredHeadBlueprint" Value="RobotHead8" />
-    <tag Name="DynamicObjectsTable:PalladiumReef_Creatures" />
-    <tag Name="DynamicObjectsTable:PalladiumReef_Creatures:Weight" Value="0.3" />
-    <tag Name="DynamicObjectsTable:BaroqueRuins_Creatures" />
-    <tag Name="DynamicObjectsTable:BaroqueRuins_Creatures:Weight" Value="0.3" />
-    <tag Name="Strutwalking" />
-    <tag Name="NoDropOnDeath" />
-		<stag Name="Historical" />		
+    <builder Name="RandomTile" Tiles="bucklerparry_largerfolk/galgal_fat.png,bucklerparry_largerfolk/galgal2_fat.png,bucklerparry_largerfolk/galgal3_fat.png,bucklerparry_largerfolk/galgal3_fat.png" />
   </object>
-  <object Name="Naser Cannon" Inherits="NaturalMissileWeapon">
-    <part Name="Render" DisplayName="naser cannon" ColorString="&amp;K" Tile="items/sw_techrifle_2.bmp" />
-    <part Name="Physics" Weight="40" UsesTwoSlots="true" />
-    <part Name="MissileWeapon" Skill="HeavyWeapons" AmmoChar="&amp;K&#15;" ShotsPerAction="1" AmmoPerAction="1" ShotsPerAnimation="1" WeaponAccuracy="2" />
-    <part Name="Commerce" Value="2000" />
-    <part Name="EnergyAmmoLoader" ChargeUse="1000" ProjectileObject="ProjectileNaserCannon" />
-    <part Name="EnergyCellSocket" SlotType="EnergyCell" />
-    <part Name="IntegratedPowerSystems" RequiresEvent="HasPowerConnectors" />
-    <part Name="RealityStabilization" ChargeUse="200" Strength="100" />
-    <part Name="Examiner" Unknown="UnknownStrangeTubes" Alternate="UnknownStrangeTubes" Complexity="7" Difficulty="2" />
-    <part Name="TinkerItem" Bits="0068" CanDisassemble="true" CanBuild="false" />
-    <part Name="Metal" />
-    <tag Name="Mods" Value="MissileWeaponMods,FirearmMods,CommonMods,ElectronicsMods,BeamWeaponMods" />
-    <tag Name="Tier" Value="8" />
-    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
-  </object>
-  <object Name="ProjectileNaserCannon" Inherits="TemporaryProjectile">
-    <part Name="Render" DisplayName="{{K|naser beam}}" ColorString="&amp;K" />
-    <part Name="Projectile" BasePenetration="11" BaseDamage="1d12" Attributes="Light Laser Normality" ColorString="&amp;K" PenetrateCreatures="true" PassByVerb="thrum" />
-    <part Name="TreatAsSolid" LightBased="true" Hits="false" RequiresPhaseMatch="false" Message="The darkness consumes =subject.t=!" />
-    <part Name="GroundOnHit" ChargeUse="0" Chance="100" Duration="20-30" SaveTarget="40" SaveStat="Agility" SaveVs="Normality Naser Grounding" FlyingLevelAidsSave="true" />
-    <part Name="RealityStabilizeOnHit" ChargeUse="0" Chance="100" Strength="100" Duration="20-30" Linked="true" />
-    <part Name="OmniphaseProjectile" />
-  </object>
-  <object Name="Gamma Moth" Inherits="BaseInsect">
+  <object Name="Gamma Moth" Load="Merge"> <!--Inherits="BaseInsect"-->
     <part Name="Render" DisplayName="gamma moth" Tile="bucklerparry_largerfolk/gamma_moth_fat.png" ColorString="&amp;M" DetailColor="K" />
     <part Name="Description" Short="Vast diaphanous wings painted in the furcate patterns of fractalized geometry bat the air." />
-    <stat Name="Level" Value="39" />
-    <stat Name="Hitpoints" Value="250" />
-    <stat Name="AV" Value="8" />
-    <stat Name="HeatResistance" Value="30" />
-    <stat Name="ColdResistance" Value="30" />
-    <stat Name="ElectricResistance" Value="30" />
-    <stat Name="AcidResistance" Value="30" />
-    <tag Name="Role" Value="Artillery" />
-    <mutation Name="Wings" Level="10" />
-    <inventoryobject Blueprint="Gamma Moth Gaze" />
-    <inventoryobject Blueprint="Gamma Moth Bite" />
-    <tag Name="Species" Value="moth" />
   </object>
-  <object Name="Gamma Moth Bite" Inherits="Bite">
-    <part Name="MeleeWeapon" PenBonus="3" BaseDamage="4d4" Slot="Head" />
-  </object>
-  <object Name="Gamma Moth Gaze" Inherits="NaturalMissileWeapon">
-    <part Name="Render" DisplayName="mutating gaze" ColorString="&amp;M" DetailColor="K" Tile="items/night_vision_mutation.bmp" />
-    <part Name="Physics" Weight="12" />
-    <part Name="MissileWeapon" Skill="Rifle" AmmoChar="&amp;M-" ShotsPerAction="1" AmmoPerAction="1" ShotsPerAnimation="1" WeaponAccuracy="2" />
-    <part Name="Commerce" Value="750" />
-    <part Name="EnergyAmmoLoader" ChargeUse="0" ProjectileObject="ProjectileGammaMothGaze" IsBioScannable="true" NameForStatus="GammaLensing" />
-    <part Name="AIShootCooldown" Cooldown="8-10" />
-    <tag Name="Tier" Value="8" />
-    <tag Name="UsesSlots" Value="Face" />
-  </object>
-  <object Name="ProjectileGammaMothGaze" Inherits="TemporaryProjectile">
-    <part Name="Render" DisplayName="{{M|flash of light}}" ColorString="&amp;M" />
-    <part Name="Projectile" BasePenetration="8" BaseDamage="1d12" Attributes="Mutagenic" ColorString="&amp;M" PenetrateCreatures="true" PassByVerb="flicker" />
-    <part Name="TreatAsSolid" GazeBased="true" Hits="false" RequiresPhaseMatch="false" Message="The darkness consumes =subject.t=!" />
-    <part Name="MutateOnHit" Chance="100" IncubationTime="100" ResultTable="MutatingResults" />
-  </object>
-	<object Name="Grand Newfather" Inherits="Templar">
+	<object Name="Grand Newfather" Load="Merge"> <!--Inherits="Templar"-->
 		<part Name="Render" ColorString="&amp;Y" TileColor="&amp;r" RenderString="t" Tile="Creatures/sw_grand_newfather.bmp" DetailColor="Y" DisplayName="grand newfather" />
 		<part Name="Description" Short="Grand white lips hang from =pronouns.possessive= hooded and overly jawed face in the asymmetry of disappointment. =pronouns.Possessive= brow crunches the softness out of =pronouns.possessive= old, color-sucked eyes. =pronouns.Subjective= looks at =pronouns.possessive= grand newchildren with a mixture of sharp fondness and disgust. To =pronouns.objective=, they are small puppets; their limbs must be curled around their joints with loving precision, or they are splayed open by their own wills, useless and broken." />
 		<stat Name="Level" Value="39" />
@@ -11878,33 +11594,13 @@ In Barathrum's name, =pronouns.subjective==verb:'ve:afterpronoun= conferred onto
     <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
     <xtagGrammar Proper="true" />
   </object>
-  <object Name="Dardi" Inherits="Barathrumite">
-    <part Name="Render" DisplayName="Dardi" ColorString="&amp;Y" RenderString="b" Tile="Creatures/sw_bearman8.bmp" DetailColor="w" />
-    <part Name="Brain" Wanders="false" />
-    <part Name="ConversationScript" ConversationID="Dardi" />
-    <part Name="FactionRank" Ranks="Barathrumites::disciple" />
-    <tag Name="InventoryPopulationTable" Value="DardiInventory" />
-    <stat Name="Hitpoints" Value="95" />
-    <part Name="Description" Short="The big urshiib is dusted with spice and wet with honeyed grease, and =pronouns.subjective= =verb:smell:afterpronoun= of a melange: hot mushroom, cloying ink, saffron, and cooked tongue." />
-    <part Name="AISelfPreservation" Threshold="60" />
-    <part Name="Interesting" />
-    <part Name="Memorial" Eulogies="Barathrumites::Today we are bereft of a passionate artisan and dedicated scientist. We laud you, from home to heptagon." />
-    <stat Name="Level" Value="25" />
-    <inventoryobject Blueprint="Difucila"/>
-    <inventoryobject Blueprint="Chain Pistol" Number="1" />
-    <inventoryobject Blueprint="Lead Slug" Number="50-70" />
-    <inventoryobject Blueprint="Plastifer Sneakers" Number="1"/>
-    <property Name="WontSell" Value="Difucila,Chain Pistol,Plastifer Sneakers" />
-    <skill Name="Tinkering" />
-    <skill Name="Tinkering_Disassemble" />
-    <skill Name="Tinkering_Repair" />
-    <skill Name="Tinkering_Tinker1" />
-    <skill Name="Pistol" />
-    <skill Name="ShortBlades" />
-    <skill Name="ShortBlades_Bloodletter" />
-    <tag Name="Gender" Value="male" />
-    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
-    <xtagGrammar Proper="true" />
+  <object Name="Dardi" Load="Merge">
+    <part Name="Render" DisplayName="Dardi" ColorString="&amp;Y" RenderString="b" Tile="bucklerparry_largerfolk/dardi_fat.png" DetailColor="w" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_bearman8.bmp" WeightStage_1="bucklerparry_largerfolk/dardi_fat.png" />
+    <part Name="Description" Short="The big urshiib is dusted with spice and wet with honeyed grease, seeping into the many folds and crevices of =pronouns.possessive= well-fed figure. =pronouns.Possessive= gut and chest overflow their holding-case, ripe with the fruit of scientific inquiry. =pronouns.Subjective= =verb:smell:afterpronoun= of a melange: hot mushroom, cloying ink, saffron, and cooked tongue." />
+    <part Name="LargerFolk_WeightDescription" 
+      WeightDescription_0="The big urshiib is dusted with spice and wet with honeyed grease, and =pronouns.subjective= =verb:smell:afterpronoun= of a melange: hot mushroom, cloying ink, saffron, and cooked tongue." 
+      WeightDescription_1="The big urshiib is dusted with spice and wet with honeyed grease, seeping into the many folds and crevices of =pronouns.possessive= well-fed figure. =pronouns.Possessive= gut and chest overflow their holding-case, ripe with the fruit of scientific inquiry. =pronouns.Subjective= =verb:smell:afterpronoun= of a melange: hot mushroom, cloying ink, saffron, and cooked tongue." />
   </object>
   <object Name="Hortensa" Inherits="Barathrumite">
     <part Name="Render" DisplayName="Hortensa" ColorString="&amp;Y" RenderString="b" Tile="Creatures/sw_bearman7.bmp" DetailColor="w" />
