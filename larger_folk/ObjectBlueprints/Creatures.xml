@@ -12781,56 +12781,13 @@ At the edges of your field of vision, more tentacles writhe over tools, books, c
   </object>
   
   <!-- Tomb children -->
-  <object Name="BaseBiomech" Inherits="NPC">
-    <part Name="Corpse" CorpseChance="0" />
+  <object Name="BaseBiomech" Load="Merge"> <!--Inherits="NPC"-->
     <part Name="Render" DisplayName="[child]" RenderString="C" DetailColor="K" ColorString="&amp;C" Tile="bucklerparry_largerfolk/mopango_fat.png" />
-    <part Name="Brain" Hostile="false" Factions="Mopango-75" Wanders="true" />
-    <part Name="ConversationScript" ConversationID="MopangoStranger" />
-    <part Name="DropOnDeath" Blueprints="Scrap 1,Scrap 2,Scrap 3,Scrap 4,Scrap 5,Scrap 6,Scrap 7" />
-    <part Name="Interesting" />
-    <stat Name="Level" Value="30" />
-    <stat Name="AV" Value="10" />
-    <stat Name="DV" Value="10" />
-    <stat Name="Hitpoints" Value="150" />
-    <stat Name="Strength" sValue="20" />
-    <stat Name="Agility" sValue="20" />
-    <stat Name="Toughness" sValue="20" />
-    <stat Name="Intelligence" sValue="30" />
-    <stat Name="Willpower" sValue="30" />
-    <stat Name="Ego" sValue="30" />
-    <tag Name="BaseObject" Value="*noinherit" />
-    <tag Name="RandomGender" Value="neuter" />
-    <intproperty Name="HasMarkOfDeath" Value="1" />
-    <tag Name="Species" Value="oddity" />
-		<stag Name="Contemporary" Value="*delete" />
-    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
   </object>
-  <object Name="Biomech Corpse" Inherits="Scrap 00">
-    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
-  </object>
-  <object Name="Writhing Spike" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="{{K|writhing spike}}" Tile="Creatures/natural-weapon-thorns.bmp" ColorString="&amp;c" />
-    <part Name="MeleeWeapon" PenBonus="8" HitBonus="6" BaseDamage="6d6" Skill="LongBlades" Stat="Strength" Slot="Foot" />
-  </object>
-  <object Name="Writhing Cable" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="{{K|writhing cable}}" Tile="Creatures/natural-weapon-cable.bmp" ColorString="&amp;c" />
-    <part Name="MeleeWeapon" HitBonus="10" BaseDamage="4d6+1" Skill="Cudgel" Stat="Strength" Slot="Foot" />
-  </object>
-  <object Name="Glossy Hull" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="{{K|glossy hull}}" Tile="Creatures/natural-weapon-hull.bmp" ColorString="&amp;c" />
-    <part Name="MeleeWeapon" BaseDamage="6d2" Skill="Cudgel" Stat="Strength" Slot="Face" />
-  </object>
-  <object Name="Nacham" Inherits="BaseBiomech">
+  <object Name="Nacham" Load="Merge"> <!--Inherits="BaseBiomech"-->
     <part Name="Description" Short="Three digitigrade skinshine legs are weighed down by the aura of a floating metal carapace, suspended across three bands in quantum magnetic tension. Prehensile braids of cordage spill from =pronouns.possessive= apertures (ending in manic and electric eyes), and the air around =pronouns.objective= purrs in the audio multitexture of gold." />
-    <part Name="Render" DisplayName="Nacham" RenderString="135" DetailColor="c" ColorString="&amp;M" Tile="creatures/sw_nacham.bmp" />
-    <part Name="DisplayNameColor" Color="M" />
-    <part Name="ConversationScript" ConversationID="Nacham" />
-    <part Name="Body" Anatomy="Quadruped" />
-    <xtagGrammar Proper="true" />
-    <inventoryobject Blueprint="Writhing Cable" Number="4" />
-    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
-		<stag Name="Historical" />
-		<tag Name="IncludeInDynamicSemanticTables" />
+    <part Name="Render" DisplayName="Nacham" RenderString="135" DetailColor="c" ColorString="&amp;M" Tile="bucklerparry_largerfolk/nacham_fat.png" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="creatures/sw_nacham.bmp" WeightStage_1="bucklerparry_largerfolk/nacham_fat.png" />
   </object>
   <object Name="Vaam" Inherits="BaseBiomech">
     <part Name="Description" Short="Arches of burnished shell huddle together as a shy metal pill bug. =pronouns.Subjective= =verb:inch:afterpronoun= along on brush-shaped appendages, and the only way to tell for sure which way =pronouns.subjective= =verb:face:afterpronoun= is the cross of light athwart =pronouns.possessive= front plate." />
@@ -13130,70 +13087,17 @@ This one is jeweled in the eroded scrap of the Tomb." />
     <part Name="Description" Short="=pronouns.Subjective= is a mudrock in the kaleidoscope. =pronouns.Possessive= salt-pocked skin, slouching spine, and dour expression are imported from the farmsteading reaches of western Qud, buh =pronouns.subjective= =verb:stand:afterpronoun= draped in the bright colors of =pronouns.possessive= brilliant eastborn flock." />
   </object>
 
-  <object Name="Une" Inherits="NPC">
-    <part Name="Render" DisplayName="Une" RenderString="t" Tile="Creatures/sw_une.bmp" ColorString="&amp;B" TileColor="&amp;B" DetailColor="Y" />
-    <part Name="Honorifics" Primary="Warden" />
-    <part Name="Brain" Factions="Wardens-100" />
-    <part Name="ConversationScript" ConversationID="Une" />
-    <tag Name="Gender" Value="nonspecific" />
-    <part Name="Description" Short="Draped in a heavy coat of scrap, wearing a beastly mask, and wielding a hand-cranked wheel-fiddle, =pronouns.subjective= =verb:look:afterpronoun= more the part of a pageantry player than a village's defender. Up close, however, you glimpse the hilt of =pronouns.possessive= brand, the butt of =pronouns.possessive= gun, and the burnished black aegis of unmarked fullerite that =pronouns.subjective= =verb:employ:afterpronoun=. Eyes of burnished azzurum peek through the sockets of =pronouns.possessive= beaked mask, suggesting the very threat =pronouns.possessive= costume was meant to annul." />
-    <stat Name="Level" Value="35" />
-    <stat Name="Strength" sValue="32" />
-    <stat Name="Agility" sValue="33" />
-    <stat Name="Toughness" sValue="29" />
-    <stat Name="Intelligence" sValue="20" />
-    <stat Name="Willpower" sValue="29" />
-    <stat Name="Ego" sValue="22" />
-    <stat Name="Hitpoints" Value="300" />
-    <part Name="GivesRep" />
-    <tag Name="staticFaction2" Value="Templar,hate,kinslaying and treason" />
-    <tag Name="staticFaction1" Value="YdFreehold,friend,defending the Freehold" />
-    <tag Name="NoHateFactions" Value="YdFreehold" />
-    <tag Name="NoSleep" />
-    <xtagGrammar Proper="true" />
-    <tag Name="InventoryPopulationTable" Value="UneInventory" />
-    <tag Name="ExcludeFromDynamicEncounters" />
-    <skill Name="LongBlades" />
-    <skill Name="LongBladesProficiency" />
-    <skill Name="LongBladesLunge" />
-    <skill Name="LongBladesSwipe" />
-    <skill Name="LongBladesDuelingStance" />
-    <skill Name="LongBladesImprovedAggressiveStance" />
-    <skill Name="LongBladesImprovedDefensiveStance" />
-    <skill Name="LongBladesImprovedDuelistStance" />
-		<skill Name="SingleWeaponFighting" />
-		<skill Name="SingleWeaponFighting_WeaponExpertise" />		
-		<skill Name="SingleWeaponFighting_PenetratingStrikes" />		
-    <skill Name="CookingAndGathering_Butchery" />
-    <skill Name="Tactics" />
-    <skill Name="Tactics_Juke" />    
-    <skill Name="Shield" />
-    <skill Name="Shield_Block" />
-    <skill Name="Shield_StaggeringBlock" />
-    <skill Name="Shield_DeftBlocking" />
-    <skill Name="Shield_SwiftBlocking" />
-    <skill Name="Shield_Slam" />
-    <skill Name="Pistol" />
-    <skill Name="Pistol_SteadyHands" />
-    <skill Name="Pistol_Akimbo" />
-    <skill Name="Pistol_WeakSpotter" />    
-    <stat Name="HeatResistance" Value="25" />
-    <stat Name="ColdResistance" Value="25" />
-    <stat Name="ElectricResistance" Value="25" />
-    <part Name="CyberneticsHasImplants" Implants="PenetratingRadar@head" />
-    <property Name="WontSell" Value="HurdyGurdy" />
-    <tag Name="WontSellTag" Value="Ammo" />
-    <skill Name="Persuasion_RebukeRobot" />
-    <tag Name="Genotype" Value="True Kin" />
+  <object Name="Une" Load="Merge"> <!--Inherits="NPC"-->
+    <part Name="Render" DisplayName="Une" RenderString="t" Tile="bucklerparry_largerfolk/warden_une_fat.png" ColorString="&amp;B" TileColor="&amp;B" DetailColor="Y" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_une.bmp" WeightStage_1="bucklerparry_largerfolk/warden_une_fat.png" />
+    <part Name="Description" Short="Draped in a heavy coat of scrap, wearing a beastly mask, and wielding a hand-cranked wheel-fiddle, =pronouns.subjective= =verb:look:afterpronoun= more the part of a pageantry player than a village's defender, especially swaddled in the belt-straining poundage of one whose action takes place more in hookah dens than battlefields. Up close, however, you glimpse the hilt of =pronouns.possessive= brand, the butt of =pronouns.possessive= gun, and the burnished black aegis of unmarked fullerite that =pronouns.subjective= =verb:employ:afterpronoun=. Eyes of burnished azzurum peek through the sockets of =pronouns.possessive= beaked mask, suggesting the very threat =pronouns.possessive= costume was meant to annul." />
+    <part Name="LargerFolk_WeightDescription" 
+      WeightDescription_0="Draped in a heavy coat of scrap, wearing a beastly mask, and wielding a hand-cranked wheel-fiddle, =pronouns.subjective= =verb:look:afterpronoun= more the part of a pageantry player than a village's defender. Up close, however, you glimpse the hilt of =pronouns.possessive= brand, the butt of =pronouns.possessive= gun, and the burnished black aegis of unmarked fullerite that =pronouns.subjective= =verb:employ:afterpronoun=. Eyes of burnished azzurum peek through the sockets of =pronouns.possessive= beaked mask, suggesting the very threat =pronouns.possessive= costume was meant to annul." 
+      WeightDescription_1="Draped in a heavy coat of scrap, wearing a beastly mask, and wielding a hand-cranked wheel-fiddle, =pronouns.subjective= =verb:look:afterpronoun= more the part of a pageantry player than a village's defender, especially swaddled in the belt-straining poundage of one whose action takes place more in hookah dens than battlefields. Up close, however, you glimpse the hilt of =pronouns.possessive= brand, the butt of =pronouns.possessive= gun, and the burnished black aegis of unmarked fullerite that =pronouns.subjective= =verb:employ:afterpronoun=. Eyes of burnished azzurum peek through the sockets of =pronouns.possessive= beaked mask, suggesting the very threat =pronouns.possessive= costume was meant to annul." 
+    />
   </object>
-  <object Name="Many Eyes" Inherits="Galgal">
+  <object Name="Many Eyes" Load="Merge"> <!--Inherits="Galgal"-->
     <part Name="Render" DisplayName="Many Eyes" RenderString="8" Tile="Creatures/sw_galgal_3.bmp" ColorString="&amp;m" TileColor="&amp;m" DetailColor="W" />
-    <part Name="Brain" Factions="YdFreehold-100" Wanders="false" />
-    <part Name="ConversationScript" ConversationID="ManyEyes" Filter="Cryptic Machine" />
-    <tag Name="ExcludeFromDynamicEncounters" />
-    <xtagGrammar Proper="true" />
-		<stag Name="Historical" />
-		<tag Name="IncludeInDynamicSemanticTables" />
   </object>  
 
   <!-- Hydropon -->
