@@ -26,7 +26,9 @@ public class LargerFolk_CasteWeightStages : IPlayerMutator
             {
                 player.GetPart<Render>().Tile = "bucklerparry_largerfolk/marshtaur_fat.png";
                 player.GetPart<LargerFolk_WeightStageRender>().WeightStage_0 = "creatures/sw_marsh_taur.bmp";
-                player.GetPart<LargerFolk_WeightStageRender>().WeightStage_1 = "bucklerparry_largerfolk/marshtaur_fat.png";
+                player.GetPart<LargerFolk_WeightStageRender>().WeightStage_1 = "bucklerparry_largerfolk/marshtaur_fat_stage1.png";
+                player.GetPart<LargerFolk_WeightStageRender>().WeightStage_2 = "bucklerparry_largerfolk/marshtaur_fat.png";
+                player.GetPart<LargerFolk_WeightStageRender>().WeightStage_3 = "bucklerparry_largerfolk/marshtaur_fat_stage3.png";
             }
             else if (myRender.Tile == "Creatures/sw_dream_tortoise.bmp" || myRender.Tile == "bucklerparry_largerfolk/dream_tortoise_fat.png")
             {

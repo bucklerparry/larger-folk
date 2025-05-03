@@ -8,6 +8,8 @@ namespace XRL.World.Parts
     [Serializable]
     public class LargerFolk_WeightPreach: IPart
     {
+        public bool GainEnabled => XRL.UI.Options.GetOption("Option_LargerFolk_DynamicWeightGainOn").EqualsNoCase("Yes");
+
         public int Volume = 20;
 
         public int Chance = 4;
@@ -137,10 +139,16 @@ namespace XRL.World.Parts
         public void PreacherHomily(GameObject who, bool Dialog)
         {
             // if parent object isn't fat enough, don't emit these preaches
-            if (!ParentObject.HasPart<LargerFolk_WeightGain>() || ParentObject.GetPart<LargerFolk_WeightGain>().WeightStage < MinWeightStage)
+            if (!ParentObject.HasPart<LargerFolk_WeightGain>())
             {
                 return;
             }
+            if (GainEnabled && ParentObject.GetPart<LargerFolk_WeightGain>().WeightStage < MinWeightStage)
+            {
+                return;
+            }
+
+
             if ((!Dialog && !ParentObject.IsAudible(IComponent<GameObject>.ThePlayer, Volume)) || !ParentObject.FireEvent("CanPreach"))
             {
                 return;
@@ -224,11 +232,19 @@ namespace XRL.World.Parts
             else if (E.ID == "BeginTakeAction" && ParentObject.InActiveZone())
             {
                 LastTalk--;
-                if (LastTalk < 0 && Chance.in100())
+                int chance_mod = 1;
+
+                // if gain is not enabled, weight huffs n puffs always happen at a reduced rate
+                if (!GainEnabled)
+                {
+                    chance_mod = 2;
+                }
+                if (LastTalk < 0 && (Chance/chance_mod).in100())
                 {
                     LastTalk = ChatWait;
                     PreacherHomily(Dialog: false);
                 }
+                
             }
             return base.FireEvent(E);
         }
