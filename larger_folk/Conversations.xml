@@ -15,6 +15,26 @@
 
   <!-- Warden Yrame -->	
   <conversation ID="WardenYrame">
+    <node ID="Start" IfSpeakerFat="false">
+      <text>
+        Welcome a-Joppa, friend. Stay peacelike, and we stay friends, hyeh? You make trouble, it’s my work a-split you open like a croc.~
+        Elder’s over my right shoulder, chemist a-left. I ask you pick one or turn around. I en’t here for chat.~
+        Live and drink, yonderling.~
+        {{emote|*Yrame grunts.*}}~
+        {{emote|*Yrame nods.*}}~
+        What follows, then?~
+        Got an eyeful, heh?~
+        Well. They en't ended you yet.
+      </text>
+      <choice GotoID="Rustwells" IfHaveActiveQuest="Weirdwire Conduit... Eureka!">I must search the Rustwells.</choice>
+      <choice GotoID="Red Rock" IfHaveActiveQuest="What's Eating the Watervine?">Mehmet has bade me travel to Red Rock.</choice>
+      <choice GotoID="Grit Gate" IfHaveActiveQuest="A Canticle for Barathrum">I depart for Grit Gate soon.</choice>
+      <choice GotoID="Stilt" IfHaveActiveQuest="O Glorious Shekhinah!">I journey North, to the Six Day Stilt.</choice>
+      <choice GotoID="Who">Who are you?</choice>
+      <choice GotoID="Weight" IfSpeakerFat="true">You're quite large.</choice>
+      <choice GotoID="Warden">What is a Warden?</choice>
+      <choice GotoID="End">Live and drink.</choice>
+    </node>
     <node ID="Start">
       <text>
         {{emote|*Huff,*}} Welcome a-Joppa, friend. Stay peacelike, and we stay friends, hyeh? You make trouble, it’s, {{emote|*huff,*}} my work a-split you open like a croc.~
@@ -23,9 +43,9 @@
         {{emote|*Yrame grunts.*}}~
         {{emote|*Yrame nods.*}}~
         What follows, then?~
-        Got an eyeful, heh?~
+        Got an eyeful, heh? Let your eyes wander, there's much to look at.~
         {{emote|*Huff,*}} I've put on a-few 'ere last... ~
-        {{emote|*Huff,*}} I a-coming, {{emote|*huff.*}} Don't care to run a-more than needed.
+        {{emote|*Huff,*}} I a-coming, {{emote|*huff.*}} Don't care to run a-more than needed.~
         Well. They en't ended you yet.
       </text>
       <choice GotoID="Rustwells" IfHaveActiveQuest="Weirdwire Conduit... Eureka!">I must search the Rustwells.</choice>
@@ -33,7 +53,7 @@
       <choice GotoID="Grit Gate" IfHaveActiveQuest="A Canticle for Barathrum">I depart for Grit Gate soon.</choice>
       <choice GotoID="Stilt" IfHaveActiveQuest="O Glorious Shekhinah!">I journey North, to the Six Day Stilt.</choice>
       <choice GotoID="Who">Who are you?</choice>
-      <choice GotoID="Weight">You're quite large.</choice>
+      <choice GotoID="Weight" IfSpeakerFat="true">You're quite large.</choice>
       <choice GotoID="Warden">What is a Warden?</choice>
       <choice GotoID="End">Live and drink.</choice>
     </node>
@@ -266,6 +286,22 @@
 
   <!-- tinkers -->
   <conversation ID="tinker">
+    <node ID="Start" IfSpeakerFat="false">
+      <text>
+        Use your gadgets hard, don't you? I can fix them.~
+        I can repair, recharge, and identify whatever you have! Within reason.~
+        If you've got anything you can't make heads or tails of it, give it here.~
+        You've got to respect a machine. Machines bite harder than any croc.~
+        You a maker?~
+        Take out what you've busted and I'll jury-rig it for a fair price.~
+        Need scrap?~
+        You get used to the nicks and burns, after years working with spark and solder.~
+        They say some folks can talk to machines. I say we all can, if we listen right.~
+        My fees for battery charging depend how empty the battery is when you bring it to me.~
+        Absolutely no refunds or returns on scrap.
+      </text>
+      <choice GotoID="End">Live and drink.</choice>
+    </node>
     <node ID="Start">
       <text>
         Use your gadgets hard, don't you? I can fix them.~
@@ -330,6 +366,19 @@
 
   <!-- village apothecaries -->
   <conversation ID="herbalist">
+    <node ID="Start" IfFat="false">
+      <text>
+        I've the cure for what ails you.~
+        You don't look so good. You need more yuckwheat and honey in your diet.~
+        Cook your meals with yuckwheat if you feel sick. Catch a disease early enough and you can kill it.~
+        "Ease the pain, addle the brain." Be careful when you chew witchwood bark.~
+        Best not leave town without some bark and bandages, wayfarer.~
+        Live and drink. Keeping well, I hope?~
+        How are you feeling today, =player.formalAddressTerm=?~
+        Moon and sun, =player.formalAddressTerm=. Keeping healthy?
+      </text>
+      <choice GotoID="End">Live and drink.</choice>
+    </node>
     <node ID="Start">
       <text>
         I've the cure for what ails you.~
@@ -339,6 +388,7 @@
         Best not leave town without some bark and bandages, wayfarer.~
         Live and drink. Keeping well, I hope?~
         Looking well-fed, =player.formalAddressTerm=. I hope you're staying healthy, I'd hate to see you lose that softness to sickness...~
+        You've a healthy softness there, though one could always be healthier.~
         How are you feeling today, =player.formalAddressTerm=?~
         Moon and sun, =player.formalAddressTerm=. Keeping healthy?
       </text>
@@ -348,10 +398,11 @@
 
   <!-- chefs  -->
   <conversation ID="chef">
-    <node ID="Start">
+    <node ID="Start" IfFat="false">
       <text>
         I tell you, =player.formalAddressTerm=, my recipes come from years of experience. There's none the like.~
         Finest food for parasangs! Finest food in Qud! Recipes and samples!~
+        Such a scrawny physique... You came to the right place.~
         I will share my food-secrets with you, =player.formalAddressTerm=, if you're willing to make it worth my while.~
         Do you cook, =player.formalAddressTerm=? So long as you aren't the type to throw whatever local debris you find in the pot, I have wares for you.~
         Not a word of lie, I studied under a chef who studied under Agate Severance Star herself. That's why my recipes are the best.~
@@ -359,6 +410,22 @@
         Cookbooks are best named from the heart. Those who ridicule the name of a cookbook have lost their sense of wonder.~
         Why =player.formalAddressTerm=, you're positively wasting away! Buy something to put some meat on those bones, won't you?~
         Live and eat, =player.formalAddressTerm=.~
+        You know, a skinny glutton is a sad thing indeed.~
+        Live and drink, =player.formalAddressTerm=.
+      </text>
+      <choice GotoID="End">Live and drink.</choice>
+    </node>
+    <node ID="Start">
+      <text>
+        I tell you, =player.formalAddressTerm=, my recipes come from years of experience. There's none the like.~
+        Finest food for parasangs! Finest food in Qud! Recipes and samples!~
+        You're the kind who enjoys a good meal, aren't you? I'm sure my recipes will suit your refined palate.~
+        I will share my food-secrets with you, =player.formalAddressTerm=, if you're willing to make it worth my while.~
+        Do you cook, =player.formalAddressTerm=? So long as you aren't the type to throw whatever local debris you find in the pot, I have wares for you.~
+        Not a word of lie, I studied under a chef who studied under Agate Severance Star herself. That's why my recipes are the best.~
+        Try my recipe. You'll believe =player.reflexive= to be judging the Carbide Chefs in the Kitchen Heptagon itself.~
+        Cookbooks are best named from the heart. Those who ridicule the name of a cookbook have lost their sense of wonder.~
+        Live and eat, =player.formalAddressTerm=. Though, I doubt you need any further encouragement.~
         Live and drink, =player.formalAddressTerm=.
       </text>
       <choice GotoID="End">Live and drink.</choice>
@@ -367,6 +434,23 @@
 
   <!-- kippers -->
   <conversation ID="kipper">
+    <node ID="Start" IfFat="false">
+      <text>
+        Smell a bit strong? That's how you know it's good.~
+        You can preserve almost anything. Al... most.~
+        Preserved ingredients cook better, safer.~
+        Everything I sell is safe to eat as it is.~
+        Welcome, =player.formalAddressTerm=. Need vittle?~
+        Crave a bit of salt, =player.formalAddressTerm=, or a load of salt?~
+        Nothing sadder than a cookfire and nothing to cook over it.~
+        Are you a chef, =player.formalAddressTerm=? My vittles are of the highest quality.~
+        So frail! You've been eating whatever detritus you find, haven't you? I've just the goods to bulk you up a bit...~
+        Cooking is an art of electrochemistry, and fine ingredients are a must to fill one's belly.~
+        If you cook without care or intent, you may as well eat nothing at all.~
+        Nourishment for the road, =player.formalAddressTerm=?
+      </text>
+      <choice GotoID="End">Live and drink.</choice>
+    </node>
     <node ID="Start">
       <text>
         Smell a bit strong? That's how you know it's good.~
@@ -378,7 +462,8 @@
         Nothing sadder than a cookfire and nothing to cook over it.~
         Are you a chef, =player.formalAddressTerm=? My vittles are of the highest quality.~
         You look like the type who enjoys a good meal, =player.formalAddressTerm=.~
-        Cooking is an art of electrochemistry, and fine ingredients are a must to fill one's belly. If you cook without care or intent, you may as well eat nothing at all.~
+        Cooking is an art of electrochemistry, and fine ingredients are a must to fill one's belly.~
+        If you cook without care or intent, you may as well eat nothing at all.~
         Nourishment for the road, =player.formalAddressTerm=?
       </text>
       <choice GotoID="End">Live and drink.</choice>
@@ -387,6 +472,19 @@
 
   <!-- vintners -->
   <conversation ID="vintner">
+    <node ID="Start" IfFat="false">
+      <text>
+        Greetings, =player.formalAddressTerm=.~
+        Live and drink deeply, =player.formalAddressTerm=.~
+        Ah, =player.formalAddressTerm=, please come in.~
+        My wares are sweet and strong, =player.formalAddressTerm=. Care to try them?~
+        Tell me, =player.formalAddressTerm=, is there any sight more sad than a hookah tent without wine?~
+        Wine, cheese, bread. =player.FormalAddressTerm=, tell me, is there anything else you truly need?~
+        The kipper and I both know that the finest ingredient is time.~
+        Greetings, =player.formalAddressTerm=. Try some rose wine? One rose is fair, but as you may know from hanging around the Stiltgrounds, five is death.
+      </text>
+      <choice GotoID="End">Live and drink.</choice>
+    </node>
     <node ID="Start">
       <text>
         Greetings, =player.formalAddressTerm=.~
@@ -424,7 +522,7 @@
 
   <!-- gutsmongers -->
   <conversation ID="gutsmonger">
-    <node ID="Start" IfTrueKin="true">
+    <node ID="Start" IfTrueKin="true" IfFat="false">
       <text>
         Hold, aristocrat! I have wares to claim your interest.~
         My implants are acquired peaceably, I assure you.~
@@ -441,7 +539,42 @@
       <choice GotoID="End">Live and drink.</choice>
     </node>
 
-    <node ID="Start">
+    <node ID="Start" IfTrueKin="true">
+      <text>
+        Hold, aristocrat! I have wares to claim your interest.~
+        My implants are acquired peaceably, I assure you.~
+        How becoming you look, Aristocrat! But you could be more becoming.~
+        Tire of your legs? Arms? Hands? See what I have that fits you.~
+        Luxury internal adornments for the discerning Aristocrat.~
+        No additional sterilisation required, of course.~
+        Quality implants for sale at reasonable prices!~
+        You strike me as an Aristocrat who knows the value of artisanal organs.~
+        I recommend everything I carry. Not all at once, of course.~
+        Hope you'll "becoming" back, ha ha.~
+        My implants would simply look divine between your folds, Aristocrat.~
+        Such a rotund body is truly becoming of nobility! I can see you've excellent taste.~
+        Your legs must tire under such girth, Aristocrat! Could I interest you in some mobility enhancements?~
+        Live and drink, Aristocrat.
+      </text>
+      <choice GotoID="End">Live and drink.</choice>
+    </node>
+
+    <node ID="Start" IfFat="false">
+      <text>
+        Kill anyone valuable?~
+        You look dangerous. Ever go hunting for parts?~
+        Got guts?~
+        Can you imagine sticking one of these things inside you? Disgusting.~
+        I've plenty water if you've got implants to sell.~
+        Always check becoming nook shelves for parts.~
+        Y'ain't peeled open any Sons or Daughters, have you?~
+        Less I know about where my stock comes from, the better.~
+        I'll still take parts you ain't washed off, it's fine.~
+        If you can butcher a boar, you can do the same to a man. Just ain't meat you're looking for.~
+        My best customers don't ask questions. My best stock asked too many.~
+        Live and drink.
+      </text>
+      <node ID="Start">
       <text>
         Kill anyone valuable?~
         You look dangerous. Ever go hunting for parts?~
@@ -479,6 +612,20 @@
 
   <!-- shoemakers -->
   <conversation ID="shoemaker">
+    <node ID="Start" IfFat="false">
+      <text>
+        Hello, hello, =player.formalAddressTerm=, let's get your weary feet covered.~
+        Come in, =player.formalAddressTerm=, and let me 'shoe' you around, ha ha!~
+        Boots! Shoes! Slippers! Sabatons! How would you prefer to cover your feet, =player.formalAddressTerm=?~
+        Even as high-quality as my products are, =player.formalAddressTerm=, I don't suggest you go walking in the fracti to test them out.~
+        Anything you need to ask 'a boot', =player.FormalAddressTerm=? Just a little cobbler's joke, there.~
+        Hot sands out there, =player.formalAddressTerm=. Is your footwear protecting you?~
+        Hello, =player.formalAddressTerm=! Care to be shod?~
+        Walk a few parasangs in my shoes, =player.formalAddressTerm=, and you'll wonder how you ever did otherwise.~
+        Live and drink, =player.formalAddressTerm=.
+      </text>
+      <choice GotoID="End">Live and drink.</choice>
+    </node>
     <node ID="Start">
       <text>
         Hello, hello, =player.formalAddressTerm=, let's get your weary feet covered.~
@@ -490,7 +637,7 @@
         Hello, =player.formalAddressTerm=! Care to be shod?~
         Walk a few parasangs in my shoes, =player.formalAddressTerm=, and you'll wonder how you ever did otherwise.~
         Not much for exercise, =player.formalAddressTerm=? I've some fine slippers to turn heads at the hookah tent.~
-
+        My shoes are of highest quality, =player.formalAddressTerm=, but perhaps you should be more concerned with finding new trousers...~
         Live and drink, =player.formalAddressTerm=.
       </text>
       <choice GotoID="End">Live and drink.</choice>
@@ -499,6 +646,20 @@
 
   <!-- haberbashers -->
   <conversation ID="haberdasher">
+    <node ID="Start" IfFat="false">
+      <text>
+        Please, =player.formalAddressTerm=, do come in. Take your time browsing my wares.~
+        Welcome, =player.formalAddressTerm=, to the sole bastion of class in this wretched place.~
+        Please knock the sand from your feet, =player.formalAddressTerm=. It gets everywhere.~
+        Ah, =player.formalAddressTerm=, I can certainly help you.~
+        How may I clothe you, =player.formalAddressTerm=?~
+        Now, =player.formalAddressTerm=, I know you must have an eye for fashion, if you're here.~
+        Oh dear. Who dressed you, =player.formalAddressTerm=? Let me help you, please.~
+        You simply MUST do something about that bony little body of yours, any of my items would look like tablecloth upon you.~
+        Live and drink, =player.formalAddressTerm=.
+      </text>
+      <choice GotoID="End">Live and drink.</choice>
+    </node>
     <node ID="Start">
       <text>
         Please, =player.formalAddressTerm=, do come in. Take your time browsing my wares.~
@@ -511,6 +672,7 @@
         Mmm, you larger folk wear fine dress so well, you know.~
         I hope you aren't coming for repairs, my rotund friend. You'll have to speak to a tailor about that.~
         My wares are crafted with painstaking effort, =player.formalAddressTerm=, do try not to outgrow them too quickly.~
+        My goodness, you've grown. I doubt the usual will suffice.~
         Live and drink, =player.formalAddressTerm=.
       </text>
       <choice GotoID="End">Live and drink.</choice>
@@ -519,6 +681,22 @@
 
   <!-- armorers -->
   <conversation ID="armorer">
+    <node ID="Start" IfFat="false">
+      <text>
+        {{emote|*silent nod*}}~
+        Careful. It's hot.~
+        =player.FormalAddressTerm=. Need protection?~
+        Be quick about it, eh?~
+        Greetings.~
+        Mm?~
+        I've got my eye on you.~
+        Leather, ring, and plate, to keep you alive.~
+        Don't get near the hearth.~
+        A healthy body is the best protection, skinbones. My equipment is wasted on your ilk.~
+        =player.FormalAddressTerm=. Live and drink.
+      </text>
+      <choice GotoID="End">Live and drink.</choice>
+    </node>
     <node ID="Start">
       <text>
         {{emote|*silent nod*}}~
@@ -556,7 +734,7 @@
 
   <!-- gunsmiths -->
   <conversation ID="gunsmith">
-    <node ID="Start">
+    <node ID="Start" IfFat="false">
       <text>
         You can't go wrong with my slugspitters, =player.formalAddressTerm=.~
         Guns, guns, guns! Don't they just make you smile?~
@@ -564,6 +742,21 @@
         Ahh, I love the smell of cordite. You know, that sulfury smell? Accelerants make a fine perfume, if you ask me.~
         You know, =player.formalAddressTerm=, I once had an traveler from Yawningmoon tell me my shop smelled of home. Now I want to visit! Hah!~
         May you find adequate cover and more loot than you can carry, =player.formalAddressTerm=.~
+        I used to be a wayfarer like you, =player.formalAddressTerm=, but old wounds slow you down. Cherish the time while you have it.~
+        I wish I could allow you to test my wares in the shop, =player.formalAddressTerm=, but walk a parasang in any direction and you'll find a target.~
+        Might not want to touch anything on the workbenches, =player.formalAddressTerm=.~
+        Live, drink, and shoot, =player.formalAddressTerm=, in whichever order you like.
+      </text>
+      <choice GotoID="End">Live and drink.</choice>
+    </node>
+    <node ID="Start">
+      <text>
+        You can't go wrong with my slugspitters, =player.formalAddressTerm=.~
+        Guns, guns, guns! Don't they just make you smile?~
+        =player.FormalAddressTerm=, I tell you: there is no defense like a good, and distant, offense.~
+        Ahh, I love the smell of cordite. You know, that sulfury smell? Accelerants make a fine perfume, if you ask me.~
+        You know, =player.formalAddressTerm=, I once had an traveler from Yawningmoon tell me my shop smelled of home. Now I want to visit! Hah!~
+        May you find adequate cover and more loot than you can carry, =player.formalAddressTerm=. Though with that physique... I think I saw a cragsmensch you could hide behind nearby, heh!~
         I used to be a wayfarer like you, =player.formalAddressTerm=, but old wounds slow you down. Cherish the time while you have it.~
         I wish I could allow you to test my wares in the shop, =player.formalAddressTerm=, but walk a parasang in any direction and you'll find a target.~
         Might not want to touch anything on the workbenches, =player.formalAddressTerm=.~
@@ -606,6 +799,8 @@
         Enter, =player.formalAddressTerm=, and behold my jewels and figurines.~
         Uncrafted jewels and metals buy and sell for the same cost, but my art's price tag is up to me.~
         Every statuette is a tribute, of a kind, but not every tribute is received well.~
+        I put great care into the anatomical details of my pieces, heh. I hope it is appreciated.~
+        Some say bigger is better, well it's definitely more expensive. The rarer the jewel, the heftier the haunches.~
         Wouldn't these make a fine conversation piece for a water ritual?~
         Beautiful baubles and gleaming gemstones over here!
       </text>
