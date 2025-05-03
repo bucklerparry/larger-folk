@@ -11383,47 +11383,18 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
   <object Name="LoudSixDayZealot" Inherits="SixDayZealot">
     <part Name="SixDayZealot" OriginalLastTalk="10" QuietTimer="10" />
   </object>
-  <object Name="Lulihart" Inherits="BaseHindren">
-    <part Name="Render" DisplayName="Lulihart" RenderString="h" Tile="creatures/sw_lulihart.bmp" ColorString="&amp;C" />
-    <part Name="Titles" Ordinary="hindren pariah" />
-    <stat Name="Level" Value="20" />
-    <stat Name="Strength" Value="12" />
-    <stat Name="Agility" Value="24" />
-    <stat Name="Toughness" Value="16" />
-    <stat Name="Intelligence" Value="22" />
-    <stat Name="Willpower" Value="20" />
-    <stat Name="Ego" Value="20" />
-    <stat Name="Hitpoints" Value="60" />
-    <inventoryobject Blueprint="Steel Dagger" Number="4" />
-    <inventoryobject Blueprint="Crude Toga" Number="1" />
-    <inventoryobject Blueprint="Borderlands Revolver" Number="2" />
-    <inventoryobject Blueprint="Lead Slug" Number="16" />
-    <inventoryobject Blueprint="LeatherBracer" Number="2" />
-    <part Name="ConversationScript" ConversationID="Lulihart" />
-    <part Name="Brain" Wanders="false" Factions="Pariahs-100" />
-    <part Name="GivesRep" />
-    <xtagWaterRitual NoJoin="true" SellSkill="false" SellBlueprints="true" numRecipes="1"></xtagWaterRitual>
-    <xtagGrammar Proper="true"></xtagGrammar>
-    <skill Name="ShortBlades_Jab" />
-    <skill Name="ShortBlades" />
-    <skill Name="Pistol" />
-    <skill Name="Pistol_Akimbo" />
-    <skill Name="Multiweapon_Fighting" />
-    <skill Name="Multiweapon_Proficiency" />
-    <mutation Name="MultipleArms" Level="4" />
-    <mutation Name="MultipleLegs" Level="4" />
-    <mutation Name="Cryokinesis" Level="5" />
-    <mutation Name="ForceBubble" Level="5" />
-    <part Name="Description" Short="There is little more to the slight deerkin than a bundle of spindly limbs, patchy pale-green fur, and tooth-white skin. Despite being one of the dune's more delicate creatures, =pronouns.subjective= =verb:perch:afterpronoun= on =pronouns.possessive= hooves with easy composure." />
-    <part Name="AISelfPreservation" Threshold="60" />
-    <tag Name="Gender" Value="hartind" />
-    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
-    <tag Name="NoHateFactions" Value="Wardens,Mechanimists,Resheph" />
-    <tag Name="Mayor" Value="Pariahs" />
+  <object Name="Lulihart" Load="Merge"> <!-- BaseHindren-->
+    <part Name="Render" DisplayName="Lulihart" RenderString="h" Tile="bucklerparry_largerfolk/lulihart_fat.png" ColorString="&amp;C" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="creatures/sw_lulihart.bmp" WeightStage_1="bucklerparry_largerfolk/lulihart_fat.png" />
+    <part Name="Description" Short="Exile has treated the overstuffed hindren well, rounding out =pronouns.possessive= patchy deerskin with voluptuous mealmeat. =pronouns.Possessive= flabby extra limbs soak up excess intake, leading the upper body to appear smaller than one might expect. Beneath it, =pronouns.possessive= factory-default cervid body shows the true brunt of =pronouns.possessive= indulgence, bloated and only semi-mobile. Despite being one of the dune's more delicate creatures, =pronouns.subjective= =verb:perch:afterpronoun= on =pronouns.possessive= hooves with easy composure, somewhat complicated by the breadth of =pronouns.possessive= flabby digitigrades." />
+    <part Name="LargerFolk_WeightDescription" 
+      WeightDescription_0="There is little more to the slight deerkin than a bundle of spindly limbs, patchy pale-green fur, and tooth-white skin. Despite being one of the dune's more delicate creatures, =pronouns.subjective= =verb:perch:afterpronoun= on =pronouns.possessive= hooves with easy composure." 
+      WeightDescription_1="Exile has treated the overstuffed hindren well, rounding out =pronouns.possessive= patchy deerskin with voluptuous mealmeat. =pronouns.Possessive= flabby extra limbs soak up excess intake, leading the upper body to appear smaller than one might expect. Beneath it, =pronouns.possessive= factory-default cervid body shows the true brunt of =pronouns.possessive= indulgence, bloated and only semi-mobile. Despite being one of the dune's more delicate creatures, =pronouns.subjective= =verb:perch:afterpronoun= on =pronouns.possessive= hooves with easy composure, somewhat complicated by the breadth of =pronouns.possessive= flabby digitigrades." />
+
   </object>
   <object Name="Tszappur" Load="Merge">
     <part Name="Render" DisplayName="Tszappur" Tile="bucklerparry_largerfolk/stranger1_fat.png" ColorString="&amp;Y" DetailColor="C" />
-    <part Name="WeightStage_Render" WeightStage_0="creatures/sw_stranger1.bmp" WeightStage_1="bucklerparry_largerfolk/stranger1_fat.png" />
+    <part Name="LargerFolk_WeightStage_Render" WeightStage_0="creatures/sw_stranger1.bmp" WeightStage_1="bucklerparry_largerfolk/stranger1_fat.png" />
     <part Name="Description" Short="Folds of coarse-weave physician's cloth fail to cover =pronouns.possessive= mounds of flab, and the crinkled brim of an old hat blots the sun and starlight. =pronouns.Possessive= hardy constitution gives an impression of unlikely spriteliness, beneath the copious coils of poundage that would immobilize a lesser worshipper." />
     <part Name="LargerFolk_WeightDescription" 
     WeightDescription_0="Folds of coarse-weave physician's cloth hang off =pronouns.possessive= lissome frame like a gunslinger's shawl, and the crinkled brim of an old hat blots the sun and starlight." 
