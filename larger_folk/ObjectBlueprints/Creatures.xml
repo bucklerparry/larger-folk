@@ -6014,24 +6014,13 @@ The infant child is unaware
     <stat Name="AV" Value="5" />
     <part Name="TurretTinker" TurretType="Missile Launcher" />
   </object>
-  <object Name="BaseSlynth" Inherits="BaseHumanoid">
-    <part Name="Render" DisplayName="slynth" Tile="creatures/sw_slynth.bmp" RenderString="152" ColorString="&amp;g" DetailColor="m" />
+  <object Name="BaseSlynth" Load="Merge"> <!--Inherits="BaseHumanoid"-->
+    <part Name="Render" DisplayName="slynth" Tile="bucklerparry_largerfolk/slynth_fat.png" RenderString="152" ColorString="&amp;g" DetailColor="m" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="creatures/sw_slynth.bmp" WeightStage_1="bucklerparry_largerfolk/slynth_fat.png" />
     <part Name="Description" Short="=pronouns.Subjective= =verb:peer:afterpronoun= out from under the broad brim-leaf that drapes atop =pronouns.possessive= head like a hat, and the blossom crowning the verdant cap casts a flushed glow about =pronouns.objective=. Lilypads have never before walked, but =pronouns.possessive= roots gather with each step lifted, flattening wide again when placed." />
-    <tag Name="RandomGender" Value="male,female,nonspecific" />
-    <part Name="Corpse" CorpseChance="0" />
-    <stat Name="Level" Value="24" />
-    <stat Name="Hitpoints" Value="100" />
-		<stat Name="AV" Value="4" />
-    <part Name="ConversationScript" ConversationID="Slynth" />
-    <part Name="Brain" Factions="Newly Sentient Beings-100" Hostile="false" />
-    <tag Name="Species" Value="slynth" />
-    <tag Name="BaseObject" Value="*noinherit" />
   </object>
-  <object Name="Slynth Wanderer" Inherits="BaseSlynth">
+  <object Name="Slynth Wanderer" Load="Merge"> <!-- Inherits="BaseSlynth"-->
     <part Name="Description" Short="From a distance, =pronouns.subjective= could be mistaken for a human wearing a wide-brimmed, lanterned hat, but =pronouns.subjective= =verb:are:afterpronoun= no human and =pronouns.possessive= hat is no vestment. =pronouns.Subjective= =verb:carry:afterpronoun= =pronouns.possessive= weapons and gear in flexible green digits, the broad leaf atop =pronouns.possessive= head scored and weathered, the shining flower atop =pronouns.possessive= crown glowing bright. =pronouns.Subjective= =verb:dress:afterpronoun= as a wanderer and =verb:speak:afterpronoun= as if new to the practice. " />
-    <stat Name="Level" Value="30" />
-    <tag Name="InventoryPopulationTable" Value="SlynthWandererGear" />
-    <part Name="ConversationScript" ConversationID="SlynthWanderer" />
   </object>
   <object Name="SoupSludgeSpawnerTier6" Inherits="SoupSludge">
     <part Name="SoupSludgeSpawner" Rank="3-4" />
@@ -10079,7 +10068,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
 		<mixin Name="BaseVehicleGolem" />
 		<part Name="Render" DisplayName="slug golem" RenderString="Q" Tile="Creatures/sw_golem_slug.png" />
 	</object>
-	<object Name="Slynth Golem" Inherits="BaseSlynth">
+	<object Name="Slynth Golem" Load="Merge"> <!--Inherits="BaseSlynth"-->
 		<mixin Name="BaseVehicleGolem" />
 		<part Name="Render" DisplayName="slynth golem" RenderString="152" Tile="Creatures/sw_golem_slynth.png" />
 	</object>
@@ -12331,10 +12320,8 @@ In Barathrum's name, =pronouns.subjective==verb:'ve:afterpronoun= conferred onto
   </object>
   
   <!-- Bethesda Susa -->
-  <object Name="Alchemist" Inherits="NPC">
+  <object Name="Alchemist" Load="Merge"> <!--Inherits="NPC"-->
     <part Name="Render" DisplayName="alchemist" Tile="bucklerparry_largerfolk/alchemist_fat.png" ColorString="&amp;M" TileColor="&amp;M" DetailColor="B" RenderString="h" />
-    <part Name="ConversationScript" ConversationID="SusaAlchemist" />
-    <part Name="Brain" Wanders="false" Hostile="false" Factions="Prey-100" />
     <part Name="Description" Short="&quot;Let the manes put off their terror, let them put off their aqueous bodies with fire.
       Let them draw together the bones of the metal.
       Selvaggia, Guiscarda, Mandetta,
@@ -12347,25 +12334,6 @@ In Barathrum's name, =pronouns.subjective==verb:'ve:afterpronoun= conferred onto
       Quiet this metal.&quot;
       -Ezra Pound.
       ... Or something. Your gaze is drawn inexorably to =pronouns.possessive= pendulous chest, and the poetry is lost on your vacant mind... It really is unnaturally large, no doubt the result of some dark experiment." />
-    <stat Name="Intelligence" Value="59" />
-    <stat Name="Willpower" Value="52" />
-    <stat Name="Ego" Value="22" />
-    <stat Name="Hitpoints" Value="175" />
-    <stat Name="Level" Value="30" />
-    <inventoryobject Blueprint="Sooty Smock" Number="1" />
-    <inventoryobject Blueprint="FluxPhial_NoSell" Number="1" />
-    <inventoryobject Blueprint="Phial" Number="1d4+3" />
-    <inventoryobject Blueprint="Corpus" />
-    <tag Name="Genotype" Value="Mutated Human" />
-    <builder Name="AlchemistEquipment" />
-    <part Name="Alchemist" />
-    <part Name="ChatAchievement" AchievementID="ACH_SPEAK_ALCHEMIST" />
-    <part Name="AISelfPreservation" Threshold="99" />
-    <part Name="Interesting" />
-    <!--<tag Name="RandomGender" Value="male,female,genericpersonalsingular,personalsingular,personal,generate" />
-    <tag Name="RandomPronounSet" Value="genericpersonal,personal,any,generate" />
-    <tag Name="RandomPronounSetChance" Value="30" />-->
-    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
   </object>
   <object Name="Skybear" Inherits="NPC">
     <part Name="Render" DisplayName="Saad Amus" Tile="Creatures/sw_skybear.bmp" ColorString="&amp;M" TileColor="&amp;Y" DetailColor="M" RenderString="U" />
@@ -13072,15 +13040,9 @@ This one is jeweled in the eroded scrap of the Tomb." />
   </object>  
 
   <!-- Hydropon -->
-  <object Name="Thah" Inherits="BaseSlynth">
+  <object Name="Thah" Load="Merge"> <!--Inherits="BaseSlynth"-->
     <part Name="Render" DisplayName="Thah" ColorString="&amp;r" DetailColor="m" />
-    <part Name="Brain" Wanders="false" />
     <part Name="Description" Short="From a distance, the slynth could be mistaken for a human wearing a wide-brimmed, lanterned hat, but =pronouns.subjective= =verb:are:afterpronoun= no human and =pronouns.possessive= hat is no vestment. This one crooks with a small hunch earned from many hours of reading over many years. =pronouns.Subjective= =verb:reel:afterpronoun= with the anxious air of a being waiting for something unknown." />
-    <stat Name="Level" Value="30" />
-    <part Name="ConversationScript" ConversationID="Thah" />
-    <xtagGrammar Proper="true" />
-    <tag Name="SlynthQuestGiver" />
-    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
   </object>
 
 	<!-- Chavvah -->

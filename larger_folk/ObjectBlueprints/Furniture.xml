@@ -607,6 +607,12 @@
     <part Name="Description" Short="Stone asserts its importance by orienting toward the firmament, whence the oldest wisdom stirs." />
   </object>
 
+  <object Name="Shower" Inherits="MountedFurniture">
+    <part Name="Render" DisplayName="shower" Tile="bucklerparry_largerfolk/furniture_shower.png" ColorString="&amp;y" DetailColor="k"/>
+    <part Name="Description" Short="A lineoleum wetting-box invites the weary to its amniotic chamber. Be reborn in its waters, and see your body in a different light." />
+    <part Name="ConversationScript" ConversationID="ShowerUse" />
+  </object>
+
   <!-- End village monuments -->
 
   <!--

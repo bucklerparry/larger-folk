@@ -3,6 +3,48 @@
   <!-- Inherited by all conversations by default, unless another base or empty string is specified in Inherits="" -->
     <!-- Conversation level choices are distributed to all start nodes by default -->
 
+
+
+  <conversation ID="ShowerUse">
+    <node ID="Start" IfWeightStage="3">
+      <text>
+        Try as you might, your couch-sized haunches and prodigious gut make entrance to the wetting-box an impossibility.
+        You are simply to large to effectively use this device.
+        <choice GotoID="End">You cannot help but redden at the thought.</choice>
+      </text>
+    </node>
+    <node ID="Start">
+      <text>
+        You enter into the wetting-box, turn the tap and release the torrent.
+      </text>
+      <choice GotoID="CleaningBody">Revel in your physicality.</choice>
+    </node>
+
+    <node ID="CleaningBody" IfWeightStage="0">
+      <text>
+        You run your hands across your lithe physique, working moisture into every crack and crevice (of which there aren't many).
+        Your body is light, perhaps scrawny- Only the necessary tissues cover it, with no frills to speak of.
+      </text>
+      <choice GotoID="End">Finish showering.</choice>
+    </node>
+    <node ID="CleaningBody" IfWeightStage="1">
+      <text>
+        You run your hands across your tubby physique, working moisture into every flabby fold.
+        Your body is well-fed, padded all over with a healthy softness.
+      </text>
+      <choice GotoID="End">Finish showering.</choice>
+    </node>
+    <node ID="CleaningBody" IfWeightStage="2">
+      <text>
+        You run your hands over your obese physique, working moisture into every deep crevice with some measure of difficulty.
+        Your body is replete to the point of hindrance, covered in excess poundage that complicates the task of cleaning it.
+        The face, the hands, the feet, all parts that would normally stay slender are starting to swell up in turn with how much adipose you've packed on.
+      </text>
+      <choice GotoID="End">Finish showering.</choice>
+    </node>
+    
+  </conversation>
+
 	<!--
 
     ************
@@ -96,7 +138,7 @@
   </conversation>
   
   <conversation ID="WardenEsthers">
-    <start ID="Welcome">
+    <start ID="Welcome" IfFat="false">
       <text>
         Live and drink, traveler. Welcome to the Stilt.
       </text>
@@ -107,6 +149,23 @@
       <choice GotoID="Bazaar">What a grand bazaar! What's in each of these tents?</choice>
       <choice GotoID="End">Live and drink, wardens.</choice>
     </start>
+    <start ID="Welcome">
+      <text>
+        Live and drink, traveler. Welcome to the Stilt. It must have been a troublesome journey, for such a fat'ed pilgrim.
+      </text>
+      <choice GotoID="WeightTease" IfSpeakerFat="true">You're one to disparage my weight, tubby.</choice>
+      <choice GotoID="Praise">Praise be to Shekhinah! O, sovereign Fathers... at last, I am here!</choice>
+      <choice GotoID="Huh">This is the Six Day Stilt, huh. It's... colossal, beautiful. I see why the chrome stewards gather here.</choice>
+      <choice GotoID="Folks">So... many... folks....</choice>
+      <choice GotoID="True">Is it true what they say? That it's a petrified kraken?</choice>
+      <choice GotoID="Bazaar">What a grand bazaar! What's in each of these tents?</choice>
+      <choice GotoID="End">Live and drink, wardens.</choice>
+    </start>
+    <node ID="WeightTease" Inherits="Welcome">
+      {{emote|*The warden shifts, blushing.*}}
+      Nothing a good runaround can't burn...
+      <choice GotoID="Welcome">Right...</choice>
+    </node>
     <node ID="Praise" Inherits="Welcome">
       You are among friends here, pilgrim. Stay peaceful.
     </node>
@@ -512,7 +571,7 @@
         Pouring, decanting, collecting, mixing. I adore my calling.~
         If it flows, I desire it. You should too, =player.formalAddressTerm=.~
         Do you ever stop and think about fluids? Are they not divine?~
-        Someday I will plumb the depths of Bethesda Susa, that I may meet the Alchemist. I hear their ti-, er, tinctures, are most incredible.~
+        Someday I will plumb the depths of Bethesda Susa, that I may meet the Alchemist. I hear their tits-, er, tinctures, are most incredible.~
         Some speak of a fluid that repletes the body with rolls and folds. It sounds like a dream, doesn't it?~
         Live and drink, and collect, and combine...
       </text>
@@ -4372,6 +4431,7 @@
         I prefer liquids.
       </text>
       <choice GotoID="Liquids">Who are you?</choice>
+      <choice GotoID="Chest">You've two fine, er, alembics there.</choice> 
       <choice GotoID="End">Live and drink, hermit.</choice>
     </node>
     <node ID="Liquids">
@@ -4384,6 +4444,20 @@
       </text>
       <choice GotoID="End">Live and drink, hermit.</choice>
     </node>
+    <node ID="Chest">
+      <text>
+        Flasks of my own internal agriculture. I grew them myself, so as to produce a liquid of my own. 
+
+        {{emote|*The Alchemist hefts =pronouns.possessive= ample breasts with heavy-gloved hands, and sets them back to a slight jiggle within =pronouns.possessive= rugged apron.}}
+
+        My hypothesis is sound. But the growth is not enough, not enough.
+
+        Perhaps something is missing.
+
+        {{emote|*You get the sense that whatever it is the alchemist hopes to acquire, it isn't to be found in the current version...*}}
+      </text>
+      <choice GotoID="End">Live and milk, hermit.</choice>
+    </node>
   </conversation>
   <!-- Asphodel -->
 
@@ -4395,7 +4469,7 @@
       </text>
       <choice ID="WhyYours" GotoID="Yours">Are you truly the Earl of Omonporch?</choice>
       <choice ID="NeedThisLand" GotoID="Lease" IfHaveQuest="The Earl of Omonporch">Earl Asphodel, the Barathrumites request your permission to lease control of the Spindle. Their inquiries into the past have led them here.</choice>
-      <choice ID="TouchFronds_go" GotoID="TouchFronds"> Can I touch your, um, fronds? </choice>
+      <choice ID="TouchFronds_go" IfSpeakerFat="true" GotoID="TouchFronds"> Can I touch your, um, fronds? </choice>
       <choice ID="ByeAsphodel" GotoID="End">Live and drink, Earl.</choice>
     </node>
     <node ID="Yours">
@@ -4407,13 +4481,13 @@
     </node>
     <node ID="TouchFronds">
       <text>
-        Ah, well, if it's for a friend of the consortium I can oblige...
+        Ah, well, I suppose I can oblige... My foliage has widened of late, I hope it's to your liking.
       </text>
       <choice ID="TouchFronds2_go" GotoID="TouchFronds2">Yay!</choice>
     </node>
     <node ID="TouchFronds2">
       <text>
-        {{emote|*You run your hands across Asphodel's engorged foliage. Xyr tendrils are thick with excess nutrients, wobbling with every touch. Sap, or chlorophyll, or somesuch fluid beats through xyr veins, drumming out a rhythmic pulsation under your fingertips. Xe turns xyr blossom to follow your wandering hands, xyr overgrown florets tightening and shivering in the folds of xyr fattened corona with every touch. It seems like xyr very sensitive...*}}
+        {{emote|*You run your hands across Asphodel's engorged foliage. Xyr tendrils are thick with excess nutrients, wobbling with every touch. Sap, or chlorophyll, or somesuch fluid beats through xyr veins, drumming out a rhythmic pulsation under your fingertips. Xe turns xyr blossom to follow your wandering hands, xyr overgrown florets tightening and shivering in the folds of xyr fattened corona with every touch. It seems like they're very sensitive...*}}
       </text>
       <choice ID="TouchFronds3_go" GotoID="TouchFronds3">You suddenly feel very self-conscious.</choice>
     </node>
