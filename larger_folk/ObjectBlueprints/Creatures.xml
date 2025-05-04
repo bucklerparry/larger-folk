@@ -365,33 +365,15 @@
     <tag Name="WaterRitualLiquid" Value="blood" />
     <tag Name="BaseObject" Value="*noinherit" />
   </object>
-	<object Name="BaseGoat" Inherits="BaseAnimal">
+	<object Name="BaseGoat" Load="Merge"> <!--Inherits="BaseAnimal"-->
 		<part Name="Render" DisplayName="goat" Tile="bucklerparry_largerfolk/goat_fat.png" RenderString="g" ColorString="&amp;w" DetailColor="y" />
-		<part Name="Corpse" CorpseChance="10" CorpseBlueprint="Goat Corpse" />		
-		<part Name="Brain" Hostile="false" Factions="Prey-100" />		
-		<skill Name="Endurance" />
-		<skill Name="Shield" />
-		<part Name="ConversationScript" ConversationID="Goats" />				
-		<part Name="InhabitAchievement" AchievementID="ACH_INHABIT_GOAT" />
-		<tag Name="Species" Value="goat" />
-		<tag Name="DynamicObjectsTable:Hills_Creatures" />
-		<tag Name="DynamicObjectsTable:Mountains_Creatures" />
-		<tag Name="Cervine" />
-		<tag Name="BaseObject" Value="*noinherit" />
-		<tag Name="LairAmbientBed" Value="Sounds/Ambiences/amb_creature_grazingAnimal" />
-		<tag Name="DeathSounds" Value="Sounds/Creatures/VO/sfx_creature_animal_goat_vo_die" />
-		<tag Name="TakeDamageSound" Value="Sounds/Creatures/VO/sfx_creature_animal_goat_vo_hurt"/>
-		<tag Name="AmbientIdleSound" Value="Sounds/Creatures/VO/sfx_creature_animal_goat_vo_idle"/>
-		<tag Name="PunchSound" Value="Sounds/Creatures/VO/sfx_creature_animal_goat_vo_attack"/>
 	</object>
-  <object Name="BaseFarmer" Inherits="NPC">
+  <object Name="BaseFarmer" Load="Merge"> <!--Inherits="NPC"-->
         <part Name="Render" DisplayName="[farmer]" ColorString="&amp;y" RenderString="f" />
-        <builder Name="RandomTile" Tiles="bucklerparry_largerfolk/farmer1_fat.png,bucklerparry_largerfolk/farmer2_fat.png,bucklerparry_largerfolk/farmer3_fat.png,bucklerparry_largerfolk/farmer4_fat.png,bucklerparry_largerfolk/farmer5_fat.png,bucklerparry_largerfolk/farmer6_fat.png" />
-        <part Name="Brain" Wanders="false" Factions="Farmers-100" />
-        <part Name="AISelfPreservation" Threshold="30" />
-        <inventoryobject Blueprint="Woven Tunic" Number="1" />
-        <inventoryobject Blueprint="Sandals" Number="1" />
-        <tag Name="BaseObject" Value="*noinherit" />
+        <removebuilder Name="RandomTile" />
+        <part Name="LargerFolk_WeightStageRender" />
+        <builder Name="LargerFolk_RandomTile" TilesStage0="Creatures/sw_farmer1.bmp,Creatures/sw_farmer2.bmp,Creatures/sw_farmer3.bmp,Creatures/sw_farmer4.bmp,Creatures/sw_farmer5.bmp,Creatures/sw_farmer6.bmp" TilesStage1="bucklerparry_largerfolk/farmer1_fat.png,bucklerparry_largerfolk/farmer2_fat.png,bucklerparry_largerfolk/farmer3_fat.png,bucklerparry_largerfolk/farmer4_fat.png,bucklerparry_largerfolk/farmer5_fat.png,bucklerparry_largerfolk/farmer6_fat.png" />
+        
         <!--
         <tag Name="RandomGender" Value="male,female,genericpersonalsingular,personalsingular" />
         <tag Name="RandomPronounSet" Value="genericpersonalsingular,personalsingular,generate" />
@@ -1462,23 +1444,9 @@ The infant child is unaware
     <part Name="Uplift" />
     <tag Name="ExcludeFromDynamicEncounters" />
   </object>
-  <object Name="Goat" Inherits="BaseGoat">
+  <object Name="Goat" Load="Merge"> <!--Inherits="BaseGoat"-->
     <part Name="Render" DisplayName="goat" Tile="bucklerparry_largerfolk/goat_fat.png" RenderString="g" ColorString="&amp;w" />
-		<part Name="Description" Short="=pronouns.Possessive= curling horns are incised with the weathering script of time, and =pronouns.subjective= =verb:chew:afterpronoun= cud without a care for the mess in =pronouns.possessive= hairknot beard." />
-    <part Name="Corpse" CorpseChance="10" CorpseBlueprint="Goat Corpse" />
-    <stat Name="Level" Value="1" />
-    <stat Name="AV" Value="4" />
-    <stat Name="Hitpoints" Value="15" />            
-    <inventoryobject Blueprint="Goat_Horns" />
-    <tag Name="Role" Value="Brute" />    
-    <tag Name="DynamicObjectsTable:Hills_Creatures" />
-    <tag Name="DynamicObjectsTable:Mountains_Creatures" />        
-  </object>
-  <object Name="Goat_Horns" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="curved horns" Tile="Items/sw_horns2.bmp" ColorString="&amp;w" />
-    <part Name="MeleeWeapon" BaseDamage="1d3" Skill="ShortBlades" Stat="Strength" Slot="Head" />
-    <part Name="Shield" AV="2" DV="0" WornOn="Head" />
-    <tag Name="Gender" Value="plural" />
+		<part Name="Description" Short="=pronouns.Possessive= curling horns are incised with the weathering script of time, and =pronouns.subjective= =verb:chew:afterpronoun= cud without a care for the mess in =pronouns.possessive= hairknot beard." />     
   </object>
   <object Name="Goat Corpse" Inherits="Animal Corpse">
     <part Name="Butcherable" OnSuccess="Raw Goat Meat" />
@@ -2950,7 +2918,7 @@ The infant child is unaware
   <object Name="Naphtaali Sap" Load="Merge"> <!--Inherits="BaseNaphtaali"-->
     <part Name="Render" DisplayName="Naphtaali sap" ColorString="&amp;W" Tile="Creatures/naphtaali_sap.bmp" />
   </object>
-  <object Name="Unplanished Godhed" Load="Merge"> <!--Inherits="BaseRobot"-->
+  <object Name="Unplanished Godhed" Load="Merge"> <!--Inherits="BaseRobot"-->  <!--TOFIX - Make it use LargerFolk_RandomTile-->
     <part Name="Render" Tile="bucklerparry_largerfolk/unplanished_godhed1_fat.png"  DisplayName="unplanished godhed" RenderString="0" ColorString="&amp;c" DetailColor="w" />
     <builder Name="RandomTile" Tiles="bucklerparry_largerfolk/unplanished_godhed1_fat.png,bucklerparry_largerfolk/unplanished_godhed2_fat.png,bucklerparry_largerfolk/unplanished_godhed1_fat.png" />
     <part Name="Description" Short="A greebled egg of metal and circuited glass was fished from the chromefall to be welded on and serve as spiritual center mass for a minyan of woodsprogs. =pronouns.Possessive= sensory pane remains unplanished, and so =pronouns.subjective= have yet to show the growth rings of communal meaning." />
@@ -3443,11 +3411,14 @@ The infant child is unaware
       WeightDescription_1="Thatched together out of scrap metal, =pronouns.subjective= =verb:teeter:afterpronoun= upon jiggling limbshafts. What was the artist and maker thinking while banging metal into a likeness? =pronouns.Subjective= =verb:occupy:afterpronoun= a point between poles on several axes: halfway between chimp and human, halfway between child and adult, somewhere on the road from large to larger. =pronouns.Subjective= =verb:are:afterpronoun= small, and there are shadows under =pronouns.possessive= chrome cheek." 
     />  
   </object>
-  <object Name="Prism Perch" Load="Merge">
+  <object Name="Prism Perch" Load="Merge"> <!--Inherits="BaseFish"-->
     <part Name="Render" DisplayName="prism perch" Tile="bucklerparry_largerfolk/fishschool1_fat.png" ColorString="&amp;Y" TileColor="&amp;y" />
     <part Name="Description" Short="Unlidded eyes stare out from a whirling school of opalescent scales." />
-    
-    <builder Name="RandomTile" Tiles="bucklerparry_largerfolk/fishschool1_fat.png,bucklerparry_largerfolk/fishschool2_fat.png" /> 
+    <removebuilder Name="RandomTile" />
+    <builder Name="LargerFolk_RandomTile" 
+    TilesStage0="Creatures\sw_fish_school_1.bmp,Creatures\sw_fish_school_2.bmp" 
+    TilesStage1="bucklerparry_largerfolk/fishschool1_fat.png,bucklerparry_largerfolk/fishschool2_fat.png" /> 
+    <part Name="LargerFolk_WeightStageRender" />
     <!-- "Creatures\sw_fish_school_1.bmp,Creatures\sw_fish_school_2.bmp" /> -->
   </object>
   <object Name="Quillipede" Inherits="BaseInsect">
@@ -3602,7 +3573,8 @@ The infant child is unaware
     <part Name="Render" DisplayName="goatfolk yurtwarden" Tile="creatures/sw_goatfolk_hunter.bmp" ColorString="&amp;R" />
   </object>
   <object Name="Goatfolk Shaman" Load="Merge"> <!-- Inherits="Goatfolk"-->
-    <part Name="Render" DisplayName="goatfolk shaman" Tile="creatures/sw_goatfolk_shaman.bmp" ColorString="&amp;B" />
+    <part Name="Render" DisplayName="goatfolk shaman" Tile="bucklerparry_largerfolk/goatfolk_shaman_fat.png" ColorString="&amp;B" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="creatures/sw_goatfolk_shaman.bmp" WeightStage_1="bucklerparry_largerfolk/goatfolk_shaman_fat.png" />
   </object>
   <object Name="Crazed Goatfolk Shaman 1" Load="Merge"> <!-- Inherits="Goatfolk Shaman"-->
   </object>
@@ -4453,23 +4425,11 @@ The infant child is unaware
     <part Name="ConversationScript" ConversationID="SparkingBaetyl" />
     <part Name="RandomAltarBaetyl" />
   </object>
-  <object Name="BananaRancher" Inherits="BaseFarmer">
+  <object Name="BananaRancher" Load="Merge"> <!--Inherits="BaseFarmer"-->
     <part Name="Render" DisplayName="banana rancher" Tile="bucklerparry_largerfolk/banana_rancher_fat.png" ColorString="&amp;W" TileColor="&amp;y" DetailColor="W" RenderString="f" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_rancher.bmp" WeightStage_1="bucklerparry_largerfolk/banana_rancher_fat.png" />
     <part Name="Description" Short="=pronouns.Subjective= =verb:maneuver:afterpronoun= under a tunic made from sackcloth and braided goat hair. =pronouns.Possessive= olive skin and straw hair glisten with Spindle dust." />
-    <part Name="ConversationScript" ConversationID="BananaRancher" />
-    <part Name="Brain" Wanders="true" />
-    <part Name="Interesting" UseBaseDisplayNameAsKey="true" />
-    <stat Name="Level" Value="22" />
-    <stat Name="AV" Value="5" />
-    <stat Name="Hitpoints" Value="90" />
-    <part Name="GenericInventoryRestocker" Table="BananaRancherInventory" Chance="71" />
-    <inventoryobject Blueprint="Leather Boots" />
-    <inventoryobject Blueprint="Woven Tunic" />
-    <inventoryobject Blueprint="Wide-brimmed Hat" />
-    <skill Name="CookingAndGathering_Harvestry" />
-    <removebuilder Name="RandomTile" />
-    <tag Name="Role" Value="Brute" />
-    <tag Name="DynamicObjectsTable:BananaGrove_Creatures" />
+    <removebuilder Name="LargerFolk_RandomTile" />
   </object>
   <object Name="Bloated Pearlfrog" Inherits="BaseFrog">
     <part Name="Render" DisplayName="bloated pearlfrog" Tile="bucklerparry_largerfolk/bloated_pearlfrog_fat.png" RenderString="F" ColorString="&amp;Y" DetailColor="g" />
@@ -5733,17 +5693,10 @@ The infant child is unaware
     <inventoryobject Blueprint="Pickaxe" IntProperties="AlwaysEquipAsWeapon:1" />
     <part Name="Rummager" />
   </object>
-  <object Name="Goatfolk Qlippoth" Inherits="Goatfolk Shaman">
-    <part Name="Render" DisplayName="goatfolk qlippoth" Tile="creatures/sw_goatfolk_shaman.bmp" ColorString="&amp;K" />
+  <object Name="Goatfolk Qlippoth" Load="Merge"> <!--Inherits="Goatfolk Shaman"-->
+    <part Name="Render" DisplayName="goatfolk qlippoth" Tile="bucklerparry_largerfolk/goatfolk_shaman_fat.png" ColorString="&amp;K" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="creatures/sw_goatfolk_shaman.bmp" WeightStage_1="bucklerparry_largerfolk/goatfolk_shaman_fat.png" />
     <part Name="Description" Short="Braided tassels spill out of the shadows to frame a blank countenance, and the pleats of a sarong thrash to an unfelt wind. =pronouns.Possessive= goatish stirring is refracted on the boundaries of sight's prism; =pronouns.possessive= horned figure appears underlaid to reality, like a grayscale dream." />
-    <part Name="Corpse" CorpseChance="100" CorpseBlueprint="Amaranthine Ashes" />
-    <part Name="RandomMutations" StateKey="QlippothMutations" />
-    <mutation Name="LifeDrain" />
-    <stat Name="Level" Value="29" />
-    <stat Name="Hitpoints" Value="115" />
-    <tag Name="DynamicObjectsTable:Jungle_Creatures" Value="*delete" />
-    <tag Name="DynamicObjectsTable:BaroqueRuins_Creatures" Value="*delete" />
-    <tag Name="DynamicObjectsTable:DeepJungle_Creatures" />
   </object>
   <object Name="Amaranthine Ashes" Inherits="Ashes">
     <part Name="Render" DisplayName="{{R|amaranthine}} ashes" ColorString="&amp;R" />
@@ -6593,39 +6546,14 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
     <part Name="AITryKeepSteadyDistance" />
     <tag Name="DynamicObjectsTable:BaroqueRuins_Creatures" />
   </object>
-  <object Name="Kaleidoslug" Inherits="BaseSlug">
+  <object Name="Kaleidoslug" Load="Merge"> <!-- Inherits="BaseSlug"-->
     <part Name="Render" DisplayName="{{kaleidoslug|kaleidoslug}}" Tile="bucklerparry_largerfolk/reefslug1_fat.png" DetailColor="w" RenderString="Q" ColorString="&amp;r" />
-    <part Name="Brain" Factions="Prey-100" />
+    <removebuilder Name="RandomTile" />
+    <builder Name="LargerFolk_RandomTile" 
+    TilesStage0="Creatures/sw_reef_slug_1.bmp,Creatures/sw_reef_slug_2.bmp,Creatures/sw_reef_slug_3.bmp,Creatures/sw_reef_slug_4.bmp" 
+    TilesStage1="bucklerparry_largerfolk/reefslug1_fat.png,bucklerparry_largerfolk/reefslug2_fat.png,bucklerparry_largerfolk/reefslug3_fat.png,bucklerparry_largerfolk/reefslug4_fat.png" />
     <part Name="Description" Short="By a bright enough light, =pronouns.subjective= nearly =verb:glow:afterpronoun=. How the hide of =pronouns.possessive= striped trunk shines like ribbons of painted glass suspended in a crystal shell -- and yet =pronouns.subjective= =verb:move:afterpronoun=. =pronouns.Possessive= fractal gills waft in an unseen current, and from time to time, =pronouns.subjective= =verb:croon:afterpronoun= a soft and howling melody." />
-    <part Name="RandomColors" MainColor="K,y,r,c,Y,y" DetailColor="C,m,M,R,C,K" PairDetailWithForeground="true" />
-    <part Name="Corpse" CorpseChance="6" CorpseBlueprint="Kaleidoslug Corpse" />
-    <stat Name="Level" Value="32" />
-    <stat Name="AV" Value="8" />
-    <stat Name="Ego" Boost="3" />
-    <stat Name="Hitpoints" Value="300" />
-    <stat Name="ElectricResistance" Value="50" />
-    <stat Name="HeatResistance" Value="50" />
-    <stat Name="ColdResistance" Value="50" />
-    <stat Name="AcidResistance" Value="50" />
-    <builder Name="RandomTile" Tiles="bucklerparry_largerfolk/reefslug1_fat.png,bucklerparry_largerfolk/reefslug2_fat.png,bucklerparry_largerfolk/reefslug3_fat.png,bucklerparry_largerfolk/reefslug4_fat.png" />
-    <tag Name="Role" Value="Tank" />
-    <inventoryobject Blueprint="ReefSlug_Foot" Number="1" />
-    <tag Name="Polypwalking" />
-    <tag Name="NoCure" />
-    <tag Name="DynamicObjectsTable:PalladiumReef_Creatures" />
-  </object>
-  <object Name="Kaleidoslug Corpse" Inherits="Worm Corpse">
-    <part Name="Render" DisplayName="kaleidoslug corpse" />
-    <part Name="Description" Short="Rings of spongy slugbody are deflated and still. Little bristles scrape the earth." />
-    <part Name="Butcherable" OnSuccess="@Kaleidoslug Corpse" />
-    <part Name="Food" Message="It tastes like a prism as it diffuses light in the full spectrum." />
-    <tag Name="Tier" Value="7" />
-    <part Name="Physics" Weight="300" />
-    <part Name="Commerce" Value="300" />    
-  </object>
-  <object Name="ReefSlug_Foot" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="nacreous foot" Tile="Creatures/natural-weapon-pseudopod.bmp" ColorString="&amp;y" />
-    <part Name="MeleeWeapon" HitBonus="4" BaseDamage="6d6" Skill="Cudgel" Stat="Strength" Slot="Tail" />
+    <part Name="LargerFolk_WeightStageRender" />
   </object>
   <object Name="Farm Kaleidoslug" Inherits="Kaleidoslug">
     <tag Name="Grazer" />
@@ -7185,7 +7113,11 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
 	<object Name="Galgal" Load="Merge"> <!--Inherits="BaseRobot"-->\
     <part Name="Render" DisplayName="galgal" RenderString="8" ColorString="&amp;m" TileColor="&amp;c" Tile="bucklerparry_largerfolk/galgal_fat.png" DetailColor="R" /> <!--Creatures/sw_galgal_1.bmp-->
     <part Name="Description" Short="A troika of monstrous, gleaming wheels orbit a center sphere of xenon clouds and gallium lightning. The spokes are laminated crysteel bled of their emerald imperfections, and the rims are milky epithelium -- a single iris stretched to the topology of a torus -- and checkered on the underside with pupils. =pronouns.Possessive= movement traces the carpentry of worlds." />
-    <builder Name="RandomTile" Tiles="bucklerparry_largerfolk/galgal_fat.png,bucklerparry_largerfolk/galgal2_fat.png,bucklerparry_largerfolk/galgal3_fat.png,bucklerparry_largerfolk/galgal3_fat.png" />
+    <removebuilder Name="RandomTile" />
+    <builder Name="LargerFolk_RandomTile" 
+    TilesStage0="Creatures/sw_galgal_1.bmp,Creatures/sw_galgal_2.bmp,Creatures/sw_galgal_3.bmp,Creatures/sw_galgal_4.bmp" 
+    TilesStage1="bucklerparry_largerfolk/galgal_fat.png,bucklerparry_largerfolk/galgal2_fat.png,bucklerparry_largerfolk/galgal3_fat.png,bucklerparry_largerfolk/galgal4_fat.png" />
+    <part Name="LargerFolk_WeightStageRender"/>  
   </object>
   <object Name="Gamma Moth" Load="Merge"> <!--Inherits="BaseInsect"-->
     <part Name="Render" DisplayName="gamma moth" Tile="bucklerparry_largerfolk/gamma_moth_fat.png" ColorString="&amp;M" DetailColor="K" />
@@ -11193,7 +11125,10 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
   </object>
   <object Name="Mehmet" Load="Merge"> <!--Inherits="WatervineFarmerJoppa"-->
     <part Name="Render" DisplayName="Mehmet" ColorString="&amp;W" RenderString="f" Tile="bucklerparry_largerfolk/mehmet_fat.png" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/npc-mehmet.bmp" WeightStage_1="bucklerparry_largerfolk/mehmet_fat.png"/>
     <part Name="Description" Short="=pronouns.Subjective= =verb:are:afterpronoun= a wind-carved man with the posture of a vinereaper; =pronouns.possessive= spine is bent to point the bright turquoise of =pronouns.possessive= eyes at the tilling angle, =pronouns.possessive= hips are pushed odd-forward with the slumping ease of a stance much more relaxed than =pronouns.possessive=. If it weren't for the salt on =pronouns.possessive= brow and the extra padding, =pronouns.subjective= would seem a marble Saad perched under a crumbling tomb." />
+    
+    <removebuilder Name="LargerFolk_RandomTile" />
   </object>
   <object Name="VillageZeroConvert" Load="Merge">
     <part Name="Render" DisplayName="watervine farmer and Mechanimist convert" Tile="bucklerparry_largerfolk/farmer_convert_fat.png" ColorString="&amp;C" DetailColor="g" RenderString="z" />
@@ -12166,45 +12101,14 @@ In Barathrum's name, =pronouns.subjective==verb:'ve:afterpronoun= conferred onto
   </object>
   
   <!-- Jungle -->
-  <object Name="Wild Water Merchant" PreviousName="Wild Watervine Merchant" Inherits="NPC">
-    <part Name="Render" DisplayName="wild-eyed water merchant" RenderString="h" Tile="bucklerparry_largerfolk/water_merchant_fat.png" HFlip="true" ColorString="&amp;B" TileColor="&amp;w" DetailColor="B" />
-    <part Name="ConversationScript" ConversationID="Wild Water Merchant" />
-    <part Name="Brain" Wanders="false" Factions="Prey-100,Mamon-100" Feelings="Player:0" />    
+  <object Name="Wild Water Merchant" Load="Merge"> <!--PreviousName="Wild Watervine Merchant" Inherits="NPC"-->
+    <part Name="Render" DisplayName="wild-eyed water merchant" RenderString="h" Tile="bucklerparry_largerfolk/water_merchant_fat.png" HFlip="true" ColorString="&amp;B" TileColor="&amp;w" DetailColor="B" />    
     <part Name="Description" Short="Bright glints in the rapture-stapled eyes of an anemic water merchant give you sudden pause. =pronouns.Subjective= =verb:are:afterpronoun= appareled in a patchwork of cloak shreds, and despite the lake of sweat settled on the oily sediment of =pronouns.possessive= skin, =pronouns.possessive= mouth is parched in fissures after days of refusing to drink the very life water =pronouns.subjective= =verb:peddle:afterpronoun=. Improbably, =pronouns.possessive= countenance still manages a hue of glee, glistening in the fire of a secret unshared." />
-    <part Name="BodyPartInventory" ByInherit="Goatfolk::10-12;;Naphtaali::10-12" />
-    <part Name="Interesting" />
-    <stat Name="Level" Value="11" />
-    <inventoryobject Blueprint="Patchwork Coat" />
-    <inventoryobject Blueprint="Walking Stick" />
-    <inventoryobject Blueprint="Leather Moccasins" />
-    <inventoryobject Blueprint="BloodCanteen" Number="8" />
-    <inventoryobject Blueprint="CyberneticsCreditWedge2_Cheap" Number="1" />
-    <intproperty Name="MinimumSellValue" Value="40" />
-    <tag Name="NoAskName" />
-    <tag Name="Gender" Value="male" />
-    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
   </object>
-  <object Name="Mamon" Inherits="Goatfolk Shaman">
-    <part Name="Brain" Hostile="false" Factions="Mamon-100" />
+  <object Name="Mamon" Load="Merge"> <!--Inherits="Goatfolk Shaman"-->
     <part Name="Render" ColorString="&amp;M" />
-    <stat Name="Level" Value="19" />
-    <stat Name="Strength" Boost="2" />
-    <stat Name="Agility" Boost="1" />
-    <stat Name="Toughness" Boost="1" />
-    <stat Name="Hitpoints" Value="115" />
-    <part Name="MamonPart" />
-    <tag Name="Role" Value="Hero" />
-    <builder Name="GoatfolkHero1" ForceName="Mamon Souldrinker" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="creatures/sw_goatfolk_shaman.bmp" WeightStage_1="bucklerparry_largerfolk/goatfolk_shaman_fat.png" />
     <part Name="Description" Short="Mamon =verb:stand= nearly a head taller than =pronouns.possessive= kin and broader at the shoulders. Great tufts of blood-matted hair, some of which is braided, tassel out from =pronouns.possessive= head and chin, and a tattered, crimson headdress hangs from one of =pronouns.possessive= colossal horns. In long swaths on =pronouns.possessive= bare chest the fur is scorched and the skin flayed. =pronouns.Subjective= =verb:wear:afterpronoun= a sarong wrapped about =pronouns.possessive= waist, its wool fibers sodden with a foul, inky liquid. =pronouns.Possessive= face is a vision of madness, at once the countenance of a rapturous crone and a child in fright." />
-    <inventoryobject Blueprint="Cyclopean Prism" />
-    <inventoryobject Blueprint="BloodyDagger3" />
-    <part Name="Physics" FlameTemperature="14550" />
-    <part Name="GivesRep" />
-    <part Name="RandomMutations" StateKey="QlippothMutations" />
-    <tag Name="NoFriendFactions" Value="Goatfolk,Wardens" />
-    <tag Name="Gender" Value="male" />
-    <xtagGrammar Proper="true" />
-    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
   </object>
   <object Name="Oboroqoru" Inherits="BaseApe">
     <part Name="Corpse" CorpseChance="100" CorpseBlueprint="Fist of the Ape God" />
@@ -12258,65 +12162,20 @@ In Barathrum's name, =pronouns.subjective==verb:'ve:afterpronoun= conferred onto
   </object>
 
   <!-- Golgotha -->
-  <object Name="GolgothaSlog" Inherits="BaseSlug">
-    <part Name="Corpse" CorpseBlueprint="SlogCorpse" CorpseChance="100" />
-    <part Name="Brain" Hostile="false" Factions="Mollusks-100" />
+  <object Name="GolgothaSlog" Load="Merge"> <!--Inherits="BaseSlug"-->
     <part Name="Render" Tile="bucklerparry_largerfolk/slog_fat.png" DisplayName="Slog" RenderString="Q" ColorString="&amp;M" DetailColor="G" />
-    <part Name="Epithets" Primary="of the Cloaca" />
-    <part Name="DisplayNameColor" Color="M" />
-    <stat Name="Level" Value="17" />
-    <stat Name="MoveSpeed" Value="125" />
-    <stat Name="AV" Value="4" />
-    <stat Name="Hitpoints" Value="150" />
-    <part Name="Description" Short="A slug has grown too large for =pronouns.possessive= anatomy to know what to do, viscous mucous caking the copious rolls and folds of a body swollen past the limits of human obesity. Bubbles of stinking broth pop over breathing pores the size of elbows, and a fifth phase of trashlike matter leaks out =pronouns.possessive= crusty mantle and down the rounded keel of =pronouns.possessive= back. Where nature had the decency to end the body of the common slug in a muscular foot, Slog's tail is instead a sphincter-choked bilge hose that =pronouns.subjective= =verb:use:afterpronoun= to spew foul waterfunk about =pronouns.possessive= surroundings." />
-    <stat Name="Strength" sValue="33" />
-    <stat Name="Agility" sValue="21" />
-    <stat Name="Toughness" sValue="32" />
-    <stat Name="Intelligence" sValue="12" />
-    <stat Name="Ego" sValue="10" />
-    <stat Name="Willpower" sValue="16" />
-    <skill Name="Cudgel" />
-    <skill Name="Cudgel_Bludgeon" />
-    <mutation Name="SlogGlands" />
-    <tag Name="Role" Value="Leader" />
-    <intproperty Name="RareLoot" Value="3" />
-    <part Name="LiquidBurst" Liquid="GooPuddle" />
-    <part Name="GivesRep" />
-    <inventoryobject Blueprint="Slog Bands" Number="1" />
-    <xtagGrammar Proper="true" />
-    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
-    <tag Name="SharesRecipe" Value="CloacaSurprise" />
-    <tag Name="SharesRecipeText" Value="You know why I'm here, Slog." />
-    <tag Name="SharesRecipeWithTrueKin" Value="false" />
-    <tag Name="NoCure" />
-    <tag Name="FilthAffinity" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="creatures/sw_slog.bmp" WeightStage_1="bucklerparry_largerfolk/slog_fat.png" />
+    <part Name="Description" Short="A slug has grown too large for =pronouns.possessive= anatomy to know what to do, viscous mucous caking the copious rolls and folds of a body swollen past any expected limits. Bubbles of stinking broth pop over breathing pores the size of elbows, and a fifth phase of trashlike matter leaks out =pronouns.possessive= crusty mantle and down the rounded keel of =pronouns.possessive= back. Where nature had the decency to end the body of the common slug in a muscular foot, Slog's tail is instead a sphincter-choked bilge hose that =pronouns.subjective= =verb:use:afterpronoun= to spew foul waterfunk about =pronouns.possessive= surroundings." />
+    <part Name="LargerFolk_WeightDescription" 
+      WeightDescription_0="A slug has grown too large for =pronouns.possessive= anatomy to know what to do. Bubbles of stinking broth pop over breathing pores the size of elbows, and a fifth phase of trashlike matter leaks out =pronouns.possessive= crusty mantle and down the sharp keel of =pronouns.possessive= back. Where nature had the decency to end the body of the common slug in a muscular foot, Slog's tail is instead a sphincter-choked bilge hose that =pronouns.subjective= =verb:use:afterpronoun= to spew foul waterfunk about =pronouns.possessive= surroundings."
+      WeightDescription_1="A slug has grown too large for =pronouns.possessive= anatomy to know what to do, viscous mucous caking the copious rolls and folds of a body swollen past any expected limits. Bubbles of stinking broth pop over breathing pores the size of elbows, and a fifth phase of trashlike matter leaks out =pronouns.possessive= crusty mantle and down the rounded keel of =pronouns.possessive= back. Where nature had the decency to end the body of the common slug in a muscular foot, Slog's tail is instead a sphincter-choked bilge hose that =pronouns.subjective= =verb:use:afterpronoun= to spew foul waterfunk about =pronouns.possessive= surroundings."
+    />
+    <part Name="LargerFolk_WeightGain" StartingWeight="2" /> <!-- slog always starts obese -->
   </object>
-  <object Name="Slog Bands" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="{{Y|crushing bands}}" Tile="Creatures/natural-weapon-bands.bmp" ColorString="&amp;w" />
-    <part Name="MeleeWeapon" MaxStrengthBonus="9999" BaseDamage="2d2" Skill="Cudgel" Stat="Strength" Slot="Body" />
-    <part Name="PoisonMelee" />
-    <tag Name="Gender" Value="plural" />
-  </object>
-  <object Name="Bilge Sphincter" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="{{w|bilge sphincter}}" Tile="Creatures/natural-weapon-tail.bmp" ColorString="&amp;w" />
-    <part Name="Description" Short="Wet rings of shuddering muscle shrink and spew body broth in peristaltic waves." />
-    <part Name="Armor" AV="1" DV="0" WornOn="Tail" />
-    <part Name="AddsRep" Faction="Mollusks" Value="300" />
-    <part Name="EquipStatBoost" CountAsBase="true" Boosts="Strength:6;AcidResistance:100" ChargeUse="0" IsBootSensitive="false" IsEMPSensitive="false" />
-    <part Name="MeleeWeapon" MaxStrengthBonus="9999" BaseDamage="2d2" Skill="Cudgel" Stat="Strength" Slot="Tail" />
-    <part Name="PoisonMelee" />
-    <part Name="MovespeedInLiquid" MS="50" MinVolume="200" />
-  </object>
-  <object Name="SlogCorpse" Inherits="Corpse">
+
+  <object Name="SlogCorpse" Load="Merge">
     <part Name="Render" DisplayName="corpse of Slog" ColorString="&amp;M" />
     <part Name="Description" Short="Rolls upon rolls of spongy wormfat are deflated and still. Little bristles scrape the earth." />
-    <part Name="Food" Message="It's sickening!" />
-    <part Name="LargerFolk_FoodCalories" Calories="10000" />
-    <part Name="Physics" Weight="300" />
-    <part Name="Commerce" Value="100" />
-    <part Name="Butcherable" OnSuccess="SlogTrophy" />
-    <tag Name="NoSparkingQuest" />
-    <tag Name="ExcludeFromDynamicEncounters" />
   </object>
   
   <!-- Bethesda Susa -->
@@ -13024,6 +12883,7 @@ This one is jeweled in the eroded scrap of the Tomb." />
       WeightStage_0="Creatures/sw_rokhas.bmp"
       WeightStage_1="bucklerparry_largerfolk/rokhas_fat.png" />
     <part Name="Description" Short="=pronouns.Subjective= is a mudrock in the kaleidoscope. =pronouns.Possessive= salt-pocked skin, slouching spine, and dour expression are imported from the farmsteading reaches of western Qud, buh =pronouns.subjective= =verb:stand:afterpronoun= draped in the bright colors of =pronouns.possessive= brilliant eastborn flock." />
+    <removebuilder Name="LargerFolk_RandomTile" />
   </object>
 
   <object Name="Une" Load="Merge"> <!--Inherits="NPC"-->

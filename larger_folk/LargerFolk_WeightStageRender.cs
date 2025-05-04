@@ -30,10 +30,14 @@ namespace XRL.World.Parts
         
 		public LargerFolk_WeightStageRender()
 		{
-        
+            
             // WeightStage_0 = renderPart.Tile;
             if (IsEnabled)
             {
+                if (WeightStage_1 == null)
+                {
+                    WeightStage_1 == ParentObject.Render.Tile;
+                }
                 if (WeightStage_2 == null)
                 {
                     WeightStage_2 = WeightStage_1;
@@ -53,9 +57,9 @@ namespace XRL.World.Parts
             {
                 Registrar.Register("OnWeightStageChange");
                 Registrar.Register("OnWeightStageInitialized");
-                
-                base.Register(Object, Registrar);
             }
+
+            base.Register(Object, Registrar);
 	    }
 
         // When the current weight stage changes, update the sprite to reflect this 
@@ -84,6 +88,11 @@ namespace XRL.World.Parts
                         break;
                     case 1:
                         if (WeightStage_1 != null) ParentObject.GetPart<Render>().Tile = WeightStage_1;
+                        else 
+                        {
+                            WeightStage_1 = WeightStage_0;
+                            ParentObject.GetPart<Render>().Tile = WeightStage_1;
+                        }
                         break;
                     case 2:
                         if (WeightStage_2 != null) ParentObject.GetPart<Render>().Tile = WeightStage_2;

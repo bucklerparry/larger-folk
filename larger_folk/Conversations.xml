@@ -9,7 +9,7 @@
     <node ID="Start" IfWeightStage="3">
       <text>
         Try as you might, your couch-sized haunches and prodigious gut make entrance to the wetting-box an impossibility.
-        You are simply to large to effectively use this device.
+        You are simply too large to effectively use this device.
         <choice GotoID="End">You cannot help but redden at the thought.</choice>
       </text>
     </node>
@@ -18,28 +18,34 @@
         You enter into the wetting-box, turn the tap and release the torrent.
       </text>
       <choice GotoID="CleaningBody">Revel in your physicality.</choice>
+      <!-- <choice GotoID="CleaningBody0" IfWeightStage="0">Revel in your physicality.</choice>
+      <choice GotoID="CleaningBody1" IfWeightStage="1">Revel in your physicality.</choice>
+      <choice GotoID="CleaningBody2" IfWeightStage="2">Revel in your physicality.</choice> -->
+    </node>
+    <node ID="CleaningBody">
+      <part Name="LargerFolk_ShowerBodyDescription"/>
+      <text>
+      </text>
+      <choice GotoID="End">Finish showering.</choice>
     </node>
 
-    <node ID="CleaningBody" IfWeightStage="0">
+    <node ID="CleaningBody0">
       <text>
         You run your hands across your lithe physique, working moisture into every crack and crevice (of which there aren't many).
         Your body is light, perhaps scrawny- Only the necessary tissues cover it, with no frills to speak of.
       </text>
       <choice GotoID="End">Finish showering.</choice>
     </node>
-    <node ID="CleaningBody" IfWeightStage="1">
+    <node ID="CleaningBody1">
       <text>
         You run your hands across your tubby physique, working moisture into every flabby fold.
         Your body is well-fed, padded all over with a healthy softness.
       </text>
       <choice GotoID="End">Finish showering.</choice>
     </node>
-    <node ID="CleaningBody" IfWeightStage="2">
-      <text>
-        You run your hands over your obese physique, working moisture into every deep crevice with some measure of difficulty.
-        Your body is replete to the point of hindrance, covered in excess poundage that complicates the task of cleaning it.
-        The face, the hands, the feet, all parts that would normally stay slender are starting to swell up in turn with how much adipose you've packed on.
-      </text>
+    <node ID="CleaningBody2">
+      <part Name="LargerFolk_ShowerBodyDescription"/>
+      <text></text>
       <choice GotoID="End">Finish showering.</choice>
     </node>
     
@@ -57,7 +63,7 @@
 
   <!-- Warden Yrame -->	
   <conversation ID="WardenYrame">
-    <node ID="Start" IfSpeakerFat="false">
+    <node ID="Start" IfSpeakerOverweight="false">
       <text>
         Welcome a-Joppa, friend. Stay peacelike, and we stay friends, hyeh? You make trouble, it’s my work a-split you open like a croc.~
         Elder’s over my right shoulder, chemist a-left. I ask you pick one or turn around. I en’t here for chat.~
@@ -73,7 +79,7 @@
       <choice GotoID="Grit Gate" IfHaveActiveQuest="A Canticle for Barathrum">I depart for Grit Gate soon.</choice>
       <choice GotoID="Stilt" IfHaveActiveQuest="O Glorious Shekhinah!">I journey North, to the Six Day Stilt.</choice>
       <choice GotoID="Who">Who are you?</choice>
-      <choice GotoID="Weight" IfSpeakerFat="true">You're quite large.</choice>
+      <choice GotoID="Weight" IfSpeakerOverweight="true">You're quite large.</choice>
       <choice GotoID="Warden">What is a Warden?</choice>
       <choice GotoID="End">Live and drink.</choice>
     </node>
@@ -95,7 +101,7 @@
       <choice GotoID="Grit Gate" IfHaveActiveQuest="A Canticle for Barathrum">I depart for Grit Gate soon.</choice>
       <choice GotoID="Stilt" IfHaveActiveQuest="O Glorious Shekhinah!">I journey North, to the Six Day Stilt.</choice>
       <choice GotoID="Who">Who are you?</choice>
-      <choice GotoID="Weight" IfSpeakerFat="true">You're quite large.</choice>
+      <choice GotoID="Weight" IfSpeakerOverweight="true">You're quite large.</choice>
       <choice GotoID="Warden">What is a Warden?</choice>
       <choice GotoID="End">Live and drink.</choice>
     </node>
@@ -138,7 +144,7 @@
   </conversation>
   
   <conversation ID="WardenEsthers">
-    <start ID="Welcome" IfFat="false">
+    <start ID="Welcome" IfOverweight="false">
       <text>
         Live and drink, traveler. Welcome to the Stilt.
       </text>
@@ -153,7 +159,7 @@
       <text>
         Live and drink, traveler. Welcome to the Stilt. It must have been a troublesome journey, for such a fat'ed pilgrim.
       </text>
-      <choice GotoID="WeightTease" IfSpeakerFat="true">You're one to disparage my weight, tubby.</choice>
+      <choice GotoID="WeightTease" IfSpeakerOverweight="true">You're one to disparage my weight, tubby.</choice>
       <choice GotoID="Praise">Praise be to Shekhinah! O, sovereign Fathers... at last, I am here!</choice>
       <choice GotoID="Huh">This is the Six Day Stilt, huh. It's... colossal, beautiful. I see why the chrome stewards gather here.</choice>
       <choice GotoID="Folks">So... many... folks....</choice>
@@ -345,7 +351,7 @@
 
   <!-- tinkers -->
   <conversation ID="tinker">
-    <node ID="Start" IfSpeakerFat="false">
+    <node ID="Start" IfSpeakerOverweight="false">
       <text>
         Use your gadgets hard, don't you? I can fix them.~
         I can repair, recharge, and identify whatever you have! Within reason.~
@@ -425,7 +431,7 @@
 
   <!-- village apothecaries -->
   <conversation ID="herbalist">
-    <node ID="Start" IfFat="false">
+    <node ID="Start" IfOverweight="false">
       <text>
         I've the cure for what ails you.~
         You don't look so good. You need more yuckwheat and honey in your diet.~
@@ -457,7 +463,7 @@
 
   <!-- chefs  -->
   <conversation ID="chef">
-    <node ID="Start" IfFat="false">
+    <node ID="Start" IfOverweight="false">
       <text>
         I tell you, =player.formalAddressTerm=, my recipes come from years of experience. There's none the like.~
         Finest food for parasangs! Finest food in Qud! Recipes and samples!~
@@ -493,7 +499,7 @@
 
   <!-- kippers -->
   <conversation ID="kipper">
-    <node ID="Start" IfFat="false">
+    <node ID="Start" IfOverweight="false">
       <text>
         Smell a bit strong? That's how you know it's good.~
         You can preserve almost anything. Al... most.~
@@ -531,7 +537,7 @@
 
   <!-- vintners -->
   <conversation ID="vintner">
-    <node ID="Start" IfFat="false">
+    <node ID="Start" IfOverweight="false">
       <text>
         Greetings, =player.formalAddressTerm=.~
         Live and drink deeply, =player.formalAddressTerm=.~
@@ -581,7 +587,7 @@
 
   <!-- gutsmongers -->
   <conversation ID="gutsmonger">
-    <node ID="Start" IfTrueKin="true" IfFat="false">
+    <node ID="Start" IfTrueKin="true" IfOverweight="false">
       <text>
         Hold, aristocrat! I have wares to claim your interest.~
         My implants are acquired peaceably, I assure you.~
@@ -618,7 +624,7 @@
       <choice GotoID="End">Live and drink.</choice>
     </node>
 
-    <node ID="Start" IfFat="false">
+    <node ID="Start" IfOverweight="false">
       <text>
         Kill anyone valuable?~
         You look dangerous. Ever go hunting for parts?~
@@ -671,7 +677,7 @@
 
   <!-- shoemakers -->
   <conversation ID="shoemaker">
-    <node ID="Start" IfFat="false">
+    <node ID="Start" IfOverweight="false">
       <text>
         Hello, hello, =player.formalAddressTerm=, let's get your weary feet covered.~
         Come in, =player.formalAddressTerm=, and let me 'shoe' you around, ha ha!~
@@ -705,7 +711,7 @@
 
   <!-- haberbashers -->
   <conversation ID="haberdasher">
-    <node ID="Start" IfFat="false">
+    <node ID="Start" IfOverweight="false">
       <text>
         Please, =player.formalAddressTerm=, do come in. Take your time browsing my wares.~
         Welcome, =player.formalAddressTerm=, to the sole bastion of class in this wretched place.~
@@ -740,7 +746,7 @@
 
   <!-- armorers -->
   <conversation ID="armorer">
-    <node ID="Start" IfFat="false">
+    <node ID="Start" IfOverweight="false">
       <text>
         {{emote|*silent nod*}}~
         Careful. It's hot.~
@@ -793,7 +799,7 @@
 
   <!-- gunsmiths -->
   <conversation ID="gunsmith">
-    <node ID="Start" IfFat="false">
+    <node ID="Start" IfOverweight="false">
       <text>
         You can't go wrong with my slugspitters, =player.formalAddressTerm=.~
         Guns, guns, guns! Don't they just make you smile?~
@@ -4469,7 +4475,7 @@
       </text>
       <choice ID="WhyYours" GotoID="Yours">Are you truly the Earl of Omonporch?</choice>
       <choice ID="NeedThisLand" GotoID="Lease" IfHaveQuest="The Earl of Omonporch">Earl Asphodel, the Barathrumites request your permission to lease control of the Spindle. Their inquiries into the past have led them here.</choice>
-      <choice ID="TouchFronds_go" IfSpeakerFat="true" GotoID="TouchFronds"> Can I touch your, um, fronds? </choice>
+      <choice ID="TouchFronds_go" IfSpeakerOverweight="true" GotoID="TouchFronds"> Can I touch your, um, fronds? </choice>
       <choice ID="ByeAsphodel" GotoID="End">Live and drink, Earl.</choice>
     </node>
     <node ID="Yours">

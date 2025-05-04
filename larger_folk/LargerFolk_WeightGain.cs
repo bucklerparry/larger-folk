@@ -81,6 +81,13 @@ public class LargerFolk_WeightGain : IPart
 
     public override bool HandleEvent(ObjectCreatedEvent E)
     {
+        WeightSetup();
+
+        return base.HandleEvent(E);
+    }
+
+    public void WeightSetup()
+    {
         // set an initial weight stage for non-player creatures, usually lean or fat, occasionally obese, extremely rarely immobile
         if (IsEnabled && !ParentObject.IsPlayer())
         {
@@ -111,8 +118,6 @@ public class LargerFolk_WeightGain : IPart
                 SetWeightStage(StartingWeight);
             }
         }
-
-        return base.HandleEvent(E);
     }
 
     public override bool FireEvent(Event E)

@@ -20,7 +20,7 @@ public static class LargerFolk_ConversationDelegates
 {
     // A predicate that receives a DelegateContext object with our values assigned, this to protect mods from signature breaks.
     [ConversationDelegate(Speaker = true)]
-    public static bool IfFat(DelegateContext Context)
+    public static bool IfOverweight(DelegateContext Context)
     {
         // Context.Value holds the quoted value from the XML attribute.
         // Context.Target holds the game object.
@@ -67,7 +67,7 @@ public static class LargerFolk_ConversationDelegates
         // if dynamic_gain is disabled, always return that the speaker/player is fat.
         if (GainEnabled)
         {
-            Popup.Show(Context.Target.GetPart<LargerFolk_WeightGain>().WeightStage.ToString());
+            // Popup.Show(Context.Target.GetPart<LargerFolk_WeightGain>().WeightStage.ToString() + "/n/n" + Context.Value);
             return Context.Target.GetPart<LargerFolk_WeightGain>().WeightStage.ToString() == Context.Value;
             
         }
@@ -76,4 +76,10 @@ public static class LargerFolk_ConversationDelegates
             return "1" == Context.Value;
         }
     }
+
+    // [ConversationDelegate]
+    // public static bool IfReadBook(DelegateContext Context)
+    // {
+
+    // }
 }
