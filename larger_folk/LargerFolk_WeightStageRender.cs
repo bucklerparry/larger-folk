@@ -36,7 +36,7 @@ namespace XRL.World.Parts
             {
                 if (WeightStage_1 == null)
                 {
-                    WeightStage_1 == ParentObject.Render.Tile;
+                    WeightStage_1 = ParentObject.Render.Tile;
                 }
                 if (WeightStage_2 == null)
                 {
