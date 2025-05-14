@@ -34,10 +34,7 @@ namespace XRL.World.Parts
             // WeightStage_0 = renderPart.Tile;
             if (IsEnabled)
             {
-                if (WeightStage_1 == null)
-                {
-                    WeightStage_1 = ParentObject.Render.Tile;
-                }
+                
                 if (WeightStage_2 == null)
                 {
                     WeightStage_2 = WeightStage_1;
