@@ -3367,16 +3367,10 @@ The infant child is unaware
     <part Name="MeleeWeapon" BaseDamage="2d2" Skill="Cudgel" Stat="Strength" Slot="Body" />
     <tag Name="Gender" Value="plural" />
   </object>
-	<object Name="Gyre Wight of Agolgot" Inherits="BaseGyreWight">
-		<part Name="Render" DisplayName="gyre wight of Agolgot" Tile="Creatures/wight_agolgot.bmp" ColorString="&amp;g" TileColor="&amp;m" DetailColor="g" />
+	<object Name="Gyre Wight of Agolgot" Load="Merge"> <!--Inherits="BaseGyreWight"-->
+		<part Name="Render" DisplayName="gyre wight of Agolgot" Tile="bucklerparry_largerfolk/wight_agolgot_fat.png" ColorString="&amp;g" TileColor="&amp;m" DetailColor="g" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/wight_agolgot.bmp" WeightStage_1="bucklerparry_largerfolk/wight_agolgot_fat.png"/>
 		<part Name="Description" Short="A figure is marked by star orchid robes as a votary of the Gyre and reveler in the metamorphic numen. Nails filth-black flash from out =pronouns.possessive= sleeve in a gesture-poem to say that plague is but transmutation, death is the ladder to life, and the existence of children proves the prelacy of raw growth. A rank and acrid smell clings to =pronouns.objective=." />
-		<stat Name="Hitpoints" Value="25" />
-		<stat Name="Level" Value="14" />
-		<part Name="RandomMutations" Mental="0-1" MentalLevel="1-6" Physical="0-2" PhysicalLevel="1-6" />
-		<part Name="ConversationScript" ConversationID="GyreWightAgolgot" />
-		<tag Name="NamingTag" Value="AgolgotGyreWight" />
-		<xtagWaterRitual SellSecretWeight="$agolgotlair:10000" />
-		<inventoryobject Blueprint="Rank Fangs" />
 	</object>
 	<object Name="RedrockGyreWight" Inherits="Gyre Wight of Agolgot">
 		<part Name="SetStateOnSeen" State="RedrockGyreWightSeen" />
@@ -9375,141 +9369,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
     <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
   </object>
 
-  <!-- Cherubim natural weapons -->
-  <object Name="Cherubic Bite" Inherits="Bite">
-    <part Name="Render" DisplayName="cherubic bite" Tile="Creatures/natural-weapon-bite.bmp" ColorString="&amp;w" />
-    <part Name="MeleeWeapon" HitBonus="20" PenBonus="10" BaseDamage="7d6" Skill="Axe" />
-  </object>
-  <object Name="Mechanical Cherubic Bite" Inherits="Bite">
-    <part Name="Render" DisplayName="{{c|mechanical cherubic bite}}" Tile="Creatures/natural-weapon-bite.bmp" ColorString="&amp;c" />
-    <part Name="MeleeWeapon" HitBonus="15" PenBonus="8" BaseDamage="6d6" Skill="Axe" />
-  </object>
-  <object Name="Cherubic Pistil" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="cherubic pistil" Tile="Creatures/natural-weapon-thorns.bmp" ColorString="&amp;g" />
-    <part Name="MeleeWeapon" HitBonus="20" PenBonus="10" BaseDamage="7d6" Skill="Cudgel" Stat="Strength" Slot="Head" />
-  </object>
-  <object Name="Mechanical Cherubic Pistil" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="{{c|mechanical cherubic pistil}}" Tile="Creatures/natural-weapon-thorns.bmp" ColorString="&amp;c" />
-    <part Name="MeleeWeapon" HitBonus="15" PenBonus="8" BaseDamage="6d6" Skill="Cudgel" Stat="Strength" Slot="Head" />
-  </object>
-  <object Name="Cherubic Claw" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="cherubic claw" Tile="Creatures/natural-weapon-claw.bmp" ColorString="&amp;w" />
-    <part Name="MeleeWeapon" HitBonus="20" PenBonus="10" BaseDamage="6d6" Skill="ShortBlades" Stat="Strength" Slot="Foot" />
-  </object>
-  <object Name="Cherubic Hand Claw" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="cherubic claw" Tile="Creatures/natural-weapon-paw.bmp" ColorString="&amp;w" />
-    <part Name="MeleeWeapon" HitBonus="20" PenBonus="10" BaseDamage="6d6" Skill="ShortBlades" Stat="Strength" Slot="Hand" />
-  </object>
-  <object Name="Mechanical Cherubic Claw" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="{{c|mechanical cherubic claw}}" Tile="Creatures/natural-weapon-claw.bmp" ColorString="&amp;c" />
-    <part Name="MeleeWeapon" HitBonus="15" PenBonus="8" BaseDamage="5d6" Skill="ShortBlades" Stat="Strength" Slot="Foot" />
-  </object>
-  <object Name="Mechanical Cherubic Hand Claw" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="{{c|mechanical cherubic claw}}" Tile="Creatures/natural-weapon-paw.bmp" ColorString="&amp;c" />
-    <part Name="MeleeWeapon" HitBonus="15" PenBonus="8" BaseDamage="5d6" Skill="ShortBlades" Stat="Strength" Slot="Hand" />
-  </object>
-  <object Name="Cherubic Fist" Inherits="NaturalFist">
-    <part Name="Render" DisplayName="cherubic fist" Tile="Creatures/natural-weapon-fist.bmp" ColorString="&amp;w" />
-    <part Name="MeleeWeapon" HitBonus="20" PenBonus="10" BaseDamage="6d6" Skill="Cudgel" Stat="Strength" Slot="Hand" />
-  </object>
-  <object Name="Mechanical Cherubic Fist" Inherits="NaturalFist">
-    <part Name="Render" DisplayName="{{c|mechanical cherubic fist}}" Tile="Creatures/natural-weapon-fist.bmp" ColorString="&amp;c" />
-    <part Name="MeleeWeapon" HitBonus="15" PenBonus="8" BaseDamage="5d6" Skill="Cudgel" Stat="Strength" Slot="Hand" />
-  </object>
-  <object Name="Cherubic Nodule" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="cherubic nodule" Tile="Creatures/natural-weapon-knob.bmp" ColorString="&amp;w" />
-    <part Name="MeleeWeapon" HitBonus="20" PenBonus="10" BaseDamage="6d6" Skill="Cudgel" Stat="Strength" Slot="Hand" />
-  </object>
-  <object Name="Mechanical Cherubic Nodule" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="{{c|mechanical cherubic nodule}}" Tile="Creatures/natural-weapon-knob.bmp" ColorString="&amp;c" />
-    <part Name="MeleeWeapon" HitBonus="15" PenBonus="8" BaseDamage="5d6" Skill="Cudgel" Stat="Strength" Slot="Hand" />
-  </object>
-  <object Name="Cherubic Handle" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="cherubic handle" Tile="Creatures/natural-weapon-knob.bmp" ColorString="&amp;y" />
-    <part Name="MeleeWeapon" HitBonus="20" PenBonus="10" BaseDamage="6d6" Skill="Cudgel" Stat="Strength" Slot="Hand" />
-  </object>
-  <object Name="Mechanical Cherubic Handle" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="{{c|mechanical cherubic handle}}" Tile="Creatures/natural-weapon-knob.bmp" ColorString="&amp;c" />
-    <part Name="MeleeWeapon" HitBonus="15" PenBonus="8" BaseDamage="5d6" Skill="Cudgel" Stat="Strength" Slot="Hand" />
-  </object>
-  <object Name="Cherubic Strangle" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="cherubic stranglehold" Tile="Creatures/natural-weapon-frond.bmp" ColorString="&amp;g" />
-    <part Name="MeleeWeapon" HitBonus="20" PenBonus="10" BaseDamage="6d6" Skill="Cudgel" Stat="Strength" Slot="Arm" />
-  </object>
-  <object Name="Mechanical Cherubic Strangle" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="{{c|mechanical cherubic stranglehold}}" Tile="Creatures/natural-weapon-frond.bmp" ColorString="&amp;c" />
-    <part Name="MeleeWeapon" HitBonus="15" PenBonus="8" BaseDamage="5d6" Skill="Cudgel" Stat="Strength" Slot="Arm" />
-  </object>
-  <object Name="Cherubic Spines" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="cherubic spines" Tile="Creatures/natural-weapon-thorns.bmp" ColorString="&amp;y" />
-    <part Name="MeleeWeapon" HitBonus="20" PenBonus="10" BaseDamage="6d6" Skill="ShortBlades" Stat="Strength" Slot="Arm" />
-  </object>
-  <object Name="Mechanical Cherubic Spines" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="{{c|mechanical cherubic spines}}" Tile="Creatures/natural-weapon-thorns.bmp" ColorString="&amp;c" />
-    <part Name="MeleeWeapon" HitBonus="15" PenBonus="8" BaseDamage="5d6" Skill="ShortBlades" Stat="Strength" Slot="Arm" />
-  </object>
-	<object Name="Cherubic Body Spines" Inherits="Cherubic Spines">		
-		<part Name="MeleeWeapon" Slot="Body" />
-	</object>
-	<object Name="Mechanical Cherubic Body Spines" Inherits="Mechanical Cherubic Spines">	
-		<part Name="MeleeWeapon" Slot="Body" />
-	</object>
-  <object Name="Cherubic Bark" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="cherubic bark" Tile="Creatures/natural-weapon-thorns.bmp" ColorString="&amp;w" />
-    <part Name="MeleeWeapon" HitBonus="20" PenBonus="10" BaseDamage="6d6" Skill="Cudgel" Stat="Strength" Slot="Hand" />
-  </object>
-  <object Name="Mechanical Cherubic Bark" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="{{c|mechanical cherubic bark}}" Tile="Creatures/natural-weapon-thorns.bmp" ColorString="&amp;c" />
-    <part Name="MeleeWeapon" HitBonus="15" PenBonus="8" BaseDamage="5d6" Skill="Cudgel" Stat="Strength" Slot="Hand" />
-  </object>
-  <object Name="Cherubic Spade" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="cherubic spade" Tile="Creatures/natural-weapon-shovel.bmp" ColorString="&amp;y" />
-    <part Name="MeleeWeapon" HitBonus="20" PenBonus="10" BaseDamage="7d6" Skill="Axe" Stat="Strength" Slot="Body" />
-  </object>
-  <object Name="Mechanical Cherubic Spade" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="{{c|mechanical cherubic spade}}" Tile="Creatures/natural-weapon-shovel.bmp" ColorString="&amp;c" />
-    <part Name="MeleeWeapon" HitBonus="15" PenBonus="8" BaseDamage="6d6" Skill="Axe" Stat="Strength" Slot="Body" />
-  </object>
-  <object Name="Cherubic Bands" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="cherubic bands" Tile="Creatures/natural-weapon-bands.bmp" ColorString="&amp;w" />
-    <part Name="MeleeWeapon" HitBonus="20" PenBonus="10" BaseDamage="7d6" Skill="Cudgel" Stat="Strength" Slot="Body" />
-  </object>
-  <object Name="Mechanical Cherubic Bands" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="{{c|mechanical cherubic bands}}" Tile="Creatures/natural-weapon-bands.bmp" ColorString="&amp;c" />
-    <part Name="MeleeWeapon" HitBonus="15" PenBonus="8" BaseDamage="6d6" Skill="Cudgel" Stat="Strength" Slot="Body" />
-  </object>
-  <object Name="Cherubic Pseudopod" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="cherubic pseudopod" Tile="Creatures/natural-weapon-pseudopod.bmp" ColorString="&amp;w" />
-    <part Name="MeleeWeapon" HitBonus="20" PenBonus="10" BaseDamage="6d6" Skill="Cudgel" Stat="Strength" Slot="Hand" />
-  </object>
-  <object Name="Mechanical Cherubic Pseudopod" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="{{c|mechanical cherubic pseudopod}}" Tile="Creatures/natural-weapon-pseudopod.bmp" ColorString="&amp;c" />
-    <part Name="MeleeWeapon" HitBonus="15" PenBonus="8" BaseDamage="5d6" Skill="Cudgel" Stat="Strength" Slot="Hand" />
-  </object>
-  <object Name="Cherubic Foot" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="cherubic foot" Tile="Creatures/natural-weapon-pseudopod.bmp" ColorString="&amp;w" />
-    <part Name="MeleeWeapon" HitBonus="20" PenBonus="10" BaseDamage="7d6" Skill="Cudgel" Stat="Strength" Slot="Tail" />
-  </object>
-  <object Name="Mechanical Cherubic Foot" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="{{c|mechanical cherubic foot}}" Tile="Creatures/natural-weapon-pseudopod.bmp" ColorString="&amp;c" />
-    <part Name="MeleeWeapon" HitBonus="15" PenBonus="8" BaseDamage="6d6" Skill="Cudgel" Stat="Strength" Slot="Tail" />
-  </object>
-  <object Name="Cherubic Kick" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="cherubic kick" Tile="Creatures/natural-weapon-hoof1.bmp" ColorString="&amp;w" />
-    <part Name="MeleeWeapon" HitBonus="20" PenBonus="10" BaseDamage="6d6" Skill="Cudgel" Stat="Strength" Slot="Foot" />
-  </object>
-  <object Name="Mechanical Cherubic Kick" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="{{c|mechanical cherubic kick}}" Tile="Creatures/natural-weapon-hoof1.bmp" ColorString="&amp;c" />
-    <part Name="MeleeWeapon" HitBonus="15" PenBonus="8" BaseDamage="5d6" Skill="Cudgel" Stat="Strength" Slot="Foot" />
-  </object>
-  <object Name="Cherubic Talons" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="cherubic talons" Tile="Creatures/natural-weapon-claw.bmp" ColorString="&amp;w" />
-    <part Name="MeleeWeapon" HitBonus="20" PenBonus="10" BaseDamage="6d6" Skill="ShortBlades" Stat="Strength" Slot="Foot" />
-  </object>
-  <object Name="Mechanical Cherubic Talons" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="{{c|mechanical cherubic talons}}" Tile="Creatures/natural-weapon-claw.bmp" ColorString="&amp;c" />
-    <part Name="MeleeWeapon" HitBonus="15" PenBonus="8" BaseDamage="5d6" Skill="ShortBlades" Stat="Strength" Slot="Foot" />
-  </object>
+
 
 	<!-- Nephilim -->
 	<object Name="BaseNephal" Inherits="Creature">
@@ -9567,17 +9427,6 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
     <tag Name="AmbientIdleSound" Value="Sounds/Creatures/VO/sfx_creature_animal_girshNephilim_vo_idle"/>
     <tag Name="PunchSound" Value="Sounds/Creatures/VO/sfx_creature_animal_girshNephilim_vo_attack"/>
 	</object>
-	<object Name="Nephal_Weapon" Inherits="NaturalWeapon">
-		<part Name="Render" DisplayName="claw" Tile="Creatures/natural-weapon-claw.bmp" ColorString="&amp;m" />
-		<part Name="MeleeWeapon" HitBonus="10" BaseDamage="3d6" Skill="LongBlades" Slot="Hand" />
-	</object>
-	<object Name="ProjectileIrisdualBeam" Inherits="TemporaryProjectile">
-		<part Name="Render" DisplayName="{{rainbow|flash of neon}}" ColorString="&amp;m" />
-		<part Name="Projectile" BasePenetration="15" BaseDamage="1d5+7" ColorString="&amp;m" PassByVerb="flicker" />
-		<part Name="TreatAsSolid" GazeBased="false" Hits="false" RequiresPhaseMatch="false" Message="The darkness consumes =subject.t=!" />
-		<tag Name="ProjectileVFX" Value="MissileWeaponsEffects/gradient_laser" />
-		<tag Name="ProjectileVFXConfiguration" Value="duration::2" />
-	</object>
 	<object Name="Agolgot" Inherits="BaseNephal">
 		<part Name="Render" DisplayName="Agolgot" Tile="Creatures/nephilim_agolgut.bmp" DetailColor="g" />
 		<part Name="Description" Short="A creature of immensity mounts the upper eyeline. The monstrous slumping head is moted with warts and freckles, and a soaking wattle rains putrid sauce on the floor. Years of slouching under pipeworks has smashed =pronouns.possessive= diacalyptus spine, and the sponginess of matter has left =pronouns.objective= boiling and sick from =pronouns.possessive= surroundings. Finally, irisdual light churning under =pronouns.possessive= tx-glass skin is filtered to a sickening hue and radiates out of body in lituus spirals." />
@@ -9588,16 +9437,6 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
 		<tag Name="WorshipPower" Value="27" />
 		<tag Name="Gender" Value="male" />
 	</object>
-	<object Name="Nephal_Claw" Inherits="NaturalWeapon">
-		<part Name="Render" DisplayName="spotted claw" Tile="Creatures/natural-weapon-claw.bmp" ColorString="&amp;m" />
-		<part Name="MeleeWeapon" HitBonus="10" BaseDamage="3d6" Skill="LongBlades" Slot="Hand" />
-	</object>
-	<object Name="Nephal_Claw_Chord" Inherits="Nephal_Claw">
-		<part Name="SecondaryAttackChance" Chance="100" Final="true" />
-	</object>
-	<object Name="Nephal_Claw_Circle" Inherits="Nephal_Claw_Chord">
-		<part Name="MeleeWeapon" HitBonus="0" />
-	</object>
 	<object Name="Bethsaida" Inherits="BaseNephal">
 		<part Name="Render" DisplayName="Bethsaida" Tile="Creatures/nephilim_bethsaida.bmp" DetailColor="W" />
 		<part Name="Description" Short="A creature of immensity mounts the upper eyeline. Leather trapezii swell with the pump of overfurcate capillaries, vapor attaches to =pronouns.possessive= starless nares, and long hand-feet fork into a hundred digits each. Over the raw humps of =pronouns.possessive= body, even the deadest of lifegrowth (hair, nails) is quickened to act and writhes like startled maggots. Finally, irisdual light churning under =pronouns.possessive= tx-glass skin is filtered to a viscus hue and radiates out of body in lituus spirals." />
@@ -9607,10 +9446,6 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
 		<inventoryobject Blueprint="Nephal_Talon" Number="2" />
 		<tag Name="Worshippable" />
 		<tag Name="WorshipPower" Value="30" />
-	</object>
-	<object Name="Nephal_Talon" Inherits="NaturalWeapon">
-		<part Name="Render" DisplayName="fractal talon" Tile="Creatures/natural-weapon-claw.bmp" ColorString="&amp;m" />
-		<part Name="MeleeWeapon" HitBonus="10" BaseDamage="3d6" Skill="ShortBlades" Slot="Hand" />
 	</object>
 	<object Name="Rermadon" Inherits="BaseNephal">
 		<part Name="Body" Anatomy="Fish" />

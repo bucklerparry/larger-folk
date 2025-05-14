@@ -32,3 +32,4 @@ Bukie (chubbukie.bsky.social)
 - mirror_bug_fat.png
 - eyeless_crab_fat.png
 - seed_spitting_vine_fat.png
+- slynth_fat.png
