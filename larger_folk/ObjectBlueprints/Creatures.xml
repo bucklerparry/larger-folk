@@ -10967,37 +10967,25 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
   </object>
   <object Name="VillageZeroConvert" Load="Merge">
     <part Name="Render" DisplayName="watervine farmer and Mechanimist convert" Tile="bucklerparry_largerfolk/farmer_convert_fat.png" ColorString="&amp;C" DetailColor="g" RenderString="z" />
+    
     <!-- Creatures/farmer_convert.bmp -->
   </object>
-  <object Name="WatervineFarmerConvert" Inherits="VillageZeroConvert">
+  <object Name="WatervineFarmerConvert" Load="Merge"> <!-- Inherits="VillageZeroConvert"> -->
     <part Name="Description" Short="=pronouns.Possessive= kufiya has been cut and resewn to a cowl, and =pronouns.subjective= =verb:have:afterpronoun= tailored a vinewafer sack to approximate the slate habit of the chromaic people. A sheaf of watervine bundled in copper wire is slung on =pronouns.possessive= hip, and =pronouns.subjective= =verb:rub:afterpronoun= a salt-nailed thumb over a talisman of cracked circuitboard." />
-    <part Name="ConversationScript" ConversationID="WatervineFarmerConvert" />
-    <stat Name="Level" Value="3" />
-    <stat Name="DV" Value="3" />
-    <skill Name="CookingAndGathering_Harvestry" />
-    <inventoryobject Blueprint="Wide-brimmed Hat" />
-    <inventoryobject Blueprint="Iron Vinereaper" />
-    <inventoryobject Blueprint="Sandals" />
-    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/farmer_convert.bmp" WeightStage_1="bucklerparry_largerfolk/farmer_convert_fat.png"/>
+   
   </object>
-  <object Name="JoppaFarmerConvert" Inherits="WatervineFarmerConvert">
+  <object Name="JoppaFarmerConvert" Load="Merge"> <!-- "WatervineFarmerConvert"> -->
     <part Name="ConversationScript" ConversationID="JoppaFarmerConvert" />
     <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
   </object>
-  <object Name="PigFarmerConvert" Inherits="VillageZeroConvert">
+  <object Name="PigFarmerConvert" Load="Merge"> <!-- Inherits="VillageZeroConvert"> -->
     <part Name="Render" DisplayName="pig farmer and Mechanimist convert" Tile="bucklerparry_largerfolk/farmer_convert_fat.png" ColorString="&amp;C" DetailColor="w" RenderString="z" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/farmer_convert.bmp" WeightStage_1="bucklerparry_largerfolk/farmer_convert_fat.png"/>
     <part Name="Description" Short="=pronouns.Possessive= kufiya has been cut and resewn to a cowl, and =pronouns.subjective= =verb:have:afterpronoun= tailored an apple sack to approximate the slate habit of the chromaic people. A herding crook sheathed in copper wire is slung on =pronouns.possessive= hip, and =pronouns.subjective= =verb:rub:afterpronoun= a salt-nailed thumb over a talisman of cracked circuitboard." />
-    <stat Name="Level" Value="3" />
-    <stat Name="AV" Value="3" />
-    <stat Name="Strength" Boost="1" />
-    <stat Name="Hitpoints" Value="20" />
-    <inventoryobject Blueprint="Leather Boots" />
-    <inventoryobject Blueprint="Wide-brimmed Hat" />
-    <skill Name="CookingAndGathering_Butchery" />
-    <part Name="ConversationScript" ConversationID="PigFarmerConvert" />
-    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
   </object>
-  <object Name="CannibalConvert" Inherits="VillageZeroConvert">
+
+  <object Name="CannibalConvert" Load="Merge"> <!-- Inherits="VillageZeroConvert"> -->
     <part Name="Render" DisplayName="cannibal and Mechanimist convert" Tile="Creatures/cannibal_convert.bmp" ColorString="&amp;C" DetailColor="r" RenderString="z" />
     <part Name="Description" Short="A torn kufiya has been cut and resewn to a cowl, and =pronouns.subjective= =verb:have:afterpronoun= tailored a knapsack to approximate the slate habit of the chromaic people. A human bone sheathed in copper wire is slung on =pronouns.possessive= hip, and =pronouns.subjective= =verb:rub:afterpronoun= a salt-nailed thumb over a talisman of cracked circuitboard." />
     <part Name="ConversationScript" ConversationID="CannibalConvert" />
@@ -11008,7 +10996,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
     <inventoryobject Blueprint="Cannibal Bite" />
     <inventoryobject Blueprint="Sandals" />
   </object>
-  <object Name="IssachariConvert" Inherits="VillageZeroConvert">
+  <object Name="IssachariConvert" Load="Merge"> <!-- Inherits="VillageZeroConvert"> -->
     <part Name="Render" DisplayName="Issachari raider and Mechanimist convert" Tile="Creatures/Issachari_convert.bmp" ColorString="&amp;C" DetailColor="R" RenderString="z" />
     <part Name="Description" Short="=pronouns.Possessive= kufiya has been cut and resewn to a cowl, and =pronouns.subjective= =verb:have:afterpronoun= tailored a tattered banner to approximate the slate habit of the chromaic people. A bronze dagger sheathed in copper wire is slung on =pronouns.possessive= hip, and =pronouns.subjective= =verb:rub:afterpronoun= a salt-nailed thumb over a talisman of cracked circuitboard." />
     <inventoryobject Blueprint="Dagger" />
@@ -11261,7 +11249,11 @@ In Barathrum's name, =pronouns.subjective==verb:'ve:afterpronoun= conferred onto
   <object Name="Rodanis Y" Load="Merge">
     <part Name="Body" Anatomy="TreadedRobot" />
     <part Name="Render" DisplayName="Rodanis Y" Tile="bucklerparry_largerfolk/rodanis_fat.png" ColorString="&amp;B" DetailColor="c" RenderString="7" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_rodanis.bmp" WeightStage_1="bucklerparry_largerfolk/rodanis_fat.png" />
     <part Name="Description" Short="A giant is carpentered from large-scale scrap towed from the trash sea. Tailstock legs meet a great wobbling gut at sagging hips, piston arms break at wye pipe shoulders, and a bent pressing plate soldered with radio antennae delivers an empty stare from between mounds of chromium cheekflab." />
+    <part Name="LargerFolk_WeightDescription"
+      WeightDescription_0="A giant is carpentered from large-scale scrap towed from the trash sea. Tailstock legs meet a great flange torso at shimmed hips, piston arms break at wye pipe shoulders, and a bent pressing plate soldered with radio antennae delivers an empty stare." 
+      WeightDescription_1="A giant is carpentered from large-scale scrap towed from the trash sea. Tailstock legs meet a great wobbling gut at sagging hips, piston arms break at wye pipe shoulders, and a bent pressing plate soldered with radio antennae delivers an empty stare from between mounds of chromium cheekflab." />
   </object>
 
   <object Name="Sparafucile" Inherits="Barathrumite">

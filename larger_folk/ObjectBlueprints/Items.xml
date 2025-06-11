@@ -85,11 +85,11 @@
     <part Name="LargerFolk_Armor" />
   </object>
 
-  <object Name="Leather Armor" Load="Merge">
+  <!-- <object Name="Leather Armor" Load="Merge">
     <part Name="LargerFolk_ButtonPop" Skill="Rifle" ShotsPerAction="1" AmmoPerAction="0" ShotsPerAnimation="1" WeaponAccuracy="12" />
     <part Name="MagazineAmmoLoader" ProjectileObject="PoppedButton" AmmoPart="AmmoSlug" MaxAmmo="0" />
     
-  </object>
+  </object> -->
 	<!--
 	<object Name="Stasis Casque" Inherits="BaseArmor">
     <part Name="Armor" AV="8" DV="-1" />

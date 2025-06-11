@@ -2,6 +2,7 @@ using System;
 using XRL.Language;
 using XRL.Rules;
 using XRL.UI;
+using XRL.World.Effects;
 
 namespace XRL.World.Parts
 {
@@ -239,7 +240,11 @@ namespace XRL.World.Parts
                 {
                     chance_mod = 2;
                 }
-                if (LastTalk < 0 && (Chance/chance_mod).in100())
+
+                int temp_roll = (Chance/chance_mod);
+                // if (ParentObject.HasEffect<Running>()) temp_roll *= 16;
+                
+                if ( (LastTalk < 0 && temp_roll.in100()) || ParentObject.HasEffect<Running>() )
                 {
                     LastTalk = ChatWait;
                     PreacherHomily(Dialog: false);

@@ -97,8 +97,10 @@ namespace XRL.World.Parts
                 {
                     if (Actor.IsPlayer())
                     {
-                        Actor.EmitMessage("Your armor feels tighter...");
-                        
+                        Actor.EmitMessage("Your " + 
+                        ParentObject.GetDisplayName(int.MaxValue, null, null, AsIfKnown: false, Single: false, NoConfusion: false, NoColor: false, Stripped: true, ColorOnly: false, Visible: true, WithoutTitles: false, ForSort: false, Short: false, BaseOnly: false, WithIndefiniteArticle: false, WithDefiniteArticle: false, null, IndicateHidden: false, Capitalize: false, SecondPerson: false, Reflexive: false, null) 
+                        + " feels tighter...");
+                         
                     }
 
                     if (Stat.Random(1, 1) == 1) //(10 - (CurrentStage*3) )
@@ -110,10 +112,10 @@ namespace XRL.World.Parts
                                 Actor.EmitMessage(new string("Your " + Actor.GetPart<LargerFolk_WeightGain>().GetWeightString() + " belly proves to much for your armor to contain, and flops outward from its ruptured confines."));
                             }
 
-                            if (ParentObject.HasPart<LargerFolk_ButtonPop>())
-                            {
-                                ParentObject.GetPart<LargerFolk_ButtonPop>().PopButton();
-                            }
+                            // if (ParentObject.HasPart<LargerFolk_ButtonPop>())
+                            // {
+                            //     ParentObject.GetPart<LargerFolk_ButtonPop>().PopButton();
+                            // }
                         }
                     }
                     //if (ParentObject.ApplyEffect(new Broken()) && IsBroken())
