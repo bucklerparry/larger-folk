@@ -93,7 +93,6 @@
   </object>
   <object Name="BaseCrab" Load="Merge">
     <part Name="Render" Tile="bucklerparry_largerfolk/eyeless_crab_fat.png" />
-    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Assets_Content_Textures_Creatures_sw_crab.bmp" WeightStage_1="bucklerparry_largerfolk/eyeless_crab_fat.png"/>
     <xtagTextFragments Skin="chitin" PoeticFeatures="ageless shelf of shell,titanic claws,stilted eyes" YounglingNoise="*click*,*croak*" Activity="scuttling without purpose" VillageActivity="reinforcing the walls of our homes" SacredThing="the art of pinching" />
   </object>
   <object Name="BaseDog" Load="Merge">
@@ -129,7 +128,6 @@
   </object>
   <object Name="BaseSpider" Load="Merge">
     <part Name="Render" Tile="bucklerparry_largerfolk/cave_spider_fat.png" DetailColor="w" />
-    <part Name="LargerFolk_WeightStageRender" WeightStage_0="creatures/sw_spider.bmp" WeightStage_1="bucklerparry_largerfolk/cave_spider_fat.png" />
     <xtagTextFragments Skin="chitin" PoeticFeatures="eightfold gams,hundred lenses,ageless bearing" YounglingNoise="*click*" Activity="waiting for errant insects" VillageActivity="weaving webs in our homes" SacredThing="graph theory" />
   </object>
   <object Name="BaseStar" Inherits="Animal">
@@ -266,7 +264,6 @@
   <object Name="BaseMiner" Load="Merge">
     <part Name="Render" DisplayName="miner" Tile="bucklerparry_largerfolk/miner_fat.png" RenderString="2" ColorString="&amp;g" TileColor="&amp;c" />
     <part Name="LargerFolk_WeightStageRender" WeightStage_0="creatures/sw_miner.bmp" WeightStage_1="bucklerparry_largerfolk/miner_fat.png" />
-    <part Name="LargerFolk_WeightStageRender" WeightStage_0="creatures/.bmp" WeightStage_1="bucklerparry_largerfolk/miner_fat.png" />
     <part Name="Description" Short="Wobbling stilt pistons fire in alternating quatro and tote the miner and =pronouns.possessive= mines in esoteric patterns across the ground. When =pronouns.possessive= topographic instincts are sated, a hatch opens on its distended carapace, and =pronouns.subjective= =verb:lay:afterpronoun= =pronouns.possessive= explosive egg." />
   </object>
   <object Name="Turret Tinker" Load="Merge">
@@ -370,7 +367,6 @@
   </object>
 	<object Name="BaseGoat" Load="Merge"> <!--Inherits="BaseAnimal"-->
 		<part Name="Render" DisplayName="goat" Tile="bucklerparry_largerfolk/goat_fat.png" RenderString="g" ColorString="&amp;w" DetailColor="y" />
-    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Assets_Content_Textures_Creatures_sw_goat.bmp" WeightStage_1="bucklerparry_largerfolk/goat_fat.png" />
 	</object>
   <object Name="BaseFarmer" Load="Merge"> <!--Inherits="NPC"-->
         <part Name="Render" DisplayName="[farmer]" ColorString="&amp;y" RenderString="f" />
@@ -396,7 +392,6 @@
 	</object>
   <object Name="BaseIssachari" Inherits="BaseHumanoid">
         <part Name="Render" DisplayName="Issachari raider" RenderString="h" Tile="bucklerparry_largerfolk/issachari_raider_fat.png" ColorString="&amp;Y" DetailColor="R" />
-        <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_raider1.bmp" WeightStage_1="bucklerparry_largerfolk/issachari_raider_fat.png" />
         <part Name="Corpse" CorpseChance="0" CorpseBlueprint="Snapjaw Corpse" />
         <part Name="Brain" Hostile="false" Factions="Issachari-100" />
         <part Name="ConversationScript" ConversationID="Issachari" />
@@ -468,7 +463,6 @@
   <object Name="BaseSightless" Inherits="BaseHumanoid">
     <part Name="Brain" Hostile="false" Factions="Seekers-100" />
     <part Name="Render" RenderString="e" Tile="bucklerparry_largerfolk/apostle_fat.png" />
-    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/caste_13.bmp" WeightStage_1="bucklerparry_largerfolk/apostle_fat.png" /> 
     <stat Name="Ego" Boost="1" />
     <stat Name="Level" Value="8" />
     <stat Name="Willpower" Boost="1" />
@@ -490,7 +484,6 @@
   </object>
 	<object Name="BaseSwine" Inherits="BaseAnimal">
 		<part Name="Render" DisplayName="pig" RenderString="o"  Tile="bucklerparry_largerfolk/pig_fat.png" ColorString="&amp;y" />		
-    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_boar2.bmp" WeightStage_1="bucklerparry_largerfolk/pig_fat.png" />
 		<part Name="Corpse" CorpseChance="100" CorpseBlueprint="Pig Corpse" />
 		<part Name="Brain" Factions="Swine-100" />
 		<tag Name="Class" Value="swine" />
@@ -2815,7 +2808,6 @@ The infant child is unaware
   <object Name="BaseHindren" Inherits="BaseHumanoid">
     <part Name="Corpse" CorpseChance="10" CorpseBlueprint="Hindren Corpse" />
     <part Name="Render" DisplayName="[base hindren]" RenderString="h" DetailColor="w" ColorString="&amp;y" Tile="bucklerparry_largerfolk/hindren_fat.png" />
-    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_hindren_1.bmp" WeightStage_1="bucklerparry_largerfolk/hindren_fat.png" />
     <part Name="AISelfPreservation" Threshold="70" />
     <mutation Name="Horns" Level="3" Variant="Horns Antlers" />
     <mutation Name="MultipleLegs" Level="3" />
