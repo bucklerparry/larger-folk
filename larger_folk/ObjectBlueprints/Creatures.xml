@@ -268,6 +268,7 @@
   </object>
   <object Name="Turret Tinker" Load="Merge">
     <part Name="Render" DisplayName="turret tinker" Tile="bucklerparry_largerfolk/turret_tinker_fat.png" RenderString="1" ColorString="&amp;g" DetailColor="C" />
+	<part Name="LargerFolk_WeightStageRender" WeightStage_0="creatures/sw_turret_tinker.bmp" WeightStage_1="bucklerparry_largerfolk/turret_tinker_fat.png" />
     <part Name="Description" Short="=pronouns.Possessive= cylindric head is embellished with a frilly crest whose symbolism is unknown. =pronouns.Subjective= dutifully =verb:march:afterpronoun= on a pair of chrome pistons toward =pronouns.possessive= final purpose." />
   </object>
   
@@ -2838,6 +2839,7 @@ The infant child is unaware
   </object>
   <object Name="HindrenVillager" Inherits="BaseHindren">
     <part Name="Render" DisplayName="hindren villager" RenderString="h" ColorString="&amp;y" />
+	<part Name="LargerFolk_WeightStageRender" WeightStage_0="creatures/sw_hindren_1.bmp" WeightStage_1="bucklerparry_largerfolk/hindren_fat.png" />
     <part Name="Brain" Factions="Hindren-99" />
     <part Name="AmbientSoundGenerator" Sounds="sfx_tinker_idle_chop" ChancePerThousand="50" />
     <stat Name="Strength" sValue="18,1d4" />
