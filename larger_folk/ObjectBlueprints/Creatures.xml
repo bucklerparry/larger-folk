@@ -93,7 +93,6 @@
   </object>
   <object Name="BaseCrab" Load="Merge">
     <part Name="Render" Tile="bucklerparry_largerfolk/eyeless_crab_fat.png" />
-    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Assets_Content_Textures_Creatures_sw_crab.bmp" WeightStage_1="bucklerparry_largerfolk/eyeless_crab_fat.png"/>
     <xtagTextFragments Skin="chitin" PoeticFeatures="ageless shelf of shell,titanic claws,stilted eyes" YounglingNoise="*click*,*croak*" Activity="scuttling without purpose" VillageActivity="reinforcing the walls of our homes" SacredThing="the art of pinching" />
   </object>
   <object Name="BaseDog" Load="Merge">
@@ -264,10 +263,12 @@
   </object>
   <object Name="BaseMiner" Load="Merge">
     <part Name="Render" DisplayName="miner" Tile="bucklerparry_largerfolk/miner_fat.png" RenderString="2" ColorString="&amp;g" TileColor="&amp;c" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="creatures/sw_miner.bmp" WeightStage_1="bucklerparry_largerfolk/miner_fat.png" />
     <part Name="Description" Short="Wobbling stilt pistons fire in alternating quatro and tote the miner and =pronouns.possessive= mines in esoteric patterns across the ground. When =pronouns.possessive= topographic instincts are sated, a hatch opens on its distended carapace, and =pronouns.subjective= =verb:lay:afterpronoun= =pronouns.possessive= explosive egg." />
   </object>
   <object Name="Turret Tinker" Load="Merge">
     <part Name="Render" DisplayName="turret tinker" Tile="bucklerparry_largerfolk/turret_tinker_fat.png" RenderString="1" ColorString="&amp;g" DetailColor="C" />
+	<part Name="LargerFolk_WeightStageRender" WeightStage_0="creatures/sw_turret_tinker.bmp" WeightStage_1="bucklerparry_largerfolk/turret_tinker_fat.png" />
     <part Name="Description" Short="=pronouns.Possessive= cylindric head is embellished with a frilly crest whose symbolism is unknown. =pronouns.Subjective= dutifully =verb:march:afterpronoun= on a pair of chrome pistons toward =pronouns.possessive= final purpose." />
   </object>
   
@@ -408,6 +409,7 @@
   <object Name="Mechanimist" Inherits="BaseHumanoid">
     <part Name="Brain" Hostile="false" Factions="Mechanimists-100" />
     <part Name="Render" Tile="bucklerparry_largerfolk/mechanimist_zealot_fat.png" DetailColor="w" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_mechanimist.bmp" WeightStage_1="bucklerparry_largerfolk/mechanimist_zealot_fat.png" />
     <stat Name="Level" Value="8" />
     <stat Name="AV" Value="3" />
     <stat Name="DV" Value="3" />    
@@ -461,7 +463,7 @@
   </object>
   <object Name="BaseSightless" Inherits="BaseHumanoid">
     <part Name="Brain" Hostile="false" Factions="Seekers-100" />
-    <part Name="Render" RenderString="e" Tile="bucklerparry_largerfolk/apostle_fat.png" />    
+    <part Name="Render" RenderString="e" Tile="bucklerparry_largerfolk/apostle_fat.png" />
     <stat Name="Ego" Boost="1" />
     <stat Name="Level" Value="8" />
     <stat Name="Willpower" Boost="1" />
@@ -1135,6 +1137,7 @@ For I knew neither 'til they spoke her name." />
   
   <object Name="Bear" Inherits="BaseBear">
     <part Name="Render" DisplayName="bear" Tile="bucklerparry_largerfolk/bear_fat.png" RenderString="u" ColorString="&amp;w" DetailColor="y" />
+		<part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_angrybear.bmp" WeightStage_1="bucklerparry_largerfolk/bear_fat.png" />
 		<part Name="Description" Short="&quot;The Grizzly Bear is huge and wild; 
 =pronouns.Subjective= =verb:have:afterpronoun= devoured the infant child.
 The infant child is unaware
@@ -1164,6 +1167,7 @@ The infant child is unaware
   </object> 
   <object Name="Pig" Inherits="BaseSwine">
     <part Name="Render" DisplayName="pig" RenderString="o"  Tile="bucklerparry_largerfolk/pig_fat.png" ColorString="&amp;y" />
+		<part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_boar2.bmp" WeightStage_1="bucklerparry_largerfolk/pig_fat.png" />
 		<part Name="Description" Short="Dirt-dappled flesh hangs from =pronouns.possessive= pouch belly and nearly slaps =pronouns.possessive= chipper trotters." />
     <stat Name="Level" Value="1" />
     <stat Name="AV" Value="2" />
@@ -1189,6 +1193,7 @@ The infant child is unaware
 	</object>
   <object Name="Boar" Inherits="BaseSwine">
     <part Name="Render" DisplayName="boar"  Tile="bucklerparry_largerfolk/boar_fat.png" RenderString="o" ColorString="&amp;w" DetailColor="y" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_boar.bmp" WeightStage_1="bucklerparry_largerfolk/boar_fat.png" />
     <part Name="Corpse" CorpseChance="15" CorpseBlueprint="Boar Corpse" />
     <stat Name="Level" Value="1" />
     <stat Name="AV" Value="4" />
@@ -1231,10 +1236,12 @@ The infant child is unaware
   </object>
   <object Name="Cave Spider" Load="Merge">
     <part Name="Render" DisplayName="cave spider" Tile="bucklerparry_largerfolk/cave_spider_fat.png" DetailColor="G" RenderString="x" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_spider.bmp" WeightStage_1="bucklerparry_largerfolk/cave_spider_fat.png" />
     <part Name="Description" Short="=pronouns.Subjective= =verb:are:afterpronoun= Spindle-limbed and skittish. Bits of =pronouns.possessive= silk home are stuck to =pronouns.possessive= underhairs." />
   </object>
   <object Name="Ray Cat" Load="Merge">
     <part Name="Render" DisplayName="ray cat" Tile="bucklerparry_largerfolk/cat_fat.png" RenderString="l" ColorString="&amp;m" DetailColor="y" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_cat.bmp" WeightStage_1="bucklerparry_largerfolk/cat_fat.png" />
     <part Name="Description" Short="=pronouns.Subjective= =verb:are:afterpronoun= a small kitty and the glassy fibers of =pronouns.possessive= coat bend the light of faraway stars into strange loops.
 
 &amp;mphosphorescent&amp;y" />
@@ -1256,6 +1263,7 @@ The infant child is unaware
 
   <object Name="Croc2" Inherits="BaseReptile">
     <part Name="Render" DisplayName="croc2" RenderString="r" Tile="bucklerparry_largerfolk/croc_fat.png" DetailColor="M" ColorString="&amp;g" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="creatures/sw_croc.bmp" WeightStage_1="bucklerparry_largerfolk/croc_fat.png" />
     <part Name="Corpse" CorpseChance="20" CorpseBlueprint="Croc Corpse" />
     <part Name="Brain" Hostile="false" Factions="Unshelled Reptiles-100" />
     <part Name="LargerFolk_WeightStageRender" WeightStage_0="creatures/sw_croc.bmp" WeightStage_1="bucklerparry_largerfolk/croc_fat.png" />
@@ -1304,6 +1312,7 @@ The infant child is unaware
   </object>
   <object Name="Electrofuge" Load="Merge"> <!--Inherits="BaseSpider"-->
     <part Name="Render" DisplayName="electrofuge" Tile="bucklerparry_largerfolk/cave_spider_fat.png" RenderString="y" ColorString="&amp;W" DetailColor="w" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="creatures/sw_spider.bmp" WeightStage_1="bucklerparry_largerfolk/cave_spider_fat.png" />
     <part Name="Description" Short="Gossamer hairs stand stiff in static charge across =pronouns.possessive= octet of Spindle legs, and =pronouns.subjective= =verb:crackle:afterpronoun= as =pronouns.subjective= =verb:crawl:afterpronoun=." />
   </object>
   <object Name="GiantAmoeba" Load="Merge"> <!--Inherits="BaseOoze"-->
@@ -1354,6 +1363,7 @@ The infant child is unaware
   </object>	
   <object Name="GiantDragonfly" Inherits="BaseInsect">
     <part Name="Render" DisplayName="giant dragonfly" Tile="bucklerparry_largerfolk/dragonfly_fat.png" RenderString="i" ColorString="&amp;K" TileColor="&amp;K" DetailColor="w" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="creatures/sw_giantdragonfly.bmp" WeightStage_1="bucklerparry_largerfolk/dragonfly_fat.png" />
     <part Name="Corpse" CorpseChance="25" CorpseBlueprint="Giant Dragonfly Corpse" />
     <stat Name="Agility" Boost="2" />
     <part Name="Brain" Factions="Prey-100,Insects-25" />
@@ -1394,6 +1404,7 @@ The infant child is unaware
   </object>  
   <object Name="Glowfish" Inherits="BaseFish">
     <part Name="Render" DisplayName="glowfish" RenderString="224" Tile="bucklerparry_largerfolk/glowfish_fat.png" DetailColor="C" ColorString="&amp;m" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="creatures/sw_glowfish.bmp" WeightStage_1="bucklerparry_largerfolk/glowfish_fat.png" />
     <part Name="Corpse" CorpseChance="100" CorpseBlueprint="Glowfish Corpse" />
     <stat Name="Hitpoints" Value="5" />
     <part Name="Brain" WandersRandomly="true" Hostile="false" Wanders="false" Aquatic="true" Calm="true" Factions="Fish-100" />
@@ -1446,6 +1457,7 @@ The infant child is unaware
   </object>
   <object Name="Goat" Load="Merge"> <!--Inherits="BaseGoat"-->
     <part Name="Render" DisplayName="goat" Tile="bucklerparry_largerfolk/goat_fat.png" RenderString="g" ColorString="&amp;w" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Assets_Content_Textures_Creatures_sw_goat.bmp" WeightStage_1="bucklerparry_largerfolk/goat_fat.png" />
 		<part Name="Description" Short="=pronouns.Possessive= curling horns are incised with the weathering script of time, and =pronouns.subjective= =verb:chew:afterpronoun= cud without a care for the mess in =pronouns.possessive= hairknot beard." />     
   </object>
   <object Name="Goat Corpse" Inherits="Animal Corpse">
@@ -1463,6 +1475,7 @@ The infant child is unaware
   </object>
   <object Name="Horned Chameleon" Inherits="BaseReptile">
     <part Name="Render" Tile="bucklerparry_largerfolk/chameleon_fat.png"  DisplayName="horned chameleon" RenderString="r" ColorString="&amp;y" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_chameleon.bmp" WeightStage_1="bucklerparry_largerfolk/chameleon_fat.png" />
     <part Name="Corpse" CorpseChance="20" CorpseBlueprint="Horned Chameleon Corpse" />
     <part Name="Brain" Hostile="false" />
     <stat Name="Hitpoints" Value="11" />
@@ -1492,6 +1505,7 @@ The infant child is unaware
   </object>
   <object Name="IrritableTortoise" Inherits="BaseTortoise">
     <part Name="Render" DisplayName="irritable tortoise" Tile="bucklerparry_largerfolk/tortoise_fat.png"  RenderString="t" ColorString="&amp;w" DetailColor="g" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_tortoise.bmp" WeightStage_1="bucklerparry_largerfolk/tortoise_fat.png" />
     <part Name="Corpse" CorpseChance="0" />
     <stat Name="Hitpoints" Value="24" />
     <part Name="Brain" Hostile="True" Factions="Tortoises-100" />
@@ -1592,6 +1606,7 @@ The infant child is unaware
   </object>
   <object Name="Salamander" Inherits="BaseReptile">
     <part Name="Render" DisplayName="{{R|salamander}}" Tile="bucklerparry_largerfolk/salamander_fat.png" RenderString="r" ColorString="&amp;R" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_salamander.bmp" WeightStage_1="bucklerparry_largerfolk/salamander_fat.png" />
     <part Name="Corpse" CorpseChance="25" CorpseBlueprint="Salamander Corpse" />
     <stat Name="Toughness" Boost="1" />
     <stat Name="AV" Value="2" />
@@ -1617,6 +1632,7 @@ The infant child is unaware
   </object>	
   <object Name="Scorpiock" Inherits="BaseSpider">
     <part Name="Render" DisplayName="scorpiock" Tile="bucklerparry_largerfolk/scorpiock_fat.png" RenderString="y" ColorString="&amp;w" DetailColor="W" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_scorpiock.bmp" WeightStage_1="bucklerparry_largerfolk/scorpiock_fat.png" />
     <part Name="Corpse" CorpseChance="10" CorpseBlueprint="Scorpiock Corpse" />
     <stat Name="Level" Value="5" />
     <stat Name="AV" Value="3" />
@@ -1684,6 +1700,7 @@ The infant child is unaware
   <!-- Snapjaws -->
   <object Name="Snapjaw" Inherits="BaseHumanoid">
         <part Name="Render" DisplayName="snapjaw" Tile="bucklerparry_largerfolk/snapjaw_fat.png" RenderString="s" ColorString="&amp;w" DetailColor="R" />
+        <part Name="LargerFolk_WeightStageRender" WeightStage_0="Assets_Content_Textures_Creatures_sw_snapjaw.bmp" WeightStage_1="bucklerparry_largerfolk/snapjaw_fat.png" />
         <part Name="ConversationScript" ConversationID="Snapjaw" />
         <part Name="Corpse" CorpseChance="90" CorpseBlueprint="Snapjaw Corpse" />
         <part Name="Brain" Hostile="false" Factions="Snapjaws-100" />
@@ -1738,6 +1755,7 @@ The infant child is unaware
   <object Name="Snapjaw Hunter" Inherits="Snapjaw">
         <part Name="AIShootAndScoot" Duration="1d2" />
         <part Name="Render" ColorString="&amp;r" Tile="bucklerparry_largerfolk/snapjaw_hunter_fat.png" DisplayName="snapjaw hunter" DetailColor="w" />
+        <part Name="LargerFolk_WeightStageRender" WeightStage_0="Assets_Content_Textures_Creatures_sw_snapjaw_hunter.bmp" WeightStage_1="bucklerparry_largerfolk/snapjaw_hunter_fat.png" />
         <part Name="Description" Short="" />
         <stat Name="Hitpoints" Value="6" />
         <stat Name="Speed" Value="95" />
@@ -1761,6 +1779,7 @@ The infant child is unaware
   <object Name="Snapjaw Shotgunner" Inherits="Snapjaw">
         <part Name="AIShootAndScoot" Duration="1d3-1" />
         <part Name="Render" ColorString="&amp;R" DisplayName="snapjaw shotgunner" Tile="bucklerparry_largerfolk/snapjaw_shotgunner_fat.png" DetailColor="r" />
+        <part Name="LargerFolk_WeightStageRender" WeightStage_0="Assets_Content_Textures_Creatures_sw_snapjaw_gunner.bmp" WeightStage_1="bucklerparry_largerfolk/snapjaw_shotgunner_fat.png" />
         <stat Name="Hitpoints" Value="6" />
         <stat Name="Speed" Value="95" />
         <inventoryobject Blueprint="Dagger" Number="1" />
@@ -1782,6 +1801,7 @@ The infant child is unaware
   </object>
   <object Name="Snapjaw Brute" Inherits="Snapjaw">
         <part Name="Render" DisplayName="snapjaw brute" Tile="bucklerparry_largerfolk/snapjaw_bruiser_fat.png" ColorString="&amp;W" DetailColor="R" />
+        <part Name="LargerFolk_WeightStageRender" WeightStage_0="Assets_Content_Textures_Creatures_sw_snapjaw_bruiser.bmp" WeightStage_1="bucklerparry_largerfolk/snapjaw_bruiser_fat.png" />
         <part Name="Description" Short="Upright =pronouns.subjective= =verb:stand:afterpronoun=, confidently bipedal. Tight undergarments strain against fat-swaddled thighs, unusual of =pronouns.possessive= kind, though =pronouns.Possessive= soft gut covers any immodesty regardless. =pronouns.possessive= wide snout snarls and =pronouns.possessive= ears twitch. =pronouns.Subjective= =verb:bark:afterpronoun=, and =pronouns.possessive= hyena tribeskin answer." />
         <stat Name="Hitpoints" Value="25" />
         <stat Name="AV" Value="1" />
@@ -1802,6 +1822,7 @@ The infant child is unaware
   </object>
   <object Name="Snapjaw Warrior" Inherits="Snapjaw">
         <part Name="Render" DisplayName="snapjaw warrior" Tile="bucklerparry_largerfolk/snapjaw_warrior_fat.png" ColorString="&amp;Y" DetailColor="R" />
+        <part Name="LargerFolk_WeightStageRender" WeightStage_0="Assets_Content_Textures_Creatures_sw_snapjaw_warrior.bmp" WeightStage_1="bucklerparry_largerfolk/snapjaw_warrior_fat.png" />
         <part Name="Description" Short="Clanking and belching, a fearsome warrior waddles across the wasteland in search of feed. =pronouns.Possessive= makeshift armour creaks and groans, its wearer in great excess of its weight capacity." />
         <stat Name="Hitpoints" Value="20" />
         <stat Name="AV" Value="1" />
@@ -1822,6 +1843,7 @@ The infant child is unaware
   </object>
   <object Name="Snapjaw Warlord" Inherits="Snapjaw">
         <part Name="Render" DisplayName="snapjaw warlord" Tile="bucklerparry_largerfolk/snapjaw_warlord_fat.png" ColorString="&amp;B" DetailColor="R" />
+        <part Name="LargerFolk_WeightStageRender" WeightStage_0="Assets_Content_Textures_Creatures_sw_snapjaw_rogue.bmp" WeightStage_1="bucklerparry_largerfolk/snapjaw_warlord_fat.png" />
         <part Name="Description" Short="A heavy gut filled with the pride of past meals swings pendulously abreast barely-mobile waddling thighs, testament to a hero's prowess. Too round for proper armour, a bright cloak flutters tattered in the wind."/>
         <stat Name="Hitpoints" Value="20" />
         <stat Name="AV" Value="2" />
@@ -1892,6 +1914,7 @@ The infant child is unaware
   </object>
   <object Name="Beetlebum" Load="Merge">
     <part Name="Render" DisplayName="beetlebum" Tile="bucklerparry_largerfolk/beetlebum_fat.png" RenderString="i" ColorString="&amp;B" TileColor="&amp;K" DetailColor="B" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_beetle.bmp" WeightStage_1="bucklerparry_largerfolk/beetlebum_fat.png" />
     <part Name="Description" Short="Bonnet blue wings contour to =pronouns.possessive= abdominal balloon, puffed out to blimpish volume by the garbage =pronouns.subjective= =verb:have:afterpronoun= eaten." />
   </object>
   <object Name="Farm Beetlebum" Inherits="Beetlebum">
@@ -1901,6 +1924,7 @@ The infant child is unaware
   </object>
   <object Name="Bloated Leech" Load="Merge">
     <part Name="Render" DisplayName="{{r|bloated leech}}" Tile="bucklerparry_largerfolk/bloated_leech_fat.png"  RenderString="W" ColorString="&amp;r" DetailColor="Y" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_bloatedleech.bmp" WeightStage_1="bucklerparry_largerfolk/bloated_leech_fat.png" />
     <part Name="Description" Short="Reticle dots are stretched to sagging geometry on =pronouns.possessive= bright and turgid wormback, coiled into flabby zigzags. =pronouns.Possessive= sucker bells flap open slightly on =pronouns.possessive= overstuffed head, satisfied." />
   </object>
   <object Name="Bloated_Leech_Bite" Inherits="Bite">
@@ -1909,15 +1933,18 @@ The infant child is unaware
   
   <object Name="ClockworkBeetle" Load="Merge">
     <part Name="Render" DisplayName="clockwork beetle" Tile="bucklerparry_largerfolk/beetlebum_fat.png"  RenderString="i" ColorString="&amp;c" DetailColor="W" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_beetle.bmp" WeightStage_1="bucklerparry_largerfolk/beetlebum_fat.png" />
   </object>
   <object Name="ClockworkBeetle_Bite" Inherits="Bite">
     <part Name="MeleeWeapon" BaseDamage="2d6" Skill="Cudgel" Slot="Head" />
   </object>
   <object Name="Issachari Raider" Load="Merge">
     <part Name="Render" DisplayName="Issachari raider" RenderString="h" Tile="bucklerparry_largerfolk/issachari_raider_fat.png" ColorString="&amp;Y" DetailColor="R" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_raider1.bmp" WeightStage_1="bucklerparry_largerfolk/issachari_raider_fat.png" />
   </object>
   <object Name="Issachari Rifler" Load="Merge">
     <part Name="Render" DisplayName="Issachari rifler" Tile="bucklerparry_largerfolk/issachari_rifler_fat.png" RenderString="h" ColorString="&amp;y" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_raider2.bmp" WeightStage_1="bucklerparry_largerfolk/issachari_rifler_fat.png" />
   </object>
 
   <object Name="Two-Headed Boar" Inherits="Boar">
@@ -2020,6 +2047,7 @@ The infant child is unaware
   </object>  		
   <object Name="Glowmoth" Inherits="BaseInsect">
     <part Name="Render" DisplayName="glowmoth" Tile="bucklerparry_largerfolk/glowmoth_fat.png" RenderString="i" ColorString="&amp;G" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_glowmoth.bmp" WeightStage_1="bucklerparry_largerfolk/glowmoth_fat.png" />
     <part Name="Corpse" CorpseChance="1" CorpseBlueprint="Glowmoth Corpse" />
     <stat Name="Hitpoints" Value="10" />
     <stat Name="Level" Value="6" />
@@ -2050,6 +2078,7 @@ The infant child is unaware
   </object>
   <object Name="Hide-Sheathed Hermit" Inherits="BaseHumanoid">
     <part Name="Render" Tile="bucklerparry_largerfolk/hermit_fat.png" DisplayName="hide-sheathed hermit" RenderString="h" ColorString="&amp;w" DetailColor="W" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_hermit.bmp" WeightStage_1="bucklerparry_largerfolk/hermit_fat.png" />
     <part Name="Corpse" CorpseChance="0" />
     <stat Name="AV" Value="6" />
     <stat Name="Level" Value="8" />
@@ -2086,6 +2115,7 @@ The infant child is unaware
   </object>
   <object Name="Knollworm" Inherits="BaseWorm">
     <part Name="Render" DisplayName="knollworm" Tile="bucklerparry_largerfolk/knollworm_fat.png" RenderString="w" ColorString="&amp;y" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_knollworm.bmp" WeightStage_1="bucklerparry_largerfolk/knollworm_fat.png" />
     <part Name="Corpse" CorpseChance="100" CorpseBlueprint="Knollworm Corpse" />
     <stat Name="AV" Value="3" />
     <stat Name="Level" Value="7" />
@@ -2114,6 +2144,7 @@ The infant child is unaware
   </object>	
   <object Name="Leech" Inherits="BaseWorm">
     <part Name="Render" DisplayName="{{r|leech}}" Tile="bucklerparry_largerfolk/leech_fat.png" RenderString="w" ColorString="&amp;y" DetailColor="Y" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_leech.bmp" WeightStage_1="bucklerparry_largerfolk/leech_fat.png" />
     <part Name="Corpse" CorpseChance="100" CorpseBlueprint="Leech Corpse" />
     <stat Name="AV" Value="2" />
     <stat Name="Level" Value="6" />
@@ -2143,6 +2174,7 @@ The infant child is unaware
   <object Name="Mechanimist Pilgrim" Inherits="Mechanimist">
     <part Name="Brain" Hostile="false" Factions="Mechanimists-100" Wanders="false" />
     <part Name="Render" DisplayName="Mechanimist pilgrim" Tile="bucklerparry_largerfolk/pilgrim2_fat.png" RenderString="m" ColorString="&amp;y" DetailColor="C" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/caste_18.bmp" WeightStage_1="bucklerparry_largerfolk/pilgrim2_fat.png" />
     <stat Name="Strength" sValue="14,1d3" />
     <stat Name="Agility" sValue="14,1d3" />
     <stat Name="Toughness" sValue="14,1d3" />
@@ -2172,6 +2204,7 @@ The infant child is unaware
   </object>
   <object Name="Mechanimist Pilgrim Still" Inherits="Mechanimist">
     <part Name="Render" DisplayName="Mechanimist pilgrim" Tile="bucklerparry_largerfolk/pilgrim2_fat.png" RenderString="m" ColorString="&amp;y" DetailColor="C" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/caste_18.bmp" WeightStage_1="bucklerparry_largerfolk/pilgrim2_fat.png" />
     <stat Name="Strength" sValue="14,1d3" />
     <stat Name="Agility" sValue="14,1d3" />
     <stat Name="Toughness" sValue="14,1d3" />
@@ -2199,6 +2232,7 @@ The infant child is unaware
   </object>
   <object Name="Mechnamist rummager" Inherits="Mechanimist">
     <part Name="Render" DisplayName="Mechanimist rummager" Tile="bucklerparry_largerfolk/mechanimist_rummager_fat.png" RenderString="m" ColorString="&amp;c" DetailColor="w" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_rummager.bmp" WeightStage_1="bucklerparry_largerfolk/mechanimist_rummager_fat.png" />
     <stat Name="Strength" sValue="14,1d3" />
     <stat Name="Agility" sValue="14,1d3" />
     <stat Name="Toughness" sValue="14,1d3" />
@@ -2246,6 +2280,7 @@ The infant child is unaware
   </object>
   <object Name="Plated Knollworm" Inherits="BaseWorm">
     <part Name="Render" DisplayName="plated knollworm" Tile="bucklerparry_largerfolk/plated_knollworm_fat.png" RenderString="w" DetailColor="w" ColorString="&amp;Y" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/plated-knollworm.bmp" WeightStage_1="bucklerparry_largerfolk/plated_knollworm_fat.png" />
     <part Name="Corpse" CorpseChance="100" CorpseBlueprint="Knollworm Corpse" />
     <stat Name="Toughness" Boost="1" />
     <stat Name="AV" Value="6" />
@@ -2320,6 +2355,7 @@ The infant child is unaware
   </object>
   <object Name="Segmented Mirthworm" Inherits="BaseWorm">
     <part Name="Render" DisplayName="{{w|segmented mirthworm}}" Tile="bucklerparry_largerfolk/mirthworm_fat.png" RenderString="w" ColorString="&amp;w" DetailColor="y" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_mirthworm.bmp" WeightStage_1="bucklerparry_largerfolk/mirthworm_fat.png" />
     <part Name="Corpse" CorpseChance="100" CorpseBlueprint="SegmentedMirthworm_Corpse" />
     <part Name="Breeder" Chance="5" ReductionChance="35" />
     <part Name="Brain" Hostile="false" />
@@ -2377,6 +2413,7 @@ The infant child is unaware
   </object>
   <object Name="BaseSlugsnout" Inherits="BaseSwine">
     <part Name="Render" DisplayName="[slugsnout]" RenderString="o" Tile="bucklerparry_largerfolk/boar_fat.png" ColorString="&amp;r" DetailColor="K" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_boar.bmp" WeightStage_1="bucklerparry_largerfolk/boar_fat.png" />
     <part Name="Corpse" CorpseChance="100" CorpseBlueprint="Boar Corpse" />
     <stat Name="AV" Value="3" />
     <stat Name="Speed" sValue="80" />
@@ -2397,6 +2434,7 @@ The infant child is unaware
   </object>
   <object Name="Slugsnout" Inherits="BaseSlugsnout">
     <part Name="Render" DisplayName="slugsnout" Tile="bucklerparry_largerfolk/boar_fat.png" ColorString="&amp;r" DetailColor="y" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_boar.bmp" WeightStage_1="bucklerparry_largerfolk/boar_fat.png" />
     <stat Name="Level" Value="9" />
     <inventoryobject Blueprint="Slugsnout Snout" Number="1" />
     <inventoryobject Blueprint="Slugsnout Tusks" Number="1" />
@@ -2502,6 +2540,7 @@ The infant child is unaware
   </object>
   <object Name="Trash Monk" Inherits="BaseHumanoid">
     <part Name="Render" Tile="bucklerparry_largerfolk/trashmonk_fat.png" DisplayName="trash monk" RenderString="h" ColorString="&amp;r" TileColor="&amp;y" DetailColor="r" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_trash_monk.bmp" WeightStage_1="bucklerparry_largerfolk/trashmonk_fat.png" />
     <stat Name="AV" Value="2" />
     <stat Name="Level" Value="8" />
     <stat Name="Hitpoints" Value="20" />
@@ -2555,6 +2594,7 @@ The infant child is unaware
 	<!-- Girshlings -->
 	<object Name="Girshling" Inherits="BaseSpider">
 		<part Name="Render" DisplayName="girshling" Tile="bucklerparry_largerfolk/girshling_fat.png"  RenderString="x" ColorString="&amp;m" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Assets_Content_Textures_Creatures_sw_solifuge.bmp" WeightStage_1="bucklerparry_largerfolk/girshling_fat.png" />
 		<part Name="Corpse" CorpseChance="8" CorpseBlueprint="Girshling Corpse" />
 		<stat Name="Hitpoints" Value="28" />
 		<stat Name="Level" Value="9" />
@@ -2799,6 +2839,7 @@ The infant child is unaware
   </object>
   <object Name="HindrenVillager" Inherits="BaseHindren">
     <part Name="Render" DisplayName="hindren villager" RenderString="h" ColorString="&amp;y" />
+	<part Name="LargerFolk_WeightStageRender" WeightStage_0="creatures/sw_hindren_1.bmp" WeightStage_1="bucklerparry_largerfolk/hindren_fat.png" />
     <part Name="Brain" Factions="Hindren-99" />
     <part Name="AmbientSoundGenerator" Sounds="sfx_tinker_idle_chop" ChancePerThousand="50" />
     <stat Name="Strength" sValue="18,1d4" />
@@ -2853,6 +2894,7 @@ The infant child is unaware
   <object Name="HindrenScout" Inherits="BaseHindren">
     <part Name="Brain" Factions="Hindren-99" />
     <part Name="Render" DisplayName="hindren scout" RenderString="h" ColorString="&amp;r" Tile="bucklerparry_largerfolk/hindren_scout_fat.png" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_hindren_4.bmp" WeightStage_1="bucklerparry_largerfolk/hindren_scout_fat.png" />
     <part Name="AISelfPreservation" Threshold="40" />
     <stat Name="Strength" sValue="20,1d4" />
     <stat Name="Agility" sValue="20,1d4" />
@@ -2891,6 +2933,7 @@ The infant child is unaware
   <!-- Naphtaali -->
   <object Name="BaseWoodsprog" Load="Merge"> <!--Inherits="BaseHumanoid"-->
     <part Name="Render" DisplayName="woodsprog" RenderString="n" ColorString="&amp;w" Tile="bucklerparry_largerfolk/woodsprog_fat.png" DetailColor="g" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/woodsprog.bmp" WeightStage_1="bucklerparry_largerfolk/woodsprog_fat.png" />
     <part Name="Description" Short="A body time-fit to living in the smalls of spiral roots is kept warm by a layer of symbiotic moss-fur. Bright eyes scan the forest points and then soften toward the stars." />
   </object>
   <object Name="Woodsprog" Load="Merge"> <!--Inherits="BaseWoodsprog"-->
@@ -2972,6 +3015,7 @@ The infant child is unaware
   </object>
   <object Name="Agolmaggot" Inherits="BaseWorm">
     <part Name="Render" DisplayName="agolmaggot" RenderString="w" ColorString="&amp;m" DetailColor="G" Tile="bucklerparry_largerfolk/agolmaggot_fat.png" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_agolmaggot.bmp" WeightStage_1="bucklerparry_largerfolk/agolmaggot_fat.png" />
     <part Name="Corpse" CorpseChance="100" CorpseBlueprint="AcidGas60" />
     <stat Name="AV" Value="3" />
     <stat Name="Level" Value="12" />
@@ -3028,6 +3072,7 @@ The infant child is unaware
     <part Name="ConversationScript" ConversationID="Arconaut" />
     <part Name="Brain" Hostile="false" Factions="Prey-100" />
     <part Name="Render" DisplayName="arconaut" Tile="bucklerparry_largerfolk/arconaut_fat.png" RenderString="h" ColorString="&amp;y" DetailColor="K" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/caste_14.bmp" WeightStage_1="bucklerparry_largerfolk/arconaut_fat.png" />
     <stat Name="Strength" sValue="14,1d3" />
     <stat Name="Agility" sValue="18,1d3" />
     <stat Name="Toughness" sValue="14,1d3" />
@@ -3070,6 +3115,7 @@ The infant child is unaware
   </object>
   <object Name="Barkbiter" Inherits="BaseBear">
     <part Name="Render" DisplayName="barkbiter" Tile="bucklerparry_largerfolk/bear_fat.png" DetailColor="W" RenderString="u" ColorString="&amp;W" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_angrybear.bmp" WeightStage_1="bucklerparry_largerfolk/bear_fat.png" />
     <part Name="Corpse" CorpseChance="30" CorpseBlueprint="Barkbiter Corpse" />
     <stat Name="Level" Value="15" />
     <stat Name="AV" Value="6" />
@@ -3100,6 +3146,7 @@ The infant child is unaware
   </object>  
   <object Name="Chitinous Puma" Inherits="BaseCat">
     <part Name="Render" DisplayName="chitinous puma" Tile="bucklerparry_largerfolk/cat_fat.png" RenderString="l" ColorString="&amp;W" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_cat.bmp" WeightStage_1="bucklerparry_largerfolk/cat_fat.png" />
     <part Name="Corpse" CorpseChance="5" CorpseBlueprint="Chitinous Puma Corpse" />
     <stat Name="AV" Value="7" />
     <stat Name="Level" Value="12" />
@@ -3201,6 +3248,7 @@ The infant child is unaware
   <object Name="Equimax" Inherits="BaseEquine">
     <part Name="Corpse" CorpseChance="10" CorpseBlueprint="Equimax Corpse" />
     <part Name="Render" DisplayName="equimax" RenderString="E" Tile="bucklerparry_largerfolk/equimax_fat.png" DetailColor="B" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_equimax.bmp" WeightStage_1="bucklerparry_largerfolk/equimax_fat.png" />
     <part Name="Brain" Wanders="True" Factions="Prey-99,Equines-100" />
     <stat Name="Intelligence" Boost="4" />
     <stat Name="Willpower" Boost="4" />
@@ -3264,6 +3312,7 @@ The infant child is unaware
   </object>
   <object Name="Fire Snout" Inherits="BaseSwine">
     <part Name="Render" DisplayName="fire snout" RenderString="o" Tile="bucklerparry_largerfolk/boar_fat.png"  ColorString="&amp;R" TileColor="&amp;R" DetailColor="W" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_boar.bmp" WeightStage_1="bucklerparry_largerfolk/boar_fat.png" />
     <part Name="Corpse" CorpseChance="10" CorpseBlueprint="Fire Snout Corpse" />
     <part Name="Brain" Hostile="false" Factions="Swine-100" />
     <stat Name="AV" Value="3" />
@@ -3305,6 +3354,7 @@ The infant child is unaware
 	</object>
 	<object Name="Gelatinous Wedge" Inherits="BaseOoze">
 		<part Name="Render" DisplayName="gelatinous wedge" Tile="bucklerparry_largerfolk/gelatinous_wedge_fat.png"  RenderString="J" ColorString="&amp;c" DetailColor="C" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_wedge.bmp" WeightStage_1="bucklerparry_largerfolk/gelatinous_wedge_fat.png" />
 		<part Name="Description" Short="Organic matter is liquefied by the agents of decay and pressurized by tight spaces into the shapes of prismatoids. Galvanized by a cousin-instinct to hunger, the gelatin entity now extrudes itself forward in wedge form." />
 		<stat Name="Level" Value="13" />
 		<tag Name="Role" Value="Tank" />
@@ -3320,6 +3370,7 @@ The infant child is unaware
 	</object>
   <object Name="Ghost Perch" Inherits="BaseFish">
     <part Name="Render" DisplayName="ghost perch" RenderString="224" Tile="bucklerparry_largerfolk/ghostperch_fat.png" DetailColor="m" ColorString="&amp;y" TileColor="&amp;Y" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_glowfish.bmp" WeightStage_1="bucklerparry_largerfolk/ghostperch_fat.png" />
     <part Name="Description" Short="Dead light refracts through the rainwater and off its kaleidoscope scales. Color is attenuated, and all that's left is a white-fin kelpie." />
     <part Name="Corpse" CorpseChance="100" CorpseBlueprint="Ghost Perch Corpse" />
     <stat Name="Hitpoints" Value="5" />
@@ -3390,11 +3441,13 @@ The infant child is unaware
   </object>
   <object Name="Ice frog" Load="Merge"> <!--Inherits="BaseFrog"-->
     <part Name="Render" DisplayName="ice frog" Tile="bucklerparry_largerfolk/ice_frog_fat.png"  RenderString="f" ColorString="&amp;C" DetailColor="W" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_frog.bmp" WeightStage_1="bucklerparry_largerfolk/ice_frog_fat.png" />
     <part Name="Description" Short="=pronouns.Subjective= =verb:gulp:afterpronoun= and =verb:shiver:afterpronoun= tufts off =pronouns.possessive= rime-tarped nostrils." />
   </object>
   <object Name="Infiltrator" Load="Merge"> <!--Inherits="BaseRobot"-->
     <part Name="Description" Short="Radial handles circumscribe a space inverter." />
     <part Name="Render" DisplayName="infiltrator" Tile="bucklerparry_largerfolk/interdictor_fat.png"  RenderString="3" ColorString="&amp;c" DetailColor="B"/>
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_interdictor.bmp" WeightStage_1="bucklerparry_largerfolk/interdictor_fat.png" />
   </object>
   <object Name="Plated Chromeling" Load="Merge"> <!--Inherits="BarathrumiteRobot"-->
     <part Name="Render" DisplayName="{{C|plated chromeling}}" Tile="bucklerparry_largerfolk/plated_chromeling_fat.png" RenderString="3" ColorString="&amp;C" DetailColor="y" />
@@ -3494,6 +3547,7 @@ The infant child is unaware
   </object>
   <object Name="Voider" Load="Merge">
     <part Name="Render" DisplayName="voider" ColorString="&amp;B" RenderString="x" Tile="bucklerparry_largerfolk/voider_fat.png" DetailColor="y" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_voider.bmp" WeightStage_1="bucklerparry_largerfolk/voider_fat.png" />
     <part Name="Description" Short="Anxious legs, grown wider in the vacated space around =pronouns.objective=, ply the mineral dirt. A drop of gastric flux sloshes inside =pronouns.possessive= swollen stomach-orb, powering =pronouns.possessive= instinctual rotation of the local ley." />
     <part Name="LargerFolk_WeightDescription" 
     WeightStage_0="Anxious legs, grown longer in the vacated space around =pronouns.objective=, ply the mineral dirt. A drop of gastric flux sloshes inside =pronouns.possessive= stomach-orb, powering =pronouns.possessive= instinctual rotation of the local ley."
@@ -3522,6 +3576,7 @@ The infant child is unaware
   <!-- Goatfolk -->
   <object Name="Goatfolk" Load="Merge">
     <part Name="Render" DisplayName="goatfolk" Tile="bucklerparry_largerfolk/goatbully_fat.png" RenderString="g" ColorString="&amp;W" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_goatfolk.bmp" WeightStage_1="bucklerparry_largerfolk/goatbully_fat.png" />
     <part Name="Description" Short="A braid of roasted frogskin stretches taut over =pronouns.possessive= swollen pectorals and fastens a satchel to =pronouns.possessive= hip. =pronouns.Possessive= hooves are stained with an unclassified mixture of blood, and spittle flies from =pronouns.possessive= bleating mouth into a tuft of scraggle chin-hair." />
     <part Name="LargerFolk_WeightDescription" 
       WeightDescription_0="A braid of roasted frogskin stretches taut over =pronouns.possessive= swollen pectorals and fastens a satchel to =pronouns.possessive= hip. =pronouns.Possessive= hooves are stained with an unclassified mixture of blood, and spittle flies from =pronouns.possessive= bleating mouth into a tuft of scraggle chin-hair." 
@@ -3559,6 +3614,7 @@ The infant child is unaware
   </object>
   <object Name="Goatfolk Hornblower" Load="Merge"> <!-- Inherits="Goatfolk Bully"-->
     <part Name="Render" DisplayName="goatfolk hornblower" Tile="bucklerparry_largerfolk/goatfolk_hornblower_fat.png" ColorString="&amp;G" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_goatfolk_hornblower.bmp" WeightStage_1="bucklerparry_largerfolk/goatfolk_hornblower_fat.png" />
   </object>
   <object Name="Goatfolk Sower" Load="Merge"> <!-- Inherits="Goatfolk"-->
     <part Name="Render" DisplayName="goatfolk sower" Tile="creatures/sw_goatfolk_sower.bmp" ColorString="&amp;r" />
@@ -3589,6 +3645,7 @@ The infant child is unaware
     <part Name="LargerFolk_WeightDescription" 
     WeightDescription_0="Fur is matted in blood-brushed clumps across =pronouns.possessive= skin; long fangs break the plane of =pronouns.possessive= bristly snout. =pronouns.Possessive= hindlegs tic and =pronouns.subjective= =verb:reach:afterpronoun= with =pronouns.possessive= forepaws for the reassurance of the dirt. In the earth's lightless recesses, troglodytes are reclaimed by the primal forces that once shucked them toward civilization."  
     WeightDescription_1="Fur is matted in blood-brushed clumps across =pronouns.possessive= sagging fleshrolls; long fangs break the plane of =pronouns.possessive= fattened snout. =pronouns.Possessive= soft hindlegs wobble and =pronouns.subjective= =verb:reach:afterpronoun= with =pronouns.possessive= forepaws for the reassurance of the dirt. In the earth's lightless recesses, troglodytes are reclaimed by the primal forces that once shucked them toward civilization."/>
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_snapjaw_feeder.bmp" WeightStage_1="bucklerparry_largerfolk/snapjaw_feeder_fat.png" />
   </object>
   <object Name="Snapjaw Feeder" Load="Merge"> <!-- Inherits="Snapjaw Troglodyte"-->
     <part Name="Render" DisplayName="snapjaw feeder" Tile="bucklerparry_largerfolk/snapjaw_feeder_fat.png" />
@@ -3666,6 +3723,7 @@ The infant child is unaware
   <object Name="Cloneling" Load="Merge"> <!-- Inherits="BaseRobot"-->
     <part Name="Render" DisplayName="{{c|cloneling}}" Tile="bucklerparry_largerfolk/cloneling_fat.png" RenderString="4" ColorString="&amp;c" DetailColor="C" />
     <part Name="Description" Short="A brushed metal pyramid floats in place and shoulders an array of stemmed articulators, some holding scalpels, some suturers, and all dripping with the amniotic draught of life." />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_cloneling.bmp" WeightStage_1="bucklerparry_largerfolk/cloneling_fat.png" />
   </object>
   <object Name="Cragmensch" Load="Merge"> <!-- Inherits="BaseHumanoid" -->
     <part Name="Render" DisplayName="cragmensch" Tile="creatures/sw_bugbear.bmp" RenderString="t" ColorString="&amp;y" />
@@ -3720,6 +3778,7 @@ The infant child is unaware
   </object>
   <object Name="Electric Snail" Load="Merge"> <!-- Inherits="BaseSnail" -->
     <part Name="Render" DisplayName="electric snail" Tile="bucklerparry_largerfolk/snail_fat.png" RenderString="q" ColorString="&amp;W" DetailColor="B" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_snail.bmp" WeightStage_1="bucklerparry_largerfolk/snail_fat.png" />
     <part Name="Description" Short="A ribbon of sparkflow writhes between the slick feelers of a boulder-height snail. =pronouns.Possessive= muscular foot tenses in the static air and disappears beneath a striated shell." />
   </object>
   <object Name="Farm Electric Snail" Load="Merge"> <!--  Inherits="Electric Snail" -->
@@ -3783,6 +3842,7 @@ The infant child is unaware
   </object>
   <object Name="Gelatinous Frustum" Load="Merge"> <!--Inherits="BaseOoze"-->
     <part Name="Render" DisplayName="gelatinous frustum" Tile="bucklerparry_largerfolk/gelatinous_frustum_fat.png"  RenderString="J" ColorString="&amp;w" DetailColor="W"/>
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_frustum.bmp" WeightStage_1="bucklerparry_largerfolk/gelatinous_frustum_fat.png" />
     <part Name="Description" Short="Organic matter is liquefied by the agents of decay and pressurized by tight spaces into the shapes of prismatoids. Galvanized by a cousin-instinct to hunger, the gelatin entity now extrudes itself forward in frustum form." />
   </object>
   <object Name="Green Goo" Load="Merge"> <!--Inherits="BaseOoze"-->
@@ -3842,6 +3902,7 @@ The infant child is unaware
   </object>
   <object Name="Humor" Inherits="BaseOoze">
     <part Name="Render" DisplayName="humor" Tile="bucklerparry_largerfolk/humor_fat.png"  RenderString="J" ColorString="&amp;y" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_humor.bmp" WeightStage_1="bucklerparry_largerfolk/humor_fat.png" />
     <stat Name="Level" Value="17" />
     <stat Name="AV" Value="5" />
     <stat Name="DV" Value="0" />
@@ -3980,6 +4041,7 @@ The infant child is unaware
   </object>
   <object Name="Mysterious Gunslinger" Inherits="BaseHumanoid">
     <part Name="Render" DisplayName="mysterious gunslinger" Tile="bucklerparry_largerfolk/gunslinger_fat.png" RenderString="h" ColorString="&amp;K" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/caste_16.bmp" WeightStage_1="bucklerparry_largerfolk/gunslinger_fat.png" />
     <part Name="Corpse" CorpseChance="0" />
     <part Name="Brain" Hostile="false" Factions="Strangers-100" />
     <stat Name="AV" Value="3" />
@@ -4027,6 +4089,7 @@ The infant child is unaware
     <stat Name="Willpower" Boost="1" />
     <stat Name="Toughness" Boost="-2" />
     <part Name="Render" ColorString="&amp;c" RenderString="e" DisplayName="psyberneticist" Tile="bucklerparry_largerfolk/psyberneticist_fat.png" DetailColor="R" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_psyber.bmp" WeightStage_1="bucklerparry_largerfolk/psyberneticist_fat.png" />
     <stat Name="Hitpoints" Value="30" />
     <stat Name="Speed" Value="100" />
     <part Name="RandomMutations" Mental="1d3" MentalLevel="1d4" Physical="0" PhysicalLevel="0" />
@@ -4038,10 +4101,12 @@ The infant child is unaware
   </object>
   <object Name="Spitting Slug" Load="Merge">
     <part Name="Render" DisplayName="spitting slug" Tile="bucklerparry_largerfolk/spitting_slug_fat.png" DetailColor="w" RenderString="q" ColorString="&amp;G" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_spitting_slug.bmp" WeightStage_1="bucklerparry_largerfolk/spitting_slug_fat.png" />
     <part Name="Description" Short="A giant, spotted keel pushes against =pronouns.possessive= acid-moist membrane. Burnt air puffs down the radula, and =pronouns.possessive= pores leak a digestive liquor." />
   </object>
   <object Name="Traipsing Mortar" Load="Merge">
     <part Name="Render" DisplayName="{{c|traipsing mortar}}" RenderString="5" ColorString="&amp;R" Tile="bucklerparry_largerfolk/traipsing_mortar_fat.png" DetailColor="W" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Assets_Content_Textures_Creatures_sw_mortar.bmp" WeightStage_1="bucklerparry_largerfolk/traipsing_mortar_fat.png" />
     <part Name="Description" Short="A mortar tube enameled with fire blister bounces on a gyroscopic mount between a pair of chrome-hooved kickers." />
   </object>	
   <object Name="Twinning Lamprey" Load="Merge">
@@ -4053,6 +4118,7 @@ The infant child is unaware
   <!-- Breathbeards -->
   <object Name="BaseBreather" Inherits="BaseReptile">
     <part Name="Render" DisplayName="breathbeard" Tile="bucklerparry_largerfolk/breathbeard_fat.png" RenderString="r" ColorString="&amp;y" DetailColor="W" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_breather.bmp" WeightStage_1="bucklerparry_largerfolk/breathbeard_fat.png" />
     <part Name="Description" Short="Rolling scales tessellate =pronouns.possessive= husky, slouching form, and motes of condensate stipple =pronouns.possessive= swollen chin. Splayed limbs beached upon its own fume-puffed gut, it wobbles slowly along in search of prey." />
     <part Name="Corpse" CorpseChance="25" CorpseBlueprint="BaseBreatherCorpse" />
     <stat Name="Level" Value="18" />
@@ -4427,6 +4493,7 @@ The infant child is unaware
   </object>
   <object Name="Bloated Pearlfrog" Inherits="BaseFrog">
     <part Name="Render" DisplayName="bloated pearlfrog" Tile="bucklerparry_largerfolk/bloated_pearlfrog_fat.png" RenderString="F" ColorString="&amp;Y" DetailColor="g" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_giant_frog.bmp" WeightStage_1="bucklerparry_largerfolk/bloated_pearlfrog_fat.png" />
     <part Name="Description" Short="Depigmented belly skin is tumefied with crushed insect matter into a gigantic and ripe pearl. Its legs have been resorbed by fat; the art of jumping mastered by its forebears survives only through ancestral memory." />
     <part Name="Corpse" CorpseChance="20" CorpseBlueprint="Bloated Pearlfrog Corpse" />
     <part Name="Brain"  Wanders="false" Mobile="false" />
@@ -4522,10 +4589,12 @@ The infant child is unaware
 		<part Name="Description" Short="A slender figure is apparelled in wispy chrome beaten by hammer and vice to appear as bunched fabric and approximate the body politic. =pronouns.Possessive= faceplate is stamped with a neutral visage." />		
 		<stat Name="Level" Value="23" />
     <part Name="Render" DisplayName="diplomacy droid" RenderString="2" ColorString="&amp;c" Tile="bucklerparry_largerfolk/diplomacybot_fat.png" DetailColor="W" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_diplomacy_droid.bmp" WeightStage_1="bucklerparry_largerfolk/diplomacybot_fat.png" />
     <tag Name="Species" Value="hover robot" />
   </object>
   <object Name="Gelatinous Prism" Inherits="BaseOoze">
     <part Name="Render" DisplayName="gelatinous prism" Tile="bucklerparry_largerfolk/gelatinous_prism_fat.png"  RenderString="J" ColorString="&amp;y" DetailColor="Y" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_prism.bmp" WeightStage_1="bucklerparry_largerfolk/gelatinous_prism_fat.png" />
     <part Name="Description" Short="Organic matter is liquefied by the agents of decay and pressurized by tight spaces into the shapes of prismatoids. Galvanized by a cousin-instinct to hunger, the gelatin entity now extrudes itself forward in prism form." />
     <stat Name="Level" Value="23" />
     <tag Name="Role" Value="Tank" />
@@ -4542,6 +4611,7 @@ The infant child is unaware
   </object>
   <object Name="Gyrohumor" Inherits="BaseOoze">
     <part Name="Render" DisplayName="gyrohumor" Tile="bucklerparry_largerfolk/gyrohumor_fat.png"  RenderString="J" ColorString="&amp;C" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_gyrohumor.bmp" WeightStage_1="bucklerparry_largerfolk/gyrohumor_fat.png" />
     <part Name="Description" Short="Humors are the eroded bits of the earth: dust flaked off a million-year-old wall of shale, runoff brine dripped through a hairline crack of chrome, dew clung to the lips of a pipe after it's belched its septic vapor. Under the right conditions, at time scales inscrutable to kith and kin, the bits are heaped together by the geometry of entropy and remorphed into the prime material anew." />
     <stat Name="Level" Value="22" />
     <stat Name="AV" Value="9" />
@@ -4634,6 +4704,7 @@ The infant child is unaware
   </object>
   <object Name="Ickslug" Inherits="BaseSlug">
     <part Name="Render" DisplayName="ickslug" Tile="bucklerparry_largerfolk/slug_fat.png" DetailColor="B" RenderString="q" ColorString="&amp;m" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_slug.bmp" WeightStage_1="bucklerparry_largerfolk/slug_fat.png" />
 		<part Name="Description" Short="A soaking span of soft tissue anneals to the floor. =pronouns.Subjective= =verb:crumple:afterpronoun= with hot life." />
     <part Name="Corpse" CorpseChance="0" CorpseBlueprint="Snailmother Corpse" />
     <stat Name="ColdResistance" Value="40" />
@@ -4734,6 +4805,7 @@ The infant child is unaware
   </object>
   <object Name="Molting Basilisk" Inherits="BaseReptile">
     <part Name="Render" DisplayName="molting basilisk husk" Tile="bucklerparry_largerfolk/basilisk_fat.png" RenderString="R" ColorString="&amp;K" DetailColor="K" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_basilisk.bmp" WeightStage_1="bucklerparry_largerfolk/basilisk_fat.png" />
     <part Name="Corpse" CorpseChance="0" CorpseBlueprint="Molting Basilisk Husk" />
     <stat Name="ColdResistance" Value="50" />
     <stat Name="Strength" sValue="37" />
@@ -4921,6 +4993,7 @@ The infant child is unaware
   </object>
   <object Name="Rimewyk" Inherits="BaseReptile">
     <part Name="Render" DisplayName="rimewyk" RenderString="r" ColorString="&amp;C" Tile="bucklerparry_largerfolk/rimewyk_fat.png" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/rimewyk.bmp" WeightStage_1="bucklerparry_largerfolk/rimewyk_fat.png" />
     <stat Name="Level" Value="22" />
     <stat Name="AV" Value="6" />
     <stat Name="DV" Value="6" />
@@ -4945,6 +5018,7 @@ The infant child is unaware
   </object>
   <object Name="Slumberling" Inherits="BaseBear">
     <part Name="Render" DisplayName="slumberling" RenderString="u" ColorString="&amp;K" Tile="bucklerparry_largerfolk/slumberling_fat.png" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_slumberling.bmp" WeightStage_1="bucklerparry_largerfolk/slumberling_fat.png" />
     <part Name="Corpse" CorpseChance="0" />
     <stat Name="Strength" Boost="2" />
     <stat Name="AV" Value="5" />
@@ -4973,6 +5047,7 @@ The infant child is unaware
   </object>
   <object Name="Snailmother" Inherits="BaseSnail">
     <part Name="Render" DisplayName="snailmother" Tile="bucklerparry_largerfolk/snail_fat.png" RenderString="Q" ColorString="&amp;C" DetailColor="c" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_snail.bmp" WeightStage_1="bucklerparry_largerfolk/snail_fat.png" />
 		<part Name="Description" Short="Out a pristine shell of rolling citrine, frozen azure, and polished jade, the goopy neck cranes straight up and loosens a throbbing egg from =pronouns.possessive= gelatin clutch." />
     <part Name="Corpse" CorpseChance="100" CorpseBlueprint="Snailmother Corpse" />
     <stat Name="ElectricResistance" Value="5" />
@@ -5039,6 +5114,7 @@ The infant child is unaware
   <object Name="Waveform Worm" Inherits="BaseWorm">
     <part Name="Description" Short="Metameric fat rings are joined into a line and crammed along a waveform. When one of a trillion-per-second random fluctuations causes the cosmic fabric to ripple, the worm aligns itself to a pattern of constructive interference and is shunted forward, with nary a jiggle to indicate any movement of the sluggish thing has occurred." />
     <part Name="Render" Tile="bucklerparry_largerfolk/waveform_worm_fat.png" DisplayName="waveform worm" RenderString="w" ColorString="&amp;c" DetailColor="R" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_waveform_worm.bmp" WeightStage_1="bucklerparry_largerfolk/waveform_worm_fat.png" />
     <stat Name="Level" Value="25" />
     <tag Name="Role" Value="Artillery" />
     <mutation Name="WaveformWorm" Level="10" />
@@ -5053,6 +5129,7 @@ The infant child is unaware
   </object>
   <object Name="White Esh" Inherits="BaseBird">
     <part Name="Render" DisplayName="white esh" RenderString="b" Tile="bucklerparry_largerfolk/white_esh_fat.png" ColorString="&amp;Y" DetailColor="m" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_flamingo_2.bmp" WeightStage_1="bucklerparry_largerfolk/white_esh_fat.png" />
     <part Name="Description" Short="Flame-white feathers bend to a sinuous curve of repose. =pronouns.Possessive= stick-legs and fisher beak bracket =pronouns.possessive= body in coral and orchid hues." />
     <part Name="ConversationScript" ConversationID="WaterBirds" />
     <stat Name="Level" Value="21" />
@@ -5124,6 +5201,7 @@ The infant child is unaware
   </object>
   <object Name="Mechanimist Priest 1" Inherits="Mechanimist">
     <part Name="Render" DisplayName="Mechanimist priest" ColorString="&amp;G" RenderString="m" Tile="bucklerparry_largerfolk/mechanimist_priest_fat.png" DetailColor="W" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_preacher2.bmp" WeightStage_1="bucklerparry_largerfolk/mechanimist_priest_fat.png" />
     <stat Name="Level" Value="25" />
     <stat Name="Hitpoints" Value="60" />
     <stat Name="Intelligence" Boost="2" />
@@ -5222,6 +5300,7 @@ The infant child is unaware
   </object>
   <object Name="Stilt Warden" Inherits="Mechanimist Warden">
     <part Name="Render" ColorString="&amp;W" DetailColor="B" RenderString="m" Tile="bucklerparry_largerfolk/hearthchild_fat.png" DisplayName="protector of the Stilt" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/caste_9.bmp" WeightStage_1="bucklerparry_largerfolk/hearthchild_fat.png" />
     <removepart Name="DisplayNameColor" />
     <part Name="Brain" Wanders="false" />
     <stat Name="Level" Value="26" />
@@ -5388,6 +5467,7 @@ The infant child is unaware
 	<!-- POINTER: Gyre Wight of Shug'ruith - Tier 4 -->
 	<object Name="Gyre Wight of Rermadon" Inherits="BaseGyreWight">
 		<part Name="Render" DisplayName="gyre wight of Rermadon" Tile="bucklerparry_largerfolk/wight_rermadon_fat.png" ColorString="&amp;G" TileColor="&amp;m" DetailColor="G" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/wight_rermadon.bmp" WeightStage_1="bucklerparry_largerfolk/wight_rermadon_fat.png" />
 		<part Name="Description" Short="A figure is marked by star orchid robes as a votary of the Gyre and reveler in the metamorphic numen. Nails filth-black flash from out =pronouns.possessive= sleeve in a gesture-poem to say that plague is but transmutation, death is the ladder to life, and the existence of children proves the prelacy of raw growth. =pronouns.Subjective= =verb:smell:afterpronoun= of burning fish guts." />
 		<stat Name="Hitpoints" Value="100" />
 		<stat Name="Level" Value="22" />
@@ -5406,6 +5486,7 @@ The infant child is unaware
 	</object>
 	<object Name="Gyre Wight of Qas" Inherits="BaseGyreWight">
 		<part Name="Render" DisplayName="gyre wight of Qas" Tile="bucklerparry_largerfolk/wight_qas_fat.png" ColorString="&amp;c" TileColor="&amp;m" DetailColor="c" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/wight_qas.bmp" WeightStage_1="bucklerparry_largerfolk/wight_qas_fat.png" />
 		<part Name="Description" Short="A figure is marked by star orchid robes as a votary of the Gyre and reveler in the metamorphic numen. Nails filth-black flash from out =pronouns.possessive= sleeve in a gesture-poem to say that plague is but transmutation, death is the ladder to life, and the existence of children proves the prelacy of raw growth. =pronouns.Subjective= =verb:bear:afterpronoun= skin ink in the shape of hexagons." />
 		<stat Name="Hitpoints" Value="110" />
 		<stat Name="Level" Value="23" />
@@ -5424,6 +5505,7 @@ The infant child is unaware
 	</object>
 	<object Name="Gyre Wight of Qon" Inherits="BaseGyreWight">
 		<part Name="Render" DisplayName="gyre wight of Qon" Tile="bucklerparry_largerfolk/wight_qon_fat.png" ColorString="&amp;b" TileColor="&amp;m" DetailColor="b" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/wight_qon.bmp" WeightStage_1="bucklerparry_largerfolk/wight_qon_fat.png" />
 		<part Name="Description" Short="A figure is marked by star orchid robes as a votary of the Gyre and reveler in the metamorphic numen. Nails filth-black flash from out =pronouns.possessive= sleeve in a gesture-poem to say that plague is but transmutation, death is the ladder to life, and the existence of children proves the prelacy of raw growth. The rhythm of =pronouns.possessive= steps contain no pattern." />
 		<stat Name="Hitpoints" Value="110" />
 		<stat Name="Level" Value="23" />
@@ -5482,6 +5564,7 @@ The infant child is unaware
   </object>
   <object Name="Caravan Guard" Inherits="Dromad">
     <part Name="Render" DisplayName="caravan guard" RenderString="h" ColorString="&amp;Y" TileColor="&amp;Y" Tile="bucklerparry_largerfolk/caravan_guard_fat.png" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/dromad-caravan-guard.png" WeightStage_1="bucklerparry_largerfolk/caravan_guard_fat.png" />
     <part Name="Corpse" CorpseChance="0" CorpseBlueprint="Snapjaw Corpse" />
     <part Name="Brain" Hostile="false" />
     <stat Name="Willpower" Value="34" />
@@ -5492,6 +5575,7 @@ The infant child is unaware
   <object Name="BaseConservator" Inherits="BaseRobot">
     <part Name="Body"  Anatomy="TreadedRobot" />
     <part Name="Render" DisplayName="conservator" RenderString="6" ColorString="&amp;B" TileColor="&amp;B" Tile="bucklerparry_largerfolk/conservator_fat.png" DetailColor="C" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_tombbot_large_2.bmp" WeightStage_1="bucklerparry_largerfolk/conservator_fat.png" />
     <part Name="Description" Short="Mirrored chrome spangles gather in waves and break on the seams of the dead-sitter colossus's electroplated chassis. Loose sequins, like free radicals, are sent tumbling by time and earth-pull." />
     <stat Name="Level" Value="30" />
     <stat Name="Strength" Boost="1" />
@@ -5555,6 +5639,7 @@ The infant child is unaware
   </object>
   <object Name="Conservator" Inherits="BaseConservator">
     <part Name="Render" DisplayName="conservator" RenderString="6" ColorString="&amp;B" TileColor="&amp;B" Tile="bucklerparry_largerfolk/conservator_fat.png" DetailColor="C" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_tombbot_large_2.bmp" WeightStage_1="bucklerparry_largerfolk/conservator_fat.png" />
   </object>
   <object Name="Conservator Special" Inherits="Conservator">
     <part Name="TombPatrolBehavior" />
@@ -5642,6 +5727,7 @@ The infant child is unaware
   </object>
   <object Name="Gelatinous Cupola" Inherits="BaseOoze">
     <part Name="Render" DisplayName="gelatinous cupola" Tile="bucklerparry_largerfolk/gelatinous_cupola_fat.png"  RenderString="J" ColorString="&amp;g" DetailColor="G" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_cupola.bmp" WeightStage_1="bucklerparry_largerfolk/gelatinous_cupola_fat.png" />
     <part Name="Description" Short="Organic matter is liquefied by the agents of decay and pressurized by tight spaces into the shapes of prismatoids. Galvanized by a cousin-instinct to hunger, the gelatin entity now extrudes itself forward in cupola form." />
     <stat Name="Level" Value="28" />
     <tag Name="Role" Value="Tank" />
@@ -5658,6 +5744,7 @@ The infant child is unaware
   </object>
   <object Name="Graverobber" Inherits="NPC">
     <part Name="Render" DisplayName="graverobber" Tile="bucklerparry_largerfolk/arconaut_fat.png" RenderString="h" ColorString="&amp;K" DetailColor="W" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/caste_14.bmp" WeightStage_1="bucklerparry_largerfolk/arconaut_fat.png" />
     <part Name="ConversationScript" ConversationID="Arconaut" />
     <part Name="Brain" Factions="Prey-100" />
     <stat Name="Agility" Boost="1" />
@@ -5865,6 +5952,7 @@ The infant child is unaware
   </object>
   <object Name="Panhumor" Inherits="BaseOoze">
     <part Name="Render" DisplayName="panhumor" Tile="bucklerparry_largerfolk/panhumor_fat.png"  RenderString="J" ColorString="&amp;y" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_panhumor.bmp" WeightStage_1="bucklerparry_largerfolk/panhumor_fat.png" />
     <stat Name="Level" Value="27" />
     <stat Name="AV" Value="5" />
     <stat Name="DV" Value="0" />
@@ -5997,6 +6085,7 @@ The infant child is unaware
   </object>
   <object Name="Trash Abbot" Inherits="BaseHumanoid">
     <part Name="Render" Tile="bucklerparry_largerfolk/trashabbot_fat.png" DisplayName="trash abbot" RenderString="h" ColorString="&amp;R" TileColor="&amp;y" DetailColor="R" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_elder_trash_monk.bmp" WeightStage_1="bucklerparry_largerfolk/trashabbot_fat.png" />
     <part Name="Description" Short="Strata in the scores of rust-caked trash wrap =pronouns.objective= like a patterned tallith. =pronouns.Subjective= =verb:wear:afterpronoun= also earrings of thousand-year glass, shoulderpads of gallium-painted circuitboard, and ankle cuffs of corpse hair." />
     <stat Name="AV" Value="3" />
     <stat Name="Level" Value="30" />
@@ -6051,6 +6140,7 @@ The infant child is unaware
   <!-- Elder breathbeards -->
   <object Name="BaseElderBreather" Inherits="BaseBreather">
     <part Name="Render" DisplayName="elder breathbeard" Tile="bucklerparry_largerfolk/elderbreathbeard_fat.png" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_elder_breather.bmp" WeightStage_1="bucklerparry_largerfolk/elderbreathbeard_fat.png" />
     <part Name="Description" Short="Rolling scales tessellate =pronouns.possessive= monstrous, slouching form, and motes of condensate stipple =pronouns.possessive= swollen chin. =pronouns.Possessive= tail is stretched and cracked with advanced age. Taught with gas pressure, its overinflated gut dominates the silhouette." />
     <part Name="Corpse" CorpseChance="25" CorpseBlueprint="BaseElderBreatherCorpse" />
     <stat Name="Level" Value="28" />
@@ -6176,6 +6266,7 @@ The infant child is unaware
   </object>
   <object Name="MopangoPilgrim" Inherits="BaseMopango">
     <part Name="Render" DisplayName="mopango pilgrim" RenderString="v" DetailColor="y" ColorString="&amp;w" Tile="bucklerparry_largerfolk/mopango_fat.png" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_mopango_villager.bmp" WeightStage_1="bucklerparry_largerfolk/mopango_fat.png" />
     <part Name="Brain" Hostile="false" Factions="Mopango-100" Wanders="true" />
     <part Name="ConversationScript" ConversationID="MopangoStranger" />
     <stat Name="Level" Value="26" />
@@ -6201,6 +6292,7 @@ The infant child is unaware
   </object>
   <object Name="MopangoTombdweller" Inherits="BaseMopango">
     <part Name="Render" DisplayName="mopango tombdweller" RenderString="v" DetailColor="y" ColorString="&amp;w" Tile="bucklerparry_largerfolk/mopango_fat.png" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_mopango_villager.bmp" WeightStage_1="bucklerparry_largerfolk/mopango_fat.png" />
     <part Name="Brain" Hostile="false" Factions="Mopango-100" Wanders="true" />
     <part Name="ConversationScript" ConversationID="MopangoStranger" />
     <stat Name="Level" Value="26" />
@@ -6286,6 +6378,7 @@ The infant child is unaware
   <object Name="Crypt Sitter" Inherits="BaseRobot">
     <part Name="Body"  Anatomy="TripedalRobot" />
     <part Name="Render" DisplayName="crypt sitter" RenderString="7" ColorString="&amp;c" Tile="bucklerparry_largerfolk/cryptsitter_fat.png" DetailColor="Y" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_orb_legged.bmp" WeightStage_1="bucklerparry_largerfolk/cryptsitter_fat.png" />
     <part Name="Brain" Hostile="false" Feelings="All:0" />
     <part Name="Description" Short="A monstrous, unlidded eye is perched on three spider-thin legs. Its lens is a lune of hot tetraxenonoglass, its iris a supernova of gallium circuitry. All the honey-thick light that pours through the void of its pupil is pumped up the arterial turnpike, drank by the optic nerve, and dripped like dye into the grayscale field of its dreaming brain." />
     <part Name="RefractLight" Chance="75" />
@@ -6345,6 +6438,7 @@ The infant child is unaware
 	</object>
 	<object Name="Enigma Snail" Inherits="BaseSnail">
     <part Name="Render" DisplayName="enigma snail" Tile="bucklerparry_largerfolk/enigma_snail_fat.png" RenderString="q" ColorString="&amp;B" TileColor="&amp;W" DetailColor="B" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_cone_snail.bmp" WeightStage_1="bucklerparry_largerfolk/enigma_snail_fat.png" />
     <part Name="Description" Short="A giant cone of calcereous shell conceals a softform body. It tilts to the side, and its many whorls are sequenced to impress the eye with pleasing geometry before swerving to uncomfortable and dizzying disharmony." />
     <part Name="Corpse" CorpseChance="20" CorpseBlueprint="Enigma Snail Corpse" />
     <part Name="Brain" MaxKillRadius="6" />
@@ -6428,6 +6522,7 @@ The infant child is unaware
   </object>
   <object Name="Gelatinous Antiprism" Inherits="BaseOoze">
     <part Name="Render" DisplayName="gelatinous antiprism" Tile="bucklerparry_largerfolk/gelatinous_antiprism_fat.png"  RenderString="J" ColorString="&amp;K" DetailColor="y" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_antiprism.bmp" WeightStage_1="bucklerparry_largerfolk/gelatinous_antiprism_fat.png" />
     <part Name="Description" Short="Organic matter is liquefied by the agents of decay and pressurized by tight spaces into the shapes of prismatoids. Galvanized by a cousin-instinct to hunger, the gelatin entity now extrudes itself forward in antiprism form." />
     <stat Name="Level" Value="33" />
     <tag Name="Role" Value="Tank" />
@@ -6496,6 +6591,7 @@ The infant child is unaware
   </object>
   <object Name="Great Saltback" Inherits="BaseTortoise">
     <part Name="Render" DisplayName="great saltback" Tile="bucklerparry_largerfolk/tortoise_fat.png" RenderString="T" ColorString="&amp;Y" DetailColor="w" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_tortoise.bmp" WeightStage_1="bucklerparry_largerfolk/tortoise_fat.png" />
     <part Name="Corpse" CorpseChance="90" CorpseBlueprint="Great Saltback Corpse" />
     <part Name="Brain" Factions="Dromad-100,Tortoises-50" Hostile="false" />
     <stat Name="AV" Value="17" />
@@ -6528,6 +6624,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
     <part Name="Body" Anatomy="HoverRobot" />
     <part Name="Description" Short="There's an oculus in the center of the dragonfly drone's sensory array. It unshutters with a whir and emits a glowing beam of force." />
     <part Name="Render" DisplayName="interdictor" Tile="bucklerparry_largerfolk/interdictor_fat.png"  RenderString="7" ColorString="&amp;y" DetailColor="C"/>
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_interdictor.bmp" WeightStage_1="bucklerparry_largerfolk/interdictor_fat.png" />
     <stat Name="Level" Value="32" />
     <stat Name="Strength" Boost="-3" />
     <stat Name="Toughness" Boost="-2" />
@@ -6557,6 +6654,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
   </object>
   <object Name="Lithofex" Inherits="BaseReptile">
     <part Name="Render" DisplayName="lithofex" Tile="bucklerparry_largerfolk/basilisk_fat.png"  RenderString="R" ColorString="&amp;y" DetailColor="Y" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_basilisk.bmp" WeightStage_1="bucklerparry_largerfolk/basilisk_fat.png" />
     <part Name="Description" Short="Rents in =pronouns.possessive= scales widen as =pronouns.subjective= =verb:flex:afterpronoun= =pronouns.possessive= petrified joints, and dust powders the ground beneath =pronouns.objective=. Under =pronouns.possessive= stalactite eyelids, a lithifying bale is whisked into focus." />
     <stat Name="Level" Value="35" />
     <tag Name="Role" Value="Artillery" />
@@ -6639,6 +6737,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
   </object>
   <object Name="Reef Hermit" Inherits="BaseHumanoid">
     <part Name="Render" Tile="bucklerparry_largerfolk/reef_hermit_fat.png" DisplayName="reef hermit" RenderString="h" ColorString="&amp;r" TileColor="&amp;y" DetailColor="r" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_reef_hermit.bmp" WeightStage_1="bucklerparry_largerfolk/reef_hermit_fat.png" />
     <part Name="Description" Short="Polyps grow across =pronouns.possessive= softened torso and broad shoulders like a tallith; fullerite and chrome and glass pop out like fins. The eremite is a waddling piece of reef." />
     <part Name="Brain" Factions="Hermits-100" />
     <stat Name="AV" Value="5" />
@@ -6769,6 +6868,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
   </object>
   <object Name="Sultan Croc" Inherits="Croc">
     <part Name="Render" DisplayName="sultan croc" RenderString="R" Tile="bucklerparry_largerfolk/sultancroc_fat.png" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_sultan_croc.bmp" WeightStage_1="bucklerparry_largerfolk/sultancroc_fat.png" />
     <part Name="Description" Short="Deposits of bone-stuff were cast into the moulds of fractured plates and ridges across the four-folk span of =pronouns.possessive= gigantic self. =pronouns.Subjective= =verb:flatten:afterpronoun= under =pronouns.possessive= own titanic weight, and teeth the size of fulcrete picks array =pronouns.possessive= stonelike mouth." />
     <part Name="Brain" Wanders="false" />
     <part Name="Corpse" CorpseChance="20" CorpseBlueprint="Sultan Croc Corpse" />
@@ -6961,6 +7061,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
   </object>
   <object Name="Astral Tabby" Inherits="BaseCat">
     <part Name="Render" DisplayName="astral tabby" Tile="bucklerparry_largerfolk/kitty_fat.png" RenderString="c" ColorString="&amp;K" DetailColor="y" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_kitty.bmp" WeightStage_1="bucklerparry_largerfolk/kitty_fat.png" />
     <part Name="Description" Short="=pronouns.Subjective= =verb:flicker:afterpronoun= behind =pronouns.possessive= marble coat, synchronously inhabiting this dimension while stalking the dreamy corridors of =pronouns.possessive= own chimeric world." />
     <stat Name="AV" Value="3" />
     <stat Name="Level" Value="36" />
@@ -7115,6 +7216,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
   </object>
   <object Name="Gamma Moth" Load="Merge"> <!--Inherits="BaseInsect"-->
     <part Name="Render" DisplayName="gamma moth" Tile="bucklerparry_largerfolk/gamma_moth_fat.png" ColorString="&amp;M" DetailColor="K" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_moth.bmp" WeightStage_1="bucklerparry_largerfolk/gamma_moth_fat.png" />
     <part Name="Description" Short="Vast diaphanous wings painted in the furcate patterns of fractalized geometry bat the air." />
   </object>
 	<object Name="Grand Newfather" Load="Merge"> <!--Inherits="Templar"-->
@@ -7172,6 +7274,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
     <part Name="Body" Anatomy="QuadrupedalRobot" />
 		<part Name="Corpse" CorpseChance="25" CorpseBlueprint="Giant Heap of Chrome Scrap" />
     <part Name="Render" DisplayName="{{r|leering stalker}}" RenderString="8" ColorString="&amp;R" TileColor="&amp;c" DetailColor="R" Tile="bucklerparry_largerfolk/leering_stalker_fat.png" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_leering_stalker.bmp" WeightStage_1="bucklerparry_largerfolk/leering_stalker_fat.png" />
     <stat Name="Level" Value="45" />
     <stat Name="AV" Value="25" />
     <stat Name="Hitpoints" Value="800" />
@@ -7248,6 +7351,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
   </object>
   <object Name="Saltwurm" Inherits="BaseWorm">
     <part Name="Render" DisplayName="salt kraken" Tile="bucklerparry_largerfolk/salt_kraken_fat.png" RenderString="W" ColorString="&amp;Y" DetailColor="y" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_kraken.bmp" WeightStage_1="bucklerparry_largerfolk/salt_kraken_fat.png" />
     <part Name="Corpse" CorpseChance="90" CorpseBlueprint="Saltwurm Corpse" />
     <stat Name="AV" Value="17" />
     <stat Name="DV" Value="-10" />
@@ -7323,6 +7427,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
 	<object Name="Unimax" Inherits="BaseEquine">
 		<part Name="Corpse" CorpseChance="10" CorpseBlueprint="Unimax Corpse" />
 		<part Name="Render" DisplayName="unimax" RenderString="E" Tile="bucklerparry_largerfolk/unimax_fat.png" ColorString="&amp;Y" DetailColor="m" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_unimax.bmp" WeightStage_1="bucklerparry_largerfolk/unimax_fat.png" />
 		<part Name="Description" Short="Horse hair carpets =pronouns.possessive= beautiful, sagging curves like white rain on the Pale Sea, and then it's battered by streamers of magenta mane. That and =pronouns.possessive= tail are pennants of a Lost and Never kingdom. Ofer the head a dream is promised: bone races itself to a nothing-point and is sheathed by Time's breath in the keratin of glitter." />
 		<part Name="Brain" Wanders="True" Factions="Prey-99,Equines-100" />
 		<stat Name="Intelligence" Boost="4" />
@@ -7650,6 +7755,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
 
   <object Name="Daughter of Exile" Inherits="BaseHumanoid">
     <part Name="Render" DisplayName="daughter of Exile" Tile="bucklerparry_largerfolk/daughter_of_exile_fat.png" ColorString="&amp;y" DetailColor="C" RenderString="h" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_daughter.bmp" WeightStage_1="bucklerparry_largerfolk/daughter_of_exile_fat.png" />
     <part Name="Description" Short="Oil smears and arc burns stripe the flesh that peeks out from under the frustum of =pronouns.possessive= habit, and the tools belted to =pronouns.possessive= waistline put a sag in =pronouns.possessive= breeches. =pronouns.Subjective= =verb:are:afterpronoun= guided by the stitch of =pronouns.possessive= order's diasporic emblem, set with a magnetic needle, and pointing =pronouns.objective= toward the wild gardens beyond the wall." />
     <part Name="Brain" Hostile="false" Factions="Daughters-100" Wanders="false" />
     <part Name="AIPilgrim" StiltZoneID="JoppaWorld.53.4.0.0.10" StiltEntranceZoneID="JoppaWorld.53.4.0.0.10" TargetObject="RachelsTombstone" />
@@ -8183,6 +8289,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
   <!-- Soup sludges -->
   <object Name="SoupSludge" Inherits="BaseOoze">
     <part Name="Render" DisplayName="{{c|soupy}} sludge" RenderString="J" ColorString="&amp;c" DetailColor="C" Tile="bucklerparry_largerfolk/soupy_sludge_fat.png" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_sludge.bmp" WeightStage_1="bucklerparry_largerfolk/soupy_sludge_fat.png" />
     <part Name="Description" Short="Quickened to life, or something akin to life, by the ionic exchange between an ultra-reactive primordial soup and its liquid cousin, the sludge repeats a process played out on trillions of star-orbiting world-rocks." />
     <part Name="Corpse" CorpseChance="0" />
     <stat Name="Hitpoints" Value="75" />
@@ -9465,6 +9572,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
 	<object Name="Qas" Inherits="BaseNephal">
 		<part Name="Body" Anatomy="Quadruped" />
 		<part Name="Render" DisplayName="Qas" Tile="bucklerparry_largerfolk/girsh_qas_fat.png" DetailColor="c" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/nephilim_qas.bmp" WeightStage_1="bucklerparry_largerfolk/girsh_qas_fat.png" />
 		<part Name="Description" Short="A creature of immensity mounts the upper eyeline. Quantized force has shaped =pronouns.possessive= behemoth muzzle to an uncanny square-shape, and tresses of potential energy wash =pronouns.possessive= withers to an unmeaning blur. Beneath =pronouns.possessive= slumping barrel, elephantine knees are locked at right angles. Finally, irisdual light churning under =pronouns.possessive= tx-glass skin is filtered to a polar hue and radiates out of body in lituus spirals." />
 		<part Name="Spawner" SpawnBlueprint="Polarized Girshling Cresh" SpawnCheckBlueprint="Polarized Girshling" />
 		<part Name="DropOnDeath" Blueprints="LightCircleQas" />
@@ -10113,6 +10221,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
   <!-- Dromads -->
   <object Name="Dromad" Inherits="BaseHumanoid">
     <part Name="Render" DisplayName="dromad" Tile="bucklerparry_largerfolk/dromad_fat.png" RenderString="d" DetailColor="W" ColorString="&amp;W" TileColor="&amp;w" />    
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Assets_Content_Textures_Creatures_sw_dromad.bmp" WeightStage_1="bucklerparry_largerfolk/dromad_fat.png" />
 		<part Name="Brain" Factions="Dromad-100" />
     <part Name="Corpse" CorpseChance="100" CorpseBlueprint="Dromad Corpse" />
     <stat Name="Willpower" Value="18" />
@@ -10211,6 +10320,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
   <!-- Apothecaries -->
   <object Name="HumanApothecary" Inherits="NPC">
     <part Name="Render" DisplayName="[human apothecary]" Tile="bucklerparry_largerfolk/greybeard_fat.png" ColorString="&amp;g" RenderString="h" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/caste_15.bmp" WeightStage_1="bucklerparry_largerfolk/greybeard_fat.png" />
     <part Name="ConversationScript" ConversationID="herbalist" />
     <part Name="Brain" Wanders="false" Factions="Merchants-100" />
     <part Name="Description" Short="Fine crushed herbs dust the old =pronouns.personTerm='s pestle knuckles." />
@@ -10239,6 +10349,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
   </object>
   <object Name="HumanApothecary1" Inherits="HumanApothecary">
     <part Name="Render" DisplayName="human apothecary" Tile="bucklerparry_largerfolk/greybeard_fat.png" ColorString="&amp;g" RenderString="h" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/caste_15.bmp" WeightStage_1="bucklerparry_largerfolk/greybeard_fat.png" />
     <stat Name="Level" Value="9" />
     <stat Name="Hitpoints" Value="75" />
     <part Name="GenericInventoryRestocker" Table="Village Apothecary 1" />
@@ -10301,6 +10412,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
   <!-- Tinkers -->
   <object Name="HumanTinker" Inherits="NPC">
     <part Name="Render" DisplayName="[human tinker]" Tile="bucklerparry_largerfolk/tinker_fat.png" ColorString="&amp;c" RenderString="h" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/caste_21.bmp" WeightStage_1="bucklerparry_largerfolk/tinker_fat.png" />
     <part Name="ConversationScript" ConversationID="tinker" />
     <part Name="Brain" Wanders="false" Factions="Merchants-100" />
     <part Name="Description" Short="Red welts dot =pronouns.possessive= skin where the soldering iron nipped it. Rings of ash stain =pronouns.possessive= apron, and =pronouns.possessive= vest pockets sprout stem-thin rods of glass, strands of wire, and metal rivets." />
@@ -10331,6 +10443,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
   </object>
   <object Name="HumanTinker1" Inherits="HumanTinker">
     <part Name="Render" DisplayName="human tinker" Tile="bucklerparry_largerfolk/tinker_fat.png" ColorString="&amp;c" RenderString="h" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/caste_21.bmp" WeightStage_1="bucklerparry_largerfolk/tinker_fat.png" />
     <stat Name="Level" Value="9" />
     <stat Name="Hitpoints" Value="75" />
     <part Name="GenericInventoryRestocker" Table="Village Tinker 1" />
@@ -10474,6 +10587,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
   </object>
   <object Name="Bookbinder" Inherits="BaseMerchant">
     <part Name="Render" DisplayName="bookbinder" ColorString="&amp;y" RenderString="s" Tile="bucklerparry_largerfolk/scholar_fat.png" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/caste_20.bmp" WeightStage_1="bucklerparry_largerfolk/scholar_fat.png" />
     <part Name="ConversationScript" ConversationID="bookbinder" />
     <stat Name="Hitpoints" Value="45" />
     <part Name="GenericInventoryRestocker" Table="BookBinderInventory" Chance="71" />
@@ -10491,6 +10605,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
   </object>
   <object Name="Scribe" Inherits="BaseMerchant">
     <part Name="Render" DisplayName="scribe" ColorString="&amp;y" RenderString="s" Tile="bucklerparry_largerfolk/scholar_fat.png" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/caste_20.bmp" WeightStage_1="bucklerparry_largerfolk/scholar_fat.png" />
     <part Name="ConversationScript" ConversationID="scribe" />
     <part Name="AISelfPreservation" Threshold="70" />
     <stat Name="Hitpoints" Value="45" />
@@ -10528,6 +10643,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
   </object>
   <object Name="Apothecary" Inherits="BaseMerchant">
     <part Name="Render" DisplayName="apothecary" ColorString="&amp;g" RenderString="s" Tile="bucklerparry_largerfolk/greybeard_fat.png" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/caste_15.bmp" WeightStage_1="bucklerparry_largerfolk/greybeard_fat.png" />
     <part Name="ConversationScript" ConversationID="apothecary" />
     <part Name="GenericInventoryRestocker" Table="ApothecaryInventory" Chance="71" />
     <inventoryobject Blueprint="Leather Boots" />
@@ -10543,6 +10659,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
   </object>
   <object Name="Kipper" Inherits="BaseMerchant">
     <part Name="Render" DisplayName="kipper" ColorString="&amp;y" DetailColor="g" RenderString="s" Tile="bucklerparry_largerfolk/kipper_fat.png" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Items/sw_kipper.bmp" WeightStage_1="bucklerparry_largerfolk/kipper_fat.png" />
     <part Name="GenericInventoryRestocker" Table="KipperInventory" Chance="71" />
     <part Name="ConversationScript" ConversationID="kipper" />
     <inventoryobject Blueprint="Leather Boots" />
@@ -10569,6 +10686,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
   </object>
   <object Name="Shoemaker" Inherits="BaseMerchant">
     <part Name="Render" DisplayName="shoemaker" ColorString="&amp;y" DetailColor="w" RenderString="f" Tile="bucklerparry_largerfolk/merchant-3_fat.png" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/merchant-3.bmp" WeightStage_1="bucklerparry_largerfolk/merchant-3_fat.png" />
     <part Name="ConversationScript" ConversationID="shoemaker" />
     <part Name="GenericInventoryRestocker" Table="ShoemakerInventory" HeroTable="ShoemakerInventory_Legendary" Chance="71" />
     <inventoryobject Blueprint="Leather Boots" />
@@ -10585,6 +10703,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
   </object>
   <object Name="Hatter" Inherits="BaseMerchant">
     <part Name="Render" DisplayName="hatter" ColorString="&amp;y" DetailColor="K" RenderString="h" Tile="bucklerparry_largerfolk/merchant-1_fat.png" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/merchant-1.bmp" WeightStage_1="bucklerparry_largerfolk/merchant-1_fat.png" />
     <part Name="ConversationScript" ConversationID="hatter" />
     <part Name="GenericInventoryRestocker" Table="HatterInventory" HeroTable="HatterInventory_Legendary" Chance="71" />
     <inventoryobject Blueprint="Leather Boots" />
@@ -10601,6 +10720,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
   </object>
   <object Name="Glover" Inherits="BaseMerchant">
     <part Name="Render" DisplayName="glover" ColorString="&amp;y" DetailColor="W" RenderString="h" Tile="bucklerparry_largerfolk/merchant-3_fat.png" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/merchant-3.bmp" WeightStage_1="bucklerparry_largerfolk/merchant-3_fat.png" />
     <part Name="ConversationScript" ConversationID="glover" />
     <part Name="GenericInventoryRestocker" Table="GloverInventory" HeroTable="GloverInventory_Legendary" Chance="71" />
     <inventoryobject Blueprint="Leather Boots" />
@@ -10617,6 +10737,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
   </object>
   <object Name="Chef" Inherits="BaseMerchant">
     <part Name="Render" DisplayName="chef" ColorString="&amp;y" DetailColor="G" RenderString="h" Tile="bucklerparry_largerfolk/kipper_fat.png" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Items/sw_kipper.bmp" WeightStage_1="bucklerparry_largerfolk/kipper_fat.png" />
     <part Name="ConversationScript" ConversationID="chef" />
     <part Name="GenericInventoryRestocker" Table="ChefInventory" HeroTable="ChefInventory_Legendary" Chance="71" />
     <inventoryobject Blueprint="Leather Boots" />
@@ -10643,6 +10764,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
   </object>
   <object Name="Haberdasher" Inherits="BaseMerchant">
     <part Name="Render" DisplayName="haberdasher" ColorString="&amp;y" DetailColor="m" RenderString="h" Tile="bucklerparry_largerfolk/merchant-1_fat.png" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/merchant-1.bmp" WeightStage_1="bucklerparry_largerfolk/merchant-1_fat.png" />
     <part Name="ConversationScript" ConversationID="haberdasher" />
     <part Name="GenericInventoryRestocker" Table="HaberdasherInventory" HeroTable="HaberdasherInventory_Legendary" Chance="71" />
     <inventoryobject Blueprint="Leather Boots" />
@@ -10658,6 +10780,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
   </object>
   <object Name="Armorer" Inherits="BaseMerchant">
     <part Name="Render" DisplayName="armorer" ColorString="&amp;y" DetailColor="K" RenderString="h" Tile="bucklerparry_largerfolk/hearthchild_fat.png" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/caste_9.bmp" WeightStage_1="bucklerparry_largerfolk/hearthchild_fat.png" />
     <part Name="ConversationScript" ConversationID="armorer" />
     <part Name="GenericInventoryRestocker" Table="ArmorerInventory" HeroTable="ArmorerInventory_Legendary" Chance="71" />
     <inventoryobject Blueprint="Leather Boots" />
@@ -10675,6 +10798,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
   </object>
   <object Name="Gunsmith" Inherits="BaseMerchant">
     <part Name="Render" DisplayName="gunsmith" ColorString="&amp;K" DetailColor="W" RenderString="h" Tile="bucklerparry_largerfolk/merchant-2_fat.png" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/merchant-2.bmp" WeightStage_1="bucklerparry_largerfolk/merchant-2_fat.png" />
     <part Name="ConversationScript" ConversationID="gunsmith" />
     <part Name="GenericInventoryRestocker" Table="GunsmithInventory" HeroTable="GunsmithInventory_Legendary" Chance="71" />
     <inventoryobject Blueprint="Leather Boots" />
@@ -10695,6 +10819,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
   </object>
   <object Name="Grenadier" Inherits="BaseMerchant">
     <part Name="Render" DisplayName="grenadier" ColorString="&amp;K" DetailColor="r" RenderString="h" Tile="bucklerparry_largerfolk/merchant-2_fat.png" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/merchant-2.bmp" WeightStage_1="bucklerparry_largerfolk/merchant-2_fat.png" />
     <part Name="ConversationScript" ConversationID="grenadier" />
     <part Name="GenericInventoryRestocker" Table="GrenadierInventory" HeroTable="GrenadierInventory_Legendary" Chance="71" />
     <inventoryobject Blueprint="Leather Boots" />
@@ -10715,6 +10840,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
   </object>
   <object Name="IchorMerchant" Inherits="BaseMerchant">
     <part Name="Render" DisplayName="ichor merchant" ColorString="&amp;K" DetailColor="G" RenderString="h" Tile="bucklerparry_largerfolk/merchant-3_fat.png" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/merchant-3.bmp" WeightStage_1="bucklerparry_largerfolk/merchant-3_fat.png" />
     <part Name="ConversationScript" ConversationID="ichormerchant" />
     <part Name="GenericInventoryRestocker" Table="IchorMerchantInventory" HeroTable="IchorMerchantInventory_Legendary" Chance="71" />
     <inventoryobject Blueprint="Sandals" />
@@ -10736,6 +10862,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
   </object>
   <object Name="Jeweler" Inherits="BaseMerchant">
     <part Name="Render" DisplayName="jeweler" ColorString="&amp;K" DetailColor="M" RenderString="h" Tile="bucklerparry_largerfolk/merchant-1_fat.png" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/merchant-1.bmp" WeightStage_1="bucklerparry_largerfolk/merchant-1_fat.png" />
     <part Name="GenericInventoryRestocker" Table="JewelerInventory" Chance="71" />
     <part Name="ConversationScript" ConversationID="jeweler" />
     <inventoryobject Blueprint="Sandals" />
@@ -10753,6 +10880,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
   </object>
   <object Name="Gemcutter" Inherits="BaseMerchant">
     <part Name="Render" DisplayName="gemcutter" ColorString="&amp;K" DetailColor="R" RenderString="f" Tile="bucklerparry_largerfolk/merchant-1_fat.png" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/merchant-1.bmp" WeightStage_1="bucklerparry_largerfolk/merchant-1_fat.png" />
     <part Name="ConversationScript" ConversationID="gemcutter" />
     <part Name="GenericInventoryRestocker" Table="GemcutterInventory" HeroTable="GemcutterInventory_Legendary" Chance="71" />
     <inventoryobject Blueprint="Leather Boots" />
@@ -10771,6 +10899,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
   </object>
   <object Name="DiskMerchant" Inherits="BaseMerchant">
     <part Name="Render" DisplayName="schematics drafter" ColorString="&amp;w" DetailColor="C" RenderString="h" Tile="bucklerparry_largerfolk/tinker_fat.png" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/caste_21.bmp" WeightStage_1="bucklerparry_largerfolk/tinker_fat.png" />
     <part Name="ConversationScript" ConversationID="schematics drafter" />
     <skill Name="Tinkering" />
     <skill Name="Tinkering_Tinker1" />
@@ -10789,6 +10918,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
   </object>
   <object Name="Gutsmonger" Inherits="BaseMerchant">
     <part Name="Render" DisplayName="gutsmonger" ColorString="&amp;w" DetailColor="C" RenderString="h" Tile="bucklerparry_largerfolk/gutsmonger_fat.png" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_merchant_tech.bmp" WeightStage_1="bucklerparry_largerfolk/gutsmonger_fat.png" />
     <part Name="Description" Short="Orbed goggles smeared with blood impart an insectoid aspect to =pronouns.possessive= face. =pronouns.Possessive= apron is stained with a rainbow of pinks, tans, and nickel -- the palette of machine and folk guts -- and spare wire shoots from =pronouns.possessive= sleeves like cuffs." />
     <part Name="ConversationScript" ConversationID="gutsmonger" />
     <skill Name="Tinkering" />
@@ -10813,7 +10943,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
   </object>
   <object Name="CrabFarmer" Inherits="BaseMerchant">
     <part Name="Render" DisplayName="crab farmer" ColorString="&amp;y" DetailColor="Y" RenderString="f" />
-    <builder Name="RandomTile" Tiles="bucklerparry_largerfolk/merchant-2_fat.png" />
+    <builder Name="RandomTile" Tiles="Creatures/merchant-2.png" />
     <part Name="ConversationScript" ConversationID="CrabFarmer" />
     <part Name="GenericInventoryRestocker" Table="CrabFarmerInventory" Chance="71" />
     <inventoryobject Blueprint="Sandals" />
@@ -10894,6 +11024,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
   <object Name="ElderBob" Inherits="NPC">
     <part Name="Body" Anatomy="HumanoidWithHandsFace" />
     <part Name="Render" DisplayName="Irudad" Tile="bucklerparry_largerfolk/irudad_fat.png" ColorString="&amp;r" TileColor="&amp;r" DetailColor="w" RenderString="f" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/npc-irudad.bmp" WeightStage_1="bucklerparry_largerfolk/irudad_fat.png" />
     <part Name="Description" Short="A warm smile spreads over an old face freckled by time and a million crumbs of salt. =pronouns.Subjective= =verb:shrink:afterpronoun= under a hunched back and =verb:drum:afterpronoun= the ground beneath =pronouns.objective= with a short and barb-crowned tail. A second pair of arms rise over the slump of =pronouns.possessive= shoulders, where hands meet and fingers lace to form another face, this one vacant and prehistoric, no mouth and eyes desert-white." />
     <part Name="Honorifics" Primary="Elder" />
     <part Name="ConversationScript" ConversationID="Irudad" />
@@ -11121,6 +11252,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
   </object>
   <object Name="SixDayZealot" Inherits="NPC">
     <part Name="Render" DisplayName="zealot of the Six Day Stilt" Tile="bucklerparry_largerfolk/apostle_fat.png" RenderString="z" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/caste_13.bmp" WeightStage_1="bucklerparry_largerfolk/apostle_fat.png" />
     <part Name="Description" Short="Gears and rondures of all sizes are inked in the margins of =pronouns.possessive= body, and =pronouns.possessive= lips quiver in recitation of the chromaic litgury." />
     <part Name="Brain" Wanders="true" Factions="Mechanimists-100" />
     <part Name="SixDayZealot" />    
@@ -11141,7 +11273,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
   </object>
   <object Name="Tszappur" Load="Merge">
     <part Name="Render" DisplayName="Tszappur" Tile="bucklerparry_largerfolk/stranger1_fat.png" ColorString="&amp;Y" DetailColor="C" />
-    <part Name="LargerFolk_WeightStage_Render" WeightStage_0="creatures/sw_stranger1.bmp" WeightStage_1="bucklerparry_largerfolk/stranger1_fat.png" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="creatures/sw_stranger1.bmp" WeightStage_1="bucklerparry_largerfolk/stranger1_fat.png" />
     <part Name="Description" Short="Folds of coarse-weave physician's cloth fail to cover =pronouns.possessive= mounds of flab, and the crinkled brim of an old hat blots the sun and starlight. =pronouns.Possessive= hardy constitution gives an impression of unlikely spriteliness, beneath the copious coils of poundage that would immobilize a lesser worshipper." />
     <part Name="LargerFolk_WeightDescription" 
     WeightDescription_0="Folds of coarse-weave physician's cloth hang off =pronouns.possessive= lissome frame like a gunslinger's shawl, and the crinkled brim of an old hat blots the sun and starlight." 
@@ -11203,6 +11335,7 @@ In Barathrum's name, =pronouns.subjective==verb:'ve:afterpronoun= conferred onto
   </object>
   <object Name="Q Girl" Load="Merge">
     <part Name="Render" DisplayName="Q Girl" ColorString="&amp;m" TileColor="&amp;Y" RenderString="b" Tile="bucklerparry_largerfolk/sw_bearman_1_fat.png" DetailColor="m" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_bearman1.bmp" WeightStage_1="bucklerparry_largerfolk/sw_bearman_1_fat.png" />
     <part Name="Description" Short="=pronouns.Subjective==verb:'re:afterpronoun= an opal in the monochrome.
 
 =pronouns.Possessive= hair is a quasar of red ochre and indigo in the blanched light of the workshop. =pronouns.Possessive= cartilage is pierced by polyhedral rings that spin in antinomy to the cave's simple geometry. Beneath the quills =pronouns.possessive= skin is decorated in furcate lines, fantastic elaborations on the patterns of discarded circuitboards. =pronouns.Subjective==verb:'re:afterpronoun= surrounded by apparatuses of =pronouns.possessive= own creation. Through the harmony of those machines, =pronouns.subjective= =verb:cut= a swath through the entropic brine that sizzles around =pronouns.objective= in a loudening chorus." />
@@ -11519,6 +11652,7 @@ In Barathrum's name, =pronouns.subjective==verb:'ve:afterpronoun= conferred onto
   </object>
   <object Name="Meyehind" Inherits="BaseHindren">
     <part Name="Render" DisplayName="Meyehind" RenderString="h" Tile="bucklerparry_largerfolk/hindren_scout_fat.png" ColorString="&amp;g" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_hindren_4.bmp" WeightStage_1="bucklerparry_largerfolk/hindren_scout_fat.png" />
     <stat Name="Level" Value="8" />
     <stat Name="Strength" sValue="17" />
     <stat Name="Agility" sValue="24" />
@@ -11546,6 +11680,7 @@ In Barathrum's name, =pronouns.subjective==verb:'ve:afterpronoun= conferred onto
   </object>
   <object Name="Liihart" Inherits="BaseHindren">
     <part Name="Render" DisplayName="Liihart" RenderString="h" Tile="bucklerparry_largerfolk/liihart_fat.png" ColorString="&amp;W" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_hindren_6.bmp" WeightStage_1="bucklerparry_largerfolk/liihart_fat.png" />
     <stat Name="Level" Value="8" />
     <stat Name="Strength" sValue="19" />
     <stat Name="Agility" sValue="20" />
@@ -11609,6 +11744,7 @@ In Barathrum's name, =pronouns.subjective==verb:'ve:afterpronoun= conferred onto
   </object>
   <object Name="Neelahind" Inherits="BaseHindren">
     <part Name="Render" DisplayName="Neelahind" RenderString="h" Tile="bucklerparry_largerfolk/neelahind_fat.png" ColorString="&amp;B" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_hindren_3.bmp" WeightStage_1="bucklerparry_largerfolk/neelahind_fat.png" />
     <part Name="Honorifics" Primary="Warden" />
     <stat Name="Level" Value="20" />
     <stat Name="Strength" Value="24" />
@@ -11684,6 +11820,7 @@ In Barathrum's name, =pronouns.subjective==verb:'ve:afterpronoun= conferred onto
   </object>
   <object Name="Kesehind" Inherits="BaseHindren">
     <part Name="Render" DisplayName="Kesehind" RenderString="H" Tile="bucklerparry_largerfolk/neelahind_fat.png" ColorString="&amp;W" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_hindren_3.bmp" WeightStage_1="bucklerparry_largerfolk/neelahind_fat.png" />
     <stat Name="Level" Value="12" />
     <stat Name="Strength" Value="24" />
     <stat Name="Agility" Value="19" />
@@ -11930,6 +12067,7 @@ In Barathrum's name, =pronouns.subjective==verb:'ve:afterpronoun= conferred onto
   <!-- Jungle -->
   <object Name="Wild Water Merchant" Load="Merge"> <!--PreviousName="Wild Watervine Merchant" Inherits="NPC"-->
     <part Name="Render" DisplayName="wild-eyed water merchant" RenderString="h" Tile="bucklerparry_largerfolk/water_merchant_fat.png" HFlip="true" ColorString="&amp;B" TileColor="&amp;w" DetailColor="B" />    
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/caste_23.bmp" WeightStage_1="bucklerparry_largerfolk/water_merchant_fat.png" />
     <part Name="Description" Short="Bright glints in the rapture-stapled eyes of an anemic water merchant give you sudden pause. =pronouns.Subjective= =verb:are:afterpronoun= appareled in a patchwork of cloak shreds, and despite the lake of sweat settled on the oily sediment of =pronouns.possessive= skin, =pronouns.possessive= mouth is parched in fissures after days of refusing to drink the very life water =pronouns.subjective= =verb:peddle:afterpronoun=. Improbably, =pronouns.possessive= countenance still manages a hue of glee, glistening in the fire of a secret unshared." />
   </object>
   <object Name="Mamon" Load="Merge"> <!--Inherits="Goatfolk Shaman"-->
@@ -12008,6 +12146,7 @@ In Barathrum's name, =pronouns.subjective==verb:'ve:afterpronoun= conferred onto
   <!-- Bethesda Susa -->
   <object Name="Alchemist" Load="Merge"> <!--Inherits="NPC"-->
     <part Name="Render" DisplayName="alchemist" Tile="bucklerparry_largerfolk/alchemist_fat.png" ColorString="&amp;M" TileColor="&amp;M" DetailColor="B" RenderString="h" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_alchemist.bmp" WeightStage_1="bucklerparry_largerfolk/alchemist_fat.png" />
     <part Name="Description" Short="&quot;Let the manes put off their terror, let them put off their aqueous bodies with fire.
       Let them draw together the bones of the metal.
       Selvaggia, Guiscarda, Mandetta,
@@ -12149,6 +12288,7 @@ In Barathrum's name, =pronouns.subjective==verb:'ve:afterpronoun= conferred onto
   <!-- Omonporch -->
   <object Name="Asphodel" Inherits="SapientMutatedFlower">
     <part Name="Render" DisplayName="Asphodel" Tile="bucklerparry_largerfolk/asphodel_fat.png" TileColor="&amp;G" ColorString="&amp;M" DetailColor="M" RenderString="237" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_flower.bmp" WeightStage_1="bucklerparry_largerfolk/asphodel_fat.png" />
     <part Name="Titles" Primary="Earl of Omonporch" />
     <part Name="ConversationScript" ConversationID="Asphodel" ClearLost="true" />
     <part Name="Brain" Wanders="false" Hostile="false" Factions="Consortium-100,Flowers-99" />
@@ -12232,6 +12372,7 @@ In Barathrum's name, =pronouns.subjective==verb:'ve:afterpronoun= conferred onto
   </object>
   <object Name="Warden 1-FF" Inherits="BaseConservator">
     <part Name="Render" DisplayName="1-FF" RenderString="6" ColorString="&amp;B" TileColor="&amp;B" Tile="bucklerparry_largerfolk/conservator_fat.png" DetailColor="C" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_tombbot_large_2.bmp" WeightStage_1="bucklerparry_largerfolk/conservator_fat.png" />
     <part Name="Honorifics" Primary="Warden" />
     <part Name="Titles" Ordinary="reprogrammed conservator" />
     <part Name="Description" Short="Stuck to =pronouns.possessive= rind of mirrored chrome sequins are two separate ecologies: the crispy deadgrowths of the inner Tomb and the verdurous molt of grove life. As the years spin by and the colossus adjusts to the sun-drenched outer world, the latter consumes the former." />
@@ -12248,6 +12389,7 @@ In Barathrum's name, =pronouns.subjective==verb:'ve:afterpronoun= conferred onto
   </object>
   <object Name="Sixshrew" Inherits="SapientMutatedSucculent">
     <part Name="Render" DisplayName="Sixshrew" Tile="bucklerparry_largerfolk/sixshrew_fat.png" ColorString="&amp;W" TileColor="&amp;g" DetailColor="W" RenderString="234" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_pottedplant_ornate_2.bmp" WeightStage_1="bucklerparry_largerfolk/sixshrew_fat.png" />
     <part Name="Description" Short="Sharp leaves burst forth from a decorative pot like a geyser of verdure. They flit as with irritation and offense at every stimulus, an assumption that might seem like an overread if it weren't for the strong telepathic halo of frustration radiating from =pronouns.possessive= leafy form. a stem fattened through stubborn lounging dangles obscenely over the rims of xyr pot, straining its ornate support structure." />
     <part Name="ConversationScript" ConversationID="Sixshrew" ClearLost="true" />
     <part Name="Brain" Wanders="false" Hostile="false" Factions="Consortium-100,Ezra-50" />
@@ -12279,6 +12421,7 @@ In Barathrum's name, =pronouns.subjective==verb:'ve:afterpronoun= conferred onto
 
   <object Name="Yla Haj" Inherits="HumanTinker5">
     <part Name="Render" DisplayName="Yla Haj" Tile="bucklerparry_largerfolk/daughter_wrench_fat.png" ColorString="&amp;c" TileColor="&amp;C" DetailColor="m" RenderString="h"  />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_daughter_wrench.bmp" WeightStage_1="bucklerparry_largerfolk/daughter_wrench_fat.png" />
     <part Name="Description" Short="Spools of hair are bunched under the frustum of =pronouns.possessive= habit, =pronouns.possessive= round cheeks are smeared with polyurethane and Spindle dust, and =pronouns.possessive= face is pulled low by the violence of =pronouns.possessive= square jaw. Long, muscular forearms are tensed by the repeated pinching motion of tool manipulation. =pronouns.Possessive= eyes are ultra keen and shine bright cyan, and =pronouns.possessive= vision smoothly segues between =pronouns.possessive= work and =pronouns.possessive= surroundings." />
     <part Name="Brain" Hostile="false" Factions="Daughters-100" />
     <part Name="ConversationScript" ConversationID="YlaHaj" />
@@ -12390,6 +12533,7 @@ At the edges of your field of vision, more tentacles writhe over tools, books, c
   <object Name="Biographer" Inherits="BaseRobot">
     <part Name="Body" Anatomy="HumanoidRobot" />
     <part Name="Render" DisplayName="Herododicus" RenderString="6" ColorString="&amp;y" Tile="bucklerparry_largerfolk/herododicus_fat.png" DetailColor="Y" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_biographer_bot.bmp" WeightStage_1="bucklerparry_largerfolk/herododicus_fat.png" />
     <part Name="Description" Short="Chrome bunches in cloth-like furrows across a metal tunic that drapes across =pronouns.possessive= lanky, anxious, pinion-limbs. A large metal cask -- =pronouns.possessive= head -- sits atop =pronouns.possessive= too-frail undercarriage, and a gleaming glass eye shines at you in several shades of tinted light. =pronouns.Subjective= =verb:seem:afterpronoun= on the verge of apologizing." />
     <part Name="Brain" Hostile="false" Wanders="false" Calm="True" Factions="Prey-100,Robots-25"  />
     <stat Name="AV" Value="10" />
@@ -12408,6 +12552,7 @@ At the edges of your field of vision, more tentacles writhe over tools, books, c
   <!-- Tomb children -->
   <object Name="BaseBiomech" Load="Merge"> <!--Inherits="NPC"-->
     <part Name="Render" DisplayName="[child]" RenderString="C" DetailColor="K" ColorString="&amp;C" Tile="bucklerparry_largerfolk/mopango_fat.png" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_mopango_villager.bmp" WeightStage_1="bucklerparry_largerfolk/mopango_fat.png" />
   </object>
   <object Name="Nacham" Load="Merge"> <!--Inherits="BaseBiomech"-->
     <part Name="Description" Short="Three digitigrade skinshine legs are weighed down by the aura of a floating metal carapace, suspended across three bands in quantum magnetic tension. Prehensile braids of cordage spill from =pronouns.possessive= apertures (ending in manic and electric eyes), and the air around =pronouns.objective= purrs in the audio multitexture of gold." />
@@ -12557,7 +12702,7 @@ This one is jeweled in the eroded scrap of the Tomb." />
   <!-- Brightsheol -->
   <object Name="Rainwater Shomer" Load="Merge">
     <part Name="Render" DisplayName="Rainwater" Tile="bucklerparry_largerfolk/stranger1_fat.png" RenderString="h" ColorString="&amp;Y" DetailColor="C" />
-    <part Name="WeightStage_Render" WeightStage_0="creatures/sw_stranger1.bmp" WeightStage_1="bucklerparry_largerfolk/stranger1_fat.png" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="creatures/sw_stranger1.bmp" WeightStage_1="bucklerparry_largerfolk/stranger1_fat.png" />
     <part Name="Description" Short="Damp clothes of the shomerim habit, a hoiche, a tallit, and a robe, drape over air as if they swathe a person's figure. Rain drops from another world patter on the bosks of ribboned thread, transforming from tense spheres of selfhood to diffuse moisture on the fibrous loam. Old life is absorbed by the ageless linen, wrung out by an invisible hand, and the cycle repeats itself." />
   </object>
   <!-- Yd Freehold -->
