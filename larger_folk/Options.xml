@@ -32,6 +32,23 @@
 			The default is {{w|Disabled}}.
 		</helptext>
 	</option>
+
+	<option 
+		ID="Option_LargerFolk_WeightDistribution"
+		Requires="Option_LargerFolk_DynamicWeightGainOn==Yes"
+	    DisplayText="Weight Distribution (Dynamic Weight)({{R|new save}})"
+	    Category="Mods: Larger Folk"
+	    Type="Combo" Values="Standard,Global Fatness" Default="Standard" >
+		<helptext>
+			Set the distribution of creature weight at generation
+
+			Standard: The default distribution. Mostly Lean-Fat, with occasional obesity.
+
+			Global Fatness: Every creature is minimum fat.
+
+			The default is {{w|Standardd}}.
+		</helptext>
+	</option>
 	
 	<option 
 		ID="Option_LargerFolk_ArmorEffects"

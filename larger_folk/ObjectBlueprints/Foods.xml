@@ -91,6 +91,16 @@
     
   <!-- End raw foods -->
 
+  <object Name="Cream Pie" Inherits="Meal">
+    <part Name="Render" DisplayName="cream pie" Tile="items/sw_pie.bmp" ColorString="&amp;w" DetailColor="Y" />
+    <part Name="Physics" Weight="1" />
+    <part Name="LargerFolk_FoodCalories" Calories="1800" />
+    <part Name="Commerce" Value="25" />
+    <part Name="ThrownWeapon" Damage="1d2" Penetration="9" />
+    <part Name="Description" Short="A culinary weapon from bygone eras of war. The recipe is lost to time." />
+
+  </object>  
+
   <!--
 
     ****************************************

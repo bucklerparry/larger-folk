@@ -14,11 +14,15 @@ namespace XRL.World.Parts
 
         public int Calories = 1000;
 
+        GameObject next_eater = null;
+
         public override void Register(GameObject Object, IEventRegistrar Registrar)
 	    {
             if (IsEnabled)
             {
 		        Registrar.Register("OnEat");
+                Registrar.Register("AfterEat");
+                Registrar.Register("ThrownProjectileHit");
             }
 		    base.Register(Object, Registrar);
 	    }
@@ -27,11 +31,28 @@ namespace XRL.World.Parts
         {
             if (E.ID == "OnEat")
             {
-                GameObject actor = E.GetGameObjectParameter("Eater");
-                if (actor.HasPart<LargerFolk_WeightGain>())
+                next_eater = E.GetGameObjectParameter("Eater");
+                
+            }
+            else if (E.ID == "AfterEat")
+            {
+                if (next_eater != null && next_eater.HasPart<LargerFolk_WeightGain>())
                 {
-                    LargerFolk_WeightGain weight_part = actor.GetPart<LargerFolk_WeightGain>();
+                    LargerFolk_WeightGain weight_part = next_eater.GetPart<LargerFolk_WeightGain>();
                     weight_part.ChangeCalories(Calories);
+                    next_eater = null;
+                }
+            }
+            // throwing food at a weight-gaining creature with an uncovered face makes them eat it, applying the calories
+            else if (E.ID == "ThrownProjectileHit")
+            {
+                GameObject target = E.GetGameObjectParameter("Defender");
+                if (target.HasPart<LargerFolk_WeightGain>())
+                {
+                    LargerFolk_WeightGain weight_part = target.GetPart<LargerFolk_WeightGain>();
+                    weight_part.ChangeCalories(Calories);
+
+                    ParentObject.Destroy();
                 }
             }
 

@@ -120,4 +120,12 @@
     </group>
   </population>
 
+
+  <population Name="BethesdaSusaRuinedWard" Load="Merge">
+    <object Chance="80" Number="2d2" Blueprint="GhostHand" />
+  </population>
+  <population Name="BethesdaSusaStandardWard">
+    <object Chance="80" Number="2d2" Blueprint="GhostHand" />
+  </population>
+
 </populations>

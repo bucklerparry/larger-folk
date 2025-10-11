@@ -52,13 +52,16 @@ public class LargerFolk_CasteWeightStages : IPlayerMutator
             {
                 player.GetPart<Render>().Tile = "bucklerparry_largerfolk/firefrond_fat.png";
                 player.GetPart<LargerFolk_WeightStageRender>().WeightStage_0 = "creatures/sw_firefrond.bmp";
-                player.GetPart<LargerFolk_WeightStageRender>().WeightStage_1 = "bucklerparry_largerfolk/firefrond_fat.png";
+                player.GetPart<LargerFolk_WeightStageRender>().WeightStage_1 = "bucklerparry_largerfolk/firefrond_fat_stage1.png";
+                player.GetPart<LargerFolk_WeightStageRender>().WeightStage_2 = "bucklerparry_largerfolk/firefrond_fat.png";
             }
             else if (myRender.Tile == "Creatures/sw_bzzzt.bmp" || myRender.Tile == "bucklerparry_largerfolk/bzzzt_fat.png")
             {
                 player.GetPart<Render>().Tile = "bucklerparry_largerfolk/bzzzt_fat.png";
                 player.GetPart<LargerFolk_WeightStageRender>().WeightStage_0 = "Creatures/sw_bzzzt.bmp";
-                player.GetPart<LargerFolk_WeightStageRender>().WeightStage_1 = "bucklerparry_largerfolk/bzzzt_fat.png";
+                player.GetPart<LargerFolk_WeightStageRender>().WeightStage_1 = "bucklerparry_largerfolk/bzzzt_fat_stage1.png";
+                player.GetPart<LargerFolk_WeightStageRender>().WeightStage_2 = "bucklerparry_largerfolk/bzzzt_fat.png";
+                player.GetPart<LargerFolk_WeightStageRender>().WeightStage_3 = "bucklerparry_largerfolk/bzzzt_fat_stage3.png";
             }
 
             // True Kin presets

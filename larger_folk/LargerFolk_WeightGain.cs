@@ -21,6 +21,7 @@ public class LargerFolk_WeightGain : IPart
     //If this is disabled, it will not be subject to the weight gain system.
     public bool IsEnabled => XRL.UI.Options.GetOption("Option_LargerFolk_DynamicWeightGainOn").EqualsNoCase("Yes");
     public bool DisplayWeightName => XRL.UI.Options.GetOption("Option_LargerFolk_WeightNames").EqualsNoCase("Yes");
+    public string WeightDistribution => XRL.UI.Options.GetOption("Option_LargerFolk_WeightDistribution");
 
     bool Initialized = false;
 
@@ -96,7 +97,7 @@ public class LargerFolk_WeightGain : IPart
             if (StartingWeight < 0)
             {
                 int TempRand = Stat.Random(1,1001);
-                if (TempRand > 999)
+                if (TempRand > 995)
                 {
                     SetWeightStage(3);
                 }
@@ -110,7 +111,14 @@ public class LargerFolk_WeightGain : IPart
                 }
                 else
                 {
-                    SetWeightStage(0);
+                    if (WeightDistribution == "Global Fatness")
+                    {
+                        SetWeightStage(1);
+                    }
+                    else
+                    {
+                        SetWeightStage(0);
+                    }
                 }
             }
             else // otherwise, set weight to starting weight

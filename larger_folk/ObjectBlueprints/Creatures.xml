@@ -3729,7 +3729,7 @@ The infant child is unaware
     <part Name="Render" DisplayName="cragmensch" Tile="creatures/sw_bugbear.bmp" RenderString="t" ColorString="&amp;y" />
     <part Name="Description" Short="Ideas like the tetravalence of carbon and silicon were suffocated in the thick valley air of jungle hamlets. The human gatherer who mounts a root-braided hillock and looks out to the horizon in wonder, who descries flecks of granite stirring on the mountain face, and who with ancestral dread ponders what toll the rocks themselves are animated to collect, he can't know the miracles of chemistry that sophists inscribed in data disks at the Long Before. Those miracles are to him the ciphers of god-things." />
   </object>
-  <object Name="Cragmensch Brainer" Inherits="Cragmensch">
+  <object Name="Cragmensch Brainer" Load="Merge">
     <stat Name="Strength" Boost="3" />
     <stat Name="Agility" Boost="-1" />
     <part Name="Render" DisplayName="cragmensch brainer" ColorString="&amp;y" />
@@ -3737,7 +3737,7 @@ The infant child is unaware
 		<inventoryobject Blueprint="Cragmensch Fist" Number="2" />
     <tag Name="Role" Value="Brute" />
   </object>
-  <object Name="Cragmensch Boulderer" Inherits="Cragmensch">
+  <object Name="Cragmensch Boulderer" Load="Merge">
     <part Name="Render" DisplayName="cragmensch boulderer" ColorString="&amp;Y" Tile="Creatures/cragmensch-boulderer.png" />
     <part Name="FabricateFromSelf" ChargeUse="0" FabricateBlueprint="MediumBoulder" FabricateVerb="excavate" BatchSize="1" HitpointsPer="1" AIUseForThrowing="true" AIHitpointsThreshold="10" HitpointsThreshold="5" EnergyCost="100" Cooldown="1d2+1" IsBioScannable="true" />
     <inventoryobject Blueprint="MediumBoulder" Number="1" />
@@ -3745,7 +3745,7 @@ The infant child is unaware
 		<inventoryobject Blueprint="Cragmensch Fist" Number="2" />
     <tag Name="Role" Value="Artillery" />
   </object>
-  <object Name="Cragmensch Luminary" Inherits="Cragmensch">
+  <object Name="Cragmensch Luminary" Load="Merge">
     <part Name="Render" DisplayName="cragmensch luminary" ColorString="&amp;B" Tile="Creatures/cragmensch-luminary.png" />
     <stat Name="Hitpoints" Value="25" />
 		<inventoryobject Blueprint="Cragmensch Fist" Number="2" />
@@ -6418,24 +6418,12 @@ The infant child is unaware
     <part Name="MeleeWeapon" HitBonus="8" BaseDamage="2d6+1" Skill="LongBlades" Stat="Strength" Slot="Foot" />
     <part Name="Metal" />
   </object>
-	<object Name="Dream Wren" Inherits="BaseBird">
+	<object Name="Dream Wren" Load="Merge">
 		<part Name="Render" DisplayName="dream wren" RenderString="b" Tile="creatures/sw_chavvah_bird.bmp" ColorString="&amp;b" TileColor="&amp;b" DetailColor="M" />
 		<part Name="Description" Short="A long and split tail feather drapes below =pronouns.possessive= talons at an immaterial buoyancy. =pronouns.Possessive= epaulets are incandescent and =pronouns.possessive= frill is a vane for astral weather." />
-		<part Name="Brain" Hostile="false" Factions="Chavvah-100" />
-		<stat Name="Level" Value="35" />
-		<stat Name="Hitpoints" sValue="100" />
-		<inventoryobject Blueprint="DreamWren_Peck" Number="1" />
-		<mutation Name="SleepBreather" Level="4" />
-		<tag Name="NoGuard" />
+		
 	</object>
-	<object Name="Dream Wren Chavvah" Inherits="Dream Wren">
-		<part Name="Brain" Factions="Chavvah-100" />
-		<tag Name="ExcludeFromDynamicEncounters" />
-	</object>
-	<object Name="DreamWren_Peck" Inherits="NaturalWeapon">
-		<part Name="Render" DisplayName="peck" Tile="Creatures/natural-weapon-beak.bmp" ColorString="&amp;m" />
-		<part Name="MeleeWeapon" BaseDamage="3d3" Skill="ShortBlades" Slot="Face" />
-	</object>
+	
 	<object Name="Enigma Snail" Inherits="BaseSnail">
     <part Name="Render" DisplayName="enigma snail" Tile="bucklerparry_largerfolk/enigma_snail_fat.png" RenderString="q" ColorString="&amp;B" TileColor="&amp;W" DetailColor="B" />
     <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_cone_snail.bmp" WeightStage_1="bucklerparry_largerfolk/enigma_snail_fat.png" />
@@ -11208,43 +11196,10 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
     <tag Name="RandomPronounSetChance" Value="0" />
     <xtagGrammar Proper="true" />
   </object>
-  <object Name="Warden Esthers" Inherits="NPC">
-    <part Name="Render" DisplayName="Esther" Tile="creatures/sw_esthers.bmp" ColorString="&amp;B" RenderString="w" DetailColor="R" />
-    <part Name="Honorifics" Primary="Wardens" />
+  <object Name="Warden Esthers" Load="Merge">
+    <part Name="Render" DisplayName="Esther" Tile="bucklerparry_largerfolk/esthers_fat.png" ColorString="&amp;B" RenderString="w" DetailColor="R" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="creatures/sw_esthers.bmp" WeightStage_1="bucklerparry_largerfolk/esthers_fat.png"/>
     <part Name="Description" Short="There's a saying among the vintners who hoist their sails toward the Stilt. 'One rose is fair; five is death.' Indeed, when a single shawl swathes her face and the Esthers are one, there is peace beneath the Stilt. But when she's joined by her sisters, and scarlet ribbons thrash in the desert air, there is only blood and justice." />
-    <part Name="ConversationScript" ConversationID="WardenEsthers" />
-    <part Name="Brain" Wanders="false" Factions="Wardens-100" />
-    <stat Name="Strength" sValue="23" />
-    <stat Name="Agility" sValue="24" />
-    <stat Name="Toughness" sValue="24" />
-    <stat Name="Intelligence" sValue="16" />
-    <stat Name="Willpower" sValue="22" />
-    <stat Name="Ego" sValue="18" />
-    <stat Name="Hitpoints" Value="250" />
-    <inventoryobject Blueprint="Carbide Shield" Number="1" />
-    <inventoryobject Blueprint="Cudgel4" Number="1" />
-    <inventoryobject Blueprint="Waterskin" Number="3" />
-    <inventoryobject Blueprint="Carbide Plate Armor" Number="1" />
-    <inventoryobject Blueprint="Carbide Boots" Number="1" />
-    <inventoryobject Blueprint="Carbide Gauntlets" Number="1" />
-    <inventoryobject Blueprint="Scarlet Shawl" Number="1" />
-    <skill Name="Cudgel_Expertise" />
-    <skill Name="Shield" />
-    <skill Name="Shield_Block" />
-    <skill Name="Shield_Slam" />
-    <mutation Name="TemporalFugue" Level="7" />
-    <mutation Name="Teleportation" Level="1" />
-    <mutation Name="HeightenedSpeed" Level="6" />
-    <stat Name="Level" Value="30" />
-    <tag Name="Genotype" Value="Mutated Human" />
-    <part Name="GivesRep" />
-    <tag Name="NoHateFactions" Value="Mechanimists,Merchants,Pariahs,Resheph,Farmers" />
-    <tag Name="Gender" Value="females" />
-    <xtagGrammar Proper="true" />
-    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
-    <tag Name="SharesRecipe" Value="HotandSpiny" />
-    <tag Name="SharesRecipeText" Value="What a savory smell! Teach me to cook the favorite dish of the Stilt pilgrims." />
-    <xtagWaterRitual SellSkill="Shield" />
   </object>
   <object Name="Six Day Choraler" Inherits="Mechanimist Choraler">
     <part Name="Brain" Hostile="false" Wanders="false" Factions="Mechanimists-100" />
@@ -11265,7 +11220,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
   <object Name="Lulihart" Load="Merge"> <!-- BaseHindren-->
     <part Name="Render" DisplayName="Lulihart" RenderString="h" Tile="bucklerparry_largerfolk/lulihart_fat.png" ColorString="&amp;C" />
     <part Name="LargerFolk_WeightStageRender" WeightStage_0="creatures/sw_lulihart.bmp" WeightStage_1="bucklerparry_largerfolk/lulihart_fat.png" />
-    <part Name="Description" Short="Exile has treated the overstuffed hindren well, rounding out =pronouns.possessive= patchy deerskin with voluptuous mealmeat. =pronouns.Possessive= flabby extra limbs soak up excess intake, leading the upper body to appear smaller than one might expect. Beneath it, =pronouns.possessive= factory-default cervid body shows the true brunt of =pronouns.possessive= indulgence, bloated and only semi-mobile. Despite being one of the dune's more delicate creatures, =pronouns.subjective= =verb:perch:afterpronoun= on =pronouns.possessive= hooves with easy composure, somewhat complicated by the breadth of =pronouns.possessive= flabby digitigrades." />
+    <part Name="Description" Short="Exile has treated the overstuffed hindren well, rounding out =pronouns.possessive= patchy deerskin with soft blubber. =pronouns.Possessive= flabby extra limbs soak up excess intake, leading the upper body to appear smaller than one might expect. Beneath it, =pronouns.possessive= factory-default cervid body shows the true brunt of =pronouns.possessive= indulgence, bloated and only semi-mobile. Despite being one of the dune's more delicate creatures, =pronouns.subjective= =verb:perch:afterpronoun= on =pronouns.possessive= hooves with easy composure, somewhat complicated by the breadth of =pronouns.possessive= flabby digitigrades." />
     <part Name="LargerFolk_WeightDescription" 
       WeightDescription_0="There is little more to the slight deerkin than a bundle of spindly limbs, patchy pale-green fur, and tooth-white skin. Despite being one of the dune's more delicate creatures, =pronouns.subjective= =verb:perch:afterpronoun= on =pronouns.possessive= hooves with easy composure." 
       WeightDescription_1="Exile has treated the overstuffed hindren well, rounding out =pronouns.possessive= patchy deerskin with voluptuous mealmeat. =pronouns.Possessive= flabby extra limbs soak up excess intake, leading the upper body to appear smaller than one might expect. Beneath it, =pronouns.possessive= factory-default cervid body shows the true brunt of =pronouns.possessive= indulgence, bloated and only semi-mobile. Despite being one of the dune's more delicate creatures, =pronouns.subjective= =verb:perch:afterpronoun= on =pronouns.possessive= hooves with easy composure, somewhat complicated by the breadth of =pronouns.possessive= flabby digitigrades." />
@@ -11611,100 +11566,42 @@ In Barathrum's name, =pronouns.subjective==verb:'ve:afterpronoun= conferred onto
 
   <!-- Bey Lah -->
   <!-- (todo: hindren need levels) -->  
-  <object Name="Eskhind" Inherits="BaseHindren">
-    <part Name="Render" DisplayName="Eskhind" RenderString="h" Tile="creatures/sw_hindren_2.bmp" ColorString="&amp;r" />
-    <stat Name="Level" Value="16" />
-    <stat Name="Strength" sValue="18" />
-    <stat Name="Agility" sValue="22" />
-    <stat Name="Toughness" sValue="20" />
-    <stat Name="Intelligence" sValue="24" />
-    <stat Name="Willpower" sValue="24" />
-    <stat Name="Ego" sValue="20" />
-    <stat Name="Hitpoints" sValue="80" />
-    <skill Name="Pistol" />
-    <skill Name="Pistol_Akimbo" />
-    <skill Name="LongBlades" />
-    <skill Name="Multiweapon_Fighting" />
-    <skill Name="Multiweapon_Proficiency" />
-    <skill Name="ShortBlades_Jab" />
-    <skill Name="ShortBlades" />
-    <inventoryobject Blueprint="Long Sword4" Number="1" />
-    <inventoryobject Blueprint="Gaslight Dagger" Number="1" />
-    <inventoryobject Blueprint="Chain Mail" Number="1" />
-    <inventoryobject Blueprint="Croccasins" Number="2" />
-    <inventoryobject Blueprint="Borderlands Revolver" Number="2" />
-    <inventoryobject Blueprint="Lead Slug" Number="16" />
-    <inventoryobject Blueprint="LeatherBracer" Number="2" />
-    <part Name="FinishQuestStepWhenSlain" Quest="Find Eskhind" Step="Find Eskhind" GameState="EskhindSlain" />
-    <part Name="ConversationScript" ConversationID="Eskhind" />
-    <part Name="Brain" Wanders="false" Factions="Pariahs-100" />
-    <xtagWaterRitual NoJoin="true" SellSkill="Multiweapon_Fighting"></xtagWaterRitual>
-    <xtagGrammar Proper="true"></xtagGrammar>
-    <part Name="Description" Short="=pronouns.Possessive= proud stance and the burning intensity of =pronouns.possessive= eyes set =pronouns.possessive= apart from =pronouns.possessive= cervidian kinfolk. Those sharp jade gems are softened by the powdered red fur of =pronouns.possessive= cheeks, and =pronouns.possessive= split philtrum is the only deviation from the narrowing neutral lines of =pronouns.possessive= lips. Save for =pronouns.possessive= leather cuffs, nothing =pronouns.subjective= =verb:wear:afterpronoun= is of hindren make." />
-    <part Name="PotentialHindrenLookClue" />
-    <part Name="AISelfPreservation" Threshold="20" />
-    <part Name="GameUnique" DeathState="EskhindKilled" />
-    <part Name="Interesting" />
-    <tag Name="Gender" Value="hindren female" />
-    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
-    <part Name="HindrenMysteryCriticalNPC" />
-    <tag Name="NoHateFactions" Value="Wardens,Dromad" />
+  <object Name="Eskhind" Load="Merge">
+  
+    <part Name="Render" DisplayName="Eskhind" RenderString="h" Tile="bucklerparry_largerfolk/eskhind_fat.png" ColorString="&amp;r" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="creatures/sw_hindren_2.bmp" WeightStage_1="bucklerparry_largerfolk/eskhind_fat.png" />
+    <part Name="LargerFolk_WeightDescription"
+      WeightDescription_0="=pronouns.Possessive= proud stance and the burning intensity of =pronouns.possessive= eyes 
+      set =pronouns.possessive= apart from =pronouns.possessive= cervidian kinfolk. 
+      Those sharp jade gems are softened by the powdered red fur of =pronouns.possessive= cheeks, 
+      and =pronouns.possessive= split philtrum is the only deviation from the narrowing neutral lines of 
+      =pronouns.possessive= lips. Save for =pronouns.possessive= leather cuffs, nothing =pronouns.subjective= 
+      =verb:wear:afterpronoun= is of hindren make."
+      WeightDescription_1="=pronouns.Possessive= proud stance and the burning intensity of =pronouns.possessive= eyes 
+      set =pronouns.possessive= apart from =pronouns.possessive= cervidian kinfolk. 
+      Those sharp jade gems are softened by the powdered red fur of =pronouns.possessive= pouting jowls, 
+      and =pronouns.possessive= split philtrum is the only deviation from the narrowing neutral lines of 
+      =pronouns.possessive= lips. Save for =pronouns.possessive= leather cuffs, nothing =pronouns.subjective= 
+      =verb:wear:afterpronoun= upon =pronouns.possessive= bloated form is of hindren make."/>
   </object>
-  <object Name="Meyehind" Inherits="BaseHindren">
+
+  <object Name="Meyehind" Load="Merge">
     <part Name="Render" DisplayName="Meyehind" RenderString="h" Tile="bucklerparry_largerfolk/hindren_scout_fat.png" ColorString="&amp;g" />
     <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_hindren_4.bmp" WeightStage_1="bucklerparry_largerfolk/hindren_scout_fat.png" />
-    <stat Name="Level" Value="8" />
-    <stat Name="Strength" sValue="17" />
-    <stat Name="Agility" sValue="24" />
-    <stat Name="Toughness" sValue="20" />
-    <stat Name="Intelligence" sValue="20" />
-    <stat Name="Willpower" sValue="18" />
-    <stat Name="Ego" sValue="16" />
-    <stat Name="Hitpoints" sValue="60" />
-    <skill Name="Rifle_SteadyHands" />
-    <skill Name="Axe" />
-    <skill Name="Axe_Cleave" />
-    <inventoryobject Blueprint="LeatherBracer" Number="2" />
-    <inventoryobject Blueprint="Elastyne Skin Suit" />
-    <inventoryobject Blueprint="Battle Axe3" />
-    <inventoryobject Blueprint="Short Bow" />
-    <inventoryobject Blueprint="Steel Arrow" Number="20" />
-    <part Name="ConversationScript" ConversationID="Meyehind" />
-    <part Name="Brain" Wanders="false" Factions="Pariahs-99" />
-    <part Name="GameUnique" />
-    <xtagGrammar Proper="true"></xtagGrammar>
-    <part Name="Description" Short="The lanky deerfolk's thin frame is bent in a shy hunch. But =pronouns.possessive= bright eyes shine like emeralds with insight and aggressive curiosity, and slender fingers flick to the complex rhythms of the weald." />
-    <part Name="AISelfPreservation" Threshold="30" />
-    <tag Name="Gender" Value="hindren female" />
-    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
+   
+      <part Name="LargerFolk_WeightDescription"
+        WeightDescription_0="The lanky deerfolk's thin frame is bent in a shy hunch. But =pronouns.possessive= bright eyes shine like emeralds with insight and aggressive curiosity, and slender fingers flick to the complex rhythms of the weald."
+        WeightDescription_1="The plump deerfolk's belly doubles up under =pronouns.possessive= hunched posture. But =pronouns.possessive= bright eyes shine like emeralds with insight and aggressive curiosity, and =pronouns.possessive= fingers flick to the complex rhythms of the weald."
+      />
   </object>
-  <object Name="Liihart" Inherits="BaseHindren">
+
+  <object Name="Liihart" Load="Merge">
     <part Name="Render" DisplayName="Liihart" RenderString="h" Tile="bucklerparry_largerfolk/liihart_fat.png" ColorString="&amp;W" />
     <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_hindren_6.bmp" WeightStage_1="bucklerparry_largerfolk/liihart_fat.png" />
-    <stat Name="Level" Value="8" />
-    <stat Name="Strength" sValue="19" />
-    <stat Name="Agility" sValue="20" />
-    <stat Name="Toughness" sValue="17" />
-    <stat Name="Intelligence" sValue="25" />
-    <stat Name="Willpower" sValue="18" />
-    <stat Name="Ego" sValue="16" />
-    <stat Name="Hitpoints" sValue="75" />
-    <skill Name="Axe" />
-    <skill Name="Axe_Cleave" />
-    <skill Name="Tactics" />
-    <skill Name="Tactics_Charge" />
-    <skill Name="Cudgel_ChargingStrike" />
-    <inventoryobject Blueprint="LeatherBracer" Number="2" />
-    <inventoryobject Blueprint="Shayna" />
-    <inventoryobject Blueprint="Leather Apron" />
-    <part Name="ConversationScript" ConversationID="Liihart" />
-    <part Name="Brain" Wanders="false" Factions="Pariahs-99" />
-    <part Name="GameUnique" />
-    <xtagGrammar Proper="true"></xtagGrammar>
-    <part Name="Description" Short="=pronouns.Subjective==verb:'re:afterpronoun= so short as to appear to be faundren, but a closer look at the soft swell of her ground-brushing gut and calculating eyes reveal her as a fully-grown runt. =pronouns.Subjective= =verb:wear:afterpronoun= =pronouns.possessive= hair in a pair of buns tied tight as =pronouns.possessive= nerves. =pronouns.Possessive= pudgy little hands, curled and anxious, are covered with the signature burns and cuts of an amateur tinker." />
-    <tag Name="Gender" Value="hindren female" />
-    <part Name="AISelfPreservation" Threshold="80" />
-    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
+    <part Name="LargerFolk_WeightDescription"
+    WeightDescription_0="=pronouns.Subjective==verb:'re:afterpronoun= so small as to appear to be faundren, but a closer look at her tense shoulders and calculating eyes reveal her as a fully-grown runt. =pronouns.Subjective= =verb:wear:afterpronoun= =pronouns.possessive= hair in a pair of buns tied tight as =pronouns.possessive= nerves. =pronouns.Possessive= little hands, curled and anxious, are covered with the signature burns and cuts of an amateur tinker."
+    WeightDescription_1="=pronouns.Subjective==verb:'re:afterpronoun= so short as to appear to be faundren, but a closer look at the soft swell of her ground-brushing gut and calculating eyes reveal her as a fully-grown runt. =pronouns.Subjective= =verb:wear:afterpronoun= =pronouns.possessive= hair in a pair of buns tied tight as =pronouns.possessive= nerves. =pronouns.Possessive= pudgy little hands, curled and anxious, are covered with the signature burns and cuts of an amateur tinker."
+    />
   </object>
   <object Name="Isahind" Inherits="BaseHindren">
     <part Name="Render" DisplayName="Isahind" RenderString="h" ColorString="&amp;W" />
@@ -11742,81 +11639,26 @@ In Barathrum's name, =pronouns.subjective==verb:'ve:afterpronoun= conferred onto
     <tag Name="Gender" Value="hindren female" />
     <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
   </object>
-  <object Name="Neelahind" Inherits="BaseHindren">
+  <object Name="Neelahind" Load="Merge">
     <part Name="Render" DisplayName="Neelahind" RenderString="h" Tile="bucklerparry_largerfolk/neelahind_fat.png" ColorString="&amp;B" />
     <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_hindren_3.bmp" WeightStage_1="bucklerparry_largerfolk/neelahind_fat.png" />
-    <part Name="Honorifics" Primary="Warden" />
-    <stat Name="Level" Value="20" />
-    <stat Name="Strength" Value="24" />
-    <stat Name="Agility" Value="25" />
-    <stat Name="Toughness" Value="24" />
-    <stat Name="Intelligence" Value="20" />
-    <stat Name="Willpower" Value="16" />
-    <stat Name="Ego" Value="14" />
-    <stat Name="Hitpoints" Value="240" />
-    <skill Name="Axe" />
-    <skill Name="Cudgel_ChargingStrike" />
-    <skill Name="Tactics_Charge" />
-    <skill Name="Axe_Cleave" />
-    <skill Name="Axe_HookAndDrag" />
-    <skill Name="Axe_Berserk" />
-    <skill Name="Shield" />
-		<skill Name="SingleWeaponFighting" />
-		<skill Name="SingleWeaponFighting_WeaponExpertise" />		
-    <inventoryobject Blueprint="LeatherBracer" Number="2" />
-    <inventoryobject Blueprint="Steel Shield" Number="1" />
-    <inventoryobject Blueprint="Yal" Number="1" />
-    <inventoryobject Blueprint="Steel Plate Mail" Number="1" />
-    <inventoryobject Blueprint="Steel Boots" Number="1" />
-    <inventoryobject Blueprint="Steel Gauntlets" Number="1" />
-    <part Name="ConversationScript" ConversationID="Neelahind" />
-    <part Name="Brain" Wanders="false" Factions="Wardens-100,Hindren-75" />
-    <part Name="Interesting" />
-    <xtagGrammar Proper="true"></xtagGrammar>
+    
     <part Name="Description" Short="All soft flab and hard vigilance, Neelahind =verb:become= =pronouns.possessive= occupation as the warden of Bey Lah. =pronouns.Subjective= =verb:swell:afterpronoun= to fill the faulds of =pronouns.possessive= armor, but the attentive eye that matches hers catches sight of a secret truth: inside the corpulent body of the warrior hides a scared and flustered faundren." />
-    <part Name="AISelfPreservation" Threshold="15" />
-    <tag Name="Gender" Value="hindren female" />
-    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
-    <part Name="HindrenMysteryCriticalNPC" />
-    <tag Name="NoHateFactions" Value="Wardens,Dromad" />
+    <part Name="LargerFolk_WeightDescription"
+    WeightDescription_0="All lithe muscle and hard vigilance, Neelahind =verb:become= =pronouns.possessive= occupation as the warden of Bey Lah. =pronouns.Subjective= =verb:bloom:afterpronoun= to fill the faulds of =pronouns.possessive= armor, but the attentive eye that matches hers catches sight of a secret truth: inside the stout and sturdy body of the warrior hides a scared and flustered faundren."
+    WeightDescription_1="All soft flab and hard vigilance, Neelahind =verb:become= =pronouns.possessive= occupation as the warden of Bey Lah. =pronouns.Subjective= =verb:swell:afterpronoun= to fill the faulds of =pronouns.possessive= armor, but the attentive eye that matches hers catches sight of a secret truth: inside the corpulent body of the warrior hides a scared and flustered faundren."
+    />
   </object>
-  <object Name="Keh" Inherits="BaseHindren">
+  <object Name="Keh" Load="Merge">
     <part Name="Render" DisplayName="Hindriarch Keh" RenderString="h" Tile="creatures/sw_hindren_5.bmp" ColorString="&amp;R" />
-    <stat Name="Level" Value="21" />
-    <stat Name="Strength" Value="15" />
-    <stat Name="Agility" Value="17" />
-    <stat Name="Toughness" Value="13" />
-    <stat Name="Intelligence" Value="20" />
-    <stat Name="Willpower" Value="20" />
-    <stat Name="Ego" Value="24" />
-    <stat Name="Hitpoints" Value="60" />
-    <skill Name="Persuasion_Berate" />
-    <inventoryobject Blueprint="LeatherBracer" Number="2" />
-    <inventoryobject Blueprint="Sandals" Number="1" />
-    <inventoryobject Blueprint="Woven Tunic" Number="1" />
-    <inventoryobject Blueprint="Walking Stick" Number="1" />
-    <inventoryobject Blueprint="Force Bracelet" Number="1" />
-    <inventoryobject Blueprint="ShadeOilTonic" Number="1" />
-    <inventoryobject Blueprint="Short Bow" />
-    <inventoryobject Blueprint="Steel Arrow" Number="20" />
-    <part Name="ConversationScript" ConversationID="Keh" />
-    <part Name="Brain" Wanders="false" Factions="Hindren-100" />
-    <part Name="Interesting" />
-    <xtagWaterRitual NoJoin="true" SellSkill="Persuasion_Berate"></xtagWaterRitual>
-    <xtagGrammar Proper="true"></xtagGrammar>
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="creatures/sw_hindren_5.bmp" WeightStage_1="bucklerparry_largerfolk/keh_fat.png" />
     <part Name="Description" Short="Time has put creases in =pronouns.possessive= ears and a deep furrow in =pronouns.possessive= throat. The sharp voice thus produced starts and stops the motion of life in the meadow. The arc of tradition has named =pronouns.possessive= Hindriarch, inscribed in the garland cut of =pronouns.possessive= hair, and the downslope of time has locked =pronouns.possessive= in the minds of faundren as Grand-Doe. To all in Bey Lah, =pronouns.subjective= =verb:are:afterpronoun= the sovereign law." />
-    <part Name="AISelfPreservation" Threshold="25" />
-    <tag Name="Gender" Value="hindren female" />
-    <tag Name="ExcludeFromDynamicEncounters" />
-    <part Name="HindrenMysteryCriticalNPC" />
-    <tag Name="NoHateFactions" Value="Wardens,Dromad" />
-    <tag Name="Mayor" Value="Hindren" />
+    
   </object>
-  <object Name="PariahKeh" Inherits="Keh">
+  <object Name="PariahKeh" Load="Merge">
     <part Name="Render" DisplayName="Keh-hind" />
     <part Name="Description" Short="I met a cadre of mopango folk,&#xD;&#xA;who told me tales of an ancient oak,&#xD;&#xA;who stood and ruled for a century.&#xD;&#xA;She towered tall over those below.&#xD;&#xA;She cast shade down so they wouldn't grow,&#xD;&#xA;but they all believed it was meant to be.&#xD;&#xA;&#xD;&#xA;But when hot sky-fire broke tradition,&#xD;&#xA;she found herself in no position,&#xD;&#xA;To draw up any new decree.&#xD;&#xA;&#xD;&#xA;-- Willow Shakesprig's 'Macoun', Act V, scene iii" />
-    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
-    <tag Name="Mayor" Value="*delete" />
+
   </object>
   <object Name="Kesehind" Inherits="BaseHindren">
     <part Name="Render" DisplayName="Kesehind" RenderString="H" Tile="bucklerparry_largerfolk/neelahind_fat.png" ColorString="&amp;W" />
@@ -13117,35 +12959,11 @@ This one is jeweled in the eroded scrap of the Tomb." />
   </object>
 
   <!-- Unplaced -->
-  <object Name="AgateSeveranceStar" Inherits="BaseHindren">
-    <part Name="Render" DisplayName="Agate Severance Star" RenderString="h" Tile="creatures/sw_hindren_2.bmp" ColorString="&amp;K" />
-    <stat Name="Level" Value="24" />
-    <stat Name="Strength" Value="22" />
-    <stat Name="Agility" Value="28" />
-    <stat Name="Toughness" Value="26" />
-    <stat Name="Intelligence" Value="33" />
-    <stat Name="Willpower" Value="29" />
-    <stat Name="Ego" Value="31" />
-    <stat Name="Hitpoints" Value="220" />
-    <inventoryobject Blueprint="Flamethrower" Number="1" />
-    <inventoryobject Blueprint="Woven Tunic" Number="1" />
-    <inventoryobject Blueprint="Vibro Blade" Number="1" CellChance="100" CellFullChance="100" CellType="Chem Cell" />
-    <inventoryobject Blueprint="Vibro Dagger" Number="1" CellChance="100" CellFullChance="100" CellType="Chem Cell" />
-    <skill Name="LongBlades" />
-    <skill Name="Multiweapon_Fighting" />
-    <skill Name="Multiweapon_Proficiency" />
-    <skill Name="ShortBlades_Jab" />
-    <skill Name="ShortBlades" />
-    <skill Name="Rifle_SteadyHands" />
-    <part Name="ConversationScript" ConversationID="AgateSeveranceStar" />
-    <part Name="Brain" Factions="Pariahs-100" />
-    <part Name="GivesRep" />
-    <xtagWaterRitual SellSkill="false" />
-    <xtagGrammar Proper="true" />
+  <object Name="AgateSeveranceStar" Load="Merge">
+    <part Name="Render" DisplayName="Agate Severance Star" RenderString="h" Tile="bucklerparry_largerfolk/eskhind_fat.png" ColorString="&amp;K" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="creatures/sw_hindren_2.bmp" WeightStage_1="bucklerparry_largerfolk/eskhind_fat.png" />
+
     <part Name="Description" Short="A severe hindren =pronouns.personTerm= =verb:wear:afterpronoun= a spotless white tabard with long tails tailored to drape across =pronouns.possessive= longish back. Dappled flanks are arrayed in saddlebags heavy with esoteric gadgetry, and a bluish-white crust grows across =pronouns.possessive= face, rendering =pronouns.possessive= gimlet stare all the more striking." />
-    <removepart Name="AISelfPreservation" />
-    <tag Name="Gender" Value="hindren female" />
-    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
   </object>
 
   <object Name="SapientBear" Inherits="BaseBear">
@@ -13156,6 +12974,26 @@ This one is jeweled in the eroded scrap of the Tomb." />
   </object>
   
   <!-- End NPCs -->
+
+  <!-- LargerFolk Exclusives-->
+
+  <object Name="GhostHand" Inherits="BaseRobot">
+    <part Name="Body" Anatomy="HoverRobot" />
+    <part Name="Render" DisplayName="ghost hand" ColorString="&amp;Y" Tile="bucklerparry_largerfolk/ghost_hand.png" DetailColor="c" />
+    <part Name="Brain" Hostile="false" />
+    <part Name="FabricateFromSelf" ChargeUse="0" FabricateBlueprint="Cream Pie" FabricateVerb="produce" BatchSize="1" HitpointsPer="0" AIUseForThrowing="true" AIHitpointsThreshold="0" HitpointsThreshold="0" EnergyCost="100" Cooldown="1d2+1" IsBioScannable="true" />
+    <inventoryobject Blueprint="Cream Pie" Number="1" />
+    <part Name="AIThrowAndScoot" />
+    <stat Name="AV" Value="2" />
+    <stat Name="Level" Value="19" />
+    <stat Name="Strength" Boost="-1" />
+    <stat Name="Agility" sValue="16" />
+    <stat Name="Hitpoints" Value="15" />
+    <part Name="Description" Short="A quintet of complex servo grasp hungrily at the air, gliding silently in search of subjects on which to wreak =pronouns.possessive= perverse whims." />
+    <part Name="Swarmer" />
+    <tag Name="Species" Value="hover robot" />
+    <inventoryobject Blueprint="MetalFist" Number="1" />
+  </object>
 
 	<!-- UNFINISHED -->
 	<!-- Trembling dunes -->
