@@ -63,6 +63,12 @@ public class LargerFolk_CasteWeightStages : IPlayerMutator
                 player.GetPart<LargerFolk_WeightStageRender>().WeightStage_2 = "bucklerparry_largerfolk/bzzzt_fat.png";
                 player.GetPart<LargerFolk_WeightStageRender>().WeightStage_3 = "bucklerparry_largerfolk/bzzzt_fat_stage3.png";
             }
+            else if (myRender.Tile == "bucklerparry_largerfolk/succubus_1.png" || myRender.Tile == "bucklerparry_largerfolk/succubus_2.png")
+            {
+                player.GetPart<Render>().Tile = "bucklerparry_largerfolk/succubus_1.png";
+                player.GetPart<LargerFolk_WeightStageRender>().WeightStage_0 = "bucklerparry_largerfolk/succubus_1.png";
+                player.GetPart<LargerFolk_WeightStageRender>().WeightStage_1 = "bucklerparry_largerfolk/succubus_2.png";
+            }
 
             // True Kin presets
             else if (myRender.Tile == "creatures/sw_praetorian_prime.bmp" || myRender.Tile == "bucklerparry_largerfolk/praetorian_prime_fat.png")

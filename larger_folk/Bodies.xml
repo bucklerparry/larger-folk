@@ -4,8 +4,8 @@
 
 <bodies Load="Merge">
 
-  <!-- <bodyparttypes Load="Merge">
-    <bodyparttype Type="Body" Integral="true" />
+  <bodyparttypes Load="Merge">
+    <!-- <bodyparttype Type="Body" Integral="true" />
     <bodyparttype Type="Head" LimbBlueprintProperty="SeveredHeadBlueprint" LimbBlueprintDefault="GenericHead" Mortal="true" Appendage="true" UsuallyOn="Body" Branching="Lateral,Longitudinal,Vertical,Stratal" ChimeraWeight="3" />
     <bodyparttype Type="Face" LimbBlueprintProperty="SeveredFaceBlueprint" LimbBlueprintDefault="GenericFace" Appendage="true" UsuallyOn="Head" Branching="Lateral,Vertical,Longitudinal,Stratal" ChimeraWeight="3" />
     <bodyparttype Type="Back" DescriptionPrefix="Worn on" Integral="true" Branching="Lateral,Vertical,Longitudinal,Stratal" ChimeraWeight="3" />
@@ -23,24 +23,32 @@
     <bodyparttype Type="Roots" Description="Root System" LimbBlueprintProperty="SeveredRootsBlueprint" Mobility="1" Plural="true" Category="Plant" Appendage="true" UsuallyOn="Body" Branching="Stratal,Vertical,Longitudinal,Lateral" />
     <bodyparttype Type="Tail" LimbBlueprintProperty="SeveredTailBlueprint" Appendage="true" UsuallyOn="Body" Branching="Lateral,Vertical,Stratal,Longitudinal" />
     <bodyparttype Type="Tread" LimbBlueprintProperty="SeveredTreadBlueprint" LimbBlueprintDefault="SeveredTread" Mobility="1" Category="Mechanical" Appendage="true" UsuallyOn="Body" Branching="Lateral,Longitudinal,Stratal,Vertical" />
-    <bodyparttype Type="Ammo" Abstract="true" Category="Mechanical" />
-  </bodyparttypes> -->
-
+    <bodyparttype Type="Ammo" Abstract="true" Category="Mechanical" /> -->
+    <!-- <bodyparttype Type="Arm" LimbBlueprintProperty="SeveredArmBlueprint" Appendage="true" UsuallyOn="Body" Branching="Lateral,Vertical,Longitudinal,Stratal" ChimeraWeight="3" /> -->
+    <bodyparttypevariant VariantOf="Arm" Type="Starched Cuff" Category="Cloth" />
+  </bodyparttypes> 
+<!-- 
   <bodyparttypevariants Load="Merge">
 
-    <!-- LargerFolk Additional Part Variants -->
+     LargerFolk Additional Part Variants 
     <bodyparttypevariant VariantOf="Arm" Type="Soft Arm" />
     <bodyparttypevariant VariantOf="Back" Type="Back Rolls" />
     <bodyparttypevariant VariantOf="Body" Type="Plump Gut" />
     <bodyparttypevariant VariantOf="Foot" Type="Thick Leg" />
 
-    <!-- End LargerFolk Part Variants -->
+    End LargerFolk Part Variants 
 
    
-  </bodyparttypevariants>
+  </bodyparttypevariants> -->
 
   <anatomies Load="Merge">
-
+    <anatomy Name="FloatingHand">
+        <part Type="Starched Cuff" Laterality="Left">
+         <part Type="Hand" Laterality="Left" SupportsDependent="Hands" />
+        </part>
+        <part Type="Missile Weapon" Laterality="Left" />
+        <part Type="Hands" DependsOn="Hands" />
+    </anatomy>
 		<!-- NPC-specific -->
     <!-- <anatomy Name="Humanoid">
       <part Type="Head">

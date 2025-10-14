@@ -12978,7 +12978,7 @@ This one is jeweled in the eroded scrap of the Tomb." />
   <!-- LargerFolk Exclusives-->
 
   <object Name="GhostHand" Inherits="BaseRobot">
-    <part Name="Body" Anatomy="HoverRobot" />
+    <part Name="Body" Anatomy="FloatingHand" />
     <part Name="Render" DisplayName="ghost hand" ColorString="&amp;Y" Tile="bucklerparry_largerfolk/ghost_hand.png" DetailColor="c" />
     <part Name="Brain" Hostile="false" />
     <part Name="FabricateFromSelf" ChargeUse="0" FabricateBlueprint="Cream Pie" FabricateVerb="produce" BatchSize="1" HitpointsPer="0" AIUseForThrowing="true" AIHitpointsThreshold="0" HitpointsThreshold="0" EnergyCost="100" Cooldown="1d2+1" IsBioScannable="true" />
@@ -12989,10 +12989,34 @@ This one is jeweled in the eroded scrap of the Tomb." />
     <stat Name="Strength" Boost="-1" />
     <stat Name="Agility" sValue="16" />
     <stat Name="Hitpoints" Value="15" />
-    <part Name="Description" Short="A quintet of complex servo grasp hungrily at the air, gliding silently in search of subjects on which to wreak =pronouns.possessive= perverse whims." />
+    <part Name="Description" Short="A quintet of white-gloved digits operate with no visible biology or mechanism, gliding silently in search of subjects on which to wreak =pronouns.possessive= perverse whims." />
     <part Name="Swarmer" />
     <tag Name="Species" Value="hover robot" />
-    <inventoryobject Blueprint="MetalFist" Number="1" />
+    <part Name="Corpse" CorpseBlueprint="WhiteGlove" />
+    <inventoryobject Blueprint="GhostHand_Grab" Number="1" />
+  </object>
+  <object Name="GhostHand_Grab" Inherits="DefaultFist">
+    <part Name="Render" DisplayName="grasping digits" />
+    <part Name="MeleeWeapon" BaseDamage="1d2" />
+    <part Name="LatchesOn" InitialSaveTarget="25" InitialSaveStat="Agility" InitialSaveDifficultyStat="Agility" MoveSaveTarget="25" MoveSaveStat="Strength" MoveSaveDifficultyStat="Strength" BreakSaveTarget="25" BreakSaveStat="Strength" BreakSaveDifficultyStat="Agility" Duration="15-18" AutoAttackOnMove="false" AutoAttackOnMoveAway="false" AutoAttackPerTurn="false" BloodSpatterOnLatch="false" />
+  </object>
+<object Name="CursedMirror" Inherits="Creature">
+    <part Name="Render" DisplayName="anima mirror" Tile="bucklerparry_largerfolk/cursed_mirror.png" ColorString="&amp;W" DetailColor="Y" />
+    <part Name="Description" Short="An ancient frame of unknown purpose, spun over with shimmering lattice. Mindgrains reflect the form of desire." />
+    <part Name="Body" Anatomy="Mirror" />
+    <part Name="Corpse" CorpseChance="50" CorpseBlueprint="Shattered Mirror" />
+    <part Name="Brain" Factions="Newly Sentient Beings-100" />
+    <part Name="ConversationScript" ConversationID="InsectNest" />
+    <removepart Name="LargerFolk_WeightGain" />
+    <stat Name="Level" Value="35" />
+    <stat Name="AV" Value="4" />
+    <stat Name="Hitpoints" Value="45" />
+    <tag Name="NoAskName" />
+    <part Name="LargerFolk_CursedMirror" />
+    <part Name="RefractLight" Chance="100" />
+		<tag Name="DeathSounds" Value="Sounds/Damage/sfx_destroy_glass" />
+		<tag Name="TakeDamageSound" Value="Sounds/Damage/sfx_damage_glass" />		
+		<tag Name="PunchSound" Value="Sounds/Damage/sfx_damage_glass" />	
   </object>
 
 	<!-- UNFINISHED -->

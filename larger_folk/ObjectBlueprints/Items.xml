@@ -588,6 +588,15 @@
     <tag Name="ShowAsPhysicalFeature" />
 		<stag Name="Contemporary" />
   </object>
+
+  <object Name="WhiteGlove">
+    <part Name="Render" DisplayName="white glove" Tile="bucklerparry_largerfolk/ghost_hand.png" />
+    <part Name="Description" Short="An inert glove of unknown make. Much too small to wear." />
+    <part Name="SizeAdjective" Adjective="small" />
+    <part Name="Physics" Weight="1" />
+    <part Name="Commerce" Value="16" />
+    <tag Name="ExcludeFromDynamicEncounters" />
+  </object>
   
   <object Name="Loose Button" Inherits="BaseStone">
     <part Name="Render" DisplayName="loose button" Tile="bucklerparry_largerfolk/item_button.png" />

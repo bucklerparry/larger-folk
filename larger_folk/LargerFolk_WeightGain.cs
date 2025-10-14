@@ -41,7 +41,7 @@ public class LargerFolk_WeightGain : IPart
 
     public int StartingWeight = -1;
 
-    public int CalorieThresholdFat = 5000;
+    public int CalorieThresholdFat = 6000;
     public int CalorieThresholdObese = 12000;
     public int CalorieThresholdImmobile = 20000;
 
@@ -321,17 +321,17 @@ public class LargerFolk_WeightGain : IPart
                 break;
             case 1:
                 StatShifter.DefaultDisplayName = "Overweight";
-                StatShifter.SetStatShift(ParentObject, "AV", 1);
-                StatShifter.SetStatShift(ParentObject, "DV", -2);
+                StatShifter.SetStatShift(ParentObject, "AV", 0);
+                StatShifter.SetStatShift(ParentObject, "DV", 0);
                 break;
             case 2:
                 StatShifter.DefaultDisplayName = "Obesity";
-                StatShifter.SetStatShift(ParentObject, "AV", 2);
-                StatShifter.SetStatShift(ParentObject, "DV", -4);
+                StatShifter.SetStatShift(ParentObject, "AV", 1);
+                StatShifter.SetStatShift(ParentObject, "DV", -3);
                 break;
             case 3:
                 StatShifter.DefaultDisplayName = "Extreme Obesity";
-                StatShifter.SetStatShift(ParentObject, "AV", 3);
+                StatShifter.SetStatShift(ParentObject, "AV", 2);
                 StatShifter.SetStatShift(ParentObject, "DV", -6);
                 break; 
             default:
