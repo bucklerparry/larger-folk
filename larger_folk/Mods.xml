@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mods Load="Merge">
+  <mod Part="LargerFolk_Mod_Stretchy" Tables="BodyMods" Rarity="C" TinkerDisplayName="stretchy" Value="1.1" TinkerCategory="armor" Description="Stretchy: This armor suffers no tightness penalties." />
+  <mod Part="LargerFolk_ModFattening" Tables="WeaponMods" TinkerTier="2" Rarity="R" TinkerDisplayName="fattening" Value="1.2" TinkerCategory="melee weapons" Description="Fattening: This weapon fattens the target on hit." />
+</mods>

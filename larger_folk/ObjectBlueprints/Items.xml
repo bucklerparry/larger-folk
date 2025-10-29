@@ -85,6 +85,16 @@
     <part Name="LargerFolk_Armor" />
   </object>
 
+  <object Name="Clay Pot" Load="Merge">
+    <part Name="LargerFolk_Armor" />
+  </object>
+
+  <!-- MODIFIED ARMORS - mainly for adding tags like Stretchy, or specific target sizes --> 
+
+  <!-- <object Name="Elastyne Skin Suit" Load="Merge">
+    <tag Name="Stretchy"/>
+  </object> -->
+
   <!-- <object Name="Leather Armor" Load="Merge">
     <part Name="LargerFolk_ButtonPop" Skill="Rifle" ShotsPerAction="1" AmmoPerAction="0" ShotsPerAnimation="1" WeaponAccuracy="12" />
     <part Name="MagazineAmmoLoader" ProjectileObject="PoppedButton" AmmoPart="AmmoSlug" MaxAmmo="0" />
@@ -597,6 +607,27 @@
     <part Name="Commerce" Value="16" />
     <tag Name="ExcludeFromDynamicEncounters" />
   </object>
+
+  <object Name="Bikini" Inherits="BaseArmor">
+    <part Name="Armor" AV="0" DV="2" WornOn="Body" />
+    <part Name="Render" DisplayName="bikini" RenderString="Y" ColorString="&amp;o" DetailColor="r" Tile="bucklerparry_largerfolk/item_bikini.png" />
+    <part Name="Commerce" Value="10" />
+    <part Name="Description" Short="Under made over. Clothing as reduced to the minimum legible signifiers." />
+    <part Name="Physics" Weight="1" Conductivity="0" />
+    <part Name="LargerFolk_Armor" />
+	  <tag Name="EquipSound" Value="sfx_equip_armor_synthetic" />
+    <tag Name="Tier" Value="1" />
+  </object>
+
+  <object Name="Fullerite Bikini" Inherits="Bikini">
+    <part Name="Armor" AV="0" DV="-2" WornOn="Body" />
+    <part Name="Render" DisplayName="{{K|fullerite}} bikini" Tile="bucklerparry_largerfolk/item_bikini.png" ColorString="&amp;K" TileColor="&amp;y" DetailColor="K" RenderString="]" />
+    <part Name="Commerce" Value="320" />
+    <part Name="Description" Short="The rough curves of an idealized physique are molded from hyperdense star-metal. Deeply unpleasant to wear." />
+    <part Name="Physics" Weight="60" />
+	  <tag Name="EquipSound" Value="sfx_equip_armor_metal_heavy" />
+    <tag Name="Tier" Value="5" />
+  </object>
   
   <object Name="Loose Button" Inherits="BaseStone">
     <part Name="Render" DisplayName="loose button" Tile="bucklerparry_largerfolk/item_button.png" />
@@ -652,7 +683,7 @@
     <part Name="RulesDescription" Text="Duration: 15 rounds
 You gain 400 calories each round." AltForGenotype="True Kin" GenotypeAlt="Duration: 5 rounds
 You gain 600 calories each round." />
-    <part Name="TinkerItem" Bits="01" Ingredient="Dreadroot Tuber" />
+    <part Name="TinkerItem" Bits="112233" Ingredient="Human Corpse" NumberMade="3" />
     <part Name="PreservableItem" Result="Congealed Salve" Number="5" />
     <tag Name="Gift" Value="*noinherit" />
     <tag Name="Tier" Value="1" />

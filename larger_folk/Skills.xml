@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<skills Load="Merge">
+
+  
+  <skill Name="Tinkering" Load="Merge">
+    <power Name="Tailor" Cost="100" Attribute="Intelligence" Minimum="17" Class="LargerFolk_Tailor" Snippet="tailoring" Description="You may alter clothing and armor to fit you better." Tile="Items/sw_copper_wire.bmp" Foreground="y" Detail="c"></power>
+  </skill>
+</skills>

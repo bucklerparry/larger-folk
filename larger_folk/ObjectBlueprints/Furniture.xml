@@ -610,7 +610,7 @@
   <object Name="Shower" Inherits="MountedFurniture">
     <part Name="Render" DisplayName="shower" Tile="bucklerparry_largerfolk/furniture_shower.png" ColorString="&amp;y" DetailColor="y"/>
     <part Name="Description" Short="A lineoleum wetting-box invites the weary to its amniotic chamber. Be reborn in its waters, and see your body in a different light." />
-    <part Name="ConversationScript" ConversationID="ShowerUse" />
+    <part Name="ConversationScript" ConversationID="LargerFolk_ShowerUse" />
   </object>
 
   <!-- End village monuments -->

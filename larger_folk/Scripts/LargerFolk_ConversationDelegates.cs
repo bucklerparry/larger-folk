@@ -8,6 +8,7 @@ using HistoryKit;
 using Qud.API;
 using XRL.Language;
 using XRL.UI;
+using XRL.World;
 using XRL.World.Anatomy;
 using XRL.World.Capabilities;
 using XRL.World.Effects;
@@ -54,6 +55,27 @@ public static class LargerFolk_ConversationDelegates
             }
         }
     }
+
+    [ConversationDelegate(Speaker = true)]
+	public static bool IfTightClothes(DelegateContext Context)
+	{
+		// Inventory inventory = Context.Target.Inventory;
+		// Body body = Context.Target.Body;
+		// DelimitedStringEnumerator enumerator = Context.Value.DelimitedBy(',').GetEnumerator();
+
+        List<GameObject> equipment = Context.Target.GetEquippedObjects();
+
+        foreach (GameObject eq in equipment)
+        {
+            if (eq.HasEffect<LargerFolk_Effect_Tight>())
+            {
+                return true;
+            }
+        }
+
+        return false;
+	}
+
     
     [ConversationDelegate(Speaker = true)]
     public static bool IfWeightStage(DelegateContext Context)

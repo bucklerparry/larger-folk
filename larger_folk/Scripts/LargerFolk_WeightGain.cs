@@ -134,21 +134,28 @@ public class LargerFolk_WeightGain : IPart
         {
             if (CanExercise)
             {
-                if (ParentObject.HasPart<Stomach>() && ParentObject.GetPart<Stomach>().HungerLevel > 0)
+                if (ParentObject.HasPart<Stomach>())
                 {
-                    ChangeCalories(-2);
+                    if (ParentObject.GetPart<Stomach>().HungerLevel == 0)
+                    {
+                        ChangeCalories(-(1 + (WeightStage/2) ));
+                    }
+                    else if (ParentObject.GetPart<Stomach>().HungerLevel > 0)
+                    {
+                        ChangeCalories(-(2 + (WeightStage) ));
+                    }
                 }
             }
             
-            if (WeightStage >= 3)
-            {
-                int MoveStat = ParentObject.Stat("MoveSpeed");
+            // if (WeightStage >= 3)
+            // {
+            //     int MoveStat = ParentObject.Stat("MoveSpeed");
 
-                if (Stat.Random(1, (int)((MoveStat/10)*(MoveStat/10)/20 + ParentObject.Stat("Strength")/3)) == 1)
-                {
-                    ParentObject.ApplyEffect(new LargerFolk_ImmobileStuck(12, 15, "Web Stuck Restraint", null, "stuck", "in", ParentObject.ID));
-                }
-            }
+            //     if (Stat.Random(1, (int)((MoveStat/10)*(MoveStat/10)/10 + ParentObject.Stat("Strength")/3)) == 1)
+            //     {
+            //         ParentObject.ApplyEffect(new LargerFolk_ImmobileStuck(12, 15, "Web Stuck Restraint", null, "stuck", "in", ParentObject.ID));
+            //     }
+            // }
         }
         else if (E.ID == "DrinkingFrom")
 		{
@@ -157,16 +164,16 @@ public class LargerFolk_WeightGain : IPart
 			{
                 if (liquidVolume.IsPureLiquid("honey") || liquidVolume.IsPureLiquid("sap") || liquidVolume.IsPureLiquid("cider") || liquidVolume.IsPureLiquid("wine") )
                 {
-                    ChangeCalories(200);
+                    ChangeCalories(100);
                 }
 			}
 		}
 
         // when a character becomes lovesick toward an fat+ creature, they have a chance of developing Adipophilia (greater chance the fatter the subject of love is).
-        else if (E.ID == "ApplyLovesick")
-        {
+        // else if (E.ID == "ApplyLovesick")
+        // {
             
-        }
+        // }
 
         return base.FireEvent(E);
     }
@@ -210,7 +217,7 @@ public class LargerFolk_WeightGain : IPart
                     }
                     else
                     {
-                        StageChangePlayerPopup("Your body has swollen with adipose to the point that you have become immobile.");
+                        StageChangePlayerPopup("Your body has swollen with adipose to the point that you are barely mobile.");
                     }
                 }
                 else
@@ -312,33 +319,77 @@ public class LargerFolk_WeightGain : IPart
     // apply effects of current weight stage that aren't dependant on how weight stage was entered
     public void AfterWeightChange()
     {
-        switch (WeightStage)
+        if (ParentObject.IsPlayer())
         {
-            case 0:
-                StatShifter.DefaultDisplayName = "Lean";
-                StatShifter.SetStatShift(ParentObject, "AV", 0);
-                StatShifter.SetStatShift(ParentObject, "DV", 1);
-                break;
-            case 1:
-                StatShifter.DefaultDisplayName = "Overweight";
-                StatShifter.SetStatShift(ParentObject, "AV", 0);
-                StatShifter.SetStatShift(ParentObject, "DV", 0);
-                break;
-            case 2:
-                StatShifter.DefaultDisplayName = "Obesity";
-                StatShifter.SetStatShift(ParentObject, "AV", 1);
-                StatShifter.SetStatShift(ParentObject, "DV", -3);
-                break;
-            case 3:
-                StatShifter.DefaultDisplayName = "Extreme Obesity";
-                StatShifter.SetStatShift(ParentObject, "AV", 2);
-                StatShifter.SetStatShift(ParentObject, "DV", -6);
-                break; 
-            default:
-                StatShifter.DefaultDisplayName = "Lean";
-                StatShifter.SetStatShift(ParentObject, "AV", 0);
-                StatShifter.SetStatShift(ParentObject, "DV", 1);
-                break;
+            switch (WeightStage)
+            {
+                case 0:
+                    StatShifter.DefaultDisplayName = "Lean";
+                    StatShifter.SetStatShift(ParentObject, "AV", 0);
+                    StatShifter.SetStatShift(ParentObject, "DV", 1);
+                    StatShifter.SetStatShift(ParentObject, "MoveSpeed", 0);
+                    break;
+                case 1:
+                    StatShifter.DefaultDisplayName = "Overweight";
+                    StatShifter.SetStatShift(ParentObject, "AV", 0);
+                    StatShifter.SetStatShift(ParentObject, "DV", 0);
+                    StatShifter.SetStatShift(ParentObject, "MoveSpeed", 10);
+                    break;
+                case 2:
+                    StatShifter.DefaultDisplayName = "Obesity";
+                    StatShifter.SetStatShift(ParentObject, "AV", 1);
+                    StatShifter.SetStatShift(ParentObject, "DV", -1);
+                    StatShifter.SetStatShift(ParentObject,"MoveSpeed", 30);
+                    break;
+                case 3:
+                    StatShifter.DefaultDisplayName = "Extreme Obesity";
+                    StatShifter.SetStatShift(ParentObject, "AV", 2);
+                    StatShifter.SetStatShift(ParentObject, "DV", -3);
+                    StatShifter.SetStatShift(ParentObject,"MoveSpeed", 75);
+                    break; 
+                default:
+                    StatShifter.DefaultDisplayName = "Lean";
+                    StatShifter.SetStatShift(ParentObject, "AV", 0);
+                    StatShifter.SetStatShift(ParentObject, "DV", 1);
+                    StatShifter.SetStatShift(ParentObject, "MoveSpeed", 0);
+                    break;
+            }
+        }
+        else
+        {
+            switch (WeightStage)
+            {
+                case 0:
+                    StatShifter.DefaultDisplayName = "Lean";
+                    StatShifter.SetStatShift(ParentObject, "AV", 0);
+                    StatShifter.SetStatShift(ParentObject, "DV", 1);
+                    StatShifter.SetStatShift(ParentObject,"MoveSpeed", 0);
+                    break;
+                case 1:
+                    StatShifter.DefaultDisplayName = "Overweight";
+                    StatShifter.SetStatShift(ParentObject, "AV", 0);
+                    StatShifter.SetStatShift(ParentObject, "DV", 0);
+                    StatShifter.SetStatShift(ParentObject, "MoveSpeed", 15);
+                    break;
+                case 2:
+                    StatShifter.DefaultDisplayName = "Obesity";
+                    StatShifter.SetStatShift(ParentObject, "AV", 1);
+                    StatShifter.SetStatShift(ParentObject, "DV", -3);
+                    StatShifter.SetStatShift(ParentObject, "MoveSpeed", 30);
+                    break;
+                case 3:
+                    StatShifter.DefaultDisplayName = "Extreme Obesity";
+                    StatShifter.SetStatShift(ParentObject, "AV", 2);
+                    StatShifter.SetStatShift(ParentObject, "DV", -4);
+                    StatShifter.SetStatShift(ParentObject, "MoveSpeed", 60);
+                    break; 
+                default:
+                    StatShifter.DefaultDisplayName = "Lean";
+                    StatShifter.SetStatShift(ParentObject, "AV", 0);
+                    StatShifter.SetStatShift(ParentObject, "DV", 1);
+                    StatShifter.SetStatShift(ParentObject, "MoveSpeed", 0);
+                    break;
+            }
         }
     }
 
@@ -401,7 +452,7 @@ public class LargerFolk_WeightGain : IPart
     {
         if (WeightStage >= 3)
         {
-            return "immobile";
+            return "barely mobile";
         }
         else if (WeightStage == 2)
         {

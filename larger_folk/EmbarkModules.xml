@@ -214,14 +214,15 @@
 &amp;c&#249;&amp;y {{W|Challenging}} starting build
         </description>
       </pregen>
-      <!-- <pregen Name="succubae" Genotype="Mutated Human" Tile="bucklerparry_largerfolk/succubus_1.png" Foreground="y" Detail="o" Background="k">
-        <code>H4sIAAAAAAAACs1WW2/aMBR+r9T/YEV72KQUAULTNIkHyi7d2k6sILZpqionOUusOXbkS6cM8d93nIRLoEBXUQQoCj7Xz985x3hyekKIF9MU7kFpJoX3lnjtRrPRbuHT8fxCH1jGoyWDFho0K10qI8tBo/inWxMyKV9z1SjPwDl9v7lq9BOqaGhAnbuIuvHVRu75CEIaNLsuHHzS0xrSgOdn/SE6ZD4Zl7m7C2Q+6VturIKuAGsU5T4Z2ICz8BLykfwNoiss5yXGAkxEDUUYc3QoemH+F9o7DLIGb5EEY87sXdhra6iBiFzYlIqa1XiVy5luWv6Y+k/mcmiDI6Wyhmw3k5W5C9rLpDYcDkVhUTeMrY+QxBVsu2lMM4zYXJZo4BAWMRZDW34mywtSNXBF8oVU6OCvWIypYlSYzQZ9aQt1a1k+9R+bdWiYiEGRl30pflmNC+ReyPTVNiQzp8pHin2jOocYi4JJtqBw5d43GXmWSEHGLD1s3i9UhZJDpvO95F0sbjcOdHuvA90zRrHAGjjGiV4Ft3ukB5IJowdWhQnVENVzupPTKBCxSVDxulYSrxdj25ocFW/qipG0cSJA63WfT8IA5ywGEbqtdOrab4zzTP4BtR7zfSxd7ZsL4XLLeTQbZlC0x1mnU1fcQEqZcPO1cnQFuN+eO9DqHs/4X9C32siU/YW5/ghbaBPI3a0k8Oa3PrxeBg+MtIctEBWFXjNXUuCoDx/0es7iJFJqGBqq3Il/JcPiyDrGAm0B+oib0IqfS/ZZZhk9yIXoEpQAnoJJZHRXbuSHtOoDixM0vBtwmhf9BnxG/HaPRoT9Ma9Fs1F8n1oIJ6225163pyfTf+c8zWfTDAAA</code>
+
+      <!-- <pregen Name="succubus" Genotype="Mutated Human" Tile="bucklerparry_largerfolk/succubus_1.png" Foreground="y" Detail="o" Background="k">
+        <code>H4sIAAAAAAAACs1W32vbMBB+L/R/EGaPbkhC2GCQhzTdmm0tZE3oBqMPsn2zvcqSkU4bXsj/vpOdJrbTNu1oQwLGkb77pbvvzlocHzHmxTyD36BNqqT3nnn9TrfT79Ez8PwSD2wqoppAjwS6KyxTkRVgaPuHWzO2qF5raF7k4JS+X110xgnXPETQp86i6Xy1kXvOQSoksctSwWcjYyALRHEynpFC7rPryvdwE5nPxlag1TCUYFFz4bOpDUQafoFirm5BDqUVooqxDCbiyCmMdXS09QafG9oZGdkKb+OEbN7JO7OXFjlCxCY247Ihdd3O5R22rP4s/f/O5cwGB5rKRmS7M7kSd0bPNRQBcB3tK4ll5ci2OcA0tmLbncgsJ4vd+o4BAWFpY9O21W9RX7AVhVdJnkAaJwjSMZqKkcq47qYqCW1ziSTtztpGx8qWWK++v/Sf6n+acLN3pxOlbg37qTT7CID79X0KMVV+70f+ECs21epXRZH9+p4TM3OOSfEibjeLmwcHR/9FB8cIUaeBRTjEydEObvfomKpUoplaHVLvQdT06WY0apAxJgS8a5TEG8XEXCy2gbmycSLBuNEzaEKfJIIQaQwydEd520S/pULk6g/obYgY62pfK36dcR7PZzmU9DgZDJrAFWQ8la7FWiMyoPOO3OBsarziN2dsDaos/Qtr/AAp9FCQu6kk6Y653bxeDve0tEcUiMpCb4lrJanVZ/dqvWZxEqUMzJBrJLJcqLCcWIdYoEcCfcKdq6XnnH1Wec6fd/Fyr5vjo+U/p284Hl4MAAA=</code>
         <description>
-&amp;c&#249;&amp;y Psychic puzzlemaster
-&amp;c&#249;&amp;y Charm foes and sow discord
+&amp;c&#249;&amp;y Psychic soldier
+&amp;c&#249;&amp;y Party leader and buff-battler
 &amp;c&#249;&amp;y {{W|Challenging}} starting build
         </description>
-      </pregen> -->
+      </pregen>  -->
 
 
     </pregens>

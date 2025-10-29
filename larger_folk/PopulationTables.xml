@@ -152,7 +152,47 @@
       <object Blueprint="Terrain/sw_sultanstatue_rare_7.png" />
       <object Blueprint="Terrain/sw_sultanstatue_rare_8.png" />
     </group>
+
+    
+  </population>
+  <population Name="LairOwners_Flowerfields">
+    <group Name="Options" Style="pickone">
+      <object Blueprint="Equimax" />
+      <object Blueprint="Qudzu" Hint="LivesOnWalls" />
+      <object Blueprint="Jilted Lover" Hint="LivesOnWalls" />
+      <object Blueprint="Seed-Spitting Vine" />
+      <object Blueprint="Dog" />
+      <object Blueprint="Boar" />
+      <object Blueprint="Horned Chameleon" />
+      <object Blueprint="Two-Headed Boar" />
+      <object Blueprint="IrritableTortoise" />
+      <object Blueprint="Salamander" />
+      <object Blueprint="Salthopper" />
+      <object Blueprint="Glowcrow" />
+      <object Blueprint="GiantDragonfly" />
+      <!--<table Name="DynamicInheritsTable:BaseRobot:Tier2" />-->
+      <!--<table Name="DynamicInheritsTable:BaseReptile:Tier2" />-->
+      <!--<table Name="DynamicInheritsTable:BaseAnimal:Tier2" />-->
+    </group>
   </population>
 
+<population Name="LargerFolk_FatGirls">
+		<group Name="Party" Style="pickeach">	
+			<object Blueprint="Naphtaali Forager" Number="2-4" />
+		</group>							
+	</population>
+
+<!-- Custom Starting Gear -->
+
+  <population Name="LargerFolk_StartingGear_Succubus">
+    <group Name="Items" Style="pickeach">
+      <table Name="StartingGear_Common" />
+
+      <object Blueprint="HalfFullWaterskin" Number="2" />
+      <object Blueprint="Leather Whip"  Number="1" />
+      <object Blueprint="Elastyne Skin Suit" Number="1" />
+      <object Blueprint="Witchwood Bark" Number="3-4" />
+    </group>
+  </population>
 
 </populations>

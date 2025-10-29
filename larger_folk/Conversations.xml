@@ -5,7 +5,7 @@
 
 
 
-  <conversation ID="ShowerUse">
+  <conversation ID="LargerFolk_ShowerUse">
     <node ID="Start" IfWeightStage="3">
       <text>
         Try as you might, your couch-sized haunches and prodigious gut make entrance to the wetting-box an impossibility.
@@ -50,6 +50,23 @@
     </node>
     
   </conversation>
+
+
+<conversation ID="LargerFolk_ChildrenOfFlesh_Conversation">
+    <node ID="Start">
+      <text>
+        {{emote|*huff, huff...*}}~
+        {{emote|*urp.*}}~
+        {{emote|*grrrr.*}}~
+        Meat, meat-thing? Eating for meating.~
+        Blood-dayling, drinktime? Link drinkling.
+        Meatling drink-ups, large-growthlings quick-drinkly.
+      </text>
+      <choice GotoID="End">Live and eat.</choice>
+    </node>
+  </conversation>
+
+
 
 	<!--
 
@@ -704,10 +721,16 @@
         How may I clothe you, =player.formalAddressTerm=?~
         Now, =player.formalAddressTerm=, I know you must have an eye for fashion, if you're here.~
         Oh dear. Who dressed you, =player.formalAddressTerm=? Let me help you, please.~
-        You simply MUST do something about that bony little body of yours, any of my items would look like tablecloth upon you.~
+        You simply MUST do something about that bony little body of yours, any of my articles would look like tableclothes upon you.~
         Live and drink, =player.formalAddressTerm=.
       </text>
       <choice GotoID="End">Live and drink.</choice>
+    </node>
+    <node ID="Start" IfTightClothes="true">
+      <text>
+        Oh my-my, you're positively bursting out of that little item, =player.formalAddressTerm=! Why don't you let me help you out of it...
+      </text>
+     <choice GotoID="End">Live and drink.</choice>
     </node>
     <node ID="Start">
       <text>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<relics>
+<relics Load="Merge">
 
   <relictypes>
     <relictype Name="Axe" />
@@ -22,7 +22,7 @@
     <relictype Name="Food" />
   </relictypes>
 
-  <relictypemappings>
+  <relictypemappings Load="Merge">
 
     <relictypemapping Name="gut" Type="Body" />
     <relictypemapping Name="haunches" Type="feet" />

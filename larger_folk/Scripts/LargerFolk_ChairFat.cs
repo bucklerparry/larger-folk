@@ -8,6 +8,9 @@ using XRL.World.Parts.Mutation;
 namespace XRL.World.Parts
 {
 
+// TODO: add some way for displaying a message for npcs breaking chairs with their fatness
+// - getting fatter while sitting should affect the chair too
+
 [Serializable]
 public class LargerFolk_ChairFat : IPart
 {
@@ -32,26 +35,35 @@ public class LargerFolk_ChairFat : IPart
 			// ParentObject.EmitMessage("SatOn!!!!");
 			if (sitter.HasPart<LargerFolk_WeightGain>())
 			{
-                if (sitter.GetPart<LargerFolk_WeightGain>().WeightStage > WeightThreshold)
-				{
-					if (!ParentObject.HasPart<ModSturdy>() && ParentObject.ApplyEffect(new Broken()) && IsBroken())
+					if (sitter.GetPart<LargerFolk_WeightGain>().WeightStage > WeightThreshold)
+					{
+						if (!ParentObject.HasPart<ModSturdy>() && ParentObject.ApplyEffect(new Broken()) && IsBroken())
+						{
+							if (sitter.IsPlayer())
+							{
+								sitter.Fail("Your weight was too much for " + ParentObject.them + "...");
+							}
+							sitter.ApplyEffect(new Prone());
+						}
+					}
+					else if (sitter.GetPart<LargerFolk_WeightGain>().WeightStage == WeightThreshold)
 					{
 						if (sitter.IsPlayer())
 						{
-							sitter.Fail("Your weight was too much for " + ParentObject.them + "...");
+
+							sitter.EmitMessage("The chair is a bit small and creaks ominously, but holds your weight.");
 						}
-						
 					}
-				}
-				else if (sitter.GetPart<LargerFolk_WeightGain>().WeightStage == WeightThreshold)
-				{
-					if (sitter.IsPlayer())
-					{
-						sitter.EmitMessage("The chair is a bit small and creaks somewhat ominously, but holds your weight.");
-					}
-				}
+				
+				// sitter.RegisterPartEvent(this, "OnWeightStageChange");
 			}
+			
 		}
+		// else if (E.ID == "OnWeightStageChange")
+  	    // {
+                
+        // }
+		
 
 		return base.FireEvent(E);
 	}

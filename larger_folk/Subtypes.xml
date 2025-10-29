@@ -326,6 +326,20 @@
 			</reputations>
       <extrainfo>Starts with random cooking ingredients</extrainfo>
     </subtype>
+<!-- 
+    <subtype Name="Lovelover" Gear="StartingGear_Succubus" Tile="bucklerparry_largerfolk/succubus_1.png" DetailColor="o">
+      <stat Name="Ego" Bonus="2" />
+      <skills>
+        <skill Name="Persuasion_Berate" />
+        <skill Name="Persuasion_Proselytize" />
+        <skill Name="Multiweapon_Fighting" />
+        <skill Name="ShortBlades" />
+      </skills>
+      <reputations>
+        <reputation With="Resheph" Value="100" />
+			</reputations>
+    </subtype> -->
+
 
   </class>
 

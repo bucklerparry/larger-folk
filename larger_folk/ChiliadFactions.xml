@@ -1,24 +1,32 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <factions>
     <faction
-        Name="Gainers"
-        DisplayName="Gainers"
+        Name="ChildrenOfFlesh"
+        DisplayName="Fleshlickers"
         Visible="true"
         Old="false"
+        InitialPlayerReputation="-200"
         PositiveSound="Sounds/Reputation/sfx_reputation_fungi_positive"
         NegativeSound="Sounds/Reputation/sfx_reputation_fungi_negative"
         HistoricalSignificance="1"
-        EmblemTile="bucklerparry_largerfolk/snapjaw_hero_fat.png"
-        EmblemTileColor="Y"
-        EmblemDetailColor="r"
-    >
-        <interests>
-            <interest Tags="dead" WillBuy="true" WillSell="false" Description="the locations of dead things" />
-            <interest Tags="dead" WillBuy="true" WillSell="false" Description="the locations of hatters" />
-        </interests>
         
-        <property Name="EndVisibility" Value="Ruined" />
-        <intproperty Name="EndReputationMin" Value="-200" />
-        <intproperty Name="EndReputationMax" Value="200" />
+        EmblemTile="bucklerparry_largerfolk/succubus_1.png"
+        EmblemTileColor="C"
+        EmblemDetailColor="o"
+    >
+    <waterritual Liquid="blood" />
+    <feeling About="Templar" Value="-600" />
+        <interests>
+            <interest Tags="chef" WillBuy="true" WillSell="true" Description="the locations of chefs" />
+            <interest Tags="ichormerchant" WillBuy="true" WillSell="true" Description="the locations of ichor merchants" />
+        </interests>
+    <!-- <partreputation About="ThickFur" Value="100" /> -->
+    <!-- <feeling About="*" Value="0" /> -->
+    <factionworshipattitudes>
+      <factionworshipattitude Name="Girsh" Attitude="+100" />
+      <factionworshipattitude Name="Merchants" Attitude="+100" />
+      
+    </factionworshipattitudes>
+  </faction>
     </faction>
 </factions>

@@ -10629,84 +10629,32 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
     <part Name="Description" Short="Bees flutter around the brim of =pronouns.possessive= hat, pulled low over =pronouns.possessive= sweaty brow. =pronouns.Possessive= apron is pulled taught over =pronouns.possessive= sagging belly, stained with glistening drops of honey." />
     <tag Name="Role" Value="Skirmisher" />
   </object>
-  <object Name="Apothecary" Inherits="BaseMerchant">
+  <object Name="Apothecary" Load="Merge">
     <part Name="Render" DisplayName="apothecary" ColorString="&amp;g" RenderString="s" Tile="bucklerparry_largerfolk/greybeard_fat.png" />
     <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/caste_15.bmp" WeightStage_1="bucklerparry_largerfolk/greybeard_fat.png" />
-    <part Name="ConversationScript" ConversationID="apothecary" />
-    <part Name="GenericInventoryRestocker" Table="ApothecaryInventory" Chance="71" />
-    <inventoryobject Blueprint="Leather Boots" />
-    <inventoryobject Blueprint="Cloth Robe" />
-		<inventoryobject Blueprint="Pestle" />:
-		<inventoryobject Blueprint="@Junk 1" Number="1-3" />
-    <skill Name="CookingAndGathering_Harvestry" />
-    <skill Name="Physic_StaunchWounds" />
-    <skill Name="Physic_Nostrums" />
-    <skill Name="Physic_Apothecary" />
     <part Name="Description" Short="Fine crushed herbs dust the old =pronouns.personTerm='s pestle knuckles." />
-    <tag Name="Role" Value="Skirmisher" />
   </object>
-  <object Name="Kipper" Inherits="BaseMerchant">
+  <object Name="Kipper" Load="Merge">
     <part Name="Render" DisplayName="kipper" ColorString="&amp;y" DetailColor="g" RenderString="s" Tile="bucklerparry_largerfolk/kipper_fat.png" />
     <part Name="LargerFolk_WeightStageRender" WeightStage_0="Items/sw_kipper.bmp" WeightStage_1="bucklerparry_largerfolk/kipper_fat.png" />
-    <part Name="GenericInventoryRestocker" Table="KipperInventory" Chance="71" />
-    <part Name="ConversationScript" ConversationID="kipper" />
-    <inventoryobject Blueprint="Leather Boots" />
-    <inventoryobject Blueprint="Leather Apron" />
-    <inventoryobject Blueprint="Goggles" />
-    <inventoryobject Blueprint="@Junk 1" Number="1-3" />
-    <skill Name="CookingAndGathering" />
-    <skill Name="CookingAndGathering_Harvestry" />
-    <skill Name="CookingAndGathering_Butchery" />
-    <skill Name="CookingAndGathering_Spicer" />
-    <tag Name="Role" Value="Skirmisher" />
     <part Name="Description" Short="=pronouns.Subjective= =verb:knead:afterpronoun= the remnants of jams and paste against =pronouns.possessive= smock, heavy breasts adding their scent to the mixture occasionally as the kipper bends and sways. Clipped yuckwheat stems unwittingly decorate =pronouns.possessive= grey locks. =pronouns.Subjective= =verb:smell:afterpronoun= like a childhood meal, with a hint of sweat from the exertion of maneuvering =pronouns.possessive= excess poundage through the exercise of preparation." />
   </object>
-  <object Name="Vintner" Inherits="BaseMerchant">
+  <object Name="Vintner" Load="Merge">
     <part Name="Render" DisplayName="vintner" ColorString="&amp;y" DetailColor="m" RenderString="f" />
-    <part Name="ConversationScript" ConversationID="vintner" />
-    <part Name="GenericInventoryRestocker" Table="VintnerInventory" Chance="71" />
-    <inventoryobject Blueprint="Sandals" />
-    <inventoryobject Blueprint="Leather Apron" />
-    <inventoryobject Blueprint="@Junk 1" Number="1-3" />
-    <skill Name="CookingAndGathering_Harvestry" />
     <part Name="Description" Short="Grape-stained teeth fill =pronouns.possessive= grinning mouth. =pronouns.Subjective= =verb:sing:afterpronoun= the praises of =pronouns.possessive= family's vintage. Wine makes the body sing, so they say, but it makes it no lighter." />
-    <tag Name="Role" Value="Brute" />
   </object>
-  <object Name="Shoemaker" Inherits="BaseMerchant">
+  <object Name="Shoemaker" Load="Merge">
     <part Name="Render" DisplayName="shoemaker" ColorString="&amp;y" DetailColor="w" RenderString="f" Tile="bucklerparry_largerfolk/merchant-3_fat.png" />
     <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/merchant-3.bmp" WeightStage_1="bucklerparry_largerfolk/merchant-3_fat.png" />
-    <part Name="ConversationScript" ConversationID="shoemaker" />
-    <part Name="GenericInventoryRestocker" Table="ShoemakerInventory" HeroTable="ShoemakerInventory_Legendary" Chance="71" />
-    <inventoryobject Blueprint="Leather Boots" />
-    <inventoryobject Blueprint="Leather Apron" />
-    <inventoryobject Blueprint="Steel Utility Knife" />
-    <inventoryobject Blueprint="Basic Toolkit" Number="0-1" />
-    <inventoryobject Blueprint="@Junk 1" Number="1-3" />
     <part Name="Description" Short="Sweat-stained sleeves bellow through a tight leather apron, fatty tissue steaming as complaint for undue exercise. =pronouns.Subjective= =verb:turn:afterpronoun= an awl around =pronouns.possessive= fingers." />
-    <tag Name="Role" Value="Brute" />
-    <tag Name="LairAdjectives" Value="shoemaker" />
-    <tag Name="StaticLikeReason" Value="crafting them artisan shoes" />
-    <tag Name="StaticHateReason" Value="refusing to craft them artisan shoes" />
-		<part Name="HasGuards" NumberOfGuards="1" />
   </object>
-  <object Name="Hatter" Inherits="BaseMerchant">
+  <object Name="Hatter" Load="Merge">
     <part Name="Render" DisplayName="hatter" ColorString="&amp;y" DetailColor="K" RenderString="h" Tile="bucklerparry_largerfolk/merchant-1_fat.png" />
     <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/merchant-1.bmp" WeightStage_1="bucklerparry_largerfolk/merchant-1_fat.png" />
-    <part Name="ConversationScript" ConversationID="hatter" />
-    <part Name="GenericInventoryRestocker" Table="HatterInventory" HeroTable="HatterInventory_Legendary" Chance="71" />
-    <inventoryobject Blueprint="Leather Boots" />
-    <inventoryobject Blueprint="Leather Apron" />
-    <inventoryobject Blueprint="Steel Utility Knife" />
-    <inventoryobject Blueprint="Basic Toolkit" Number="0-1" />
-    <inventoryobject Blueprint="@Junk 1" Number="1-3" />
     <part Name="Description" Short="=pronouns.Subjective==verb:'ve:afterpronoun= woven a leather chin strap between =pronouns.possessive= fingers. Pelts of a dozen animals hang from =pronouns.possessive= shoulder." />
-    <tag Name="LairAdjectives" Value="hatter" />
-    <tag Name="StaticLikeReason" Value="crafting them artisan hats" />
-    <tag Name="StaticHateReason" Value="refusing to craft them artisan hats" />
-    <tag Name="Role" Value="Brute" />
-		<part Name="HasGuards" NumberOfGuards="1" />
+
   </object>
-  <object Name="Glover" Inherits="BaseMerchant">
+  <object Name="Glover" Load="Merge">
     <part Name="Render" DisplayName="glover" ColorString="&amp;y" DetailColor="W" RenderString="h" Tile="bucklerparry_largerfolk/merchant-3_fat.png" />
     <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/merchant-3.bmp" WeightStage_1="bucklerparry_largerfolk/merchant-3_fat.png" />
     <part Name="ConversationScript" ConversationID="glover" />
@@ -10723,7 +10671,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
     <tag Name="Role" Value="Brute" />
 		<part Name="HasGuards" NumberOfGuards="1" />
   </object>
-  <object Name="Chef" Inherits="BaseMerchant">
+  <object Name="Chef" Load="Merge">
     <part Name="Render" DisplayName="chef" ColorString="&amp;y" DetailColor="G" RenderString="h" Tile="bucklerparry_largerfolk/kipper_fat.png" />
     <part Name="LargerFolk_WeightStageRender" WeightStage_0="Items/sw_kipper.bmp" WeightStage_1="bucklerparry_largerfolk/kipper_fat.png" />
     <part Name="ConversationScript" ConversationID="chef" />
@@ -10747,10 +10695,10 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
     <tag Name="LairDiscoveredMessage" Value="You discover the kitchen of %o." />
     <tag Name="Role" Value="Brute" />
   </object>
-  <object Name="StiltChef" Inherits="Chef">
+  <object Name="StiltChef" Load="Merge">
     <tag Name="StiltChef" />
   </object>
-  <object Name="Haberdasher" Inherits="BaseMerchant">
+  <object Name="Haberdasher" Load="Merge">
     <part Name="Render" DisplayName="haberdasher" ColorString="&amp;y" DetailColor="m" RenderString="h" Tile="bucklerparry_largerfolk/merchant-1_fat.png" />
     <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/merchant-1.bmp" WeightStage_1="bucklerparry_largerfolk/merchant-1_fat.png" />
     <part Name="ConversationScript" ConversationID="haberdasher" />
@@ -10766,7 +10714,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
     <tag Name="Role" Value="Brute" />
 		<part Name="HasGuards" NumberOfGuards="1" />
   </object>
-  <object Name="Armorer" Inherits="BaseMerchant">
+  <object Name="Armorer" Load="Merge">
     <part Name="Render" DisplayName="armorer" ColorString="&amp;y" DetailColor="K" RenderString="h" Tile="bucklerparry_largerfolk/hearthchild_fat.png" />
     <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/caste_9.bmp" WeightStage_1="bucklerparry_largerfolk/hearthchild_fat.png" />
     <part Name="ConversationScript" ConversationID="armorer" />
@@ -10784,7 +10732,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
     <tag Name="Role" Value="Brute" />
 		<part Name="HasGuards" NumberOfGuards="1" />
   </object>
-  <object Name="Gunsmith" Inherits="BaseMerchant">
+  <object Name="Gunsmith" Load="Merge">
     <part Name="Render" DisplayName="gunsmith" ColorString="&amp;K" DetailColor="W" RenderString="h" Tile="bucklerparry_largerfolk/merchant-2_fat.png" />
     <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/merchant-2.bmp" WeightStage_1="bucklerparry_largerfolk/merchant-2_fat.png" />
     <part Name="ConversationScript" ConversationID="gunsmith" />
@@ -11116,7 +11064,8 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
     <inventoryobject Blueprint="Sandals" />
   </object>
   <object Name="IssachariConvert" Load="Merge"> <!-- Inherits="VillageZeroConvert"> -->
-    <part Name="Render" DisplayName="Issachari raider and Mechanimist convert" Tile="Creatures/Issachari_convert.bmp" ColorString="&amp;C" DetailColor="R" RenderString="z" />
+    <part Name="Render" DisplayName="Issachari raider and Mechanimist convert" Tile="bucklerparry_largerfolk/issachari_convert_fat.png" ColorString="&amp;C" DetailColor="R" RenderString="z" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/Issachari_convert.bmp" WeightStage_1="bucklerparry_largerfolk/issachari_convert_fat.png" />
     <part Name="Description" Short="=pronouns.Possessive= kufiya has been cut and resewn to a cowl, and =pronouns.subjective= =verb:have:afterpronoun= tailored a tattered banner to approximate the slate habit of the chromaic people. A bronze dagger sheathed in copper wire is slung on =pronouns.possessive= hip, and =pronouns.subjective= =verb:rub:afterpronoun= a salt-nailed thumb over a talisman of cracked circuitboard." />
     <inventoryobject Blueprint="Dagger" />
     <inventoryobject Blueprint="Sandals" />
@@ -12128,35 +12077,12 @@ In Barathrum's name, =pronouns.subjective==verb:'ve:afterpronoun= conferred onto
   </object>
 
   <!-- Omonporch -->
-  <object Name="Asphodel" Inherits="SapientMutatedFlower">
+  <object Name="Asphodel" Load="Merge">
     <part Name="Render" DisplayName="Asphodel" Tile="bucklerparry_largerfolk/asphodel_fat.png" TileColor="&amp;G" ColorString="&amp;M" DetailColor="M" RenderString="237" />
     <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_flower.bmp" WeightStage_1="bucklerparry_largerfolk/asphodel_fat.png" />
-    <part Name="Titles" Primary="Earl of Omonporch" />
     <part Name="ConversationScript" ConversationID="Asphodel" ClearLost="true" />
-    <part Name="Brain" Wanders="false" Hostile="false" Factions="Consortium-100,Flowers-99" />
-    <part Name="Leader" popTable="AsphodelFollowers" />
-    <part Name="GivesRep" />
-    <stat Name="Level" Value="30" />
-    <stat Name="Strength" sValue="16" />
-    <stat Name="Agility" sValue="28" />
-    <stat Name="Toughness" sValue="20" />
-    <stat Name="Intelligence" sValue="28" />
-    <stat Name="Willpower" sValue="33" />
-    <stat Name="Ego" sValue="36" />
-    <stat Name="Hitpoints" sValue="500" />
-    <stat Name="AV" Value="8" />
     <part Name="Description" Short="Asphodel (called the Lovely) turns their tipping anthers at seductive angles. All the bright golds of the harvest sun and musa peel are garnishes to the swollen beauty of =pronouns.possessive= petal. =pronouns.Subjective= =verb:claim:afterpronoun= the aesthetic lineage of Hegelrut, and from that argument flowers =pronouns.possessive= claim to Omonporch and the entire Great Shade of the grove. In =pronouns.possessive= royal leisure, =pronouns.possessive= foliage has grown thick and flabby. Ambulation, already a physical impossibility, recieves a symbolic rejection in the pursuit of decadence." />
-    <part Name="Calming" />
-    <part Name="FriendlyFireAmnestyDuringQuest" QuestName="Reclamation" />
-    <part Name="FinishQuestStepWhenSlain" Quest="The Earl of Omonporch" Step="Travel to Omonporch~Secure the Spindle" GameState="AsphodelSlain" RequireQuest="true" />
-    <inventoryobject Blueprint="Clay Pot" />
-    <skill Name="Persuasion_Berate" />
-    <tag Name="Role" Value="NPC" />
-    <xtagGrammar Proper="true"></xtagGrammar>
-    <stat Name="ElectricResistance" Value="90" />
-    <tag Name="NoHateFactions" Value="Trees,Insects,Barathrumites" />
-    <tag Name="PronounSet" Value="xe/xem/xyr" />
-    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
+   
   </object>
   <object Name="Delegate" Inherits="NPC">
     <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
@@ -12229,30 +12155,16 @@ In Barathrum's name, =pronouns.subjective==verb:'ve:afterpronoun= conferred onto
 		<stag Name="Historical" />
 		<tag Name="IncludeInDynamicSemanticTables" />
   </object>
-  <object Name="Sixshrew" Inherits="SapientMutatedSucculent">
+  <object Name="Sixshrew" Load="Merge">
     <part Name="Render" DisplayName="Sixshrew" Tile="bucklerparry_largerfolk/sixshrew_fat.png" ColorString="&amp;W" TileColor="&amp;g" DetailColor="W" RenderString="234" />
-    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_pottedplant_ornate_2.bmp" WeightStage_1="bucklerparry_largerfolk/sixshrew_fat.png" />
-    <part Name="Description" Short="Sharp leaves burst forth from a decorative pot like a geyser of verdure. They flit as with irritation and offense at every stimulus, an assumption that might seem like an overread if it weren't for the strong telepathic halo of frustration radiating from =pronouns.possessive= leafy form. a stem fattened through stubborn lounging dangles obscenely over the rims of xyr pot, straining its ornate support structure." />
-    <part Name="ConversationScript" ConversationID="Sixshrew" ClearLost="true" />
-    <part Name="Brain" Wanders="false" Hostile="false" Factions="Consortium-100,Ezra-50" />
-    <part Name="Interesting" />
-    <stat Name="Level" Value="27" />
-    <stat Name="Hitpoints" sValue="300" />
-    <stat Name="Strength" Boost="4" />
-    <inventoryobject Blueprint="Clay Pot" />
-    <mutation Name="Burgeoning" Level="3" />
-    <mutation Name="Confusion" Level="4" />
-    <mutation Name="ForceBubble" Level="2" />
-    <mutation Name="Telepathy" Level="1" />
-    <mutation Name="PhotosyntheticSkin" Level="1" />
-    <skill Name="Cudgel" />
-    <skill Name="Persuasion_Berate" />
-    <tag Name="Role" Value="NPC" />
-    <part Name="GenericInventoryRestocker" Table="Tier5Wares" />
-    <tag Name="NoSleep" />
-    <xtagGrammar Proper="true"></xtagGrammar>
-    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
-    <tag Name="PronounSet" Value="xe/xem/xyr" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Items/sw_pottedplant_ornate_2.bmp" WeightStage_1="bucklerparry_largerfolk/sixshrew_fat.png" />
+   
+   <part Name="LargerFolk_WeightDescription" 
+      WeightDescription_0="Sharp leaves burst forth from a decorative pot like a geyser of verdure. They flit as with irritation and offense at every stimulus, an assumption that might seem like an overread if it weren't for the strong telepathic halo of frustration radiating from =pronouns.possessive= leafy form."
+      WeightDescription_1="Sharp leaves burst forth from a decorative pot like a geyser of verdure. They flit as with irritation and offense at every stimulus, an assumption that might seem like an overread if it weren't for the strong telepathic halo of frustration radiating from =pronouns.possessive= leafy form. a stem fattened through stubborn lounging dangles obscenely over the rims of xyr pot, straining its ornate support structure."
+    />
+   
+   <part Name="Description" Short="Sharp leaves burst forth from a decorative pot like a geyser of verdure. They flit as with irritation and offense at every stimulus, an assumption that might seem like an overread if it weren't for the strong telepathic halo of frustration radiating from =pronouns.possessive= leafy form. a stem fattened through stubborn lounging dangles obscenely over the rims of xyr pot, straining its ornate support structure." />
   </object>
 
   <object Name="Zothom" Load="Merge">
@@ -13019,6 +12931,97 @@ This one is jeweled in the eroded scrap of the Tomb." />
 		<tag Name="PunchSound" Value="Sounds/Damage/sfx_damage_glass" />	
   </object>
 
+  <object Name="SuccourScout" Inherits="BaseHumanoid">
+		<part Name="Render" DisplayName="succour scoutlet" Tile="bucklerparry_largerfolk/succubus_2.png" ColorString="&amp;C" DetailColor="o" />
+    <part Name="Brain" Factions="ChildrenOfFlesh-100" Hostile="true" />
+    <part Name="ConversationScript" ConversationID="LargerFolk_ChildrenOfFlesh_Conversation" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="bucklerparry_largerfolk/succubus_1.png" WeightStage_1="bucklerparry_largerfolk/succubus_2.png" />
+		<part Name="Description" Short="Long hair and sharp talons sway to the rhythm of =pronouns.possessive= confident strut. =pronouns.Possessive= legs and underbelly sport the same reddish hair, and =pronouns.possessive= swollen gut pulses with stolen lifestuff." />
+    <part Name="LargerFolk_WeightGain" StartingWeight="0" />
+     <part Name="LargerFolk_MutationFatHealing" />
+		<stat Name="Hitpoints" Value="56" />
+		<stat Name="Level" Value="17" />
+		<part Name="RandomMutations" Mental="1-2" MentalLevel="1-4"  Physical="0-3" PhysicalLevel="1-6" />
+    <mutation Name="LifeDrain" Level="6" />
+		<!-- <part Name="ConversationScript" ConversationID="GyreWightRermadon" /> -->
+		<!-- <tag Name="NamingTag" Value="RermadonGyreWight" /> -->
+		<inventoryobject Blueprint="Leather Whip" />
+    <inventoryobject Blueprint="Elastyne Skin Suit" />
+    <part Name="LargerFolk_WeightDescription" 
+      WeightDescription_0="Long hair and sharp talons sway to the rhythm of =pronouns.possessive= confident strut. =pronouns.Possessive= legs and underbelly sport coarse red fur, and =pronouns.possessive= swollen gut pulses with stolen lifestuff."
+      WeightDescription_1="Long hair and sharp talons sway to the rhythm of =pronouns.possessive= breathless waddle. =pronouns.Possessive= figure rounds out into obscenity on the nectar of life energy. A fattened Philial makes for troublesome opposition."
+    />
+    <part Name="LargerFolk_WeighStatMod" />
+	</object>
+  <object Name="SuccourThrall" Inherits="SuccourScout">
+		<part Name="Render" DisplayName="succour thrall" Tile="bucklerparry_largerfolk/succubus_2.png" ColorString="&amp;C" DetailColor="o" />
+    <part Name="Brain" Factions="ChildrenOfFlesh-100" Hostile="true" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="bucklerparry_largerfolk/succubus_1.png" WeightStage_1="bucklerparry_largerfolk/succubus_2.png" />
+		<part Name="Description" Short="Long hair and sharp talons sway to the rhythm of =pronouns.possessive= confident strut. =pronouns.Possessive= legs and underbelly sport the same reddish hair, and =pronouns.possessive= swollen gut pulses with stolen lifestuff." />
+    <part Name="LargerFolk_WeightGain" StartingWeight="0" />
+		<stat Name="Hitpoints" Value="56" />
+		<stat Name="Level" Value="17" />
+		<part Name="RandomMutations" Mental="1-2" MentalLevel="1-4"  Physical="0-3" PhysicalLevel="1-6" />
+     <part Name="LargerFolk_MutationFatHealing" />
+    <mutation Name="LifeDrain" Level="6" />
+		<!-- <part Name="ConversationScript" ConversationID="GyreWightRermadon" /> -->
+		<!-- <tag Name="NamingTag" Value="RermadonGyreWight" /> -->
+		<inventoryobject Blueprint="Leather Whip" />
+    <inventoryobject Blueprint="Elastyne Skin Suit" />
+    <!-- <part Name="FabricateFromSelf" ChargeUse="0" FabricateBlueprint="Cream Pie" FabricateVerb="produce" BatchSize="1" HitpointsPer="2" AIUseForThrowing="true" AIHitpointsThreshold="0" HitpointsThreshold="0" EnergyCost="100" Cooldown="1d2+1" IsBioScannable="true" />
+     -->
+	</object>
+  <object Name="SuccourBrute" Inherits="BaseHumanoid">
+		<part Name="Render" DisplayName="succour matron" Tile="bucklerparry_largerfolk/succubus_grabber_1.png" ColorString="&amp;C" DetailColor="o" />
+    <part Name="Brain" Factions="ChildrenOfFlesh-100" Hostile="true" />
+    <part Name="ConversationScript" ConversationID="LargerFolk_ChildrenOfFlesh_Conversation" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="bucklerparry_largerfolk/succubus_0.png" WeightStage_1="bucklerparry_largerfolk/succubus_1.png" WeightStage_2="bucklerparry_largerfolk/succubus_2.png"/>
+		<part Name="Description" Short="Long hair and sharp talons sway to the rhythm of =pronouns.possessive= confident strut. =pronouns.Possessive= legs and underbelly sport the same reddish hair, and =pronouns.possessive= swollen gut pulses with stolen lifestuff." />
+    <part Name="LargerFolk_WeightGain" StartingWeight="1" />
+		<stat Name="Hitpoints" Value="112" />
+		<stat Name="Level" Value="22" />
+		<!-- <part Name="ConversationScript" ConversationID="GyreWightRermadon" /> -->
+		<!-- <tag Name="NamingTag" Value="RermadonGyreWight" /> -->
+    <mutation Name="Carnivorous" />
+		<part Name="RandomMutations" Mental="1-2" MentalLevel="1-3"  Physical="1-3" PhysicalLevel="2-6" />
+		<inventoryobject Blueprint="Apotheote_Claws" Number="2" />
+    <part Name="LargerFolk_WeightDescription" 
+      WeightDescription_0="Wandering eyes peer from beneath the mop of blood-red hair, styled lovingly by =pronouns.possessive= cooing harem. =pronouns.Possessive= cold intelligence is put only toward acquiring the "
+      WeightDescription_1="Long hair and sharp talons sway to the rhythm of =pronouns.possessive= breathless waddle. =pronouns.Possessive= figure rounds out into obscenity on the nectar of life energy. A fattened Philial makes for troublesome opposition."
+    />
+    
+    <part Name="LargerFolk_WeighStatMod" />
+    <part Name="Leader" SpawnRadius="4" popTable="LargerFolk_FatGirls" />
+	</object>
+  
+  <object Name="SuccourBruteStarved" Inherits="SuccourBrute">
+		<part Name="Render" DisplayName="succour matron" Tile="bucklerparry_largerfolk/succubus_grabber_0.png" ColorString="&amp;C" DetailColor="o" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="bucklerparry_largerfolk/succubus_0.png" WeightStage_1="bucklerparry_largerfolk/succubus_1.png" WeightStage_2="bucklerparry_largerfolk/succubus_2.png"/>
+		<part Name="Description" Short="Long hair and sharp talons sway to the rhythm of =pronouns.possessive= confident strut. =pronouns.Possessive= legs and underbelly sport the same reddish hair, and =pronouns.possessive= swollen gut pulses with stolen lifestuff." />
+    <part Name="LargerFolk_WeightGain" StartingWeight="0" />
+		<stat Name="Hitpoints" Value="112" />
+		<stat Name="Level" Value="22" />
+		<part Name="RandomMutations" Mental="1-2" MentalLevel="1-3"  Physical="1-3" PhysicalLevel="2-6" />
+    <mutation Name="LifeDrain" Level="6" />
+		<!-- <part Name="ConversationScript" ConversationID="GyreWightRermadon" /> -->
+		<!-- <tag Name="NamingTag" Value="RermadonGyreWight" /> -->\
+    <part Name="LargerFolk_WeightDescription" 
+      WeightDescription_0="Wandering eyes peer from beneath the mop of blood-red hair, styled lovingly by =pronouns.possessive= cooing harem. =pronouns.Possessive= cold intelligence is put only toward acquiring the "
+      WeightDescription_1="Long hair and sharp talons sway to the rhythm of =pronouns.possessive= breathless waddle. =pronouns.Possessive= figure rounds out into obscenity on the nectar of life energy. A fattened Philial makes for troublesome opposition."
+    />
+    <part Name="LargerFolk_WeighStatMod" />
+	</object>
+<!-- <object Name="BaseGyreWight" Inherits="BaseHumanoid">
+		<part Name="Render" DisplayName="gyre wight" Tile="Creatures/wight_agolgot.bmp" RenderString="z" ColorString="&amp;m" />
+		<part Name="Brain" Factions="Gyre Wights-100" Hostile="false" />
+		<stat Name="Hitpoints" Value="25" />
+		<stat Name="Level" Value="14" />
+		<tag Name="InventoryPopulationTable" Value="HumanoidEquipment" />
+		<inventoryobject Blueprint="Cloth Robe" Number="1" />
+		<tag Name="BaseObject" Value="*noinherit" />
+		<xtagWaterRitual numSecrets="2" />
+		<stag Name="Contemporary" />
+	</object> -->
 	<!-- UNFINISHED -->
 	<!-- Trembling dunes -->
 	<!-- <object Name="Graftek" Inherits="BaseRobot">

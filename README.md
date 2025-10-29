@@ -1,3 +1,4 @@
+
 Clone the repository with the big green button for whatever latest hottest changes i've pushed recently, check releases for the old beta and (eventually) big major releases with all-tested changes!
 
 To install, go to the user folder of your computer, and navigate to 
@@ -22,5 +23,44 @@ Creatures' current weight stage will be displayed next to their name, and you ca
 consuming enough calories increases your weight stage, which you'll be notified of with a popup. current weight stages are slim -> Fat -> Obese -> Immobile/Morbidly Obese (Immobility causes frequent tripping/exhaustion based on strength and movespeed, forcing you to stop and rest for a bit after a certain number of steps.)
 when weight gain is enabled becoming "fat" or heavier gives you the fat version of your sprite and creatures may have new descriptions for higher weight stages, though there are no more visual stages planned beyond simply "fatter than usual". 
 
+CHANGELOG
 
+Release V.3.0
 
+- Added changelog
+
+- Added creatures for "Adipophilials" faction (not fully implemented yet)
+
+- more sprite replacements
+
+- added conversation delegate hooks for npcs to notice that your clothes are too tight
+
+- Increased rate of weight loss at lower movement speeds (the idea being lower movement speed has the character
+exerting more effort to perform that movement, the player loses weight faster while heavier, etc)
+
+- Redo of how the mod interacts with armour, armour can now have a particular size it's made for and
+will give an increasing tightness debuff as the wearer outsizes it. Both size and tightness are visible by 
+examining the armour. Size/tightness only applies to body slot armour as of yet, since I felt like it would be weird to outsize
+boots and helmets unless you were like, MASSIVE, which the mod just doesn't currently mechanically support the fantasy of being 
+that large, so maybe it will be added later.  I wish qud had pants...
+
+- Tightness debuff: armour loses DV for each weight stage you outsize it by, and has a slim chance of breaking outright when athletic/movement heavy skills are used
+
+- New associated tinkering skill, Tailoring: allows you to tailor armour to be larger, smaller, or to fit your current size, consuming Bits.
+
+- New armour mod, Stretchy. Stretchy negates tightness penalties for the affected armour.
+(planned armour mod for the future, hammerspace, negates ALL effects of being overweight while powered, including resetting sprite to lean. be wary of normality gas...)
+
+- Breaking a chair via sitting on it while being too fat for it now causes the sitter to be knocked prone
+
+- the Clay Pots worn by some plants are now subject to LargerFolk_Armor effects
+
+- Altered Adipocytic Tonic tinkering recipe to require [REDACTED] as an ingredient
+
+- added new armours, the Bikini and Fullerite Bikini.
+
+- moved all scripts to the Scripts folder, for organizaiton purposes
+
+- altered movement penalty for weight gain, now a movespeed debuff rather than getting stuck
+
+- fixed errors with sixshrew and gunwing sprites
