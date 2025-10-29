@@ -9,12 +9,12 @@
 	    DisplayText="Dynamic Weight Gain ({{R|new save}})"
 	    Category="Mods: Larger Folk"
 	    Type="Checkbox" 
-			Default="No"
+			Default="Yes"
 	>
 		<helptext>
-			Turn this on if you wanna try it out. If disabled, the fat sprites are used no matter what, and weight-based effects like stuckage and chair-breaking will not occur.
+			Turn this off if you wanna play with just the fat sprites, and don't care about the gameplay system changes.
 
-			The default is {{w|Disabled}}.
+			The default is {{w|Enabled}}.
 		</helptext>
 	</option>
 	
@@ -55,12 +55,12 @@
 	    DisplayText="Armor-Based Weight Effects (DOESN'T WORK WELL, WORK IN PROGRESS). ({{R|new save}})"
 	    Category="Mods: Larger Folk"
 	    Type="Checkbox" 
-			Default="No"
+			Default="Yes"
 	>
 		<helptext>
-			Turn it on if you reaaally want to try it out, but it's very basic and buggy.
+			This system might get annoying, so I'll allow you to play without it...
 
-			The default is {{w|Disabled}}.
+			The default is {{w|Enabled}}.
 		</helptext>
 	</option>
   <!-- 	<option 
