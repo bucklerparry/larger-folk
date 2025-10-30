@@ -25,7 +25,12 @@ when weight gain is enabled becoming "fat" or heavier gives you the fat version 
 
 CHANGELOG
 
-Release V.3.0
+V 0.3.01
+
+- weight gain now applies / alters a weight stage effect that displays in your / creatures properties, so it shows when you Look at them but isn't visible all the time (unless enabled in options)
+- effects of current weight stage are a bit clearer now, since you can see it in your effects tab.
+
+Release V 0.3.0
 
 - Added changelog
 
