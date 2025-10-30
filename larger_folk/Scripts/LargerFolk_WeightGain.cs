@@ -319,78 +319,22 @@ public class LargerFolk_WeightGain : IPart
     // apply effects of current weight stage that aren't dependant on how weight stage was entered
     public void AfterWeightChange()
     {
-        if (ParentObject.IsPlayer())
+        
+        
+        if (ParentObject.HasEffect<LargerFolk_Effect_Weight>())
         {
-            switch (WeightStage)
-            {
-                case 0:
-                    StatShifter.DefaultDisplayName = "Lean";
-                    StatShifter.SetStatShift(ParentObject, "AV", 0);
-                    StatShifter.SetStatShift(ParentObject, "DV", 1);
-                    StatShifter.SetStatShift(ParentObject, "MoveSpeed", 0);
-                    break;
-                case 1:
-                    StatShifter.DefaultDisplayName = "Overweight";
-                    StatShifter.SetStatShift(ParentObject, "AV", 0);
-                    StatShifter.SetStatShift(ParentObject, "DV", 0);
-                    StatShifter.SetStatShift(ParentObject, "MoveSpeed", 10);
-                    break;
-                case 2:
-                    StatShifter.DefaultDisplayName = "Obesity";
-                    StatShifter.SetStatShift(ParentObject, "AV", 1);
-                    StatShifter.SetStatShift(ParentObject, "DV", -1);
-                    StatShifter.SetStatShift(ParentObject,"MoveSpeed", 30);
-                    break;
-                case 3:
-                    StatShifter.DefaultDisplayName = "Extreme Obesity";
-                    StatShifter.SetStatShift(ParentObject, "AV", 2);
-                    StatShifter.SetStatShift(ParentObject, "DV", -3);
-                    StatShifter.SetStatShift(ParentObject,"MoveSpeed", 75);
-                    break; 
-                default:
-                    StatShifter.DefaultDisplayName = "Lean";
-                    StatShifter.SetStatShift(ParentObject, "AV", 0);
-                    StatShifter.SetStatShift(ParentObject, "DV", 1);
-                    StatShifter.SetStatShift(ParentObject, "MoveSpeed", 0);
-                    break;
-            }
+            ParentObject.GetEffect<LargerFolk_Effect_Weight>().AdjustWeightEffect(WeightStage);
         }
         else
         {
-            switch (WeightStage)
-            {
-                case 0:
-                    StatShifter.DefaultDisplayName = "Lean";
-                    StatShifter.SetStatShift(ParentObject, "AV", 0);
-                    StatShifter.SetStatShift(ParentObject, "DV", 1);
-                    StatShifter.SetStatShift(ParentObject,"MoveSpeed", 0);
-                    break;
-                case 1:
-                    StatShifter.DefaultDisplayName = "Overweight";
-                    StatShifter.SetStatShift(ParentObject, "AV", 0);
-                    StatShifter.SetStatShift(ParentObject, "DV", 0);
-                    StatShifter.SetStatShift(ParentObject, "MoveSpeed", 15);
-                    break;
-                case 2:
-                    StatShifter.DefaultDisplayName = "Obesity";
-                    StatShifter.SetStatShift(ParentObject, "AV", 1);
-                    StatShifter.SetStatShift(ParentObject, "DV", -3);
-                    StatShifter.SetStatShift(ParentObject, "MoveSpeed", 30);
-                    break;
-                case 3:
-                    StatShifter.DefaultDisplayName = "Extreme Obesity";
-                    StatShifter.SetStatShift(ParentObject, "AV", 2);
-                    StatShifter.SetStatShift(ParentObject, "DV", -4);
-                    StatShifter.SetStatShift(ParentObject, "MoveSpeed", 60);
-                    break; 
-                default:
-                    StatShifter.DefaultDisplayName = "Lean";
-                    StatShifter.SetStatShift(ParentObject, "AV", 0);
-                    StatShifter.SetStatShift(ParentObject, "DV", 1);
-                    StatShifter.SetStatShift(ParentObject, "MoveSpeed", 0);
-                    break;
-            }
+                ParentObject.ApplyEffect(new LargerFolk_Effect_Weight(WeightStage: WeightStage));
+            
         }
+        
+       
+    
+            
+        
     }
 
     public int CaloriesToStage(int cal)

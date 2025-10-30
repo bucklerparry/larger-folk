@@ -91,32 +91,46 @@ namespace XRL.World.Effects
 
         public override bool WantEvent(int ID, int cascade)
         {
-            if (!base.WantEvent(ID, cascade) && ID != AdjustValueEvent.ID && ID != SingletonEvent<BeginTakeActionEvent>.ID && ID != PooledEvent<GetDisplayNameEvent>.ID && ID != PooledEvent<IsRepairableEvent>.ID)
-            {
-                return ID == PooledEvent<RepairedEvent>.ID;
-            }
-            return true;
+            // if (!base.WantEvent(ID, cascade) && ID != AdjustValueEvent.ID && ID != SingletonEvent<BeginTakeActionEvent>.ID && ID != PooledEvent<GetDisplayNameEvent>.ID && ID != PooledEvent<IsRepairableEvent>.ID)
+            // {
+            //     return ID == PooledEvent<RepairedEvent>.ID;
+            // }
+            // return true;
+            return ID == GetShortDescriptionEvent.ID || (ID == PooledEvent<GetDisplayNameEvent>.ID) || base.WantEvent(ID, cascade);
         }
 
-        // public override bool HandleEvent(GetDisplayNameEvent E)
-        // {
-        //     if (!E.Reference)
-        //     {
-        //         if (StageDifference > 2)
-        //         {
-        //             E.AddTag("({{r|bursting}})", 20);
-        //         }
-        //         else if (StageDifference > 1)
-        //         {
-        //             E.AddTag("({{r|straining}})", 20);
-        //         }
-        //         else if (StageDifference >= 0)
-        //         {
-        //             E.AddTag("({{r|ill-fitting}})", 20);
-        //         }
-        //     }
-        //     return base.HandleEvent(E);
-        // }
+        public override bool HandleEvent(GetDisplayNameEvent E)
+        {
+            if (!E.Reference)
+            {
+                if (StageDifference > 2)
+                {
+                    E.AddTag("({{r|bursting}})", 20);
+                }
+                else if (StageDifference > 1)
+                {
+                    E.AddTag("({{r|straining}})", 20);
+                }
+                else if (StageDifference >= 0)
+                {
+                    E.AddTag("({{r|ill-fitting}})", 20);
+                }
+            }
+            return base.HandleEvent(E);
+        }
+
+        public override bool HandleEvent(GetShortDescriptionEvent E)
+	    {
+            // if (!E.Object.HasPart<ModKeen>())
+            // {
+            //     E.Postfix.AppendRules(GetDescription(Tier));
+            // }
+
+            // E.Postfix.AppendLine("it's tight!!! " + StageDifference.ToString());
+
+            return base.HandleEvent(E);
+	    }
+        
         public override bool HandleEvent(GetDisplayNameEvent E)
         {
             if (E.Understood() && !E.Object.HasProperName && !E.Object.IsNatural())

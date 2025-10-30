@@ -24,10 +24,10 @@
 	    DisplayText="Display Weight in Names ({{R|new save}})"
 	    Category="Mods: Larger Folk"
 	    Type="Checkbox" 
-			Default="Yes"
+			Default="False"
 	>
 		<helptext>
-			This option displays a creatures current weight stage as an adjective in their display name. I feel like it's a bit much to have it display all the time, so I've added a toggle if you don't want this to happen.
+			This option displays everything's current weight stage as an adjective in their display name. I feel like it's a bit much to have it display all the time, so I've added a toggle if you don't want this to happen.
 
 			The default is {{w|Disabled}}.
 		</helptext>
