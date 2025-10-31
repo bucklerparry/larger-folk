@@ -99,25 +99,6 @@ namespace XRL.World.Effects
             return ID == GetShortDescriptionEvent.ID || (ID == PooledEvent<GetDisplayNameEvent>.ID) || base.WantEvent(ID, cascade);
         }
 
-        public override bool HandleEvent(GetDisplayNameEvent E)
-        {
-            if (!E.Reference)
-            {
-                if (StageDifference > 2)
-                {
-                    E.AddTag("({{r|bursting}})", 20);
-                }
-                else if (StageDifference > 1)
-                {
-                    E.AddTag("({{r|straining}})", 20);
-                }
-                else if (StageDifference >= 0)
-                {
-                    E.AddTag("({{r|ill-fitting}})", 20);
-                }
-            }
-            return base.HandleEvent(E);
-        }
 
         public override bool HandleEvent(GetShortDescriptionEvent E)
 	    {

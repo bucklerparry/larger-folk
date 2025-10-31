@@ -25,6 +25,9 @@
     <bodyparttype Type="Tread" LimbBlueprintProperty="SeveredTreadBlueprint" LimbBlueprintDefault="SeveredTread" Mobility="1" Category="Mechanical" Appendage="true" UsuallyOn="Body" Branching="Lateral,Longitudinal,Stratal,Vertical" />
     <bodyparttype Type="Ammo" Abstract="true" Category="Mechanical" /> -->
     <!-- <bodyparttype Type="Arm" LimbBlueprintProperty="SeveredArmBlueprint" Appendage="true" UsuallyOn="Body" Branching="Lateral,Vertical,Longitudinal,Stratal" ChimeraWeight="3" /> -->
+    
+    <bodyparttype Type="Butt" DescriptionPrefix="Worn on" UsuallyOn="Body" Appendage="true" Branching="Lateral,Vertical,Longitudinal,Stratal" ChimeraWeight="2" />
+    <bodyparttypevariant VariantOf="Butt" Type="Haunches"/>
     <bodyparttypevariant VariantOf="Arm" Type="Starched Cuff" Category="Cloth" />
   </bodyparttypes> 
 <!-- 
@@ -48,6 +51,42 @@
         </part>
         <part Type="Missile Weapon" Laterality="Left" />
         <part Type="Hands" DependsOn="Hands" />
+    </anatomy>
+
+    <!-- NPC-specific -->
+    <anatomy Name="Humanoid" Load="Replace">
+      <part Type="Head">
+        <part Type="Face" />
+      </part>
+      <part Type="Back" />
+      <part Type="Arm" Laterality="Right">
+        <part Type="Hand" Laterality="Right" SupportsDependent="Hands" />
+      </part>
+      <part Type="Arm" Laterality="Left">
+        <part Type="Hand" Laterality="Left" SupportsDependent="Hands" />
+      </part>
+      <part Type="Missile Weapon" Laterality="Right" />
+      <part Type="Missile Weapon" Laterality="Left" />
+      <part Type="Hands" DependsOn="Hands" />
+      <part Type="Butt" />
+      <part Type="Feet" />
+    </anatomy>
+
+     <anatomy Name="Quadruped" Load="Replace">
+      <part Type="Head">
+        <part Type="Face" />
+      </part>
+      <part Type="Back" />
+      <part Type="Haunches" />
+      <part Type="Foot" Laterality="Right Fore" SupportsDependent="Forefeet" />
+      <part Type="Foot" Laterality="Left Fore" SupportsDependent="Forefeet" />
+      <part Type="Foot" Laterality="Right Hind" SupportsDependent="Hindfeet" />
+      <part Type="Foot" Laterality="Left Hind" SupportsDependent="Hindfeet" />
+      <part Type="Missile Weapon" Laterality="Right" />
+      <part Type="Missile Weapon" Laterality="Left" />
+      <part Type="Feet" Laterality="Fore" DependsOn="Forefeet" Mobility="0" />
+      <part Type="Feet" Laterality="Hind" DependsOn="Hindfeet" Mobility="0" />
+      <part Type="Tail" />
     </anatomy>
 		<!-- NPC-specific -->
     <!-- <anatomy Name="Humanoid">
