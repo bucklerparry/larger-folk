@@ -26,7 +26,7 @@
     <bodyparttype Type="Ammo" Abstract="true" Category="Mechanical" /> -->
     <!-- <bodyparttype Type="Arm" LimbBlueprintProperty="SeveredArmBlueprint" Appendage="true" UsuallyOn="Body" Branching="Lateral,Vertical,Longitudinal,Stratal" ChimeraWeight="3" /> -->
     
-    <bodyparttype Type="Butt" DescriptionPrefix="Worn on" UsuallyOn="Body" Appendage="true" Branching="Lateral,Vertical,Longitudinal,Stratal" ChimeraWeight="2" />
+    <bodyparttype Type="Butt" DescriptionPrefix="Worn on" LimbBlueprintProperty="SeveredHeadBlueprint" LimbBlueprintDefault="GenericHead" UsuallyOn="Body" Appendage="true" Branching="Lateral,Vertical,Longitudinal,Stratal" ChimeraWeight="0" />
     <bodyparttypevariant VariantOf="Butt" Type="Haunches"/>
     <bodyparttypevariant VariantOf="Arm" Type="Starched Cuff" Category="Cloth" />
   </bodyparttypes> 
@@ -54,7 +54,7 @@
     </anatomy>
 
     <!-- NPC-specific -->
-    <anatomy Name="Humanoid" Load="Replace">
+    <anatomy Name="Humanoid" >
       <part Type="Head">
         <part Type="Face" />
       </part>
@@ -68,7 +68,6 @@
       <part Type="Missile Weapon" Laterality="Right" />
       <part Type="Missile Weapon" Laterality="Left" />
       <part Type="Hands" DependsOn="Hands" />
-      <part Type="Butt" />
       <part Type="Feet" />
     </anatomy>
 

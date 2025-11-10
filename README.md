@@ -25,6 +25,11 @@ when weight gain is enabled becoming "fat" or heavier gives you the fat version 
 
 CHANGELOG
 
+V 3.02
+
+- When creatures randomly determine their weight they will also add some extra calories randomly, so they aren't just at the exact threshold every time.
+
+
 V 0.3.01
 
 - weight gain now applies / alters a weight stage effect that displays in your / creatures properties, so it shows when you Look at them but isn't visible all the time (unless enabled in options)

@@ -11,6 +11,8 @@ using XRL.World.Effects;
 using XRL.Rules;
 using XRL.World.Parts.Mutation;
 
+using LargerFolk.Utilities;
+
 
 namespace XRL.World.Parts
 {
@@ -33,6 +35,7 @@ public class LargerFolk_WeightGain : IPart
     //increased by eating cooking with ingredients or food items
     //and other sources
     public int TotalCalories = 0;
+    
     //0 = thin (default)
     //1 = fat
     //2 = obese
@@ -72,7 +75,7 @@ public class LargerFolk_WeightGain : IPart
     {
 	    // Check if the ID parameter matches one of the events we want
 	    // The base WantEvent of IPart/Effect will always return false.
-	    return base.WantEvent(ID, cascade) || ID == ObjectCreatedEvent.ID || (ID == GetDisplayNameEvent.ID);
+	    return base.WantEvent(ID, cascade) || ID == ObjectCreatedEvent.ID || (ID == GetDisplayNameEvent.ID) || ID == GetIntrinsicWeightEvent.ID;
     }
 
     // public override bool WantEvent(int ID, int cascade) 
@@ -87,6 +90,13 @@ public class LargerFolk_WeightGain : IPart
         return base.HandleEvent(E);
     }
 
+    public override bool HandleEvent(GetIntrinsicWeightEvent E)
+	{
+		E.Weight += TotalCalories/32;
+		return base.HandleEvent(E);
+	}
+
+
     public void WeightSetup()
     {
         // set an initial weight stage for non-player creatures, usually lean or fat, occasionally obese, extremely rarely immobile
@@ -96,28 +106,33 @@ public class LargerFolk_WeightGain : IPart
             // if no starting weight is set, select one randomly
             if (StartingWeight < 0)
             {
-                int TempRand = Stat.Random(1,1001);
+                int TempRand = LargerFolk_Random.Next(1,1001);
                 if (TempRand > 995)
                 {
                     SetWeightStage(3);
+                    ChangeCalories(LargerFolk_Random.Next(1000, 10000));
                 }
                 else if (TempRand > 900)
                 {
                     SetWeightStage(2);
+                    ChangeCalories(LargerFolk_Random.Next(1000, 6000));
                 }
                 else if (TempRand > 500)
                 {
                     SetWeightStage(1);
+                    ChangeCalories(LargerFolk_Random.Next(1000, 5000));
                 }
                 else
                 {
                     if (WeightDistribution == "Global Fatness")
                     {
                         SetWeightStage(1);
+                        ChangeCalories(LargerFolk_Random.Next(1000, 5000));
                     }
                     else
                     {
                         SetWeightStage(0);
+                        ChangeCalories(LargerFolk_Random.Next(1000, 5000));
                     }
                 }
             }

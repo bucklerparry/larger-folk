@@ -32,7 +32,7 @@ namespace XRL.World.Effects
 
         public override int GetEffectType()
         {
-            return 117440514;
+            return 67108896; // taken from "liquid-covered" effect, so it should apply to any creature with a weightgain part
         }
 
        
