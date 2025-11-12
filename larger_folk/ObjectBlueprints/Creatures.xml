@@ -1341,52 +1341,15 @@ The infant child is unaware
     <tag Name="Grazer" />
     <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
   </object>
-  <object Name="Giant Centipede" Inherits="BaseInsect">
-    <part Name="Render" DisplayName="giant centipede" Tile="Creatures/sw_centipede.bmp" RenderString="i" DetailColor="r" ColorString="&amp;w" />
-    <part Name="Corpse" CorpseChance="25" CorpseBlueprint="Giant Centipede Corpse" />
-    <part Name="Brain" Hostile="false" Factions="Insects-100" />
-    <stat Name="AV" Value="2" />
-    <stat Name="DV" Value="2" />
-    <stat Name="Hitpoints" Value="8" />
-    <stat Name="Level" Value="5" />
-    <inventoryobject Blueprint="GiantCentipede_Bite" Number="1" />
+  <object Name="Giant Centipede" Load="Merge">
+    <part Name="Render" DisplayName="giant centipede" Tile="bucklerparry_largerfolk/centipede_fat.png" RenderString="i" DetailColor="r" ColorString="&amp;w" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_centipede.bmp" WeightStage_1="bucklerparry_largerfolk/centipede_fat.png" />
     <part Name="Description" Short="Chittering legs in the high dozens figure S-swerve =pronouns.possessive= shining trunk like the spine of a gigantic hominid." />
-    <skill Name="ShortBlades" />
-    <tag Name="Species" Value="centipede" />
   </object>
-  <object Name="GiantCentipede_Bite" Inherits="Bite">
-    <part Name="MeleeWeapon" BaseDamage="1d3" Slot="Head" />
-  </object>
-  <object Name="Giant Centipede Corpse" Inherits="Arthropod Corpse">
-    <part Name="Render" DisplayName="giant centipede corpse" />    
-    <tag Name="Tier" Value="1" />    
-  </object>	
-  <object Name="GiantDragonfly" Inherits="BaseInsect">
+  <object Name="GiantDragonfly" Load="Merge">
     <part Name="Render" DisplayName="giant dragonfly" Tile="bucklerparry_largerfolk/dragonfly_fat.png" RenderString="i" ColorString="&amp;K" TileColor="&amp;K" DetailColor="w" />
     <part Name="LargerFolk_WeightStageRender" WeightStage_0="creatures/sw_giantdragonfly.bmp" WeightStage_1="bucklerparry_largerfolk/dragonfly_fat.png" />
-    <part Name="Corpse" CorpseChance="25" CorpseBlueprint="Giant Dragonfly Corpse" />
-    <stat Name="Agility" Boost="2" />
-    <part Name="Brain" Factions="Prey-100,Insects-25" />
-    <stat Name="AV" Value="2" />
-    <stat Name="Hitpoints" Value="6" />
-    <mutation Name="Wings" Level="10" />
-    <inventoryobject Blueprint="Dragonfly_Bite" Number="1" />
     <part Name="Description" Short="Big diaphanous wings bat the air as =pronouns.subjective= =verb:drone:afterpronoun= in place." />
-    <tag Name="Species" Value="dragonfly" />
-    <tag Name="DynamicObjectsTable:DesertCanyon_Creatures" />
-    <tag Name="DynamicObjectsTable:Jungle_Creatures" />
-    <tag Name="DynamicObjectsTable:Saltmarsh_Creatures" />
-    <tag Name="DynamicObjectsTable:Water_Creatures" />
-    <tag Name="DynamicObjectsTable:Flowerfields_Creatures" />
-  </object>
-  <object Name="Dragonfly_Bite" Inherits="Bite">
-    <part Name="MeleeWeapon" Slot="Head" />
-  </object>
-  <object Name="Giant Dragonfly Corpse" Inherits="Winged Arthropod Corpse">
-    <part Name="Render" DisplayName="giant dragonfly corpse" />
-    <part Name="Physics" Weight="3" />
-    <part Name="Commerce" Value="1" />
-		<tag Name="Tier" Value="1" />
   </object>
   <object Name="Glowcrow" Inherits="BaseBird">
     <part Name="Render" DisplayName="glowcrow" RenderString="b" ColorString="&amp;m" />    
@@ -7302,33 +7265,18 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
 		<tag Name="DynamicObjectsTable:Corpses" />
 		<tag Name="Role" Value="Rare" />
 	</object>
-	<object Name="Monad" Inherits="BaseStar">
+	<object Name="Monad" Load="Merge"> <!-- Inherits="BaseStar" -->
 		<part Name="Render" DisplayName="monad" RenderString="031" Tile="Creatures/sw_monad.bmp" ColorString="&amp;Y" DetailColor="m" />
 		<part Name="Description" Short="A ternion of transformations are given sharp shape against the fuzzy physics of earth-time. The triangle is inert and of an algebraic substance, but stillness slides off =pronouns.possessive= colorless arms; objects around =pronouns.objective= are forced into sets unfamiliar." />
-		<part Name="Body" Anatomy="Three-Pointed Star" />
-		<part Name="Brain" Factions="Entropic-100" Calm="True" />
-		<stat Name="Level" Value="40" />
-		<stat Name="Hitpoints" Value="1000" />
-		<stat Name="AV" Value="12" />
-		<tag Name="DynamicObjectsTable:MoonStair_Creatures" />
+		<part Name="LargerFolk_WeightDescription" 
+    WeightDescription_0="A ternion of transformations are given sharp shape against the fuzzy physics of earth-time. The triangle is inert and of an algebraic substance, but stillness slides off =pronouns.possessive= colorless arms; objects around =pronouns.objective= are forced into sets unfamiliar." 
+    WeightDescription_1="A ternion of transformations are given sharp shape against the fuzzy physics of earth-time. The triangle is inert and of an algebraic substance, but stillness slides off =pronouns.possessive= colorless arms; objects around =pronouns.objective= are forced into sets unfamiliar. A trick of perception perhaps, but this instance has a certain fullness to it."
+    />
 	</object>
-	<object Name="n-Dimensional Starshell" Inherits="BaseTortoise">
-		<part Name="Render" DisplayName="n-dimensional starshell" RenderString="t" Tile="Creatures/sw_starshell.bmp"  ColorString="&amp;O" TileColor="&amp;g" DetailColor="O" />
+	<object Name="n-Dimensional Starshell" Load="Merge">
+		<part Name="Render" DisplayName="n-dimensional starshell" RenderString="t" Tile="bucklerparry_largerfolk/starshell_fat.png"  ColorString="&amp;O" TileColor="&amp;g" DetailColor="O" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_starshell.bmp" WeightStage_1="bucklerparry_largerfolk/starshell_fat.png" />
 		<part Name="Description" Short="Pointy and expressive scutes range across the broad back as a mapmade mosaic. The topography of an other-place is rendered in interdimensional keratin." />
-		<stat Name="Level" Value="37" />
-		<stat Name="Hitpoints" Value="600" />
-		<tag Name="Role" Value="Tank" />
-		<stat Name="AV" Value="5" />
-		<part Name="RevealDimensionOnLook" />
-		<mutation Name="SpacetimeVortex" Level="20" />
-		<mutation Name="Carapace" Level="15" />
-		<inventoryobject Blueprint="Starshell_Bite" Number="1" />
-		<tag Name="DynamicObjectsTable:MoonStair_Creatures" />
-	</object>
-	<object Name="Starshell_Bite" Inherits="Bite">
-		<part Name="Render" DisplayName="{{K|adumbral}} bite" />
-		<part Name="MeleeWeapon" HitBonus="6" BaseDamage="0" Skill="LongBlades" />
-		<part Name="ElementalDamage" Damage="20-30" Attributes="Umbral" />
 	</object>
   <object Name="Phase Cannon Tinker" Inherits="Turret Tinker">
     <part Name="Render" DisplayName="phase cannon tinker" RenderString="8" ColorString="&amp;M" DetailColor="c" />
@@ -11599,7 +11547,7 @@ In Barathrum's name, =pronouns.subjective==verb:'ve:afterpronoun= conferred onto
     />
   </object>
   <object Name="Keh" Load="Merge">
-    <part Name="Render" DisplayName="Hindriarch Keh" RenderString="h" Tile="creatures/sw_hindren_5.bmp" ColorString="&amp;R" />
+    <part Name="Render" DisplayName="Hindriarch Keh" RenderString="h" Tile="bucklerparry_largerfolk/keh_fat.png" ColorString="&amp;R" />
     <part Name="LargerFolk_WeightStageRender" WeightStage_0="creatures/sw_hindren_5.bmp" WeightStage_1="bucklerparry_largerfolk/keh_fat.png" />
     <part Name="Description" Short="Time has put creases in =pronouns.possessive= ears and a deep furrow in =pronouns.possessive= throat. The sharp voice thus produced starts and stops the motion of life in the meadow. The arc of tradition has named =pronouns.possessive= Hindriarch, inscribed in the garland cut of =pronouns.possessive= hair, and the downslope of time has locked =pronouns.possessive= in the minds of faundren as Grand-Doe. To all in Bey Lah, =pronouns.subjective= =verb:are:afterpronoun= the sovereign law." />
     

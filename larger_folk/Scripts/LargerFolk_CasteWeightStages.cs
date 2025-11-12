@@ -245,7 +245,22 @@ public class LargerFolk_CasteWeightStages : IPlayerMutator
                 player.GetPart<LargerFolk_WeightStageRender>().WeightStage_1 = "bucklerparry_largerfolk/farmer1_fat.png";
             }
 
-            player.GetPart<LargerFolk_WeightGain>().TotalCalories = 1000;
+            switch (XRL.UI.Options.GetOption("Option_LargerFolk_PlayerStartingWeight"))
+            {
+                case "Lean":
+                    player.GetPart<LargerFolk_WeightGain>().TotalCalories = 1000;
+                    break;
+                case "Fat":
+                    player.GetPart<LargerFolk_WeightGain>().TotalCalories = 8000;
+                    break;
+                case "Obese":
+                    player.GetPart<LargerFolk_WeightGain>().TotalCalories = 14000;
+                    break;
+                case "Barely Mobile":
+                    player.GetPart<LargerFolk_WeightGain>().TotalCalories = 24000;
+                    break;
+            }
+            
             player.GetPart<LargerFolk_WeightGain>().InitializeWeightStage();
         }
 

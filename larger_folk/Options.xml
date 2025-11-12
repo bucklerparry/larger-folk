@@ -42,17 +42,29 @@
 		<helptext>
 			Set the distribution of creature weight at generation
 
-			Standard: The default distribution. Mostly Lean-Fat, with occasional obesity.
+			Standard: The default disstribution. Mostly Lean-Fat, with occasional obesity.
 
 			Global Fatness: Every creature is minimum fat.
 
 			The default is {{w|Standardd}}.
 		</helptext>
 	</option>
+
+	<option 
+		ID="Option_LargerFolk_PlayerStartingWeight"
+		Requires="Option_LargerFolk_DynamicWeightGainOn==Yes"
+	    DisplayText="Player Starting Weight({{R|new save}})"
+	    Category="Mods: Larger Folk"
+	    Type="Combo" Values="Lean,Fat,Obese,Barely Mobile" Default="Lean" >
+		<helptext>
+			Choose what weight stage the player starts with. Starting armor may not fit correctly!
+			The default is {{w|Lean}}.
+		</helptext>
+	</option>
 	
 	<option 
 		ID="Option_LargerFolk_ArmorEffects"
-	    DisplayText="Armor-Based Weight Effects (DOESN'T WORK WELL, WORK IN PROGRESS). ({{R|new save}})"
+	    DisplayText="Armor-Based Weight Effects ({{R|new save}})"
 	    Category="Mods: Larger Folk"
 	    Type="Checkbox" 
 			Default="Yes"

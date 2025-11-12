@@ -153,7 +153,7 @@ public class LargerFolk_WeightGain : IPart
                 {
                     if (ParentObject.GetPart<Stomach>().HungerLevel == 0)
                     {
-                        ChangeCalories(-(1 + (WeightStage/2) ));
+                        ChangeCalories(-((WeightStage/2) ));
                     }
                     else if (ParentObject.GetPart<Stomach>().HungerLevel > 0)
                     {

@@ -25,10 +25,14 @@ when weight gain is enabled becoming "fat" or heavier gives you the fat version 
 
 CHANGELOG
 
-V 3.02
+V 0.3.02
 
+- Fixed fat/obese/etc being considered mental effects that can be "shaken off" by two-headed creatures
+- fatness/ingested calories now affects a creature's intrinsic weight
+- Player starting weight can be selected in the options menu (only affects new saves)
+- new fat sprites for Giant Centipede and N-Dimensional Starshell
 - When creatures randomly determine their weight they will also add some extra calories randomly, so they aren't just at the exact threshold every time.
-
+- Slightly reduced rate of weight loss
 
 V 0.3.01
 

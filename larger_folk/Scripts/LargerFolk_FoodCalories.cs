@@ -47,7 +47,7 @@ namespace XRL.World.Parts
             else if (E.ID == "ThrownProjectileHit")
             {
                 GameObject target = E.GetGameObjectParameter("Defender");
-                if (target.HasPart<LargerFolk_WeightGain>())
+                if (target.HasPart<LargerFolk_Stomach>())
                 {
                     LargerFolk_WeightGain weight_part = target.GetPart<LargerFolk_WeightGain>();
                     weight_part.ChangeCalories(Calories);

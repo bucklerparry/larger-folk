@@ -54,7 +54,7 @@
     </anatomy>
 
     <!-- NPC-specific -->
-    <anatomy Name="Humanoid" >
+    <anatomy Name="Humanoid" Load="Replace">
       <part Type="Head">
         <part Type="Face" />
       </part>
@@ -68,7 +68,9 @@
       <part Type="Missile Weapon" Laterality="Right" />
       <part Type="Missile Weapon" Laterality="Left" />
       <part Type="Hands" DependsOn="Hands" />
+      <part Type="Butt" />
       <part Type="Feet" />
+      
     </anatomy>
 
      <anatomy Name="Quadruped" Load="Replace">
