@@ -32,7 +32,7 @@ V 0.3.02
 - Player starting weight can be selected in the options menu (only affects new saves)
 - new fat sprites for Giant Centipede and N-Dimensional Starshell
 - When creatures randomly determine their weight they will also add some extra calories randomly, so they aren't just at the exact threshold every time.
-- Slightly reduced rate of weight loss
+- slightly reduced weight loss rate while sated
 
 V 0.3.01
 

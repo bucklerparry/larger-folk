@@ -12838,7 +12838,7 @@ This one is jeweled in the eroded scrap of the Tomb." />
   <!-- LargerFolk Exclusives-->
 
   <object Name="GhostHand" Inherits="BaseRobot">
-    <part Name="Body" Anatomy="FloatingHand" />
+    <part Name="Body" Anatomy="HoverRobot" />
     <part Name="Render" DisplayName="ghost hand" ColorString="&amp;Y" Tile="bucklerparry_largerfolk/ghost_hand.png" DetailColor="c" />
     <part Name="Brain" Hostile="false" />
     <part Name="FabricateFromSelf" ChargeUse="0" FabricateBlueprint="Cream Pie" FabricateVerb="produce" BatchSize="1" HitpointsPer="0" AIUseForThrowing="true" AIHitpointsThreshold="0" HitpointsThreshold="0" EnergyCost="100" Cooldown="1d2+1" IsBioScannable="true" />
