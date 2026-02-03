@@ -2,6 +2,9 @@ All sprites/scripts not credited here are by bucklerparry! (bucklerparry.bsky.so
 
 
 Bukie (chubbukie.bsky.social)
+- fat_sultanstatue_15.png
+- fat_sultanstatue_12.png
+- fat_sultanstatue_14.png
 - humor_fat.png
 - gyrohumor_fat.png
 - panhumor_fat.png
