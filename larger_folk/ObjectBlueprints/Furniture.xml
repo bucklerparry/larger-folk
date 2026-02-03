@@ -504,12 +504,13 @@
     <part Name="Description" Short="Here Shekhinah has been sculpted into permanence with magnificent cerulean marble. His body is chiseled to blessed perfection. His golden diadem crowns him Father among Fathers." />
   </object>
   <object Name="statue of wizard" Load="Merge">
-    <part Name="Render" DisplayName="statue of Dagon" Tile="Terrain/sw_statue3.bmp" />
-    <part Name="Description" Short="Dagon the orator domineers the west apse with his brazen pose. His golden coronet shines splendidly in the fire's shine." />
+    <part Name="Render" DisplayName="statue of Dagon" Tile="bucklerparry_largerfolk/statue_argent_dagon_fat.png" />
+    <part Name="Description" Short="Dagon the orator domineers the west apse with his bloated gut and heaving bosom. His golden coronet shines splendidly in the fire's shine." />
   </object>
+  
   <object Name="statue of athlete" Load="Merge">
-    <part Name="Render" DisplayName="statue of Carthax" Tile="Terrain/sw_statue5.bmp" />
-    <part Name="Description" Short="Carthax the athlete is depicted here mid-stride. His glistening silver hair is tied behind his head, in astral tradition, as he vaults through the firmament." />
+    <part Name="Render" DisplayName="statue of Carthax" Tile="bucklerparry_largerfolk/statue_argent_carthax_fat.png"/>
+    <part Name="Description" Short="Carthax the ex-athlete is depicted here mid-grope. His glistening silver hair is tied behind his head, in astral tradition, as he explores the softened flesh that inaction wrought." />
   </object>
   <object Name="statue of scholar" Load="Merge">
     <part Name="Render" DisplayName="statue of Resheph" Tile="Terrain/sw_statue6.bmp" />
