@@ -60,18 +60,7 @@
   </object>
   <object Name="BaseAntelope" Load="Merge">
   </object>
-	<object Name="BaseBat" Inherits="BaseAnimal">
-		<part Name="Brain" Factions="Winged Mammals-100" />
-		<tag Name="Class" Value="winged mammal" />
-		<tag Name="Species" Value="bat" />		
-		<mutation Name="Wings" Level="10" CapOverride="10" />
-		<tag Name="BaseObject" Value="*noinherit" />		
-		<tag Name="SimpleConversation" Value="{{emote|*idly flaps wings*}}" />
-    <tag Name="LairAmbientBed" Value="Sounds/Ambiences/amb_creature_bats" />
-		<tag Name="DeathSounds" Value="Sounds/Creatures/VO/sfx_creature_animal_bat_vo_die" />
-		<tag Name="TakeDamageSound" Value="Sounds/Creatures/VO/sfx_creature_animal_bat_vo_hurt"/>
-		<tag Name="AmbientIdleSound" Value="Sounds/Creatures/VO/sfx_creature_animal_bat_vo_idle"/>
-		<tag Name="PunchSound" Value="Sounds/Creatures/VO/sfx_creature_animal_bat_vo_attack"/>
+	<object Name="BaseBat" Load="Merge">
   </object>
   <object Name="BaseBear" Load="Merge">
     <part Name="Render" DisplayName="base bear" Tile="assets_content_textures_creatures_creatures-3-13.png" RenderString="u" ColorString="&amp;w" />
@@ -6383,71 +6372,19 @@ The infant child is unaware
   </object>
 	<object Name="Dream Wren" Load="Merge">
 		<part Name="Render" DisplayName="dream wren" RenderString="b" Tile="creatures/sw_chavvah_bird.bmp" ColorString="&amp;b" TileColor="&amp;b" DetailColor="M" />
-		<part Name="Description" Short="A long and split tail feather drapes below =pronouns.possessive= talons at an immaterial buoyancy. =pronouns.Possessive= epaulets are incandescent and =pronouns.possessive= frill is a vane for astral weather." />
-		
+		<part Name="Description" Short="A long and split tail feather drapes below =pronouns.possessive= comical, limb-enveloping gut at an immaterial buoyancy, its only visible appendage save its fat-swaddled, huffing little head, snapping greedily at wisps of psychic dream-swell. =pronouns.Possessive= epaulets are incandescent and =pronouns.possessive= frill is a vane for astral weather."/>
+		<part Name="LargerFolk_WeightDescription" 
+      WeightDescription_0="A long and split tail feather drapes below =pronouns.possessive= talons at an immaterial buoyancy. =pronouns.Possessive= epaulets are incandescent and =pronouns.possessive= frill is a vane for astral weather."
+      WeightDescription_1="A long and split tail feather drapes below =pronouns.possessive= comical, limb-enveloping gut at an immaterial buoyancy, its only visible appendage save its fat-swaddled, huffing little head, snapping greedily at wisps of psychic dream-swell. =pronouns.Possessive= epaulets are incandescent and =pronouns.possessive= frill is a vane for astral weather." />
 	</object>
 	
-	<object Name="Enigma Snail" Inherits="BaseSnail">
+	<object Name="Enigma Snail" Load="Merge">
     <part Name="Render" DisplayName="enigma snail" Tile="bucklerparry_largerfolk/enigma_snail_fat.png" RenderString="q" ColorString="&amp;B" TileColor="&amp;W" DetailColor="B" />
     <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_cone_snail.bmp" WeightStage_1="bucklerparry_largerfolk/enigma_snail_fat.png" />
-    <part Name="Description" Short="A giant cone of calcereous shell conceals a softform body. It tilts to the side, and its many whorls are sequenced to impress the eye with pleasing geometry before swerving to uncomfortable and dizzying disharmony." />
-    <part Name="Corpse" CorpseChance="20" CorpseBlueprint="Enigma Snail Corpse" />
-    <part Name="Brain" MaxKillRadius="6" />
-    <stat Name="Level" Value="32" />
-    <stat Name="Hitpoints" Value="180" />
-    <stat Name="AV" Value="2" />
-    <stat Name="MoveSpeed" Value="150" />
-    <mutation Name="Carapace" Level="10" />
-    <mutation Name="Confusion" Level="15" />
-    <stat Name="ElectricResistance" Value="30" />
-    <stat Name="HeatResistance" Value="30" />
-    <stat Name="ColdResistance" Value="30" />
-    <stat Name="AcidResistance" Value="30" />
-    <stat Name="Ego" sValue="16" />
-    <skill Name="LongBlades" />
-    <tag Name="Role" Value="Controller" />
-    <part Name="SapOnPenetration" Stat="Willpower" Amount="1" />
-    <inventoryobject Blueprint="EnigmaSnail_Bite" Number="1" />
-    <tag Name="NoCure" />
-    <tag Name="DynamicObjectsTable:PalladiumReef_Creatures" />
-  </object>
-  <object Name="EnigmaSnail_Bite" Inherits="Bite">
-    <part Name="Render" DisplayName="{{B|perplexcis}}" />
-    <part Name="MeleeWeapon" HitBonus="6" BaseDamage="2d2" Skill="LongBlades" />
-  </object>
-  <object Name="Enigma Snail Corpse" Inherits="Snail Corpse">
-    <part Name="Render" DisplayName="enigma snail corpse" />
-    <part Name="Butcherable" OnSuccess="@Enigma Snail Corpse" />
-    <part Name="Food" Message="????" />
-    <tag Name="Tier" Value="7" />
-    <part Name="ConfuseOnEat" Strength="1d8" Duration="13-20" Level="15" BuildupTimeout="15" />
-    <part Name="Physics" Weight="150" />
-    <part Name="Commerce" Value="300" />    
-  </object>
-  <object Name="LightRondure" Inherits="NaturalMissileWeapon">
-    <part Name="Render" DisplayName="{{Y|rondure of light}}" ColorString="&amp;c" />
-    <part Name="Physics" UsesTwoSlots="true" Weight="50" />
-    <part Name="MissileWeapon" Skill="Pistol" AmmoChar="&amp;Y-" ShotsPerAction="2" AmmoPerAction="2" ShotsPerAnimation="2" WeaponAccuracy="2" />
-    <part Name="CooldownAmmoLoader" Cooldown="2" Readout="true" />
-    <part Name="EnergyAmmoLoader" ChargeUse="100" ProjectileObject="ProjectileLaserColumn" />
-    <part Name="EnergyCellSocket" SlotType="EnergyCell" ChanceSlotted="100" SlottedType="Antimatter Cell" ChanceDestroyCellOnForcedUnequip="100" />
-    <part Name="EquipCharge" ChargeRate="80" EquipperProperty="LightRondureRecharge" NameForStatus="PowerUplink" />
-    <part Name="IntegralRecharger" />
-    <part Name="Examiner" Complexity="7" />
-    <part Name="TinkerItem" Bits="0007" CanDisassemble="true" CanBuild="false" />
-    <part Name="Metal" />
-    <tag Name="MissileFireSound" Value="Sounds/Missile/Fires/Rifles/sfx_missile_laserRifle_fire" />
-    <tag Name="Tier" Value="7" />
-  </object>
-  <object Name="ProjectileLaserColumn" Inherits="TemporaryProjectile">
-    <part Name="Render" DisplayName="{{Y|laser column}}" ColorString="&amp;Y" />
-    <part Name="Projectile" BasePenetration="10" BaseDamage="2d8" Attributes="Light Laser" ColorString="&amp;Y" PassByVerb="thrum" />
-    <part Name="TreatAsSolid" LightBased="true" Hits="false" RequiresPhaseMatch="false" Message="The darkness consumes =subject.t=!" />
-    <tag Name="NoDodging" />
-    <tag Name="IgnoresForceWall" />
-    <tag Name="Light" />
-    <tag Name="ProjectileVFX" Value="MissileWeaponsEffects/heavy_laser" />
-    <tag Name="ProjectileVFXConfiguration" Value="duration::0.25;;beamColor0::#FF0000;;beamColor1::#FF8000;;beamColor2::#FFFFFF" />
+    <part Name="Description" Short="A giant cone of calcereous shell fails to conceal the over-bloated softbody of the corpulent mollusk. It wobbles to the side, and its many whorls are sequenced to impress the eye with pleasing geometry before swerving to uncomfortable and dizzying disharmony. Fat folds in and out and upon itself, sweaty-slimy creases ad infinitum. You find your eyes drawn to it despite the nausea." />
+    <part Name="LargerFolk_WeightDescription" 
+      WeightDescription_0="A giant cone of calcereous shell conceals a softform body. It tilts to the side, and its many whorls are sequenced to impress the eye with pleasing geometry before swerving to uncomfortable and dizzying disharmony."
+      WeightDescription_1="A giant cone of calcereous shell fails to conceal the over-bloated softbody of the corpulent mollusk. It wobbles to the side, and its many whorls are sequenced to impress the eye with pleasing geometry before swerving to uncomfortable and dizzying disharmony. Fat folds in and out and upon itself, sweaty-slimy creases ad infinitum. You find your eyes drawn to it despite the nausea." />
   </object>
   <object Name="Eigenturret Tinker" Inherits="Turret Tinker">
     <part Name="Render" DisplayName="eigenturret tinker" RenderString="7" ColorString="&amp;Y" DetailColor="c" />
@@ -6471,58 +6408,14 @@ The infant child is unaware
     <tag Name="DynamicObjectsTable:BaroqueRuins_FarmablePlants" />
     <tag Name="DynamicObjectsTable:BaroqueRuins_FarmablePlants:Weight" Value="0.2" />
   </object>
-  <object Name="Gelatinous Antiprism" Inherits="BaseOoze">
+  <object Name="Gelatinous Antiprism" Load="Merge">
     <part Name="Render" DisplayName="gelatinous antiprism" Tile="bucklerparry_largerfolk/gelatinous_antiprism_fat.png"  RenderString="J" ColorString="&amp;K" DetailColor="y" />
     <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_antiprism.bmp" WeightStage_1="bucklerparry_largerfolk/gelatinous_antiprism_fat.png" />
     <part Name="Description" Short="Organic matter is liquefied by the agents of decay and pressurized by tight spaces into the shapes of prismatoids. Galvanized by a cousin-instinct to hunger, the gelatin entity now extrudes itself forward in antiprism form." />
-    <stat Name="Level" Value="33" />
-    <tag Name="Role" Value="Tank" />
-    <part Name="Engulfing" />
-    <part Name="EngulfingDamage" Amount ="4-8" />
-    <part Name="EngulfingClones" Cooldown="10" Clones="2-3" ColorString="&amp;K" Prefix="anti-" Description="It's negative you." RealityStabilizationPenetration="55" />
-    <part Name="EngulfingSedentary" />
-    <stat Name="Hitpoints" Value="140" />
-    <stat Name="AV" Value="8" />
-    <stat Name="HeatResistance" Value="25" />
-    <stat Name="ColdResistance" Value="25" />
-    <stat Name="ElectricResistance" Value="25" />
-    <stat Name="AcidResistance" Value="25" />
   </object>
-  <object Name="Glittermensch" Inherits="Cragmensch">
+  <object Name="Glittermensch" Load="Merge">
     <part Name="Render" DisplayName="glittermensch" Tile="creatures/sw_glittermensch.bmp" RenderString="t" ColorString="&amp;y" />
     <part Name="Description" Short="Heat, pressure, beauty, and transformation are concepts understood by every manner of human being. When the sundry tribes commune by campfire and the hillfolk aver the godliness of the mountain face, so does the troglodyte speak with wonderment of the splayed crystal-things that glint in the shadows of her cave. Though neither has the language to articulate the mechanisms that connect them, together they know these things are the same." />
-		<part Name="Physics" FlameTemperature="600" />
-		<part Name="Brain" Hostile="false" Factions="Cragmensch-100" />
-    <part Name="Corpse" CorpseChance="0" />
-		<part Name="DropOnDeath" Blueprints="LargeBoulder" />
-    <stat Name="Strength" Boost="2" />
-    <stat Name="Agility" sValue="1d3+7" />
-    <stat Name="Toughness" Boost="2" />
-    <stat Name="HeatResistance" Value="75" />
-    <stat Name="ColdResistance" Value="75" />
-    <stat Name="AcidResistance" Value="100" />
-    <stat Name="Speed" Value="40" />
-    <stat Name="AV" Value="25" />
-    <stat Name="Level" Value="31" />
-    <stat Name="Hitpoints" Value="60" />
-    <skill Name="Cudgel" />
-    <part Name="DropOnDamage" Blueprint="@Gemstones" MinimumDamage="3" />
-    <part Name="RandomColors" DetailColor="m,W,r,R,b,B,g,G" />    
-    <tag Name="Species" Value="cragmensch" />
-    <tag Name="BaseObject" Value="*noinherit" />
-  </object>
-  <object Name="Glittermensch_Fist" Inherits="NaturalFist">
-    <part Name="Render" DisplayName="crystal fist" Tile="Creatures/natural-weapon-fist.bmp" ColorString="&amp;y" />		
-    <part Name="MeleeWeapon" BaseDamage="4d4" Skill="Cudgel" Stat="Strength" Slot="Hand" />
-  </object>
-  <object Name="Glittermensch Brainer" Inherits="Glittermensch">
-    <part Name="Render" DisplayName="glittermensch brainer" ColorString="&amp;y" />
-    <stat Name="Strength" Boost="3" />
-    <stat Name="Agility" Boost="-1" />
-    <skill Name="Cudgel_Bludgeon" />
-		<inventoryobject Blueprint="Glittermensch_Fist" Number="2" />
-    <stat Name="Level" Value="31" />
-    <tag Name="Role" Value="Brute" />
   </object>
   <object Name="Glittermensch Boulderer" Inherits="Glittermensch">
     <part Name="Render" DisplayName="glittermensch boulderer" Tile="Creatures/glittermensch-boulderer.png" ColorString="&amp;Y"/>
@@ -6540,28 +6433,20 @@ The infant child is unaware
     <stat Name="Level" Value="35" />
     <tag Name="Role" Value="Leader" />
   </object>
-  <object Name="Great Saltback" Inherits="BaseTortoise">
+  <object Name="Great Saltback" Load="Merge">
     <part Name="Render" DisplayName="great saltback" Tile="bucklerparry_largerfolk/tortoise_fat.png" RenderString="T" ColorString="&amp;Y" DetailColor="w" />
     <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_tortoise.bmp" WeightStage_1="bucklerparry_largerfolk/tortoise_fat.png" />
-    <part Name="Corpse" CorpseChance="90" CorpseBlueprint="Great Saltback Corpse" />
-    <part Name="Brain" Factions="Dromad-100,Tortoises-50" Hostile="false" />
-    <stat Name="AV" Value="17" />
-    <stat Name="DV" Value="-10" />
-    <stat Name="Strength" Boost="2" />
-    <stat Name="Agility" Boost="-3" />
-    <stat Name="Hitpoints" Value="900" />
-    <stat Name="Level" Value="31" />
-    <part Name="Description" Short="Words fail to contain the paradox of =pronouns.possessive= domesticated immensity.
+    
+    <part Name="Description" Short= />
+    <part Name="LargerFolk_WeightDescription" 
+      WeightDescription_0="Words fail to contain the paradox of =pronouns.possessive= domesticated immensity.
 
-Drifts on the cultural seas have swept a particular fable to your attention. Long ago, far away, folks supposed all of everything rested on the back of a world-tortoise. Surely that flight of fancy came to someone gazing on a Great Saltback... or does your own vision echo through the past to partake in its creation?" />
-    <inventoryobject Blueprint="Saltback_Stomp" Number="1" />
-    <tag Name="Role" Value="Tank" />
-		<tag Name="Gigantic" />
+Drifts on the cultural seas have swept a particular fable to your attention. Long ago, far away, folks supposed all of everything rested on the back of a world-tortoise. Surely that flight of fancy came to someone gazing on a Great Saltback... or does your own vision echo through the past to partake in its creation?"
+      WeightDescription_1="Words fail to contain the paradox of =pronouns.possessive= domesticated obesity.
+
+Drifts on the cultural seas have swept a particular fable to your attention. Long ago, far away, folks supposed all of everything rested on the back of a world-tortoise. Surely that flight of fancy came to someone gazing on a Great Saltback... Had they seen this one, perhaps they wouldn't have thought a tortoise the carrying sort. It is difficult to imagine the diet a creature of such immensity could follow to reach such a state of obesity as this. Between towering, house-thick legs a mountainous belly sags to scrape a parasangs-long trail across the desert like the finger of a god."/>
   </object>
-  <object Name="Saltback_Stomp" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="great stomp" Tile="Creatures/natural-weapon-hoof1.bmp" ColorString="&amp;w" />
-    <part Name="MeleeWeapon" BaseDamage="4d6" Skill="Cudgel" Stat="Strength" Slot="Foot" />
-  </object>
+
   <object Name="Great Saltback Corpse" Inherits="Animal Corpse">
     <part Name="Render" DisplayName="great saltback corpse" />
     <part Name="Food" Message="Out of the mountain of shell a few strips of salt-coffined meat preserve." />
@@ -7689,28 +7574,13 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
 
   -->
 
-  <object Name="Daughter of Exile" Inherits="BaseHumanoid">
+  <object Name="Daughter of Exile" Load="Merge">
     <part Name="Render" DisplayName="daughter of Exile" Tile="bucklerparry_largerfolk/daughter_of_exile_fat.png" ColorString="&amp;y" DetailColor="C" RenderString="h" />
     <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_daughter.bmp" WeightStage_1="bucklerparry_largerfolk/daughter_of_exile_fat.png" />
-    <part Name="Description" Short="Oil smears and arc burns stripe the flesh that peeks out from under the frustum of =pronouns.possessive= habit, and the tools belted to =pronouns.possessive= waistline put a sag in =pronouns.possessive= breeches. =pronouns.Subjective= =verb:are:afterpronoun= guided by the stitch of =pronouns.possessive= order's diasporic emblem, set with a magnetic needle, and pointing =pronouns.objective= toward the wild gardens beyond the wall." />
-    <part Name="Brain" Hostile="false" Factions="Daughters-100" Wanders="false" />
-    <part Name="AIPilgrim" StiltZoneID="JoppaWorld.53.4.0.0.10" StiltEntranceZoneID="JoppaWorld.53.4.0.0.10" TargetObject="RachelsTombstone" />
-    <skill Name="Tinkering" />
-    <skill Name="Tinkering_Repair" />
-    <skill Name="Tinkering_Tinker1" />
-    <skill Name="Tinkering_Disassemble" />
-    <skill Name="Tinkering_DeployTurret" />
-    <skill Name="Tinkering_LayMine" />
-    <skill Name="Tinkering_Tinker2" />
-    <skill Name="Tinkering_Scavenger" />
-    <tag Name="InventoryPopulationTable" Value="DaughterofExileInventory" />
-    <stat Name="Hitpoints" Value="85" />
-    <stat Name="Level" Value="24" />
-    <stat Name="Intelligence" Boost="1" />
-    <stat Name="AV" Value="3" />
-    <part Name="SpawnWithEffect" Effect="Lost" Chance="8" />
-    <part Name="AIShopper" />
-    <tag Name="Gender" Value="female" />    
+    <part Name="Description" Short="Oil smears and arc burns stripe the soft flesh that bulges out from under the frustum of =pronouns.possessive= habit and the narrow crescent lune of plush tummy between =pronouns.possessive= overtaxed top and the sagging waistband of =pronouns.possessive= breeches. =pronouns.Subjective= =verb:are:afterpronoun= guided by the stitch of =pronouns.possessive= order's diasporic emblem, set with a magnetic needle, and pointing =pronouns.objective= toward the wild gardens beyond the wall." />
+    <part Name="LargerFolk_WeightDescription"
+      WeightDescription_0="Oil smears and arc burns stripe the flesh that peeks out from under the frustum of =pronouns.possessive= habit, and the tools belted to =pronouns.possessive= waistline put a sag in =pronouns.possessive= breeches. =pronouns.Subjective= =verb:are:afterpronoun= guided by the stitch of =pronouns.possessive= order's diasporic emblem, set with a magnetic needle, and pointing =pronouns.objective= toward the wild gardens beyond the wall."
+      WeightDescription_1="Oil smears and arc burns stripe the soft flesh that bulges out from under the frustum of =pronouns.possessive= habit and the narrow crescent lune of plush tummy between =pronouns.possessive= overtaxed top and the sagging waistband of =pronouns.possessive= breeches. =pronouns.Subjective= =verb:are:afterpronoun= guided by the stitch of =pronouns.possessive= order's diasporic emblem, set with a magnetic needle, and pointing =pronouns.objective= toward the wild gardens beyond the wall."/>
   </object>
   <object Name="Giant Clam" Inherits="BaseClam">
     <part Name="Render" DisplayName="giant clam" Tile="Creatures/sw_clam_1.bmp" RenderString="128" RenderLayer="9" ColorString="&amp;Y" DetailColor="y" />
@@ -11899,88 +11769,17 @@ In Barathrum's name, =pronouns.subjective==verb:'ve:afterpronoun= conferred onto
       -Ezra Pound.
       ... Or something. Your gaze is drawn inexorably to =pronouns.possessive= pendulous chest, and the poetry is lost on your vacant mind... It really is unnaturally large, no doubt the result of some dark experiment." />
   </object>
-  <object Name="Skybear" Inherits="NPC">
-    <part Name="Render" DisplayName="Saad Amus" Tile="Creatures/sw_skybear.bmp" ColorString="&amp;M" TileColor="&amp;Y" DetailColor="M" RenderString="U" />
-    <part Name="Brain" Hostile="True" />
-    <part Name="Corpse" CorpseChance="0" />
-    <part Name="Titles" Primary="the Sky-Bear" />
-    <part Name="ItemElements" Elements="might::1" />
-    <part Name="Interesting" />
-    <stat Name="Level" Value="35" />
-    <stat Name="Strength" Value="30" />
-    <stat Name="Agility" Value="34" />
-    <stat Name="Toughness" Value="26" />
-    <stat Name="Intelligence" Value="20" />
-    <stat Name="Willpower" Value="30" />
-    <stat Name="Ego" Value="24" />
-    <stat Name="AV" Value="6" />
-    <stat Name="Speed" Value="160" />
-    <stat Name="Hitpoints" Value="350" />
-    <stat Name="HeatResistance" Value="75" />
-    <stat Name="ColdResistance" Value="75" />
-    <stat Name="AcidResistance" Value="75" />
-    <stat Name="ElectricResistance" Value="75" />
+  <object Name="Skybear" Load="Merge">
+    <part Name="Render" DisplayName="Saad Amus" Tile="bucklerparry_largerfolk/amus_fat.png" ColorString="&amp;M" TileColor="&amp;Y" DetailColor="M" RenderString="U" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_skybear.bmp" WeightStage_1="bucklerparry_largerfolk/amus_fat.png"/>
     <part Name="Description" Short="A whole man is formed of skinstuff that mirrors the subsurface scattering and rivulet imperfections of sculpted marble. =pronouns.Subjective= =verb:are:afterpronoun= white and pink and blushing with the sanguinity of moonlight filtered through a sieve of monofilament chrome. Eyes drawn to a lasting point, =pronouns.subjective= =verb:cast:afterpronoun= a furious gaze on a world made defamiliar." />
-    <skill Name="LongBlades" />
-    <skill Name="LongBladesProficiency" />
-    <skill Name="LongBladesLunge" />
-    <skill Name="LongBladesSwipe" />
-    <skill Name="LongBladesDuelingStance" />
-    <skill Name="LongBladesImprovedAggressiveStance" />
-    <skill Name="LongBladesImprovedDefensiveStance" />
-    <skill Name="LongBladesImprovedDuelistStance" />
-    <skill Name="LongBladesDeathblow" />
-		<skill Name="SingleWeaponFighting" />
-		<skill Name="SingleWeaponFighting_WeaponExpertise" />
-		<skill Name="SingleWeaponFighting_PenetratingStrikes" />
-		<skill Name="SingleWeaponFighting_WeaponMastery" />
-    <inventoryobject Blueprint="Jeweled Sandals" />
-    <inventoryobject Blueprint="Ceremonial Khopesh" />
-    <inventoryobject Blueprint="SkybearJetpack" />
-    <tag Name="Gender" Value="male" />
-    <tag Name="Genotype" Value="True Kin" />
-		<skill Name="Persuasion_RebukeRobot" />
-    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
-    <xtagGrammar Proper="true" />
+   
   </object>
-  <object Name="SkybearClone" Inherits="NPC">
-    <part Name="Render" DisplayName="clone of Saad Amus" Tile="Creatures/sw_skybear.bmp" ColorString="&amp;M" TileColor="&amp;Y" DetailColor="M" RenderString="U" />
-    <part Name="Brain" />
-    <part Name="Corpse" CorpseChance="0" />
-    <part Name="ItemElements" Elements="might::1" />
-    <stat Name="Level" Value="35" />
-    <stat Name="Strength" Value="30" />
-    <stat Name="Agility" Value="34" />
-    <stat Name="Toughness" Value="26" />
-    <stat Name="Intelligence" Value="20" />
-    <stat Name="Willpower" Value="30" />
-    <stat Name="Ego" Value="24" />
-    <stat Name="AV" Value="6" />
-    <stat Name="Speed" Value="160" />
-    <stat Name="Hitpoints" Value="350" />
-    <stat Name="HeatResistance" Value="75" />
-    <stat Name="ColdResistance" Value="75" />
-    <stat Name="AcidResistance" Value="75" />
-    <stat Name="ElectricResistance" Value="75" />
+  <object Name="SkybearClone" Load="Merge">
+    <part Name="Render" DisplayName="clone of Saad Amus" Tile="bucklerparry_largerfolk/amus_fat.png" ColorString="&amp;M" TileColor="&amp;Y" DetailColor="M" RenderString="U" />
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_skybear.bmp" WeightStage_1="bucklerparry_largerfolk/amus_fat.png"/>
     <part Name="Description" Short="A whole man is formed of skinstuff that mirrors the subsurface scattering and rivulet imperfections of sculpted marble. =pronouns.Subjective= =verb:are:afterpronoun= white and pink and blushing with the sanguinity of moonlight filtered through a sieve of monofilament chrome. Eyes drawn to a lasting point, =pronouns.subjective= =verb:cast:afterpronoun= a furious gaze on a world made defamiliar." />
-    <skill Name="LongBlades" />
-    <skill Name="LongBladesProficiency" />
-    <skill Name="LongBladesLunge" />
-    <skill Name="LongBladesSwipe" />
-    <skill Name="LongBladesDuelingStance" />
-    <skill Name="LongBladesImprovedAggressiveStance" />
-    <skill Name="LongBladesImprovedDefensiveStance" />
-    <skill Name="LongBladesImprovedDuelistStance" />
-    <skill Name="LongBladesDeathblow" />
-		<skill Name="SingleWeaponFighting" />
-		<skill Name="SingleWeaponFighting_WeaponExpertise" />
-		<skill Name="SingleWeaponFighting_PenetratingStrikes" />
-		<skill Name="SingleWeaponFighting_WeaponMastery" />
-    <inventoryobject Blueprint="Jeweled Sandals" />
-    <inventoryobject Blueprint="Ceremonial Khopesh" />
-    <tag Name="Gender" Value="male" />
-    <intproperty Name="IsClone" Value="1" />
-		<tag Name="NoFigurine" />
+    
   </object>
   <object Name="Phinae Hoshaiah" Inherits="Mechanimist">
     <part Name="Render" DisplayName="Phinae Hoshaiah" ColorString="&amp;M" RenderString="m" Tile="creatures/sw_preacher3.bmp" DetailColor="W" />

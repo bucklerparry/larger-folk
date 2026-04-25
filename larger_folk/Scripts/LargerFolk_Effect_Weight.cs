@@ -190,7 +190,7 @@ namespace XRL.World.Effects
                         break;
                     case 3:
                         // StatShifter.DefaultDisplayName = "Extreme Obesity";
-                        AVShift = 2;
+                        AVShift = 3;
                         DVShift = -3;
                         MSShift = 60;
                         break;

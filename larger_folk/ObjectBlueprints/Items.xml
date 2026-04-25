@@ -350,7 +350,9 @@
     **********
 
   -->
-
+  <object Name="Witchwood Bark" Load="Merge">
+    <part Name="LargerFolk_FoodCalories" Calories="25" />
+  </object>
   
   
   <!-- End meds -->

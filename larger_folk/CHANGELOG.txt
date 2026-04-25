@@ -1,3 +1,13 @@
+V 0.4 - Cooking update
+
+- cooking meals now adds calories based on the ingredients included! cooked ingredients will
+add more calories than just eating them.
+
+SPRITES
+- lotsa new sprites! check the github commits
+- stage 3 sprite for eunuch
+- Fat sprite for saad amus
+
 V 0.3.02
 
 - Fixed fat/obese/etc being considered mental effects that can be "shaken off" by two-headed creatures

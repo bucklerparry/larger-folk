@@ -23,6 +23,7 @@ namespace XRL.World.Parts
 		        Registrar.Register("OnEat");
                 Registrar.Register("AfterEat");
                 Registrar.Register("ThrownProjectileHit");
+                Registrar.Register("UsedAsIngredient");
             }
 		    base.Register(Object, Registrar);
 	    }
@@ -39,7 +40,7 @@ namespace XRL.World.Parts
                 if (next_eater != null && next_eater.HasPart<LargerFolk_WeightGain>())
                 {
                     LargerFolk_WeightGain weight_part = next_eater.GetPart<LargerFolk_WeightGain>();
-                    weight_part.ChangeCalories(Calories);
+                    weight_part.ChangeCalories(Calories * 50 / 100);
                     next_eater = null;
                 }
             }
@@ -54,6 +55,10 @@ namespace XRL.World.Parts
 
                     ParentObject.Destroy();
                 }
+            }
+            else if (E.ID == "UsedAsIngredient")
+            {
+                E.GetGameObjectParameter("Actor").GetPart<LargerFolk_WeightGain>().ChangeCalories(Calories * 125 / 100);
             }
 
             return base.FireEvent(E);

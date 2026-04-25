@@ -138,6 +138,8 @@ public class LargerFolk_CasteWeightStages : IPlayerMutator
                 player.GetPart<Render>().Tile = "bucklerparry_largerfolk/eunuch_fat.png";
                 player.GetPart<LargerFolk_WeightStageRender>().WeightStage_0 = "creatures/caste_8.bmp";
                 player.GetPart<LargerFolk_WeightStageRender>().WeightStage_1 = "bucklerparry_largerfolk/eunuch_fat.png";
+                player.GetPart<LargerFolk_WeightStageRender>().WeightStage_2 = "bucklerparry_largerfolk/eunuch_fat.png";
+                player.GetPart<LargerFolk_WeightStageRender>().WeightStage_3 = "bucklerparry_largerfolk/eunuch_fat_stage3.png";
             }
             else if (myRender.Tile =="creatures/caste_9.bmp" || myRender.Tile == "bucklerparry_largerfolk/hearthchild_fat.png")
             {
