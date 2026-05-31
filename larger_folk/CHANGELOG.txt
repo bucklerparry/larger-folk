@@ -1,3 +1,9 @@
+V 0.4.1
+  - fixed bug with npcs displaying the wrong weight sprite
+  - fixed weight descriptions for amus, asphodel, and alchemist.
+  - fixed typo in options menu
+  - moved unused script files to gitignore
+  - changed manifest to correctly reflect version number
 V 0.4 - Cooking update
 
 - cooking meals now adds calories based on the ingredients included! cooked ingredients will

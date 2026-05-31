@@ -26,7 +26,7 @@
   -->
 
   <object Name="Creature" Load="Merge">
-    <part Name="Render" DisplayName="[Creature]" RenderString="@" RenderLayer="10" RenderIfDark="false" DetailColor="w" Tile="Assets_Content_Textures_Creatures_sw_farmer.bmp" />
+    <!-- <part Name="Render" DisplayName="[Creature]" RenderString="@" RenderLayer="10" RenderIfDark="false" DetailColor="w" Tile="Assets_Content_Textures_Creatures_sw_farmer.bmp" /> -->
     <part Name="LargerFolk_WeightGain" />
     <part Name="LargerFolk_WeightPreach" Book="LargerFolk_WeightSounds" Prefix="=subject.T= =verb:go= {{W|'" inOrder="false" />
   </object>
@@ -262,7 +262,7 @@
   </object>
   
   <!-- Base humanoids -->
-  <object Name="Humanoid" Inherits="Creature">
+  <!-- <object Name="Humanoid" Inherits="Creature">
     <tag Name="BodyDisplayName" Value="Humanoid" />
     <part Name="Body" Anatomy="Humanoid" />
     <part Name="Brain" Factions="Humanoids-100" />
@@ -277,8 +277,8 @@
     <tag Name="BaseObject" Value="*noinherit" />
     <tag Name="PrimaryLimbType" Value="Hand" />
     <tag Name="LairAmbientBed" Value="Sounds/Ambiences/amb_creature_humanoid_generic" />
-  </object>
-  <object Name="BaseHumanoid" Inherits="Humanoid">
+  </object> -->
+  <!-- <object Name="BaseHumanoid" Inherits="Humanoid">
     <part Name="Render" RenderString="h" />
     <part Name="Corpse" CorpseChance="90" CorpseBlueprint="Human Corpse" />
     <stat Name="Strength" sValue="14,1d3,(t)d1" />
@@ -296,7 +296,7 @@
     <tag Name="SimpleConversation" Value="Moon and Sun. Wisdom and will.~May the earth yield for us this season.~Peace, =player.formalAddressTerm=." />
     <tag Name="PrimaryLimbType" Value="Hand" />    		
     <tag Name="LairAmbientBed" Value="Sounds/Ambiences/amb_creature_humanoid_generic" />        
-  </object>
+  </object> -->
   <object Name="BaseApe" Inherits="Humanoid">
     <stat Name="Strength" sValue="18,1d3,(t-1)d2" />
     <stat Name="Agility" sValue="14,1d3,(t-1)d2" />
@@ -6437,14 +6437,10 @@ The infant child is unaware
     <part Name="Render" DisplayName="great saltback" Tile="bucklerparry_largerfolk/tortoise_fat.png" RenderString="T" ColorString="&amp;Y" DetailColor="w" />
     <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_tortoise.bmp" WeightStage_1="bucklerparry_largerfolk/tortoise_fat.png" />
     
-    <part Name="Description" Short= />
+    <part Name="Description" Short="Words fail to contain the paradox of =pronouns.possessive= domesticated obesity. Drifts on the cultural seas have swept a particular fable to your attention. Long ago, far away, folks supposed all of everything rested on the back of a world-tortoise. Surely that flight of fancy came to someone gazing on a Great Saltback... Had they seen this one, perhaps they wouldn't have thought a tortoise the carrying sort. It is difficult to imagine the diet a creature of such immensity could follow to reach such a state of obesity as this. Between towering, house-thick legs a mountainous belly sags to scrape a parasangs-long trail across the desert like the finger of a god."/>
     <part Name="LargerFolk_WeightDescription" 
-      WeightDescription_0="Words fail to contain the paradox of =pronouns.possessive= domesticated immensity.
-
-Drifts on the cultural seas have swept a particular fable to your attention. Long ago, far away, folks supposed all of everything rested on the back of a world-tortoise. Surely that flight of fancy came to someone gazing on a Great Saltback... or does your own vision echo through the past to partake in its creation?"
-      WeightDescription_1="Words fail to contain the paradox of =pronouns.possessive= domesticated obesity.
-
-Drifts on the cultural seas have swept a particular fable to your attention. Long ago, far away, folks supposed all of everything rested on the back of a world-tortoise. Surely that flight of fancy came to someone gazing on a Great Saltback... Had they seen this one, perhaps they wouldn't have thought a tortoise the carrying sort. It is difficult to imagine the diet a creature of such immensity could follow to reach such a state of obesity as this. Between towering, house-thick legs a mountainous belly sags to scrape a parasangs-long trail across the desert like the finger of a god."/>
+      WeightDescription_0="Words fail to contain the paradox of =pronouns.possessive= domesticated immensity. Drifts on the cultural seas have swept a particular fable to your attention. Long ago, far away, folks supposed all of everything rested on the back of a world-tortoise. Surely that flight of fancy came to someone gazing on a Great Saltback... or does your own vision echo through the past to partake in its creation?"
+      WeightDescription_1="Words fail to contain the paradox of =pronouns.possessive= domesticated obesity. Drifts on the cultural seas have swept a particular fable to your attention. Long ago, far away, folks supposed all of everything rested on the back of a world-tortoise. Surely that flight of fancy came to someone gazing on a Great Saltback... Had they seen this one, perhaps they wouldn't have thought a tortoise the carrying sort. It is difficult to imagine the diet a creature of such immensity could follow to reach such a state of obesity as this. Between towering, house-thick legs a mountainous belly sags to scrape a parasangs-long trail across the desert like the finger of a god."/>
   </object>
 
   <object Name="Great Saltback Corpse" Inherits="Animal Corpse">
@@ -10758,14 +10754,14 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
 
   -->
 
-  <object Name="NPC" Inherits="BaseHumanoid">
+  <!-- <object Name="NPC" Inherits="BaseHumanoid">
     <part Name="Brain" Hostile="false" Wanders="false" />
     <tag Name="Role" Value="NPC" />
     <tag Name="AllowIdleBehavior" />
     <tag Name="SleepOnBed" />
     <tag Name="BaseObject" Value="*noinherit" />
 		<stag Name="Contemporary" />
-  </object>
+  </object> -->
   <object Name="TrueKinNPC" Inherits="BaseTrueKin">
     <part Name="Brain" Hostile="false" Wanders="false" />
     <tag Name="Role" Value="NPC" />
@@ -10847,7 +10843,6 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
     <part Name="Render" DisplayName="Mehmet" ColorString="&amp;W" RenderString="f" Tile="bucklerparry_largerfolk/mehmet_fat.png" />
     <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/npc-mehmet.bmp" WeightStage_1="bucklerparry_largerfolk/mehmet_fat.png"/>
     <part Name="Description" Short="=pronouns.Subjective= =verb:are:afterpronoun= a wind-carved man with the posture of a vinereaper; =pronouns.possessive= spine is bent to point the bright turquoise of =pronouns.possessive= eyes at the tilling angle, =pronouns.possessive= hips are pushed odd-forward with the slumping ease of a stance much more relaxed than =pronouns.possessive=. If it weren't for the salt on =pronouns.possessive= brow and the extra padding, =pronouns.subjective= would seem a marble Saad perched under a crumbling tomb." />
-    
     <removebuilder Name="LargerFolk_RandomTile" />
   </object>
   <object Name="VillageZeroConvert" Load="Merge">
@@ -10894,7 +10889,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
   </object>
   <!-- ColorString="&amp;B" TileColor="&amp;w" DetailColor="B" RenderString="w" DisplayName="Yrame"  -->
   <object Name="Warden Yrame" Load="Merge">
-    <part Name="Render" Tile="bucklerparry_largerfolk/yrame_fat.png" /> 
+    <part Name="Render" Tile="bucklerparry_largerfolk/yrame_fat.png" ColorString="&amp;B" TileColor="&amp;w" DetailColor="B" RenderString="w" DisplayName="Yrame"/> 
     <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/npc-yrame.bmp" WeightStage_1="bucklerparry_largerfolk/yrame_fat.png" />
     <part Name="Description" Short="Big Yrame shifts =pronouns.possessive= prodigious weight between hind and forelegs. =pronouns.Subjective= =verb:shake:afterpronoun= a storm of rust dander from the tines of =pronouns.possessive= great horns, and =pronouns.subjective= =verb:blow:afterpronoun= a halo of freezing air from =pronouns.possessive= rime-veined hands. Movement is a chore even on easy earth for the mammoth physique of the widest warden." />
     <part Name="LargerFolk_WeightDescription" 
@@ -10903,6 +10898,7 @@ Drifts on the cultural seas have swept a particular fable to your attention. Lon
     />
     <tag Name="staticFaction1" Value="Joppa,friend,letting them rub her tummy" />
   </object>
+  
   
   <!-- Salt marsh -->
   <object Name="OasisGlowpad" Inherits="Glowpad">
@@ -11768,18 +11764,51 @@ In Barathrum's name, =pronouns.subjective==verb:'ve:afterpronoun= conferred onto
       Quiet this metal.&quot;
       -Ezra Pound.
       ... Or something. Your gaze is drawn inexorably to =pronouns.possessive= pendulous chest, and the poetry is lost on your vacant mind... It really is unnaturally large, no doubt the result of some dark experiment." />
+    <part Name="LargerFolk_WeightDescription" 
+    WeightDescription_0="&quot;Let the manes put off their terror, let them put off their aqueous bodies with fire.
+      Let them draw together the bones of the metal.
+      Selvaggia, Guiscarda, Mandetta,
+      Rain flakes of gold on the water
+      Azure and flaking silver of water,
+      Pallor of silver, pale lustre of Latona,
+      By these, from the malevolence of the dew
+      Guard this alembic.
+      Elain, Tireis, Allodetta
+      Quiet this metal.&quot;
+      -Ezra Pound."
+     
+    WeightDescription_1="&quot;Let the manes put off their terror, let them put off their aqueous bodies with fire.
+      Let them draw together the bones of the metal.
+      Selvaggia, Guiscarda, Mandetta,
+      Rain flakes of gold on the water
+      Azure and flaking silver of water,
+      Pallor of silver, pale lustre of Latona,
+      By these, from the malevolence of the dew
+      Guard this alembic.
+      Elain, Tireis, Allodetta
+      Quiet this metal.&quot;
+      -Ezra Pound.
+      ... Or something. Your gaze is drawn inexorably to =pronouns.possessive= pendulous chest, and the poetry is lost on your vacant mind... It really is unnaturally large, no doubt the result of some dark experiment." 
+    
+    />
   </object>
   <object Name="Skybear" Load="Merge">
     <part Name="Render" DisplayName="Saad Amus" Tile="bucklerparry_largerfolk/amus_fat.png" ColorString="&amp;M" TileColor="&amp;Y" DetailColor="M" RenderString="U" />
     <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_skybear.bmp" WeightStage_1="bucklerparry_largerfolk/amus_fat.png"/>
-    <part Name="Description" Short="A whole man is formed of skinstuff that mirrors the subsurface scattering and rivulet imperfections of sculpted marble. =pronouns.Subjective= =verb:are:afterpronoun= white and pink and blushing with the sanguinity of moonlight filtered through a sieve of monofilament chrome. Eyes drawn to a lasting point, =pronouns.subjective= =verb:cast:afterpronoun= a furious gaze on a world made defamiliar." />
-   
+    <part Name="Description" Short="A rotund man is formed of skinstuff that mirrors the subsurface scattering and rivulet imperfections of sculpted marble. =pronouns.Subjective= =verb:are:afterpronoun= white and pink and blushing with exertion. Eyes drawn to a lasting point, =pronouns.subjective= =verb:cast:afterpronoun= a furious gaze on a world made defamiliar."/>
+    <part Name="LargerFolk_WeightDescription" 
+    WeightDescription_0="A whole man is formed of skinstuff that mirrors the subsurface scattering and rivulet imperfections of sculpted marble. =pronouns.Subjective= =verb:are:afterpronoun= white and pink and blushing with the sanguinity of moonlight filtered through a sieve of monofilament chrome. Eyes drawn to a lasting point, =pronouns.subjective= =verb:cast:afterpronoun= a furious gaze on a world made defamiliar."
+    WeightDescription_1="A rotund man is formed of skinstuff that mirrors the subsurface scattering and rivulet imperfections of sculpted marble. =pronouns.Subjective= =verb:are:afterpronoun= white and pink and blushing with exertion. Eyes drawn to a lasting point, =pronouns.subjective= =verb:cast:afterpronoun= a furious gaze on a world made defamiliar."
+    />
   </object>
   <object Name="SkybearClone" Load="Merge">
     <part Name="Render" DisplayName="clone of Saad Amus" Tile="bucklerparry_largerfolk/amus_fat.png" ColorString="&amp;M" TileColor="&amp;Y" DetailColor="M" RenderString="U" />
     <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_skybear.bmp" WeightStage_1="bucklerparry_largerfolk/amus_fat.png"/>
-    <part Name="Description" Short="A whole man is formed of skinstuff that mirrors the subsurface scattering and rivulet imperfections of sculpted marble. =pronouns.Subjective= =verb:are:afterpronoun= white and pink and blushing with the sanguinity of moonlight filtered through a sieve of monofilament chrome. Eyes drawn to a lasting point, =pronouns.subjective= =verb:cast:afterpronoun= a furious gaze on a world made defamiliar." />
-    
+    <part Name="Description" Short="A rotund man is formed of skinstuff that mirrors the subsurface scattering and rivulet imperfections of sculpted marble. =pronouns.Subjective= =verb:are:afterpronoun= white and pink and blushing with exertion. Eyes drawn to a lasting point, =pronouns.subjective= =verb:cast:afterpronoun= a furious gaze on a world made defamiliar."/>
+    <part Name="LargerFolk_WeightDescription" 
+    WeightDescription_0="A whole man is formed of skinstuff that mirrors the subsurface scattering and rivulet imperfections of sculpted marble. =pronouns.Subjective= =verb:are:afterpronoun= white and pink and blushing with the sanguinity of moonlight filtered through a sieve of monofilament chrome. Eyes drawn to a lasting point, =pronouns.subjective= =verb:cast:afterpronoun= a furious gaze on a world made defamiliar."
+    WeightDescription_1="A rotund man is formed of skinstuff that mirrors the subsurface scattering and rivulet imperfections of sculpted marble. =pronouns.Subjective= =verb:are:afterpronoun= white and pink and blushing with exertion. Eyes drawn to a lasting point, =pronouns.subjective= =verb:cast:afterpronoun= a furious gaze on a world made defamiliar."
+    />
   </object>
   <object Name="Phinae Hoshaiah" Inherits="Mechanimist">
     <part Name="Render" DisplayName="Phinae Hoshaiah" ColorString="&amp;M" RenderString="m" Tile="creatures/sw_preacher3.bmp" DetailColor="W" />
@@ -11829,7 +11858,10 @@ In Barathrum's name, =pronouns.subjective==verb:'ve:afterpronoun= conferred onto
     <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_flower.bmp" WeightStage_1="bucklerparry_largerfolk/asphodel_fat.png" />
     <part Name="ConversationScript" ConversationID="Asphodel" ClearLost="true" />
     <part Name="Description" Short="Asphodel (called the Lovely) turns their tipping anthers at seductive angles. All the bright golds of the harvest sun and musa peel are garnishes to the swollen beauty of =pronouns.possessive= petal. =pronouns.Subjective= =verb:claim:afterpronoun= the aesthetic lineage of Hegelrut, and from that argument flowers =pronouns.possessive= claim to Omonporch and the entire Great Shade of the grove. In =pronouns.possessive= royal leisure, =pronouns.possessive= foliage has grown thick and flabby. Ambulation, already a physical impossibility, recieves a symbolic rejection in the pursuit of decadence." />
-   
+    <part Name="LargerFolk_WeightDescription" 
+    WeightDescription_0="Asphodel (called the Lovely) turns =pronouns.possessive= tipping anthers at seductive angles. All the bright golds of the harvest sun and musa peel are garnishes to the frail beauty of =pronouns.possessive= petal. =pronouns.Subjective= =verb:claim:afterpronoun= the aesthetic lineage of Hegelrut, and from that argument flowers =pronouns.possessive= claim to Omonporch and the entire Great Shade of the grove."
+    WeightDescription_1="Asphodel (called the Lovely) turns their tipping anthers at seductive angles. All the bright golds of the harvest sun and musa peel are garnishes to the swollen beauty of =pronouns.possessive= petal. =pronouns.Subjective= =verb:claim:afterpronoun= the aesthetic lineage of Hegelrut, and from that argument flowers =pronouns.possessive= claim to Omonporch and the entire Great Shade of the grove. In =pronouns.possessive= royal leisure, =pronouns.possessive= foliage has grown thick and flabby. Ambulation, already a physical impossibility, recieves a symbolic rejection in the pursuit of decadence."
+    />
   </object>
   <object Name="Delegate" Inherits="NPC">
     <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
