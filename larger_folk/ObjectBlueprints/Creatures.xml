@@ -10841,7 +10841,7 @@ The infant child is unaware
   </object>
   <object Name="Mehmet" Load="Merge"> <!--Inherits="WatervineFarmerJoppa"-->
     <part Name="Render" DisplayName="Mehmet" ColorString="&amp;W" RenderString="f" Tile="bucklerparry_largerfolk/mehmet_fat.png" />
-    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/npc-mehmet.bmp" WeightStage_1="bucklerparry_largerfolk/mehmet_fat.png"/>
+    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/npc-mehmet.bmp" WeightStage_1="bucklerparry_largerfolk/mehmet_fat.png" WeightStage_2="bucklerparry_largerfolk/mehmet_fat_stage2.png"/>
     <part Name="Description" Short="=pronouns.Subjective= =verb:are:afterpronoun= a wind-carved man with the posture of a vinereaper; =pronouns.possessive= spine is bent to point the bright turquoise of =pronouns.possessive= eyes at the tilling angle, =pronouns.possessive= hips are pushed odd-forward with the slumping ease of a stance much more relaxed than =pronouns.possessive=. If it weren't for the salt on =pronouns.possessive= brow and the extra padding, =pronouns.subjective= would seem a marble Saad perched under a crumbling tomb." />
     <removebuilder Name="LargerFolk_RandomTile" />
   </object>
