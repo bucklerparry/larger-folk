@@ -44,5 +44,15 @@ namespace LargerFolk.Utilities
         {
             return Rand.Next(minInclusive, maxInclusive + 1);
         }
+
+        public static int d6x(int quantity)
+        {
+            int val = 0;
+            for (int i = 0; i < quantity; i++)
+            {
+                val += Rand.Next(1,6);
+            }
+            return val;
+        }
     }
 }

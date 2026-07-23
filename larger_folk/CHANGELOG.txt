@@ -1,3 +1,9 @@
+V 0.4.2
+  - new messages for equipping too-tight armor
+  - changed fat-based weight calculation to use AdjustWeightEvent to better integrate with the vore mod
+  - weight stage thresholds vary based on creature size and weight
+V 0.4.11
+  - Fat sprites for centipede/beetle nests
 V 0.4.1
   - fixed bug with npcs displaying the wrong weight sprite
   - fixed weight descriptions for amus, asphodel, and alchemist.

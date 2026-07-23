@@ -835,24 +835,12 @@
   </object>
   
   <!-- Base oddities -->
-  <object Name="BaseNest" Inherits="Creature">
-    <part Name="Render" DisplayName="[Nest]" RenderLayer="7" RenderString="15" Tile="Creatures/sw_nest.bmp" ColorString="&amp;w" DetailColor="y" Occluding="false" />
-    <part Name="Physics" Solid="false" Weight="200" Category="Nest" Takeable="false" />
-    <part Name="Body" Anatomy="Nest" />
-    <part Name="Brain" Mobile="false" Hostile="false" Factions="Beasts-100" />
-    <part Name="NoKnockdown" />
-    <part Name="Springy" Factor="0.2" />
-    <tag Name="DeathMessageAsInanimate" />
-    <part Name="MentalShield" />
-    <xtagTextFragments YounglingNoise="*squish*" Activity="incubating larvae" VillageActivity="incubating larvae" NeedsItemFor="for my own collection,to slake my greed,because of its trade value" SacredThing="nesting" ArableLand="a moist place" ValuedOre="moisture" />
-    <tag Name="Class" Value="nest" />
-    <tag Name="BaseObject" Value="*noinherit" />
-    <tag Name="ExcludeFromVillagePopulations" />
-		<tag Name="LairAmbientBed" Value="Sounds/Ambiences/amb_creature_nest_urchin" />
-		<tag Name="DeathSounds" Value="Sounds/Creatures/VO/sfx_creature_animal_nest-urchin_vo_die" />
-    <tag Name="TakeDamageSound" Value="Sounds/Creatures/VO/sfx_creature_animal_nest-urchin_vo_hurt"/>
-    <tag Name="AmbientIdleSound" Value="Sounds/Creatures/VO/sfx_creature_animal_nest-urchin_vo_idle"/>
-    <tag Name="PunchSound" Value="Sounds/Creatures/VO/sfx_creature_animal_nest-urchin_vo_attack"/>
+  <object Name="BaseNest" Load="Merge">
+    <part Name="Render" DisplayName="[Nest]" RenderLayer="7" RenderString="15" Tile="bucklerparry_largerfolk/nest_fat.png" ColorString="&amp;w" DetailColor="y" Occluding="false" />
+    <part Name="LargerFolk_WeightStageRender" 
+    WeightStage_0="Creatures/sw_nest.bmp"
+    WeightStage_1="bucklerparry_largerfolk/nest_fat.png" />
+  
   </object>
 	
 	<!-- Base animated objects -->
@@ -1985,69 +1973,26 @@ The infant child is unaware
     <tag Name="Role" Value="Minion" />
     <tag Name="Species" Value="lah" />
   </object>
-  <object Name="Giant Centipede Nest" Inherits="BaseNest">
-    <part Name="Render" DisplayName="giant centipede nest" Tile="Creatures/sw_nest.bmp" ColorString="&amp;w" DetailColor="r" />
-    <part Name="Brain" Factions="Insects-100" />
+  <object Name="Giant Centipede Nest" Load="Merge">
+    <part Name="Render" DisplayName="giant centipede nest" Tile="bucklerparry_largerfolk/nest_fat.png" ColorString="&amp;w" DetailColor="r" />
+    <part Name="LargerFolk_WeightStageRender" 
+    WeightStage_0="Creatures/sw_nest.bmp"
+    WeightStage_1="bucklerparry_largerfolk/nest_fat.png" />
     <part Name="Description" Short="Plies of nest-skin swell and contract as if the thing were taking breaths. Its darkling cavities glint with larvae burning to be born." />
-    <part Name="ConversationScript" ConversationID="InsectNest" />
-    <stat Name="Level" Value="10" />
-    <stat Name="AV" Value="2" />
-    <stat Name="Hitpoints" Value="20" />
-    <tag Name="Role" Value="Summoner" />
-    <tag Name="NoAskName" />
-    <part Name="Nest" TurnsPerSpawn="15-20" NumberSpawned="1-3" SpawnMessage="A giant centipede crawls out of the nest." SpawnParticle="&amp;w." BlueprintSpawned="Giant Centipede" />
+    
   </object>  		
-  <object Name="Glowmoth" Inherits="BaseInsect">
+  <object Name="Glowmoth" Load="Merge">
     <part Name="Render" DisplayName="glowmoth" Tile="bucklerparry_largerfolk/glowmoth_fat.png" RenderString="i" ColorString="&amp;G" />
-    <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_glowmoth.bmp" WeightStage_1="bucklerparry_largerfolk/glowmoth_fat.png" />
-    <part Name="Corpse" CorpseChance="1" CorpseBlueprint="Glowmoth Corpse" />
-    <stat Name="Hitpoints" Value="10" />
-    <stat Name="Level" Value="6" />
-    <stat Name="AV" Value="2" />
-    <mutation Name="Wings" Level="1" />
-    <part Name="Brain" Hostile="false" Factions="Insects-100" PointBlankRange="true" />
-    <part Name="Description" Short="A rain of gorgeous dust drifts down a frustum of light, and radiant mirrorwings bat it through the air vacuum." />
-    <inventoryobject Blueprint="Glowmoth_Gaze" Number="1" />
-    <tag Name="Species" Value="moth" />
-    <tag Name="DynamicObjectsTable:Ruins_Creatures" />    
+    <part Name="LargerFolk_WeightStageRender" 
+    WeightStage_0="Creatures/sw_glowmoth.bmp" 
+    WeightStage_1="bucklerparry_largerfolk/glowmoth_fat.png" />
+    <part Name="Description" Short="A rain of gorgeous dust drifts down a frustum of light, and radiant mirrorwings bat it through the air vacuum." />   
   </object>
-  <object Name="Glowmoth_Gaze" Inherits="NaturalMissileWeapon">
-    <part Name="Render" DisplayName="gaze" ColorString="&amp;c" />
-    <part Name="MissileWeapon" RangeIncrement="12" Skill="Rifle" AmmoChar="&amp;G&#236;" ShotsPerAction="1" AmmoPerAction="1" ShotsPerAnimation="1" />
-    <part Name="EnergyAmmoLoader" ChargeUse="0" ProjectileObject="Projectile_GlowmothGaze" />
-    <tag Name="UsesSlots" Value="Face" />
-  </object>
-  <object Name="Projectile_GlowmothGaze" Inherits="TemporaryEnergyProjectile">
-    <part Name="Render" DisplayName="{{G|flash of neon}}" ColorString="&amp;G" />
-    <part Name="Projectile" BasePenetration="4" BaseDamage="1d6" ColorString="&amp;G" PassByVerb="flicker" />
-    <part Name="TreatAsSolid" GazeBased="true" Hits="false" RequiresPhaseMatch="false" Message="The darkness consumes =subject.t=!" />
-  </object>
-  <object Name="Glowmoth Corpse" Inherits="Winged Arthropod Corpse">
-    <part Name="Render" DisplayName="glowmoth corpse" ColorString="&amp;G" />
-    <part Name="Description" Short="It decays and gives off a warm and lovely heat." />
-    <part Name="Butcherable" OnSuccess="Luminous Mote" />
-    <tag Name="Tier" Value="2" />    
-  </object>
-  <object Name="Hide-Sheathed Hermit" Inherits="BaseHumanoid">
+  <object Name="Hide-Sheathed Hermit" Load="Merge">
     <part Name="Render" Tile="bucklerparry_largerfolk/hermit_fat.png" DisplayName="hide-sheathed hermit" RenderString="h" ColorString="&amp;w" DetailColor="W" />
     <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_hermit.bmp" WeightStage_1="bucklerparry_largerfolk/hermit_fat.png" />
-    <part Name="Corpse" CorpseChance="0" />
-    <stat Name="AV" Value="6" />
-    <stat Name="Level" Value="8" />
-    <stat Name="Hitpoints" Value="25" />
-    <part Name="Brain" Hostile="false" Factions="Hermits-100" />
+  
     <part Name="Description" Short="The patchwork of ash and dirt-caked hides make a gradient of flesh across the hermit's body. =pronouns.Possessive= hair has knotted into a rat's nest. =pronouns.Subjective= =verb:scream:afterpronoun= in a tongue of =pronouns.possessive= own invention." />
-    <skill Name="Cudgel" />
-    <skill Name="Multiweapon_Fighting" />
-    <builder Name="Tier2HumanoidEquipment" />
-    <inventoryobject Blueprint="Furs" Number="1" />
-    <tag Name="Role" Value="Tank" />
-    <stat Name="ColdResistance" Value="10" />
-    <stat Name="HeatResistance" Value="10" />
-    <stat Name="ElectricResistance" Value="10" />
-    <tag Name="DynamicObjectsTable:Jungle_Creatures" />
-    <tag Name="DynamicObjectsTable:Hills_Creatures" />
-    <tag Name="DynamicObjectsTable:Ruins_Creatures" />
   </object> 
   <object Name="Honey Skunk" Inherits="BaseAnimal">
     <part Name="Render" DisplayName="honey skunk" Tile="Creatures/sw_honeyskunk.bmp" RenderString="v" ColorString="&amp;r" DetailColor="Y" />
@@ -2063,61 +2008,16 @@ The infant child is unaware
     <tag Name="DynamicObjectsTable:Jungle_Creatures" />
     <tag Name="DynamicObjectsTable:Hills_Creatures" />
   </object>
-  <object Name="Honeyskunk_Bite" Inherits="Bite">
-  </object>
-  <object Name="Knollworm" Inherits="BaseWorm">
+  <object Name="Knollworm" Load="Merge">
     <part Name="Render" DisplayName="knollworm" Tile="bucklerparry_largerfolk/knollworm_fat.png" RenderString="w" ColorString="&amp;y" />
     <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_knollworm.bmp" WeightStage_1="bucklerparry_largerfolk/knollworm_fat.png" />
-    <part Name="Corpse" CorpseChance="100" CorpseBlueprint="Knollworm Corpse" />
-    <stat Name="AV" Value="3" />
-    <stat Name="Level" Value="7" />
-    <stat Name="Hitpoints" Value="20" />
-    <part Name="Brain" Hostile="false" />
-    <inventoryobject Blueprint="Knollworm_Beak" Number="1" />
     <part Name="Description" Short="A thick cord of bristled fat rolls are capped by a cuspate beak for breaking through shale." />
-    <skill Name="Tactics" />
-    <skill Name="Axe" />
-    <skill Name="Axe_Cleave" />
-    <mutation Name="Regeneration" />
-    <tag Name="Role" Value="Brute" />
-    <tag Name="Species" Value="knollworm" />
   </object>
-  <object Name="Knollworm_Beak" Inherits="NaturalWeapon">
-    <part Name="Render" DisplayName="crab-crushing beak" Tile="Creatures/natural-weapon-beak.bmp" ColorString="&amp;w"/>
-    <part Name="DisplayNameColor" Color="&amp;Y" />
-    <part Name="MeleeWeapon" BaseDamage="1d3" Skill="Axe" Stat="Strength" Slot="Head" />
-  </object>
-  <object Name="Knollworm Corpse" Inherits="Worm Corpse">
-    <part Name="Description" Short="Rings of still, spongy wormbody are mixed with crushed beak, and little bristles scrape the earth." />
-		<part Name="Butcherable" OnSuccess="@Knollworm Corpse"/>
-    <part Name="Render" DisplayName="knollworm corpse" ColorString="&amp;y" />
-    <part Name="Physics" Weight="70" />
-    <tag Name="Tier" Value="2" />    
-  </object>	
-  <object Name="Leech" Inherits="BaseWorm">
+  <object Name="Leech" Load="Merge">
     <part Name="Render" DisplayName="{{r|leech}}" Tile="bucklerparry_largerfolk/leech_fat.png" RenderString="w" ColorString="&amp;y" DetailColor="Y" />
     <part Name="LargerFolk_WeightStageRender" WeightStage_0="Creatures/sw_leech.bmp" WeightStage_1="bucklerparry_largerfolk/leech_fat.png" />
-    <part Name="Corpse" CorpseChance="100" CorpseBlueprint="Leech Corpse" />
-    <stat Name="AV" Value="2" />
-    <stat Name="Level" Value="6" />
-    <stat Name="Hitpoints" Value="10" />
-    <part Name="Brain" Hostile="false" Factions="Worms-100" />
-    <inventoryobject Blueprint="Leech_Bite" Number="1" />
     <part Name="Description" Short="Reticle dots lattice =pronouns.possessive= overfed gooey wormback, and sucker bells pinch the air with blooditch. Even starved, it's body swells with the pounds of past meals." />
-    <mutation Name="LifeDrain" />
-    <tag Name="Species" Value="leech" />
-    <tag Name="DynamicObjectsTable:Jungle_Creatures" />
-    <tag Name="DynamicObjectsTable:Hills_Creatures" />
   </object>
-  <object Name="Leech_Bite" Inherits="Bite">
-    <part Name="MeleeWeapon" Skill="Axe" Slot="Head" />
-  </object>
-  <object Name="Leech Corpse" Inherits="Worm Corpse">
-    <part Name="Render" DisplayName="leech corpse" />
-    <part Name="Physics" Weight="30" />
-    <part Name="Commerce" Value="2" />
-    <tag Name="Tier" Value="2" />    
-  </object>  
   <object Name="Farm Leech" Inherits="Leech">
     <part Name="Brain" Hostile="false" Factions="Farmers-100" />
     <tag Name="Grazer" />
@@ -3340,17 +3240,12 @@ The infant child is unaware
     <part Name="Render" DisplayName="ghost perch corpse" ColorString="&amp;m" />
     <tag Name="Tier" Value="6" />    
   </object>	
-  <object Name="Giant Beetle Nest" Inherits="BaseNest">
-    <part Name="Render" DisplayName="giant beetle nest" Tile="Creatures/sw_nest.bmp" ColorString="&amp;y" DetailColor="K" />
-    <part Name="Brain" Factions="Insects-100" />
+  <object Name="Giant Beetle Nest" Load="Merge">
+    <part Name="Render" DisplayName="giant beetle nest" Tile="bucklerparry_largerfolk/nest_fat.png" ColorString="&amp;y" DetailColor="K" />
+    <part Name="LargerFolk_WeightStageRender" 
+      WeightStage_0="Creatures/sw_nest.bmp"
+      WeightStage_1="bucklerparry_largerfolk/nest_fat.png" />
     <part Name="Description" Short="Plies of nest-skin swell and contract as if the thing were taking breaths. Its darkling cavities glint with larvae burning to be born." />
-    <part Name="ConversationScript" ConversationID="InsectNest" />
-    <stat Name="Level" Value="15" />
-    <stat Name="AV" Value="3" />
-    <stat Name="Hitpoints" Value="25" />
-    <tag Name="Role" Value="Summoner" />
-    <tag Name="NoAskName" />
-    <part Name="Nest" TurnsPerSpawn="15-20" NumberSpawned="1-3" SpawnMessage="A giant beetle crawls out of the nest." SpawnParticle="&amp;K." BlueprintSpawned="Giant Beetle" />
   </object>
   <object Name="Girshworm" Inherits="BaseWorm">
     <part Name="Render" DisplayName="girshworm" Tile="Creatures/sw_girshworm.bmp" RenderString="w" ColorString="&amp;m" />

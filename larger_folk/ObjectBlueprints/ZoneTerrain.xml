@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<objects>
+
+<object Name="CrackedGround" Inherits="Walkway">
+    <part Name="Render" DisplayName="bridge" RenderString="#" ColorString="&amp;r" Tile="bucklerparry_largerfolk/tile/crackedground.png" DetailColor="W" RenderLayer="3" />
+    <part Name="Description" Short="A spiderweb of fine cracks line the fragile earth." />
+    <part Name="Physics" Weight="50" Takeable="false" Solid="false" />
+    <tag Name="Tier" Value="1" />
+    <tag Name="SuspendedPlatform"></tag>
+</object>  
+<!-- 
+  <object Name="SlimyShaft" Load="Merge">
+    <part Name="LargerFolk_StairsDown"/>
+    <part Name="StairsDown" Connected="false" PullDown="true" PullMessage="You fall down the slimy shaft!" />
+    
+  </object>
+  <object Name="OpenShaft" Load="Merge">
+    <part Name="LargerFolk_StairsDown"/>
+    <part Name="StairsDown" Connected="false" PullDown="true" />
+    
+  </object>
+  <object Name="OpenShaft2" Load="Merge">
+    <part Name="LargerFolk_StairsDown"/>
+    <part Name="StairsDown" Connected="false" PullDown="true" Levels="2"/>
+   
+  </object>
+  <object Name="Air" Load="Merge">
+    <part Name="LargerFolk_StairsDown"/>
+    <part Name="StairsDown" Connected="false" PullDown="true" ConnectLanding="false" PullMessage="You fall down!" GenericFall="true" JumpPrompt="It looks like an awfully long fall. Are you sure you want to jump?"/>
+    
+  </object>
+  <object Name="Pit" Load="Merge">
+    <part Name="LargerFolk_StairsDown"/>
+    <part Name="StairsDown" Connected="false" PullDown="true" PullMessage="You scramble down a craggy ledge." GenericFall="true" JumpPrompt="It looks like an awfully long fall. Are you sure you want to jump?"/>
+    
+  </object>
+
+
+  <object Name="TombShaft" Load="Merge"> 
+    <part Name="LargerFolk_StairsDown"/>
+    <part Name="StairsDown" Connected="false" PullDown="true" />
+    
+  </object>
+  <object Name="ElevatorShaft" Load="Merge">
+    <part Name="LargerFolk_StairsDown"/>
+    <part Name="StairsDown" Connected="false" PullDown="true" Levels="1"/>
+    
+  </object>
+  <object Name="ReefOpenShaft" Load="Merge">
+    <part Name="LargerFolk_StairsDown"/> 
+    <part Name="StairsDown" Connected="false" PullDown="true" PullMessage="" />
+    
+  </object> -->
+  <!-- End up/down connection terrain -->
+
+</objects>

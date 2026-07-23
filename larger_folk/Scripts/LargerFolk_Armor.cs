@@ -33,6 +33,7 @@ namespace XRL.World.Parts
 
         public string OutsizeString1 = "Your ";
         public string OutsizeString2 = " feels tighter...";
+        public string OutsizeEquipString = " just barely fits around ";
 
         public override bool SameAs(IPart p)
         {
@@ -117,6 +118,14 @@ namespace XRL.World.Parts
                     ParentObject.ApplyEffect(new LargerFolk_Effect_Tight(
                         StageDifference: (wearerWeightStage - TargetSize),
                         FromEquip: true) );
+                    
+                    if (E.Actor.IsPlayer())
+                    {
+                        E.Actor.EmitMessage("The " + 
+                        ParentObject.ShortDisplayNameStripped
+                        + OutsizeEquipString + E.Actor.its + " " + LargerFolk_Language.AjSize(E.Actor.GetPart<LargerFolk_WeightGain>().WeightStage) + " " + E.Part.Name.ToLower() + ".");
+                         
+                    }
                 }
                 // else if (wearerWeightStage < TargetSize)
                 // {

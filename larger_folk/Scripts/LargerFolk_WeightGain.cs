@@ -44,9 +44,9 @@ public class LargerFolk_WeightGain : IPart
 
     public int StartingWeight = -1;
 
-    public int CalorieThresholdFat = 6000;
-    public int CalorieThresholdObese = 12000;
-    public int CalorieThresholdImmobile = 20000;
+    public int CalorieThresholdFat { get => ParentObject.GetBodyWeight() * 30; }
+    public int CalorieThresholdObese { get => ParentObject.GetBodyWeight() * 60; }
+    public int CalorieThresholdImmobile{ get => ParentObject.GetBodyWeight() * 100; }
 
     public LargerFolk_WeightGain()
     {
@@ -75,7 +75,7 @@ public class LargerFolk_WeightGain : IPart
     {
 	    // Check if the ID parameter matches one of the events we want
 	    // The base WantEvent of IPart/Effect will always return false.
-	    return base.WantEvent(ID, cascade) || ID == ObjectCreatedEvent.ID || (ID == GetDisplayNameEvent.ID) || ID == GetIntrinsicWeightEvent.ID;
+	    return base.WantEvent(ID, cascade) || ID == ObjectCreatedEvent.ID || (ID == GetDisplayNameEvent.ID);
     }
 
     // public override bool WantEvent(int ID, int cascade) 
@@ -87,22 +87,20 @@ public class LargerFolk_WeightGain : IPart
     {
         WeightSetup();
 
+        ParentObject.RequirePart<LargerFolk_WeightPhysics>();
+        ParentObject.RequirePart<LargerFolk_WeightStatMod>();
+
         return base.HandleEvent(E);
     }
-
-    public override bool HandleEvent(GetIntrinsicWeightEvent E)
-	{
-		E.Weight += TotalCalories/32;
-		return base.HandleEvent(E);
-	}
 
 
     public void WeightSetup()
     {
+        
         // set an initial weight stage for non-player creatures, usually lean or fat, occasionally obese, extremely rarely immobile
         if (IsEnabled && !ParentObject.IsPlayer())
         {
-
+            
             // if no starting weight is set, select one randomly
             if (StartingWeight < 0)
             {
