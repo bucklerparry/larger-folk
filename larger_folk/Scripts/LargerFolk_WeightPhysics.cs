@@ -52,7 +52,7 @@ public class LargerFolk_WeightPhysics : IPart
     {
 	    // Check if the ID parameter matches one of the events we want
 	    // The base WantEvent of IPart/Effect will always return false.
-	    return base.WantEvent(ID, cascade) || ID == ObjectCreatedEvent.ID || ID == AdjustWeightEvent.ID || ID == FellDownEvent.ID || ID == EnteringCellEvent.ID;
+	    return base.WantEvent(ID, cascade) || ID == ObjectCreatedEvent.ID || ID == FellDownEvent.ID || ID == EnteringCellEvent.ID;
     }
 
     // public override bool WantEvent(int ID, int cascade) 
@@ -129,12 +129,7 @@ public class LargerFolk_WeightPhysics : IPart
 	// 	// E.Weight += TotalCalories/32;
 	// 	return base.HandleEvent(E);
 	// }
-     public override bool HandleEvent(AdjustWeightEvent E)
-    {
-        // E.Weight *= 1 + TotalCalories/10000.0;
-        E.Weight += TotalCalories/32;
-        return base.HandleEvent(E);
-    }
+
 
     public override bool FireEvent(Event E)
     {
